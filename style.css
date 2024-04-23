@@ -5,12 +5,42 @@ body {
 header {
     height: 70px;
     width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+.button {
+    background-color: #3691ff;
+    color: #ffffff;
+}
+
+.logo_image {
+    margin-left: 200px;
+}
+
+.login_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+    margin-right: 200px;
+    width: 128px;
+    height: 48px;
+    border-radius: 8px;
 }
 
 .home {
     background-color: #cfe5ff;
     width: 100%;
 }
+
+.items_button
 
 footer {
     color: #e5e7eb;
