@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+}
+
+header {
+    height: 70px;
+    width: auto;
+}
+
+.home {
+    background-color: #cfe5ff;
+    width: 100%;
+}
+
+footer {
+    color: #e5e7eb;
+    background-color: #111827;
+}
