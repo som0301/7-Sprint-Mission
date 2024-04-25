@@ -3,13 +3,31 @@
   margin: 0;
 }
 
-.click-button {
+.click {
   cursor: pointer;
 }
 
-.click-button.logo {
+.logo {
   width: 153px;
   height: 51px;
+}
+
+.login {
+  background-color: #3692FF;
+  border-radius: 8px;
+  width: 128px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login .click {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+
 }
 
 header,
