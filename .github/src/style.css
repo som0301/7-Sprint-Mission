@@ -12,6 +12,9 @@
 .img_navBar_logo{
     width: 153px;
     height: 51px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 .button_login{
     width: 128px;
@@ -22,6 +25,9 @@
     color: #ffffff;
     font-size: 16px;
     font-weight: 600;
+    &:hover{
+        cursor: pointer;
+    }
 }
 /* banner style */
 .banner{
@@ -49,6 +55,9 @@
     color: #ffffff;
     font-weight: 600;
     font-size: 20px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 .img_banner_top{
     width: 996px;
@@ -113,11 +122,10 @@
 /* footer style */
 .footer{
     height: 160px;
-    width: 100%;
     background-color: #111827;
-    padding: 32px, 200px, 32px, 200px
+    padding: 32px 200px 32px 200px;
 }
-.footer_container{
+.footer_item_container{
     display: flex;
     justify-content: space-between;
     width: 1520px;
@@ -128,18 +136,27 @@
     font-size: 16px;
     font-weight: 400;
 }
-.footer_item_center span{
-    color: #E5E7EB;
-    font-size: 16px;
-    font-weight: 400;
-}
 .footer_item_center{
     display: flex;
     justify-content: space-between;
+    width: 159px;
+    height: 19px;
+}
+.footer_item_center a{
+    color: #E5E7EB;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration-line: none;
+    &:hover{
+        cursor: pointer;
+    }
 }
 .footer_item_sns img{
     width: 20px;
     height: 20px;
+    &:hover{
+        cursor: pointer;
+    }
 }
 .footer_item_sns{
     gap: 1px;
