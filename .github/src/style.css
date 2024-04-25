@@ -1,5 +1,5 @@
-.container{
-    width: 1920px;
+.container_all{
+    width: 100%;
 }
 /* navBar Style */
 .navBar{
@@ -91,7 +91,7 @@
     height: 444px;
     display: flex;
 }
-.img_section{
+.img_section img{
     width: 588px;
     height: 444px;
     margin-top: 137.5px;
@@ -103,6 +103,10 @@
     gap: 12px;
     margin-top: 137.5px;
     margin-left: 64px;
+}
+#right_section{
+    text-align: right;
+    margin-right: 64px;
 }
 .section_text_tag{
     font-size: 18;
