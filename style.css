@@ -13,6 +13,10 @@ header {
   background-color: #ffffff;
 }
 
+header .logo {
+  width: 153px;
+}
+
 .login {
   background-color: #3692ff;
   color: #ffffff;
