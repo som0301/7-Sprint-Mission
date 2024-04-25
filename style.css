@@ -7,6 +7,11 @@
   cursor: pointer;
 }
 
+.click-button.logo {
+  width: 153px;
+  height: 51px;
+}
+
 header,
 footer {
   margin: 0 auto;
