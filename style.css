@@ -41,6 +41,11 @@ header .logo {
   background-image: url(images/Img_home_top.png);
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: 80% bottom;
+  background-size: 55%;
 }
 
 .banner-box {
@@ -116,6 +121,11 @@ h1 {
   background-image: url(images/Img_home_bottom.png);
   background-size: cover;
   background-position: center; 
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-position: 80% bottom;
+  background-size: 55%;
 }
 
 footer {
