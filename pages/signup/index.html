@@ -44,6 +44,10 @@
 							<input type="text" name="email" id="login_email" value="" placeholder="이메일을 입력해주세요" />
 						</article>
 						<article class="input-box">
+							<label for="login_nickname">닉네임</label>
+							<input type="text" name="nickname" id="login_nickname" value="" placeholder="닉네임을 입력해주세요" />
+						</article>
+						<article class="input-box">
 							<label for="login_password">비밀번호</label>
 							<div>
 								<input type="password" name="password" id="login_password" value="" placeholder="비밀번호를 입력해주세요" />
@@ -52,8 +56,17 @@
 								</button>
 							</div>
 						</article>
+						<article class="input-box">
+							<label for="login_password_check">비밀번호 확인</label>
+							<div>
+								<input type="password" name="password_check" id="login_password_check" value="" placeholder="비밀번호를 다시 한 번 입력해주세요" />
+								<button type="button" class="btn_visibility">
+									<img src="/assets/images/icon/ic_visibility_off.svg" alt="비가시성 아이콘" draggable="false" />
+								</button>
+							</div>
+						</article>
 						<button class="btn btn_large" disabled>
-							<span>로그인</span>
+							<span>회원가입</span>
 						</button>
 					</form>
 				</section>
@@ -66,7 +79,7 @@
 						</div>
 					</article>
 					<div class="login__signup">
-						<p>판다마켓이 처음이신가요? <a href="/pages/signup/">회원가입</a></p>
+						<p>이미 회원이신가요? <a href="/pages/login/">로그인</a></p>
 					</div>
 				</section>
 			</article>
