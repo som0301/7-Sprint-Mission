@@ -61,6 +61,7 @@ a{
 .h2_title{
   font: 700 40px / 56px Pretendard;  
   color: var(--text-color-cool-gray);
+  word-break: keep-all;
 }
 
 .p_description {
