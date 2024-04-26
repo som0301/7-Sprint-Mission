@@ -21,6 +21,10 @@ header .logo {
   width: 153px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .login {
   background-color: #3692ff;
   color: #ffffff;
@@ -31,7 +35,6 @@ header .logo {
   font-weight: 600;
   border-radius: 8px;
   padding: 12px 20px;
-  text-decoration: none;
 }
 
 .banner {
@@ -75,7 +78,6 @@ h1 {
   border-radius: 999px;
   padding: 16px 124px;
   margin-top: 34px;
-  text-decoration: none;
 }
 
 .container {
@@ -149,7 +151,6 @@ footer {
 
 .footer-menu a {
   color: #E5E7EB;
-  text-decoration: none;
 }
 
 .sns {
