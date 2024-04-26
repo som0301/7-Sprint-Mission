@@ -106,3 +106,28 @@ h1 {
   background-size: cover;
   background-position: center; 
 }
+
+footer {
+  background-color: #111827;
+  color: #9ca3af;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 200px 108px 200px;
+  font-size: 16px;
+}
+
+.footer-menu {
+  display: flex;
+  gap: 30px;
+}
+
+.footer-menu a {
+  color: #E5E7EB;
+  text-decoration: none;
+}
+
+.sns {
+  display: flex;
+  gap: 12px;
+}
