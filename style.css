@@ -142,3 +142,7 @@ footer {
   display: flex;
   gap: 12px;
 }
+
+.sns img {
+  width: 20px;
+}
