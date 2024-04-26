@@ -96,7 +96,6 @@ header {
     background-color: var(--banner);
     width: 100%;
     height: 540px;
-    background-image: url('Img_home_top.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right 200px bottom;
@@ -137,10 +136,10 @@ main {
 }
 
 section {
-
     display: flex;
     gap: 64px;
     margin: 138px auto;
+    justify-content: center;
     align-items: center;
     flex: 1 1 0;
 }
