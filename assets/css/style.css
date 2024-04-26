@@ -70,16 +70,15 @@ body {
 	text-decoration: none;
 	cursor: pointer;
 	transition: all 0.16s;
-}
-
-*[class^='btn']:hover {
-	background-color: var(--color-hover);
-}
-*[class^='btn']:active {
-	background-color: var(--color-active);
-}
-*[class^='btn'][disabled] {
-	background-color: var(--color-disabled);
+	&:hover {
+		background-color: var(--color-hover);
+	}
+	&:active {
+		background-color: var(--color-active);
+	}
+	&[disabled] {
+		background-color: var(--color-disabled);
+	}
 }
 
 *.btn_small {
