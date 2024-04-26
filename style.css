@@ -41,7 +41,6 @@ header .logo {
   background-image: url(images/Img_home_top.png);
   background-size: cover;
   background-position: center;
-  
 }
 
 .banner-box {
@@ -100,4 +99,10 @@ h1 {
 
   margin-top: 24px;
   color: #374151;
+}
+
+#bottom {
+  background-image: url(images/Img_home_bottom.png);
+  background-size: cover;
+  background-position: center; 
 }
