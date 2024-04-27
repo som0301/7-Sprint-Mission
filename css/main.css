@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: #374151;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 200px;
+}
+
+header > h1 {
+  height: 51px;
+}
+
+header > a {
+  display: block;
+  width: 128px;
+  height: 48px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: #fff;
+  background-color: #3692FF;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.container { 
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.section1, .section3 {
+  position: relative;
+  height: 540px;
+  background-color: #CFE5FF;
+}
+
+.section1 > .bg-img {
+  position: absolute;
+  top: 93px; left: 36.51vw;
+  z-index: 0;
+}
+
+.section1 > .container, .section3 > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+.section1 > .container a {
+  padding: 16px 124px;
+  border-radius: 40px;;
+  background-color: #3692FF;
+  color: #fff; 
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.section2 .container {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding: 138px 0;
+}
+
+.section2 .container.right {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.section2 .container .subtitle {
+  margin-bottom: 12px;
+  color: #3692FF;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.section2 .container .description {
+  margin-top: 24px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.section3 > .bg-img {
+  position: absolute;
+  top: 0; left: 36.51vw;
+  z-index: 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  height: 160px;
+  padding: 32px 200px;
+  background-color: #111827;
+  font-size: 16px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+footer > div:first-child {
+  flex-basis: 200px;
+  color: #9CA3AF;
+}
+
+footer > .fnav a {
+  color: #9CA3AF;
+  margin-right: 30px;
+}
+
+footer > .sns {
+  flex-basis: 200px;
+  text-align: right;
+}
+
+footer > .sns a {
+  margin-right: 12px;
+}
+
+footer > .fnav a:last-child, footer > .sns a:last-child {
+  margin-right: 0;
+}
