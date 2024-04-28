@@ -1,5 +1,7 @@
 *{
   box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
 header{
   width: 1920px;
@@ -14,6 +16,11 @@ header{
   flex-direction: row;
   justify-content: space-between;
 }
+.logo{
+  margin-right: auto; 
+  margin-left: 200px;
+  cursor: pointer;
+}
 .login{
   width: Fixed (128px)px;
   height: Fixed (48px)px;
@@ -25,6 +32,9 @@ header{
   opacity: 0px;
   background: #3692FF;
   color: #FFFFFF;
+  margin-right:200px;
+  margin-left:auto;
+  cursor: pointer;
 }
 main{
   width: 1920px;
@@ -65,6 +75,7 @@ h2{
   opacity: 0px;
   background: #3692FF;
   color:#ffffff;
+  cursor: pointer;
 }
 .panda{
   left: 701px;
@@ -207,6 +218,7 @@ footer{
   line-height: 19.09px;
   text-align: center;
   color: #E5E7EB;
+  cursor: pointer;
 }
 .icon{
   display:flex;
@@ -215,4 +227,13 @@ footer{
   padding: 1.85px 2px 1.15px 1px;
   gap: 12px;
   opacity: 0px;
+  cursor: pointer;
+}
+@media(min-width:1920px){
+  main{
+    padding: 0 20px;
+  }
+}
+@media(max-width:1920px){
+
 }
