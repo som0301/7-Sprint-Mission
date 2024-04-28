@@ -31,10 +31,13 @@ header{
   border-radius: 8px;
   opacity: 0px;
   background: #3692FF;
-  color: #FFFFFF;
+  
   margin-right:200px;
   margin-left:auto;
   cursor: pointer;
+}
+.login_click{
+  color: #FFFFFF;
 }
 main{
   width: 1920px;
@@ -74,8 +77,11 @@ h2{
   border-radius: 40px;
   opacity: 0px;
   background: #3692FF;
-  color:#ffffff;
+  
   cursor: pointer;
+}
+.gotosee_click{
+  color:#ffffff;
 }
 .panda{
   left: 701px;
