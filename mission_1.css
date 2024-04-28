@@ -1,7 +1,7 @@
 *{
   box-sizing: border-box;
 }
-.title{
+header{
   width: 1920px;
   height: 70px;
   padding: 10px 200px 9px 200px;
@@ -26,7 +26,7 @@
   background: #3692FF;
   color: #FFFFFF;
 }
-.rectangle{
+main{
   width: 1920px;
   height: 540px;
   gap: 0px;
@@ -74,12 +74,12 @@ h2{
 }
 .container_box{
   width: 1920px;
-  height:2838px;
+  height:2160px;
   text-align: center;
 }
 .container{
   width: 1200px;
-  height: 2838px;
+  height: 2160px;
   top: 610px;
   left: 360px;
   gap: 0px;
@@ -88,16 +88,131 @@ h2{
   grid-template-rows: repeat(3,1fr);
   margin:auto;
 }
-.first{
+.section{
   display: flex;
-  justify-content:flex-start ;
   align-items: center;
+  gap:64px;
 }
-.first_left{
+.description{
   display:flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap:12px;
 }
-.first_image{
+.section_image{
   width: 588px;
   height: 444px;
+}
+.article1{
+  color: #3692FF;
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.2px;
+  text-align: left;
+}
+.article2{
+  font-family: Pretendard;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: #374151;
+}
+.article3{
+  font-family: Pretendard;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.8px;
+  letter-spacing: 0.08em;
+  text-align: left;
+  color: #374151;
+  margin-top:24px;
+}
+.section_reverse{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap:64px;
+}
+.second_description{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap:12px;
+}
+.article2_reverse{
+  font-family: Pretendard;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0.02em;
+  text-align: right;
+  color: #374151;
+}
+.article3_reverse{
+  font-family: Pretendard;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28.8px;
+  letter-spacing: 0.08em;
+  text-align: right;
+  color: #374151;
+  margin-top:24px;
+}
+.section_last{
+  width: 1920px;
+  height: 540px;
+  top: 2908px;
+  gap: 0px;
+  opacity: 0px;
+  background: #CFE5FF;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+footer{
+  width: 1920px;
+  height: 160px;
+  top: 3448px;
+  padding: 32px 200px 32px 200px;
+  gap: 10px;
+  opacity: 0px;
+  background: #111827;
+}
+.footer_section{
+  width:1520px;
+  height:20px;
+  display:flex;
+  justify-content: space-between;
+}
+.codeit{
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.09px;
+  text-align: center;
+  color: #9CA3AF;
+}
+.PF{
+
+  display:flex;
+  gap:30px;
+}
+#Privacy, #FAQ{
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.09px;
+  text-align: center;
+  color: #E5E7EB;
+}
+.icon{
+  display:flex;
+  width: 116px;
+  height: 20px;
+  padding: 1.85px 2px 1.15px 1px;
+  gap: 12px;
+  opacity: 0px;
 }
