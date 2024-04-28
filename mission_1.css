@@ -40,6 +40,10 @@ header{
   color: #FFFFFF;
 }
 main{
+  
+  background: #CFE5FF;
+}
+.main_section{
   width: 1920px;
   height: 540px;
   gap: 0px;
@@ -179,6 +183,10 @@ h2{
   margin-top:24px;
 }
 .section_last{
+ 
+  background: #CFE5FF;
+}
+.section_last_rectangle{
   width: 1920px;
   height: 540px;
   top: 2908px;
@@ -237,7 +245,10 @@ footer{
 }
 @media(min-width:1920px){
   main{
-    padding: 0 20px;
+    margin:auto;
+  }
+  .section_last{
+    margin:auto;
   }
 }
 @media(max-width:1920px){
