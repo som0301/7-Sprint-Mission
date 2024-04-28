@@ -17,8 +17,7 @@ header{
   justify-content: space-between;
 }
 .logo{
-  margin-right: auto; 
-  margin-left: 200px;
+  margin: auto;
   cursor: pointer;
 }
 .login{
@@ -32,8 +31,7 @@ header{
   opacity: 0px;
   background: #3692FF;
   
-  margin-right:200px;
-  margin-left:auto;
+  margin:auto;
   cursor: pointer;
 }
 .login_click{
@@ -252,5 +250,13 @@ footer{
   }
 }
 @media(max-width:1920px){
-
+  .logo{
+    margin-left:200px;
+  }
+  .login{
+    margin-right:200px;
+  }
+  header{
+    flex : 1 0 auto;
+  }
 }
