@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panda {
+  width: 40px;
+  height: 40.14px;
+}
+
+.logo a {
+  color: #3692ff;
+  font-weight: 700;
+  font-size: 25.63px;
+  line-height: 34.6px;
+  text-decoration-line: none;
+  cursor: pointer;
+}
+
+.go-buy:hover {
+  background-color: #1250aa;
+}
+
+.login-button {
+  background-color: #3692ff;
+  color: #ffffff;
+  width: 128px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #1250aa;
+}
+
+.top-banner,
+.bottom-banner {
+  background-color: #cfe5ff;
+  width: 100%;
+  height: 540px;
+}
+
+.top-banner {
+  background-image: url('pictures/판다1.png');
+  background-position: 80% 100%;
+  background-repeat: no-repeat;
+  background-size: 996px 447px;
+  display: flex;
+  justify-content: center;
+}
+
+.go-buy {
+  background-color: #3692ff;
+  border-radius: 40px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 16px 124px;
+  border: none;
+  cursor: pointer;
+}
+
+.bottom-banner {
+  background-image: url('pictures/판다2.png');
+  background-position: 80% 100%;
+  background-repeat: no-repeat;
+  background-size: 996px 447px;
+  display: flex;
+  justify-content: center;
+}
+
+.banner-container {
+  display: flex;
+  width: 1200px;
+  align-items: center;
+}
+
+.h1 {
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+
+  color: #374151;
+}
+
+.card-exp {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28.8px;
+  color: #374151;
+}
+
+.card-textgroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-2 .card-textgroup2 .category,
+.card-2 .card-textgroup2 h1,
+.card-2 .card-textgroup2 .card-exp {
+  text-align: right;
+}
+.container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 200px;
+}
+
+.card-1,
+.card-2,
+.card-3 {
+  display: flex;
+  gap: 40px;
+}
+
+.pictures,
+.card-textgroup {
+  width: 580px;
+}
+
+.card-textgroup .category {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.2px;
+  color: #3692ff;
+}
+
+footer {
+  width: 100%;
+}
+.footer-container {
+  background-color: #111827;
+  display: flex;
+  height: 160px;
+  justify-content: space-around;
+}
+
+.company {
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.09px;
+}
+
+.policy {
+  color: #e5e7eb;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19.09px;
+}
+.policy a {
+  text-decoration-line: none;
+  color: #e5e7eb;
+}
+
+.company,
+.policy,
+.sns {
+  margin-top: 40px;
+}
+
+@media (min-width: 1921px) {
+  .banner-container .container,
+  header {
+    width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1919px) {
+  .logo {
+    margin-left: 200px;
+  }
+  .login-button {
+    margin-right: 200px;
+  }
+}
