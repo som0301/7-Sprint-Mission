@@ -47,8 +47,7 @@ body {
 }
 
 a {
-    text-decoration-line: none;
-    color: var(--gray200);
+
 }
 
 .btn_large:hover {
@@ -82,6 +81,8 @@ header {
     cursor: pointer;
     border: 0;
     text-align: center;
+    text-decoration-line: none;
+
 }
 
 .login_button {
