@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;
+    margin: 0; 
+  }
+
+header{ /*메뉴 부분*/
+    padding: 10px 200px;   
+    height: 70px;
+}
+
+#header-container{  /*메뉴 버튼 모음*/
+    display: flex;
+    justify-content: space-between;
+}
+
+#logo{  /*판다마켓 로고*/
+    width: 153px;
+    height: 51px;
+}
+
+.btn{   /*버튼 디자인*/
+    background-color: #3692FF;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.btn:hover{
+    background-color:#1967D6;
+}
+
+.btn:active{
+    background-color:#1251AA;
+}
+
+.btn:enabled{
+    background-color:#9CA3AF;
+}
+
+#login{ /*로그인 버튼*/
+    width: 128px;
+    height: 48px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration-line: none;
+    text-align: center;
+    font-size: 16px;
+    line-height: 19.09px;
+}
+
+.blue-container{ /*파란색 부분*/
+    height: 540px;
+    background-color: #CFE5FF;
+    position: relative;
+}
+
+.white-container{  /*하얀색 부분*/
+    height: 720px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+}
+
+.pandas{   /*팬더 이미지들*/
+    position: absolute;
+    bottom: 0;
+    left: 701px;
+}
+
+.text{  /*큰 글자*/
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 56px;
+    color: #374151;
+}
+
+#main-show{ /*items로 가는 버튼과 설명*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 170px;
+    left: 360px;
+    width: 357px;
+    height: 200px;
+    white-space: nowrap;
+}
+
+#go-to{ /*items로 가는 버튼*/
+    width: 355px;
+    height: 56px;
+    border-radius: 40px;
+    padding: 16px 124px;
+    text-decoration-line: none; 
+    text-align: center;
+    font-size: 20px;
+}
+
+#white-containers{ /*흰색 컨테이너 부분*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+}
+
+.white-container-img{ /*흰색 컨테이너 부분 이미지 크기*/
+    width: 588px;
+    height: 444px;
+}
+
+.explains{ /*흰색 컨테이너 텍스트들*/
+    display: flex;
+    flex-direction: column;
+    gap: 12px 24px;
+}
+
+.small-text{ /*작고 파란색 텍스트*/
+    color: #3692FF;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.middle-text{ /*중간 크기 텍스트*/
+    font-weight: 500;
+    font-size: 24px;
+    color: #374151;
+    line-height: 28.8px;
+    margin-top: 24px;
+}
+
+#section2{ /*두 번째 섹션 */
+    flex-direction: row-reverse;
+}
+
+#explain2{ /*두 번째 섹션 안 텍스트*/
+    text-align: right;
+}
+
+#bottom-blue{ /*흰색과 아래쪽 파란색 컨테이너 사이의 공간*/
+    margin-top: 300px;
+}
+
+#bottom-text{ /*아래쪽 텍스트*/
+    position: absolute;
+    top: 214px;
+    left: 360px;
+}
+
+footer{ /*바닥 요소 디자인*/
+    height: 160px;
+    padding: 32px 200px;
+    background-color: #111827;
+}
+
+#footer-container{ /*바닥 요소*/
+    width: 1520px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.footer-text{ /*바닥 텍스트 디자인*/
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.09px;
+    text-align: center;
+    color: #9CA3AF;
+}
+
+#footer-mid-text{ /*Privacy Policy FAQ*/
+    display: flex;
+    gap: 30px;
+}
