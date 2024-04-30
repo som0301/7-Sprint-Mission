@@ -56,9 +56,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
   height: 70px;
   padding: 0 200px;
   border-bottom: 1px solid #DFDFDF;
+  background-color: var(--bg-color-white);
 }
 
 .nav-bar__logo-wrapper {

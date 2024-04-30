@@ -1,4 +1,7 @@
 :root {
+  /* area-bg-color */
+  --bg-color-white: #FFFFFF;
+
   /* btn-bg-color */
   --btn-bg-color-default: #3692FF;
   --btn-bg-color-hover: #1967D6;
