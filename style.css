@@ -1,26 +1,3 @@
-:root {
-  /* btn-bg-color */
-  --btn-bg-color-default: #3692FF;
-  --btn-bg-color-hover: #1967D6;
-  --btn-bg-color-click: #1251AA;
-  --btn-bg-color-inactive: #9CA3AF;
-  
-  /* text-color */
-  --text-color-cool-gray: #374151;
-  --text-color-white: #FFFFFF;
-  --text-color-blue: #3692FF;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-}
-
 .btn {
   display: flex;
   justify-content: center;
