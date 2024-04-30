@@ -19,3 +19,38 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--btn-bg-color-default);
+  color: var(--text-color-white);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--btn-bg-color-hover);
+}
+
+.btn:active {
+  background: var(--btn-bg-color-click);
+}
+
+.btn:disabled {
+  background: var(--btn-bg-color-inactive);
+}
+
+.btn_small {
+  width: 128px;
+  height: 48px;
+  border-radius: 8px;
+  font: 600 16px / 19.09px 'Pretendard';
+}
+
+.btn_large {
+  width: 355px;
+  height: 56px;
+  border-radius: 40px;
+  font: 600 20px / 24px 'Pretendard';
+}
