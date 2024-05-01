@@ -4,12 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>로그인</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="/global.css">
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <a class="header__logo-wrapper" href="/"><img class="header__logo" src="/image-resources/img_login_logo.png" alt="판다마켓 로고"></a>
   </header>
+  <main>
+    <form class="main-form" action="">
+      <label class="main-form__label__email">
+        <p class="p_label">이메일</p>
+        <input class="main-form__input__email input_box" type="email" placeholder="이메일을 입력해주세요" />
+      </label>
+      <label class="main-form__label__password">
+        <p class="p_label">비밀번호</p>
+        <input class="main-form__input__password input_box" type="password" placeholder="비밀번호를 입력해주세요" />
+        <img class="main-form__blind-logo" src="/image-resources/img_login_invisible.png" alt="비밀번호 보기">       
+      </label>
+      <button class="btn_width-640 btn_large btn" type="submit">로그인</button>
+    </form>
+    <div class="main__container__simple-login">
+      <p class="simple-login__title">간편 로그인하기</p>
+      <a class="simple-login__sns" href="https://www.google.com/"><img src="/image-resources/img_login_google.png" alt="구글 로고"></a>
+      <a class="simple-login__sns" href="https://www.kakaocorp.com/page/"><img src="/image-resources/img_login_kakao.png" alt="카카오 로고"></a>
+    </div>
+    <div class="main__wrapper__signup">
+      <p class="signup__title">판다마켓이 처음이신가요? <a class="signup__link" href="/signup">회원가입</a></p>
+    </div>
+  </main>
 </body>
 </html>
