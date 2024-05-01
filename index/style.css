@@ -15,6 +15,12 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    font-family: 'Pretendard Variable', 'sans-serif';
+    word-break: keep-all;
+}
+
 .main_text {
     font-size: 40px;
     line-height: 56px;
@@ -38,16 +44,6 @@
 
 h1, h2, h3 {
     margin: 0;
-}
-
-body {
-    margin: 0;
-    font-family: 'Pretendard Variable', 'sans-serif';
-    word-break: keep-all;
-}
-
-a {
-
 }
 
 .btn_large:hover {
@@ -82,7 +78,6 @@ header {
     border: 0;
     text-align: center;
     text-decoration-line: none;
-
 }
 
 .login_button {
@@ -110,11 +105,11 @@ header {
 
 .topbanner {
     margin-top: 70px;
-    background-image: url('images/home/Img_home_top.png');
+    background-image: url('../images/home/Img_home_top.png');
 }
 
 .bottombanner {
-    background-image: url('images/home/Img_home_bottom.png');
+    background-image: url('../images/home/Img_home_bottom.png');
 }
 
 .banner_content {
@@ -176,9 +171,15 @@ footer {
 
 .footer_menu {
     display: flex;
-    color: var(--white);
     gap: 30px;
     cursor: pointer;
+}
+
+.footer_menu_btn {
+    color: var(--white);
+    text-decoration: none;
+    border: 0;
+    background-color: transparent;
 }
 
 .sns_icon {
