@@ -6,3 +6,91 @@ header {
 .header__logo {
   margin: 60px 0 40px;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form_label {
+  display: block;
+}
+
+.label_name {
+  font: 700 18px / 21.48px Pretendard;
+  color: var(--text-color-dark-gray);
+  margin-bottom: 16px;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.label_input {
+  width: 640px;
+  height: 56px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: var(--bg-color-gray);
+}
+
+.label_input:focus-visible {
+  outline: 1px solid var(--border-color-blue);
+}
+
+.label_input::placeholder {
+  font: 400 16px / 24px Pretendard;
+  color: var(--text-color-light-gray);
+}
+
+.password__blind-logo {
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+  color: var(--logo-color-dark-gray);
+}
+
+.btn_full-width {
+  width: 100%;
+}
+
+.main__container__simple-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 640px;
+  margin: 24px 0;
+  padding: 16px 23px;
+  background-color: var(--bg-color-light-blue);
+  border-radius: 8px;
+}
+
+.simple-login__title {
+  font: 500 16px / 24px Pretendard;
+}
+
+.simple-login__sns {
+  display: flex;
+  gap: 16px;
+  height: 42px;
+}
+
+.simple-login__sns a {
+  display: inline-block;
+}
+
+.signup__title {
+  font: 500 15px / 17.9px Pretendard;
+}
+
+.signup__link {
+  text-decoration: underline;
+  color: var(--text-color-cool-blue);
+}
