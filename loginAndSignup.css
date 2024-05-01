@@ -87,11 +87,11 @@ main {
   display: inline-block;
 }
 
-.signup__title {
+.signup__title, .login__title {
   font: 500 15px / 17.9px Pretendard;
 }
 
-.signup__link {
+.signup__link, .login__link {
   text-decoration: underline;
   color: var(--text-color-cool-blue);
 }
