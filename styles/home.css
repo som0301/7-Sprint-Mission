@@ -26,6 +26,11 @@
   font-weight: 600;
   border-radius: 8px;
   padding: 11.5px 23px;
+  background-color: #3692ff;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* banner 요소 내의 pill-button을 선택해 스타일 적용. ID 선택자 대신 이렇게 캐스캐이딩을 활용하는 방법은 특정 컨텍스트 내에서만 스타일을 적용하고자 할 때 유용해요. */
