@@ -9,9 +9,14 @@
   --color-link: #e5e7eb;
   --color-button-vistied: #9ca3af;
   --color-white: #fff;
+  --color-coolgray-900: #1b1d1f;
   --color-coolgray-800: #1f2937;
-  --color-coolgray-100: #f3f4f6;
+  --color-coolgray-600: #454c53;
+  --color-coolgray-500: #72787f;
   --color-coolgray-400: #9ca3af;
+  --color-coolgray-200: #e5e7eb;
+  --color-coolgray-100: #f3f4f6;
+  --color-coolgray-50: #f7f7f8;
   --color-brand-blue: #3182f6;
   --color-easylogin-skyblue: #e6f2ff;
 }
