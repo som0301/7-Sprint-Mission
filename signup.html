@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="icon" href="image/logo/favicon.ico" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/auth.css" />
+  </head>
+
+  <body>
+    <div class="auth-container">
+      <div class="logo-home-wrapper">
+        <a href="index.html" rel="noreferrer noopener">
+          <img src="image/logo/logo.png" alt="판다마켓 홈">
+        </a>
+      </div>
+
+      <form method="post">
+        <div class="input-items">
+          <label for="email">
+            이메일
+          </label>
+          <input 
+            id="email" 
+            name="email" 
+            type="email" 
+            placeholder="이메일을 입력해주세요" 
+          />
+        </div>
+
+        <div class="input-items">
+          <label for="nick">닉네임</label>
+          <input 
+            id="nickname" 
+            name="nickname" 
+            type="text" 
+            placeholder="닉네임을 입력해주세요" 
+          />
+        </div>
+        
+        <div class="input-items">
+          <label for="password">
+            비밀번호
+          </label>
+          <div class="password">
+            <input id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요" />
+            <img src="image/icon/eye-none.png" alt="비밀번호 숨기기" class="toggle-password">
+          </div>
+        </div>
+
+        <div class="input-items">
+          <label for="password2">
+            비밀번호 확인
+          </label>
+          <div class="password">
+            <input 
+              id="password" 
+              name="password" 
+              type="password" 
+              placeholder="비밀번호를 다시 한 번 입력해주세요" 
+            />
+            <img src="image/icon/eye-none.png" alt="비밀번호 숨기기" class="toggle-password">
+          </div> 
+        </div>
+        <button type="submit" class="btn_login">
+          로그인
+        </button>
+      </form>
+
+      <div class="social-login">
+        <h2>간편 로그인하기</h2>
+        <div class="social-login-btns">
+          <a href="http://www.google.com" target="_blank" rel="noreferrer noopener">
+            <img src="image/social/google.png" alt="구글 로그인" width="42">
+          </a>
+          <a href="http://www.kakaocorp.com/page/" target="_blank" rel="noreferrer noopener">
+            <img src="image/social/kakao.png" alt="카카오 로그인" width="42">
+          </a>
+        </div>
+      </div>
+      <div class="auth-switch">
+        이미 회원이신가요? <a href="signin.html" rel="noreferrer noopener">로그인</a>
+      </div>
+    </div>
+  </body>    
+</html>
+        

@@ -24,29 +24,6 @@ header {
   cursor: pointer;
 }
 
-.btn_login {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 19.09px;
-  width: 128px;
-  height: 48px;
-  padding: 12px 20px;
-  margin-right: 200px;
-  border: none;
-  border-radius: 8px;
-  background-color: #1967D6;
-  grid-area: btn;
-}
-
-.btn_login a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
-.btn_login:hover {
-  cursor: pointer;
-}
-
 /* ----- section.banner 관련 요소 ----- */
 .banner-top-wrap,
 .banner-bottom-wrap {
