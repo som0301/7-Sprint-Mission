@@ -8,14 +8,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
     <title>판다마켓</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="fonts/pretendard.css" />
+    <link rel="stylesheet" href="define.css">
   </head>
   <body>
-    <header>
-      <div>
-        <img src="image\logo.png" alt="로고" />
-      </div>
+    <header id="mainheader">
+      <div id="mainheaderbg">
+      <a href="index.html">
+        <div>
+          <img src="image/logo.png" alt="로고" />
+        </div>
+      </a>
       <div class="virtualbox"></div>
-      <button type="button" onclick="location.href='login.html'">로그인</button>
+      <a href="login.html"><button type="button">로그인</button></a>
+    </div>
     </header>
     <main>
       <div class="container">
@@ -23,7 +29,7 @@
           일상의 모든 물건을 <br />
           거래해 보세요
         </h2>
-        <button type="button" onclick="location.href='items.html'">구경하러 가기</button>
+        <a href="login.html"><button type="button" onclick="location.href='items.html'">구경하러 가기</button></a>
       </div>
       <div class="container-img">
         <img src="image\Img_home_top.svg" alt="Img_home_top" />

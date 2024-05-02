@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>로그인</title>
+    <title>회원가입</title>
     <link rel="stylesheet" href="fonts/pretendard.css" />
     <link rel="stylesheet" href="define.css" />
     <link rel="stylesheet" href="login.css" />
@@ -20,13 +20,24 @@
         <input class="logininput" type="text" placeholder="이메일을 입력해주세요" />
       </section>
       <section class="container-login">
+        <p class="inputvaluetitle">닉네임</p>
+        <input class="logininput" type="text" placeholder="닉네임을 입력해주세요" />
+      </section>
+      <section class="container-login">
         <p class="inputvaluetitle">비밀번호</p>
         <label>
           <input class="logininput" type="password" placeholder="비밀번호를 입력해주세요" />
           <img id="ic_visibilityoff" src="image/ic_visibility_off.svg" alt="" />
         </label>
       </section>
-      <button class="loginbutton">로그인</button>
+      <section class="container-login">
+        <p class="inputvaluetitle">비밀번호 확인</p>
+        <label>
+          <input class="logininput" type="text" placeholder="비밀번호를 다시 한 번 입력해주세요" />
+          <img id="ic_visibilityoff" src="image/ic_visibility.svg" alt="" />
+        </label>
+      </section>
+      <button class="loginbutton">회원가입</button>
       <section class="container-easylogin">
         <p>간편 로그인하기</p>
         <div>
@@ -36,7 +47,7 @@
       </section>
     </main>
     <footer>
-      <p class="footer-info">판다마켓이 처음이신가요? <a id="sighup-link" href="signup.html">회원가입</a></p>
+      <p class="footer-info">이미 회원이신가요? <a id="sighup-link" href="login.html">로그인</a></p>
     </footer>
   </body>
 </html>
