@@ -16,15 +16,15 @@
     </header>
     <main>
       <section class="container-login">
-        <p class="inputvaluetitle">이메일</p>
-        <input class="logininput" type="text" placeholder="이메일을 입력해주세요" />
+        <label class="inputvaluetitle" for="email">이메일</label>
+        <input class="logininput" type="email" id="email" placeholder="이메일을 입력해주세요" />
       </section>
       <section class="container-login">
-        <p class="inputvaluetitle">비밀번호</p>
-        <label>
-          <input class="logininput" type="password" placeholder="비밀번호를 입력해주세요" />
+        <label class="inputvaluetitle" for="password">비밀번호</label>
+        <div class="passwordbuttonhandler">
+          <input class="logininput" id="password" type="password" placeholder="비밀번호를 입력해주세요" />
           <img id="ic_visibilityoff" src="image/ic_visibility_off.svg" alt="" />
-        </label>
+        </div>
       </section>
       <button class="loginbutton">로그인</button>
       <section class="container-easylogin">

@@ -53,10 +53,8 @@ body {
   margin-bottom: 2.4rem;
 }
 
-label {
-  position : relative;
-  width: 64rem;
-  height: 5.6rem;
+.passwordbuttonhandler {
+  position: relative;
 }
 
 #ic_visibilityoff {
