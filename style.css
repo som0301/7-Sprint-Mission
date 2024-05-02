@@ -61,6 +61,11 @@
 
   .btn:hover{
     cursor: pointer;
+    background-color: #1967D6;
+  }
+
+  .btn:active{
+    background-color: #1251AA;
   }
 
   .btn-small{
