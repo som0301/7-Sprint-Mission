@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
 
+    
     <link rel="stylesheet" href="../color.css">
     <link rel="stylesheet" href="../login.css">
+    <link rel="stylesheet" href="../button.css">
 </head>
 <body>
     <main id="main">
@@ -26,17 +28,17 @@
                 <div class="input-div">
                     <label for="password">비밀번호</label>
                     <input type="password" id="password" placeholder="비밀번호를 입력해주세요">
-                    <div class="eye btn">
+                    <button class="eye">
                         <img src="../images/eye-off.png">
-                    </div>
+                    </button>
                 </div>
-                <button class="btn btn-large">로그인</button>
+                <button class="btn btn-large btn-login">로그인</button>
             </form>
             <div class="easy-login">
                 <span class="easy">간편 로그인하기</span>
                 <div>
-                    <button class="btn" onclick="location.href='https\://www.google.com'"><img src="../images/google.png" width="42px" height="42px"></button> <!-- 이미지 버튼으로 수정해야함-->
-                    <button clsss="btn" onclick="location.href='https\://www.kakaocorp.com/page'"><img src="../images/kakao.png" width="42px" height="42px"></button>
+                    <button class="social" onclick="location.href='https\://www.google.com'"><img src="../images/google.png" width="42px" height="42px"></button> <!-- 이미지 버튼으로 수정해야함-->
+                    <button clsss="social" onclick="location.href='https\://www.kakaocorp.com/page'"><img src="../images/kakao.png" width="42px" height="42px"></button>
                 </div>
             </div>
 

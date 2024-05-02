@@ -10,11 +10,12 @@
   *{
     box-sizing: border-box;
     margin: 0;
+    font-family: Pretendard;
   }
 
   html{
     font-size: 16px;
-    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */ /* 다시 사용할까봐 주석 */
   }
 
   body {
@@ -50,42 +51,6 @@
     height: 51px;
   }
 
-  .btn{
-    background-color: var(--main-color);
-    font-family: Pretendard;
-    font-weight: 600;
-    color: white;
-    border: none;
-    gap: 10px;
-  }
-
-  .btn:hover{
-    cursor: pointer;
-    background-color: #1967D6;
-  }
-
-  .btn:active{
-    background-color: #1251AA;
-  }
-
-  .btn-small{
-    border-radius: 8px;
-    padding: 12px 20px;
-    width: 128px;
-    height: 48px;
-
-    font-size: 16px;
-    line-height: 19.09px;
-  }
-
-  .btn-large{
-    padding: 16px 124px;
-    border-radius: 40px;
-
-    font-size: 20px;
-    line-height: 24px;
-  }
-
   .sky{
     background-color: #CFE5FF;
     height: 540px;
@@ -99,7 +64,6 @@
   }
 
   .title{
-    font-family: Pretendard;
     font-size: 40px;
     font-weight: 700;
     line-height: 56px;
@@ -146,7 +110,6 @@
   }
 
   .home-banner{
-    font-family: Pretendard;
     font-size: 1.125em;
     font-weight: 700;
     line-height: 25.2px;
@@ -164,7 +127,6 @@
   }
 
   .home-description{
-    font-family: Pretendard;
     font-size: 1.5em;
     font-weight: 500;
     line-height: 28.8px;
@@ -187,7 +149,6 @@ footer{
 }
 
 .footer-text{
-  font-family: Pretendard;
   font-size: 1em;
   font-weight: 400;
   line-height: 19.09px;
