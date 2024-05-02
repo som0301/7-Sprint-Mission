@@ -26,6 +26,7 @@
 
 	--text-primary: var(--cool-grey-700);
 	--text-button: var(--white);
+	--text-link: #3182f6;
 }
 
 * {
@@ -37,14 +38,13 @@
 html {
 	min-width: 320px;
 	min-height: 100vh;
-	font-size: 16px;
+	font-size: 100%;
 }
 
 body {
 	background-color: var(--background-solid);
 	color: var(--text-primary);
-	font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-	font-size: 1rem;
+	font-family: 'Pretendard', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
 }
 
 .inner {
@@ -56,8 +56,8 @@ input {
 	border: 1px solid transparent;
 	border-radius: 12px;
 	min-height: 56px;
-	padding: 16px 24px;
-	font-size: 16px;
+	padding: 16px 40px;
+	font-size: 1rem;
 	font-weight: 400;
 	line-height: 1.2;
 	background-color: var(--cool-grey-100);
@@ -82,8 +82,6 @@ input.error {
 	gap: 8px;
 }
 .input-box label {
-	font-size: 16px;
-	font-weight: 400;
 	line-height: 1.6;
 }
 .input-box input {
@@ -93,17 +91,6 @@ input.error {
 }
 .input-box > div {
 	position: relative;
-}
-.btn_visibility {
-	position: absolute;
-	z-index: 8;
-	top: 50%;
-	right: 16px;
-	transform: translateY(-50%);
-	border: none;
-	background: transparent;
-	display: flex;
-	align-items: center;
 }
 
 .btn {
@@ -118,13 +105,12 @@ input.error {
 	padding: 12px 20px;
 	background-color: var(--color-primary);
 	color: var(--text-button);
-	font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: 600;
 	line-height: 1.2;
 	text-decoration: none;
 	cursor: pointer;
-	transition: all 0.16s;
+	transition: background-color 0.16s;
 }
 .btn:hover {
 	background-color: var(--color-hover);
@@ -139,15 +125,25 @@ input.error {
 .btn.btn_small {
 	min-width: 128px;
 	min-height: 48px;
-	font-size: 16px;
 }
 .btn.btn_large {
 	border-radius: 9999px;
-	min-width: 355px;
+	min-width: 360px;
 	min-height: 56px;
-	font-size: 20px;
+	font-size: 1.25rem;
 }
-.btn_horizon {
+
+.btn_visibility {
+	position: absolute;
+	z-index: 8;
+	top: 50%;
+	right: 8px;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	padding: 8px;
+	border: none;
+	background: transparent;
 }
 
 /* header */
@@ -175,6 +171,7 @@ input.error {
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
+	line-height: 1;
 }
 .header__logo a img {
 	display: block;
@@ -206,35 +203,33 @@ input.error {
 	height: 100%;
 	max-width: 1920px;
 	padding: 32px 200px;
+	text-align: center;
 }
 .copyright {
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.2;
-	text-align: center;
+	line-height: 1;
 	color: var(--cool-grey-400);
 }
-.guide {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
-	gap: 30px;
-}
-.guide a {
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.2;
-	text-align: center;
-	color: var(--cool-grey-200);
-	cursor: pointer;
-}
+.guide,
 .sns_link {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
 	align-items: center;
+}
+.guide {
+	gap: 30px;
+}
+.guide a {
+	line-height: 1;
+	color: var(--cool-grey-200);
+	cursor: pointer;
+}
+.sns_link {
 	gap: 12px;
+}
+.sns_link a,
+.sns_link img {
+	display: block;
 }
 
 /* main page */
@@ -255,7 +250,7 @@ input.error {
 .visual p {
 	position: relative;
 	z-index: 1;
-	font-size: 40px;
+	font-size: 2.5rem;
 	font-weight: 700;
 	line-height: 1.4;
 }
@@ -284,18 +279,18 @@ input.error {
 	text-align: left;
 }
 .introduce article div b {
-	font-size: 18px;
+	font-size: 1.125rem;
 	font-weight: 700;
 	line-height: 1.4;
 	color: var(--color-primary);
 }
 .introduce article div h5 {
-	font-size: 40px;
+	font-size: 2.5rem;
 	font-weight: 700;
 	line-height: 1.4;
 }
 .introduce article div p {
-	font-size: 24px;
+	font-size: 1.5rem;
 	font-weight: 500;
 	line-height: 1.2;
 }
@@ -332,8 +327,13 @@ input.error {
 	align-items: center;
 }
 
-.login__foot {
+.login__body form {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 24px;
 }
+
 .login-external {
 	display: flex;
 	justify-content: space-between;
@@ -343,9 +343,7 @@ input.error {
 	background-color: #e6f2ff;
 }
 .login-external h6 {
-	font-size: 16px;
 	font-weight: 500;
-	line-height: 1.5;
 }
 
 .external-sites {
@@ -364,19 +362,10 @@ input.error {
 	text-align: center;
 }
 .login__signup p {
-	font-size: 15px;
 	font-weight: 500;
 	color: var(--cool-grey-800);
 }
 .login__signup a {
-	color: #3182f6;
+	color: var(--text-link);
 	text-decoration: underline;
-}
-.login__body {
-}
-.login__body form {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	gap: 24px;
 }
