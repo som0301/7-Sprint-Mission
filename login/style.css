@@ -2,8 +2,17 @@
   --blue: #3692ff;
 }
 
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
+  font-family: 'Pretendard-Regular';
 }
 
 /* 이미지+div 태그가 아닌 button태그로 통일하기위한 수정 */
@@ -54,6 +63,7 @@ header .top-logo div {
   font-size: 66.34px;
   line-height: 89.56px;
   color: var(--blue);
+  /* font-family: 'ROKAF Sans'; */
 }
 
 header .top-logo img {
@@ -101,6 +111,7 @@ label {
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
+  font-family: 'Pretendard';
 }
 
 .for-submit:hover {
