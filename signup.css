@@ -72,6 +72,17 @@ input::placeholder{
 
 }
 
+.password{
+    position: relative;
+}
+
+.unvisible{
+    position: absolute;
+    top: 5.3rem;
+    right: 2.4rem;
+
+}
+
 .simple-login{
     display: flex;
     justify-content: space-between;
@@ -80,7 +91,7 @@ input::placeholder{
     background-color: #e6f2ff;
     height: 7.4rem;
     border-radius: 0.8rem;
-    padding-left: 2.4rem;
+    padding-left: 3.4rem;
     font-size: 1.6rem;
     font-weight: 500;
     font-family: Pretendard;
@@ -92,25 +103,14 @@ input::placeholder{
     margin-right: 2.4rem;
 }
 
-.password{
-    position: relative;
-}
-
-.unvisible{
-    position: absolute;
-    top: 5.3rem;
-    right: 2.4rem;
-
-
-}
-.ask-signup{
+.ask-login{
     font-family: Pretendard;
     font-size: 1.5rem;
     font-weight: 500;
     margin-top: 2.4rem;
     text-align: center;
 }
-#signup{
+#login{
     color: #3182F6;
 
 }

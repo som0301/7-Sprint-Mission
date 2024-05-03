@@ -3,24 +3,30 @@ button{
 }
 
 .button-small{
-    padding: 12px 23px;
-    gap: 10px;
-    background: #3692FF;
-    border-radius: 8px;  
+    padding: 1.2rem 2rem;
+    gap: 1rem;
+    background-color: #3692FF;
+    border-radius: 8px; 
+    color: #ffffff; 
+    border: none;
+    font-family: Pretendard;
+    font-size: 1.6rem;
+    font-weight: 600;
+     
 }
 
-
 .button-large{
-    padding: 16px 124px;
-    gap: 10px;
-    height: 56px;
-    background: #3692FF;
+    padding: 1.6rem 12.4rem;
+    gap: 1rem;
+    height: 5.6rem;
+    background: var(--gray-400);
+    background-color:#3692FF;
     border-radius: 40px;
     border: none;
     font-family: Pretendard;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 600;
-    line-height: 24px;
+    line-height: 2.4rem;
     text-align: center;
     color: #ffffff;
 
@@ -35,15 +41,23 @@ button:hover{
     background-color: #1251AA;
 }
 
+.login-btn:hover{
+    background-color: #3692ff;
+}
+
+.signup-btn:hover{
+    background-color: #3692ff;
+}
+
 .btn:hover{
     background-color: #1967D6;
 }
 
 
 .input{
-    width: 612px;
-    height: 56px;
-    border-radius: 12px;
+    width: 61.2rem;
+    height: 5.6rem;
+    border-radius: 1.2rem;
     border: 1px #3692FF;
     color: #f3f4f6;
 }
