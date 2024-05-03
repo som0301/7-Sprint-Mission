@@ -369,3 +369,11 @@ input.error {
 	color: var(--text-link);
 	text-decoration: underline;
 }
+
+@media screen and (max-width: 1199px) {
+	/* Tablet */
+}
+
+@media screen and (max-width: 767px) {
+	/* Mobile */
+}
