@@ -1,0 +1,132 @@
+.login-container {
+  max-width: 640px ;
+  margin: 0 auto;
+}
+
+
+.logo-home-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+
+.input-area {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column; 
+}
+
+
+label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* border:none 을 함으로 bc가 들어가면서 생긴 두께가 사라짐 */
+input {
+  padding: 16px 24px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
+
+input::placeholder {
+  color: #9ca3af;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* focus in 되면 색상이 바뀌는 부분 */
+
+input:focus {
+  outline-color: #3692FF
+}
+
+/* 눈아이콘과 password input을 flex로 묶어주고 
+.hide-password 클래스에 absolute를 추가하여 위치 조정을 위해
+relative를 추가해줌  */
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hide-password {
+  position: absolute;
+  right: 24px;
+  cursor: pointer;
+}
+/*  버튼 관련 색상이 전부 같음을 느꼈음 현재 각 클래스마다 색상을 부여 했지만
+차후 하나의 요소?  하나의 객체? 로 관리하는 방법을 구상해보는 것이 좋겠다 느낌 */
+.login-button {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 16px 126px;
+  background-color: #3692FF;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #1967d6;  
+}
+
+.soclal-login-area {
+  background-color: #e6f2ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 16px 23px;
+  margin: 24px 0;
+}
+
+.soclal-login-area h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.social-login-button {
+  display: flex;
+  gap: 16px;
+}
+
+.signup-button {
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+
+.signup-button a {
+  color: #3182f6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.signup-button {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 16px 126px;
+  background-color: #3692FF;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.signup-button:hover {
+  background-color: #1967d6;  
+}
