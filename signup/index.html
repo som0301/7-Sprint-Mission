@@ -28,12 +28,22 @@
 
     <div class="signup-box">
       <label for="password" class="signup-label">비밀번호</label>
-      <input type="password" id="password" class="signup-input-pw" placeholder="비밀번호를 입력해주세요">
+      <div class="signup-pw-container">
+        <input type="password" id="password" class="signup-input-pw" placeholder="비밀번호를 입력해주세요">
+        <div class="see-pw-btn">
+          <i class="see-pw-img"></i>
+        </div>
+      </div>
     </div>
 
     <div class="signup-box">
-      <label for="password" class="signup-label">비밀번호 확인</label>
-      <input type="password" id="password" class="signup-input-pw" placeholder="비밀번호를 다시 한 번 입력해주세요">
+      <label for="password-check" class="signup-label">비밀번호 확인</label>
+      <div class="signup-pw-container">
+        <input type="password" id="password-check" class="signup-input-pw" placeholder="비밀번호를 다시 한 번 입력해주세요">
+        <div class="see-pw-btn-check">
+          <i class="see-pw-img-check"></i>
+        </div>
+      </div>
     </div>
     
     <button class="signup-btn">회원가입</button>
@@ -51,6 +61,8 @@
       <a class="link-to-signup" href="/signup/">회원가입</a>
     </div>  
   </main>
+
+  <script src="index.js"></script>
 
   </body>
 </html>

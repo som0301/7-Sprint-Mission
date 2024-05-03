@@ -57,12 +57,6 @@
   font-weight: 700;
 }
 
-.login-input-pw {
-  background-image: url(/images/ic_see-password.png);
-  background-repeat: no-repeat;
-  background-position: 595px;
-}
-
 input {
   color: var(--color-gray800);
   font-size: 16px;
@@ -86,6 +80,23 @@ input::placeholder {
   font-weight: 400;
 }
 
+.login-pw-container {
+  position: relative;
+}
+
+.see-pw-btn {
+  cursor: pointer;
+}
+
+.see-pw-img {
+  width: 24px;
+  height: 24px;
+  background-image: url(/images/ic_invisible-pw.png);
+  position: absolute;
+  top: 16px;
+  right: 18px;
+}
+
 .login-btn {
   color: var(--color-white);
   font-size: 20px;
@@ -95,6 +106,7 @@ input::placeholder {
   border-radius: 40px;
   width: 640px;
   height: 56px;
+  cursor: pointer;
 }
 
 .login-btn:hover {
