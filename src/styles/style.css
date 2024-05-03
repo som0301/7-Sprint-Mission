@@ -1,10 +1,13 @@
 /* header style */
+header {
+  height: 70px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
 .header__logo {
   width: 153px;
   height: 51px;
-  &:hover {
-    cursor: pointer;
-  }
 }
 .header__button {
   width: 128px;
@@ -21,25 +24,60 @@
   /* 화면크기 축소될 때 글자깨짐 방지 */
   flex-shrink: 0;
 }
-/* width크기가 744px 넘어갈 때 */
+main {
+  background-color: #ffffff;
+  height: 2160px;
+}
+/* footer style */
+footer {
+  height: 160px;
+  background-color: var(--gray900);
+  font-size: 16px;
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32px;
+}
+.footer__text-left {
+  color: var(--gray400);
+  flex-shrink: 0;
+}
+.footer__text-center {
+  color: var(--gray200);
+  display: flex;
+  justify-content: space-between;
+  width: 159px;
+  flex-shrink: 0;
+}
+.footer__sns-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
 @media (min-width: 744px) {
   header {
     margin-right: 200px;
     margin-left: 200px;
   }
+  .footer__text-left {
+    margin-left: 200px;
+  }
+  .footer__sns-icon-container {
+    margin-right: 200px;
+  }
 }
-@media (min-width: 375) {
+
+@media (min-width: 375px) {
   header {
     margin-right: 24px;
     margin-left: 24px;
   }
-}
-main {
-  background-color: #ffffff;
-  height: 2160px;
-}
-footer {
-  width: 100%;
-  height: 160px;
-  background-color: var(--gray900);
+  .footer__text-left {
+    margin-left: 24px;
+  }
+  .footer__sns-icon-container {
+    margin-right: 24px;
+  }
 }

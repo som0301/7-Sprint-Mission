@@ -14,9 +14,8 @@
 * {
   text-decoration-line: none;
 }
-header {
-  height: 70px;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: space-between;
+a {
+  &:hover {
+    cursor: pointer;
+  }
 }
