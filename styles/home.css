@@ -20,6 +20,14 @@
   background-image: url("../images/home/bottom-banner-image.png");
 }
 
+.headerSize {
+  max-width: 1920px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* 버튼 등의 요소에 고정된 width나 height을 부여하는 것보다 내부 콘텐츠에 padding을 적용해서 요소의 전체 크기를 유동적으로 조정하는 방법이 반응형 웹 디자인과 접근성(accessibility) 측면에서 더 적합합니다. */
 #loginLinkButton {
   font-size: 16px;
