@@ -46,3 +46,23 @@ button:hover{
     width: 100%;
     text-align: center;
 }
+
+/* 인풋이 다 입력되기 전까지는 로그인 버튼에 cursor: pointer가 작동하지 않게 */
+/* 인풋이 다 입력되고 나서 :hover와 :after가 작동하게끔.. */
+.btn-login:hover{
+    cursor: default;
+    background-color: #9CA3AF;
+}
+
+.btn-login-on{
+    background-color: var(--main-color);
+}
+
+.btn-login-on:hover{
+    cursor: pointer;
+    background-color:#1967D6;;
+}
+
+.btn-login-on:active{
+    background-color: #1251AA;
+}
