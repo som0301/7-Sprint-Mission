@@ -1,10 +1,10 @@
-.h2_title {
+.header_text {
   font: 700 40px / 56px 'Pretendard';
   color: var(--text-color-cool-gray);
   word-break: keep-all;
 }
 
-.p_description {
+.text {
   font: 500 24px / 28.8px 'Pretendard';
   letter-spacing: 0.08em;
 }
@@ -144,7 +144,7 @@ footer {
 /* 태블릿 */
 
 @media screen and (max-width: 1199px) {
-  .h2_title br {
+  .header_text br {
     display: none;
   }
 
@@ -191,12 +191,12 @@ footer {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1199px) {
-  .h2_title {
+  .header_text {
     font-size: 32px;
     line-height: 44.8px;
   }
 
-  .p_description {
+  .text {
     font-size: 18px;
     line-height: 21.6px;
   }
@@ -242,12 +242,12 @@ footer {
 /* 모바일 */
 
 @media screen and (max-width: 767px) {
-  .h2_title {
+  .header_text {
     font-size: 24px;
     line-height: 33.6px;
   }
 
-  .p_description {
+  .text {
     font-size: 16px;
     line-height: 19.2px;
   }
