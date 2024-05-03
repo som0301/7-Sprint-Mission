@@ -85,3 +85,7 @@ input {
   cursor: pointer;
   width: 24px;
 }
+
+input:focus {
+  outline-color: var(--blue);
+}
