@@ -9,47 +9,54 @@
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 </head>
 <body>
-    <a href="./index.html"><img class="login_top_logo" src="./images/logo/logo.png"></a>
+    <a href="../index.html"><img class="login_top_logo" src="../images/logo/logo.png"></a>
+    <main>
+        <form class="main_form">
+            <label class="form_contents">
+                이메일
+                <input
+                class="input_value"
+                name="email" 
+                type="email" 
+                placeholder="이메일을 입력해주세요">
+            </label>
+            <label class="form_contents">
+                닉네임
+                <input
+                class="input_value"
+                name="nickname"
+                type="text"
+                placeholder="닉네임을 입력해주세요">
+            </label>
+            <label class="form_contents">
+                비밀번호
+                <input 
+                class="input_value"
+                name="password" 
+                type="password" 
+                placeholder="비밀번호를 입력해주세요">
+                <img class="password_visibility" src="../images/etc/btn_visibility.png">
+            </label>
+            <label class="form_contents">
+                비밀번호 확인
+                <input 
+                class="input_value"
+                name="password" 
+                type="text" 
+                placeholder="비밀번호를 다시 한 번 입력해주세요">
+                <img class="password_visibility" src="../images/etc/btn_visibility.png">
+            </label>
+            <button class="btn_large">회원가입</button>
+            <div class="simple_login">
+                간편 로그인하기
+                <div class="simple_sns">
+                    <a href="https://www.google.com/"><img src="../images/social/googlelogo.png"></a>
+                    <a href="https://www.kakaocorp.com/page/"><img src="../images/social/kakaologo.png"></a>
+                </div>
+            </div>
+            <p class="guide_text">이미 회원이신가요? <a href="./login.html">로그인</a></p>
+        </form>
 
-    <form>
-        <label>
-            이메일
-            <input 
-            name="email" 
-            type="text" 
-            placeholder="이메일을 입력해주세요">
-        </label>
-        <label>
-            닉네임
-            <input
-            name="nickname"
-            type="text"
-            placeholder="닉네임을 입력해주세요">
-        </label>
-        <label>
-            비밀번호
-            <input 
-            class="password_input" 
-            name="password" 
-            type="password" 
-            placeholder="비밀번호를 입력해주세요">
-        </label>
-        <label>
-            비밀번호 확인
-            <input 
-            class="password_input_confirm" 
-            name="password" 
-            type="password" 
-            placeholder="비밀번호를 다시 한 번 입력해주세요">
-        </label>
-        <img class="password_visibility" src="./images/etc/btn_visibility.png">
-        <button class="btn_signup">회원가입</button>
-    </form>
-    <div class="simple_login">
-        간편 로그인하기
-        <a href="https://www.google.com/"><img src="./images/social/googlelogo.png"></a>
-        <a href="https://www.kakaocorp.com/page/"><img src="./images/social/kakaologo.png"></a>
-    </div>
-    <p>이미 회원이신가요? <a href="./login.html">로그인</a></p>
+    </main>
 </body>
 </html>

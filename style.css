@@ -105,11 +105,11 @@ header {
 
 .topbanner {
     margin-top: 70px;
-    background-image: url('../images/home/Img_home_top.png');
+    background-image: url('./images/home/Img_home_top.png');
 }
 
 .bottombanner {
-    background-image: url('../images/home/Img_home_bottom.png');
+    background-image: url('./images/home/Img_home_bottom.png');
 }
 
 .banner_content {
@@ -172,7 +172,6 @@ footer {
 .footer_menu {
     display: flex;
     gap: 30px;
-    cursor: pointer;
 }
 
 .footer_menu_btn {
@@ -180,6 +179,7 @@ footer {
     text-decoration: none;
     border: 0;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .sns_icon {
