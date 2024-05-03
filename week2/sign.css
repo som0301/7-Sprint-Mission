@@ -1,0 +1,69 @@
+@import url('colorSet.css');
+@import url('easyRem.css');
+@import url('fontPretendard.css');
+@import url('inputSet.css');
+@import url('button.css');
+
+* {
+  margin: 0;
+}
+
+.main-logo-box {
+  margin: 0 auto;
+}
+
+.main-logo-image {
+  width: 396px;
+  height: 132px;
+  margin: 60px auto 16px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 640px;
+  margin: 0 auto;
+  gap: 24px 0;
+}
+
+.simple-login-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 23px;
+  background-color: #E6F2FF;
+  border-radius: 8px;
+}
+
+.simple-login-text {
+  color: var(--gray800);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 24px;
+}
+
+.simple-login-button-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.simple-login-button {
+  width: 42px;
+  height: 42px;
+}
+
+.simple-login-button:hover {
+  cursor: pointer;
+}
+
+.nav-to-sign {
+  margin: 0 auto;
+  color: var(--gray800);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.nav-to-sign > a {
+  color: #3182F6;
+}

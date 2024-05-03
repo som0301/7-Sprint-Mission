@@ -1,0 +1,28 @@
+@import url('colorSet.css');
+@import url('easyRem.css');
+@import url('fontPretendard.css');
+
+.button-standard {
+  padding: 16px 124px;
+  color: #FFFFFF;
+  background-color: var(--gray400);
+  border: 0;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  cursor: default;
+}
+
+.button-standard.enable {
+  cursor: pointer;
+  background-color: var(--blue);
+}
+
+.button-standard.enable:hover {
+  background-color: var(--blueHover);
+}
+
+.button-standard.enable:active {
+  background-color: var(--blueActive);
+}
