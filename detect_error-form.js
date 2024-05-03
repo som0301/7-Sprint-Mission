@@ -5,7 +5,11 @@ const form = document.querySelector('.main-form');
 function checkFormFilled({ target }) {
   detectErrorInputs(target);
   const inputs = [...document.querySelectorAll('.label_input')];
-  if (inputs.some((item) => item.classList.contains('input_error'))) {
+  if (
+    inputs.some(
+      (item) => item.classList.contains('input_error') || item.value === ''
+    )
+  ) {
     disableBtn();
   } else {
     enableBtn();
