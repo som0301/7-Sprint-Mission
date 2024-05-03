@@ -1,0 +1,117 @@
+* { 
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+.logo { 
+  width: 396px;
+  height: 132px;
+  margin: 60px 762px;
+}
+
+main { 
+  width: 640px;
+  margin: 40px 640px;
+}
+
+form { 
+  height: 290px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+label { 
+  width: 47px;
+  height: 21px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.48px;
+  color: #1f2937;
+}
+
+input { 
+  height: 56px;
+  border-radius: 12px;
+  gap: 10px;
+  background-color: #f3f4f6;
+  border: none;
+}
+
+input::placeholder { 
+  width: 143px;
+  height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #9ca3af;
+  padding: 16px 24px;
+}
+
+.email { 
+  height: 93px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pw { 
+  height: 93px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
+button { 
+  width: 640px;
+  height: 56px;
+  border-radius: 40px;
+  padding: 16px 124px 16px 124px;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  background-color: #9ca3af;
+  border: none;
+}
+
+.info { 
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #1f2937;
+}
+
+.ask { 
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 17.9px;
+  color: #1f2937;
+}
+
+.easy-login { 
+  height: 74px;
+  border-radius: 8px;
+  background-color: #e6f2ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 23px;
+  margin-top: 24px;
+}
+
+.site-logo { 
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 42px;
+  gap: 16px;
+}
+
+.ask-signup { 
+  display: flex;
+  justify-content: center;
+}
