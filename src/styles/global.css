@@ -11,3 +11,12 @@
   --blue: #3692ff;
   --red: #f74747;
 }
+* {
+  text-decoration-line: none;
+}
+header {
+  height: 70px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
