@@ -21,25 +21,29 @@
       <form class="main-form" action="https://">
         <label class="form_label">
           <p class="label_name">이메일</p>
-          <input
-            class="label_input"
-            type="email"
-            name="email"
-            placeholder="이메일을 입력해주세요"
-            required
-            autocomplete="email"
-          />
+          <div class="input-wrapper">
+            <input
+              class="label_input"
+              type="email"
+              name="email"
+              placeholder="이메일을 입력해주세요"
+              required
+              autocomplete="email"
+            />
+          </div>
         </label>
         <label class="form_label">
           <p class="label_name">닉네임</p>
-          <input
-            class="label_input"
-            type="text"
-            name="nickname"
-            placeholder="닉네임을 입력해주세요"
-            required
-            autocomplete="nickname"
-          />
+          <div class="input-wrapper">
+            <input
+              class="label_input"
+              type="text"
+              name="nickname"
+              placeholder="닉네임을 입력해주세요"
+              required
+              autocomplete="nickname"
+            />
+          </div>
         </label>
         <label class="form_label">
           <p class="label_name">비밀번호</p>
@@ -108,5 +112,6 @@
     </main>
     <script type="module" src="/password_visibility.js"></script>
     <script type="module" src="/control_submit_btn.js"></script>
+    <script type="module" src="/detect_error-form.js"></script>
   </body>
 </html>

@@ -102,6 +102,17 @@ main {
   opacity: 0.5;
 }
 
+.error-message {
+  margin-top: 8px;
+  margin-left: 16px;
+  font: 600 15px / 17.9px Pretendard;
+  color: var(--text-color-cool-red);
+}
+
+.input_error {
+  outline: 1px solid var(--text-color-cool-red);
+}
+
 @media screen and (max-width: 767px) {
   .header__logo {
     width: 198px;
