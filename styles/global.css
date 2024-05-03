@@ -49,3 +49,12 @@ footer {
   padding: 32px 200px 108px 200px;
   font-size: 16px;
 }
+
+#button-login {
+  background-color: var(--gray-400);
+  color: var(--white);
+  width: 100%;
+  padding: 16px 124px;
+  border-radius: 40px;
+  border: none;
+}

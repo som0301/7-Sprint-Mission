@@ -13,3 +13,26 @@
 #singin-logo {
   width: 153px;
 }
+
+.input-box {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-box label {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+input {
+  padding: 16px 24px;
+  background-color: var(--gray-100);
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
