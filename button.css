@@ -1,0 +1,50 @@
+button{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.button-small{
+    padding: 12px 23px;
+    gap: 10px;
+    background: #3692FF;
+    border-radius: 8px;  
+}
+
+
+.button-large{
+    padding: 16px 124px;
+    gap: 10px;
+    height: 56px;
+    background: #3692FF;
+    border-radius: 40px;
+    border: none;
+    font-family: Pretendard;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+
+}
+
+
+button:hover{
+    cursor: pointer;
+}
+
+.btn:active{
+    background-color: #1251AA;
+}
+
+.btn:hover{
+    background-color: #1967D6;
+}
+
+
+.input{
+    width: 612px;
+    height: 56px;
+    border-radius: 12px;
+    border: 1px #3692FF;
+    color: #f3f4f6;
+}
+

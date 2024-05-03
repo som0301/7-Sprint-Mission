@@ -1,0 +1,106 @@
+@import url('color.css');
+* {
+    box-sizing: border-box;
+  }
+
+html{
+    font-size: 62.5%;
+}
+body{
+    width:192rem;
+    font-size: inherit;
+    height: 100dvh;
+}
+
+main{
+    width:64rem;
+    height:108rem;
+    margin:0 auto;
+}
+
+.width{
+    width: 100%;
+}
+
+
+.login-logo{
+    margin: auto;
+    border: none;
+}
+
+.form-container{
+    width: 64rem;
+    height: 43rem;
+    
+}
+
+
+.label-text{
+    font-family: Pretendard;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: left;
+    
+
+}
+
+
+input:focus{
+    outline-color: #3692ff;
+    
+}
+input::placeholder{
+    color: var(--gray-400);
+    font-size: 1.6rem;
+}
+
+.input-text{
+    height: 5.6rem;
+    padding-left: 3.2rem;
+    color: black;
+    border: none;
+    border-radius: 1.2rem;
+    background-color: #f3f4f6;
+    font-size: 1.6rem;
+    font-family: Pretendard;
+    color: var;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    text-align: left;
+    margin-top:1.6rem;
+    margin-bottom: 1.6rem;
+
+}
+
+.simple-login{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    background-color: #e6f2ff;
+    height: 7.4rem;
+    border-radius: 0.8rem;
+    padding-left: 3.2rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: Pretendard;
+}
+
+.icons{
+    display: flex;
+    gap: 16px;
+    margin-right: 3.2rem;
+}
+
+.ask-signup{
+    font-family: Pretendard;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 2.4rem;
+    text-align: center;
+}
+#signup{
+    color: #3182F6;
+
+}

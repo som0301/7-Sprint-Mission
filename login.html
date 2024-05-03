@@ -3,32 +3,40 @@
     <head>
         <meta charset="utf-8">
         <title> 로그인 </title>
+        <link 
+            rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"/>
         <link rel="stylesheet" href="login.css">
+        
         <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
         <link rel="stylesheet" href="button.css">
     </head>
 
     <body>
         <main>
-            <div>
-                <button class="login-logo" onclick="location.href='../index/index.html'"> <img src="../img/logo.png"> </button>
-            </div>
             <!--메인 로그인 로고-->
+            <div>
+                <button class="login-logo width" onclick="location.href='../index/index.html'"> <img src="../img/logo.png"> </button>
+            </div>
+            
             <div class="form-container">
                 <form>
-                    <label>이메일</label>
-                    <input type="email" placeholder="이메일을 입력해주세요">
-                    <label>비밀번호</label>
-                    <input type="password" placeholder="비밀번호를 입력해주세요">
+                    <label class="width label-text">이메일</label>
+                    <input class="width input-text" type="email" placeholder="이메일을 입력해주세요" onfocus="this.placeholder=''"/>
+                    <label class="width label-text">비밀번호</label>
+                    <input class="width input-text" type="password" placeholder="비밀번호를 입력해주세요">
 
-                    <button class="button-large">로그인</button>
+                    <button class="width button-large">로그인</button>
                 </form>
-                <div>
-                    <span>간편 로그인하기</span> <div>아이콘 두개</div>
+                <div class="simple-login width">
+                    <span>간편 로그인하기</span>
+                    <div class="icons">
+                        <a target="_blank" href="https://www.google.com/"><img src="./img/ic_google.png"></a>
+                        <a target="_blank" href="https://www.kakaocorp.com/page/"><img src="./img/ic_kakao.png"></a>
+                    </div>
                 </div>
 
-                <div>
-                    <span>판다마켓이 처음이신가요?</span> <a href="signup.html">회원가입</a>
+                <div class="ask-signup">
+                    <span>판다마켓이 처음이신가요?</span> <a id="signup" href="signup.html"> 회원가입</a>
                 </div>
 
 
