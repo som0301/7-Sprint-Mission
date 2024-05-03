@@ -127,7 +127,7 @@ h1 {
 #bottom {
   background-image: url(images/Img_home_bottom.png);
   background-size: cover;
-  background-position: center; 
+  background-position: center;
   display: flex;
   align-items: center;
   background-repeat: no-repeat;
@@ -151,7 +151,7 @@ footer {
 }
 
 .footer-menu a {
-  color: #E5E7EB;
+  color: #e5e7eb;
 }
 
 .sns {
