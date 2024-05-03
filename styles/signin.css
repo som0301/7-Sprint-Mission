@@ -3,6 +3,9 @@
   max-width: 640px;
   margin: 0 auto;
 }
+#singin-logo {
+  width: 396px;
+}
 
 .logo-box {
   display: block;
@@ -68,4 +71,17 @@ input {
 .login-footer a {
   color: var(--blue);
   text-decoration: underline;
+}
+
+.password-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-button {
+  position: absolute;
+  right: 24px;
+  cursor: pointer;
+  width: 24px;
 }
