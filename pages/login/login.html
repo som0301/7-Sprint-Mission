@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/common.css" />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <button class="logo" type="button" onclick="location.href='/'">
+      <img src="/images/logo@3x.png" alt="판다마켓로고" />
+    </button>
+    <div class="container">
+      <form class="login-form">
+        <label for="email">이메일</label>
+        <input type="email" id="email" placeholder="이메일을 입력해주세요" />
+        <label for="password">비밀번호</label>
+        <div class="input-container">
+          <input
+            type="password"
+            id="password"
+            placeholder="비밀번호를 입력해주세요"
+          />
+          <button class="btn_visibility_on_24px" type="button">
+            <img
+              src="/images/btn_visibility_off_24px.svg"
+              alt="비밀번호가리기아이콘"
+            />
+          </button>
+        </div>
+        <button class="btn_large" type="submit">로그인</button>
+      </form>
+      <div class="sns-login">
+        <div>간편 로그인하기</div>
+        <div class="sns-icon">
+          <button
+            type="button"
+            onclick="location.href='https://www.google.com/'"
+          >
+            <img src="/images/Component2.png" alt="구글아이콘" />
+          </button>
+          <button
+            type="button"
+            onclick="location.href='https://www.kakaocorp.com/page/'"
+          >
+            <img src="/images/kakao-icon.svg" alt="카톡아이콘" />
+          </button>
+        </div>
+      </div>
+      <div class="signup">
+        판다마켓이 처음이신가요? <a href="../signup/signup.html">회원가입</a>
+      </div>
+    </div>
+  </body>
+</html>
