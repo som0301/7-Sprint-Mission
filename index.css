@@ -41,6 +41,14 @@ header > .btn_small {
   cursor: pointer;
 }
 
+header > .btn_small:hover {
+  background-color: #1967d6;
+}
+
+header > .btn_small:active {
+  background-color: #1251aa;
+}
+
 main {
   position: relative;
   z-index: 0;
@@ -94,6 +102,14 @@ h2 {
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
+}
+
+.section1 > .container .btn_large:hover {
+  background-color: #1967d6;
+}
+
+.section1 > .container .btn_large:active {
+  background-color: #1251aa;
 }
 
 .section2 .container {
