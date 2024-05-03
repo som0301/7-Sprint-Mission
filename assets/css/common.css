@@ -21,7 +21,7 @@
 
 	--color-hover: #1967d6;
 	--color-active: #1251aa;
-	--color-disabled: #9ca3af;
+	--color-disabled: var(--cool-grey-400);
 	--color-error: var(--red);
 
 	--text-primary: var(--cool-grey-700);
