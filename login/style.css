@@ -6,7 +6,9 @@
   box-sizing: border-box;
 }
 
-header {
+/* 이미지+div 태그가 아닌 button태그로 통일하기위한 수정 */
+
+/* header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,6 +29,41 @@ header img {
   width: 103.53px;
   height: 103.88px;
   margin-right: 15px;
+} */
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+header .top-logo {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: none;
+  width: 396px;
+  height: 132px;
+}
+
+header .top-logo div {
+  font-weight: 700;
+  font-size: 66.34px;
+  line-height: 89.56px;
+  color: var(--blue);
+}
+
+header .top-logo img {
+  width: 103.53px;
+  height: 103.88px;
+  margin-right: 10px;
+}
+
+.top-logo:hover {
+  cursor: pointer;
 }
 
 .container {
@@ -52,7 +89,7 @@ label {
   line-height: 21.48px;
 }
 
-button {
+.for-submit {
   display: block;
   background-color: #9ca3af;
   color: #ffffff;
@@ -66,7 +103,7 @@ button {
   font-weight: 600;
 }
 
-button:hover {
+.for-submit:hover {
   background-color: var(--blue);
   cursor: pointer;
 }
