@@ -1,0 +1,14 @@
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #ffffff;
+  display: flex;
+}
+main {
+  background-color: #ffffff;
+}
+footer {
+  width: 100%;
+  height: 160px;
+  background-color: --gray900;
+}
