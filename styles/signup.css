@@ -11,11 +11,13 @@
 
 main { 
   width: 640px;
+  height: 664px;
   margin: 0 640px;
+  gap: 24px;
 }
 
 form { 
-  height: 290px;
+  height: 524px;
   gap: 24px;
   display: flex;
   flex-direction: column;
@@ -55,6 +57,13 @@ input::placeholder {
   flex-direction: column;
 }
 
+.nickname { 
+  height: 93px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
 .pw { 
   height: 93px;
   gap: 16px;
@@ -63,16 +72,13 @@ input::placeholder {
   white-space: nowrap;
 }
 
-.eyeclose { 
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  top: 435px;
-  right: 664px; 
+.checkpw { 
+  height: 93px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
 }
-/* input#password 에 position relative를 주고 .eyeclose에 앱솔루트로 위치 지정하려 했는데
-relative가 안먹는지 안되네요... 태그 위치가 잘못된 걸까요..
-일단 위치지정만 해뒀습니다..!*/
 
 button { 
   width: 640px;
@@ -126,7 +132,7 @@ button {
   gap: 16px;
 }
 
-.ask-signup { 
+.ask-login { 
   display: flex;
   justify-content: center;
 }
