@@ -16,7 +16,13 @@ header{
   flex-direction: row;
   justify-content: space-between;
 }
+header > a{
+  width:153px;
+  height:51px;
+}
 .logo{
+  width:153px;
+  height:51px;
   margin: auto;
   cursor: pointer;
 }
