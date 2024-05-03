@@ -17,34 +17,22 @@
 		<meta property="og:image" content="https://codeit-sprint1-juhyeokc.netlify.app/assets/images/home/img-home-top.png" />
 
 		<!-- Favicon -->
-		<link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-icon-57x57.png" />
-		<link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicon/apple-icon-60x60.png" />
-		<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-icon-72x72.png" />
-		<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicon/apple-icon-76x76.png" />
-		<link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png" />
-		<link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png" />
-		<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png" />
-		<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png" />
-		<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png" />
-		<link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/android-icon-192x192.png" />
-		<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png" />
-		<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png" />
-		<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png" />
-		<link rel="manifest" href="/assets/images/favicon/manifest.json" />
-		<meta name="msapplication-TileColor" content="#ffffff" />
-		<meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png" />
-		<meta name="theme-color" content="#ffffff" />
+		<link rel="icon" href="/assets/images/favicon/favicon.ico" />
+
+		<!-- FONT -->
+		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
 		<!-- CSS -->
 		<link rel="stylesheet" href="/assets/css/reset.css" />
-		<link rel="stylesheet" href="/assets/css/font.css" />
-		<link rel="stylesheet" href="/assets/css/style.css" />
+		<link rel="stylesheet" href="/assets/css/common.css" />
+		<link rel="stylesheet" href="/assets/css/form.css" />
+		<link rel="stylesheet" href="/assets/css/sign.css" />
 	</head>
 	<body>
 		<main id="signupPage">
 			<article class="login">
 				<section class="login__head">
-					<a href="/"><img src="/assets/images/logo/logo-full.png" alt="판다마켓 로고" height="132" draggable="false" /></a>
+					<a href="/" target="_self"><img src="/assets/images/logo/logo.svg" alt="판다마켓 로고" draggable="false" /></a>
 				</section>
 				<section class="login__body">
 					<form>
@@ -74,7 +62,7 @@
 								</button>
 							</div>
 						</article>
-						<button type="submit" name="sign" class="btn btn_large" disabled>
+						<button type="submit" name="sign" class="btn btn_large" disabled="true">
 							<span>회원가입</span>
 						</button>
 					</form>
@@ -83,12 +71,12 @@
 					<article class="login-external">
 						<h6>간편 로그인하기</h6>
 						<div class="external-sites">
-							<a href="https://www.google.com/" target="_blank"><img src="/assets/images/portal/ic-circle-google.png" alt="google 로그인 아이콘" height="42" /></a>
-							<a href="https://www.kakaocorp.com/page/" target="_blank"><img src="/assets/images/portal/ic-circle-kakao.png" alt="kakao 로그인 아이콘" height="42" /></a>
+							<a href="https://www.google.com/" target="_blank" rel="noreferrer noopener"><img src="/assets/images/sns/ic-google-circle.png" alt="google 로그인 아이콘" draggable="false" /></a>
+							<a href="https://www.kakaocorp.com/page/" target="_blank" rel="noreferrer noopener"><img src="/assets/images/sns/ic-kakao-circle.png" alt="kakao 로그인 아이콘" draggable="false" /></a>
 						</div>
 					</article>
 					<div class="login__signup">
-						<p>이미 회원이신가요? <a href="/pages/login/">로그인</a></p>
+						<p>이미 회원이신가요? <a href="/pages/login/" target="_self">로그인</a></p>
 					</div>
 				</section>
 			</article>
