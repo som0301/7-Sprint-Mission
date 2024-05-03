@@ -13,20 +13,25 @@ function checkFormFilled({ target }) {
 }
 
 function detectErrorInputs(target) {
+  let errorMessage;
+  let isError;
   switch (target.name) {
     case 'email':
-      detectErrorEmail(target);
+      ({ errorMessage, isError } = detectErrorEmail(target));
       break;
     case 'nickname':
-      detectErrorNickname(target);
+      ({ errorMessage, isError } = detectErrorNickname(target));
       break;
     case 'password':
-      detectErrorPassword(target);
+      ({ errorMessage, isError } = detectErrorPassword(target));
       break;
     case 'password-repeat':
-      detectErrorPasswordRepeat(target);
+      ({ errorMessage, isError } = detectErrorPasswordRepeat(target));
       break;
   }
+  removeErrorMessage(target);
+  isError && addErrorMessage(target, errorMessage);
+  outlineInputError(target, isError);
 }
 
 function detectErrorEmail(inputEmail) {
@@ -40,10 +45,7 @@ function detectErrorEmail(inputEmail) {
   } else {
     isError = false;
   }
-
-  removeErrorMessage(inputEmail);
-  isError && addErrorMessage(inputEmail, errorMessage);
-  outlineInputError(inputEmail, isError);
+  return { errorMessage, isError };
 }
 
 function isNotEmail(emailAddress) {
@@ -64,10 +66,7 @@ function detectErrorNickname(inputNickname) {
   } else {
     isError = false;
   }
-
-  removeErrorMessage(inputNickname);
-  isError && addErrorMessage(inputNickname, errorMessage);
-  outlineInputError(inputNickname, isError);
+  return { errorMessage, isError };
 }
 
 function detectErrorPassword(inputPassword) {
@@ -81,10 +80,7 @@ function detectErrorPassword(inputPassword) {
   } else {
     isError = false;
   }
-
-  removeErrorMessage(inputPassword);
-  isError && addErrorMessage(inputPassword, errorMessage);
-  outlineInputError(inputPassword, isError);
+  return { errorMessage, isError };
 }
 
 function detectErrorPasswordRepeat(inputPasswordRepeat) {
@@ -99,17 +95,11 @@ function detectErrorPasswordRepeat(inputPasswordRepeat) {
   } else {
     isError = false;
   }
-
-  removeErrorMessage(inputPasswordRepeat);
-  isError && addErrorMessage(inputPasswordRepeat, errorMessage);
-  outlineInputError(inputPasswordRepeat, isError);
+  return { errorMessage, isError };
 }
 
 function addErrorMessage(targetInput, content) {
   const label = targetInput.parentNode.parentNode;
-  // const hasErrorMessage =
-  //   label.lastElementChild.classList.contains('error-message');
-  // hasErrorMessage && label.lastElementChild.remove();
   const errorMessage = document.createElement('p');
   errorMessage.classList.add('error-message');
   errorMessage.textContent = content;
@@ -130,7 +120,3 @@ function outlineInputError(targetInput, isError) {
 }
 
 form.addEventListener('focusout', checkFormFilled);
-
-// 체인지 시 에러 감지 + 모든 인풋 순회해서 error 클래스가 모두 없으면 true 반환 => 버튼 활성화
-// 에러 있으면 각 에러에 해당하는 에러 메시지 + input 에 error 클래스이름 줌. error 는 빨간색 아웃라인
-//
