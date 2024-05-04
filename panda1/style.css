@@ -129,6 +129,20 @@ html{
     line-height: 0;
 }
 
+.btn-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--panda-blue);
+  width: 128px;
+  height: 48px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  overflow: hidden;
+}
+
   .banner{ 
     display: flex;
     background: var(--panda-skyblue);
