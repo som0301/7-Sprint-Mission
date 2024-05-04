@@ -76,6 +76,27 @@ input::placeholder {
   white-space: nowrap;
 }
 
+input#password { 
+  width: 100%;
+}
+
+input#pwcheck { 
+  width: 100%;
+}
+
+.pweye { 
+  position: relative;
+}
+
+.eyeclose { 
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 24px;
+}
+
 .checkpw { 
   height: 93px;
   gap: 16px;
