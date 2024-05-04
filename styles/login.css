@@ -67,12 +67,21 @@ input::placeholder {
   white-space: nowrap;
 }
 
+input#password { 
+  width: 100%;
+}
+
+.pweye { 
+  position: relative;
+}
+
 .eyeclose { 
   width: 24px;
   height: 24px;
   position: absolute;
-  top: 435px;
-  right: 664px; 
+  top: 50%;
+  transform: translateY(-50%);
+  right: 24px;
 }
 /* input#password 에 position relative를 주고 .eyeclose에 앱솔루트로 위치 지정하려 했는데
 relative가 안먹는지 안되네요... 태그 위치가 잘못된 걸까요..
