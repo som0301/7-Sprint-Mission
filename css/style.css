@@ -1,29 +1,3 @@
-:root {
-  --color-primary: #3692FF;
-  --color-primary-dark: #1967d6;
-  --color-primary-darker: #1251aa;
-  --color-secondary: #CFE5FF;
-  --color-text-primary: #374151;
-  --color-text-secondary: #9ca3af;
-  --color-background-dark: #111827;
-  --color-link: #e5e7eb;
-  --color-button-vistied: #9ca3af; /* button:visited의 경우 */
-  --color-white: #fff;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: "Noto Sans KR", sans-serif;
-  line-height: 100%;
-}
-
-@media (min-width: 1521px)                          { *{ font-size: 62.5%;  }}
-@media (min-width: 1220px) and (max-width: 1520px)  { *{ font-size: 82.5%;  }}
-@media (min-width: 1020px) and (max-width: 1219px)  { *{ font-size: 102.5%; }}
-@media (max-width: 1019px)                          { *{ font-size: 122.5%; }}
-
 a{
   text-decoration: none;
 }
@@ -63,19 +37,27 @@ body{
   justify-content: space-between;
 }
 
-header{
+#mainheader {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+}
+
+#mainheaderbg {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0 9px 0;
-  padding: 0 200px;
+  padding: 10px 200px 9px 200px;
   width: 100%;
   max-width: 1920px;
 }
 
-header > img{
-  width: 40px;
-  height: 40px;
+#mainheaderbg img{
+  width: 153px;
+  height: 51px;
   flex-wrap: nowrap;
 }
 
@@ -84,19 +66,8 @@ header > img{
   flex-shrink: 2;
 }
 
-header > div{
-  display: flex;
-  align-items:center;
-  justify-content: center;
-  gap: 8.59px
-}
 
-header > div > img{
-  width: 153px;
-  height: 51px;
-}
-
-header > button{
+#mainheaderbg > a > button{
   width: 128px;
   height: 48px;
   font-size: 1.6rem;
@@ -106,15 +77,16 @@ header > button{
 }
 
 .footer-top,
-main{
+header{
   background-color: var(--color-secondary);
   width: 100%;
   z-index: -2;
   display: flex;
   justify-content: center;
+  margin-top: 72px;
 }
 
-section{
+main{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -122,7 +94,7 @@ section{
   height: 100%;
 }
 
-section img{
+main img{
   width: 568px;
   height: 444px;
 }
@@ -132,10 +104,11 @@ section img{
   width: 1200px;
   height: 540px;
   gap: 64px;
+  padding: 0 48px;
 }
 
 footer > .container,
-main > .container{
+header > .container{
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -150,7 +123,7 @@ main > .container{
 }
 
 footer > .container-img > img,
-main > .container-img > img{
+header > .container-img > img{
   width: 996px;
   height: 447px;
   position: absolute;
@@ -159,7 +132,7 @@ main > .container-img > img{
   z-index: 0;
 }
 
-main > .container > button{
+header > .container > a > button{
   width: 357px;
   height: 56px;
   border-radius: 40px;
@@ -168,8 +141,8 @@ main > .container > button{
   font-weight: 600;
 }
 
-section .container-right,
-section .container{
+main .container-right,
+main .container{
   width: 1200px;
   height: 720px;
   align-items: center;
@@ -179,16 +152,16 @@ section .container{
   padding: 138px 0;
 }
 
-section .container{
+main .container{
   justify-content: flex-start;
 }
 
-section .container-right{
+main .container-right{
   justify-content: flex-end;
   text-align: right;
 }
 
-.section-title{
+.main-title{
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 2.52rem;
@@ -196,7 +169,7 @@ section .container-right{
   margin-bottom: 12px;
 }
 
-.section-head{
+.main-head{
   font-size: 4rem;
   font-weight: 700;
   line-height: 5.6rem;
@@ -205,7 +178,7 @@ section .container-right{
   margin-bottom: 24px;
 }
 
-.section-main{
+.main-main{
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 2.88rem;

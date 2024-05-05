@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="fonts/pretendard.css" />
+    <link rel="stylesheet" href="css/define.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img id="login-img" src="image/logo-big.png" alt="" />
+      </a>
+    </header>
+    <main>
+      <section class="container-login">
+        <label for="email" class="inputvaluetitle">이메일</label>
+        <input id="email" class="logininput" type="text" placeholder="이메일을 입력해주세요" />
+      </section>
+      <section class="container-login">
+        <label for="nickname" class="inputvaluetitle">닉네임</label>
+        <input id="nickname" class="logininput" type="text" placeholder="닉네임을 입력해주세요" />
+      </section>
+      <section class="container-login">
+        <label for="password" class="inputvaluetitle">비밀번호</label>
+        <div class="passwordbuttonhandler">
+          <input id="password" class="logininput" type="password" placeholder="비밀번호를 입력해주세요" />
+          <img id="ic_visibilityoff" src="image/ic_visibility_off.svg" alt="" />
+        </div>
+      </section>
+      <section class="container-login">
+        <label for="passwordrepeat" class="inputvaluetitle">비밀번호 확인</label>
+        <div class="passwordbuttonhandler">
+          <input id="passwordrepeat" class="logininput" type="text" placeholder="비밀번호를 다시 한 번 입력해주세요" />
+          <img id="ic_visibilityoff" src="image/ic_visibility.svg" alt="" />
+        </div>
+      </section>
+      <button class="loginbutton">회원가입</button>
+      <section class="container-easylogin">
+        <p>간편 로그인하기</p>
+        <div>
+          <a href="https://www.google.com/"><img id="ic_google" src="image/ic_google.png" alt="Google" /></a>
+          <a href="https://www.kakaocorp.com/page/"><img id="ic_kakaotalk" src="image/ic_kakaotalk.png" alt="Kakaotalk" /></a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p class="footer-info">이미 회원이신가요? <a id="sighup-link" href="login.html">로그인</a></p>
+    </footer>
+  </body>
+</html>
