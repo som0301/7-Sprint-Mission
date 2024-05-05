@@ -182,11 +182,7 @@ footer {
     background-size: 60%;
   }
   
-<<<<<<< HEAD
-  .header-bar {
-=======
   .nav-bar {
->>>>>>> f542a8a (refactor : header-bar -> nav-bar)
     padding: 0 100px;
   }
 
@@ -262,11 +258,7 @@ footer {
     background-size: 520px;
   }
 
-<<<<<<< HEAD
-  .header-bar {
-=======
   .nav-bar {
->>>>>>> f542a8a (refactor : header-bar -> nav-bar)
     padding: 0 24px;
   }
 
@@ -310,19 +302,11 @@ footer {
     background-size: 100vw;
   }
   
-<<<<<<< HEAD
-  .header-bar {
-    padding: 0 16px;
-  }
-  
-  .header-bar__logo {
-=======
   .nav-bar {
     padding: 0 16px;
   }
   
   .nav-bar__logo {
->>>>>>> f542a8a (refactor : header-bar -> nav-bar)
     content: url(image-resources/img_logo.png);
   }
 
