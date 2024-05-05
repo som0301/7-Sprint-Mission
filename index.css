@@ -45,6 +45,12 @@ a {
   justify-content: space-between;
   padding: 0 20rem;
   border-bottom: 1px solid var(--gray-100);
+  background-color: white;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .header > .header__left {
