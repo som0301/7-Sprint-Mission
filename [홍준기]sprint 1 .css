@@ -13,7 +13,10 @@ body {
 
 header {
   height: 70px;
-  
+  width: 100%;
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 2
 }
 
 .header-content {
@@ -25,6 +28,8 @@ header {
   padding-top: 10px;
   
 }
+
+
 
 #판다마켓 {
   display: inline-block;
@@ -50,13 +55,13 @@ header {
 .home-panda {
   
   position: absolute;
-  left: 701px;
+  right: 223px;
   top: 93px;
 }
 
 .back-textBox {
   position: absolute;
-  left: 360px;
+  right: 1203px;
   top: 170px;
 }
 
@@ -66,18 +71,7 @@ h1 {
   line-height: 56px;
 }
 
-.button {
-  border-radius: 40px;
-  border: 1px solid #3692FF;
-  background-color: #3692FF;
-  padding: 16px 124px;
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 24px;
-  text-align: center;
-  cursor: pointer;
-}
+
 
 main {
   position: relative;
@@ -160,7 +154,7 @@ p {
 
 #bottom-panda {
   position: absolute;
-  left: 701px;
+  right: 223px;
   
 }
 
