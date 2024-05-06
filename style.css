@@ -1,11 +1,30 @@
 * {
   box-sizing: border-box;
+  font-family: 'Pretendard-Regular';
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
   margin: 0;
+  padding-top: 66.56px;
 }
 
+/* fixed후 양 여백 색이 채워지지 않아서, 새로운 div태그로 묶음 */
+.header-color {
+  width: 100;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
+}
 header {
   display: flex;
   justify-content: space-between;
@@ -47,7 +66,17 @@ header {
   cursor: pointer;
 }
 
-.login-button:hover {
+.lets-go-login {
+  background-color: #3692ff;
+  color: #ffffff;
+  width: 128px;
+  height: 48px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.lets-go-login:hover {
   background-color: #1250aa;
 }
 

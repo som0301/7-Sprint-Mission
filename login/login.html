@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- <a href="/"><img src="../pictures/판다얼굴 로고.png" alt="로고사진" /></a>
+      <p><a href="/">판다마켓</a></p> -->
+
+      <button class="top-logo" onclick="location.href='/'">
+        <img src="../pictures/판다얼굴 로고.png" alt="로고사진" />
+        <div>판다마켓</div>
+      </button>
+    </header>
+    <div class="container">
+      <main>
+        <form action="">
+          <label for="LOGIN-id">이메일</label>
+          <input
+            id="LOGIN-id"
+            type="email"
+            placeholder="이메일을 입력해주세요"
+          />
+          <label for="LOGIN-pwd">비밀번호</label>
+          <input
+            id="LOGIN-pwd"
+            type="password"
+            placeholder="비밀번호를 입력해주세요"
+          />
+          <button class="for-submit" type="submit">로그인</button>
+        </form>
+        <div class="easy-login">
+          <div class="easy-login-text">간편 로그인하기</div>
+          <div class="imgs">
+            <img
+              onclick="javascript:location.href='https://www.google.com/'"
+              src="../pictures\google.png"
+              alt="구글로고"
+            />
+
+            <!-- a태그 사용시 밑줄 생김. 인라인으로 자바스크립트. 추후 변경예정 -->
+            <img
+              onclick="javascript:location.href='https://www.kakaocorp.com/page/'"
+              src="../pictures\kakao.png"
+              alt="카카오톡 로고"
+            />
+          </div>
+        </div>
+        <div class="join">
+          판다마켓이 처음이신가요? <a href="../signup\signup.html">회원가입</a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
