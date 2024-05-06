@@ -1,0 +1,68 @@
+:root {
+  /* area-bg-color */
+  --bg-color-white: #ffffff;
+  --bg-color-gray: #f3f4f6;
+  --bg-color-light-blue: #e6f2ff;
+
+  /* area-border-color */
+  --border-color-blue: #3692ff;
+
+  /* btn-bg-color */
+  --btn-bg-color-default: #3692ff;
+  --btn-bg-color-hover: #1967d6;
+  --btn-bg-color-click: #1251aa;
+  --btn-bg-color-inactive: #9ca3af;
+
+  /* text-color */
+  --text-color-cool-gray: #374151;
+  --text-color-dark-gray: #1f2937;
+  --text-color-light-gray: #9ca3af;
+  --text-color-white: #ffffff;
+  --text-color-blue: #3692ff;
+  --text-color-cool-blue: #3182f6;
+  /* logo-color */
+  --logo-color-dark-gray: #4b5563;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--btn-bg-color-default);
+  color: var(--text-color-white);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--btn-bg-color-hover);
+}
+
+.btn:active {
+  background: var(--btn-bg-color-click);
+}
+
+.btn:disabled {
+  background: var(--btn-bg-color-inactive);
+}
+
+.btn_small {
+  width: 128px;
+  height: 48px;
+  border-radius: 8px;
+  font: 600 16px / 19.09px 'Pretendard';
+}
+
+.btn_large {
+  width: 355px;
+  height: 56px;
+  border-radius: 40px;
+  font: 600 20px / 24px 'Pretendard';
+}
