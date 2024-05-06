@@ -1,0 +1,134 @@
+main {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.go-home-logo {
+    display: block;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+label {
+    color: #1F2937;
+    font-size: 1.125em; /*18px;*/
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    background-color: #f3f4f6;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1em;
+    line-height: 24px;
+    font-family: inherit;
+    margin: 16px 0 24px 0;
+    font-weight: 400;
+}
+
+input::placeholder {
+    color: #9CA3AF;
+}
+
+input:focus {
+    outline-color: var(--blue);
+}
+
+button {
+    font-weight: 600;
+    line-height: 24px;   
+    width: 100%;
+}
+
+.easy-login {
+    margin: 24px 0 24px 0;
+    background-color: #E6F2FF;
+    display: flex;
+    border-radius: 8px;
+    padding: 16px 23px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3 {
+    color: #1F2937;
+    font-size: 1em;
+    line-height: 24px;
+    font-weight: 500;   
+}
+
+.easy-login img {
+    margin-left: 16px;
+}
+
+.signup {
+    color: #1F2937;
+    font-size: 0.9375em; /*15px*/
+    line-height: 17.9px;
+    font-weight: 500;   
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.signup a {
+    color: var(--hyperlink-blue);
+    text-decoration:underline;
+}
+
+input img {
+    position: relative;
+    inset: 0;
+}
+
+.password-input {
+    position: relative;
+}
+
+.visibility-img {
+    position: absolute;
+    top: 32px;
+    right: 24px;
+}
+
+/* Tablet: 768px 이상 ~ 1199px 이하 */
+@media screen and (max-width: 1199px) {
+
+}
+
+/* Mobile: 767px 이하 */
+@media screen and (max-width: 767px) {
+
+    /*기본 패딩과 최대 넓이*/
+    main {
+        padding: 0 16px;
+        max-width: 400px;
+    }
+
+    /*사이즈 위치 조정*/
+    .go-home-logo {
+        margin: 24px 0;
+    }
+    .go-home-logo img {
+        width: 198px;
+    }
+
+    label {
+        font-size: 0.875em; /*14px;*/
+    }
+
+    input {
+        margin-top: 8px;
+        margin-bottom: 16px;
+    }
+
+    .pill-button {
+        padding: 16px 10px;
+    }
+
+    .visibility-img {
+        top: 25px;
+    }     
+}
