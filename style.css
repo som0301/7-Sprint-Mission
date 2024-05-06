@@ -1,10 +1,6 @@
-/* 체크리스트[심화] color 값 변수로 등록하고 사용하기 */
-:root {
-    --main-color : #3692ff;
-    --error-color : #F74747;
-  }
+@import 'color.css';
 
-  @font-face {
+@font-face {
     font-family: 'Pretendard-Regular';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: 400;
@@ -14,17 +10,18 @@
   *{
     box-sizing: border-box;
     margin: 0;
+    font-family: Pretendard;
   }
 
   html{
     font-size: 16px;
-    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */ /* 다시 사용할까봐 주석 */
   }
 
   body {
-    max-width: 1920px;
     width: 100%;
     color: #161346;
+    margin-top: 70px;
   }
 
   a{
@@ -41,31 +38,17 @@
     width: 100%;
     background-color: #ffffff;
 
-    /* 조건은 없지만 상단 헤더바 고정 */
-    position: sticky;
+    /* 상단 헤더바 고정 */
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 1;
   }
 
-  .login-btn{
-    background-color: var(--main-color);
-    color: #ffffff;
-    border-radius: 8px;
-    padding: 12px 20px;
-    gap: 10px;
-    display: inline-block;
-    width: 128px;
-    height: 48px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-family: Pretendard;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 19.09px;
+  .header-logo{
+    width: 153px;
+    height: 51px;
   }
 
   .sky{
@@ -81,7 +64,6 @@
   }
 
   .title{
-    font-family: Pretendard;
     font-size: 40px;
     font-weight: 700;
     line-height: 56px;
@@ -102,20 +84,6 @@
     justify-content: center;
     align-items: flex-start;
     gap: 32px;
-  }
-
-  .look-btn{
-    background-color: var(--main-color);
-    color: #ffffff;
-    padding: 16px 124px;
-    gap: 10px;
-    border-radius: 40px;
-
-    font-family: Pretendard;
-    font-size: 1.25em;
-    font-weight: 600;
-    line-height: 24px;
-    text-align: center;
   }
 
   .main-bottom-panda {
@@ -142,7 +110,6 @@
   }
 
   .home-banner{
-    font-family: Pretendard;
     font-size: 1.125em;
     font-weight: 700;
     line-height: 25.2px;
@@ -160,7 +127,6 @@
   }
 
   .home-description{
-    font-family: Pretendard;
     font-size: 1.5em;
     font-weight: 500;
     line-height: 28.8px;
@@ -183,7 +149,6 @@ footer{
 }
 
 .footer-text{
-  font-family: Pretendard;
   font-size: 1em;
   font-weight: 400;
   line-height: 19.09px;
@@ -203,7 +168,7 @@ footer{
 }
 
 .footer-link{
-  color: #E5E7EB;
+  color: var(--gray-200);
 }
 
 .footer-imgs{

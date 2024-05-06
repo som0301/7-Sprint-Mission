@@ -1,0 +1,118 @@
+@import 'color.css';
+
+* {
+    box-sizing: border-box;
+    font-family: Pretendard;
+}
+
+/*
+    label input 간격 16
+*/
+
+/* 기본 설정 */
+.main{
+    margin: 60px auto 0;
+    width: 640px;
+}
+
+/* 로고 */
+.login-header{
+    text-align: center;
+}
+
+.login-logo{
+    width: 396px;
+    height: 132px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* 폼 */
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.input-div{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+/* 심화 요구사항 - 비밀번호에 눈 추가 */
+.eye{
+    position: absolute;
+    right: 24px;
+    top: 53px;
+}
+
+.input-form label {
+    color: var(--gray-800);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.48px;
+    text-align: left;
+}
+
+
+.input-form input {
+    background-color: var(--gray-100);
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: var(--gray-800);   
+}
+
+input{
+    border:none;
+}
+
+input:focus{
+    border: 2px solid var(--main-color);
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--gray-400);
+}
+
+/* 간편 로그인 */
+.easy-login{
+    background-color: #E6F2FF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 74px;
+    padding: 0 23px;
+    border-radius: 8px;
+
+    margin: 24px 0;
+}
+
+/* 회원가입 링크 */
+.link {
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 15px;
+    line-height: 17.9px;
+}
+
+.text{
+    font-weight: 500;
+    color: var(--gray-800);
+}
+
+.easy{
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.join, .join:visited{
+    color: #3182F6;
+}

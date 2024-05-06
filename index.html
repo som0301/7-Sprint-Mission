@@ -11,17 +11,15 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&display=swap"
       rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="button.css">
 </head>
 <body>
     <!-- 헤더 영역 -->
     <header> 
         <a href="/">
-            <img src="images/header-logo.png" alt="헤더 로고">
+            <img src="images/logo@3x.png" alt="헤더 로고" class="header-logo">
         </a>
-        <a href="html/login.html" class="login-btn">
-            <!--<img src="images/login-btn.png" alt="로그인 버튼">-->
-            로그인
-        </a>
+        <button class="btn btn-small" onclick="location.href='html/login.html';">로그인</button>
     </header>
 
     <!-- 콘텐츠 메인 영역-->
@@ -32,10 +30,7 @@
                     일상의 모든 물건을<br>
                     거래해 보세요
                 </h2>
-                <a href="html/items.html" class="look-btn">
-                    <!--<img src="/images/main_top_btn.png" alt="" width="357px">-->
-                    구경하러 가기
-                </a>
+                <button class="btn btn-large" onclick="location.href='html/items.html';">구경하러 가기</button>
             </div>
         </div>
 
