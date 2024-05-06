@@ -1,0 +1,97 @@
+#signupPage {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 80px 16px;
+	min-height: 100vh;
+}
+
+.login {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 640px;
+}
+
+.login__head {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login__head a,
+.login__head img {
+	display: block;
+}
+
+.login__head img {
+	height: 132px;
+}
+
+.login__body form {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 24px;
+}
+
+.login-external {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 8px;
+	padding: 16px 24px;
+	background-color: #e6f2ff;
+}
+
+.login-external h6 {
+	font-weight: 500;
+}
+
+.external-sites {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.external-sites a,
+.external-sites img {
+	display: block;
+}
+
+.external-sites img {
+	height: 42px;
+}
+
+.login__signup {
+	margin-top: 24px;
+	text-align: center;
+}
+
+.login__signup p {
+	font-weight: 500;
+	color: var(--cool-grey-800);
+}
+
+.login__signup a {
+	color: var(--text-link);
+	text-decoration: underline;
+}
+
+@media screen and (max-width: 1199px) {
+	/* Tablet */
+}
+
+@media screen and (max-width: 767px) {
+	/* Mobile */
+	.login {
+		max-width: 400px;
+	}
+
+	.login__head img {
+		height: 80px;
+	}
+}
