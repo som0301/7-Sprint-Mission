@@ -26,10 +26,15 @@ input {
   width: 100%;
 }
 
-input[type=password] {
-  background-image: url('/assets/icons/ic_visible_off.svg');
-  background-position: top 16px right 16px;
-  background-repeat: no-repeat;
+.password-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.visibility-icon {
+  position: absolute;
+  right: 20px;
 }
 
 input:focus {

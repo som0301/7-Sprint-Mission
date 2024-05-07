@@ -20,9 +20,15 @@
       <label for="nickname">닉네임</label>
       <input id="nickname" name="nickname" placeholder="닉네임을 입력해주세요" required>
       <label for="password">비밀번호</label>
-      <input id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요" required>
+      <div class="password-input">
+        <input id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요" required>
+        <img class="visibility-icon" src="/assets/icons/ic_visible_off.svg" alt="비밀번호 가리기 아이콘">
+      </div>
       <label for="password-check">비밀번호 확인</label>
-      <input id="password-check" name="password-check" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요" required>
+      <div class="password-input">
+        <input id="password-check" name="password-check" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요" required>
+        <img class="visibility-icon" src="/assets/icons/ic_visible_off.svg" alt="비밀번호 가리기 아이콘">
+      </div>
       <button>회원가입</button>
     </form>
   </main>
