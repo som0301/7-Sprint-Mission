@@ -1,0 +1,293 @@
+/* Pretendard  Font*/
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  color: var(--gray800);
+}
+:root {
+  --gray900 : #111827;
+  --gray800 : #1F2937;
+  --gray700 : #374151;
+  --gray600 : #4B5563;
+  --gray500 : #6B7280;
+  --gray400 : #9CA3AF;
+  --gray200 : #E5E7EB;
+  --gray100 : #F3F4F6;
+  --gray50 : #F9FAFB;
+  --blue : #3692FF;
+  --red : #F74747;
+  --white : #FFFFFF;
+}
+
+/* HomePage CSS */
+
+/* Container */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.header-wrapper {
+  width: 100vw;
+  background-color: var(--white);
+  position: fixed;
+}
+.gnb {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 200px;
+  max-width: 1920px;
+}
+.gnb-logo {
+  display: block;
+  width: 153px;
+  height: 51px;
+}
+.gnb-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 128px;
+  height: 48px;
+  padding: 12px 20px;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Main */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* banner */
+.content-banner-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background-color: #CFE5FF;
+  overflow: hidden;
+}
+.content-banner{
+  display: flex;
+  align-items: center;
+  width: 1200px;
+  height: 540px;
+}
+.content-banner-desc{
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.content-banner-text {
+  width: 357px;
+  color: var(--gray700);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+}
+.content-banner-Btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 357px;
+  height: 56px;
+  background-color: var(--blue);
+  color: var(--white);
+  border-radius: 40px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* content */
+.contents {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+}
+.content {
+  display: flex;
+  align-items: center;
+  height: 720px;
+  gap: 64px;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.content-img{
+  width: 588px;
+  height: 444px;
+}
+.content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.content-text-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue);
+}
+.content-text-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--gray700);
+  line-height: 56px;
+}
+.content-text-desc {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--gray700);
+  line-height: 28.8px;
+}
+
+/* Footer */
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 32px 200px;
+  height: 160px;
+  background-color: var(--gray900);
+  color: var(--white);
+  max-width: 1920px;
+}
+.footer-copyright {
+  font-size: 16px;
+  color: var(--gray400);
+}
+.footer-link {
+  display: flex;
+  gap: 30px;
+}
+.footer-link a {
+  font-size: 16px;
+  color: var(--gray200);
+}
+.footer-sns {
+  display: flex;
+  gap: 12px;
+}
+
+/* Form CSS */
+
+.form-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Form Header */
+.form-header{
+  margin-top: 60px;
+}
+.form-logo {
+  width: 369px;
+  height: 132px;
+}
+
+/* Form Content*/
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 640px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.position-relative{
+  position: relative;
+}
+.form-label{
+  font-size: 18px;
+  font-weight: 700;
+}
+.form-input{
+  width: inherit;
+  height: 56px;
+  padding: 0 23px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--gray100);
+}
+.form-input::placeholder{
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray400);
+  line-height: 24px;
+}
+.form-input:focus{
+  border: 1px solid var(--blue);
+}
+.ic-visivility{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: 16px;
+  right: 23px;
+  cursor: pointer;
+}
+
+.form-btn {
+  height: 56px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  border: none;
+  border-radius: 40px;
+  background-color: var(--gray400);
+  cursor: pointer;
+}
+
+
+/* Form Footer */
+.form-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 640px;
+  margin-bottom: 60px;
+}
+.easy-login{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+  height: 74px;
+  padding: 0 23px;
+  border-radius: 8px;
+  background-color: #E6F2FF;
+}
+.easy-login span{
+  font-size: 16px;
+  font-weight: 500;
+}
+.easy-login-links{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.auth-link{
+  font-size: 15px;
+  font-weight: 500;
+}
+.auth-link a{
+  color: var(--blue);
+  text-decoration: underline;
+}
