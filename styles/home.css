@@ -19,31 +19,8 @@ header {
   grid-area: img;
   margin-left: 200px;
 }
-  
+
 .img_logo:hover {
-  cursor: pointer;
-}
-
-.btn_login {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 19.09px;
-  width: 128px;
-  height: 48px;
-  padding: 12px 20px;
-  margin-right: 200px;
-  border: none;
-  border-radius: 8px;
-  background-color: #1967D6;
-  grid-area: btn;
-}
-
-.btn_login a {
-  text-decoration: none;
-  color: #FFFFFF;
-}
-
-.btn_login:hover {
   cursor: pointer;
 }
 
@@ -218,7 +195,7 @@ footer {
 @media (min-width: 1920px) {
   /* 화면의 너비가 1920px보다 커질 때 */
 
-  .banner-top-wrap, 
+  .banner-top-wrap,
   .banner-bottom-wrap,
   footer {
     width: 100%;
