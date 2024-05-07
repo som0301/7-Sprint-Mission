@@ -31,7 +31,7 @@ header {
 
 }
 
-.button {
+.cue {
   width: 128px;
   height: 48px;
   display: inline-flex;
@@ -43,7 +43,7 @@ header {
   gap: 10px;
 }
 
-.button:hover {
+.cue:hover {
   background-color: #1967d6;
 }
 
@@ -80,7 +80,7 @@ header {
 }
 
 
-.look-button {
+.look-cue {
   height : 56px;
   width: 355px;
   display: inline-flex;
@@ -90,7 +90,7 @@ header {
   border-radius: 40px;
 }
 
-.look-button:hover {
+.look-cue:hover {
   background-color: #1967d6;
 }
 

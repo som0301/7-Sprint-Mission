@@ -4,7 +4,7 @@
 }
 
 
-.logo-home-button {
+.logo-home-cue {
   display: flex;
   justify-content: center;
   margin-top: 60px;
@@ -62,7 +62,7 @@ input:focus {
   cursor: pointer;
 }
 
-.login-button {
+.login-cue {
   width: 100%;
   font-size: 20px;
   font-weight: 700;
@@ -74,7 +74,7 @@ input:focus {
   cursor: pointer;
 }
 
-.login-button:hover {
+.login-cue:hover {
   background-color: #1967d6;  
 }
 
@@ -94,24 +94,24 @@ input:focus {
   line-height: 24px;
 }
 
-.social-login-button {
+.social-login-cue {
   display: flex;
   gap: 16px;
 }
 
-.signup-button {
+.signup-cue {
   font-weight: 500;
   font-size: 15px;
   text-align: center;
 }
 
-.signup-button a {
+.signup-cue a {
   color: #3182f6;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
 
-.signup-button {
+.signup-cue {
   width: 100%;
   font-size: 20px;
   font-weight: 700;
@@ -123,6 +123,6 @@ input:focus {
   cursor: pointer;
 }
 
-.signup-button:hover {
+.signup-cue:hover {
   background-color: #1967d6;  
 }
