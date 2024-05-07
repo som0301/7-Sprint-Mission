@@ -19,7 +19,7 @@ header {
   grid-area: img;
   margin-left: 200px;
 }
-  
+
 .img_logo:hover {
   cursor: pointer;
 }
@@ -195,7 +195,7 @@ footer {
 @media (min-width: 1920px) {
   /* 화면의 너비가 1920px보다 커질 때 */
 
-  .banner-top-wrap, 
+  .banner-top-wrap,
   .banner-bottom-wrap,
   footer {
     width: 100%;

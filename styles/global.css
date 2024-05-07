@@ -50,6 +50,9 @@ header {
   background-color: var(--blue-600);
   text-decoration: none;
   color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button {

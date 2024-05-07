@@ -46,13 +46,7 @@ input:focus {
   margin-bottom: 26px;
 }
 
-.password {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.password2 {
+.password, .password2 {
   position: relative;
   display: flex;
   align-items: center;
@@ -71,9 +65,9 @@ input:focus {
   padding: 16px 124px;
   font-size: 20px;
   font-weight: 600;
-  line-height: 24px; 
+  line-height: 24px;
 }
-  
+
   /* Social Login Container */
   .social-login {
   width: 100%;
