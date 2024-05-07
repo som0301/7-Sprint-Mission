@@ -1,0 +1,128 @@
+.login-container {
+  max-width: 640px ;
+  margin: 0 auto;
+}
+
+
+.logo-home-cue {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+
+.input-area {
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column; 
+}
+
+
+label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+input {
+  padding: 16px 24px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+}
+
+input::placeholder {
+  color: #9ca3af;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+input:focus {
+  outline-color: #3692FF
+}
+
+
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hide-password {
+  position: absolute;
+  right: 24px;
+  cursor: pointer;
+}
+
+.login-cue {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 16px 126px;
+  background-color: #3692FF;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.login-cue:hover {
+  background-color: #1967d6;  
+}
+
+.soclal-login-area {
+  background-color: #e6f2ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 16px 23px;
+  margin: 24px 0;
+}
+
+.soclal-login-area h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.social-login-cue {
+  display: flex;
+  gap: 16px;
+}
+
+.signup-cue {
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+}
+
+.signup-cue a {
+  color: #3182f6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.signup-cue {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 999px;
+  padding: 16px 126px;
+  background-color: #3692FF;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.signup-cue:hover {
+  background-color: #1967d6;  
+}

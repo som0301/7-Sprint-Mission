@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>판다마켓 로그인</title>
     <link rel="icon" href="images/logo/favicon.ico" />
-    <link rel="stylesheet" href="styles/home.css" />    
-    <link rel = "stylesheet" href="styles/login.css"/>
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="styles/login.css" />        
   </head> 
+
   <body>
-    <h1>임시 로그인 페이지</h1>
     <div class="login-container">
       <div class="logo-home-cue">
         <a href="/"><img src="images/logo/logo.svg" alt="판다마켓 홈이동" width="396px"></a>
@@ -20,6 +20,12 @@
           <label for="email">이메일</label>
           <input id="email" name="email" type="email" placeholder="이메일을 입력해 주세요"/>
         </div>
+
+        <div class="input-area">
+          <label for="nickname">닉네임</label>
+          <input id="nickname" name="nickname" type="text" placeholder="닉네임을 입력해 주세요"/>
+        </div>
+
         <div class="input-area">
           <label for="password">비밀번호</label>
             <div class="input-wrapper">
@@ -27,7 +33,23 @@
               <img src="images/icons/eye-invisible.svg" alt="비밀번호 숨김버튼" class="hide-password"/>
             </div>
         </div>
-        <cue type="submit" class="login-cue">로그인</cue>
+        <div class="input-area">
+          <label for="passwordConfirmation">비밀번호 확인</label>
+            <div class="input-wrapper">
+              <input 
+                id="passwordConfirmation" 
+                name="passwordConfirmation" 
+                type="passwordConfirmation" 
+                placeholder="비밀번호를 다시 한 번 입력해 주세요"/>
+              <img 
+                src="images/icons/eye-invisible.svg" 
+                alt="비밀번호 숨김버튼" 
+                class="hide-password"/>
+            </div>
+        </div>
+
+
+        <button type="submit" class="signup-cue">회원가입</button>
       </form>
 
       <div class="soclal-login-area">
@@ -43,5 +65,6 @@
       <div class="signup-cue">판다마켓이 처음이신가요?
         <a href="signup.html">회원가입</a>
       </div>
+    </div>
   </body>
 </html>
