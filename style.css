@@ -1,14 +1,12 @@
 * {
   box-sizing: border-box;
-}
-
-html {
-  position: relative;
-}
-
-body {
   margin: 0;
-  
+  padding: 0;
+  font-size: 65.5%;
+}
+
+main {
+  padding-top: 70px;
 }
 
 header {
@@ -29,156 +27,138 @@ header {
   
 }
 
-
-
-#판다마켓 {
+#top-logo {
   display: inline-block;
   width: 153px;
   height: 51px;
 }
 
-.판다배경 {
-  display: flex;
-  background-color: #CFE5FF;
-  background-size: cover;
-  width: auto;
+.hero {
   height: 540px;
+  background-color: #cfe5ff;
+  background-image: url(image/Img_home_top.png);
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: 701px bottom;
+  display: flex;
+  align-items: center;
 }
 
-.background-content {
-  width: 1920px;
-  margin: 0 auto;
-  position: relative;
-  
+.hero-textbox {
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  margin:0 auto;
+  width: 100%;
 }
 
-.home-panda {
-  
-  position: absolute;
-  right: 223px;
-  top: 93px;
-}
-
-.back-textBox {
-  position: absolute;
-  right: 1203px;
-  top: 170px;
-}
-
-h1 {
-  font-size: 40px;
-  font-weight: 700;
+.hero-text {
   line-height: 56px;
+  font-size: 4rem;
+  font-weight: 700;
 }
 
-
-
-main {
-  position: relative;
-  width: 90%;
-  max-width: 1920px;
+.sections {
+  max-width: 1200px;
   height: 2160px;
+  width: 100%;
   margin: 0 auto;
-  
+  position: relative;
 }
 
-.section1{
-  position: absolute;
-  left: 360px;
+.section{
   display: flex;
   gap: 64px;
-  width: 1200px;
-  height: 720px;
-  align-items: center;
-  max-width: 1200px;
-  
+  margin-top: 138px;
 }
 
+.section.reverse {
+  flex-direction: row-reverse; 
+}
+
+.section-textbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
 
 
+}
 
 .small-text {
   line-height: 25.2px;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #3692FF
+  color: #3692FF;
 }
 
-h1 {
-  font-size: 40px;
+.section-title {
+  font-size: 4rem;
   font-weight: 700;
   line-height: 56px;
 }
 
-p {
-  font-size: 24px;
+.section-descript {
+  font-size: 2.4rem;
   font-weight: 500;
   color: #374151;
   line-height: 28.8px;
 }
 
-.section2{
-  position: absolute;
-  left: 360px;
-  top: 720px;
-  display: flex;
-  gap: 64px;
-  width: 1200px;
-  height: 720px;
-  align-items: center;
-  flex-direction: row-reverse;
-  max-width: 1200px;
-  
-}
-
-.section2-text{
-  text-align: right;
-}
-
-.section3{
-  position: absolute;
-  left: 360px;
-  top: 1440px;
-  display: flex;
-  gap: 64px;
-  width: 1200px;
-  height: 720px;
-  align-items: center;
-  margin-bottom: 138px;
-  max-width: 1200px;
-}
-
-.bottomBackground {
-  display: flex;
-  margin-top: 138px;
-  background-color: #CFE5FF;
-  background-size: cover;
-  width: 100%;
+.bottom {
   height: 540px;
+  background-color: #cfe5ff;
+  background-image: url(image/Img_home_bottom.png);
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-position: 701px bottom;
+  display: flex;
+  align-items: center;
 }
 
-#bottom-panda {
-  position: absolute;
-  right: 223px;
-  
+.bottom-textbox {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  margin:0 auto;
+  width: 100%;
+}
+
+.bottom-text {
+  line-height: 56px;
+  font-size: 4rem;
+  font-weight: 700;
 }
 
 footer {
-  background-color: #111827;
+
   height: 160px;
-  width: 100%;
-  background-size: 100%;
+  background-color: #111827;
+  
+  padding: 32px, 200px, 32px, 200px;
 }
 
-.footer-leftContent {
+.footer-contents {
+  display: flex;
+  justify-content: space-between;
+  
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 32px 200px 32px 200px;
+}
+
+.footer-left-content {
   color: #9CA3AF;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 400;
   line-height: 19.09px;
 }
 
-.footer-centerContent {
-  font-size: 16px;
+.footer-center-content {
+  font-size: 1.6rem;
   font-weight: 400;
   color: #E5E7EB;
   display: flex;
@@ -186,31 +166,9 @@ footer {
   gap: 30px;
 }
 
-.footerContent {
-  margin:0 auto;
-  padding-top: 32px;
-  display: flex;
-  justify-content: space-between;
-  width: 90%;
-
-}
-
-.footer-snsLink {
+.footer-right-content {
   display: flex;
   gap: 12px;
   align-items: center;
 }
 
-#footer-center-text {
-  text-decoration: none;
-  color: #e5e7eb;
-}
-
-.icon {
-  width: 20px;
-  
-}
-
-a{
-  text-decoration: none;
-}

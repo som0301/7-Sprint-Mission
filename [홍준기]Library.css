@@ -48,11 +48,6 @@
     color: #ffffff;
   }
 
-  button.large-button {
-    display: inline-block;
-    width: 100%;
-    height: 56px;
-  }
 
   input:focus {
     outline-color: #3692FF;
