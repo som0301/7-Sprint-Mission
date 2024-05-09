@@ -4,6 +4,7 @@ header {
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
+  margin: 10px 200px 9px 200px;
 }
 .header__logo {
   width: 153px;
@@ -28,6 +29,49 @@ main {
   background-color: #ffffff;
   height: 2160px;
 }
+/* banner style */
+.banner {
+  height: 540px;
+  background-color: #cfe5ff;
+  padding-left: 360px;
+  padding-right: 223px;
+  display: flex;
+}
+.banner__item-container {
+  display: flex;
+}
+.banner__text-container {
+  width: 357px;
+  height: 200px;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--gray700);
+}
+.banner__img-top {
+  width: 996px;
+  height: 447px;
+  margin-top: 93px;
+}
+.banner__img-bottom {
+  flex-shrink: 0;
+  width: 996px;
+  height: 540px;
+}
+.banner__button {
+  width: 357px;
+  height: 56px;
+  background-color: var(--blue);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 40px;
+  /* text 가운데 정렬 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 화면크기 축소될 때 글자깨짐 방지 */
+  flex-shrink: 0;
+}
 /* footer style */
 footer {
   height: 160px;
@@ -37,6 +81,8 @@ footer {
   display: flex;
   justify-content: space-between;
   padding-top: 32px;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 .footer__text-left {
   color: var(--gray400);
@@ -49,6 +95,10 @@ footer {
   width: 159px;
   flex-shrink: 0;
 }
+.footer__text-center a {
+  /* 기본적으로 a태그가 가지고 있는 색상 없애기 */
+  color: inherit;
+}
 .footer__sns-icon {
   width: 20px;
   height: 20px;
@@ -56,28 +106,12 @@ footer {
   flex-shrink: 0;
 }
 
-@media (min-width: 744px) {
+/* @media screen and (min-width: 375px) {
   header {
-    margin-right: 200px;
-    margin-left: 200px;
+    margin: 10px 24px 9px 24px;
   }
-  .footer__text-left {
-    margin-left: 200px;
+  footer {
+    padding-left: 24px;
+    padding-right: 24px;
   }
-  .footer__sns-icon-container {
-    margin-right: 200px;
-  }
-}
-
-@media (min-width: 375px) {
-  header {
-    margin-right: 24px;
-    margin-left: 24px;
-  }
-  .footer__text-left {
-    margin-left: 24px;
-  }
-  .footer__sns-icon-container {
-    margin-right: 24px;
-  }
-}
+} */

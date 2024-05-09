@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko"/>
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <title>판다마켓</title>
-  <link rel="stylesheet" href="./src/styles/style.css" />
+  <link rel="stylesheet" href="./src/styles/reset.css"/>
   <link rel="stylesheet" href="./src/styles/global.css"/>
+  <link rel="stylesheet" href="./src/styles/style.css"/>
   <link
     rel="stylesheet"
     type="text/css"
@@ -12,16 +13,23 @@
   />
 </head>
 <body>
-    <!-- navBar -->
+    <!-- nav -->
     <header>
-      <a class="header__logo" href="/index.html"><img src="./src/assets/logo_nav_panda.png" alt="판다마켓 헤더 로고"/></a>
+      <a class="header__logo" href="/"><img src="./src/assets/logo_nav_panda.png" alt="판다마켓 헤더 로고"/></a>
       <a class="header__button" href='./src/pages/login.html'">
         로그인
       </a>
     </header>
     <main>
         <!-- top banner -->
-        <div>
+        <div class="banner">
+            <div class="banner__item-container">
+                <div class="banner__text-container">
+                    <p>일상의 모든 물건을<br/>거래해 보세요</p>
+                    <a class="banner__button" href="./src/pages/items.html">구경하러 가기</a>
+                </div>
+                <img class="banner__img-top" src="./src/assets/Img_home_top.png" alt="상단 배너 이미지"/>
+            </div>
         </div>
         <!-- section -->
         <section class="section">
@@ -32,15 +40,19 @@
         <!-- third section END -->
         </section>
       <!-- bottom banner -->
-      <div>
+      <div class="banner">
+        <div class="banner__text-container">
+            <p>믿을 수 있는<br/>판다마켓 중고거래</p>
+        </div>
+        <img class="banner__img-bottom" src="./src/assets/Img_home_bottom.png" alt="하단 배너 이미지"/>
       </div>
     </main>
     <!-- footer -->
     <footer>
         <div class="footer__text-left">©codeit - 2024</div>
         <div class="footer__text-center">
-            <span>Privacy Policy</span>
-            <span>FAQ</span>
+            <a href="./src/pages/privacy.html">Privacy Policy</a>
+            <a href="./src/pages/faq.html">FAQ</a>
         </div>
         <div class="footer__sns-icon-container">
             <a href="https://www.facebook.com/"><img class="footer__sns-icon" src="./src/assets/icon_facebook.svg" alt="페이스북으로 이동하는 아이콘"/></a>
