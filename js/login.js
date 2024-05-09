@@ -3,15 +3,15 @@ const userPwd = document.querySelector('#password');
 const loginBtn = document.querySelector('.btn-login');
 
 function loginCheckInput(){
-    var emailCheck = userEmail.value;
-    var passwordCheck = userPwd.value;
+    const emailCheck = userEmail.value;
+    const passwordCheck = userPwd.value;
 
     if((emailCheck === '') || (passwordCheck === '')){
-        loginBtn.classList.remove('btn-login-on');
+        loginBtn.disabled = true;
     } else {
-        loginBtn.classList.add('btn-login-on');
+        loginBtn.disabled = false;
     }
 }
 
-userEmail.addEventListener('input', loginCheckInput);
-userPwd.addEventListener('input', loginCheckInput);
+const userInputs = [ userEmail, userPwd ];
+userInputs.forEach((input) => input.addEventListener('input', loginCheckInput));
