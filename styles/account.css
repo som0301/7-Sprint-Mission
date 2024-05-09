@@ -12,7 +12,7 @@ main {
 
 label {
     color: #1F2937;
-    font-size: 1.125em; /*18px;*/
+    font-size: var(--fontsize-18); /*18px;*/
     font-weight: 700;
 }
 
@@ -87,11 +87,27 @@ input img {
     position: relative;
 }
 
-.visibility-img {
+.visibility.off, .visibility.on {
     position: absolute;
     top: 32px;
     right: 24px;
 }
+
+/* 비밀번호 안감은 눈은 기본으로 안보이기 */
+.visibility.on {
+    display: none;
+}
+
+/* 사용자가 비밀번호 눈 클릭시 다시 보이기 */
+.visibility.visible-maker {
+    display: inline;
+}
+
+/* 사용자가 비밀번호 눈 클릭시 안 보이기 */
+.visibility.hidden-maker {
+    display: none;
+}
+
 
 /* Tablet: 768px 이상 ~ 1199px 이하 */
 @media screen and (max-width: 1199px) {
