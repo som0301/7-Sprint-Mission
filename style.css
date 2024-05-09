@@ -46,14 +46,6 @@ h1, h2, h3 {
     margin: 0;
 }
 
-.btn_large:hover {
-    background-color: var(--hoverblue);
-}
-
-.btn_large:active {
-    background-color: var(--activeblue);
-}
-
 header {
     position: fixed;
     background-color: var(--white);
@@ -78,6 +70,22 @@ header {
     border: 0;
     text-align: center;
     text-decoration-line: none;
+}
+
+.btn_large:hover {
+    background-color: var(--hoverblue);
+}
+
+.btn_large:active {
+    background-color: var(--activeblue);
+}
+
+.btn_small {
+    width: 357px;
+    height: 56px;
+    border-radius: 40px;
+    padding: 16px 124px;
+    font-weight: 600;
 }
 
 .login_button {
@@ -122,13 +130,6 @@ header {
     max-width: 1200px;
 }
 
-.btn_small {
-    width: 357px;
-    height: 56px;
-    border-radius: 40px;
-    padding: 16px 124px;
-    font-weight: 600;
-}
 
 main {
     display: flex;
@@ -186,3 +187,4 @@ footer {
     display: flex;
     gap: 12px;
 }
+
