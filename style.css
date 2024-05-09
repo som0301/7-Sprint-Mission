@@ -4,8 +4,9 @@
   word-break: keep-all;
 }
 
-.text {
+.content_text {
   font: 500 24px / 28.8px 'Pretendard';
+  color: var(--text-color-cool-gray);
   letter-spacing: 0.08em;
 }
 
@@ -196,7 +197,7 @@ footer {
     line-height: 44.8px;
   }
 
-  .text {
+  .content_text {
     font-size: 18px;
     line-height: 21.6px;
   }
@@ -247,7 +248,7 @@ footer {
     line-height: 33.6px;
   }
 
-  .text {
+  .content_text {
     font-size: 16px;
     line-height: 19.2px;
   }
