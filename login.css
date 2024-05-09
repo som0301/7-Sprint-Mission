@@ -1,4 +1,4 @@
-@import 'color.css';
+@import '/common/color.css';
 
 * {
     box-sizing: border-box;
@@ -74,8 +74,8 @@ input{
 }
 
 input:focus{
-    border: 2px solid var(--main-color);
-    outline: none;
+    border: none;
+    outline: 2px solid var(--main-color);
 }
 
 input::placeholder {
