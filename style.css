@@ -222,9 +222,6 @@ footer {
 }
 
 @media (max-width: 1919px) {
-  .logo {
-    margin-left: 200px;
-  }
   .login-button {
     margin-right: 200px;
   }
