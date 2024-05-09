@@ -1,35 +1,45 @@
-a{
+@media (min-width: 1200px) {
+  * {
+    font-size: 62.5%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+}
+@media (min-width: 767px) and (max-width: 375px) {
+}
+
+a {
   text-decoration: none;
 }
 
-h2{
+h2 {
   font-size: 4rem;
   line-height: 5.6rem;
   font-weight: 700;
 }
 
-button{
+button {
   border: 0px solid var(--color-white);
   background-color: var(--color-primary);
   font-weight: 600;
   color: var(--color-white);
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
   background-color: var(--color-primary-dark);
 }
-button:active{
+button:active {
   cursor: pointer;
   background-color: var(--color-primary-darker);
-} 
-button:visited{
+}
+button:visited {
   cursor: pointer;
   background-color: var(--color-button-vistied);
-} 
+}
 
-body{
-  align-items:center;
+body {
+  align-items: center;
   display: flex;
   flex-direction: column;
   z-index: -3;
@@ -55,19 +65,18 @@ body{
   max-width: 1920px;
 }
 
-#mainheaderbg img{
+#mainheaderbg img {
   width: 153px;
   height: 51px;
   flex-wrap: nowrap;
 }
 
-.virtualbox{
+.virtualbox {
   height: 100%;
   flex-shrink: 2;
 }
 
-
-#mainheaderbg > a > button{
+#mainheaderbg > a > button {
   width: 128px;
   height: 48px;
   font-size: 1.6rem;
@@ -77,7 +86,7 @@ body{
 }
 
 .footer-top,
-header{
+header {
   background-color: var(--color-secondary);
   width: 100%;
   z-index: -2;
@@ -86,7 +95,7 @@ header{
   margin-top: 72px;
 }
 
-main{
+main {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,12 +103,12 @@ main{
   height: 100%;
 }
 
-main img{
+main img {
   width: 568px;
   height: 444px;
 }
 
-.container{
+.container {
   display: flex;
   width: 1200px;
   height: 540px;
@@ -108,7 +117,7 @@ main img{
 }
 
 footer > .container,
-header > .container{
+header > .container {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -116,14 +125,14 @@ header > .container{
   gap: 32px;
 }
 
-.container-img{
+.container-img {
   width: 1200px;
   height: 540px;
   position: absolute;
 }
 
 footer > .container-img > img,
-header > .container-img > img{
+header > .container-img > img {
   width: 996px;
   height: 447px;
   position: absolute;
@@ -132,7 +141,7 @@ header > .container-img > img{
   z-index: 0;
 }
 
-header > .container > a > button{
+header > .container > a > button {
   width: 357px;
   height: 56px;
   border-radius: 40px;
@@ -142,7 +151,7 @@ header > .container > a > button{
 }
 
 main .container-right,
-main .container{
+main .container {
   width: 1200px;
   height: 720px;
   align-items: center;
@@ -152,16 +161,16 @@ main .container{
   padding: 138px 0;
 }
 
-main .container{
+main .container {
   justify-content: flex-start;
 }
 
-main .container-right{
+main .container-right {
   justify-content: flex-end;
   text-align: right;
 }
 
-.main-title{
+.main-title {
   font-size: 1.8rem;
   font-weight: 700;
   line-height: 2.52rem;
@@ -169,7 +178,7 @@ main .container-right{
   margin-bottom: 12px;
 }
 
-.main-head{
+.main-head {
   font-size: 4rem;
   font-weight: 700;
   line-height: 5.6rem;
@@ -178,7 +187,7 @@ main .container-right{
   margin-bottom: 24px;
 }
 
-.main-main{
+.main-main {
   font-size: 2.4rem;
   font-weight: 500;
   line-height: 2.88rem;
@@ -186,18 +195,18 @@ main .container-right{
   letter-spacing: 0.08em;
 }
 
-#footerimg{
+#footerimg {
   height: 540px;
 }
 
-.footer-background{
+.footer-background {
   width: 100%;
   background-color: var(--color-background-dark);
   display: flex;
   justify-content: center;
 }
 
-.footer-bottom{
+.footer-bottom {
   padding: 32px 200px 0 200px;
   width: 100%;
   height: 160px;
@@ -208,7 +217,7 @@ main .container-right{
   max-width: 1920px;
 }
 
-#footer-name-year > p{
+#footer-name-year > p {
   color: var(--color-text-secondary);
   font-size: 1.6rem;
   font-weight: 400;
@@ -216,23 +225,23 @@ main .container-right{
 }
 
 #footer-link,
-#footer-tag{
+#footer-tag {
   display: flex;
   flex-direction: row;
 }
 
-#footer-tag{
+#footer-tag {
   gap: 30px;
 }
 
-#footer-tag > a{
+#footer-tag > a {
   color: var(--color-link);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.909rem;
 }
 
-#footer-link{
+#footer-link {
   gap: 12px;
   background-color: unset;
   display: flex;
@@ -241,23 +250,23 @@ main .container-right{
 #icon-facebook,
 #icon-twitter,
 #icon-youtube,
-#icon-instagram{
+#icon-instagram {
   width: 20px;
   height: 20px;
 }
 
-#icon-facebook{
+#icon-facebook {
   background-image: url(image/ic_facebook.svg);
 }
 
-#icon-twitter{
+#icon-twitter {
   background-image: url(image/ic_twitter.svg);
 }
 
-#icon-youtube{
+#icon-youtube {
   background-image: url(image/ic_youtube.svg);
 }
 
-#icon-instagram{
+#icon-instagram {
   background-image: url(image/ic_instagram.svg);
 }
