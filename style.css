@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  margin: 0 auto;
+  margin: 0;
   
 }
 
@@ -75,9 +75,11 @@ h1 {
 
 main {
   position: relative;
-  width: 1920px;
+  width: 90%;
+  max-width: 1920px;
   height: 2160px;
   margin: 0 auto;
+  
 }
 
 .section1{
@@ -88,6 +90,7 @@ main {
   width: 1200px;
   height: 720px;
   align-items: center;
+  max-width: 1200px;
   
 }
 
@@ -124,6 +127,7 @@ p {
   height: 720px;
   align-items: center;
   flex-direction: row-reverse;
+  max-width: 1200px;
   
 }
 
@@ -141,6 +145,7 @@ p {
   height: 720px;
   align-items: center;
   margin-bottom: 138px;
+  max-width: 1200px;
 }
 
 .bottomBackground {
@@ -148,7 +153,7 @@ p {
   margin-top: 138px;
   background-color: #CFE5FF;
   background-size: cover;
-  width: auto;
+  width: 100%;
   height: 540px;
 }
 
@@ -186,7 +191,7 @@ footer {
   padding-top: 32px;
   display: flex;
   justify-content: space-between;
-  width: 1520px;
+  width: 90%;
 
 }
 
