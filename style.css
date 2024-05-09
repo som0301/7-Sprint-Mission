@@ -29,6 +29,10 @@
     cursor: pointer;
   }
 
+  .new-line{
+    display: block;
+  }
+
   header{
     display: flex;
     justify-content: space-between;
@@ -179,4 +183,47 @@ footer{
 .footer-imgs > img {
   width: 20px;
   height: 20px;
+}
+
+@media (max-width: 1199px) {
+  header{
+    padding: 0 24px;
+  }
+  .sky{
+    height: 771px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-top-panda{
+    background-position: bottom center;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 84px;
+    gap: 24px;
+    background-size: 100%;
+  }
+  .new-line{
+    display: inline;
+  }
+}
+
+@media (max-width: 767px) {
+  header{
+    padding: 0 16px;
+  }
+  .sky {
+    height: 540px;
+  }
+  .main-top-panda{
+    padding-top: 48px;
+    gap: 18px;
+  }
+  .title{
+    font-size: 32px;
+    text-align: center;
+  }
+  .new-line{
+    display: block;
+  }
 }
