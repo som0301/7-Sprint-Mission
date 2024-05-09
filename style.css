@@ -229,3 +229,155 @@ footer {
     margin-right: 200px;
   }
 }
+/* 태블릿 사이즈. */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  header {
+    justify-content: space-between;
+    padding: 0;
+  }
+  header .logo {
+    margin-left: 0;
+    padding-left: 20px;
+  }
+
+  .lets-go-login {
+    margin-right: 20px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .top-banner {
+    height: 771px;
+  }
+
+  .banner-container {
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .top-banner-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .container .card-1,
+  .card-3 {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card-2 {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .container .pictures {
+    width: 100%;
+  }
+
+  .card-textgroup {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .bottom-banner {
+    height: 900px;
+    background-position: 60% 100%;
+  }
+
+  .bottom-banner .banner-container {
+    justify-content: center;
+    margin-top: 200px;
+  }
+  .bottom-banner .banner-container h1 {
+    text-align: center;
+  }
+}
+
+/* 모바일 */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  header {
+    padding: 0;
+  }
+  header .logo {
+    margin-left: 16px;
+  }
+  header .logo .panda {
+    display: none;
+  }
+  .lets-go-login {
+    margin-right: 16px;
+  }
+
+  .go-buy {
+    width: 154px;
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .banner-container {
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .top-banner-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .top-banner-text h1 {
+    text-align: center;
+    padding: 0 30px;
+    padding-top: 10px;
+  }
+
+  .banner-container .top-banner-text {
+    padding: 16px 40px;
+  }
+
+  .card-1,
+  .card-3 {
+    flex-direction: column;
+  }
+
+  .card-2 {
+    flex-direction: column-reverse;
+  }
+
+  .pictures,
+  .card-textgroup {
+    width: 100%;
+  }
+
+  .card-1,
+  .card-2,
+  .card-3 {
+    width: 100%; /* 이미지의 최대 너비를 부모 요소의 너비에 맞춥니다. */
+    height: auto; /* 이미지의 높이를 자동으로 조정하여 비율을 유지합니다. */
+    object-fit: contain; /* 이미지가 자동으로 조정되면서 짤리지 않고 전체 이미지가 보이도록 합니다. */
+  }
+
+  .top-banner {
+    background-size: 150%;
+    background-position: 60% 100%;
+  }
+
+  .bottom-banner {
+    background-size: 130%;
+    background-position: 60% 100%;
+  }
+
+  .banner-container h1 {
+    margin-top: 20%;
+    text-align: center;
+  }
+}
