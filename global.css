@@ -32,6 +32,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 .btn {
   display: flex;
   justify-content: center;
@@ -66,4 +70,3 @@
   border-radius: 40px;
   font: 600 20px / 24px 'Pretendard';
 }
-
