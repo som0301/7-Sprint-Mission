@@ -15,4 +15,3 @@ function loginCheckInput(){
 
 userEmail.addEventListener('input', loginCheckInput);
 userPwd.addEventListener('input', loginCheckInput);
-
