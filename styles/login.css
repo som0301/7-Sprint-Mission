@@ -1,3 +1,7 @@
+html {
+  font-size: 10px;
+}
+
 body {
   margin: 0;
   border: 0;
@@ -15,6 +19,32 @@ body {
   --gray100: #e8ebed;
   --gray50: #f7f7f8;
   --blue: #3692ff;
+}
+
+@media (min-width: 375px) {
+
+  body {
+    padding: 0 16px;
+  }
+
+  header > a > #titleLogo {
+    width: 198px;
+    height: 66px;
+  }
+
+  main {
+    gap: 16px !important;
+  }
+  
+  section {
+    width: 100% !important;
+  }
+
+  section > h1 {
+    font-size: 1.4rem;
+    line-height: 1.671rem;
+  }
+
 }
 
 header {
@@ -41,7 +71,7 @@ section {
   display: flex;
   flex-direction: column;
   width: 640px;
-  gap: 16px, 0;
+  column-gap: 16px;
 }
 
 h1 {
