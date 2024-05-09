@@ -1,126 +1,89 @@
-import { enableBtn, disableBtn } from '/control_submit_btn.js';
-
 const form = document.querySelector('.main-form');
+const button = document.querySelector('.main-form button');
 
 function checkFormFilled({ target }) {
-  detectErrorInputs(target);
+  validateInputs(target);
   const inputs = [...document.querySelectorAll('.label_input')];
-  if (
-    inputs.some(
-      (item) => item.classList.contains('input_error') || item.value === ''
-    )
-  ) {
-    disableBtn();
-  } else {
-    enableBtn();
-  }
+  const hasInputErrors = inputs.some(
+    (item) => item.classList.contains('input_error') || item.value === ''
+  );
+  hasInputErrors ? (button.disabled = true) : (button.disabled = false);
 }
 
-function detectErrorInputs(target) {
-  let errorMessage;
-  let isError;
-  switch (target.name) {
-    case 'email':
-      ({ errorMessage, isError } = detectErrorEmail(target));
-      break;
-    case 'nickname':
-      ({ errorMessage, isError } = detectErrorNickname(target));
-      break;
-    case 'password':
-      ({ errorMessage, isError } = detectErrorPassword(target));
-      break;
-    case 'password-repeat':
-      ({ errorMessage, isError } = detectErrorPasswordRepeat(target));
-      break;
-  }
-  removeErrorMessage(target);
-  isError && addErrorMessage(target, errorMessage);
-  outlineInputError(target, isError);
+function validateInputs(input) {
+  const errorMessages = {
+    email: validateEmail,
+    nickname: validateNickname,
+    password: validatePassword,
+    'password-repeat': validatePasswordRepeat,
+  };
+
+  const { errorMessage, hasError } = errorMessages[input.name](input);
+  removeErrorMessage(input);
+  hasError && addErrorMessage(input, errorMessage);
+  outlineInputError(input, hasError);
 }
 
-function detectErrorEmail(inputEmail) {
-  let isError = true;
-  let errorMessage = '';
-
-  if (inputEmail.value === '') {
-    errorMessage = '이메일을 입력해주세요';
-  } else if (isNotEmail(inputEmail.value)) {
-    errorMessage = '잘못된 이메일 형식입니다';
-  } else {
-    isError = false;
-  }
-  return { errorMessage, isError };
+function validateEmail(target) {
+  const value = target.value.trim();
+  if (value === '')
+    return { errorMessage: '이메일을 입력해주세요', hasError: true };
+  if (!isEmail(value))
+    return { errorMessage: '잘못된 이메일 형식입니다', hasError: true };
+  return { errorMessage: '', hasError: false };
 }
 
-function isNotEmail(emailAddress) {
+function isEmail(emailAddress) {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
-  if (emailRegex.test(emailAddress)) {
-    return false;
-  } else {
-    return true;
-  }
+  const isEmail = emailRegex.test(emailAddress);
+  return isEmail;
 }
 
-function detectErrorNickname(inputNickname) {
-  let isError = true;
-  let errorMessage = '';
-
-  if (inputNickname.value === '') {
-    errorMessage = '닉네임을 입력해주세요';
-  } else {
-    isError = false;
-  }
-  return { errorMessage, isError };
+function validateNickname(target) {
+  const value = target.value.trim();
+  if (value === '')
+    return { errorMessage: '닉네임을 입력해주세요', hasError: true };
+  return { errorMessage: '', hasError: false };
 }
 
-function detectErrorPassword(inputPassword) {
-  let isError = true;
-  let errorMessage = '';
-
-  if (inputPassword.value === '') {
-    errorMessage = '비밀번호를 입력해주세요';
-  } else if (inputPassword.value.length < 8) {
-    errorMessage = '비밀번호를 8자 이상 입력해주세요';
-  } else {
-    isError = false;
-  }
-  return { errorMessage, isError };
+function validatePassword(target) {
+  const value = target.value.trim();
+  if (value === '')
+    return { errorMessage: '비밀번호를 입력해주세요', hasError: true };
+  if (value.length < 8)
+    return { errorMessage: '비밀번호를 8자 이상 입력해주세요', hasError: true };
+  return { errorMessage: '', hasError: false };
 }
 
-function detectErrorPasswordRepeat(inputPasswordRepeat) {
+function validatePasswordRepeat(target) {
   const inputPassword = document.querySelector('.label_input[name="password"]');
-  let isError = true;
-  let errorMessage = '';
-
-  if (inputPasswordRepeat.value === '') {
-    errorMessage = '비밀번호를 입력해주세요';
-  } else if (inputPasswordRepeat.value !== inputPassword.value) {
-    errorMessage = '비밀번호가 일치하지 않습니다';
-  } else {
-    isError = false;
-  }
-  return { errorMessage, isError };
+  const passwordValue = inputPassword.value.trim();
+  const value = target.value.trim();
+  if (value === '')
+    return { errorMessage: '비밀번호를 입력해주세요', hasError: true };
+  if (value !== passwordValue)
+    return { errorMessage: '비밀번호가 일치하지 않습니다', hasError: true };
+  return { errorMessage: '', hasError: false };
 }
 
-function addErrorMessage(targetInput, content) {
-  const label = targetInput.parentNode.parentNode;
+function addErrorMessage(input, content) {
+  const label = input.closest('.form_label');
   const errorMessage = document.createElement('p');
   errorMessage.classList.add('error-message');
   errorMessage.textContent = content;
   label.appendChild(errorMessage);
 }
 
-function removeErrorMessage(targetInput) {
-  const label = targetInput.parentNode.parentNode;
-  const hasErrorMessage =
-    label.lastElementChild.classList.contains('error-message');
-  hasErrorMessage && label.lastElementChild.remove();
+function removeErrorMessage(input) {
+  const label = input.closest('.form_label');
+  const errorMessage = label.querySelector('.error-message');
+  errorMessage && errorMessage.remove();
 }
 
-function outlineInputError(targetInput, isError) {
-  isError
-    ? targetInput.classList.add('input_error')
-    : targetInput.classList.remove('input_error');
+function outlineInputError(input, hasError) {
+  hasError
+    ? input.classList.add('input_error')
+    : input.classList.remove('input_error');
 }
 
 form.addEventListener('focusout', checkFormFilled);
