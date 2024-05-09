@@ -64,7 +64,7 @@
   .container{
     width: 1200px;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 auto;    
   }
 
   .title{
@@ -76,8 +76,6 @@
   }
 
   /* || main 메인 영역 */
-
-
   .main-top-panda{
     background-image: url('images/Img_home_top.png');
     background-position: bottom right;
@@ -100,21 +98,40 @@
     align-items: center;
   }
 
+  .home{
+    display: flex;
+    flex-direction: column;
+    gap: 276px;
+  }
+
   .home-content{
     background-color: #ffffff;
-    height: 720px;
-
+    /*height: 720px;*/
+    /*padding: 138px 0;*/
     display: flex;
     align-items: center;
     gap: 64px;
+  }
+  .home-content:first-child{
+    padding-top: 138px;
+  }
+  .home-content:last-child{
+    padding-bottom: 277px;
   }
 
   .home-content:nth-child(even) {
     justify-content: right;
   }
 
+  .home-content:nth-child(even) > .home-text-div{
+    order: 1;
+  }
+  .home-content:nth-child(even) > img{
+    order:2;
+  }
+
   .home-banner{
-    font-size: 1.125em;
+    font-size: 1.125em; /* 18px */
     font-weight: 700;
     line-height: 25.2px;
     text-align: left;
@@ -185,6 +202,7 @@ footer{
   height: 20px;
 }
 
+/* 패드 사이즈 */
 @media (max-width: 1199px) {
   header{
     padding: 0 24px;
@@ -206,6 +224,62 @@ footer{
   .new-line{
     display: inline;
   }
+
+  .container{
+    width: 100%;
+  }
+
+  .home{
+    padding: 3%;
+    gap: 64px;
+  }
+
+  .home-content{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .home-content:first-child{
+    padding: 0;
+  }
+  .home-content:last-child{
+    padding-bottom: 80px;
+  }
+
+  .home-content:nth-child(even) > .home-text-div{
+    order: 2;
+  }
+  .home-content:nth-child(even) > img{
+    order: 1;
+  }
+
+  .home-img{
+    width: 100%;
+    height: auto;
+  }
+  .home-text-div{
+    width: 100%;
+
+  }
+  .home-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .home-title{
+    font-size: 2em; /*32*/
+    margin-bottom: 20px;
+  }
+
+  .home-title > .new-line {
+    display: inline;
+  }
+
+  .home-description{
+    font-size: 1.125em;
+  }
 }
 
 @media (max-width: 767px) {
@@ -226,4 +300,23 @@ footer{
   .new-line{
     display: block;
   }
+
+  .home-content:first-child{
+    padding-top: 51px;
+  }
+  .home-content:last-child{
+    padding-bottom: 64px;
+  }
+
+  .home-banner{
+    font-size: 1em;
+  }
+  .home-title{
+    font-size: 1.5em;
+    margin: 8px 0 20px;
+  }
+  .home-description{
+    font-size: 1em;
+  }
+
 }
