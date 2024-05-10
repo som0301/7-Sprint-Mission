@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 header {
   margin-top: 50px;
 }
@@ -58,7 +65,7 @@ button {
 }
 
 .sns-login {
-  background-color: var(--light-blue-color);
+  background-color: var(--light-sky-color);
   border-radius: 8px;
   display: flex;
   justify-content: space-between;

@@ -1,10 +1,16 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 header {
   margin-top: 50px;
 }
 
 form {
   margin: 16px auto;
-  /* width: 640px; */
 }
 
 label {
@@ -59,7 +65,7 @@ button {
 }
 
 .sns-login {
-  background-color: var(--light-blue-color);
+  background-color: var(--light-sky-color);
   border-radius: 8px;
   /* width: 640px; */
   display: flex;

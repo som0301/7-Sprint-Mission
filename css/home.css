@@ -2,20 +2,9 @@
 	box-sizing: border-box;
 }
 
-:root {
-  --white-color: #FFFFFF;
-  --light-gray-color: #9CA3AF;
-  --dark-gray-color: #374151;
-  --white-sky-color: #CFE5FF;
-  --light-blue-color: #3692FF;
-  --normal-blue-color: #1967D6;
-  --dark-blue-color: #1251AA;  
-  --navy-color: #111827;
-}
-
 body {
   margin: 0;
-  color: var(--dark-gray-color);
+  color: var(--gray700-color);
 }
 
 main {
@@ -166,8 +155,8 @@ h1 {
 }
 
 .footer-bottom-line {
-  background-color: var(--navy-color);
-  color: var(--light-gray-color);
+  background-color: var(--gray900-color);
+  color: var(--gray400-color);
   display: flex;
   justify-content: space-around;
   gap: 30px;
