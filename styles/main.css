@@ -19,7 +19,6 @@ body {
     align-items: center;
     width: 100%;
     height: 70px;
-    padding: 0 200px;
     margin: 0 auto;
     background: #fff;
     border-bottom: 1px solid #dfdfdf;
@@ -56,13 +55,10 @@ body {
     align-items: center;
     background-size: 50%;
     background-repeat: no-repeat;
-    background-position: 701px bottom;
 }
 
 .banner__container {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .top-banner__wrapper {
@@ -153,7 +149,7 @@ body {
     color: #374151;
 }
 
-.bottom-banner{
+.bottom-banner {
     display: flex;
     min-width: 1920px;
     height: 540px;
@@ -207,4 +203,55 @@ body {
 
 .social__logo {
     display: block;
+}
+
+@media (min-width: 1200px) {
+    .header {
+        padding: 0 200px;
+    }
+
+    .top-banner,
+    .bottom-banner {
+        min-width: 1920px;
+        height: 540px;
+        background-position: 701px bottom;
+    }
+
+    .banner__container {
+        margin: 0 360px;
+    }
+
+    .top-banner__wrapper {}
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .header {
+        padding: 0 24px;
+    }
+
+    .top-banner,
+    .bottom-banner {
+        min-width: 1920px;
+        height: 771px;
+        background-position: bottom;
+    }
+
+    .banner__container {
+        margin: 0 116px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+    .header {
+        padding: 0 16px;
+    }
+
+    .top-banner,
+    .bottom-banner {
+        min-width: 375px;
+    }
+
+    .banner__container {
+        margin: 0 70px;
+    }
 }
