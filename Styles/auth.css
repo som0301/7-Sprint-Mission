@@ -111,3 +111,29 @@
   color: var(--blue);
   text-decoration: underline;
 }
+/* Responsive Design: Media Queries */
+
+/* Styles for Mobile */
+@media (min-width : 375px) and (max-width: 767px) {
+
+  .form-container {
+    padding: 0 16px;
+    max-width: 400px;
+  }
+
+  /* Form Header */
+  .form-logo {
+    width: 198px;
+    height: 66px;
+  }
+
+  /* Form Content*/
+  .form{
+    width: 100%;
+  }
+
+  /* Form Footer */
+  .form-footer{
+    width: 100%;
+  }
+}
