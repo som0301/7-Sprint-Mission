@@ -1,0 +1,105 @@
+@import 'color.css';
+
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    display: block;
+    margin: 60px 0 40px;
+}
+
+.login__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+}
+
+.form__wrapper {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form__label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.48px;
+    row-gap: 16px;
+}
+
+.label__name {
+    width: fit-content;
+}
+
+.label__input {
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--gray400);
+    min-width: 640px;
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: none;
+    background-color: var(--gray100);
+}
+
+.label__input:focus-visible {
+    outline: 3px solid #3692ff;
+}
+
+.password__blind-logo {
+    position: absolute;
+    right:24px;
+    bottom: 16px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #fff;
+    padding: 16px 124px;
+    border-radius: 40px;
+    border: none;
+    background-color: var(--gray400);
+    cursor: pointer;
+}
+
+.social__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #e6f2ff;
+    border-radius: 8px;
+}
+
+.social__login {
+    display: flex;
+    column-gap: 16px;
+}
+
+.social__logo {
+    display: block;
+}
+
+.member__check {
+    text-align: center;
+}
+
+.check__link {
+    text-decoration: underline;
+}
+

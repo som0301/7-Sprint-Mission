@@ -13,11 +13,14 @@ body {
 }
 
 .header {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     height: 70px;
     padding: 0 200px;
+    margin: 0 auto;
     background: #fff;
     border-bottom: 1px solid #dfdfdf;
 }
@@ -45,26 +48,30 @@ body {
 }
 
 .top-banner {
-    position: absolute;
+    display: flex;
     min-width: 1920px;
     height: 540px;
-    left: 0;
-    right: 0;
-    top: 70px;
     background-color: #cfe5ff;
-    padding: 0 360px;
+    background-image: url(../img/home/hero-image.png);
+    align-items: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 701px bottom;
+}
+
+.banner__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .top-banner__wrapper {
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     row-gap: 32px;
     width: 357px;
-    top: calc(50% - 200px/2);
     height: 200px;
-    left: 360px;
 }
 
 .top-banner__title {
@@ -88,18 +95,16 @@ body {
     color: #fff;
 }
 
-.top-banner__image {
-    position: absolute;
-    top: 93px;
-    left: 701px;
+.content {
+    width: 1920px;
+    background-color: #fff;
 }
 
-.content {
-    position: absolute;
-    width: 1920px;
-    top: 610px;
-    background-color: #fff;
-    padding: 0 360px;
+.content__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 138px;
 }
 
 .content__wrapper {
@@ -148,50 +153,36 @@ body {
     color: #374151;
 }
 
-.bottom-banner {
-    position: absolute;
+.bottom-banner{
+    display: flex;
     min-width: 1920px;
     height: 540px;
-    top: 2908px;
-    left: 0;
-    right: 0;
-    bottom: 70px;
     background-color: #cfe5ff;
-    padding: 0 360px;
+    background-image: url(../img/home/bottom-banner-image.png);
+    align-items: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 701px bottom;
 }
 
 .bottom-banner__title {
-    position: absolute;
     font-size: 40px;
     line-height: 140%;
     color: #374151;
-    top: 214px;
-    left: 360px;
 }
 
 .bottom-banner__image {
-    position: absolute;
     width: 996px;
     height: 540px;
-    top: 0;
-    left: 701px;
 }
 
 .footer {
-    position: absolute;
-    width: 1920px;
-    height: 160px;
-    justify-content: space-between;
-    align-items: center;
-    top: 3448px;
     padding: 32px 200px 108px;
     background-color: #111827;
 }
 
 .footer__link {
     display: flex;
-    width: 1520px;
-    height: 20px;
     justify-content: space-between;
 
 }
