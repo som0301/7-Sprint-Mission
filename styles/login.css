@@ -130,3 +130,8 @@ relative를 추가해줌  */
 .signup-button:hover {
   background-color: #1967d6;  
 }
+
+
+@media (min-width: 768px) {
+  
+}
