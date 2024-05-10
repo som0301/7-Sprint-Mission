@@ -21,6 +21,9 @@
     --focus-blue: #1251aa;
     --hyperlink-blue: #3182F6;
 
+    --disable-button-gray:#9CA3AF;
+    --activate-button-blue: var(--blue);
 
     --fontsize-18: 1.125em;
+    --fontsize-15: 0.9375em;
 }

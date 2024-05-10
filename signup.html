@@ -28,65 +28,82 @@
 
             <section class="input">
                 <form method="post">
-                    <label for="email">이메일</label>
-                    <input id="email" 
-                        name="email" 
-                        type="email" 
-                        placeholder="이메일을 입력해주세요" 
-                        required
-                    />
-                    <label for="email">닉네임</label>
-                    <input id="email" 
-                        name="email" 
-                        type="email" 
-                        placeholder="닉네임을 입력해주세요" 
-                        required
-                    />
-                    <label for="password">비밀번호</label>
-                    <div class="password-input">
-                        <input id="password" 
-                            name="password" 
-                            type="password" 
-                            placeholder="비밀번호를 입력해주세요"  
-                            required 
+                    <div class="input-area">
+                        <label for="email">이메일</label>
+                        <input id="email" 
+                            name="email" 
+                            type="email" 
+                            placeholder="이메일을 입력해주세요" 
+                            required
                         />
-                        <button class="visibility-button">
-                            <img
-                                class="visibility off"
-                                src="images/logo/btn_visibility_off.svg"
-                                alt="비밀번호 가리기"
-                                width="24"
-                            />
-                            <img
-                                class="visibility on"
-                                src="images/logo/btn_visibility_on.svg"
-                                alt="비밀번호 보이기"
-                                width="24"
-                            />
-                        </button>
+                        <h3 id="email-error" class="error-message email">유효하지 않은 이메일입니다.</h3>
                     </div>
-                    <label for="password">비밀번호 확인</label>
-                    <div class="password-input">
-                        <input id="password" 
-                            name="password" 
-                            type="password" 
-                            placeholder="비밀번호를 다시 한번 입력해주세요"  
-                            required 
-                        />
-                        <button class="visibility-button">
-                            <img
-                                class="visibility off"
-                                src="images/logo/btn_visibility_off.svg"
-                                alt="비밀번호 가리기"
-                                width="24"
+                    <div class="input-area">
+                        <label for="nickname">닉네임</label>
+                        <input id="nickname" 
+                            name="nickname" 
+                            type="text" 
+                            placeholder="닉네임을 입력해주세요" 
+                            autocomplete="username"
+                            required
+                        /> 
+                        <h3 id="nickname-error" class="error-message email">닉네임을 입력해주세요.</h3>
+                    </div>
+                    <div class="input-area">
+                        <label for="password">비밀번호</label>
+                        <div class="password-input">
+                            <input id="password" 
+                                name="password" 
+                                class="password-event"
+                                type="password" 
+                                placeholder="비밀번호를 입력해주세요"  
+                                autocomplete="current-password"
+                                required 
                             />
-                            <img
-                                class="visibility on"
-                                src="images/logo/btn_visibility_on.svg"
-                                alt="비밀번호 보이기"
-                                width="24"
+                            <h3 id="password-error" class="error-message password">비밀번호를 입력해주세요.</h3>
+                            <button class="visibility-button" type="button">
+                                <img
+                                    class="visibility-off"
+                                    src="images/logo/btn_visibility_off.svg"
+                                    alt="비밀번호 가리기"
+                                    width="24"
+                                />
+                                <img
+                                    class="visibility-on"
+                                    src="images/logo/btn_visibility_on.svg"
+                                    alt="비밀번호 보이기"
+                                    width="24"
+                                />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="input-area">
+                        <label for="password">비밀번호 확인</label>
+                        <div class="password-input">
+                            <input id="passwordConfirmation"
+                                name="passwordConfirmation" 
+                                class="password-event" 
+                                type="password" 
+                                placeholder="비밀번호를 다시 한번 입력해주세요"  
+                                autocomplete="current-password"
+                                required 
                             />
-                        </button>
+                            <h3 id="password-check-error" class="error-message password">비밀번호를 확인을 입력해주세요.</h3>
+                            <button class="visibility-button" type="button">
+                                <img
+                                    class="visibility-off"
+                                    src="images/logo/btn_visibility_off.svg"
+                                    alt="비밀번호 가리기"
+                                    width="24"
+                                />
+                                <img
+                                    class="visibility-on"
+                                    src="images/logo/btn_visibility_on.svg"
+                                    alt="비밀번호 보이기"
+                                    width="24"
+                                />
+                            </button>
+                        </div>
                     </div>
                     <button class="button pill-button">회원가입</button>
                 </form>
@@ -114,6 +131,6 @@
             </section>
         </main>
 
-        <script src="scripts/account.js"></script>
+        <script type="module" src="scripts/account.js"></script>
     </body>
 </html>
