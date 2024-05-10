@@ -1,5 +1,8 @@
 :root {
-  /* Gray scale */
+  /* 
+  color 파레트 추가 하였습니다. 궁금한점이  home.scc에 작성된 이 변수가
+  다른 css 파일에 자동으로 연동이 되는지 궁금합니다.! 
+  */
   --gray-900: #1b1d1f;
   --gray-800: #26282b;
   --gray-600: #454c53;
@@ -183,3 +186,4 @@ footer {
   gap: 30px;
   color: #e5e7eb;
 }
+
