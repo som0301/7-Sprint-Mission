@@ -14,6 +14,7 @@
   --gray-50: #f7f7f8;
   --blue: #3692ff;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -21,62 +22,60 @@
 }
 
 /* PC사이즈 */
-@media (min-width: 1280px) { 
+@media (min-width: 1280px) {
   header {
-    padding: 0 200px !important; 
+    padding: 0 200px !important;
   }
-}
 
-
-/* 테블릿사이트 */
-@media (min-width: 768px) { 
-  header {
-    padding: 0 24px;
-  }
   #hero {
-    height: 771px;
+    height: 540px;
   }
-  .wrapper > h1 > br {
-    display: none;
+
+  .wrapper>h1>br {
+    display: block;
   }
+
   #hero {
     /* background-size: 135% 60%; */
-    background-size: 996px 447px;
-    background-position: 50% bottom;
-    align-items: flex-start;
+    background-repeat: no-repeat;
+    background-position: 80% bottom;
+    background-size: 55%;
   }
+
   #hero .wrapper {
-    display: flex;
-    flex-direction: column;
+    display:contents;
+    flex-direction: row;
     align-items: center;
     position: relative;
     top: 84px;
   }
+
   #features .feature {
     flex-direction: column;
     padding: 0;
     margin: 24px;
   }
 
-  .feature > img {
-    width: 100%;
-    height: 524px;
-    margin-bottom: 20px;
+  .feature>img {
+    width: 50%;
+    /* height: 524px; */
+    /* margin-bottom: 20px; */
   }
 
   .feature-content {
     width: 100%;
   }
 
-  .feature-content > h1 {
+  .feature-content>h1 {
     font-size: 32px;
     line-height: 44.8px;
   }
-  .feature-content > h1 > br {
+
+  .feature-content>h1>br {
     display: none;
   }
 
-  .feature-content > p {
+  .feature-content>p {
     font-size: 18px;
     line-height: 21.6px;
   }
@@ -98,37 +97,124 @@
     top: 201px;
   }
 
-  #bottomBanner .wrapper > h1 > br {
+  #bottomBanner .wrapper>h1>br {
+    display: block;
+  }
+}
+
+
+/* 테블릿사이트 */
+@media (min-width: 768px) {
+  header {
+    padding: 0 24px;
+  }
+
+  #hero {
+    height: 771px;
+  }
+
+  .wrapper>h1>br {
+    display: none;
+  }
+
+  #hero {
+    /* background-size: 135% 60%; */
+    background-size: 996px 447px;
+    background-position: 50% bottom;
+    align-items: flex-start;
+  }
+
+  #hero .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 84px;
+  }
+
+  #features .feature {
+    flex-direction: column;
+    padding: 0;
+    margin: 24px;
+  }
+
+  .feature>img {
+    width: 100%;
+    height: 524px;
+    margin-bottom: 20px;
+  }
+
+  .feature-content {
+    width: 100%;
+  }
+
+  .feature-content>h1 {
+    font-size: 32px;
+    line-height: 44.8px;
+  }
+
+  .feature-content>h1>br {
+    display: none;
+  }
+
+  .feature-content>p {
+    font-size: 18px;
+    line-height: 21.6px;
+  }
+
+  #bottomBanner {
+    height: 927px;
+    background-position: 50% bottom;
+    /* background-size: 130%; */
+    background-size: 996px 540px;
+    align-items: flex-start;
+  }
+
+  #bottomBanner .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 201px;
+  }
+
+  #bottomBanner .wrapper>h1>br {
     display: block;
   }
 }
 
 /* 모바일사이즈 */
-@media (min-width: 375px) { 
+@media (min-width: 375px) {
   header {
     padding: 0 16px;
   }
+
   #hero {
     height: 540px;
   }
-  #hero .wrapper > h1 {
+
+  #hero .wrapper>h1 {
     font-size: 32px;
     line-height: 44.8px;
     text-align: center;
     border-radius: 24px;
   }
-  #hero .wrapper > a > .pill-button {
+
+  #hero .wrapper>a>.pill-button {
     font-size: 16px;
     line-height: 19.09px;
     padding: 16px 20px;
     border-radius: 24px;
   }
+
   #hero {
     /* background-size: 135% 60%; */
     background-size: 626px 281px;
     background-position: 50% bottom;
     align-items: flex-start;
   }
+
   #hero .wrapper {
     display: flex;
     flex-direction: column;
@@ -136,13 +222,14 @@
     position: relative;
     top: 48px;
   }
+
   #features .feature {
     flex-direction: column;
     padding: 0;
     margin: 24px;
   }
 
-  .feature > img {
+  .feature>img {
     width: 100%;
     height: 259px;
     margin-bottom: 20px;
@@ -151,20 +238,22 @@
   .feature-content {
     width: 100%;
   }
-  .feature-content > h2 {
+
+  .feature-content>h2 {
     font-size: 16px;
     line-height: 22.4px;
   }
 
-  .feature-content > h1 {
+  .feature-content>h1 {
     font-size: 24px;
     line-height: 33.6px;
   }
-  .feature-content > h1 > br {
+
+  .feature-content>h1>br {
     display: none;
   }
 
-  .feature-content > p {
+  .feature-content>p {
     font-size: 16px;
     line-height: 19.2px;
   }
@@ -186,20 +275,20 @@
     top: 121px;
   }
 
-  #bottomBanner .wrapper > h1 > br {
+  #bottomBanner .wrapper>h1>br {
     display: block;
   }
 
   footer {
     padding: 32px !important;
-    display: grid !important; 
+    display: grid !important;
     grid-template: 1fr/ 1fr 1fr;
     row-gap: 78px;
 
-    
+
   }
 
-  footer #codeityear{
+  footer #codeityear {
     grid-area: 2;
   }
 
@@ -222,6 +311,7 @@ button {
   box-shadow: none;
   cursor: pointer;
 }
+
 /* 
   - 이미지는 기본적으로 inline 요소로 취급되기 때문에 텍스트의 baseline에 맞춰서 정렬됩니다. 
     브라우저가 이미지를 텍스트와 같은 라인에 배치할 때 g, j, p 등 아래로 치우치는 알파벳의 descender 공간을 예약해 놓기 때문에 이미지와 주변 텍스트 사이에 의도하지 않은 작은 간격이 생기는 경우가 많습니다. 
@@ -298,6 +388,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
 /* 
   가상 클래스(pseudo-class)를 사용해 특정 상태에 맞는 스타일을 적용하세요. 
   버튼 역할을 하는 요소에는 hover 또는 disabled 시의 스타일을 지정해 주는 것이 사용자 경험에 도움이 됩니다. 
