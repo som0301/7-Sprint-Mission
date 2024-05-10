@@ -1,14 +1,16 @@
 .login-container {
-  max-width: 640px ;
+  max-width: 400px ;
   margin: 0 auto;
+  padding: 16px;
 }
 
 
 .logo-home-button {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: 198px;
 }
 
 
@@ -21,8 +23,8 @@
 
 label {
   display: block;
-  margin-bottom: 16px;
-  font-size: 18px;
+  margin-bottom: 8px;
+  font-size: 14px;
   font-weight: 700;
 }
 
@@ -131,7 +133,32 @@ relative를 추가해줌  */
   background-color: #1967d6;  
 }
 
+/* 반응형 관련하여 기존pc 사이즈에 맞춰 사이즈를 작성하였으나
+반응형이 추가되고  media  테블릿  media pc   media 모바일 
+3가지를 만들어야 된다고 생각을 했으나 이해가 잘 가지 않아 스프린트 3탬플릿을 확인해보니
+기본을 모바일로 변경하고  테블릿과 피씨를 추가해서 관리 하는것을 발견 하였습니다. 
+그렇게 수정하는 편이 어느부분에서 이점이 있는지 궁금합니다.! */
+@media (min-width: 768px) {
+  .login-container {
+    max-width: 400px ;
+  }
+
+  .logo-home-button {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    width: 396px;
+  }
+  
+  label {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+}
 
 @media (min-width: 768px) {
-  
+  .logo-home-button {
+    margin-top: 60px;
+    margin-bottom: 40px;
+
+  }
 }
