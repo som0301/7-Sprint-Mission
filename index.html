@@ -3,7 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>판다월드</title>
+    <meta property="og:image" content="images/meta_image.png" />
+    <meta property="og:title" content="판다마켓" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:url" content="https://pandamarket-c.netlify.app/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="images/meta_image.png" />
+    <meta name="twitter:title" content="판다마켓" />
+    <meta
+      name="twitter:description"
+      content="일상의 모든 물건을 거래해보세요"
+    />
+    <title>판다마켓</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="index.css" />
   </head>
@@ -126,51 +137,57 @@
       </section>
     </main>
     <footer>
-      <div>©codeit - 2024</div>
-      <div class="fnav">
-        <a href="pages/privacy/privacy.html">Privacy Policy</a>
-        <a href="pages/faq/faq.html">FAQ</a>
+      <div class="f-container">
+        <div class="pc-tablet-addr">©codeit - 2024</div>
+        <div class="fnav">
+          <a href="pages/privacy/privacy.html">Privacy Policy</a>
+          <a href="pages/faq/faq.html">FAQ</a>
+        </div>
+        <div class="sns">
+          <button
+            type="button"
+            onclick="window.open('https://www.facebook.com/')"
+          >
+            <img
+              src="images/ic_facebook.png"
+              alt="페이스북 아이콘"
+              width="20"
+              height="20"
+            />
+          </button>
+          <button type="button" onclick="window.open('https://twitter.com/')">
+            <img
+              src="images/ic_twitter.png"
+              alt="트위터 아이콘"
+              width="20"
+              height="20"
+            />
+          </button>
+          <button
+            type="button"
+            onclick="window.open('https://www.youtube.com/')"
+          >
+            <img
+              src="images/ic_youtube.png"
+              alt="유튜브 아이콘"
+              width="20"
+              height="20"
+            />
+          </button>
+          <button
+            type="button"
+            onclick="window.open('https://www.instagram.com/')"
+          >
+            <img
+              src="images/ic_instagram.png"
+              alt="인스타그램 아이콘"
+              width="20"
+              height="20"
+            />
+          </button>
+        </div>
       </div>
-      <div class="sns">
-        <button
-          type="button"
-          onclick="window.open('https://www.facebook.com/')"
-        >
-          <img
-            src="images/ic_facebook.png"
-            alt="페이스북 아이콘"
-            width="20"
-            height="20"
-          />
-        </button>
-        <button type="button" onclick="window.open('https://twitter.com/')">
-          <img
-            src="images/ic_twitter.png"
-            alt="트위터 아이콘"
-            width="20"
-            height="20"
-          />
-        </button>
-        <button type="button" onclick="window.open('https://www.youtube.com/')">
-          <img
-            src="images/ic_youtube.png"
-            alt="유튜브 아이콘"
-            width="20"
-            height="20"
-          />
-        </button>
-        <button
-          type="button"
-          onclick="window.open('https://www.instagram.com/')"
-        >
-          <img
-            src="images/ic_instagram.png"
-            alt="인스타그램 아이콘"
-            width="20"
-            height="20"
-          />
-        </button>
-      </div>
+      <div class="mobile-addr">©codeit - 2024</div>
     </footer>
   </body>
 </html>
