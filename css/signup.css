@@ -147,6 +147,7 @@ input:focus {
   gap: 16px;
   position: absolute;
   display: flex;
+  top: 7px;
 }
 
 /* 구글 아이콘 */
