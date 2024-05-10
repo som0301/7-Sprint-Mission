@@ -15,7 +15,6 @@
 
   html{
     font-size: 16px;
-    /* font-family: 'Noto Sans KR', sans-serif; */ /* 다시 사용할까봐 주석 */
   }
 
   body {
@@ -58,7 +57,7 @@
   .sky{
     background-color: #CFE5FF;
   }
-  .main-top{
+  .main-top, .main-bottom{
     height: 540px;
     width: 100%;
   }
@@ -125,6 +124,7 @@
     justify-content: right;
   }
 
+  /* home 영역에 두번째 flex 순서 바꾸기 */
   .home-content:nth-child(even) > .home-text-div{
     order: 1;
   }
@@ -186,7 +186,7 @@ footer{
 /* .footer-links - 혼자 살짝 아래로 내려가있어서 flex로 지정 -> 올바른 방법인지는 모르겠음 */
 .footer-links{
   display: flex;
-  align-items:flex-start;
+  align-items: flex-start;
   gap: 30px;
 }
 
@@ -206,9 +206,20 @@ footer{
 
 /* 패드 사이즈 */
 @media (max-width: 1199px) {
+
   header{
     padding: 0 24px;
   }
+  .new-line{
+    display: inline;
+  }
+  .container{
+    width: 100%;
+  }
+
+  /* || main */
+
+  /* || main에서 top */
   .main-top{
     height: 771px;
     display: flex;
@@ -223,14 +234,10 @@ footer{
     gap: 24px;
     background-size: 100%;
   }
-  .new-line{
-    display: inline;
-  }
+  
 
-  .container{
-    width: 100%;
-  }
 
+  /* || main에서 home */
   .home{
     padding: 3%;
     gap: 64px;
@@ -271,8 +278,8 @@ footer{
   }
 
   .home-title{
-    font-size: 2.5em; /*32*/
-    margin:0;
+    font-size: 2.5em; /* 32px */
+    margin: 0;
     text-align: center;
   }
 
@@ -284,6 +291,7 @@ footer{
     font-size: 1.125em;
   }
 
+  /* || main에서 bottom*/
   .main-bottom{
     height: 927px;
   }
@@ -296,21 +304,30 @@ footer{
     padding-top: 201px;
   }
 
+  /* || footer */
   footer{
     padding: 32px 104px 0;
   }
 }
 
+/* 모바일 */
 @media (max-width: 767px) {
+  .new-line{
+    display: block;
+  }
+
   header{
     padding: 0 16px;
   }
-
   .header-logo{
     content: url('/images/logo-text.png');
     width: 103px;
     height: 100%;
   }
+
+  /* || main */
+
+  /* || main에서 top*/
   .sky {
     height: 540px;
   }
@@ -322,17 +339,14 @@ footer{
     font-size: 32px;
     text-align: center;
   }
-  .new-line{
-    display: block;
-  }
-
+  
+  /* || main에서 Home */
   .home-content:first-child{
     padding-top: 51px;
   }
   .home-content:last-child{
     padding-bottom: 64px;
   }
-
   .home-banner{
     font-size: 1em;
   }
@@ -342,14 +356,20 @@ footer{
   .home-description{
     font-size: 1em;
   }
+
+  /* || main에서 bottom */
+  .main-bottom{
+    height:540px
+  }
   .main-bottom-panda{
     padding-top: 121px;
   }
 
+  /* footer */
   footer{
     padding: 32px;
   }
-
+  
   .footer-content{
     flex-wrap: wrap;
   }

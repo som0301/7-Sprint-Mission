@@ -118,6 +118,7 @@ input::placeholder {
     color: #3182F6;
 }
 
+/* 패드 사이즈 */
 @media (max-width:1199px){
     .main{
         max-width: 640px;
@@ -125,6 +126,7 @@ input::placeholder {
     }
 }
 
+/* 모바일 사이즈 */
 @media (max-width:767px){
     .login-logo{
         width: 198px;
