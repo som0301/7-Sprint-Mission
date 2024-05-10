@@ -2,18 +2,25 @@
 
 ### 기본
 
-로그인 페이지, 회원가입 페이지 공통
-- [x] “판다마켓" 로고 클릭 시 루트 페이지(“/”)로 이동합니다.
-- [x] 로그인 페이지, 회원가입 페이지 모두 로고 위 상단 여백이 동일합니다.
-- [x] input 요소에 focus in 일 때, 테두리 색상은 #3692FF입니다.
-- [x] input 요소에 focus out 일 때, 테두리는 없습니다.
-- [x] SNS 아이콘들은 클릭시 각각 실제 서비스 홈페이지로 이동합니다.
+공통
 
-로그인 페이지
-- [x] “회원가입”버튼 클릭 시 “/signup” 페이지로 이동합니다.
+- [x]브라우저에 현재 보이는 화면의 영역(viewport) 너비를 기준으로 분기되는 반응형 디자인을 적용합니다.
+PC: 1200px 이상
+Tablet: 768px 이상 ~ 1199px 이하
+Mobile: 375px 이상 ~ 767px 이하
+375px 미만 사이즈의 디자인은 고려하지 않습니다
 
-회원가입 페이지
-- [x] “로그인”버튼 클릭 시 “/login” 페이지로 이동합니다.
+랜딩 페이지
+
+- [x]Tablet 사이즈로 작아질 때 “판다마켓” 로고의 왼쪽에 여백 24px, “로그인” 버튼 오른쪽 여백 24px을 유지할 수 있도록 “판다마켓” 로고와 “로그인" 버튼의 간격이 가까워집니다.
+- [x]Mobile 사이즈로 작아질 때 “판다마켓” 로고의 왼쪽에 여백 16px, “로그인” 버튼 오른쪽 여백 16px을 유지할 수 있도록 “판다마켓” 로고와 “로그인" 버튼의 간격이 가까워집니다.
+- [] 화면 영역이 줄어들면 “Privacy Policy”, “FAQ”, “codeit-2024”이 있는 영역과 SNS 아이콘들이 있는 영역의 간격이 줄어듭니다.
+
+로그인, 회원가입 페이지 공통
+
+- [x] Tablet 사이즈에서 내부 디자인은 PC사이즈와 동일합니다.
+- [x] Mobile 사이즈에서 좌우 여백 16px 제외하고 내부 요소들이 너비를 모두 차지합니다.
+- [x] Mobile 사이즈에서 내부 요소들의 너비는 기기의 너비가 커지는 만큼 커지지만 400px을 넘지 않습니다.
 
 ### 심화
 
@@ -27,11 +34,14 @@
 
 ## 스크린샷
 
-![screencapture-1](https://github.com/codeit-bootcamp-frontend/7-Sprint-Mission/assets/166487780/1eea2f35-8fda-4d74-8a42-caeafe904248)
-![screencapture-2](https://github.com/codeit-bootcamp-frontend/7-Sprint-Mission/assets/166487780/c95ee0bc-1a73-4d66-9ca4-41ab4fad685f)
+![landing-mobile](https://github.com/codeit-bootcamp-frontend/7-Sprint-Mission/assets/166487780/8de3eaf5-a551-4086-85b1-8654f21c35d0)
+![landing-tablet](https://github.com/codeit-bootcamp-frontend/7-Sprint-Mission/assets/166487780/ea268eb8-8a89-47dd-ae13-8c0af9de03de)
+![login-mobile](https://github.com/codeit-bootcamp-frontend/7-Sprint-Mission/assets/166487780/4bacc3cb-f12d-421c-82c6-b81b58deb482)
+![signup-mobile](https://github.com/codeit-bootcamp-frontend/7-Sprint-Mission/assets/166487780/783ea87e-2b88-4c1c-b932-4b8358aef1be)
+
 
 ## 멘토에게
 
-- 
+- footer의 메뉴 부분을 어떻게 조작해야 할지 잘 모르겠습니다...
 -
 - 
