@@ -119,7 +119,7 @@ button {
 /* PC */
 @media (min-width: 1200px) {
   
-  main {
+  form {
     width: 640px;
   }
   
