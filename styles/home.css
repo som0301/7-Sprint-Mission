@@ -65,6 +65,7 @@
   display: flex;
   align-items: center;
   gap: 5%;
+  /* width: 1200px; */
 }
 
 /* pseudo-selector인 nth-child(2)를 통해 feature 클래스를 가진 요소 중 두 번째 아이템에만 다른 스타일을 적용했어요. */
