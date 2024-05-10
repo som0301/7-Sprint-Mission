@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="stylesheet" href="css/signin.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-logo-wrapper">
+        <h1>
+          <a href="index.html">
+            <img
+              src="img/logo/panda-market-logo.png"
+              alt="판다마켓"
+              width="396"
+              height="132"
+            />
+          </a>
+        </h1>
+      </div>
+
+      <form method="post">
+        <div class="login-input">
+          <label class="login-input-label" for="email">이메일</label>
+          <input
+            class="login-input-field"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="이메일을 입력해주세요"
+          />
+        </div>
+
+        <div class="login-input">
+          <label class="login-input-label" for="password">비밀번호</label>
+          <div class="login-input-field-wrapper">
+            <input
+              class="login-input-field"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <img
+              class="login-input-eye-icon"
+              src="img/icons/eye-invisible.svg"
+              alt="비밀번호 보기"
+            />
+          </div>
+        </div>
+
+        <button class="login-button" type="submit">로그인</button>
+      </form>
+      <div class="social-login-container">
+        <span class="social-login-label">간편 로그인하기</span>
+        <div class="social-login-icon-wrapper">
+          <a
+            href="https://www.google.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="img/social/google-logo.png"
+              alt="구글"
+              width="42"
+              height="42"
+            />
+          </a>
+          <a
+            href="https://www.kakaocorp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="img/social/kakao-logo.png"
+              alt="카카오"
+              width="42"
+              height="42"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="login-signup">
+        <span class="login-signup-text">판다마켓이 처음이신가요?</span>
+        <a class="login-signup-link" href="signup.html">회원가입</a>
+      </div>
+    </div>
+  </body>
+</html>
