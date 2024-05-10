@@ -29,21 +29,17 @@
   gap: 24px;
 }
 
+.login-box,
 .signup-box {
   display: grid;
   gap: 16px;
 }
 
+.login-label,
 .signup-label {
   color: var(--color-gray800);
   font-size: 18px;
   font-weight: 700;
-}
-
-.signup-input-pw {
-  background-image: url(/images/ic_see-password.png);
-  background-repeat: no-repeat;
-  background-position: 595px;
 }
 
 input {
@@ -69,25 +65,24 @@ input::placeholder {
   font-weight: 400;
 }
 
-.signup-pw-container {
+.login-pw-container {
   position: relative;
 }
 
-.see-pw-btn,
-.see-pw-btn-check {
+/* .see-pw-btn {
   cursor: pointer;
 }
 
-.see-pw-img,
-.see-pw-img-check {
+.see-pw-img {
   width: 24px;
   height: 24px;
   background-image: url(/images/ic_invisible-pw.png);
   position: absolute;
   top: 16px;
   right: 18px;
-}
+} */
 
+.login-btn,
 .signup-btn {
   color: var(--color-white);
   font-size: 20px;
@@ -97,8 +92,10 @@ input::placeholder {
   border-radius: 40px;
   width: 640px;
   height: 56px;
+  cursor: pointer;
 }
 
+.login-btn:hover,
 .signup-btn:hover {
   background-color: var(--color-blue);
 }
@@ -133,5 +130,45 @@ input::placeholder {
 }
 
 .link-to-signup {
-  color: #3182F6;
+  color: var(--color-solid-blue);
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  body {
+    padding: 0 16px;
+  }
+
+  .header-login-and-signup {
+    width: 198px;
+    height: 66px;
+  }
+
+  .header-login-and-signup-icon {
+    width: 51.76px;
+    height: auto;
+  }
+
+  .header-login-and-signup-title {
+    width: 133px;
+    height: auto;
+  }
+
+  .container-login-and-signup,
+  input,
+  .login-box,
+  .login-btn,
+  .signup-btn,
+  .easy-login-box {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .login-box {
+    gap: 10px;
+  }
+
+  .login-label {
+    font-size: 14px;
+    line-height: 16.71px;
+  }
 }
