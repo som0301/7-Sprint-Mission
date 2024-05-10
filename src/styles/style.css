@@ -156,8 +156,8 @@ footer {
   margin-right: 12px;
   flex-shrink: 0;
 }
-
-@media screen and (max-width: 744px) {
+/* Tablet size */
+@media screen and (max-width: 1199px) {
   header {
     margin: 10px 24px 9px 24px;
   }
@@ -166,8 +166,8 @@ footer {
     padding-right: 24px;
   }
 }
-
-@media screen and (max-width: 375px) {
+/* Mobile size */
+@media screen and (max-width: 767px) {
   header {
     margin: 10px 16px 9px 16px;
   }
