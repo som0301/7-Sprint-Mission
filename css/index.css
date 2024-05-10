@@ -1,0 +1,530 @@
+/* PC: 1200px ~ */
+body {
+  margin: 0 auto;
+  height: 3608px;
+  position: relative;
+}
+
+nav {
+  height: 70px;
+  border-bottom: 1px solid #DFDFDF;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: 0 200px;
+}
+
+.logo-and-login {
+  height: 51px;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  top: 10px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+.logo-and-login > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo_text {
+  font-family: 'ROKAF Sans';
+  font-weight: 700;
+  font-size: 25.63px;
+  color: #3692FF;
+  text-decoration: none;
+  margin-bottom: -3px;
+}
+
+.login-btn {
+  width: 128px;
+  min-width: 128px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  background-color: #3692FF;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+header {
+  width: 100%;
+  height: 540px;
+  background-image: url(../image/img_home_top.png);
+  background-repeat: no-repeat;
+  background-position: 80% bottom;
+  background-size: 55%;
+  position: absolute;
+  background-color: #CFE5FF;
+}
+
+.lookAround-btn {
+  width: 355px;
+  height: 60px;
+  top: 327px;
+  left: 358px;
+  border-radius: 45.5px;
+  background-color: #3692FF;
+  border-style: none;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.banner-txt, .bottom-img > p {
+  position: relative;
+  top: 120px;
+  color: #374151;
+  font-size: 40px; 
+  font-weight: 700; 
+  line-height: 56px; 
+  margin: 0 auto;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.bottom-img > p {
+  top: 214px;
+}
+
+.banner-txt > a {
+  height: 56px;
+}
+
+main {
+  position: relative;
+  top: 540px;
+}
+
+.container {
+  /* border: 1px solid #3692FF; */
+  margin: 0 auto;
+  max-width: 1200px; /* 최대너비 */
+  width: 100%;
+  margin: 0px auto;
+}
+
+.introduce {
+  height: 720px;
+  position: relative;
+  z-index: -9999;
+  display: flex;
+}
+
+.flexstart {
+  justify-content: flex-start;  
+}
+
+.flexend {
+  justify-content: flex-end;
+}
+
+.introduce > div {
+  height: 720px;
+}
+
+.introduce > div.section1, .introduce > div.section3 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 64px;
+  width: 955px;
+  height: 444px;
+  position: absolute;
+  top: 137.5px;
+}
+
+.section1 > img, .section2 > img, .section3 > img {
+  width: 588px;
+  height: 444px;
+}
+
+.section1 > div, .section2 > div, .section3 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.section1 > div, .section2 > div {
+  width: 303px;
+}
+
+.section3 > div {
+  width: 370px;
+}
+
+.section2 > div {
+  text-align: end;
+}
+
+.section3 .description {
+  width: 370px;
+}
+
+.introduce > div.section2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 64px;
+  height: 444px; 
+  position: absolute; 
+  top: 138px;
+}
+
+main > img {
+  /* width: 588px; */
+  height: 444px;
+}
+
+.main-top-word {
+  margin: 0;
+  color: #3692FF;
+  font-size: 18px; 
+  font-weight: 700; 
+  line-height: 25.2px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.main-center-word {
+  color: #374151;
+  font-size: 40px; 
+  font-weight: 700;
+  line-height: 56px;
+  word-spacing: 0.02em; /* 2% */
+  margin: 0;
+}
+
+.main-bottom-word {
+  margin: 0;
+  color: #374151;
+  font-size: 24px; 
+  font-weight: 500; 
+  line-height: 28.8px;
+  word-spacing: 0.08em; /* 8% */
+}
+
+.bottom-img {
+  width: 100%;
+  height: 540px;
+  position: absolute;
+  top: 2908px;
+  background-color: #CFE5FF;
+  background-image: url(../image/img_home_bottom.png);
+  background-repeat: no-repeat;
+  background-position: 80% bottom;
+  background-size: 55%;
+}
+
+.bottom-img > img {
+  /* width: 996px;  */
+  height: 540px; 
+  position: absolute;
+  left: 701px;
+}
+
+footer {
+  width: 100%;
+  height: 160px;
+  position: absolute;
+  top: 3448px;
+  bottom: 0px;
+  padding: 32px 200px 32px 200px;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  background-color: #111827;
+  color: #ffffff;
+}
+
+footer > div {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_codeit_info {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.copyright > p {
+  color: #9CA3AF;
+  margin: 0;
+}
+
+.info a {
+  color: #E5E7EB;
+  text-decoration: none;
+}
+
+.info {
+  display: flex;
+  gap: 30px;
+}
+
+.sns-icons {
+  font-size: 0; /* a태그 여백 제거 */
+  display: flex;
+  gap: 12px;
+}
+
+/* Tablet: 768px ~ 1199px */
+@media screen and (max-width: 1199px) {
+  nav {
+    padding: 0;
+  }
+
+  .logo-and-login {
+    padding: 12px 24px;
+  }
+
+  header {
+    height: 771px;
+    background-position: bottom;
+    background-size: 130%;
+  }
+
+  .banner-txt {
+    top: 84px;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* <br> 제거 */
+  .banner-txt br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+
+  .banner-txt > a > img {
+    height: 60px;
+  }
+
+  main {
+    top: 800px;
+    margin: 0 24px;
+  }
+
+  /* .flexstart {
+    display: flex;
+    justify-content: center;
+  } */
+
+  .introduce {
+    height: 1050px;
+  }
+
+  .flexend {
+    justify-content: flex-start;
+  }
+
+  .introduce > div.section1, .introduce > div.section2, .introduce > div.section3 {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .introduce > div.section2 {
+    justify-content: flex-start;
+  }
+
+  .section1 > img, .section2  img, .section3 > img {
+    width: 100%;
+    height: auto; /* 이미지 원본 비율 고정 */
+  }
+
+  .section1 > div, .section2 > div, .section3 > div {
+    display: block;
+    width: 100%;
+  }
+
+  .section2 > div {
+    order: 2;
+    text-align: right;
+  }
+
+  .section2 > img {
+    order: 1;
+  }
+
+  .main-top-word {
+    font-size: 18px;
+  }
+
+  .main-center-word {
+    font-size: 32px;
+    line-height: 44.8px;
+  }
+  
+  .section3 .main-center-word {
+    width: 120%;
+  }
+
+  /* <br> 제거 */
+  .main-center-word > br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+
+  .main-bottom-word {
+    font-size: 18px;
+    line-height: 21.6px;
+  }
+
+  .bottom-img {
+    height: 927px;
+    background-position: bottom;
+    background-size: 130%;
+    top: 4050px;
+  }
+
+  .bottom-img > p {
+    width: 295px;
+    top: 201px;
+    text-align: center;
+  }
+
+  footer {
+    top: 4900px;
+    padding: 32px 104px 64px 104px;
+  }
+
+  .footer_codeit_info {
+    display: flex;
+    gap: 24px;
+  }
+
+  .info {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+/* Mobile: 375px ~ 767px */
+@media screen and (max-width: 767px) {
+  main {
+    margin: 0 15.5px;
+  }
+
+  .container {
+    position: absolute;
+    top: -240px;
+  }
+
+  nav {
+    padding: 0;
+  }
+
+  .logo-and-login {
+    padding: 12px 16px;
+  }
+  
+  .image-logo {
+    display: none; /* 로고이미지 숨기기 */
+  }
+
+  header {
+    height: 540px;
+  }
+
+  .banner-txt {
+    top: 48px;
+  }
+
+  .banner-txt > p {
+    font-size: 32px;
+    line-height: 44.8px;
+  }
+
+  .banner-txt br {
+    display: inline-block;
+    content: normal;
+    padding: 0 2px;
+  }
+
+  .lookAround-btn {
+    width: 154px;
+    height: 48px;
+    border-radius: 24px;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19.09px;
+  }
+
+  .introduce {
+    height: 700px;
+  }
+
+  .main-top-word {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .main-center-word {
+    font-size: 24px;
+    line-height: 33.6px;
+  }
+
+  .main-bottom-word {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+
+  .bottom-img {
+    top: 2750px;
+  }
+
+  footer {
+    padding: 32px;
+    top: 3650px;
+  }
+
+  footer > div {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer_codeit_info {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+
+  .sns-icons {
+    display: flex;
+    gap: 12px;
+  }
+
+  .footer_codeit_info {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+}
