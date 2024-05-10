@@ -37,6 +37,7 @@ header {
   align-items: center;
   padding: 0 200px;
   background-color: var(--white);
+  border-bottom: 1px solid var(--gray-200);
 }
 
 footer {
