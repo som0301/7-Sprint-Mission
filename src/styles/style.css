@@ -5,6 +5,7 @@ header {
   display: flex;
   justify-content: space-between;
   margin: 10px 200px 9px 200px;
+  align-items: center;
 }
 .header__logo {
   width: 153px;
@@ -27,29 +28,34 @@ header {
 }
 main {
   background-color: #ffffff;
-  height: 2160px;
 }
 /* banner style */
 .banner {
   height: 540px;
   background-color: #cfe5ff;
-  padding-left: 360px;
-  padding-right: 223px;
-  display: flex;
+  /* display: flex; */
 }
 .banner__item-container {
   display: flex;
+  margin-left: 360px;
+  margin-right: 223px;
 }
 .banner__text-container {
   width: 357px;
   height: 200px;
+  width: 50%;
   font-size: 40px;
   font-weight: 700;
+  line-height: 56px;
   color: var(--gray700);
+  margin-top: 170px;
+  margin-bottom: 170px;
+}
+.banner__text-container p {
+  margin-bottom: 32px;
+  flex-shrink: 0;
 }
 .banner__img-top {
-  width: 996px;
-  height: 447px;
   margin-top: 93px;
 }
 .banner__img-bottom {
@@ -72,14 +78,59 @@ main {
   /* 화면크기 축소될 때 글자깨짐 방지 */
   flex-shrink: 0;
 }
+/* section style */
+section {
+  padding-left: 360px;
+  padding-right: 360px;
+  height: 100%;
+}
+.section__container {
+  padding: 138px 0px;
+}
+.section__container:nth-child(2) {
+  text-align: right;
+}
+.section__item-container {
+  display: flex;
+  gap: 5%;
+  justify-content: center;
+}
+.section__text-container {
+  padding-top: 106.5px;
+  flex-shrink: 0;
+}
+.section__text-container h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 25.2px;
+  margin-bottom: 12px;
+}
+.section__text-container h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--gray700);
+  line-height: 56px;
+  margin-bottom: 24px;
+}
+.section__text-container p {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--gray700);
+  line-height: 28.8px;
+}
+.section__img {
+  width: 588px;
+  height: 444px;
+}
 /* footer style */
 footer {
+  display: flex;
+  justify-content: space-between;
   height: 160px;
   background-color: var(--gray900);
   font-size: 16px;
   font-weight: 400;
-  display: flex;
-  justify-content: space-between;
   padding-top: 32px;
   padding-left: 200px;
   padding-right: 200px;
@@ -106,7 +157,7 @@ footer {
   flex-shrink: 0;
 }
 
-/* @media screen and (min-width: 375px) {
+@media screen and (max-width: 744px) {
   header {
     margin: 10px 24px 9px 24px;
   }
@@ -114,4 +165,10 @@ footer {
     padding-left: 24px;
     padding-right: 24px;
   }
-} */
+}
+
+@media screen and (max-width: 375px) {
+  header {
+    margin: 10px 16px 9px 16px;
+  }
+}
