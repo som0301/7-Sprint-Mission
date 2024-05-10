@@ -180,6 +180,6 @@ function validateChangeButton() {
     }
     // 실패
     else {
-
+        submitButton.classList.remove('valid-button');
     }
 }
