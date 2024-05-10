@@ -54,3 +54,16 @@ button:hover{
     cursor: default;
     background-color: #9CA3AF;
 }
+
+@media (max-width: 767px){
+    .btn-large{
+        height: 48px;
+        width: 50%;
+        font-size: 16px;
+        padding: 16px 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
