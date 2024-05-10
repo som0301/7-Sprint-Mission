@@ -21,6 +21,8 @@ body {
     height: 70px;
     padding: 0 200px;
     margin: 0 auto;
+    top: 0;
+    left: 0;
     background: #fff;
     border-bottom: 1px solid #dfdfdf;
 }

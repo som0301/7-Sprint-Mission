@@ -21,32 +21,33 @@
     </header>
     <main class="login__container">
         <form class="login__form">
-            <div class="form__wrapper">
-                <label class="form__label">
-                    <p class="label__name">이메일</p>
-                    <input class="label__input" type="email" name="email" placeholder="이메일을 입력해주세요" autocomplete="email" required>
-                </label>
+            <div class="form__label">
+                <label class="label__name" for="email">이메일</label>
+                <input class="label__input" id="email" type="email" name="email" placeholder="이메일을 입력해주세요"
+                    autocomplete="email" required>
             </div>
-            <div class="form__wrapper">
-                <label class="form__label">
-                    <p class="label__name">닉네임</p>
-                    <input class="label__input" type="text" name="nickname" placeholder="닉네임을 입력해주세요" autocomplete="email" required>
-                </label>
+            <div class="form__label">
+                <label class="label__name" for="nickname">닉네임</label>
+                <input class="label__input" id="nickname" type="text" name="nickname" placeholder="닉네임을 입력해주세요"
+                    autocomplete="nicknmae">
             </div>
-            <div class="form__wrapper">
-                <label class="form__label">
-                    <p class="label__name">비밀번호</p>
-                    <input class="label__input" type="password" name="password" placeholder="비밀번호를 입력해주세요" required>
-                    <img class="password__blind-logo" src="../img/icon/btn__visibility-off.svg" alt="비밀번호숨기거나보이기" width="24"
+            <div class="form__label">
+                <label class="label__name" for="password">비밀번호</label>
+                <div class="input__wrapper">
+                    <input class="label__input" id="password" type="password" name="password" placeholder="비밀번호를 입력해주세요"
+                        autocomplete="new-password" required>
+                    <img class="password__blind-logo" src="../img/icon/btn__visibility-off.svg" alt="비밀번호보기" width="24"
                         height="24" />
-                </label>
+                </div>
             </div>
-            <div class="form__wrapper">
-                <label class="form__label">
-                    <p class="label__name">비밀번호 확인</p>
-                    <input class="label__input" type="password" name="password-check" placeholder="비밀번호를 다시 한 번 입력해주세요" required>
-                    <img class="password__blind-logo" src="../img/icon/btn__visibility-off.svg" alt="비밀번호숨기거나보이기" width="24" height="24" />
-                </label>
+            <div class="form__label">
+                <label class="label__name" for="password-repeat">비밀번호 확인</label>
+                <div class="input__wrapper">
+                    <input class="label__input" id="password-repeat" type="password" name="password-repeat"
+                        placeholder="비밀번호를 다시 한 번 입력해주세요" autocomplete="new-password" required>
+                    <img class="password__blind-logo" src="../img/icon/btn__visibility-off.svg" alt="비밀번호보기" width="24"
+                        height="24" />
+                </div>
             </div>
             <button class="submit-btn" type="submit">회원가입</button>
             <div class="social__wrapper">
