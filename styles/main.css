@@ -210,3 +210,55 @@ body {
 .social__logo {
     display: block;
 }
+
+
+@media (min-width: 1200px) {
+    .header {
+        padding: 0 200px;
+    }
+
+    .top-banner,
+    .bottom-banner {
+        min-width: 1920px;
+        height: 540px;
+        background-position: 701px bottom;
+    }
+
+    .banner__container {
+        margin: 0 360px;
+    }
+
+    .top-banner__wrapper {}
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .header {
+        padding: 0 24px;
+    }
+
+    .top-banner,
+    .bottom-banner {
+        min-width: 1920px;
+        height: 771px;
+        background-position: bottom;
+    }
+
+    .banner__container {
+        margin: 0 116px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+    .header {
+        padding: 0 16px;
+    }
+
+    .top-banner,
+    .bottom-banner {
+        min-width: 375px;
+    }
+
+    .banner__container {
+        margin: 0 70px;
+    }
+} 
