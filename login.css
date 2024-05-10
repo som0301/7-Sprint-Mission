@@ -5,13 +5,14 @@
     font-family: Pretendard;
 }
 
-/*
-    label input 간격 16
-*/
+body{
+    display: flex;
+    justify-content: center;
+}
 
 /* 기본 설정 */
 .main{
-    margin: 60px auto 0;
+    margin-top: 60px;
     width: 640px;
 }
 
@@ -115,4 +116,24 @@ input::placeholder {
 
 .join, .join:visited{
     color: #3182F6;
+}
+
+@media (max-width:1199px){
+    .main{
+        max-width: 640px;
+        width: 70%;
+    }
+}
+
+@media (max-width:767px){
+    .login-logo{
+        width: 198px;
+        height: 66px;
+    }
+
+    .main{
+        max-width: 400px;
+        width: 100%;
+        margin: 24px 16px 0;
+    }
 }
