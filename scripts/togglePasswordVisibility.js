@@ -13,14 +13,7 @@ export function handlePasswordVisibilityToggle(e) {
     onImage.classList.toggle("visible-maker");
     offImage.classList.toggle("hidden-maker");
 
-    // 비밀번호 글자 보임
-    if( onImage.classList.contains("visible-maker") ) {
-        inputPassword.type = "text";
-
-    }
-    // 다시 비밀번호 글자 안보임
-    else {
-        inputPassword.type = "password";
-    }
+    // 비밀번호 글자 보이기/안보이기 설정
+    inputPassword.type = onImage.classList.contains("visible-maker") ? "text" : "password";
 }
 

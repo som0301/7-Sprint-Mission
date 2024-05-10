@@ -98,6 +98,8 @@ input img {
     width: auto;
 }
 
+
+
 /* 비밀번호 안감은 눈은 기본 안보이기 */
 .visibility-on {
     display: none;
@@ -114,6 +116,7 @@ input img {
 }
 
 /* 우선 순위 때문에 코드 맨 아래에 위치해야함 */
+
 /* 다시 보이기 */
 .visible-maker {
     display: inline-block;  
@@ -122,6 +125,11 @@ input img {
 /* 안 보이기 */
 .hidden-maker {
     display: none;
+}
+
+/*  유효성 검사 버튼*/
+.valid-button {
+    background-color: var(--activate-button-blue);
 }
 
 /* Tablet: 768px 이상 ~ 1199px 이하 */

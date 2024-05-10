@@ -104,3 +104,23 @@ h1 {
   border-radius: 999px;
   padding: 16px 124px;
 }
+
+.acc-button {
+    background-color: var(--disable-button-gray);
+}
+
+.acc-button:focus {
+    background-color: var(--disable-button-gray);
+}
+
+.acc-button:hover {
+    background-color: var(--disable-button-gray);
+}
+
+.valid-button.acc-button:focus {
+    background-color: var(--focus-blue);
+}
+
+.valid-button.acc-button:hover {
+    background-color: var(--hover-blue);
+}
