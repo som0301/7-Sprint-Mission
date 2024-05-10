@@ -16,7 +16,7 @@
   box-sizing: border-box;
 }
 
-body {
+body, button {
   font-family: 'Pretendard-Regular';
   margin: 0;
 }

@@ -64,13 +64,20 @@ header {
   background-color: #CFE5FF;
 }
 
-/* header > img {
-  position: relative;
-  width: 996px; 
-  height: 447px; 
-  top: 93px; 
-  left: 701px;
-} */
+.lookAround-btn {
+  width: 355px;
+  height: 60px;
+  top: 327px;
+  left: 358px;
+  border-radius: 45.5px;
+  background-color: #3692FF;
+  border-style: none;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: #FFFFFF;
+}
 
 .banner-txt, .bottom-img > p {
   position: relative;
@@ -173,17 +180,6 @@ main {
   top: 138px;
 }
 
-/* .introduce > div.section3 {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 64px;
-  height: 444px;
-  position: relative;
-  top: 138px;
-  left: 360px;
-} */
-
 main > img {
   /* width: 588px; */
   height: 444px;
@@ -261,7 +257,13 @@ footer > div {
   justify-content: space-between;
 }
 
-.copyright {
+.footer_codeit_info {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.copyright > p {
   color: #9CA3AF;
   margin: 0;
 }
@@ -276,8 +278,250 @@ footer > div {
   gap: 30px;
 }
 
-.sns-icon {
+.sns-icons {
   font-size: 0; /* a태그 여백 제거 */
   display: flex;
   gap: 12px;
+}
+
+/* Tablet: 768px ~ 1199px */
+@media screen and (max-width: 1199px) {
+  nav {
+    padding: 0;
+  }
+
+  .logo-and-login {
+    padding: 12px 24px;
+  }
+
+  header {
+    height: 771px;
+    background-position: bottom;
+    background-size: 130%;
+  }
+
+  .banner-txt {
+    top: 84px;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* <br> 제거 */
+  .banner-txt br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+
+  .banner-txt > a > img {
+    height: 60px;
+  }
+
+  main {
+    top: 800px;
+    margin: 0 24px;
+  }
+
+  /* .flexstart {
+    display: flex;
+    justify-content: center;
+  } */
+
+  .introduce {
+    height: 1050px;
+  }
+
+  .flexend {
+    justify-content: flex-start;
+  }
+
+  .introduce > div.section1, .introduce > div.section2, .introduce > div.section3 {
+    display: flex;
+    flex-direction: column;
+    position: static;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .introduce > div.section2 {
+    justify-content: flex-start;
+  }
+
+  .section1 > img, .section2  img, .section3 > img {
+    width: 100%;
+    height: auto; /* 이미지 원본 비율 고정 */
+  }
+
+  .section1 > div, .section2 > div, .section3 > div {
+    display: block;
+    width: 100%;
+  }
+
+  .section2 > div {
+    order: 2;
+    text-align: right;
+  }
+
+  .section2 > img {
+    order: 1;
+  }
+
+  .main-top-word {
+    font-size: 18px;
+  }
+
+  .main-center-word {
+    font-size: 32px;
+    line-height: 44.8px;
+  }
+  
+  .section3 .main-center-word {
+    width: 120%;
+  }
+
+  /* <br> 제거 */
+  .main-center-word > br {
+    display: inline-block;
+    content: " ";
+    padding: 0 2px;
+  }
+
+  .main-bottom-word {
+    font-size: 18px;
+    line-height: 21.6px;
+  }
+
+  .bottom-img {
+    height: 927px;
+    background-position: bottom;
+    background-size: 130%;
+    top: 4050px;
+  }
+
+  .bottom-img > p {
+    width: 295px;
+    top: 201px;
+    text-align: center;
+  }
+
+  footer {
+    top: 4900px;
+    padding: 32px 104px 64px 104px;
+  }
+
+  .footer_codeit_info {
+    display: flex;
+    gap: 24px;
+  }
+
+  .info {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+/* Mobile: 375px ~ 767px */
+@media screen and (max-width: 767px) {
+  main {
+    margin: 0 15.5px;
+  }
+
+  .container {
+    position: absolute;
+    top: -240px;
+  }
+
+  nav {
+    padding: 0;
+  }
+
+  .logo-and-login {
+    padding: 12px 16px;
+  }
+  
+  .image-logo {
+    display: none; /* 로고이미지 숨기기 */
+  }
+
+  header {
+    height: 540px;
+  }
+
+  .banner-txt {
+    top: 48px;
+  }
+
+  .banner-txt > p {
+    font-size: 32px;
+    line-height: 44.8px;
+  }
+
+  .banner-txt br {
+    display: inline-block;
+    content: normal;
+    padding: 0 2px;
+  }
+
+  .lookAround-btn {
+    width: 154px;
+    height: 48px;
+    border-radius: 24px;
+    padding: 16px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19.09px;
+  }
+
+  .introduce {
+    height: 700px;
+  }
+
+  .main-top-word {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .main-center-word {
+    font-size: 24px;
+    line-height: 33.6px;
+  }
+
+  .main-bottom-word {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+
+  .bottom-img {
+    top: 2750px;
+  }
+
+  footer {
+    padding: 32px;
+    top: 3650px;
+  }
+
+  footer > div {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .footer_codeit_info {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+
+  .sns-icons {
+    display: flex;
+    gap: 12px;
+  }
+
+  .footer_codeit_info {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
 }

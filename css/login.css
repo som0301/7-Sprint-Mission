@@ -113,6 +113,7 @@ input:focus {
   line-height: 24px;
   text-align: center;
   color: #FFFFFF;
+  user-select: none; /* 버튼 속 텍스트 선택 방지 */
 }
 
 /* 간편로그인하기 <div> */
@@ -141,18 +142,17 @@ input:focus {
 }
 
 /* 구글, 카카오 아이콘 <div> */
-.sns_icon {
+.sns_icons {
   width: 100px;
   height: 42px;
-  /* top: 16px; */
-  left: 517px;
+  right: 23px;
   gap: 16px;
   position: absolute;
   display: flex;
 }
 
 /* 구글 아이콘 */
-.sns_icon > img {
+.sns_icons > img {
   width: 42px;
   height: 42px;
 }
@@ -183,4 +183,45 @@ input:focus {
 .signup {
   width: 52px;
   color: #3182F6;
+}
+
+/* Tablet: 768px ~ 1199px */
+@media screen and (max-width: 1199px) {
+  body {
+    margin: 52px;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+
+/* Mobile: 375px ~ 767px */
+@media screen and (max-width: 767px) {
+  body {
+    margin: 16px;
+  }
+
+  /* 상단 로고영역 */
+  .logo {
+    width: 198px;  /* 원래의 50% */
+    height: 66px;  /* 원래의 50% */
+    gap: 13px;
+  }
+
+  .logo_image {
+    width: 51.765px;  /* 원래의 50% */
+    height: 51.94px;  /* 원래의 50% */
+    border-radius: 0;
+  }
+
+  .logo_text {
+    font-size: 33.17px;  /* 원래의 50% */
+    height: 45px;  /* 원래의 50% */
+  }
+
+  form {
+    width: 100%;
+    max-width: 400px;
+  }
 }
