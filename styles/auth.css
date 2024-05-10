@@ -1,20 +1,16 @@
 /* sign-in */
-.signin-container {
+.auth-container {
   max-width: 640px;
   margin: 0 auto;
 }
-#singin-logo {
+#auth-logo {
   width: 396px;
 }
 
-.logo-box {
+.auth-logo-box {
   display: block;
   text-align: center;
   margin: 60px 0 40px 0;
-}
-
-#singin-logo {
-  width: 153px;
 }
 
 .input-box {
