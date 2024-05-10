@@ -13,7 +13,6 @@ function handleValidationError(e, isChecked) {
 
     e.style.border = isChecked ? "1px solid red" : "none";
     isChecked ? element.add("visible-maker") : element.remove("visible-maker");
-
 }
 
 // 공백 제거
@@ -114,9 +113,9 @@ function validatePasswordConf() {
         if ( validatePasswordLength (inputpassword.value) ) {
             
             // 두 비밀번호 일치 확인
-            return checkPasswordMatch(inputpasswordConf);;
+            return checkPasswordMatch(inputpasswordConf);
         }
-        // 비밀번호 길이라 8자 이하라면 재확인요청
+        // 비밀번호 길이가 8자 이하라면 재확인요청
         else {
             handleValidationError(inputpasswordConf, true);
             eText.textContent = "조건을 먼저 일치시켜 주세요.";
@@ -145,13 +144,13 @@ export function validateForm(e) {
     const formId = e.currentTarget.id;
 
     // login 페이지 유효성 성공
-    if( formId == 'login' && (isEmailValid && isPasswordValid) ) {
+    if( formId === 'login' && (isEmailValid && isPasswordValid) ) {
         
         const destinationURL = '../items.html';
         window.location.href = destinationURL;
     }
     // signup 페이지 유효성 성공
-    else if( formId == 'signup' && (isEmailValid && isPasswordValid && isNicknameValid && isPasswordConfirmationValid) ) {
+    else if( formId === 'signup' && (isEmailValid && isPasswordValid && isNicknameValid && isPasswordConfirmationValid) ) {
         const destinationURL = '../signin.html';
         window.location.href = destinationURL;
 
@@ -169,12 +168,12 @@ function validateChangeButton() {
     const submitButton = document.querySelector('.acc-button');
 
     // login 페이지 유효성 성공
-    if( formId.id == 'login' && (isEmailValid && isPasswordValid) ) {
+    if( formId.id === 'login' && (isEmailValid && isPasswordValid) ) {
         
         submitButton.classList.add('valid-button');
     }
     // signup 페이지 유효성 성공
-    else if( formId.id == 'signup' && (isEmailValid && isPasswordValid && isNicknameValid && isPasswordConfirmationValid) ) {
+    else if( formId.id === 'signup' && (isEmailValid && isPasswordValid && isNicknameValid && isPasswordConfirmationValid) ) {
 
         submitButton.classList.add('valid-button');
     }
