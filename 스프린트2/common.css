@@ -1,3 +1,17 @@
+:root {
+  --gray900: #111827;
+  --gray800: #1f2937;
+  --gray700: #374151;
+  --gray600: #4b5563;
+  --gray500: #6b7280;
+  --gray400: #9ca3af;
+  --gray200: #e5e7eb;
+  --gray100: #f3f4f6;
+  --gray50: #f9fafb;
+  --blue: #3692ff;
+}
+/*나중에 메인에 추가할까?*/
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,12 +24,13 @@ body {
   align-items: center;
 }
 
-header {
+a {
   margin-top: 60px;
   margin-bottom: 40px;
 }
 
-content {
+content,
+form {
   display: flex;
   flex-direction: column;
   width: 640px;
@@ -25,52 +40,59 @@ content {
 .input_please {
   height: 93px;
   position: relative;
-  background-color: rgb(236, 202, 255);
 }
 
 .input_please label {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.5px;
-  background-color: rgb(140, 190, 240);
+  display: flex;
 }
 
 input {
   display: flex;
+  justify-content: space-between;
   width: 100%;
   height: 56px;
   padding-left: 23px;
   border-radius: 12px;
   position: absolute;
   bottom: 0;
-  background-color: #f3f4f6;
   border: none;
+  background-color: var(--gray100);
 }
 
 input::placeholder {
-  color: #9ca3af;
+  color: var(--gray400);
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 }
 
 input:focus {
-  outline: 2px ridge #3692ff;
+  outline: 2px ridge var(--blue);
+}
+
+.no_eye {
+  width: 24px;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
 }
 
 button {
   height: 56px;
   border-radius: 40px;
   border: none;
-  background-color: #9ca3af;
-  color: #ffffff;
+  color: white;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
+  cursor: pointer;
+  background-color: var(--gray400);
 }
 
 .simple {
-  background-color: #91e18c;
   padding: 0 23px;
   display: flex;
   justify-content: space-between;
@@ -80,4 +102,25 @@ button {
   color: #1f2937;
   font-weight: 500;
   font-size: 16px;
+  background-color: #e6f2ff;
+}
+
+.simple_img {
+  height: 42px;
+}
+
+.simple img {
+  height: 100%;
+  margin-left: 16px;
+}
+
+.question {
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 17.9px;
+}
+
+.question span {
+  color: #3182f6;
 }

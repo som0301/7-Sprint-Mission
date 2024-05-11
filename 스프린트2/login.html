@@ -5,33 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login_style.css" />
     <link rel="stylesheet" href="common.css" />
-    <title>판다마켓_로그인</title>
+    <title>판다마켓 - 로그인</title>
   </head>
 
   <body>
-    <header>
-      <a href="/">
-        <img src="/스프린트2/img/logo.png" class="logo" />
-      </a>
-    </header>
+    <a href="/">
+      <img src="/스프린트2/img/logo.png" class="logo" />
+    </a>
+
     <content>
-      <div class="input_please">
-        <label
-          >이메일
-          <input
-            name="email"
-            type="email"
-            placeholder="이메일을 입력해주세요"
-            autocomplete="email"
-          />
-        </label>
+      <form>
+        <div class="input_please">
+          <label
+            >이메일
+            <input
+              name="email"
+              type="email"
+              placeholder="이메일을 입력해주세요"
+              autocomplete="email"
+            />
+          </label>
+        </div>
+
+        <div class="input_please password">
+          <label
+            >비밀번호
+            <input
+              name="password"
+              type="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <img src="/스프린트2/img/eye.png" class="no_eye" />
+          </label>
+        </div>
+
+        <button type="submit">로그인</button>
+      </form>
+
+      <div class="simple">
+        간편 로그인하기
+        <div class="simple_img">
+          <a href="https://www.google.com/"
+            ><img src="/스프린트2/img/google.png"
+          /></a>
+          <a href="https://www.kakaocorp.com/page/"
+            ><img src="/스프린트2/img/kakao.png"
+          /></a>
+        </div>
       </div>
 
-      <button type="submit">로그인</button>
-
-      <div class="simple">간편 로그인하기</div>
-
-      <div class="re">판다마켓이 처음이신가요?</div>
+      <div class="question">
+        판다마켓이 처음이신가요? <a href="/signup">회원가입</a>
+      </div>
     </content>
   </body>
 </html>

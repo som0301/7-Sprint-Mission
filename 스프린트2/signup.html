@@ -3,7 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>판다마켓_회원가입</title>
+    <link rel="stylesheet" href="login_style.css" />
+    <link rel="stylesheet" href="common.css" />
+    <title>판다마켓 - 회원가입</title>
   </head>
-  <body></body>
+
+  <body>
+    <a href="/">
+      <img src="/스프린트2/img/logo.png" class="logo" />
+    </a>
+
+    <content>
+      <form>
+        <div class="input_please">
+          <label
+            >이메일
+            <input
+              name="email"
+              type="email"
+              placeholder="이메일을 입력해주세요"
+              autocomplete="email"
+            />
+          </label>
+        </div>
+
+        <div class="input_please">
+          <label
+            >닉네임
+            <input
+              name="email"
+              type="email"
+              placeholder="닉네임을 입력해주세요"
+              autocomplete="email"
+            />
+          </label>
+        </div>
+
+        <div class="input_please password">
+          <label
+            >비밀번호
+            <input
+              name="password"
+              type="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <img src="/스프린트2/img/eye.png" class="no_eye" />
+          </label>
+        </div>
+
+        <div class="input_please password">
+          <label
+            >비밀번호 확인
+            <input
+              name="password"
+              type="password"
+              placeholder="비밀번호를 다시 한 번 입력해주세요"
+            />
+            <img src="/스프린트2/img/eye.png" class="no_eye" />
+          </label>
+        </div>
+
+        <button type="submit">로그인</button>
+      </form>
+
+      <div class="simple">
+        간편 로그인하기
+        <div class="simple_img">
+          <a href="https://www.google.com/"
+            ><img src="/스프린트2/img/google.png"
+          /></a>
+          <a href="https://www.kakaocorp.com/page/"
+            ><img src="/스프린트2/img/kakao.png"
+          /></a>
+        </div>
+      </div>
+
+      <div class="question">이미 회원이신가요? <a href="/login">로그인</a></div>
+    </content>
+  </body>
 </html>
