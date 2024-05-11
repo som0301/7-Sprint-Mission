@@ -1,12 +1,12 @@
-* {
+  *{
     box-sizing: border-box;
   }
-
-html{
+  
+  html{
   font-size: 62.5%;
-}
-
-
+  }
+  
+  
   :root{
     --gray900: #111827;
     --gray800: #1F2937;
@@ -21,85 +21,8 @@ html{
     --panda-skyblue: #CFE5FF;
     --panda-red: #F74747;
   }
-
-  .login-logo{
-    margin: 0 auto;
-    margin-top: 60px;
-  }
   
-  .divide{
-    margin-top: 0;
-    font-size: 0;
-    text-align: left;
-    margin-bottom: 2.4rem;
-  }
-
-  .input-name{
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin: 0;
-    margin-bottom: 1.6rem;
-  }
-
-  #login-box{
-    margin: 0 auto;
-    margin-top: 24px;
-    width: 640px;
-  }
-  .for-btn_visibility{
-    position: relative;
-  }
-
-  .input-box{
-    background-color: var(--gray100);
-    width: 640px;
-    height: 56px;
-    border-width: 0;
-    border-radius: 12px;
-    padding: 16px 24px;
-  }
-
-  .for-btn_visibility img{
-    position: absolute;
-    top: 16px;
-    right: 16px;
-  }
-
-  input:focus {
-    outline: none; /* 포커스 효과의 기본 테두리 제거 */
-    border: 1px solid var(--panda-blue); /* 포커스가 발생했을 때의 테두리 색상 지정 */
-}
-
-  .divide .btn{
-    width: 100%;
-    background-color: var(--gray400);
-  }
-
-  .divide .btn:hover{
-    background-color: var(--panda-blue);
-  }
-
-  .help-login{
-    display: flex;
-    justify-content: space-between;
-    padding: 2.3rem;
-    border-radius: 0.8rem;
-    align-items: center;
-    height: 7.4rem;
-    background-color: #E6F2FF;
-    font-size: 1.6rem;
-  }
-
-  .icons{
-    display: flex;
-    gap: 1.6rem;
-    font-size: 0;
-}
-
-  #help-signup{
-    font-size: 1.5rem;
-  }
-
+  
   body {
     margin: 0;
     font-family: Pretendard;
@@ -108,11 +31,15 @@ html{
     color: #374151;
     text-align: center;
   }
-
+  
   .header{
     width: 100%;
   }
 
+  h1{
+    line-height: 45px;
+  }
+  
   .nav{
     position: sticky;
     top: 0;
@@ -125,9 +52,18 @@ html{
     width: 100%;
     height: 70px;
     line-height: 0;
-}
+  }
 
-.btn-login{
+  .logo{
+    display: flex;
+    align-items: center;
+  }
+
+  .panda{
+    display: none;
+  }
+  
+  .btn-login{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -138,8 +74,8 @@ html{
   text-decoration: none;
   border-radius: 8px;
   font-size: 16px;
-}
-
+  }
+  
   .banner{ 
     display: flex;
     background: var(--panda-skyblue);
@@ -147,51 +83,31 @@ html{
     align-items: center;
     justify-content: center;
     border-top: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
     flex-wrap: wrap;
     overflow: hidden;
+    gap: 55px;
   }
-
+  
   #banner-content{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 240px;
-    text-align: center;
   }
-
+  
   #banner-content h1{
     font-size: 32px;
     margin-top: 48px;
   }
-
-  #banner-content a{
-    font-size: 16px;
-  }
-
+  
   .banner-img-top{
     width: 170%;
   }
-
+  
   .banner-img-bottom{
     width: 130%;
   }
-
-  .text{ 
-    font-family: Pretendard;
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 2.9rem;
-    letter-spacing: 0.08em;
-  }
-
-  .section h1{
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 56px;
-    margin: 0;
-  }
-
+  
   .btn{
     display: flex;
     justify-content: center;
@@ -201,11 +117,12 @@ html{
     text-decoration: none;
     width: 154px;
     height: 48px;
+    border: none;
     border-radius: 40px;
-    font-size: 20px;
     font-weight: 600;
+    font-size: 16px;
   }
-
+  
   .container {
     display: flex;
     flex-direction: column;
@@ -213,8 +130,11 @@ html{
     justify-content: center;
     margin: 0 auto;
     padding: 25px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    gap: 60px;
   }
-
+  
   .section{
     display: flex;
     align-items: center;
@@ -223,79 +143,250 @@ html{
     font-size: 24px;
     max-width: 1200px;
   }
+  
   .section * {
-    width: 0px;
     flex-grow: 1;
     min-width: 375px;
   }
 
+  .section span{
+    display: inline-block;
+    min-width: initial;
+  }
+
+  .section img{
+    width: 100%;
+  }
+  
+  .blue-text{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--panda-blue);
+    margin-bottom: 0;
+  }
+  
+  .text{ 
+    font-family: Pretendard;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 2.9rem;
+    letter-spacing: 0.08em;
+    margin: 0;
+  }
+  
+  .section h1{
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 56px;
+    margin: 0;
+  }
+  
   .odd{
     text-align: left;
   }
-
+  
   .even{
     text-align: right;
     flex-direction: row-reverse;
   }
-
+  
   .even div {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
     }
 
-  .blue-text{
-    font-size: 18px;
-    font-weight: 700px;
-    color: var(--panda-blue);
-  }
+    .banner-bottom{ 
+      display: flex;
+      background: var(--panda-skyblue);
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid #dfdfdf;
+      flex-wrap: wrap;
+      overflow: hidden;
+      gap: 55px;
+      padding-top: 72px;
+    }
 
+    .banner-bottom h1{
+      margin: 0;    
+    }
+  
   .bottom{
     display: flex;
+    justify-content: center;
     background: var(--gray900);
     width: 100%;
     height: 160px;
-    justify-content: space;
     font-family: Pretendard;
     font-size: 16px;
     font-weight: 400;
-    line-height: 19.09px;
+    line-height: 19px;
     padding: 32px;
+    text-align: center;
   }
-
+  
   .bottom-detail{
     color: var(--gray400);
     display: flex;
+    justify-content: space-between;
     max-width: 1520px;
     height: 20px;
     width: 100%;
-    flex-wrap: wrap;
   }
 
-  .bottom-detail-mid{
+  .bottom-detail-mobile{
+    color: var(--gray400);
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+    width: 100%;
+  }
+  
+  .l-detail{
+    display: flex;
+    flex-direction: column;
+    height: 96px;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  .bottom-detail-faq{
     color: var(--gray200);
     display: flex;
     gap: 30px;
   }
-
-  .bottom-detail-right{
+  
+  .bottom-detail-icon{
     display: flex;
     gap: 12px;
   }
-
-  .bottom-detail div:nth-child(1){
-    order: 3;
-  }
-
+  
   .link{
     text-decoration: none;
     color: inherit;
   }
 
-  /* 750px 이하일 때의 스타일 */
-@media screen and (max-width: 1400px) {
-  .content-text {
-    min-width: 500px;
-    max-width: none;
+  .bottom-detail-mobile {
+    display: flex;
+}
+
+.bottom-detail {
+    display: none;
+}
+
+@media (min-width: 768px) {
+  .nav{
+    padding-left: 24px;
+    padding-right: 24px;
   }
+
+  .panda{
+    display: block;
+  }
+
+  .banner{
+    gap: 100px;
+  }
+
+  #banner-content{
+    width: auto;
+  }
+
+  #banner-content h1{
+    font-size: 40px;
+    margin-top: 84px;
+  }
+
+  .btn{
+    width: 355px;
+    height: 60px;
+    font-size: 20px;
+  }
+  
+  .banner-img-top{
+    width: auto;
+  }
+  
+  .banner-img-bottom{
+    width: auto;
+  }
+
+  .container{
+    margin-top: 0;
+  }
+
+  .blue-text{
+    font-size: 18px;
+  }
+
+  .section h1{
+    font-size: 32px;
+  }
+
+  .bottom-detail-mobile {
+    display: none;
+}
+
+.bottom-detail {
+    display: flex;
+}
+
+}
+
+@media (min-width: 1200px) {
+  .nav{
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .banner{
+    gap: 0;
+  }
+
+  #banner-content{
+    width: 355px;
+  }
+  
+  #banner-content h1{
+    margin-top: 0;
+    text-align: left;
+  }
+
+  .banner-img-top{
+    margin-top: 93px;
+  }
+  .container {
+    gap: 276px;
+    padding: 0;
+    margin-top: 138px;
+    margin-bottom: 277px;
+  }
+
+  .section{
+    gap: 64px;
+  }
+
+  .section *{
+    flex: 1;
+  }
+
+  .section h1{
+    font-size: 40px;
+    width: 240px;
+  }
+
+  .section img{ /*이미지의 크기를 키우고 싶었으나 원하는대로 동작하지 않음.*/
+    width: 588px;
+  }
+
+  .text{
+    font-size: 24px;
+  }
+
+  .banner-bottom{ 
+    padding-top: 0;
+  }
+
 }
