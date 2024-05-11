@@ -4,13 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="login_style.css" />
+    <link rel="stylesheet" href="common.css" />
     <title>판다마켓_로그인</title>
   </head>
+
   <body>
-    <img src="/스프린트2/img/logo.png" class="re" />
-    <div class="re"></div>
-    <div class="re">로그인</div>
-    <div class="re">간편 로그인하기</div>
-    <div class="re">판다마켓이 처음이신가요?</div>
+    <header>
+      <a href="/">
+        <img src="/스프린트2/img/logo.png" class="logo" />
+      </a>
+    </header>
+    <content>
+      <div class="input_please">
+        <label
+          >이메일
+          <input
+            name="email"
+            type="email"
+            placeholder="이메일을 입력해주세요"
+            autocomplete="email"
+          />
+        </label>
+      </div>
+
+      <button type="submit">로그인</button>
+
+      <div class="simple">간편 로그인하기</div>
+
+      <div class="re">판다마켓이 처음이신가요?</div>
+    </content>
   </body>
 </html>

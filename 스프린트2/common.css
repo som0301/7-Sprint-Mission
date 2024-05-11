@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+content {
+  display: flex;
+  flex-direction: column;
+  width: 640px;
+  gap: 24px;
+}
+
+.input_please {
+  height: 93px;
+  position: relative;
+  background-color: rgb(236, 202, 255);
+}
+
+.input_please label {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.5px;
+  background-color: rgb(140, 190, 240);
+}
+
+input {
+  display: flex;
+  width: 100%;
+  height: 56px;
+  padding-left: 23px;
+  border-radius: 12px;
+  position: absolute;
+  bottom: 0;
+  background-color: #f3f4f6;
+  border: none;
+}
+
+input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+input:focus {
+  outline: 2px ridge #3692ff;
+}
+
+button {
+  height: 56px;
+  border-radius: 40px;
+  border: none;
+  background-color: #9ca3af;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.simple {
+  background-color: #91e18c;
+  padding: 0 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 74px;
+  border-radius: 8px;
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 16px;
+}
