@@ -7,3 +7,8 @@
 a {
     text-decoration: none;
 }
+
+img {
+    display: block;
+    vertical-align: top;
+}
