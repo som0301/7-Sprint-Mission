@@ -1,13 +1,12 @@
-header .logo {
-  width: 153px;
-}
-
 .button {
   background-color: var(--blue);
   color: var(--white);
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+#button-small {
   font-size: 16px;
   font-weight: 600;
   border-radius: 8px;
@@ -23,7 +22,7 @@ header .logo {
 }
 
 #banner-top {
-  background-image: url(/images/Img_home_top.png);
+  background-image: url(/images/img-home/Img-home-top.png);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -38,7 +37,8 @@ header .logo {
   margin: 0 auto;
 }
 
-h1 {
+h1,
+h3 {
   font-size: 40px;
   font-weight: 700;
   line-height: 56px;
@@ -102,7 +102,7 @@ h1 {
 }
 
 #banner-bottom {
-  background-image: url(/images/Img_home_bottom.png);
+  background-image: url(/images/img-home/Img-home-bottom.png);
   background-size: cover;
   background-position: center;
   display: flex;
