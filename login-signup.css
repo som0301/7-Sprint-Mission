@@ -101,3 +101,31 @@ main {
 .translucent {
   opacity: 0.5;
 }
+
+@media screen and (max-width: 767px) {
+  .header__logo {
+    width: 198px;
+    margin: 24px 0;
+  }
+
+  main {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .main-form,
+  .main__container__simple-login {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .label_name {
+    font-size: 14px;
+    line-height: 16.71px;
+    margin-bottom: 8px;
+  }
+
+  .label_input {
+    width: 100%;
+  }
+}
