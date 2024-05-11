@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="../../styles/reset.css" />
+    <link rel="stylesheet" href="../../styles/global.css" />
+    <link rel="stylesheet" href="../../styles/auth.css"" />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img
+          class="header__img-logo"
+          src="../../assets/logo_title_large.png"
+          alt="판다마켓 타이틀 로고"
+        />
+      </a>
+    </header>
+    <main>
+      <form method="post">
+        <div class="input-container">
+          <label for="email">이메일</label>
+          <input
+            id="email"
+            type="email"
+            name="emial"
+            placeholder="이메일을 입력해주세요"
+            name="email"
+          />
+        </div>
+        <div class="input__container">
+          <label for="nickname">닉네임</label>
+          <input
+            id="nickname"
+            type="text"
+            name="nickname"
+            placeholder="닉네임을 입력해주세요"
+          />
+        </div>
+        <div class="input__container">
+          <label for="password">비밀번호</label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="비밀번호를 입력해주세요"
+          />
+        </div>
+        <div class="input__container">
+          <label for="password-confirm">비밀번호 확인</label>
+          <input
+            id="password-confirm"
+            type="password"
+            name="password-confirm"
+            placeholder="비밀번호를 다시 한 번 입력해주세요"
+          />
+        </div>
+        <div class="sns-login-container">
+          <p>간편 로그인하기</p>
+          <div class="icon-sns">
+            <a href="https://www.google.com/" target="_blank">
+              <img
+                class="img-sns"
+                src="../../assets/icon_google.png"
+                alt="구글 소셜 로그인 아이콘"
+              />
+            </a>
+            <a
+              href="https://www.kakaocorp.com/page/service/service/KakaoTalk"
+              target="_blank"
+            >
+              <img
+                class="img-sns"
+                src="../../assets/icon_kakao.png"
+                alt="카카오 소셜 로그인 아이콘"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="auth-switch-container">
+          <p>이미 회원이신가요?</p>
+          <a href="../authpage/login.html">로그인</a>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
