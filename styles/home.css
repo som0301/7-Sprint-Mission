@@ -62,10 +62,89 @@
   margin-top: 24px;
 }
 /**태블릿**/
-@media (min-width: 768px) { 
+@media (min-width: 768px) and (max-width: 1199px){ 
 
+  header { 
+    padding: 0 24px;
+  }
+
+  .banner { 
+    height: 771px;
+    background-size: 120%;
+    background-position-x: 50%;
+  }
+
+  div.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  #bottomBanner h1 { 
+    text-align: center;
+  }
+
+  .wrapperh1 { 
+    font-size: 40px;
+    line-height: 56px;
+    display: flex;
+    white-space: pre;
+  }
+  
+  #feauture1 { 
+    margin-bottom: 64px;  /** <section id="features" class="wrapper"> 이 부분 간격을
+                              주려고 했는데 왜 되질 않는지 모르겠습니다... **/
+  }
+
+  .feature h1 { 
+    display: flex;
+    white-space: pre;
+  }
+
+  #features { 
+    padding-top: 24px;
+    padding-bottom: 80px;
+  }
+
+  .showimg { 
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  div.feature { 
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .feature-content { 
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  #bottomBanner { 
+    height: 927px;
+    background-size: 110%;
+    background-position-x: 50%;
+  }
+
+  #wrapperbottom { 
+    margin-bottom: 201px;
+  }
+
+  footer{ 
+    padding: 32px 104px 108px 104px;
+  }
+
+  .footerimg { 
+    width: 20px;
+    height: 20px;
+  }
 }
 /**모바일**/
-@media (min-width: 375px) { 
-
+@media (min-width: 375px) and (max-width: 767px){ 
+  header { 
+    padding: 0 16px;
+  }
 }
