@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles//accountinput.css">
+  <link rel="icon" href="/images/favicon.ico">
+  <title>판다마켓-회원가입</title>
+</head>
+<body>
+  <!--
+    판다마켓 로고
+    회원가입 창-이메일/입력, 닉네임/입력, 비밀번호/입력, 비밀번호확인/입력
+    회원가입 버튼
+    간편로그인 안내-'간편 로그인하기', 구글아이콘, 카톡아이콘
+    로그인 안내
+  -->
+  <main>
+    <section class="login-logo">
+      <a href="/" ><img src="/images/panda-market-logo.png" alt="판다마켓 로고"></a>
+    </section>
+    <div class="container">
+      <section class="user-account">
+        <div class="new-email">
+          <p class="account-text">이메일</p>
+          <input class="user-input" placeholder="이메일을 입력해주세요">
+        </div>
+        <div class="new-nickname">
+          <p class="account-text">닉네임</p>
+          <input class="user-input" placeholder="닉네임을 입력해주세요">
+        </div>
+        <div class="new-password">
+          <p class="account-text">비밀번호</p>
+          <input class="user-input password" type="password" placeholder="비밀번호를 입력해주세요">
+        </div>
+        <div class="new-password-reconfirm">
+          <p class="account-text">비밀번호 확인</p>
+          <input class="user-input password" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+        </div>
+      </section>
+      <a href="/htmls/signup.html" class="user-login-button">회원가입</a>
+      <section class="social-login">
+        <p class="social-login-text">간편 로그인하기</p>
+        <div class="social-login-img">
+          <a id="google" href="https://www.google.com/"><img src="/images/google.png" alt="구글로 로그인하기 버튼"></a>
+          <a id="kakao" href="https://www.kakaocorp.com/page"><img src="/images/kakaotalk.png" alt="카카오로 로그인하기 버튼"></a>
+        </div>
+      </section>
+      <div class="singup-announce">
+        <p>이미 회원이신가요?</p>
+        <a href="/htmls//login.html">로그인</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,3 +1,16 @@
+:root{
+  --gray-900: #111827;
+  --gray-800: #1f2937;
+  --gray-700: #374151;
+  --gray-600: #4b5563;
+  --gray-500: #687280;
+  --gray-400: #9ca3af;
+  --gray-200: #e5e7eb;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+  --blue: #3692ff;
+}
+
 *{
   box-sizing: border-box;
   margin: 0;
@@ -7,31 +20,59 @@
 
 body{
   font-family: "Pretendard", sans-serif;
-  color: #374151;
+  color: var(--gray-700);
 }
 
 header{
+  background-color: #ffffff;
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 200px;
+  padding: 0 150px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+header>.logo{
+  width: 153px;
+  height: 51px;
+  background-image: url(/images/panda-market-logo.png);
+  background-size: cover;
 }
 
 #panda-logo{
   height: 50px;
 }
 
-
 header>.login-button{
   padding: 16px 25px;
   border-radius: 8px;
-  background-color: #3692ff;
+  background-color: var(--blue);
   text-align: center;
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  
   white-space:nowrap;
 }
 
+/* Tablet: 768px 이상 ~ 1199px 이하*/
+@media (max-width : 1199px) {
+  header{
+    padding: 0 24px;
+  }
+}
+
+/* Mobile: 375px 이상 ~ 767px 이하*/
+@media (max-width : 767px) {
+  header{
+    padding: 0 16px;
+  }
+  header>.logo{
+    width: 103px;
+    height: 51px;
+    background-image: url(/images/panda-market-logo-mobile.png);
+    background-size: cover;
+  }
+}

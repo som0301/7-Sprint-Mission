@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   position: relative;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
@@ -23,13 +22,12 @@ h1{
   font-weight: 700;
   line-height: 56px;
   letter-spacing: 0.02em;
-  color: #374151;
-
+  color: var(--gray-700);
   z-index: 1;
 }
 
 .main-banner>.banner-button{
-  background-color: #3692ff;
+  background-color: var(--blue);
   padding: 16px 124px;
   border-radius: 999px;
   text-align: center;
@@ -71,7 +69,7 @@ h1{
 }
 
 .section-title{
-  color: #3692ff;
+  color: var(--blue);
   font-size: 18px;
   line-height: 25px;
   font-weight: 700;
@@ -88,21 +86,21 @@ h1{
 }
 
 footer{
-  background-color: #111827;
-  
+  background-color: var(--gray-900);
+  height: 160px;
 }
 
 footer>.footer-container{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 200px 108px 200px;
-  color: #9ca3af;
+  padding: 32px 100px 108px 100px;
+  color: var(--gray-400);
   font-size: 16px;
 }
 
 footer>.footer-container>.footer-link{
-  color: #e5e7eb;
+  color: var(--gray-200);
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -110,13 +108,13 @@ footer>.footer-container>.footer-link{
   gap: 10px;
 }
 a:hover {
-  color: #e5e7eb;
+  color: var(--gray-200);
 }
 a:active {
-  color: #e5e7eb;
+  color: var(--gray-200);
 }
 a:visited{
-  color: #e5e7eb;
+  color: var(--gray-200);
 }
 
 .copyright-codeit{
@@ -128,4 +126,16 @@ a:visited{
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+}
+
+/* Mobile: 375px 이상 ~ 767px 이하*/
+@media (max-width : 767px) {
+  footer>.footer-container{
+    position: relative;
+    padding: 32px 32px 64px;
+  }
+  .copyright-codeit{
+    position: absolute;
+    bottom: 0;
+  }
 }
