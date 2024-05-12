@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: Pretendard, sans-serif;
 }
@@ -17,15 +18,16 @@
   flex-direction: column;
   gap: 20px;
 }
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
+.input-system{
+  position: relative;
 }
-#emailInput,
-#passwordInput {
+.input-system label{
+  display: block;
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.input-system input{
   width: 100%;
   height: 56px;
   border-radius: 12px;
@@ -33,21 +35,22 @@ section {
   font-size: 16px;
   color: #1f2937;
   border: 0;
-}
-input {
-  padding: 25px;
+  padding:25px;
 }
 input:focus {
   outline: 1px solid #3692ff;
-  color: #1f2937;
 }
-.eye {
-  width: 20.47px;
-  height: 18.07px;
-  top: -58px;
-  left: 600px;
-  position: relative;
-  color: #4b5563;
+button{
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+.password-button{
+  position: absolute;
+  right: 24px;
+  bottom:15px;
 }
 .login_submit {
   width: 100%;
@@ -57,15 +60,7 @@ input:focus {
   background: #9ca3af;
   color: #fff;
   font-size: 20px;
-  border: 0;
-  background: #3692ff;
-}
-strong {
-  font-family: Pretendard;
-  font-size: 20px;
-  text-align: center;
-  color: #fff;
-  display: block;
+  margin-bottom:20px;
 }
 .simple-login {
   background: #e6f2ff;
@@ -73,40 +68,32 @@ strong {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 640px;
+  width: 100%;
   height: 74px;
   padding: 16px 24px;
+  margin-bottom: 20px;
 }
-.text {
-  font-family: Pretendard;
+.simple-login-text {
   font-size: 16px;
-  font-weight: 500px;
   color: #1f2937;
-  position: relative;
-  left: 23px;
+  font-weight: 600;
 }
 .icon {
   display: flex;
   column-gap: 16px;
 }
-
+.google .kakao {
+  display:inline-block;
+}
 .description {
-  font-family: Pretendard;
   font-size: 15px;
   display: flex;
   justify-content: center;
   gap: 4px;
-}
-label {
-  color: #1f2937;
-  font-family: Pretendard;
-  font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
 }
 .member {
   color: #3182f6;
-  font-family: Pretendard;
   font-size: 15px;
-  font-weight: 500;
   text-decoration: underline;
 }
