@@ -182,3 +182,33 @@ input:focus {
 input:focus::placeholder {
   opacity: 0;
 }
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  header .top-logo {
+    width: 198px;
+    height: 66px;
+  }
+  header .top-logo div {
+    font-size: 33.17px;
+    font-weight: 700;
+    line-height: 44.78px;
+    text-align: left;
+  }
+  header .top-logo img {
+    width: 51.76px;
+    height: 51.94px;
+    top: 6.49px;
+    gap: 0px;
+    border-radius: 14.47px 0px 0px 0px;
+    opacity: 0px;
+  }
+
+  body {
+    margin: 0 auto;
+    padding: 0 16px;
+    max-width: 400px;
+  }
+  header {
+    margin-bottom: 0;
+  }
+}
