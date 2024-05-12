@@ -37,6 +37,9 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  .wrapper {
+    width: 1200px;
+  }
 }
 
 
@@ -102,8 +105,7 @@
   #bottomBanner {
     height: 927px;
     background-position: 50% bottom;
-    /* background-size: 130%; */
-    background-size: 996px 540px;
+    background-size: 130%;
     align-items: flex-start;
   }
 
@@ -146,8 +148,7 @@
   }
 
   #hero {
-    /* background-size: 135% 60%; */
-    background-size: 626px 281px;
+    background-size: 135% 60%;
     background-position: 50% bottom;
     align-items: flex-start;
   }
@@ -198,8 +199,7 @@
   #bottomBanner {
     height: 540px;
     background-position: 50% bottom;
-    /* background-size: 130%; */
-    background-size: 498px 270px;
+    background-size: 130%;
     align-items: flex-start;
   }
 
@@ -216,13 +216,18 @@
     display: block;
   }
 
-  footer {
+  body footer {
     padding: 32px;
     display: grid;
     grid-template: 1fr/ 1fr 1fr;
     row-gap: 78px;
 
 
+  }
+
+  #bottomBanner .wrapper > h1 {
+    font-size: 32px;
+    line-height: 44.8px;
   }
 
   footer #codeityear {
@@ -235,7 +240,6 @@ main {
   padding-top: 70px;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 /* 링크가 상위 요소 또는 설정된 기본 텍스트 색상과 동일하게 표현되길 원한다면 a 태그에 명시적으로 color: inherit을 지정해 줘야 합니다. */
