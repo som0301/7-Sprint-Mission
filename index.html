@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="판다 마켓" />
+    <meta property="og:description"content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:image" content="./images/logo/logo_withicon.png" />
+    <meta property="og:url" content="https://www.pandamarket.kr" />
+    <meta name="twitter:title" content="판다 마켓" />
+    <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta name="twitter:image" content="./images/logo/logo_withicon.png" />
     <title>판다마켓</title>
     <link rel="icon" href="images/logo/favicon.ico">
     <link rel="stylesheet" href="style.css">
@@ -10,28 +17,28 @@
 </head>
 <body>
     <header>
-        <a href="./index.html"><img src="./images/logo/Group19.png" class="logo_image"></a>
-        <button type="button" onclick="location.href='./login-signup/login.html'" class="btn_large login_button">로그인</button>
+        <a href="./index.html" class="header_logo"><img src="./images/logo/panda-icon.png" class="logo_image" /><img src="./images/logo/logo.png" class="logo_text" /></a>
+        <button type="button" onclick="location.href='./login-signup/login.html'" class="contents_btn btn_small">로그인</button>
     </header>
     <div class="banner topbanner">
         <div class="banner_content">
             <h1>
-                일상의 모든 물건을<br>
+                일상의 모든 물건을<br class="br_tablet">
                 거래해 보세요
             </h1>
             <button 
             type="button" 
             onclick="location.href='./items/items.html'" 
-            class="btn_large btn_small">구경하러 가기</button>
+            class="contents_btn btn_large">구경하러 가기</button>
         </div>
     </div>
     <main>
         <section>
-            <img src="./images/home/Img_home_01.png">
+            <img src="./images/home/Img_home_01.png" class="feature_img" />
             <div class="section_text">
                 <h3 class="feature_tag">Hot item</h3>
                 <h1 class="main_text">
-                    인기 상품을<br>
+                    인기 상품을<br class="br_mobile">
                     확인해 보세요
                 </h1>
                 <h2 class="feature_description">
@@ -40,11 +47,11 @@
                 </h2>
             </div>
         </section>
-        <section class="section_flexend">
-            <div class="section_text">
+        <section class="section_right">
+            <div class="section_text_right">
                 <h3 class="feature_tag">Search</h3>
                 <h1 class="main_text">
-                    구매를 원하는<br>
+                    구매를 원하는<br class="br_mobile">
                     상품을 검색하세요
                 </h1>
                 <h2 class="feature_description">
@@ -52,15 +59,14 @@
                     쉽게 찾아보세요
                 </h2>
             </div>
-            <img src="./images/home/Img_home_02.png">
-
+            <img src="./images/home/Img_home_02.png" class="feature_img" />
         </section>
         <section>
-            <img src="./images/home/Img_home_03.png">
+            <img src="./images/home/Img_home_03.png" class="feature_img" />
             <div class="section_text">
                 <h3 class="feature_tag">Register</h3>
                 <h1 class="main_text">
-                    판매를 원하는<br>
+                    판매를 원하는<br class="br_mobile">
                     상품을 등록하세요
                 </h1>
                 <h2 class="feature_description">
@@ -71,22 +77,24 @@
         </section>
     </main>
     <div class="banner bottombanner">
-        <h1 class="banner_content">
+        <h1 class="banner_content bottom_bn_content">
             믿을 수 있는<br>
             판다마켓 중고거래
         </h1>
     </div>
     <footer>
-        <div>ⓒcodeit - 2024</div>
-        <div class="footer_menu">
-            <button class="footer_menu_btn" onclick="location.href='./privacy/privacy.html'">Privacy Policy</button>
-            <button class="footer_menu_btn" onclick="location.href='./faq/faq.html'">FAQ</a>
-        </div>
-        <div class="sns_icon">
-            <a href="https://www.facebook.com/" target="_blank"><img src="./images/social/ic_facebook.png"></a>
-            <a href="https://twitter.com/home" target="_blank"><img src="./images/social/ic_twitter.png"></a>
-            <a href="https://www.youtube.com/" target="_blank"><img src="./images/social/ic_youtube.png"></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src="./images/social/ic_instagram.png"></a>
+        <div class="codeit">ⓒcodeit - 2024</div>
+        <div class="footer_contents">
+            <div class="footer_menu">
+                <button class="footer_menu_btn" onclick="location.href='./privacy/privacy.html'">Privacy Policy</button>
+                <button class="footer_menu_btn" onclick="location.href='./faq/faq.html'">FAQ</a>
+            </div>
+            <div class="sns_icon">
+                <a href="https://www.facebook.com/" target="_blank"><img src="./images/social/ic_facebook.png"></a>
+                <a href="https://twitter.com/home" target="_blank"><img src="./images/social/ic_twitter.png"></a>
+                <a href="https://www.youtube.com/" target="_blank"><img src="./images/social/ic_youtube.png"></a>
+                <a href="https://www.instagram.com/" target="_blank"><img src="./images/social/ic_instagram.png"></a>
+            </div>
         </div>
     </footer>
 </body>

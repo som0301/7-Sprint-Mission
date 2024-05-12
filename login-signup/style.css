@@ -75,6 +75,7 @@ input {
 
 .btn_large {
     background-color: var(--blue);
+    color: var(--white);
     border: 0;
     border-radius: 40px;
     padding: 16px, 124px;
@@ -83,7 +84,7 @@ input {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
-    color: var(--white);
+    cursor: pointer;
 }
 
 .simple_login {
@@ -113,4 +114,25 @@ input {
     font-size: 15px;
     line-height: 17.9px;
     font-weight: 500;
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+    .login_top_logo {
+        width: 198px;
+        height: 66px;
+    }
+
+    main {
+        margin: 0 16px;
+        max-width: 400px;
+    }
+
+    .main_form {
+        gap: 16px;
+    }
+
+    .form_contents {
+        font-size: 14px;
+        gap: 8px;
+    }
 }
