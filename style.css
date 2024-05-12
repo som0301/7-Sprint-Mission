@@ -1,4 +1,4 @@
-@import 'color.css';
+@import '/common/color.css';
 
 @font-face {
     font-family: 'Pretendard-Regular';
@@ -15,7 +15,6 @@
 
   html{
     font-size: 16px;
-    /* font-family: 'Noto Sans KR', sans-serif; */ /* 다시 사용할까봐 주석 */
   }
 
   body {
@@ -27,6 +26,10 @@
   a{
     text-decoration: none;
     cursor: pointer;
+  }
+
+  .new-line{
+    display: block;
   }
 
   header{
@@ -53,6 +56,8 @@
 
   .sky{
     background-color: #CFE5FF;
+  }
+  .main-top, .main-bottom{
     height: 540px;
     width: 100%;
   }
@@ -60,7 +65,7 @@
   .container{
     width: 1200px;
     height: 100%;
-    margin: 0 auto;
+    margin: 0 auto;    
   }
 
   .title{
@@ -72,8 +77,6 @@
   }
 
   /* || main 메인 영역 */
-
-
   .main-top-panda{
     background-image: url('images/Img_home_top.png');
     background-position: bottom right;
@@ -96,21 +99,41 @@
     align-items: center;
   }
 
+  .home{
+    display: flex;
+    flex-direction: column;
+    gap: 276px;
+  }
+
   .home-content{
     background-color: #ffffff;
-    height: 720px;
-
+    /*height: 720px;*/
+    /*padding: 138px 0;*/
     display: flex;
     align-items: center;
     gap: 64px;
+  }
+  .home-content:first-child{
+    padding-top: 138px;
+  }
+  .home-content:last-child{
+    padding-bottom: 277px;
   }
 
   .home-content:nth-child(even) {
     justify-content: right;
   }
 
+  /* home 영역에 두번째 flex 순서 바꾸기 */
+  .home-content:nth-child(even) > .home-text-div{
+    order: 1;
+  }
+  .home-content:nth-child(even) > img{
+    order:2;
+  }
+
   .home-banner{
-    font-size: 1.125em;
+    font-size: 1.125em; /* 18px */
     font-weight: 700;
     line-height: 25.2px;
     text-align: left;
@@ -163,7 +186,7 @@ footer{
 /* .footer-links - 혼자 살짝 아래로 내려가있어서 flex로 지정 -> 올바른 방법인지는 모르겠음 */
 .footer-links{
   display: flex;
-  align-items:flex-start;
+  align-items: flex-start;
   gap: 30px;
 }
 
@@ -179,4 +202,186 @@ footer{
 .footer-imgs > img {
   width: 20px;
   height: 20px;
+}
+
+/* 패드 사이즈 */
+@media (max-width: 1199px) {
+
+  header{
+    padding: 0 24px;
+  }
+  .new-line{
+    display: inline;
+  }
+  .container{
+    width: 100%;
+  }
+
+  /* || main */
+
+  /* || main에서 top */
+  .main-top{
+    height: 771px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-top-panda{
+    background-position: bottom center;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 84px;
+    gap: 24px;
+    background-size: 100%;
+  }
+  
+
+
+  /* || main에서 home */
+  .home{
+    padding: 3%;
+    gap: 64px;
+  }
+
+  .home-content{
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .home-content:first-child{
+    padding: 0;
+  }
+  .home-content:last-child{
+    padding-bottom: 80px;
+  }
+
+  .home-content:nth-child(even) > .home-text-div{
+    order: 2;
+  }
+  .home-content:nth-child(even) > img{
+    order: 1;
+  }
+
+  .home-img{
+    width: 100%;
+    height: auto;
+  }
+  .home-text-div{
+    width: 100%;
+
+  }
+  .home-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .home-title{
+    font-size: 2.5em; /* 32px */
+    margin: 0;
+    text-align: center;
+  }
+
+  .home-title > .new-line {
+    display: inline;
+  }
+
+  .home-description{
+    font-size: 1.125em;
+  }
+
+  /* || main에서 bottom*/
+  .main-bottom{
+    height: 927px;
+  }
+
+  .main-bottom-panda{
+    background-position: bottom center;
+    background-size: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 201px;
+  }
+
+  /* || footer */
+  footer{
+    padding: 32px 104px 0;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .new-line{
+    display: block;
+  }
+
+  header{
+    padding: 0 16px;
+  }
+  .header-logo{
+    content: url('/images/logo-text.png');
+    width: 103px;
+    height: 100%;
+  }
+
+  /* || main */
+
+  /* || main에서 top*/
+  .sky {
+    height: 540px;
+  }
+  .main-top-panda{
+    padding-top: 48px;
+    gap: 18px;
+  }
+  .title{
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  /* || main에서 Home */
+  .home-content:first-child{
+    padding-top: 51px;
+  }
+  .home-content:last-child{
+    padding-bottom: 64px;
+  }
+  .home-banner{
+    font-size: 1em;
+  }
+  .home-title{
+    font-size: 2em;
+  }
+  .home-description{
+    font-size: 1em;
+  }
+
+  /* || main에서 bottom */
+  .main-bottom{
+    height:540px
+  }
+  .main-bottom-panda{
+    padding-top: 121px;
+  }
+
+  /* footer */
+  footer{
+    padding: 32px;
+  }
+  
+  .footer-content{
+    flex-wrap: wrap;
+  }
+
+  .footer-companies{
+    order: 3;
+  }
+  .footer-links{
+    order: 1;
+  }
+
+  .footer-imgs{
+    order: 2;
+  }
 }

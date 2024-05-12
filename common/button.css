@@ -42,27 +42,29 @@ button:hover{
 }
 
 .btn-login{
-    background-color: #9CA3AF;
+    background-color: var(--main-color);
     width: 100%;
     text-align: center;
 }
 
-/* 인풋이 다 입력되기 전까지는 로그인 버튼에 cursor: pointer가 작동하지 않게 */
+/* sprint2 - 인풋이 다 입력되기 전까지는 로그인 버튼에 cursor: pointer가 작동하지 않게 */
 /* 인풋이 다 입력되고 나서 :hover와 :after가 작동하게끔.. */
-.btn-login:hover{
+/* sprint3 - disabled 속성일때! 로 변경 */
+.btn-login:disabled{ 
     cursor: default;
     background-color: #9CA3AF;
 }
 
-.btn-login-on{
-    background-color: var(--main-color);
-}
+/* sprint3 - 모바일 사이즈 일때 '구경하러 가기' 버튼 사이즈 줄어들게 */
+@media (max-width: 767px){
+    .btn-shop{
+        height: 48px;
+        width: 50%;
+        font-size: 16px;
+        padding: 16px 20px;
 
-.btn-login-on:hover{
-    cursor: pointer;
-    background-color:#1967D6;;
-}
-
-.btn-login-on:active{
-    background-color: #1251AA;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
