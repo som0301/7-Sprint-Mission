@@ -2,23 +2,27 @@
   box-sizing: border-box;
   margin:0;
   padding:0;
+  font-family: Pretendard , sans-serif;
+}
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 header{
-  width: 1920px;
+  width: 100%;
   height: 70px;
   background: #FFF;
   border-bottom: 1px solid #DFDFDF;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-}
-header > a{
-  display:inline-block;
+  justify-content: space-between;
+  padding:0 200px;
 }
 .logo{
   width:153px;
   height:51px;
   cursor: pointer;
+  display:inline-block;
 }
 .login{
   padding: 12px 25px;
@@ -34,40 +38,29 @@ header > a{
   width:42px;
   height:19px;
 }
-.main_section{
-  width: 1920px;
+.banner{
+  width: 100%;
   height: 540px;
   background: #CFE5FF;
   display:flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
+  justify-content: center;
 }
-.left{
+.wrapper{
   display: flex;
   flex-direction: column;
-  top: 170px;
-  left: 360px;
   gap: 32px;
-  position: absolute;
 }
-h2{
+h1{
   color: #374151;
-  font-family: Pretendard , sans-serif;;
   font-size: 40px;
   font-weight: 700;
-  line-height: 56px;
-  text-align: left;
 }
 .gotosee{
   width: 357px;
   height: 56px;
-  top: 127px;
-  left: 103px;
-  padding: 16px 124px 16px 124px;
-  gap: 10px;
+  padding: 16px 124px;
   border-radius: 40px;
-  opacity: 0px;
   background: #3692FF;
   cursor: pointer;
 }
@@ -75,58 +68,40 @@ h2{
   color:#FFF;
   text-decoration: none;
 }
-.panda{
-  left: 701px;
-  bottom:0px;
-  padding-left: 30px;
-  position: absolute;
+.top{
+  position: relative;
+  bottom:-47px;
 }
-.container_box{
-  width: 1920px;
-  text-align: center;
-}
-.container{
-  width: 1200px;
-  height: 2160px;
-  border: 1px;
-  display:grid;
-  grid-template-rows: repeat(3,1fr);
-  margin:auto;
+.section_box{
+  max-width: 1200px;
+  width:100%;
+  margin:0 auto;
 }
 .section{
   display: flex;
   align-items: center;
   gap:64px;
-}
-.description{
-  display:flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap:12px;
+  padding: 150px 0;
 }
 .section_image{
   width: 588px;
   height: 444px;
 }
-.article1{
+.feature{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap:12px;
+}
+.title{
   color: #3692FF;
-  font-family: Pretendard , sans-serif;;
   font-size: 18px;
   font-weight: 700;
   text-align: left;
 }
-.article2{
-  font-family: Pretendard , sans-serif;;
-  font-size: 40px;
-  font-weight: 700;
-  text-align: left;
-  color: #374151;
-}
-.article3{
-  font-family: Pretendard , sans-serif;;
+.description{
   font-size: 24px;
   font-weight: 500;
-  text-align: left;
   color: #374151;
   margin-top:24px;
 }
@@ -135,50 +110,36 @@ h2{
   flex-direction: row-reverse;
   align-items: center;
   gap:64px;
+  padding: 150px 0;
 }
-.second_description{
+.feature-reverse{
   display:flex;
   flex-direction: column;
   align-items: flex-end;
   gap:12px;
-}
-.article2_reverse{
-  font-family: Pretendard , sans-serif;;
-  font-size: 40px;
-  font-weight: 700;
   text-align: right;
-  color: #374151;
-}
-.article3_reverse{
-  font-family: Pretendard , sans-serif;;
-  font-size: 24px;
-  font-weight: 500;
-  text-align: right;
-  color: #374151;
-  margin-top:24px;
 }
 .section_last_rectangle{
-  width: 1920px;
+  width: 100%;
   height: 540px;
   background: #CFE5FF;
   display:flex;
   justify-content: center;
   align-items: center;
 }
-footer{
-  width: 1920px;
-  height: 160px;
-  padding: 32px 200px 32px 200px;
-  background: #111827;
+.bottom{
+  position: relative;
+  bottom:-47px;
 }
-.footer_section{
-  width:1520px;
-  height:20px;
+footer{
+  width: 100%;
+  height: 160px;
+  padding: 32px 200px;
+  background: #111827;
   display:flex;
   justify-content: space-between;
 }
 .codeit{
-  font-family: Pretendard , sans-serif;;
   font-size: 16px;
   color: #9CA3AF;
   width: 150px;
@@ -191,7 +152,6 @@ footer{
   gap:30px;
 }
 #Privacy, #FAQ{
-  font-family: Pretendard , sans-serif;;
   font-size: 16px;
   text-align: center;
   color: #E5E7EB;
@@ -206,12 +166,11 @@ footer{
   gap: 12px;
   cursor: pointer;
 }
-.icon > a{
+.icon_width{
   display:inline-block;
-  width:20px;
-  height:20px;
+  vertical-align: top;
 }
-@media(min-width:1920px){
+/*@media(min-width:1920px){
   main{
     margin:auto;
     background: #CFE5FF;
@@ -220,14 +179,4 @@ footer{
     margin:auto;
     background: #CFE5FF;
   }
-}
-@media(max-width:1920px){
-  .logo{
-    margin-left:200px;
-    flex: 1 0 auto;
-    
-  }
-  .login{
-    margin-right:200px;
-  }
-}
+}*/
