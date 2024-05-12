@@ -1,4 +1,4 @@
-@import '/reset.css';
+@import "/reset.css";
 
 * {
   color: var(--Cool-gray-800);
@@ -130,4 +130,34 @@
 .signup-page-move > a,
 .login-page-move > a {
   color: #3182f6;
+}
+
+/* Mobile */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  body {
+    padding: 0 16px;
+  }
+
+  .logo {
+    width: 198px;
+    margin: 30px auto 0;
+    cursor: pointer;
+  }
+
+  .logo > img {
+    width: 198px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 400px;
+    margin: 24px auto 0;
+  }
+
+  .auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+  }
 }
