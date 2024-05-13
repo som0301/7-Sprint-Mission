@@ -1,0 +1,37 @@
+
+:root {
+  /* 
+  color 파레트 추가 하였습니다. 궁금한점이  home.scc에 작성된 이 변수가
+  다른 css 파일에 자동으로 연동이 되는지 궁금합니다.! 
+  */
+  --gray-900: #1b1d1f;
+  --gray-800: #26282b;
+  --gray-600: #454c53;
+  --gray-500: #72787f;
+  --gray-400: #9ea4a8;
+  --gray-200: #e5e7eb;
+  --gray-100: #e8ebed;
+  --gray-50: #f7f7f8;
+  --blue: #3692ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* font-family를 넣었는데 폰트가 바뀌지 않는 이슈가 있습니다.! */
+body {
+  color: #374151;
+  word-break: keep-all;
+  font-family: "Pretendard", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #E5E7EB;
+}
+
+main {
+  margin-top: 70px;
+}
