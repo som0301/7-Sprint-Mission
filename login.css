@@ -1,21 +1,21 @@
 @import url('color.css');
+
 * {
     box-sizing: border-box;
   }
 
 html{
     font-size: 62.5%;
+    margin: 0;
 }
+
 body{
-    width:192rem;
-    font-size: inherit;
-    height: 100dvh;
+    margin: 0;
 }
 
 main{
+    width: 64rem;
     padding-top:6rem;
-    width:64rem;
-    height:108rem;
     margin:0 auto;
 }
 
@@ -23,16 +23,28 @@ main{
     width: 100%;
 }
 
+.login{
+    margin: auto;
+}
 
 .login-logo{
+    display: flex;
     margin: auto;
     border: none;
+    justify-content: center;
+}
+
+.login-logo-img{
+    margin: auto;
+}
+
+img{
+    display: block; 
 }
 
 .form-container{
     width: 64rem;
     height: 43rem;
-    
 }
 
 
@@ -46,8 +58,8 @@ main{
 
 input:focus{
     outline-color: #3692ff;
-    
 }
+
 input::placeholder{
     color: var(--gray-400);
     font-size: 1.6rem;
@@ -88,7 +100,7 @@ input::placeholder{
 
 .icons{
     display: flex;
-    gap: 16px;
+    gap: 1.6rem;
     margin-right: 2.4rem;
 }
 
@@ -103,6 +115,7 @@ input::placeholder{
 
 
 }
+
 .ask-signup{
     font-family: Pretendard;
     font-size: 1.5rem;
@@ -112,5 +125,35 @@ input::placeholder{
 }
 #signup{
     color: #3182F6;
+
+}
+
+/* 태블릿 */
+
+@media  (min-width: 768px) and (max-width: 1199px ){
+
+main{
+    margin: auto;
+}
+}
+
+/* 모바일 */
+@media (min-width:0) and (max-width: 767px){
+
+main{
+    width: 100%;
+    max-width: 40rem;
+    padding:2.4rem 1.6rem auto 1.6rem;
+
+}
+
+.form-container{
+    width: 100%;
+    margin:auto;
+}
+
+.login-logo-img{
+    width: 20rem;
+}
 
 }
