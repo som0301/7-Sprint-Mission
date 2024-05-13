@@ -2,11 +2,244 @@
   전체 선택자(*) 및 a, button, img 태그에 대한 CSS는 새로운 웹 개발 프로젝트를 시작할 때 전역 스타일에 기본적으로 넣어주면 좋은 내용들입니다. 
   브라우저 간의 스타일 차이를 최소화하고 예측 가능한 레이아웃을 위해 브라우저 기본 세팅을 일부 리셋해 준다고 생각하면 됩니다. 
 */
+:root {
+  --gray-900: #1b1d1f;
+  --gray-800: #26282b;
+  --gray-700: #374151;
+  --gray-600: #454c53;
+  --gray-500: #72787f;
+  --gray-400: #9ea4a8;
+  --gray-200: #e5e7eb;
+  --gray-100: #e8ebed;
+  --gray-50: #f7f7f8;
+  --blue: #3692ff;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* PC사이즈 */
+@media (min-width: 1280px) {
+  header {
+    padding: 0 200px;
+  }
+
+  #hero {
+    display: flex;
+    align-items: center;
+  }
+
+  #hero .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wrapper {
+    width: 1200px;
+  }
+}
+
+
+/* 테블릿사이트 */
+@media (min-width: 768px) and (max-width: 1279px) {
+  header {
+    padding: 0 24px;
+  }
+
+  #hero {
+    height: 771px;
+  }
+
+  .wrapper>h1>br {
+    display: none;
+  }
+
+  #hero {
+    /* background-size: 135% 60%; */
+    background-size: 996px 447px;
+    background-position: 50% bottom;
+    align-items: flex-start;
+  }
+
+  #hero .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 84px;
+  }
+
+  #features .feature {
+    flex-direction: column;
+    padding: 0;
+    margin: 24px;
+  }
+
+  .feature>img {
+    width: 100%;
+    height: 524px;
+    margin-bottom: 20px;
+  }
+
+  .feature-content {
+    width: 100%;
+  }
+
+  .feature-content>h1 {
+    font-size: 32px;
+    line-height: 44.8px;
+  }
+
+  .feature-content>h1>br {
+    display: none;
+  }
+
+  .feature-content>p {
+    font-size: 18px;
+    line-height: 21.6px;
+  }
+
+  #bottomBanner {
+    height: 927px;
+    background-position: 50% bottom;
+    background-size: 130%;
+    align-items: flex-start;
+  }
+
+  #bottomBanner .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 201px;
+  }
+
+  #bottomBanner .wrapper>h1>br {
+    display: block;
+  }
+}
+
+/* 모바일사이즈 */
+@media (min-width: 375px) and (max-width: 767px) {
+  header {
+    padding: 0 16px;
+  }
+
+  #hero {
+    height: 540px;
+  }
+
+  #hero .wrapper>h1 {
+    font-size: 32px;
+    line-height: 44.8px;
+    text-align: center;
+    border-radius: 24px;
+  }
+
+  #hero .wrapper>a>.pill-button {
+    font-size: 16px;
+    line-height: 19.09px;
+    padding: 16px 20px;
+    border-radius: 24px;
+  }
+
+  #hero {
+    background-size: 135% 60%;
+    background-position: 50% bottom;
+    align-items: flex-start;
+  }
+
+  #hero .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 48px;
+  }
+
+  #features .feature {
+    flex-direction: column;
+    padding: 0;
+    margin: 24px;
+  }
+
+  .feature>img {
+    width: 100%;
+    height: 259px;
+    margin-bottom: 20px;
+  }
+
+  .feature-content {
+    width: 100%;
+  }
+
+  .feature-content>h2 {
+    font-size: 16px;
+    line-height: 22.4px;
+  }
+
+  .feature-content>h1 {
+    font-size: 24px;
+    line-height: 33.6px;
+  }
+
+  .feature-content>h1>br {
+    display: none;
+  }
+
+  .feature-content>p {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+
+  #bottomBanner {
+    height: 540px;
+    background-position: 50% bottom;
+    background-size: 130%;
+    align-items: flex-start;
+  }
+
+  #bottomBanner .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 121px;
+  }
+
+  #bottomBanner .wrapper>h1>br {
+    display: block;
+  }
+
+  body footer {
+    padding: 32px;
+    display: grid;
+    grid-template: 1fr/ 1fr 1fr;
+    row-gap: 78px;
+
+
+  }
+
+  #bottomBanner .wrapper > h1 {
+    font-size: 32px;
+    line-height: 44.8px;
+  }
+
+  footer #codeityear {
+    grid-area: 2;
+  }
+
+}
+
+main {
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 링크가 상위 요소 또는 설정된 기본 텍스트 색상과 동일하게 표현되길 원한다면 a 태그에 명시적으로 color: inherit을 지정해 줘야 합니다. */
@@ -50,10 +283,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 200px;
   background-color: #ffffff;
   border-bottom: 1px solid #dfdfdf;
   position: fixed;
+  z-index: 1;
 }
 
 footer {
@@ -79,9 +312,8 @@ footer {
 
 /* 요소의 최대 너비를 1200px로 제한하고, 요소가 그보다 큰 경우에는 가로 중앙 정렬해 주는 inner container */
 .wrapper {
-  max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
+  /* width: 100%; */
 }
 
 h1 {
@@ -89,6 +321,7 @@ h1 {
   font-weight: 700;
   line-height: 56px;
   letter-spacing: 0.02em;
+  color: var(--gray-700);
 }
 
 /* 위에서 스타일링해준 <button> 태그와 달리 버튼 모양이지만 <a> 태그를 사용한 class='button' 요소들을 지칭하는 부분이니 혼동하지 않도록 주의하세요. */
@@ -99,6 +332,7 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
 /* 
   가상 클래스(pseudo-class)를 사용해 특정 상태에 맞는 스타일을 적용하세요. 
   버튼 역할을 하는 요소에는 hover 또는 disabled 시의 스타일을 지정해 주는 것이 사용자 경험에 도움이 됩니다. 
