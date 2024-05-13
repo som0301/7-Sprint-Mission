@@ -57,7 +57,7 @@
 
 .password__blind-logo {
     position: absolute;
-    right:24px;
+    right: 24px;
     bottom: 16px;
     cursor: pointer;
 }
@@ -100,3 +100,30 @@
     text-decoration: underline;
 }
 
+@media (min-width: 375px) and (max-width: 767px) {
+    .header__logo {
+        width: 198px;
+        height: 66px;
+        margin: 24px 0 24px;
+    }
+
+    .login__form {
+        width: 100%;
+        padding: 0 16px;
+        row-gap: 16px;
+    }
+
+    .form__label {
+        font-size: 14px;
+        line-height: 16.71px;
+        row-gap: 8px;
+    }
+
+    .label__input {
+        min-width: 100%;
+    }
+
+    .submit-btn {
+        margin-bottom: 8px;
+    }
+}
