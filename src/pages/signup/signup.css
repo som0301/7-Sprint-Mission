@@ -1,1 +1,185 @@
 @import url("../../styles/global.css");
+:root{
+    --gray-100: #F3F4F6;
+    --gray-400: #9CA3AF;
+    --gray-800: #1F2937;
+    --login-blue: #3692FF;
+    --footer-blue: #E6F2FF;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: inherit;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    margin-top: 6rem;
+    width: 64rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.6rem;
+}
+
+.header__logo{
+    width: 39.6rem;
+    height: 13.2rem;
+
+}
+.password-box,
+.passcheck-box{
+    position: relative;
+}
+
+.email-box__text,
+.password-box__text,
+.nickname-box__text,
+.passcheck-box__text{
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 1.6rem;
+    
+}
+
+.email::placeholder,
+.password::placeholder,
+.nickname::placeholder,
+.passcheck::placeholder{
+    color: var(--gray-400);
+}
+
+.email,
+.password,
+.passcheck,
+.nickname{
+    width: 100%;
+    height: 5.6rem;
+    border-radius: 1.2rem;
+    margin-bottom: 1.6rem;
+    color: black;
+    border: none;
+    background-color: var(--gray-100);
+    padding-left: 2rem;
+}
+
+.email:focus,
+.password:focus,
+.nickname:focus,
+.passcheck:focus{
+    border: 0.3rem solid var(--login-blue);
+    outline: none;
+}
+
+.password-eye{
+    position: absolute;
+    left: 92%;
+    top: 5rem;
+    cursor: pointer;
+}
+
+.passCheck-eye{
+    position: absolute;
+    left: 92%;
+    top: 5rem;
+    cursor: pointer;
+}
+
+.loginBtn{
+    width: 100%;
+    height: 5.6rem;
+    border-radius: 4rem;
+    border: none;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.6rem;
+}
+
+.loginBtn:hover{
+    background-color: var(--login-blue);
+    color: #ffffff;
+}
+
+.simple-login{
+    height: 7.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem 0 2rem;
+    background-color: var(--footer-blue);
+    border-radius: 0.8rem;
+}
+
+.simple-login > .simple-login__left{
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--gray-800);
+}
+
+.simple-login__right{
+    width: 10rem;
+    height: 4.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.simple-login__right__Google,
+.simple-login__right__Kakao{
+    width: 4.2rem;
+    height: 4.2rem;
+}
+
+.footer-login{
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--gray-800);
+}
+
+@media screen and (max-width: 767px) {
+
+    html{
+        font-size: 40%;
+    }
+
+    body{
+        width: 100%;
+    }
+    .container__logo{
+        width: 35rem;
+        height: 12rem;
+        margin: 2.4rem auto 0;
+    }
+    .form {
+        width: 100%;
+        max-width: 64rem; 
+        margin: 0 auto;
+        box-sizing: border-box; /* 패딩과 테두리를 요소의 크기에 포함 */
+        margin-top: 0;
+    }
+    .form > .container {
+        width: 100%;
+    }
+    .password-eye,
+    .passCheck-eye {
+        position: absolute;
+        left: 87%;
+        top: 4.3rem;
+    }
+}
