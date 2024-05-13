@@ -1,0 +1,86 @@
+@import url('globals.css');
+@import url('inputSet.css');
+@import url('button.css');
+
+.main-logo-box {
+  margin: 0 auto;
+}
+
+.main-logo-image {
+  width: 396px;
+  height: 132px;
+  margin: 60px auto 16px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: 640px;
+  margin: 0 auto;
+  gap: 24px 0;
+}
+
+.simple-login-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 23px;
+  background-color: #E6F2FF;
+  border-radius: 8px;
+}
+
+.simple-login-text {
+  color: var(--gray800);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 24px;
+}
+
+.simple-login-button-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.simple-login-button {
+  width: 42px;
+  height: 42px;
+}
+
+.simple-login-button:hover {
+  cursor: pointer;
+}
+
+.nav-to-sign {
+  margin: 0 auto;
+  color: var(--gray800);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.nav-to-sign > a {
+  color: #3182F6;
+}
+
+@media screen and (max-width: 767px) {
+
+  .main-logo-image {
+    width: 198px;
+    height: 66px;
+    margin: 24px auto 0;
+  } 
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px 0;
+
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;    
+    padding: 0 16px;
+
+    box-sizing: border-box;
+  }
+  
+}
