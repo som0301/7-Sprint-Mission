@@ -21,6 +21,7 @@
     line-height: 24px;
     text-align: center;
     cursor: pointer;
+
   }
 
   .large-button:hover {
@@ -46,13 +47,9 @@
     width: 128px;
     height: 48px;
     color: #ffffff;
+
   }
 
-  button.large-button {
-    display: inline-block;
-    width: 640px;
-    height: 56px;
-  }
 
   input:focus {
     outline-color: #3692FF;
