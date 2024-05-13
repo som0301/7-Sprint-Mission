@@ -1,0 +1,139 @@
+/* Form CSS */
+
+.form-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Form Header */
+.form-header{
+  margin-top: 60px;
+}
+.form-logo {
+  width: 369px;
+  height: 132px;
+}
+
+/* Form Content*/
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 640px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.position-relative{
+  position: relative;
+}
+.form-label{
+  font-size: 18px;
+  font-weight: 700;
+}
+.form-input{
+  width: inherit;
+  height: 56px;
+  padding: 0 23px;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--gray100);
+}
+.form-input::placeholder{
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray400);
+  line-height: 24px;
+}
+.form-input:focus{
+  border: 1px solid var(--blue);
+}
+.ic-visivility{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: 16px;
+  right: 23px;
+  cursor: pointer;
+}
+
+.form-btn {
+  height: 56px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  border: none;
+  border-radius: 40px;
+  background-color: var(--gray400);
+  cursor: pointer;
+}
+
+
+/* Form Footer */
+.form-footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 640px;
+  margin-bottom: 60px;
+}
+.oauth-login-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+  height: 74px;
+  padding: 0 23px;
+  border-radius: 8px;
+  background-color: #E6F2FF;
+}
+.oauth-login-container span{
+  font-size: 16px;
+  font-weight: 500;
+}
+.oauth-login-container-links{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.auth-link{
+  font-size: 15px;
+  font-weight: 500;
+}
+.auth-link a{
+  color: var(--blue);
+  text-decoration: underline;
+}
+/* Responsive Design: Media Queries */
+
+/* Styles for Mobile */
+@media (min-width : 375px) and (max-width: 767px) {
+
+  .form-container {
+    padding: 0 16px;
+    max-width: 400px;
+  }
+
+  /* Form Header */
+  .form-logo {
+    width: 198px;
+    height: 66px;
+  }
+
+  /* Form Content*/
+  .form{
+    width: 100%;
+  }
+
+  /* Form Footer */
+  .form-footer{
+    width: 100%;
+  }
+}
