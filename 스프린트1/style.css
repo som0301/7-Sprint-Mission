@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  margin: 0;
+  white-space: nowrap;
+}
+
+header {
+  padding-left: 200px;
+  padding-right: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  cursor: pointer;
+}
+
+.header-logo {
+  width: 153px;
+  height: 51px;
+}
+
+.blue_button {
+  background-color: #3692ff;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-button {
+  border-radius: 8px;
+  width: 128px;
+  height: 48px;
+  font-size: 16px;
+}
+
+.banner {
+  width: 100%;
+  height: 540px;
+  position: relative;
+  background-color: #cfe5ff;
+}
+
+.banner .word {
+  width: 357px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  position: absolute;
+  left: 19%;
+  top: 170px;
+  z-index: 1;
+}
+
+.banner .title {
+  color: #374151;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.banner .button {
+  border-radius: 40px;
+  width: 357px;
+  height: 56px;
+  font-size: 20px;
+}
+
+.banner .panda {
+  width: 998px;
+  position: absolute;
+  left: 37%;
+  bottom: 0px;
+}
+
+.content {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.content_1 {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 444px;
+  margin-top: 137.5px;
+  margin-bottom: 137.5px;
+}
+
+.content_img {
+  height: 100%;
+  margin-right: 64px;
+}
+
+.content_explain {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: relative;
+}
+
+.content_explain .one {
+  color: #3692ff;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25.2px;
+}
+
+.content_explain .two {
+  color: #374151;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 56px;
+}
+
+.content_explain .three {
+  color: #374151;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28.8px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.reverse .content_img {
+  margin-right: 0px;
+}
+
+.reverse .content_explain {
+  margin-right: 84px;
+  margin-left: 0;
+}
+
+.believe {
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  height: 160px;
+  background-color: #111827;
+}
+
+footer .footer_box {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 200px;
+}
+
+.footer_box p {
+  color: #9ca3af;
+}
+
+.footer_link {
+  color: #e5e7eb;
+  text-decoration: none;
+}
+
+.footer_img {
+  display: flex;
+  gap: 12px;
+}
+
+.footer_img img {
+  height: 20px;
+}
