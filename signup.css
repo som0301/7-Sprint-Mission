@@ -7,15 +7,12 @@ html{
     font-size: 62.5%;
 }
 body{
-    width:192rem;
-    font-size: inherit;
-    height: 100dvh;
+    margin:0;
 }
 
 main{
     padding-top:6rem;
     width:64rem;
-    height:108rem;
     margin:0 auto;
 }
 
@@ -24,9 +21,15 @@ main{
 }
 
 
-.login-logo{
+.signup-logo{
+    display: flex;
     margin: auto;
     border: none;
+    justify-content: center;
+}
+
+.signup-logo-img{
+    margin:auto;
 }
 
 .form-container{
@@ -99,7 +102,7 @@ input::placeholder{
 
 .icons{
     display: flex;
-    gap: 16px;
+    gap: 1.6rem;
     margin-right: 2.4rem;
 }
 
@@ -112,5 +115,36 @@ input::placeholder{
 }
 #login{
     color: #3182F6;
-
 }
+
+
+/* 태블릿 */
+
+@media  (min-width: 768px) and (max-width: 1199px ){
+
+    main{
+        margin: auto;
+    }
+
+    }
+    
+    /* 모바일 */
+    @media (min-width:0) and (max-width: 767px){
+    
+    main{
+        width: 100%;
+        max-width: 40rem;
+        padding:2.4rem 1.6rem auto 1.6rem;
+    
+    }
+    
+    .form-container{
+        width: 100%;
+        margin:auto;
+    }
+    
+    .signup-logo-img{
+        width: 20rem;
+    }
+    
+    }
