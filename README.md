@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6cfd95c4-85d3-4d31-8af9-762f29bee14b/deploy-status)](https://app.netlify.com/sites/jiin-pandamarket/deploys)
