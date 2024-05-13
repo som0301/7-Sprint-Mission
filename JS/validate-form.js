@@ -7,7 +7,7 @@ function checkFormFilled({ target }) {
   const hasInputErrors = inputs.some(
     (item) => item.classList.contains('input_error') || item.value === ''
   );
-  hasInputErrors ? (button.disabled = true) : (button.disabled = false);
+  button.disabled = hasInputErrors;
 }
 
 function validateInputs(input) {

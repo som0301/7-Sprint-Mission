@@ -36,7 +36,7 @@
 }
 
 .header-home__wrapper {
-  background-image: url(image-resources/img_header.png);
+  background-image: url(/image-resources/img_header.png);
 }
 
 .header-home {
@@ -98,7 +98,7 @@ main {
 .main-footer__wrapper {
   width: 100%;
   margin-top: 138px;
-  background-image: url(image-resources/Img_home_bottom.png);
+  background-image: url(/image-resources/Img_home_bottom.png);
 }
 
 .main-footer {
@@ -264,7 +264,7 @@ footer {
   }
 
   .nav-bar__logo {
-    content: url(image-resources/img_logo.png);
+    content: url(/image-resources/img_logo.png);
   }
 
   .header-home {
