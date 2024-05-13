@@ -27,6 +27,11 @@
                     autocomplete="email" required>
             </div>
             <div class="form__label">
+                <label class="label__name" for="nickname">닉네임</label>
+                <input class="label__input" id="nickname" type="text" name="nickname" placeholder="닉네임을 입력해주세요"
+                    autocomplete="nicknmae">
+            </div>
+            <div class="form__label">
                 <label class="label__name" for="password">비밀번호</label>
                 <div class="input__wrapper">
                     <input class="label__input" id="password" type="password" name="password" placeholder="비밀번호를 입력해주세요"
@@ -35,7 +40,16 @@
                         height="24" />
                 </div>
             </div>
-            <button class="submit-btn" type="submit">로그인</button>
+            <div class="form__label">
+                <label class="label__name" for="password-repeat">비밀번호 확인</label>
+                <div class="input__wrapper">
+                    <input class="label__input" id="password-repeat" type="password" name="password-repeat"
+                        placeholder="비밀번호를 다시 한 번 입력해주세요" autocomplete="new-password" required>
+                    <img class="password__blind-logo" src="../img/icon/btn__visibility-off.svg" alt="비밀번호보기" width="24"
+                        height="24" />
+                </div>
+            </div>
+            <button class="submit-btn" type="submit">회원가입</button>
             <div class="social__wrapper">
                 <p>간편 로그인하기</p>
                 <div class="social__login">
@@ -47,8 +61,8 @@
                     </a>
                 </div>
             </div>
-            <p class="member__check">판다마켓이 처음이신가요?
-                <a class="check__link" href="/signup.html">회원가입</a>
+            <p class="member__check">이미 회원이신가요?
+                <a class="check__link" href="/login">로그인</a>
             </p>
         </form>
     </main>
