@@ -1,9 +1,9 @@
 import { userForm, visibilityButtons } from './sign/tags.js';
 import toggleInputVisibility from './sign/visibility.js';
-import checkInputs from './sign/validate.js';
+import validateForm from './sign/validate/validate.js';
 
 visibilityButtons.forEach((button) => {
 	button.addEventListener('click', toggleInputVisibility);
 });
 
-userForm.addEventListener('focusout', checkInputs);
+userForm.addEventListener('focusout', validateForm);

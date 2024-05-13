@@ -1,7 +1,7 @@
 /**
  * 비밀번호 가시성 토글
  */
-const toggleInputVisibility = ({ currentTarget }) => {
+export default function toggleInputVisibility({ currentTarget }) {
 	const img = currentTarget.querySelector('img');
 	const input = currentTarget.parentElement.querySelector('input[name^="password"]');
 	const status = input.type;
@@ -19,6 +19,4 @@ const toggleInputVisibility = ({ currentTarget }) => {
 			img.alt = '비가시성 아이콘';
 			break;
 	}
-};
-
-export default toggleInputVisibility;
+}
