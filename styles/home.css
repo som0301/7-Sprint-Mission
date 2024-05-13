@@ -59,7 +59,7 @@ main {
   
 .feature-tag {
     color: var(--blue);
-    font-size: 1.125em;
+    font-size: var(--fontsize-18);
     line-height: 25px;
     font-weight: 700;
     margin-bottom: 12px;
@@ -92,7 +92,7 @@ main {
     footer {
         flex-wrap: wrap;
         gap: 30px;
-        padding: 32px 100px 108px 100px;
+        padding: 32px 100px 108px;
     }
 
     .feature-content > h1 {
@@ -101,7 +101,7 @@ main {
     }
 
     .feature-content > p {
-        font-size: 1.125em; /*18px;*/
+        font-size: var(--fontsize-18); /*18px;*/
         line-height: 21.6px;
     }
 
@@ -134,7 +134,7 @@ main {
     }
 
     .feature > img {
-        padding: 24px 24px 20px 24px;
+        padding: 24px 24px 20px;
     }
 
     .feature-content {
@@ -236,7 +236,7 @@ main {
     }
 
     .feature > img {
-        padding: 51px 16px 20px 16px;
+        padding: 51px 16px 20px;
     }   
 
     .banner {
