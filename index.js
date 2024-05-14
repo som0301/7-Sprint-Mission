@@ -6,7 +6,7 @@ const logoImage = document.getElementById("logoImage");
 // 화면 크기에 따라 이미지를 변경하는 함수
 function checkScreenSize() {
   // 화면의 너비를 가져옵니다.
-  var screenWidth = window.outerWidth;
+  var screenWidth = window.innerWidth;
 
   // 화면 너비가 375px 이하이면 작은 로고 이미지로 변경합니다.
   if (screenWidth <= 767) {
