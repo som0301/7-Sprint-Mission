@@ -13,6 +13,7 @@
         <h1>
           <a href="index.html">
             <img
+              class="login-logo-image"
               src="img/logo/panda-market-logo.png"
               alt="판다마켓"
               width="396"
@@ -24,7 +25,9 @@
 
       <form method="post">
         <div class="login-input">
-          <label class="login-input-label" for="email">이메일</label>
+          <label class="login-input-label email-label" for="email"
+            >이메일</label
+          >
           <input
             class="login-input-field"
             type="email"
@@ -35,20 +38,24 @@
         </div>
 
         <div class="login-input">
-          <label class="login-input-label" for="password">비밀번호</label>
+          <label class="login-input-label password-label" for="password"
+            >비밀번호</label
+          >
           <div class="login-input-field-wrapper">
             <input
-              class="login-input-field"
+              class="login-input-field password-field"
               type="password"
               name="password"
               id="password"
               placeholder="비밀번호를 입력해주세요"
             />
-            <img
-              class="login-input-eye-icon"
-              src="img/icons/eye-invisible.svg"
-              alt="비밀번호 보기"
-            />
+            <button class="login-input-eye-icon-wrapper">
+              <img
+                class="login-input-eye-icon"
+                src="img/icons/eye-invisible.svg"
+                alt="비밀번호 보기"
+              />
+            </button>
           </div>
         </div>
 

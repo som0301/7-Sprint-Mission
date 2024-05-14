@@ -24,6 +24,18 @@
   margin-bottom: 16px;
 }
 
+.email-label {
+  width: fit-content;
+}
+
+.password-label {
+  width: fit-content;
+}
+
+.verify-password-label {
+  width: fit-content;
+}
+
 .signup-input-field-wrapper {
   position: relative;
   display: flex;
@@ -39,6 +51,10 @@
   width: 100%;
 }
 
+.password-field {
+  padding: 16px 50px 16px 24px;
+}
+
 .signup-input-field:focus {
   outline-color: var(--blue);
 }
@@ -49,16 +65,20 @@
   color: #9ca3af;
 }
 
+.signup-input-eye-icon-wrapper {
+  border: none;
+}
+
 .signup-input-eye-icon {
   position: absolute;
   cursor: pointer;
   right: 24px;
+  top: 16px;
 }
 
 .signup-button {
   width: 100%;
   border-radius: 40px;
-  max-width: 640px;
   padding: 20px;
   border: none;
   background-color: #9ca3af;
@@ -110,4 +130,18 @@
   line-height: 17.9px;
   color: #3182f6;
   text-decoration: underline;
+}
+
+@media screen and (max-width: 767px) {
+  .signup-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 0 16px;
+    row-gap: 16px;
+  }
+
+  .signup-logo-image {
+    width: 198px;
+    height: 66px;
+  }
 }

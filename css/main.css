@@ -1,9 +1,13 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #dfdfdf;
-  background-color: #ffffff;
+  background-color: #fff;
   height: 70px;
   padding: 0 200px;
 }
@@ -11,7 +15,7 @@
 .login-button {
   display: inline-flex;
   background-color: #3692ff;
-  color: #ffffff;
+  color: #fff;
   font-weight: 600;
   font-size: 16px;
   line-height: 19.09px;
@@ -39,6 +43,7 @@
 }
 
 .trade {
+  max-width: 357px;
   font-size: 40px;
   line-height: 56px;
   color: #374151;
@@ -49,7 +54,7 @@
   font-weight: 600;
   line-height: 24px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   min-width: 357px;
   padding: 20px;
   border-radius: 40px;
@@ -63,15 +68,17 @@
   background-color: #1967d6;
 }
 
+.product-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .product {
   display: flex;
   align-items: center;
   padding: 138px 0;
   gap: 64px;
-}
-
-.product-image {
-  flex: 1;
 }
 
 .product-details {
@@ -154,6 +161,198 @@
   column-gap: 12px;
 }
 
-.social-icon {
-  display: block;
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .header {
+    padding: 0 24px;
+  }
+
+  .top-banner {
+    background-position: center bottom;
+    background-size: contain;
+    height: 90vh;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 200px;
+  }
+
+  .trade {
+    max-width: 532px;
+  }
+
+  .br-tag {
+    display: none;
+  }
+
+  .product-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .product {
+    flex-direction: column;
+    padding: 24px;
+    align-items: baseline;
+  }
+
+  .product:nth-child(2) {
+    align-items: end;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .product-content-tag {
+    line-height: 25px;
+    font-size: 18px;
+  }
+
+  .product-content-title {
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  .product-content-description {
+    font-size: 18px;
+    padding-bottom: 20px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+
+  .search-product {
+    order: 2;
+  }
+
+  .search-image {
+    order: 1;
+  }
+
+  .bottom-banner {
+    background-size: contain;
+    background-position: center bottom;
+    height: 90vh;
+  }
+
+  .bottom-banner-title {
+    margin-bottom: 200px;
+    text-align: center;
+    font-size: 40px;
+  }
+
+  .footer {
+    padding: 32px 104px 64px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 0 16px;
+  }
+
+  .top-banner {
+    background-size: contain;
+    background-position: center bottom;
+    height: 60vh;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .trade {
+    max-width: 250px;
+    font-size: 32px;
+    line-height: 44px;
+  }
+
+  .watch {
+    padding: 16px 20px;
+    font-size: 16px;
+    line-height: 19px;
+    min-width: 154px;
+    margin-top: 20px;
+    margin-bottom: 70px;
+  }
+
+  .br-tag {
+    display: none;
+  }
+
+
+  .product-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    flex-direction: column;
+    padding: 16px;
+    align-items: baseline;
+  }
+
+  .product:nth-child(2) {
+    align-items: end;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .product-content-tag {
+    font-size: 16px;
+  }
+
+  .product-content-title {
+    font-size: 24px;
+  }
+
+  .product-content-description {
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 16px;
+  }
+
+  .search-product {
+    order: 2;
+  }
+
+  .search-image {
+    order: 1;
+  }
+
+  .bottom-banner {
+    background-size: contain;
+    background-position: center bottom;
+    height: 60vh;
+  }
+
+  .bottom-banner-title {
+    margin-bottom: 200px;
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .footer {
+    padding: 32px;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 60px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .footer-copyright {
+    order: 2;
+  }
 }
