@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="css/login.css">
   <!-- 파비콘 -->
   <link rel="icon" href="image/image-logo.png">
+  <!-- 아이콘 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <!-- 로고 -->
@@ -25,21 +27,35 @@
         <!-- 이메일 -->
         <div class="email">
           <label for="email" class="email-label">이메일</label>
-          <input id="email" type="email" class="email-input" placeholder="이메일을 입력해주세요" autocomplete="off">
+          <div class="email-input-msg">
+            <input id="email" type="email" class="email-input" placeholder="이메일을 입력해주세요" autocomplete="off">
+            <div>
+              <!-- 이메일 유효성 검사 -->
+              <div class="emptyEmailInput-message hide">이메일을 입력해주세요.</div>
+              <div class="emailFailure-message hide">잘못된 이메일 형식입니다</div>
+            </div>
+          </div>
         </div>
         <!-- 비밀번호 -->
         <div class="password">
           <label for="pwd" class="password-label">비밀번호</label>
-          <div>
+          <div class="pw-input-msg">
             <input id="pwd" type="password" class="password-input" placeholder="이메일을 입력해주세요" autocomplete="off">
-            <img class="password_visibility" src="image/btn_visibility_off_24px.png" alt="비밀번호 입력창의 비밀번호 보기/숨기기 기능을 구현하는 눈 모양의 아이콘">
+            <div>  
+              <span class="password-toggle-icon"><i class="fas fa-eye-slash"></i></span>
+              <div>
+                <!-- 비밀번호 유효성 검사 -->
+                <div class="emptyPwInput-message hide">비밀번호를 입력해주세요.</div>
+                <div class="pwFailure-message hide">비밀번호를 8자 이상 입력해주세요.</div>
+              </div>
+            </div>
           </div>
         </div>
         <!-- 로그인 버튼 -->
         <div>
-          <button type="button" class="login-btn">로그인
+          <button type="button" class="login-btn" id="login-btn" disabled>로그인
+          </div>
         </div>
-      </div>
     </div>
     <!-- 간편 로그인하기 -->
     <div class="social_login">
@@ -55,5 +71,8 @@
       <a class="signup" href="signup.html">회원가입</a>
     </div>
   </form>
+
+  <!-- javascript 연결 -->
+  <script type="text/javascript" src="javascript/login.js"></script>
 </body>
 </html>
