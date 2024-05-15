@@ -231,7 +231,7 @@ body {
     }
 
     .top-banner__wrapper {
-        margin-top: 84px;
+        padding-top: 84px;
         align-items: center;
         row-gap: 24px;
     }
@@ -277,12 +277,12 @@ body {
     }
 
     .bottom-banner {
+        padding-top: 201px;
         flex-direction: column;
         height: 927px;
     }
 
     .bottom-banner__title {
-        margin-top: 201px;
         text-align: center;
     }
 
@@ -309,7 +309,7 @@ body {
     }
 
     .top-banner__wrapper {
-        margin-top: 84px;
+        padding-top: 84px;
         align-items: center;
         row-gap: 24px;
     }
@@ -372,12 +372,12 @@ body {
 
     .bottom-banner {
         flex-direction: column;
+        padding-top: 121px;
         height: 540px;
         background-size: 498px 270px;
     }
 
     .bottom-banner__title {
-        margin-top: 121px;
         text-align: center;
     }
 
