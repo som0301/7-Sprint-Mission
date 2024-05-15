@@ -87,6 +87,7 @@ h1 {
 }
 
 .header-main img {
+  max-width: none;
   padding-top: 7%;
 }
 
@@ -151,6 +152,7 @@ h1 {
 
 
 .banner-bottom img {
+  max-width: none;
   padding-top: 100px;
 } 
 
