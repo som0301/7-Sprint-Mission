@@ -3,36 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css">
   <link rel="stylesheet" type="text/css" href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'>
   <link rel="stylesheet" href="/styles/home.css">
   <link rel="stylesheet" href="/styles/header.css">
+  <link rel="icon" href="/images/favicon.ico">
   <title>판다마켓</title>
+  <meta property="og:image" content="/images/panda-market-logo.png">
+  <meta name="twitter:card" content="/images/panda-market-logo.png">
+  <meta
+    name="description"
+    content="일상의 모든 물건을 거래해보세요">
 </head>
 <body>
   <header>
     <!--로고    로그인버튼-->
-    <a href="/main.html" alt="판다마켓 메인"><img src="/images/panda-market-logo.png" id="panda-logo" alt="판다 마켓 로고"></a>
-    <a href="/login.html" class="login-button">로그인</a>
+    <a class="logo" href="/"> </a>
+    <a href="/htmls/login.html" class="login-button">로그인</a>
   </header>
-  <!-- 메인 베너 - 구경하러 가기(버튼)/배너 이미지
-    세션 - 이미지/강조 텍스트+h1+내용
-    *3
-    하단 베너 - 텍스트/이미지
-    footer copyright/Privacy Policy+FAQ/소셜아이콘(링크)
-  -->
   <main>
     <!--메인 베너-->
     <section class="main-banner">
       <h1>일상의 모든 물건을<br>거래해 보세요</h1>
-      <a href="/market.html" class="banner-button">구경하러 가기</a>
+      <a href="/htmls/market.html" class="banner-button">구경하러 가기</a>
       <img src="/images/main-banner-image.png" alt="상단 배너 이미지" class="banner-img">
     </section>
-    
     <div class="container">
       <!--feature1-->
       <section class="feature">
-          <img src="/images/feature1-image.png" alt="섹션1 이미지">
+          <img src="/images/feature1-image.png" alt="인기 상품 확인 표현 이미지">
           <div class="feature-contents">
             <p class="section-title">Hot item</p>
             <h1 class="detail-big">인기 상품을<br>확인해보세요</h1>
@@ -41,7 +39,7 @@
       </section>
       <!--feature2-->
       <section class="feature" id="section-center">
-        <img src="/images/feature2-image.png" alt="섹션2 이미지">
+        <img src="/images/feature2-image.png" alt="상품 검색 표현 이미지">
         <div class="feature-contents">
           <p class="section-title">Search</p>
           <h1 class="detail-big">구매를 원하는<br>상품을 검색하세요</h1>
@@ -50,7 +48,7 @@
       </section>
       <!--feature3-->
       <section class="feature">
-        <img src="/images/feature3-image.png" alt="섹션3 이미지">
+        <img src="/images/feature3-image.png" alt="상품 등록 표현 이미지">
         <div class="feature-contents">
           <p class="section-title">Register</p>
           <h1 class="detail-big">판매를 원하는<br>상품을 등록하세요</h1>
@@ -67,15 +65,14 @@
     </section>
 
   </main>
-  
   <footer>
     <div class="footer-container">
       <div class="copyright-codeit">
         <p>©codeit - 2024</p>
       </div>
       <div class="footer-link">
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/faq.html">FAQ</a>
+        <a href="/htmls/privacy.html">Privacy Policy</a>
+        <a href="/htmls/faq.html">FAQ</a>
       </div>
       <div class="socialmedia">
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img src="/snslogos/facebook-logo.svg" alt="페이스북"></a>
