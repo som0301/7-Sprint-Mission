@@ -39,7 +39,7 @@ h1 {
   flex-shrink: 0;
 }
 
-.btn-go-looking {
+.link-to-product-list {
   background-color: var(--light-blue-color);
   color: var(--white-color);
   text-decoration: none;
@@ -219,7 +219,7 @@ h1 {
     margin-right: 50px;
   }
 
-  .btn-go-looking { 
+  .link-to-product-list { 
     width: 154px;
   }
 
@@ -270,7 +270,7 @@ h1 {
     gap: 150px;
   }
 
-  .btn-go-looking {
+  .link-to-product-list {
     width: 355px;
   }
 
@@ -296,7 +296,7 @@ h1 {
     margin-bottom: 50px;
   }
 
-  .btn-go-looking {
+  .link-to-product-list {
     width: 355px;
   }
 
