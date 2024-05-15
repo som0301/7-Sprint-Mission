@@ -2,10 +2,7 @@
   max-width: 640px;
   margin: 0 auto;
 }
-.container > .logo-wrapper > a {
-  display: inline-block;
-}
-.logo-wrapper {
+h1 {
   text-align: center;
   margin-top: 60px;
   margin-bottom: 40px;
@@ -32,22 +29,21 @@
   font-size: 16px;
   color: #1f2937;
   border: 0;
-  padding: 25px;
-}
-input:focus {
-  outline: 1px solid #3692ff;
+  padding: 16px 24px;
 }
 button {
-  background: none;
   border: none;
   outline: none;
   box-shadow: none;
   cursor: pointer;
+  background: url(../image/hidden.png) no-repeat;
 }
 .password-button {
   position: absolute;
   right: 24px;
-  bottom: 15px;
+  bottom: 17px;
+  width:21px;
+  height:20px;
 }
 .login_submit {
   width: 100%;
@@ -104,7 +100,7 @@ button {
     max-width: 400px;
     margin: 0 16px;
   }
-  .logo-wrapper {
+  h1 {
     margin-bottom: 20px;
   }
   .logo {
