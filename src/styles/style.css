@@ -33,17 +33,20 @@ main {
 .banner {
   height: 540px;
   background-color: #cfe5ff;
-  /* display: flex; */
-}
-.banner__item-container {
   display: flex;
-  margin-left: 360px;
-  margin-right: 223px;
+  background-repeat: no-repeat;
+  background-position: right 15% bottom;
+}
+.background-img__top {
+  background-image: url("../assets/Img_home_top.png");
+}
+.background-img__bottom {
+  background-image: url("../assets/Img_home_bottom.png");
 }
 .banner__text-container {
+  margin-left: 15%;
   width: 357px;
   height: 200px;
-  width: 50%;
   font-size: 40px;
   font-weight: 700;
   line-height: 56px;
@@ -53,7 +56,7 @@ main {
 }
 .banner__text-container p {
   margin-bottom: 32px;
-  flex-shrink: 0;
+  word-break: keep-all;
 }
 .banner__img-top {
   margin-top: 93px;
