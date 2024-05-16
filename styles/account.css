@@ -100,12 +100,12 @@ input img {
 
 
 
-/* 비밀번호 안감은 눈은 기본 안보이기 */
+/* 비밀번호 가시성 토글 기본 비가시성 */
 .visibility-on {
     display: none;
 }
 
-/* 유효성 에러 text 기본 안보이기 */
+/* 유효성 에러 text 기본 비가시성 */
 .error-message {
     margin: 8px 16px;
     color: var(--error-red);
@@ -117,17 +117,17 @@ input img {
 
 /* 우선 순위 때문에 코드 맨 아래에 위치해야함 */
 
-/* 다시 보이기 */
+/* 가시성 설정 */
 .visible-maker {
     display: inline-block;  
 }
 
-/* 안 보이기 */
+/* 비가시성 설정 */
 .hidden-maker {
     display: none;
 }
 
-/*  유효성 검사 버튼*/
+/* 유효성 검사 버튼 */
 .valid-button {
     background-color: var(--activate-button-blue);
 }
