@@ -1,134 +1,140 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>판다 마켓</title>
 
     <!-- open graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://minkyung-sprint1.netlify.app/">
-    <meta property="og:title" content="판다 마켓">
-    <meta property="og:image" content="/images/opengraph-img.png">
-    <meta property="og:description" content="일상의 모든 물건을 거래해보세요">
-    <meta property="og:site_name" content="판다 마켓">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://minkyung-sprint1.netlify.app/" />
+    <meta property="og:title" content="판다 마켓" />
+    <meta property="og:image" content="/images/opengraph-img.png" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:site_name" content="판다 마켓" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- 트위터 -->
-    <meta name="twitter:card" content="card" /> 
-    <meta name="twitter:title" content="판다 마켓" /> 
-    <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요" /> 
-    <meta name="twitter:image" content="/images/opengraph-img.png" /> 
+    <meta name="twitter:card" content="card" />
+    <meta name="twitter:title" content="판다 마켓" />
+    <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta name="twitter:image" content="/images/opengraph-img.png" />
 
     <!-- CSS -->
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Poppins:wght@400;700&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/common/button.css">
-</head>
-<body>
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/common/button.css" />
+  </head>
+  <body>
     <!-- 헤더 영역 -->
-    <header> 
-        <a href="/">
-            <img src="/images/logo@3x.png" alt="헤더 로고" class="header-logo">
-        </a>
-        <button class="btn btn-small" onclick="location.href='/html/login.html';">로그인</button>
+    <header>
+      <a href="/">
+        <img src="/images/logo@3x.png" alt="헤더 로고" class="header-logo" />
+      </a>
+      <button class="btn btn-small" onclick="location.href='/html/login.html';">로그인</button>
     </header>
 
     <!-- 콘텐츠 메인 영역-->
     <main>
-        <div class="sky main-top">   <!-- 배경색이 하늘색인 영역 -->
-            <div class="container main-top-panda">  <!-- width 1200px인 container 클래스와 메인영역의 top에 있는 판다 배경 클래스-->
-                <h2 class="title">  <!-- 제목 / .title 들은 다 똑같은 속성이라 같은 클래스를 부여함 -->
-                    <span class="new-line">일상의 모든 물건을</span>
-                    <span class="new-line">거래해 보세요</span>
-                </h2>
-                <button class="btn btn-large btn-shop" onclick="location.href='/html/items.html';">구경하러 가기</button>
-            </div>
+      <div class="sky main-top">
+        <!-- 배경색이 하늘색인 영역 -->
+        <div class="container main-top-panda">
+          <!-- width 1200px인 container 클래스와 메인영역의 top에 있는 판다 배경 클래스-->
+          <h2 class="title">
+            <!-- 제목 / .title 들은 다 똑같은 속성이라 같은 클래스를 부여함 -->
+            <span class="new-line">일상의 모든 물건을</span>
+            <span class="new-line">거래해 보세요</span>
+          </h2>
+          <button class="btn btn-large btn-shop" onclick="location.href='/html/items.html';">구경하러 가기</button>
         </div>
+      </div>
 
-        <!-- 가운데 영역의 클래스 이름을 home으로 지음 -->
-        <!-- 직관적이지는 않은듯 .. 무슨 이름이 적절한지는 모르겠음 -->
-        <div class="home"> 
-            <div class="container home-content"> <!-- home 영역의 컨텐츠 부분이 home-content 클래스-->
-                <img src="/images/Img_home_01.png" alt="홈 이미지" class="home-img">
-                <div class="home-text-div">         
-                    <div class="home-text">
-                        <p class="home-banner">Hot item</p>
-                        <h2 class="title home-title">
-                            <span class="new-line">인기 상품을</span>
-                            <span class="new-line">확인해 보세요</span>
-                        </h2>
-                        <p class="home-description">
-                            가장 HOT한 중고거래 물품을<br>
-                            판다 마켓에서 확인해 보세요
-                        </p>
-                    </div>
-                </div>
+      <!-- 가운데 영역의 클래스 이름을 home으로 지음 -->
+      <!-- 직관적이지는 않은듯 .. 무슨 이름이 적절한지는 모르겠음 -->
+      <div class="home">
+        <div class="container home-content">
+          <!-- home 영역의 컨텐츠 부분이 home-content 클래스-->
+          <img src="/images/Img_home_01.png" alt="홈 이미지" class="home-img" />
+          <div class="home-text-div">
+            <div class="home-text">
+              <p class="home-banner">Hot item</p>
+              <h2 class="title home-title">
+                <span class="new-line">인기 상품을</span>
+                <span class="new-line">확인해 보세요</span>
+              </h2>
+              <p class="home-description">
+                가장 HOT한 중고거래 물품을<br />
+                판다 마켓에서 확인해 보세요
+              </p>
             </div>
-            <div class="container home-content">
-                <img src="/images/Img_home_02.png" alt="홈 이미지" class="home-img">
-                <div class="home-text-div">         
-                    <div class="home-text">
-                        <p class="home-banner">Search</p>
-                        <h2 class="title home-title">
-                            <span class="new-line">구매를 원하는</span>
-                            <span class="new-line">상품을 검색하세요</span>
-                        </h2>
-                        <p class="home-description">
-                            구매하고 싶은 물품은 검색해서<br>
-                            쉽게 찾아보세요
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="container home-content">
-                <img src="/images/Img_home_03.png" alt="홈 이미지" class="home-img">
-                <div class="home-text-div">         
-                    <div class="home-text">
-                        <p class="home-banner">Register</p>
-                        <h2 class="title home-title">
-                            <span class="new-line">판매를 원하는</span>
-                            <span class="new-line">상품을 등록하세요</span>
-                        </h2>
-                        <p class="home-description">
-                            어떤 물건이든 판매하고 싶은 상품을<br>
-                            쉽게 등록하세요
-                        </p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        <div class="sky main-bottom">
-            <div class="container main-bottom-panda"> <!-- 메인 영역의 하단 판다 배경 클래스-->
-                <h2 class="title home-title">
-                    믿을 수 있는<br>
-                    판다마켓 중고거래
-                </h2>
+        <div class="container home-content">
+          <img src="/images/Img_home_02.png" alt="홈 이미지" class="home-img" />
+          <div class="home-text-div">
+            <div class="home-text">
+              <p class="home-banner">Search</p>
+              <h2 class="title home-title">
+                <span class="new-line">구매를 원하는</span>
+                <span class="new-line">상품을 검색하세요</span>
+              </h2>
+              <p class="home-description">
+                구매하고 싶은 물품은 검색해서<br />
+                쉽게 찾아보세요
+              </p>
             </div>
+          </div>
         </div>
+        <div class="container home-content">
+          <img src="/images/Img_home_03.png" alt="홈 이미지" class="home-img" />
+          <div class="home-text-div">
+            <div class="home-text">
+              <p class="home-banner">Register</p>
+              <h2 class="title home-title">
+                <span class="new-line">판매를 원하는</span>
+                <span class="new-line">상품을 등록하세요</span>
+              </h2>
+              <p class="home-description">
+                어떤 물건이든 판매하고 싶은 상품을<br />
+                쉽게 등록하세요
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sky main-bottom">
+        <div class="container main-bottom-panda">
+          <!-- 메인 영역의 하단 판다 배경 클래스-->
+          <h2 class="title home-title">
+            믿을 수 있는<br />
+            판다마켓 중고거래
+          </h2>
+        </div>
+      </div>
     </main>
 
     <!-- 푸터 영역 -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-companies">
-                <p class="footer-company footer-text">@Codeit - 2024</p>
-            </div>
-            <div class="footer-links">
-                <a href="/html/privacy.html" class="footer-text footer-link">Privacy Policy</a>
-                <a href="/html/faq.html" class="footer-text footer-link">FAQ</a>
-            </div>
-            <div class="footer-imgs">
-                <a href="https://www.facebook.com" target="_blank"><img src="/images/ic_facebook.png" alt=""></a>
-                <a href="https://www.twitter.com" target="_blank"><img src="/images/ic_twitter.png" alt=""></a>
-                <a href="https://www.youtube.com" target="_blank"><img src="/images/ic_youtube.png" alt=""></a>
-                <a href="https://www.instagram.cpm" target="_blank"><img src="/images/ic_instagram.png" alt=""></a>
-            </div>
+      <div class="footer-content">
+        <div class="footer-companies">
+          <p class="footer-company footer-text">@Codeit - 2024</p>
         </div>
+        <div class="footer-links">
+          <a href="/html/privacy.html" class="footer-text footer-link">Privacy Policy</a>
+          <a href="/html/faq.html" class="footer-text footer-link">FAQ</a>
+        </div>
+        <div class="footer-imgs">
+          <a href="https://www.facebook.com" target="_blank"><img src="/images/ic_facebook.png" alt="" /></a>
+          <a href="https://www.twitter.com" target="_blank"><img src="/images/ic_twitter.png" alt="" /></a>
+          <a href="https://www.youtube.com" target="_blank"><img src="/images/ic_youtube.png" alt="" /></a>
+          <a href="https://www.instagram.cpm" target="_blank"><img src="/images/ic_instagram.png" alt="" /></a>
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
