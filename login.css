@@ -139,3 +139,19 @@ input::placeholder {
     margin: 24px 16px 0;
   }
 }
+
+.error-input {
+  outline: 2px solid var(--error-color);
+}
+
+input:invalid {
+  outline: 2px solid var(--error-color);
+}
+
+.error-msg {
+  font-family: Pretendard;
+  font-size: 15px;
+  font-weight: 600;
+
+  color: var(--error-color);
+}
