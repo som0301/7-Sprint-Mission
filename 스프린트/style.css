@@ -9,8 +9,9 @@
 }
 
 header {
-  padding-left: 200px;
-  padding-right: 200px;
+  margin: 0px auto;
+  max-width: 1520px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,8 +47,10 @@ header {
 }
 
 .panda-banner .panda-word {
-  width: 357px;
-  height: 200px;
+  max-width: 357px;
+  max-height: 200px;
+  width: 100%;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
