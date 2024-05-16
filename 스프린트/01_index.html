@@ -8,6 +8,22 @@
   <link rel="stylesheet" as="style" crossorigin
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
   <title>판다마켓</title>
+  <!-- 기본 메타 태그 -->
+  <meta name="description" content="일상의 모든 물건을 거래해보세요">
+
+  <!-- Open Graph 메타 태그 -->
+  <meta property="og:title" content="판다 마켓">
+  <meta property="og:description" content="일상의 모든 물건을 거래해보세요">
+  <meta property="og:image" content="/스프린트/img/메타태그.jpg">
+  <meta property="og:url" content="https://example.com/">
+
+  <!-- Twitter 카드 메타 태그 -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="판다 마켓">
+  <meta name="twitter:description" content="일상의 모든 물건을 거래해보세요">
+  <meta name="twitter:image" content="/스프린트/img/메타태그.jpg">
+  <meta name="twitter:url" content="https://example.com/">
+
 </head>
 
 <body>
@@ -18,10 +34,12 @@
 
   <div class="panda-banner">
     <div class="panda-word">
-      <p class="panda-title">일상의 모든 물건을<br />거래해 보세요</p>
+      <p class="panda-title"><span>일상의 모든 물건을</span> <span>거래해 보세요</span></p>
       <a href="/items" class="panda-button panda-blue-button">구경하러 가기</a>
     </div>
-    <img src="/스프린트/img/banner_panda.png" class="panda" />
+    <div class="panda_img_flexbox">
+      <img src="/스프린트/img/banner_panda.png" class="panda" />
+    </div>
   </div>
 
   <content>
@@ -31,8 +49,7 @@
         <div class="content_explain">
           <p class="content_explain_one">Hot item</p>
           <p class="content_explain_two">
-            인기 상품을<br />
-            확인해 보세요
+            <span>인기 상품을</span> <span>확인해 보세요</span>
           </p>
           <p class="content_explain_three">
             가장 HOT한 중고거래 물품을<br />판다 마켓에서 확인해 보세요
@@ -46,7 +63,7 @@
         <img src="/스프린트/img/img_home_02.png" class="content_img" />
         <div class="content_explain">
           <p class="content_explain_one">Search</p>
-          <p class="content_explain_two">구매를 원하는<br />상품을 검색하세요</p>
+          <p class="content_explain_two"><span>구매를 원하는</span> <span>상품을 검색하세요</span></p>
           <p class="content_explain_three">
             구매하고 싶은 물품은 검색해서<br />쉽게 찾아보세요
           </p>
@@ -59,7 +76,7 @@
         <img src="/스프린트/img/img_home_03.png" class="content_img" />
         <div class="content_explain">
           <p class="content_explain_one">Register</p>
-          <p class="content_explain_two">판매를 원하는<br />상품을 등록하세요</p>
+          <p class="content_explain_two"><span>판매를 원하는</span> <span>상품을 등록하세요</span></p>
           <p class="content_explain_three">
             어떤 물건이든 판매하고 싶은 상품을<br />쉽게 등록하세요
           </p>
@@ -68,11 +85,13 @@
     </div>
   </content>
 
-  <div class="panda-banner">
+  <div class="panda-banner believe">
     <div class="panda-word">
-      <p class="panda-title believe">믿을 수 있는<br />판다마켓 중고거래</p>
+      <p class="panda-title">믿을 수 있는<br> 판다마켓 중고거래</p>
     </div>
-    <img src="/스프린트/img/img_home_bottom.png" class="panda" />
+    <div class="panda_img_flexbox">
+      <img src="/스프린트/img/img_home_bottom.png" class="panda" />
+    </div>
   </div>
 
   <div class="footer_index">
@@ -80,7 +99,7 @@
       <p>©codeit - 2024</p>
 
       <div>
-        <a href="/privacy" class="footer_link">Privacy Policy</a>
+        <a href="/privacy" class="footer_link footer_privacy">Privacy Policy</a>
         <a href="/faq" class="footer_link">FAQ</a>
       </div>
 

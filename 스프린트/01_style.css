@@ -5,7 +5,6 @@
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   margin: 0;
-  white-space: nowrap;
 }
 
 header {
@@ -15,6 +14,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .header-logo {
@@ -48,9 +49,7 @@ header {
 
 .panda-banner .panda-word {
   max-width: 357px;
-  max-height: 200px;
   width: 100%;
-  height: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
@@ -64,6 +63,10 @@ header {
   color: #374151;
   font-size: 40px;
   font-weight: 700;
+  line-height: 56px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 .panda-banner .panda-button {
@@ -74,8 +77,8 @@ header {
 }
 
 .panda-banner .panda {
-  max-width: 998px;
-  width: 100%;
+  max-height: 447px;
+  height: auto;
   position: absolute;
   left: 37%;
   bottom: 0px;
@@ -120,6 +123,8 @@ header {
   font-weight: 700;
   font-size: 40px;
   line-height: 56px;
+  display: flex;
+  flex-direction: column;
 }
 
 .content_explain .content_explain_three {
@@ -143,11 +148,6 @@ header {
   margin-left: 0;
 }
 
-.believe {
-  display: flex;
-  align-items: center;
-}
-
 .footer_index {
   width: 100%;
   height: 160px;
@@ -157,7 +157,8 @@ header {
 .footer_index .footer_box {
   display: flex;
   justify-content: space-between;
-  padding: 32px 200px;
+  padding: 32px 104px;
+  font-size: 16px;
 }
 
 .footer_box p {
@@ -169,6 +170,10 @@ header {
   text-decoration: none;
 }
 
+.footer_box .footer_privacy {
+  margin-right: 30px;
+}
+
 .footer_img {
   display: flex;
   gap: 12px;
@@ -176,4 +181,188 @@ header {
 
 .footer_img img {
   height: 20px;
+}
+
+
+
+/* 태블릿 스타일 (768px ~ 1199px) */
+@media (max-width: 1199px) {
+
+  .panda-blue-button {
+    background-color: #ff2f2f;
+  }
+
+  header {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .panda-banner {
+    height: 771px;
+    padding-top: 84px;
+  }
+
+  .panda-banner .panda-word {
+    position: static;
+    max-width: 100%;
+    align-items: center;
+    flex-direction: column;
+    gap: 24px
+  }
+
+  .panda-banner .panda-title {
+    display: block;
+    width: auto;
+    text-align: center;
+  }
+
+  .panda-banner .panda-button {
+    border-radius: 45.5px;
+    width: 355px;
+    height: 60px;
+  }
+
+  /*(위) 조금씩 차이가 나는게 rem 때문인듯? rem으로 바꾸면 사라질 짜식들*/
+
+  .panda-banner .panda_img_flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .panda-banner .panda {
+    left: unset;
+  }
+
+  .content_1 {
+    display: grid;
+    height: auto;
+    margin: 24px;
+  }
+
+  .content_img {
+    width: 100%;
+  }
+
+  .content_explain {
+    margin-top: 20px;
+    margin-bottom: 56px;
+
+  }
+
+  .content_explain .content_explain_one {
+    color: #3692ff;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25.2px;
+  }
+
+  .content_explain .content_explain_two {
+    display: block;
+  }
+
+  .content_explain .content_explain_three {
+    margin-top: 8px;
+  }
+
+  .reverse .content_explain {
+    margin-right: 0;
+  }
+
+  .believe {
+    height: 927px;
+    padding: 0;
+  }
+
+  .believe .panda-title {
+    margin-top: 201px;
+    text-align: center;
+  }
+
+  .believe .panda {
+    max-height: 540px;
+  }
+
+}
+
+
+
+
+@media (max-width: 767px) {
+
+  .panda-blue-button {
+    background-color: #ffee00d4;
+  }
+
+  header {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .panda-banner {
+    height: 540px;
+    padding-top: 48px;
+  }
+
+  .panda-banner .panda-title {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .panda-banner .panda-button {
+    width: 154px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .panda-banner .panda {
+    max-height: 281px;
+    height: auto;
+  }
+
+  .content_1 {
+    margin: 16px;
+  }
+
+  .content_explain {
+    gap: 8px;
+  }
+
+  .content_explain .content_explain_one {
+    font-size: 16px;
+  }
+
+  .content_explain .content_explain_two {
+    font-size: 24px;
+    line-height: normal;
+  }
+
+  .content_explain .content_explain_three {
+    font-size: 16px;
+    margin-top: 12px;
+    line-height: 19.2px;
+  }
+
+  .panda-banner .panda-title {
+    font-size: 32px;
+  }
+
+  .believe .panda-title {
+    margin-top: 42px;
+    text-align: center;
+    line-height: 44.8px;
+  }
+
+  .footer_index {
+    position: relative;
+  }
+
+  .footer_box p {
+    position: absolute;
+    bottom: 32px;
+  }
+
+  .footer_index .footer_box {
+    padding: 32px;
+  }
 }
