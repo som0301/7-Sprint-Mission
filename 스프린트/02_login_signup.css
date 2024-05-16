@@ -28,6 +28,10 @@ a {
   margin-bottom: 40px;
 }
 
+.logo {
+  width: 396px;
+}
+
 content,
 form {
   display: flex;
@@ -123,4 +127,41 @@ button {
 
 .question a {
   color: #3182f6;
+}
+
+
+@media (max-width: 767px) {
+  * {
+    color: yellow;
+  }
+
+  body {
+    padding: 0px 16px;
+  }
+
+  a {
+    margin: 24px auto;
+  }
+
+  .logo {
+    width: 198px;
+  }
+
+  content,
+  form {
+    width: 100%;
+    gap: 16px;
+  }
+
+  .input_please {
+    height: 81px;
+  }
+
+  .input_please label {
+    font-size: 14px;
+  }
+
+  .simple {
+    margin: 8px 0;
+  }
 }
