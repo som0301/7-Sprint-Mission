@@ -18,28 +18,34 @@
   <main>
     <section>
       <h1>이메일</h1>
-      <input type="text" placeholder="이메일을 입력해주세요" />
+      <input type="text" id="ID" placeholder="이메일을 입력해주세요" />
+      <p id="emailNoneError">이메일을 입력해주세요</p>
+      <p id="emailSetError">잘못된 이메일 형식입니다</p>
     </section>
     <section>
       <h1>닉네임</h1>
-      <input type="text" placeholder="닉네임을 입력해주세요" />
+      <input type="text" id="NICK" placeholder="닉네임을 입력해주세요" />
+      <p id="nicknoneError">닉네임을 입력해주세요</p>
     </section>
     <section>
       <h1>비밀번호</h1>
-      <input type="password" placeholder="비밀번호를 입력해주세요 " />
+      <input type="password" id="PW" placeholder="비밀번호를 입력해주세요 " />
+      <p id="pwNoneError">비밀번호를 입력해주세요</p>
+      <p id="pwLengthError">비밀번호를 8자 이상 입력해주세요</p>
       <div class="inputPW">
-        <img src="images/home/btn_visibility_button.png" />
+        <img src="images/home/btn_visibility_button.png" id="pwIcon" />
       </div>
     </section>
     <section>
       <h1>비밀번호 확인</h1>
-      <input type="password" placeholder="비밀번호를 다시 한 번 입력해주세요 " />
+      <input type="password" id="PWcheck" placeholder="비밀번호를 다시 한 번 입력해주세요 " />
+      <p id="pwCheckError">비밀번호가 일치하지 않습니다.</p>
       <div class="inputPW">
-        <img src="images/home/btn_visibility_button.png" />
+        <img src="images/home/btn_visibility_button.png" id="pwCheckIcon" />
       </div>
     </section>
     <section>
-      <a><button>로그인</button></a>
+      <a href="signin.html" id="signupLink" class="disabled"><button id="signupButton">회원가입</button></a>
     </section>
     <section>
       <div class="socialLogin">
@@ -54,6 +60,7 @@
   <footer>
     <p>판다마켓이 처음이신가요? <a href="signup.html">회원가입</a></p>
   </footer>
+  <script src="js/signup.js"></script>
 </body>
 
 </html>
