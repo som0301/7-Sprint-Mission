@@ -43,10 +43,14 @@ form {
 }
 
 /* 심화 요구사항 - 비밀번호에 눈 추가 */
-.eye {
+.btn-visibility {
   position: absolute;
   right: 24px;
   top: 53px;
+}
+
+.btn-visibility:hover {
+  cursor: pointer;
 }
 
 .input-form label {
@@ -144,14 +148,11 @@ input::placeholder {
   outline: 2px solid var(--error-color);
 }
 
-input:invalid {
-  outline: 2px solid var(--error-color);
-}
-
 .error-msg {
   font-family: Pretendard;
   font-size: 15px;
   font-weight: 600;
 
   color: var(--error-color);
+  margin-left: 16px;
 }

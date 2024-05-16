@@ -10,6 +10,9 @@ const errorMsgNickname = document.querySelector('.error-msg-nickname');
 const errorMsgPwd = document.querySelector('.error-msg-pwd');
 const errorMsgRepeat = document.querySelector('.error-msg-repeat');
 
+const pwdVisibility = document.querySelector('.btn-visibility-pwd');
+const repeatVisibility = document.querySelector('.btn-visibility-repeat');
+
 // 이메일 유효성
 function emailCheck(email) {
   const email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
@@ -33,6 +36,7 @@ function validEmail() {
   }
 }
 
+// 닉네임 공백 체크
 function validNickname() {
   const nickname = userNickname.value;
 
@@ -67,6 +71,7 @@ function validPwd() {
   }
 }
 
+// 비밀번호 확인
 function isMatch(pwd, rep) {
   return pwd === rep;
 }
@@ -77,13 +82,14 @@ function validRepeat() {
 
   if (isMatch(pwd, rep)) {
     errorMsgRepeat.textContent = '';
-    userPwdRepeat.classList.add('error-input');
+    userPwdRepeat.classList.remove('error-input');
   } else {
     errorMsgRepeat.textContent = '비밀번호가 일치하지 않습니다.';
-    userPwdRepeat.classList.remove('error-input');
+    userPwdRepeat.classList.add('error-input');
   }
 }
 
+// input이 맞게 들어갔는지 확인
 function joinCheckInput() {
   const emailValue = userEmail.value;
   const nicknameValue = userNickname.value;
@@ -99,6 +105,31 @@ function joinCheckInput() {
 
   loginBtn.disabled = isError || isEmpty;
 }
+
+// 눈버튼 토글
+function passwordToggle() {
+  if (userPwd.getAttribute('type') === 'password') {
+    userPwd.setAttribute('type', 'text');
+    pwdVisibility.src = '/images/eye-on.png';
+  } else {
+    userPwd.setAttribute('type', 'password');
+    pwdVisibility.src = '/images/eye-off.png';
+  }
+}
+
+function repeatToggle() {
+  if (userPwdRepeat.getAttribute('type') === 'password') {
+    userPwdRepeat.setAttribute('type', 'text');
+    repeatVisibility.src = '/images/eye-on.png';
+  } else {
+    userPwdRepeat.setAttribute('type', 'password');
+    repeatVisibility.src = '/images/eye-off.png';
+  }
+}
+
+//이벤트 추가
+pwdVisibility.addEventListener('click', passwordToggle);
+repeatVisibility.addEventListener('click', repeatToggle);
 
 const userInputs = [userEmail, userNickname, userPwd, userPwdRepeat];
 const valids = [validEmail, validNickname, validPwd, validRepeat];

@@ -5,6 +5,8 @@ const loginBtn = document.querySelector('.btn-login');
 const errorMsgEmail = document.querySelector('.error-msg-email');
 const errorMsgPwd = document.querySelector('.error-msg-pwd');
 
+const pwdVisibility = document.querySelector('.btn-visibility');
+
 // 이메일 유효성
 function emailCheck(email) {
   const email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
@@ -50,11 +52,16 @@ function validPwd() {
   }
 }
 
-const userInputs = [userEmail, userPwd];
-const valids = [validEmail, validPwd];
-
-for (let i = 0; i < valids.length; i++) userInputs[i].addEventListener('focusout', valids[i]);
-for (let i = 0; i < valids.length; i++) userInputs[i].addEventListener('keyup', valids[i]);
+// 눈버튼 토글
+function passwordToggle() {
+  if (userPwd.getAttribute('type') === 'password') {
+    userPwd.setAttribute('type', 'text');
+    pwdVisibility.src = '/images/eye-on.png';
+  } else {
+    userPwd.setAttribute('type', 'password');
+    pwdVisibility.src = '/images/eye-off.png';
+  }
+}
 
 // 로그인 버튼 비활성화
 function loginCheckInput() {
@@ -66,6 +73,15 @@ function loginCheckInput() {
 
   loginBtn.disabled = isError || isEmpty;
 }
+
+//이벤트 핸들러 추가
+pwdVisibility.addEventListener('click', passwordToggle);
+
+const userInputs = [userEmail, userPwd];
+const valids = [validEmail, validPwd];
+
+for (let i = 0; i < valids.length; i++) userInputs[i].addEventListener('focusout', valids[i]);
+for (let i = 0; i < valids.length; i++) userInputs[i].addEventListener('keyup', valids[i]);
 
 userInputs.forEach(input => input.addEventListener('input', loginCheckInput));
 userInputs.forEach(input => input.addEventListener('keyup', loginCheckInput));
