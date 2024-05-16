@@ -74,14 +74,16 @@ header {
 }
 
 .panda-banner .panda {
-  width: 998px;
+  max-width: 998px;
+  width: 100%;
   position: absolute;
   left: 37%;
   bottom: 0px;
 }
 
 .content {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
