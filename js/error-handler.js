@@ -9,9 +9,22 @@ export function createErrorElement(inputElement) {
 }
 
 export function showError(inputElement, errorElement, errorMessage) {
+    inputElement.style.border = '1px solid #f74747';
     errorElement.textContent = errorMessage;
 }
 
 export function hideError(inputElement, errorElement) {
-    errorElement.textContent = '';
+    inputElement.style.border = 'none';
+    errorElement.parentNode.removeChild(errorElement);
+}
+
+export function setSubmitButtonState(submitButton, errorMessages) {
+    let submitButtonState = true;
+    errorMessages.forEach((errorMessage) => {
+        submitButtonState = errorMessage.parentNode ? false : submitButtonState;
+    });
+
+    if (submitButtonState) {
+        submitButton.classList.toggle('active', submitButtonState);
+    }
 }

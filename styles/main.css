@@ -1,10 +1,12 @@
+@import 'color.css';
+
 em {
     width: 72px;
     height: 25px;
     font-size: 18px;
     font-weight: 700;
     font-style: normal;
-    color: #3692ff;
+    color: var(--blue);
     line-height: 25.2px;
 }
 
@@ -39,7 +41,7 @@ body {
     justify-content: center;
     min-width: 128px;
     height: 48px;
-    background: #3692ff;
+    background: var(--blue);
     border-radius: 8px;
     font-weight: 700;
     font-size: 16px;
@@ -73,7 +75,7 @@ body {
 .top-banner__title {
     font-size: 40px;
     line-height: 140%;
-    color: #374151;
+    color: var(--gray700);
 }
 
 .top-banner__items-btn {
@@ -82,7 +84,7 @@ body {
     align-items: center;
     width: 355px;
     height: 60px;
-    background: #3692ff;
+    background: var(--blue);
     border-radius: 45.5px;
     font-weight: 700;
     font-size: 20px;
@@ -132,14 +134,14 @@ body {
     font-size: 40px;
     line-height: 140%;
     letter-spacing: 0.02em;
-    color: #374151;
+    color: var(--gray700);
 }
 
 .feature__content {
     font-size: 24px;
     line-height: 120%;
     letter-spacing: 0.08em;
-    color: #374151;
+    color: var(--gray700);
 }
 
 .bottom-banner {
@@ -157,7 +159,7 @@ body {
 .bottom-banner__title {
     font-size: 40px;
     line-height: 140%;
-    color: #374151;
+    color: var(--gray700);
 }
 
 .footer {
@@ -318,7 +320,7 @@ body {
         font-size: 32px;
         line-height: 140%;
         text-align: center;
-        color: #374151;
+        color: var(--gray700);
     }
 
     .top-banner__items-btn {

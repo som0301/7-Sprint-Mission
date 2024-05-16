@@ -66,18 +66,18 @@
     cursor: pointer;
 }
 
-.visibility-btn -show {
+.visibility-btn.show {
     background-image: url(../img/icon/btn__visibility-on.svg);
 }
 
 .error__message {
     padding-left: 16px;
     font-size: 15px;
-    color: #f74747;
+    color: var(--red);
 }
 
 .label__input:focus-visible {
-    outline: 3px solid #3692ff;
+    outline: 1px solid var(--blue);
 }
 
 .submit-btn {
