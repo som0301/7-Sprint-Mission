@@ -148,7 +148,7 @@
   }
 
   #hero {
-    background-size: 135% 60%;
+    background-size: 100% 60%;
     background-position: 50% bottom;
     align-items: flex-start;
   }

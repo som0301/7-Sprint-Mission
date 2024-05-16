@@ -21,30 +21,6 @@ body {
   --blue: #3692ff;
 }
 
-/* @media (min-width: 768px) {
-  body {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  header > a > #titleLogo {
-    width: 198px;
-    height: 66px;
-  }
-  
-  section {
-    width: 640px;
-  }
-
-  section > h1 {
-    font-size: 18px;
-    line-height: 16.71px;
-  }
-} */
-
 @media (min-width: 375px) and (max-width: 767px) {
 
   body {
@@ -62,7 +38,7 @@ body {
 
   main {
     gap: 16px;
-    width: 400px;
+    max-width: 400px;
   }
   
   main > section {
@@ -119,7 +95,6 @@ input {
   line-height: 24px;
   color: var(--gray800);
   outline-color: var(--blue);
-  /* width: 100%; */
 }
 
 input::placeholder {
