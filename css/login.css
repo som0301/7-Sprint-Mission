@@ -47,6 +47,10 @@ input:focus {
   outline: 1px solid var(--blue-color);
 }
 
+.input-warnning {
+  outline: 1px solid red;
+}
+
 input::placeholder {
   color: var(--gray400-color);
 }
