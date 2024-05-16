@@ -16,16 +16,12 @@ header {
   align-items: center;
 }
 
-a {
-  cursor: pointer;
-}
-
 .header-logo {
   width: 153px;
   height: 51px;
 }
 
-.blue_button {
+.panda-blue-button {
   background-color: #3692ff;
   color: white;
   font-weight: 600;
@@ -42,14 +38,14 @@ a {
   font-size: 16px;
 }
 
-.banner {
+.panda-banner {
   width: 100%;
   height: 540px;
   position: relative;
   background-color: #cfe5ff;
 }
 
-.banner .word {
+.panda-banner .panda-word {
   width: 357px;
   height: 200px;
   display: flex;
@@ -61,20 +57,20 @@ a {
   z-index: 1;
 }
 
-.banner .title {
+.panda-banner .panda-title {
   color: #374151;
   font-size: 40px;
   font-weight: 700;
 }
 
-.banner .button {
+.panda-banner .panda-button {
   border-radius: 40px;
   width: 357px;
   height: 56px;
   font-size: 20px;
 }
 
-.banner .panda {
+.panda-banner .panda {
   width: 998px;
   position: absolute;
   left: 37%;
@@ -107,21 +103,21 @@ a {
   position: relative;
 }
 
-.content_explain .one {
+.content_explain .content_explain_one {
   color: #3692ff;
   font-weight: 700;
   font-size: 18px;
   line-height: 25.2px;
 }
 
-.content_explain .two {
+.content_explain .content_explain_two {
   color: #374151;
   font-weight: 700;
   font-size: 40px;
   line-height: 56px;
 }
 
-.content_explain .three {
+.content_explain .content_explain_three {
   color: #374151;
   font-weight: 500;
   font-size: 24px;
@@ -147,13 +143,13 @@ a {
   align-items: center;
 }
 
-footer {
+.footer_index {
   width: 100%;
   height: 160px;
   background-color: #111827;
 }
 
-footer .footer_box {
+.footer_index .footer_box {
   display: flex;
   justify-content: space-between;
   padding: 32px 200px;
