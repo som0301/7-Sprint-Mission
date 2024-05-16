@@ -21,6 +21,8 @@
     line-height: 24px;
     text-align: center;
     cursor: pointer;
+    width: 100%;
+    display: inline-block;
 
   }
 
@@ -47,6 +49,8 @@
     width: 128px;
     height: 48px;
     color: #ffffff;
+    width: 100%;
+    display: inline-block;
 
   }
 
@@ -54,22 +58,3 @@
   input:focus {
     outline-color: #3692FF;
   }
-
-
-
-
-/*
-
-position: absolute;
-left: 7.45%;
-right: 7.24%;
-top: 14.56%;
-bottom: 10.17%;
-
- Cool Gray/600 
-background: #4B5563;
-*/
-
-/* Vector */
-
-
