@@ -3,10 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>판다마켓 로그인</title>
+    <meta property="og:type" content="website" />
+    <!-- 5.17 Open Graph 프로토콜을 사용하여 특정 URL과 관련된 메타데이터를 설정하는 HTML 태그입니다. 
+      이 태그는 주로 소셜 미디어 플랫폼에서 URL이 공유될 때 어떤 정보가 표시될지를 정의 -->
+    <meta
+    property="og:url"
+    content="https://panda-market-sample.netlify.app/signup"
+    />
+    <meta property="og:title" content="판다마켓 - 회원가입" />
+    <meta property="og:image" content="images/logo/og-image.png" />
+    <meta
+      property="og:description"
+      content="일상의 모든 물건을 거래해 보세요"
+    />
+    <title>판다마켓 - 회원가입</title>
     <link rel="icon" href="images/logo/favicon.ico" />
-    <link rel="stylesheet" href="styles/home.css" />
-    <link rel="stylesheet" href="styles/login.css" />        
+    
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/auth.css" />   
   </head> 
 
   <body>
@@ -109,7 +123,7 @@
               <img 
                 src="images/icons/eye-invisible.svg" 
                 alt="비밀번호 숨김버튼" 
-                class="hide-password"/>
+                class="password-toggle-icon"/>
             </div>
             <!-- 5.17 Confirmation Init 확인초기화 -->
             <span id="passwordConfirmationInitError" class="error-message"
