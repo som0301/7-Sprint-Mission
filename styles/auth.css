@@ -165,7 +165,7 @@ relative를 추가해줌  */
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
   .auth-container {
     padding: 60px 0;
   }
