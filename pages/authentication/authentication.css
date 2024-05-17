@@ -1,4 +1,4 @@
-@import "/reset.css";
+@import '/reset.css';
 
 * {
   color: var(--Cool-gray-800);
@@ -47,6 +47,17 @@
 
 .auth-form input:focus {
   outline: 2px solid var(--main-color);
+}
+
+/* input.focusout과 p.focusout은 js파일에서 사용 */
+.auth-form input.focusout {
+  outline: 2px solid var(--error-color);
+  margin-bottom: 10px;
+}
+
+.auth-form p.focusout {
+  color: var(--error-color);
+  margin-bottom: 24px;
 }
 
 .auth-form .input-container {
