@@ -17,7 +17,7 @@
         </a>
       </div>
 
-      <form method="post">
+      <form id="signUpForm" method="post">
         <div class="input-items">
           <label for="email">
             이메일
@@ -28,6 +28,12 @@
             type="email"
             placeholder="이메일을 입력해주세요"
           />
+          <span id="emailEmptyError" class="error-message">
+            이메일을 입력해주세요.
+          </span>
+          <span id="emailInvalidError" class="error-message">
+            잘못된 이메일 형식입니다.
+          </span>
         </div>
 
         <div class="input-items">
@@ -38,6 +44,9 @@
             type="text"
             placeholder="닉네임을 입력해주세요"
           />
+          <span id="nicknameEmptyError" class="error-message">
+            닉네임을 입력해주세요.
+          </span>
         </div>
 
         <div class="input-items">
@@ -46,8 +55,16 @@
           </label>
           <div class="password">
             <input id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요" />
-            <img src="image/icon/eye-none.png" alt="비밀번호 숨기기" class="toggle-password">
+            <button type="button" class="toggle-password" onclick="togglePassword('password')">
+              <img src="image/icon/eye-none.png" alt="비밀번호 숨기기">
+            </button>
           </div>
+          <span id="passwordEmptyError" class="error-message">
+            비밀번호를 입력하세요.
+          </span>
+          <span id="passwordInvalidError" class="error-message">
+            비밀번호를 8자 이상 입력해주세요.
+          </span>
         </div>
 
         <div class="input-items">
@@ -56,13 +73,18 @@
           </label>
           <div class="password">
             <input
-              id="password2"
-              name="password"
+              id="passwordConfirm"
+              name="passwordConfirm"
               type="password"
               placeholder="비밀번호를 다시 한 번 입력해주세요"
             />
-            <img src="image/icon/eye-none.png" alt="비밀번호 숨기기" class="toggle-password">
+            <button type="button" class="toggle-password" onclick="togglePassword('passwordConfirm')">
+              <img src="image/icon/eye-none.png" alt="비밀번호 숨기기" />
+            </button>
           </div>
+          <span id="passwordConfirmError" class="error-message">
+            비밀번호가 일치하지 않습니다.
+          </span>
         </div>
         <button type="submit" class="btn-primary submit_btn_login">
           회원가입
@@ -84,5 +106,6 @@
         이미 회원이신가요? <a href="signin.html" rel="noreferrer noopener">로그인</a>
       </div>
     </div>
+    <script src="script/auth.js"></script>
   </body>
 </html>

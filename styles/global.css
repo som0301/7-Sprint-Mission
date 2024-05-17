@@ -15,6 +15,7 @@
 
   /* Primary color */
   --white: #ffffff;
+  --red: #f74747
 }
 * {
   box-sizing: border-box;
