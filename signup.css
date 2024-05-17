@@ -83,9 +83,11 @@ input::placeholder{
     position: absolute;
     top: 5.3rem;
     right: 2.4rem;
-
 }
 
+.signup-btn{
+  background-color: var(--gray-400);  
+}
 .simple-login{
     display: flex;
     justify-content: space-between;
@@ -163,4 +165,9 @@ input::placeholder{
     margin-top: 0.5rem;
     margin-left: 1.6rem;
     margin-bottom: 2.4rem;
+}
+
+.disabled{
+    background-color: #9CA3AF;
+    cursor: none;
 }
