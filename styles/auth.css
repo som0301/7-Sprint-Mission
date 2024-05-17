@@ -1,35 +1,49 @@
-.login-container {
-  max-width: 400px ;
+
+
+.auth-container {
+  padding: 24px 16px;
+  max-width: 432px;
   margin: 0 auto;
-  padding: 16px;
 }
 
 
-.logo-home-button {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
+.logo-home-link {
+  display: block;
   margin-bottom: 24px;
+  text-align: center;
+}
+
+
+.logo-home-link img {
   width: 198px;
 }
 
 
-.input-area {
+.input-item {
   margin-bottom: 24px;
-  display: flex;
-  flex-direction: column; 
 }
 
 
-label {
+.logo-home-link img {
+  width: 198px;
+}
+
+.input-item {
+  margin-bottom: 24px;
+}
+
+
+.input-item label {
   display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
   font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 8px;
 }
+
+
 
 /* border:none 을 함으로 bc가 들어가면서 생긴 두께가 사라짐 */
-input {
+.input-item input {
   padding: 16px 24px;
   background-color: #f3f4f6;
   border: none;
@@ -39,7 +53,9 @@ input {
   width: 100%;
 }
 
-input::placeholder {
+
+
+.input-item input::placeholder {
   color: #9ca3af;
   font-size: 16px;
   line-height: 24px;
@@ -47,8 +63,8 @@ input::placeholder {
 
 /* focus in 되면 색상이 바뀌는 부분 */
 
-input:focus {
-  outline-color: #3692FF
+.input-item input:focus {
+  outline-color: var(--blue);
 }
 
 /* 눈아이콘과 password input을 flex로 묶어주고 
@@ -61,76 +77,38 @@ relative를 추가해줌  */
   align-items: center;
 }
 
-.hide-password {
+
+.password-toggle-button {
   position: absolute;
   right: 24px;
-  cursor: pointer;
 }
+
+
 /*  버튼 관련 색상이 전부 같음을 느꼈음 현재 각 클래스마다 색상을 부여 했지만
 차후 하나의 요소?  하나의 객체? 로 관리하는 방법을 구상해보는 것이 좋겠다 느낌 */
-.login-button {
-  width: 100%;
-  font-size: 20px;
-  font-weight: 700;
-  border: none;
-  border-radius: 999px;
-  padding: 16px 126px;
-  background-color: #3692FF;
-  color: #ffffff;
-  cursor: pointer;
-}
 
-.login-button:hover {
-  background-color: #1967d6;  
-}
 
-.soclal-login-area {
+
+.social-login-container {
   background-color: #e6f2ff;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 8px;
   padding: 16px 23px;
   margin: 24px 0;
 }
 
-.soclal-login-area h3 {
+
+.social-login-container h3 {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
 }
 
-.social-login-button {
+.social-login-links-container {
   display: flex;
   gap: 16px;
-}
-
-.signup-button {
-  font-weight: 500;
-  font-size: 15px;
-  text-align: center;
-}
-
-.signup-button a {
-  color: #3182f6;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.signup-button {
-  width: 100%;
-  font-size: 20px;
-  font-weight: 700;
-  border: none;
-  border-radius: 999px;
-  padding: 16px 126px;
-  background-color: #3692FF;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.signup-button:hover {
-  background-color: #1967d6;  
 }
 
 .auth-switch {
@@ -139,32 +117,56 @@ relative를 추가해줌  */
   text-align: center;
 }
 
+.auth-switch a {
+  color: #3182f6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+
+.error-message {
+  color: #f74747;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  margin-top: 8px;
+  display: none;
+  padding-left: 16px;
+}
+
+
+
 /* 반응형 관련하여 기존pc 사이즈에 맞춰 사이즈를 작성하였으나
 반응형이 추가되고  media  테블릿  media pc   media 모바일 
 3가지를 만들어야 된다고 생각을 했으나 이해가 잘 가지 않아 스프린트 3탬플릿을 확인해보니
 기본을 모바일로 변경하고  테블릿과 피씨를 추가해서 관리 하는것을 발견 하였습니다. 
 그렇게 수정하는 편이 어느부분에서 이점이 있는지 궁금합니다.! */
 @media (min-width: 768px) {
-  .login-container {
-    max-width: 400px ;
+  .auth-container {
+    max-width: 640px;
+    padding: 48px 0;
+  }
+  
+  
+  .logo-home-link {
+    margin-bottom: 40px;
   }
 
-  .logo-home-button {
-    margin-top: 48px;
-    margin-bottom: 24px;
+
+  .logo-home-link img {
     width: 396px;
   }
   
-  label {
+
+
+  .input-item label {
+    font-size: 18px;
     margin-bottom: 16px;
-    font-size: 14px;
   }
 }
 
 @media (min-width: 768px) {
-  .logo-home-button {
-    margin-top: 60px;
-    margin-bottom: 40px;
-
+  .auth-container {
+    padding: 60px 0;
   }
 }

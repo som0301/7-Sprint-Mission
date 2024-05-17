@@ -26,7 +26,7 @@
     <main class="auth-container">
       <a href="index.html" class="logo-home-link" aria-label="홈으로 이동"
         ><img src="images/logo/logo.svg" alt="판다마켓 로고" 
-      />/a>
+      /></a>
 
       <!-- 5.17 method="post  아마도  정보를 전달할때 쓰는 용도로 사용것 같다."
       form> 태그의 method 속성은 폼 데이터(form data)가 서버로 제출될 때 사용되는 HTTP 메소드를 명시
@@ -43,7 +43,7 @@
           />
            <!-- Empy 비어있는 에러 -->
           <span id="emailEmptyError" class="error-message"
-            >이메일을 입려해 주세요</span 
+            >이메일을 입력해 주세요</span 
           >
           <!-- Invalid 요효하지 않는 에러 -->
           <span id="emailInvalidError" class="error-message"
@@ -64,14 +64,15 @@
               />
               <button
                 type="button"
-                class="pasword-toggle-button"
+                class="password-toggle-button"
                 aria-label="비밀번호 보기"
               >
-                <img 
-                  src="images/icons/eye-invisible.svg" 
-                  alt="비밀번호 숨김버튼" 
-                  class="password-toggle-icon"/>
-              </button>
+              <img
+                class="password-toggle-icon"
+                src="images/icons/eye-invisible.svg"
+                alt="비밀번호 숨김 상태 아이콘"
+              />
+            </button>
 
             </div>
             <!-- Empy 비어있는 에러 -->
@@ -82,12 +83,12 @@
               >비밀번호를 8자 이상 입력해 주세요</span>
         </div>
 
-        <button type="submit" class="login-button">로그인</button>
+        <button type="submit" class="button pill-button">로그인</button>
       </form>
 
-      <div class="soclal-login-area">
+      <div class="social-login-container">
         <h3>간편 로그인하기</h3>
-        <div class="social-login-button">
+        <div class="social-login-links-container">
           <!-- rel 추가 -->
           <a 
           href="https://www.google.com/" 
