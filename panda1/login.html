@@ -19,27 +19,24 @@
          <a href="/"><img src="/img/logo_L.png" /></a>
       </div>
       <div id="login-box">
-         <div class="divide">
-            <p class="input-name">이메일</p>
-            <input id="id-box" class="input-box" name="username" type="text" placeholder="이메일을 입력해주세요" />
-         </div>
-         <div class="divide">
-            <p class="input-name">비밀번호</p>
-            <div class="for-btn_visibility">
-               <input
-                  id="pw-box"
-                  class="input-box"
-                  name="password"
-                  type="password"
-                  placeholder="비밀번호를 입력해주세요"
-               />
-               <img src="/img/btn_visibility.png" />
+         <form>
+            <div class="divide">
+               <p class="input-name">이메일</p>
+               <input id="id-box" class="input-box" name="username" type="email" placeholder="이메일을 입력해주세요" />
+               <p class="err-content id-err-content"></p>
             </div>
-            <div class="err-content"></div>
-         </div>
-         <div class="divide">
-            <button type="button" onclick="location.href = '/login'" class="btn">로그인</button>
-         </div>
+            <div class="divide">
+               <p class="input-name">비밀번호</p>
+               <div class="for-btn_visible">
+                  <input id="pw-box" class="input-box" name="password" type="password" placeholder="비밀번호를 입력해주세요" />
+                  <img class="btn-v" src="/img/btn_unvisible.svg" />
+               </div>
+               <p class="err-content pw-err-content"></p>
+            </div>
+            <div class="divide">
+               <button type="button" onclick="location.href = '/items.html'" id="login-btn" class="btn" disabled>로그인</button>
+            </div>
+         </form>
          <div class="help-login divide">
             <span> 간편 로그인하기 </span>
             <div class="icons">
@@ -52,6 +49,6 @@
          </div>
       </div>
 
-      <script src="/input.js"></script>
+      <script src="/login.js"></script>
    </body>
 </html>

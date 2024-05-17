@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>판다마켓/signup</title>
+      <link
+         rel="stylesheet"
+         as="style"
+         crossorigin
+         href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css"
+      />
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="login.css" />
+   </head>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>판다마켓/signup</title>
-    <link rel="stylesheet" as="style" crossorigin
-        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="login.css">
-</head>
-
-<body>
-    <div class="login-logo">
-        <a href="/"><img src="/img/logo_L.png"></a>
-    </div>
-    <div id="login-box">
-        <div class="divide">
+   <body>
+      <div class="login-logo">
+         <a href="/"><img src="/img/logo_L.png" /></a>
+      </div>
+      <div id="login-box">
+         <div class="divide">
             <p class="input-name">이메일</p>
-            <input class="input-box" name="username" type="text" placeholder="이메일을 입력해주세요" />
-        </div>
-        <div class="divide">
+            <input id="id-box" class="input-box" name="username" type="email" placeholder="이메일을 입력해주세요" />
+            <p class="err-content id-err-content"></p>
+         </div>
+         <div class="divide">
             <p class="input-name">닉네임</p>
-            <input class="input-box" name="username" type="text" placeholder="닉네임을 입력해주세요" />
-        </div>
-        <div class="divide">
+            <input id="nick-box" class="input-box" name="username" type="text" placeholder="닉네임을 입력해주세요" />
+            <p class="err-content nick-err-content"></p>
+         </div>
+         <div class="divide">
             <p class="input-name">비밀번호</p>
-            <div class="for-btn_visibility">
-                <input class="input-box" name="password" type="password" placeholder="비밀번호를 입력해주세요" />
-                <img src="/img/btn_visibility.png">
+            <div class="for-btn_visible">
+               <input id="pw-box" class="input-box" name="password" type="password" placeholder="비밀번호를 입력해주세요" />
+               <p class="err-content pw-err-content"></p>
+               <img class="btn-v" src="/img/btn_unvisible.svg" />
             </div>
-        </div>
-        <div class="divide">
+         </div>
+         <div class="divide">
             <p class="input-name">비밀번호 확인</p>
-            <div class="for-btn_visibility">
-                <input class="input-box" name="password" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요" />
-                <img src="/img/btn_visibility.png">
+            <div class="for-btn_visible">
+               <input id="pwdc-box" class="input-box" name="password" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요" />
+               <img class="btn-v" src="/img/btn_unvisible.svg" />
             </div>
-        </div>
-        <div class="divide">
-            <button id="login-pg-btn" type="button" onclick="location.href = '/signup'" class="btn">회원가입</button>
-        </div>
-        <div class="help-login divide">
-            <div>
-                간편 로그인하기
-            </div>
+            <p class="err-content pwdc-err-content"></p>
+         </div>
+         <div class="divide">
+            <button type="button" onclick="location.href = '/signup'" id="signup-btn" class="btn" disabled>회원가입</button>
+         </div>
+         <div class="help-login divide">
+            <div>간편 로그인하기</div>
             <div class="icons">
-                <a href="https://www.google.com/"><img src="/img/lg_google.png"></a>
-                <a href="https://www.kakaocorp.com/page/"><img src="/img/lg_kakao.png"></a>
+               <a href="https://www.google.com/"><img src="/img/lg_google.png" /></a>
+               <a href="https://www.kakaocorp.com/page/"><img src="/img/lg_kakao.png" /></a>
             </div>
-        </div>
-        <div id="help-signup">
+         </div>
+         <div id="help-signup">
             <p>이미 회원이신가요?<a href="login.html">로그인</a></p>
-        </div>
-
-    </div>
-</body>
+         </div>
+      </div>
+      <script src="/signup.js"></script>
+   </body>
+</html>
