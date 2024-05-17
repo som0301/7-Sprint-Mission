@@ -248,7 +248,7 @@ footer {
   .article * {
     width: 0;
     flex-grow: 1;
-    min-width: 75.7rem;
+    /* min-width: 75.7rem; */
     justify-content: center;
   }
 
@@ -292,7 +292,7 @@ footer {
   .article * {
     width: 0;
     flex-grow: 1;
-    min-width: 75.7rem;
+    /* min-width: 75.7rem; */
     justify-content: center;
 
   }

@@ -25,14 +25,16 @@
             <div class="form-container">
                 <form>
                     <div>
-                        <label class="width label-text">이메일</label>
-                        <input class="width input-text" type="email" placeholder="이메일을 입력해주세요" onfocus="this.placeholder=''"/>
+                        <label for="email" class="width label-text">이메일</label>
+                        <input id="email" class="width input-text" type="email" placeholder="이메일을 입력해주세요" /> 
+                        <!-- onfocus="this.placeholder=''" -->
                         <div id="email-error" class = "error-messsage"></div>
                     </div>
                     <div class="password">
-                        <label class="width label-text">비밀번호</label>
-                        <input class="width input-text" type="password" placeholder="비밀번호를 입력해주세요">
+                        <label for="password" class="width label-text">비밀번호</label>
+                        <input id="password" class="width input-text" type="password" placeholder="비밀번호를 입력해주세요">
                         <img class="unvisible" src ="./img/btn_visibility_on_24px.png">
+                        <div id="password-error" class = "error-messsage"></div>
                     </div>
                     <button class="width button-large login-btn">로그인</button>
                 </form>
