@@ -28,7 +28,13 @@
     gap: 74px;
     padding-top: 201px;
   }
-
+  .main-title.main-media,
+  .main-main.main-media {
+    font-size: 1.8rem;
+  }
+  .main-head.main-media {
+    font-size: 3.2rem;
+  }
   .footer-top,
   #header {
     display: flex;
@@ -66,6 +72,7 @@
   .container.main-media,
   .main-img {
     height: auto;
+    gap: 20px;
   }
   .container.main-media {
     padding: 0 24px;
@@ -77,6 +84,12 @@
   }
 }
 @media (min-width: 375px) and (max-width: 767px) {
+  .nav-logo.nav-media {
+    background-image: url('/image/logo-small.svg');
+    width: 103px;
+    height: 51px;
+  }
+
   #mainheader #mainheaderbg {
     padding: 10px 16px 9px;
     text-wrap: nowrap;
@@ -84,6 +97,78 @@
   #header-img {
     width: 626.12px;
     height: 281px;
+  }
+
+  .big-message {
+    width: 265px;
+    font-size: 3.2rem;
+    line-height: 4.48rem;
+  }
+
+  #media-headerbutton{
+    width: 154px;
+    height: 48px;
+    font-size: 1.6rem;
+  }
+
+  #header {
+    gap: 55px;
+    padding-top: 48px;
+    margin-bottom: 50px;
+  }
+
+  #main-container {
+    gap: 18px;
+  }
+
+  .container.main-media {
+    padding : 0 16px;
+  }
+  
+  .main-head.main-media {
+    font-size: 2.4rem;
+    line-height: 3.36rem;
+    margin-bottom: 20px;
+  }
+
+  .main-title.main-media,
+  .main-main.main-media {
+    font-size: 1.6rem;
+    letter-spacing: 8%;
+    line-height: 1.92rem;
+  }
+  .main-title.main-media {
+    margin-bottom: 8px;
+  }
+  .footer-top.footer-media {
+    padding: 0;
+    gap: 59px;
+  }
+  .big-message.footer-media {
+    padding-top: 121px;
+  }
+  #footerimg.media-footerimg {
+    width: 132.776%;
+    height: auto;
+  }
+  .footer-bottom.footer-media {
+    padding: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #footer-name-year {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    grid-column: 1/2;
+    grid-row: 2;
+  }
+  #footer-tag {
+    justify-content: space-between;
+  }
+  #footer-link {
+    justify-content: flex-end;
   }
 }
 
@@ -145,11 +230,13 @@ body {
   max-width: 1920px;
 }
 
-#mainheaderbg img {
+.nav-logo {
+  background: url('/image/logo-big.png') no-repeat center / contain;
   width: 153px;
   height: 51px;
-  flex-wrap: nowrap;
 }
+
+
 
 .virtualbox {
   height: 100%;
