@@ -17,4 +17,9 @@
   --white-color: #FFFFFF;
 }
 
+.button-disabled {
+  background: var(--gray400-color);
+  cursor: default;
+}
+
 

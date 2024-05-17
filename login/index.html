@@ -15,7 +15,7 @@
     </div>
   </header>
   <main>
-    <form>
+    <form id="login-form" method="post">
       <label for="email">이메일</label>
       <input id="email" name="email" type="email" placeholder="이메일을 입력해주세요" required>
       <label for="password">비밀번호</label>
@@ -23,7 +23,7 @@
         <input id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요" required>
         <img class="visibility-icon" src="/assets/icons/ic_visible_off.svg" alt="비밀번호 가리기 아이콘">
       </div>
-      <button>로그인</button>
+      <button id="login-btn" class="button-disabled submit" onclick="location.href='/items'" disabled>로그인</button>
     </form>
   </main>
   <footer>
