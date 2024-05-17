@@ -1,101 +1,100 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
-    background: none;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
 }
 
 img {
-    vertical-align: bottom;
+  vertical-align: bottom;
 }
 
 body {
-    color: var(--gray700);
-    word-break: keep-all;
-    font-family: "Pretendard", sans-serif;
+  color: var(--gray700);
+  word-break: keep-all;
+  font-family: "Pretendard", sans-serif;
 }
-  
+
 header {
-    width: 100%;
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 200px;
-    background-color: var(--white);
-    border-bottom: 1px solid var(--solid-gray);
-    
-    flex-wrap: wrap;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 200px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--solid-gray);
+
+  flex-wrap: wrap;
 }
-  
+
 footer {
-    background-color: var(--gray900);
-    color: var(--gray400);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 32px 200px 108px;
-    font-size: 1rem;
+  background-color: var(--gray900);
+  color: var(--gray400);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 200px 108px;
+  font-size: 1rem;
 }
-  
+
 #footerMenu {
-    display: flex;
-    gap: 30px;
-    color: #e5e7eb;
+  display: flex;
+  gap: 30px;
+  color: #e5e7eb;
 }
-  
+
 #socialMedia {
-    display: flex;
-    gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
 .wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 h1 {
-    font-size: 2.5em;
-    font-weight: 700;
-    line-height: 56px;
-    letter-spacing: 0.02em;
+  font-size: 2.5em;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0.02em;
 }
 
 .button {
-    background-color: var(--blue);
-    color: var(--white);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: inherit;
+  background-color: var(--blue);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
 }
-  
+
 .button:hover {
-    background-color: var(--hover-blue);
+  background-color: var(--hover-blue);
 }
-  
+
 .button:focus {
-    background-color: var(--focus-blue);
+  background-color: var(--focus-blue);
 }
-  
+
 .button:disabled {
-    background-color: var(--gray400);
-    cursor: default;
-    pointer-events: none;
+  background-color: var(--gray400);
+  cursor: default;
+  pointer-events: none;
 }
 
 .pill-button {
@@ -106,21 +105,22 @@ h1 {
 }
 
 .acc-button {
-    background-color: var(--disable-button-gray);
+  background-color: var(--disable-button-gray);
+  cursor: not-allowed;
 }
 
 .acc-button:focus {
-    background-color: var(--disable-button-gray);
+  background-color: var(--disable-button-gray);
 }
 
 .acc-button:hover {
-    background-color: var(--disable-button-gray);
+  background-color: var(--disable-button-gray);
 }
 
 .valid-button.acc-button:focus {
-    background-color: var(--focus-blue);
+  background-color: var(--focus-blue);
 }
 
 .valid-button.acc-button:hover {
-    background-color: var(--hover-blue);
+  background-color: var(--hover-blue);
 }

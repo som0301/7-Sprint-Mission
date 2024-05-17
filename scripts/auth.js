@@ -11,10 +11,10 @@ togglePasswordBtns?.forEach((button) => {
 form && form.addEventListener("submit", handleValidateForm);
 
 // inputs(이메일,닉네임,비밀번호,비밀번호 확인) 유효성 검사 이벤트
-formInputs.forEach(
-  (input) =>
-    input.element &&
-    input.element.addEventListener("blur", (event) =>
-      handleValidateInput(event, input.name)
-    )
-);
+Object.entries(formInputs).forEach(([name, element]) => {
+  if (element) {
+    element.addEventListener("blur", (event) => {
+      handleValidateInput(event, name);
+    });
+  }
+});
