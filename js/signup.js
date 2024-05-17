@@ -110,10 +110,10 @@ function joinCheckInput() {
 function passwordToggle(pwd, eye) {
   if (pwd.getAttribute('type') === 'password') {
     pwd.setAttribute('type', 'text');
-    eye.src = '/images/eye-on.png';
+    eye.src = '/images/eye-on.svg';
   } else {
     pwd.setAttribute('type', 'password');
-    eye.src = '/images/eye-off.png';
+    eye.src = '/images/eye-off.svg';
   }
 }
 

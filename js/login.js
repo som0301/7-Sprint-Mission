@@ -56,10 +56,10 @@ function validPwd() {
 function passwordToggle() {
   if (userPwd.getAttribute('type') === 'password') {
     userPwd.setAttribute('type', 'text');
-    pwdVisibility.src = '/images/eye-on.png';
+    pwdVisibility.src = '/images/eye-on.svg';
   } else {
     userPwd.setAttribute('type', 'password');
-    pwdVisibility.src = '/images/eye-off.png';
+    pwdVisibility.src = '/images/eye-off.svg';
   }
 }
 
