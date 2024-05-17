@@ -88,18 +88,8 @@ export function checkInput() {
 
   const inputs = [...elementInputs];
 
-  let isEmpty = false;
-  let isError = false;
-
-  console.log(inputs);
-
-  for (let input of inputs) {
-    isEmpty = isEmpty || input.value === '';
-  }
-
-  for (let input of inputs) {
-    isError = isError || input.parentElement.lastElementChild.textContent !== '';
-  }
+  let isEmpty = inputs.some(input => input.value === '');
+  let isError = inputs.some(input => input.parentElement.lastElementChild.textContent !== '');
 
   btn.disabled = isError || isEmpty;
 }
