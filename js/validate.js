@@ -83,20 +83,20 @@ export function validRepeat({ target }) {
 
 // 함수 하나로 버튼 활성화/비활성화 구현 성공!!
 export function checkInput() {
-  const inputs = document.querySelectorAll('.input-form input');
+  const elementInputs = document.querySelectorAll('.input-form input');
   const btn = document.querySelector('.btn-login');
 
-  const inputValues = {};
-  for (let input of inputs) {
-    inputValues['user-' + input.id] = input.value; // 동적으로 이름을 정하다보니 카멜케이스는 사용하지 못함..!
-  }
+  const inputs = [...elementInputs];
 
   let isEmpty = false;
-  for (let key in inputValues) {
-    isEmpty = isEmpty || inputValues[key] === '';
+  let isError = false;
+
+  console.log(inputs);
+
+  for (let input of inputs) {
+    isEmpty = isEmpty || input.value === '';
   }
 
-  let isError = false;
   for (let input of inputs) {
     isError = isError || input.parentElement.lastElementChild.textContent !== '';
   }
