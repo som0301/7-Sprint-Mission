@@ -107,23 +107,21 @@ function joinCheckInput() {
 }
 
 // 눈버튼 토글
-function passwordToggle(pwd, eye) {
+function passwordToggle({ target }) {
+  // 이벤트 타겟은 visibility 아이콘
+  const pwd = target.previousElementSibling; // 비밀번호 인풋
   if (pwd.getAttribute('type') === 'password') {
     pwd.setAttribute('type', 'text');
-    eye.src = '/images/eye-on.svg';
+    pwd.nextElementSibling.src = '/images/eye-on.svg';
   } else {
     pwd.setAttribute('type', 'password');
-    eye.src = '/images/eye-off.svg';
+    pwd.nextElementSibling.src = '/images/eye-off.svg';
   }
 }
 
 //이벤트 추가
-pwdVisibility.addEventListener('click', () => {
-  passwordToggle(userPwd, pwdVisibility);
-});
-repeatVisibility.addEventListener('click', () => {
-  passwordToggle(userPwdRepeat, repeatVisibility);
-});
+userPwd.nextElementSibling.addEventListener('click', passwordToggle);
+userPwdRepeat.nextElementSibling.addEventListener('click', passwordToggle);
 
 const userInputs = [userEmail, userNickname, userPwd, userPwdRepeat];
 const valids = [validEmail, validNickname, validPwd, validRepeat];
