@@ -1,5 +1,5 @@
 // 이메일 유효성
-export function emailCheck(email) {
+function emailCheck(email) {
   const email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
   return email_regex.test(email);
 }
@@ -37,7 +37,7 @@ export function validNickname({ target }) {
 }
 
 // 비밀번호 길이 체크
-export function passwordCheck(pwd) {
+function passwordCheck(pwd) {
   return pwd.length >= 8;
 }
 
@@ -60,7 +60,7 @@ export function validPwd({ target }) {
 }
 
 // 비밀번호 확인
-export function isMatch(pwd, rep) {
+function isMatch(pwd, rep) {
   return pwd === rep;
 }
 
@@ -81,6 +81,23 @@ export function validRepeat({ target }) {
   }
 }
 
+// 로그인 버튼 비활성화
+// 로그인과 회원가입 버튼 활성화/비활성화를 나눠놨지만 하나의 함수로 할 수 있게 수정할 계획..!!!
+export function loginCheckInput() {
+  const userEmail = document.querySelector('#email');
+  const userPwd = document.querySelector('#password');
+
+  const loginBtn = document.querySelector('.btn-login');
+
+  const emailValue = userEmail.value;
+  const passwordValue = userPwd.value;
+
+  const isEmpty = emailValue === '' || passwordValue === ''; // 비어있거나
+  const isError = userEmail.nextElementSibling !== '' || userPwd.nextElementSibling.nextElementSibling !== ''; // 에러가 있거나(에러메시지로 체크)
+
+  loginBtn.disabled = isError || isEmpty;
+}
+
 // input이 맞게 들어갔는지 확인
 export function joinCheckInput() {
   const userEmail = document.querySelector('#email');
@@ -99,8 +116,8 @@ export function joinCheckInput() {
   const isError =
     userEmail.nextElementSibling.textContent !== '' ||
     userNickname.nextElementSibling.textContent !== '' ||
-    userPwd.nextElementSibling.textContent !== '' ||
-    userPwdRepeat.nextElementSibling.textContent !== '';
+    userPwd.nextElementSibling.nextElementSibling.textContent !== '' ||
+    userPwdRepeat.nextElementSibling.nextElementSibling.textContent !== '';
 
   loginBtn.disabled = isError || isEmpty;
 }
