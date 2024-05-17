@@ -155,7 +155,7 @@ input::placeholder{
     border: 2px solid #F74747;
 }
     
-#email-error,#password-error,#nickname-error{
+#email-error,#password-error,#nickname-error,#password-confirmation-error{
     color: #F74747;
     font-size:1.5rem;
     font-family: Pretendard;
