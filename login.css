@@ -27,6 +27,10 @@ main {
   padding: 0 16px;
 }
 
+.login-box {
+  position: relative;
+}
+
 
 label {
   display: block;
@@ -91,6 +95,19 @@ input {
   height: 18.07px;;
 }
 
+
+
+.error-message {
+  font-size: 15px;
+  color: #f74747;
+  font-weight: 600;
+  display: none;
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+
+
 @media(max-width: 767px) {
   
 
@@ -102,6 +119,7 @@ input {
     width: 100%;
     display: flex;
     justify-content: center;
+    
   }
 
   .login-box {
@@ -116,10 +134,13 @@ input {
     width: 100%;
   }
 
+ 
+
   #Vector {
     position: absolute;
     top: 19.49px;
     right: 25.74px;
   }
 }
+
 

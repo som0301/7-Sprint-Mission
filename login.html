@@ -18,10 +18,14 @@
   <form>
   <div class="login-box">
     <label for="userEmail"><span class = "login-text">이메일</span></label>
-    <input name = 'userEmail' type="email" placeholder="이메일을 입력해 주세요">
+    <input id="email-input" name = 'userEmail' type="email" placeholder="이메일을 입력해 주세요">
+      
+        <span class="error-message email"></span>
+      
     <label for="password"><span class = "login-text">비밀번호</span></label>
     <div class="password-box">
-      <input id="password" name="password" type="password" placeholder="비밀번호를 입력해 주세요">
+      <input id="password-input" name="password" type="password" placeholder="비밀번호를 입력해 주세요">
+      <span class="error-message password"></span>
       <img id="Vector" src="/image/Vector.png">
     </div>
     
@@ -44,5 +48,6 @@
 </main>
 
 
-
+<script src="/login.js"></script>
 </body>
+</html>
