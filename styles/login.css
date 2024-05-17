@@ -101,6 +101,15 @@ section {
   flex-direction: column;
   width: 640px;
   row-gap: 16px;
+  position: relative;
+}
+
+.CheckIcon{
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 56px;
+  right: 24px;
 }
 
 h1 {
@@ -128,19 +137,6 @@ input::placeholder {
 
 input:focus {
   outline-color: var(--blue) ;
-}
-
-.inputPW {
-  position: relative;
-
-}
-
-.inputPW > img {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  bottom: 30px;
-  right: 24px;
 }
 
 button {

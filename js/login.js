@@ -54,11 +54,11 @@ function pwCheckIcon() {
   const pwInput = document.getElementById("PW");
   checkIcon.addEventListener('click', (event) => {
     if(pwInput.type === "password") { 
-      checkIcon.src = "images/btn-unvisibility_button.svg";
+      checkIcon.src = "images/home/btn-unvisibility_button.svg";
       pwInput.type = "text";
     }
     else {
-      checkIcon.src = "images/btn_visibility_button.png";
+      checkIcon.src = "images/home/btn_visibility_button.png";
       pwInput.type = "password";
     }
   });
