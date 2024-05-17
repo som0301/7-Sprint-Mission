@@ -54,11 +54,7 @@ export function handleValidateInput(e, inputType) {
     passwordConf: validatePasswordConf,
   };
 
-  const validator = validators[inputType];
-
-  validator
-    ? (inputStates[inputType] = validator())
-    : console.log("잘못된 입력 유형입니다.");
+  validators[inputType]();
 
   // 버튼 유효성 검사
   validateChangeButton();
