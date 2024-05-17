@@ -58,7 +58,7 @@
             <img
               alt="눈 아이콘"
               class="password_visibility"
-              src="../images/etc/btn_visibility.png"
+              src="../images/etc/btn_visibility_off.svg"
             />
           </div>
           <div class="error_message empty_pass hide">
@@ -78,13 +78,20 @@
           />
           <img
             class="password_visibility"
-            src="../images/etc/btn_visibility.png"
+            src="../images/etc/btn_visibility_off.svg"
           />
         </label>
         <div class="error_message not_match hide">
           비밀번호가 일치하지 않습니다.
         </div>
-        <button class="btn_large">회원가입</button>
+        <button
+          class="btn_large"
+          type="button"
+          disabled="false"
+          onclick="location.href='./login.html'"
+        >
+          회원가입
+        </button>
         <div class="simple_login">
           간편 로그인하기
           <div class="simple_sns">
