@@ -3,6 +3,7 @@ function inputIdFocusoutEvent() {
   const inputNoneError = document.getElementById("emailNoneError");
   const inputSetError = document.getElementById("emailSetError");
   let emaillText = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+  
   inputText.addEventListener('focusout', (event) => {
     if(inputText.value === "") {
       inputNoneError.style.display = 'block';
