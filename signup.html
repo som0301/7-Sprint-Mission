@@ -31,6 +31,7 @@
             name="email"
             placeholder="이메일을 입력해주세요"
           />
+          <div id="error-message-email" class="error-message"></div>
         </div>
 
         <div class="input-box">
@@ -41,6 +42,7 @@
             type="text"
             placeholder="닉네임을 입력해 주세요"
           />
+          <div id="error-message-nickname" class="error-message"></div>
         </div>
 
         <div class="input-box">
@@ -58,6 +60,7 @@
               class="password-button"
             />
           </div>
+          <div id="error-message-password" class="error-message"></div>
         </div>
 
         <div class="input-box">
@@ -75,9 +78,10 @@
               class="password-button"
             />
           </div>
+          <div id="error-message-password-confirm" class="error-message"></div>
         </div>
 
-        <button type="submit" id="button-auth" class="button">회원가입</button>
+        <button type="submit" id="button-auth" class="button disabled" disabled>회원가입</button>
       </form>
 
       <div class="login-social">
@@ -103,5 +107,6 @@
         <a href="signin.html">로그인</a>
       </div>
     </div>
+    <script src="signup.js"></script>
   </body>
 </html>
