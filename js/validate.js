@@ -65,9 +65,9 @@ function isMatch(pwd, rep) {
 }
 
 export function validRepeat({ target }) {
-  const userPwd = target.parentElement.previousElementSibling;
+  const userPwd = target.parentElement.previousElementSibling.children[1];
   const userPwdRepeat = target;
-  const errorMsgRepeat = userPwdRepeat.nextElementSibling.nextElementSibling;
+  const errorMsgRepeat = userPwdRepeat.parentElement.lastElementChild;
 
   const pwd = userPwd.value;
   const rep = userPwdRepeat.value;
@@ -81,45 +81,27 @@ export function validRepeat({ target }) {
   }
 }
 
-// 로그인 버튼 비활성화
-// 로그인과 회원가입 버튼 활성화/비활성화를 나눠놨지만 하나의 함수로 할 수 있게 수정할 계획..!!!
-export function loginCheckInput() {
-  const userEmail = document.querySelector('#email');
-  const userPwd = document.querySelector('#password');
+// 함수 하나로 버튼 활성화/비활성화 구현 성공!!
+export function checkInput() {
+  const inputs = document.querySelectorAll('.input-form input');
+  const btn = document.querySelector('.btn-login');
 
-  const loginBtn = document.querySelector('.btn-login');
+  const inputValues = {};
+  for (let input of inputs) {
+    inputValues['user-' + input.id] = input.value; // 동적으로 이름을 정하다보니 카멜케이스는 사용하지 못함..!
+  }
 
-  const emailValue = userEmail.value;
-  const passwordValue = userPwd.value;
+  let isEmpty = false;
+  for (let key in inputValues) {
+    isEmpty = isEmpty || inputValues[key] === '';
+  }
 
-  const isEmpty = emailValue === '' || passwordValue === ''; // 비어있거나
-  const isError = userEmail.nextElementSibling !== '' || userPwd.nextElementSibling.nextElementSibling !== ''; // 에러가 있거나(에러메시지로 체크)
+  let isError = false;
+  for (let input of inputs) {
+    isError = isError || input.parentElement.lastElementChild.textContent !== '';
+  }
 
-  loginBtn.disabled = isError || isEmpty;
-}
-
-// input이 맞게 들어갔는지 확인
-export function joinCheckInput() {
-  const userEmail = document.querySelector('#email');
-  const userNickname = document.querySelector('#nickname');
-  const userPwd = document.querySelector('#password');
-  const userPwdRepeat = document.querySelector('#password-repeat');
-
-  const loginBtn = document.querySelector('.btn-login');
-
-  const emailValue = userEmail.value;
-  const nicknameValue = userNickname.value;
-  const passwordValue = userPwd.value;
-  const pwdRepeatValue = userPwdRepeat.value;
-
-  const isEmpty = emailValue === '' || nicknameValue === '' || passwordValue === '' || pwdRepeatValue === '';
-  const isError =
-    userEmail.nextElementSibling.textContent !== '' ||
-    userNickname.nextElementSibling.textContent !== '' ||
-    userPwd.nextElementSibling.nextElementSibling.textContent !== '' ||
-    userPwdRepeat.nextElementSibling.nextElementSibling.textContent !== '';
-
-  loginBtn.disabled = isError || isEmpty;
+  btn.disabled = isError || isEmpty;
 }
 
 // 눈버튼 토글
