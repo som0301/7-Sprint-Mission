@@ -31,6 +31,24 @@ h1 {
   border: 0;
   padding: 16px 24px;
 }
+input.email-error {
+  border: 1px solid red;
+}
+input.nickname-error {
+  border: 1px solid red;
+}
+input.password-error {
+  border: 1px solid red;
+}
+input.password-confirm-error {
+  border: 1px solid red;
+}
+.error-message-on {
+  color: red;
+  position: relative;
+  top: 5px;
+  left: 19px;
+}
 button {
   border: none;
   outline: none;
@@ -42,8 +60,8 @@ button {
   position: absolute;
   right: 24px;
   bottom: 17px;
-  width:21px;
-  height:20px;
+  width: 21px;
+  height: 20px;
 }
 .login_submit {
   width: 100%;
@@ -90,7 +108,7 @@ button {
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .container {
-    padding: 48px 0;
+    padding: 0 48px;
     max-width: 640px;
   }
 }
@@ -98,7 +116,7 @@ button {
 @media (min-width: 375px) and (max-width: 767px) {
   .container {
     max-width: 400px;
-    margin: 0 16px;
+    padding: 0 16px;
   }
   h1 {
     margin-bottom: 20px;

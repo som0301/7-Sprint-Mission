@@ -28,5 +28,5 @@ img {
 }
 
 input:focus {
-  outline: 1px solid #3692ff;
+  outline-color: #3692ff;
 }

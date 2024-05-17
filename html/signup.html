@@ -25,15 +25,18 @@
       <div class="email-password">
         <div class="input-system">
           <label for="email">이메일</label>
-          <input type="text" id="email" placeholder="이메일을 입력해주세요" />
+          <input type="text" class="email-input" id="email" placeholder="이메일을 입력해주세요" />
+          <span class="email-error-message"></span>
         </div>
         <div class="input-system">
           <label for="nickname">닉네임</label>
-          <input type="text" id="nickname" placeholder="닉네임을 입력해주세요" />
+          <input type="text" class="nickname-input" id="nickname" placeholder="닉네임을 입력해주세요" />
+          <span class="nickname-error-message"></span>
         </div>
         <div class="input-system">
           <label for="passwordInput">비밀번호</label>
-          <input type="password" id="passwordInput" placeholder="비밀번호를 입력해주세요" />
+          <input type="password" class="password-input" id="passwordInput" placeholder="비밀번호를 입력해주세요" />
+          <span class="password-error-message"></span>
           <button
             type="button"
             class="password-button"
@@ -43,11 +46,14 @@
         <div class="input-system">
           <label for="passwordconfirm">비밀번호 확인</label>
           <input
-            type="password" id="passwordconfirm"
+            type="password"
+            class="password-confirm-input"
+            id="passwordconfirm"
             placeholder="비밀번호를 다시 한 번 입력해주세요"
           />
           <button type="button" class="password-button">
           </button>
+          <span class="password-confirm-error-message"></span>
         </div>
 
         <button type="submit" class="login_submit">회원가입</button>
@@ -81,5 +87,6 @@
         <a href="login.html" class="member">로그인</a>
       </div>
     </div>
+    <script src="../js/validateInput.js"></script>
   </body>
 </html>
