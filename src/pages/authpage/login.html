@@ -18,16 +18,16 @@
       </a>
     </header>
     <main>
-      <form method="post">
+      <form method="post" class="auth_form">
         <div class="input__container">
-          <label for="email">이메일</label>
+          <label id="main-email" for="email">이메일</label>
           <input
             id="email"
             type="email"
             name="email"
             placeholder="이메일을 입력해주세요"
-            name="email"
           />
+          <div class="error-message__email"></div>
         </div>
         <div class="input__container">
           <label for="password">비밀번호</label>
@@ -38,13 +38,14 @@
               name="password"
               placeholder="비밀번호를 입력해주세요"
             />
-            <!-- <img src="../../assets/icon_unvisibility.svg" /> -->
           </div>
+          <div class="error-message__password"></div>
         </div>
-        <div class="sns-login-container">
+        <a class="button">로그인하기</a>
+        <!-- <div class="sns-login-container">
           <p>간편 로그인하기</p>
           <div class="icon-sns">
-            <a href="https://www.google.com/" target="_blank">
+            <a href="https://www.google.com/">
               <img
                 class="img-sns"
                 src="../../assets/icon_google.png"
@@ -62,12 +63,13 @@
               />
             </a>
           </div>
-        </div>
+        </div> -->
         <div class="auth-switch-container">
           <p>판다마켓이 처음이신가요?</p>
           <a href="../authpage/signup.html">회원가입</a>
         </div>
       </form>
     </main>
+    <script src="../../js/auth_check.js"></script>
   </body>
 </html>
