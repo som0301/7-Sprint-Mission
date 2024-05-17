@@ -93,3 +93,14 @@ input:focus {
   border-radius: 40px;
   border: none;
 }
+
+input.error {
+  border: 1px solid #F74747;
+}
+
+.error-message {
+  color: #F74747;
+  font-size: 15px;
+  margin-top: 8px;
+  display: none;
+}
