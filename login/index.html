@@ -16,22 +16,23 @@
   </a>
 
   <main class="container-login-and-signup">
-
-    <div class="login-box">
-      <label for="email" class="login-label">이메일</label>
-      <input type="email" id="email" placeholder="이메일을 입력해주세요">
-    </div>
-
-    <div class="login-box">
-      <label for="password" class="login-label">비밀번호</label>
-      <div class="login-pw-container">
-        <input type="password" id="password" placeholder="비밀번호를 입력해주세요">
-        <div class="see-pw-btn">
-          <i class="see-pw-img"></i>
+    <form>
+      <div class="login-box">
+        <label for="email" class="login-label">이메일</label>
+        <div class="email-input-container">
+          <input type="email" id="email" placeholder="이메일을 입력해주세요">
         </div>
       </div>
-    </div>
-    
+
+      <div class="login-box">
+        <label for="password" class="login-label">비밀번호</label>
+        <div class="password-input-container">
+          <input type="password" id="password" placeholder="비밀번호를 입력해주세요">
+          <div class="toggle-pw-btn"></div>
+        </div>
+      </div>      
+    </form>
+
     <button class="login-btn">로그인</button>
     
     <div class="easy-login-box">

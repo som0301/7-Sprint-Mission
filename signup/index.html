@@ -16,36 +16,37 @@
   </a>
 
   <main class="container-login-and-signup">
-
-    <div class="signup-box">
-      <label for="email" class="signup-label">이메일</label>
-      <input type="email" id="email" placeholder="이메일을 입력해주세요">
-    </div>
-
-    <div class="signup-box">
-      <label for="nickname" class="signup-label">닉네임</label>
-      <input type="text" id="nickname" placeholder="닉네임을 입력해주세요">
-    </div>
-
-    <div class="signup-box">
-      <label for="password" class="signup-label">비밀번호</label>
-      <div class="signup-pw-container">
-        <input type="password" id="password" class="signup-input-pw" placeholder="비밀번호를 입력해주세요">
-        <div class="see-pw-btn">
-          <i class="see-pw-img"></i>
+    <form>
+      <div class="signup-box">
+        <label for="email" class="signup-label">이메일</label>
+        <div class="email-input-container">
+          <input type="email" id="email" placeholder="이메일을 입력해주세요">
         </div>
       </div>
-    </div>
-
-    <div class="signup-box">
-      <label for="password-check" class="signup-label">비밀번호 확인</label>
-      <div class="signup-pw-container">
-        <input type="password" id="password-check" class="signup-input-pw" placeholder="비밀번호를 다시 한 번 입력해주세요">
-        <div class="see-pw-btn-check">
-          <i class="see-pw-img-check"></i>
+  
+      <div class="signup-box">
+        <label for="nickname" class="signup-label">닉네임</label>
+        <div class="nickname-input-container">
+          <input type="text" id="nickname" placeholder="닉네임을 입력해주세요">
         </div>
       </div>
-    </div>
+  
+      <div class="signup-box">
+        <label for="password" class="signup-label">비밀번호</label>
+        <div class="password-input-container">
+          <input type="password" id="password" class="signup-input-pw" placeholder="비밀번호를 입력해주세요">
+          <div class="toggle-pw-btn"></div>
+        </div>
+      </div>
+  
+      <div class="signup-box">
+        <label for="password-check" class="signup-label">비밀번호 확인</label>
+        <div class="password-check-input-container">
+          <input type="password" id="password-check" class="signup-input-pw" placeholder="비밀번호를 다시 한 번 입력해주세요">
+          <div class="toggle-pw-btn-check"></div>
+        </div>
+      </div>
+    </form>
     
     <button class="signup-btn">회원가입</button>
     
