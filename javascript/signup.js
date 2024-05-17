@@ -2,10 +2,12 @@ const emailController = document.querySelector('#email');
 const passwordController = document.querySelector('#password');
 const nicknameController = document.querySelector('#nickname');
 const repeatPwController = document.querySelector('#password-repeat');
+const pwVisibleController = document.querySelectorAll('.is-invisable');
 const loginButton = document.querySelector('.login-button');
 const MIN_PASSWORD_LENGTH = 8;
 let [emailAlert, passwordAlert, nicknameAlert, repeatPwAlert] = [null, null, null, null];
 let [emailPossibility, passwordPossibility, nicknamePossibility, repeatPwPossibility] = [false, false, false, false];
+let isvisible = [false, false];
 
 function emailValidationTest(email) {
   const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -120,7 +122,22 @@ function repeatPwCheck(e) {
   activeLoginButton()
 }
 
+function switchVisible(e) {
+  isvisible = !isvisible;
+  if (isvisible) {
+    e.target.classList.remove('is-invisable');
+    e.target.classList.add('is-visiable');
+    passwordController.setAttribute('type','text');
+  } else {
+    e.target.classList.remove('is-visiable');
+    e.target.classList.add('is-invisable');
+    passwordController.setAttribute('type','password');
+  }
+}
+
 emailController.addEventListener('focusout', emailCheck);
 passwordController.addEventListener('focusout', passwordCheck);
 nicknameController.addEventListener('focusout', nicknameCheck);
 repeatPwController.addEventListener('focusout', repeatPwCheck);
+pwVisibleController[0].addEventListener('click',switchVisible);
+pwVisibleController[1].addEventListener('click',switchVisible);

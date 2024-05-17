@@ -86,12 +86,22 @@ body {
   position: relative;
 }
 
-#ic_visibilityoff {
+.is-visiable,
+.is-invisable {
+  border: none;
   position: absolute;
   width: 2.4rem;
   height: 2.4rem;
   right: 2.4rem;
   top: 1.6rem;
+}
+
+.is-visiable {
+  background: url('/image/ic_visibility.svg')  no-repeat center / contain;
+}
+
+.is-invisable {
+  background: url('/image/ic_visibility_off.svg')  no-repeat center / contain;
 }
 
 .login-button-active,
