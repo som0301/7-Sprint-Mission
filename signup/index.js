@@ -110,10 +110,10 @@ passwordInputCheck.addEventListener('focusout', function() {
     passwordInputCheck.style.borderColor = 'red';
     passwordCheckError.textContent = '비밀번호 확인을 입력해주세요.';
     passwordInputCheckContainer.parentNode.appendChild(passwordCheckError);
-  } else if (passwordInputCheck !== passwordInput) {
+  } else if (passwordInputCheck.value !== passwordInput.value) {
     passwordInputCheck.style.borderColor = 'red';
-    passwordCheckErrorContainer.textContent = '비밀번호가 일치하지 않습니다.';
-    passwordInputCheck.parentNode.appendChild(passwordCheckError);
+    passwordCheckError.textContent = '비밀번호가 일치하지 않습니다.';
+    passwordInputCheckContainer.parentNode.appendChild(passwordCheckError);
   } else {
     passwordInputCheck.style.borderColor = '';
     passwordCheckError.textContent = '';
