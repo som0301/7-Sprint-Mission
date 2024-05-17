@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>판다마켓</title>
+    <link rel="stylesheet" href="/modules/css/signUp.css">
+  </head>
+  <body>
+    <main class="main-container">
+      <a class="main-logo-box" href="/index.html">
+        <img class="main-logo-image" src="/assets/images/logo.png">
+      </a>
+      <div class="input-set-container">
+        <p class="input-set-title">
+          이메일
+        </p>
+        <input id="email" class="input-set-content" type="text" placeholder="이메일을 입력해주세요">
+        <p class="input-set-warning" style="display: none;"></p>
+      </div>
+      <div class="input-set-container">
+        <p class="input-set-title">
+          닉네임
+        </p>
+        <input id="nickname" class="input-set-content" type="text" placeholder="닉네임을 입력해주세요">
+        <p class="input-set-warning" style="display: none;"></p>
+      </div>
+      <div class="input-set-container">
+        <p class="input-set-title">
+          비밀번호
+        </p>        
+        <img id="password-visibility" class="input-button-visibility" src="/assets/images/btn_visibility_off.svg"/>
+        <input id="password" class="input-set-content" type="password" placeholder="비밀번호를 입력해주세요">
+        <p class="input-set-warning" style="display: none;"></p>
+      </div>
+      <div class="input-set-container">
+        <p class="input-set-title">
+          비밀번호 확인
+        </p>
+        <img id="password-check-visibility" class="input-button-visibility" src="/assets/images/btn_visibility_off.svg"/>
+        <input id="password-check" class="input-set-content" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+        <p class="input-set-warning" style="display: none;"></p>
+      </div>
+      <button class="button large disable sign-button" onclick="location.href='/signIn.html'">
+        회원가입
+      </button>
+      <div class="simple-login-container">
+        <p class="simple-login-text">
+          간편 로그인하기
+        </p>
+        <div class="simple-login-button-box">
+          <a href="https://www.google.com/">
+            <img class="simple-login-button" src="/assets/images/ic_google.png">
+          </a>
+          <a href="https://www.kakaocorp.com/page/">
+            <img class="simple-login-button" src="/assets/images/ic_kakao.png">
+          </a>
+        </div>
+      </div>
+      <p class="nav-to-sign">
+        이미 회원이신가요? 
+        <a href="/signIn.html">
+          로그인
+        </a>
+      </p>
+    </main>
+
+    <script src="/modules/js/commonSign.js"></script>
+  </body>
+</html>
