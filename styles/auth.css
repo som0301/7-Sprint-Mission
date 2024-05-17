@@ -69,6 +69,7 @@ input:focus {
   font-weight: 500;
   font-size: 16px;
   line-height: 24px;
+  color: #1f2937;
 }
 
 .social-login-buttons-container {
@@ -86,4 +87,22 @@ input:focus {
   color: #3182f6;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.changeRed{ 
+  color: #bf010a;
+}
+
+.errorBorder { 
+  outline-color: #f74747;
+}
+/**태블릿**/
+@media (min-width: 768px) and (max-width: 1199px) { 
+
+}
+/**모바일**/
+@media (min-width: 375px) and (max-width: 767px) { 
+  body { 
+    padding: 0 16px;
+  }
 }
