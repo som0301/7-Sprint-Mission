@@ -21,7 +21,7 @@ passwordInput.addEventListener('blur', function(e) {
     if(passwordInput.value === "") {
         passwordInput.classList.add('error');
         pwErrorMessage.textContent = '비밀번호를 입력해주세요.';
-    } else if (!isValidEmail(passwordInput.value) && passwordInput.value !== "" && passwordInput.value.length < 8) {
+    } else if (passwordInput.value !== "" && passwordInput.value.length < 8) {
         passwordInput.classList.add('error');
         pwErrorMessage.textContent = '';
         pwErrorMessage.textContent = '비밀번호를 8자 이상 입력해주세요.';
@@ -30,6 +30,16 @@ passwordInput.addEventListener('blur', function(e) {
         pwErrorMessage.textContent = '';
     }
 });
+
+const nicknameInput = document.querySelector('#nickname')
+nicknameInput.addEventListener('blur', function(e) {
+    const errorMessage = document.querySelector('#nickname-error');
+    if(nicknameInput.value === "") {
+        nicknameInput.classList.add('error');
+        errorMessage.textContent = '닉네임을 입력해주세요.';
+    }
+});
+
 // function validateEmail(input) {
 //     const errorMessage = document.querySelector('#email-error');
 //     if(!input.value) {

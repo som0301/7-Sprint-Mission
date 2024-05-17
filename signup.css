@@ -113,6 +113,7 @@ input::placeholder{
     margin-top: 2.4rem;
     text-align: center;
 }
+
 #login{
     color: #3182F6;
 }
@@ -146,5 +147,20 @@ input::placeholder{
     .signup-logo-img{
         width: 20rem;
     }
-    
     }
+
+/*동작형*/
+
+.error{
+    border: 2px solid #F74747;
+}
+    
+#email-error,#password-error,#nickname-error{
+    color: #F74747;
+    font-size:1.5rem;
+    font-family: Pretendard;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-left: 1.6rem;
+    margin-bottom: 2.4rem;
+}
