@@ -107,29 +107,23 @@ function joinCheckInput() {
 }
 
 // 눈버튼 토글
-function passwordToggle() {
-  if (userPwd.getAttribute('type') === 'password') {
-    userPwd.setAttribute('type', 'text');
-    pwdVisibility.src = '/images/eye-on.png';
+function passwordToggle(pwd, eye) {
+  if (pwd.getAttribute('type') === 'password') {
+    pwd.setAttribute('type', 'text');
+    eye.src = '/images/eye-on.png';
   } else {
-    userPwd.setAttribute('type', 'password');
-    pwdVisibility.src = '/images/eye-off.png';
-  }
-}
-
-function repeatToggle() {
-  if (userPwdRepeat.getAttribute('type') === 'password') {
-    userPwdRepeat.setAttribute('type', 'text');
-    repeatVisibility.src = '/images/eye-on.png';
-  } else {
-    userPwdRepeat.setAttribute('type', 'password');
-    repeatVisibility.src = '/images/eye-off.png';
+    pwd.setAttribute('type', 'password');
+    eye.src = '/images/eye-off.png';
   }
 }
 
 //이벤트 추가
-pwdVisibility.addEventListener('click', passwordToggle);
-repeatVisibility.addEventListener('click', repeatToggle);
+pwdVisibility.addEventListener('click', () => {
+  passwordToggle(userPwd, pwdVisibility);
+});
+repeatVisibility.addEventListener('click', () => {
+  passwordToggle(userPwdRepeat, repeatVisibility);
+});
 
 const userInputs = [userEmail, userNickname, userPwd, userPwdRepeat];
 const valids = [validEmail, validNickname, validPwd, validRepeat];
