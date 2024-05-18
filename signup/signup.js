@@ -11,8 +11,8 @@ allInputs.forEach((input) => {
   );
 });
 
-//유효성 검사 코드
-let notAnEmail = 2; // <- 반환값 확인용 변수 선언.
+// 이메일 유효성 검사 코드 - 반환값은 3개이다. true/false/이메일확인용변수
+let notAnEmail = 2; // <- 반환값 확인용 변수 선언. -> let? const?
 function isEmailValid(email) {
   // 이메일 정규표현식
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -103,6 +103,47 @@ nameInput.addEventListener('focus', function () {
       //키가 한개라도 눌렀을 경우
       nameErr.style.display = 'none'; // 초기화
       nameInput.classList.remove('err-border'); // 초기화
+    });
+  }
+});
+
+// ------------비밀번호 ------------------
+
+const pwdInput = document.querySelector('#pwd');
+const pwdNullErr = document.querySelector('.pwd-null-err');
+const pwdShortErr = document.querySelector('.pwd-is-short-err');
+
+// pwd인풋이 이벤트를 잃었을 경우 실행할 함수.
+pwdInput.addEventListener('blur', function () {
+  // 사용자 값 다루기위한 내부스코프 변수 선언.
+  const userPwdValue = pwdInput.value;
+  if (userPwdValue === '') {
+    pwdNullErr.style.display = 'block';
+    pwdInput.classList.add('err-border');
+    pwdShortErr.style.display = 'none'; // 에러 메세지 중복 방지
+  } else if (userPwdValue.length < 8) {
+    pwdShortErr.style.display = 'block';
+    pwdInput.classList.add('err-border');
+    pwdNullErr.style.display = 'none'; // 에러 메세지 중복 방지
+  }
+});
+
+// 만약 사용자가 에러를 발견하고 focus했을 때 실행할 함수.
+pwdInput.addEventListener('focus', function () {
+  //빈값을 수정하려 할 경우
+  if (pwdNullErr.style.display === 'block') {
+    pwdInput.addEventListener('keyup', function () {
+      pwdNullErr.style.display = 'none';
+      pwdInput.classList.remove('err-border');
+    });
+    // 8글자가 안되서 수정하려 할 경우
+  } else if (pwdShortErr.style.display === 'block') {
+    pwdInput.addEventListener('keyup', function () {
+      if (pwdInput.value.length >= 8) {
+        // 8글자이상이 되는 순간 에러와 메시지 삭제
+        pwdShortErr.style.display = 'none';
+        pwdInput.classList.remove('err-border');
+      }
     });
   }
 });
