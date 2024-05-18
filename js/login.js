@@ -1,12 +1,11 @@
 import { validEmail, validPwd, checkInput, passwordToggle } from './validate.js';
 
-const userEmail = document.querySelector('#email');
-const userPwd = document.querySelector('#password');
+const inputs = document.querySelectorAll('.input-form input');
 
 //이벤트 핸들러 추가
-userPwd.nextElementSibling.addEventListener('click', passwordToggle);
+inputs[1].nextElementSibling.addEventListener('click', passwordToggle);
 
-const userInputs = [userEmail, userPwd];
+const userInputs = [...inputs];
 const valids = [validEmail, validPwd];
 
 for (let i = 0; i < valids.length; i++) userInputs[i].addEventListener('focusout', valids[i]);

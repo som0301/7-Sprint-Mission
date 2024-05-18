@@ -42,7 +42,7 @@ function passwordCheck(pwd) {
 }
 
 export function validPwd({ target }) {
-  const errorMsgPwd = target.nextElementSibling.nextElementSibling;
+  const errorMsgPwd = target.parentElement.lastElementChild;
   const pwd = target.value;
 
   if (pwd === '') {
