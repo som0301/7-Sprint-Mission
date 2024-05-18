@@ -132,7 +132,7 @@ function passwordInput(e) {
       password.classList.remove("focusout");
     }
 
-    if (e.target.value === passwordCheck.value) {
+    if (e.target.value === passwordCheck.value && e.target.value.length >= 8) {
       passwordCheckErrorMessage.remove();
       passwordCheck.classList.remove("focusout");
       isValid.password = false;
@@ -172,7 +172,7 @@ function passwordCheckInput(e) {
       passwordCheckErrorMessage.classList.add("focusout");
     }
 
-    if (e.target.value === password.value) {
+    if (e.target.value === password.value && e.target.value.length >= 8) {
       passwordCheckErrorMessage.remove();
       passwordCheck.classList.remove("focusout");
       isValid.password = false;
