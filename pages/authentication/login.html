@@ -36,7 +36,14 @@
             />
           </button>
         </div>
-        <button class="btn_large" type="submit" disabled>로그인</button>
+        <button
+          class="btn_large"
+          type="submit"
+          onclick="event.preventDefault(); location.href='../items/items.html'"
+          disabled
+        >
+          로그인
+        </button>
       </form>
       <div class="sns-login">
         <div>간편 로그인하기</div>
@@ -57,7 +64,7 @@
       </div>
       <div class="signup-page-move">
         판다마켓이 처음이신가요?
-        <a href="../authentication/signup.html">회원가입</a>
+        <a href="./signup.html">회원가입</a>
       </div>
     </div>
     <script type="module" src="./login.js"></script>
