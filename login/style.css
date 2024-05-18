@@ -154,7 +154,8 @@ label {
 
 form input {
   border-radius: 12px;
-  border: none;
+  border: 0px solid;
+  outline: 0px solid;
   background-color: #f3f4f6;
   width: 100%;
   height: 56px;
@@ -178,10 +179,10 @@ form input {
   color: var(--blue);
 }
 
-input:focus {
+/* input:focus {
   /* border:none 이기 때문에 outline으로 focus 색상 설정 */
-  outline-color: var(--blue);
-}
+/* outline-color: var(--blue);
+} */
 
 input:focus::placeholder {
   opacity: 0;
@@ -215,4 +216,24 @@ input:focus::placeholder {
   header {
     margin-bottom: 0;
   }
+}
+
+/* ---------------------- */
+
+.focused-border {
+  border: 1px solid var(--blue);
+}
+
+.err-border {
+  border: 1px solid red;
+}
+
+.null-err {
+  display: none;
+  color: red;
+}
+
+.not-an-email-err {
+  display: none;
+  color: red;
 }
