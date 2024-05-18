@@ -28,6 +28,15 @@ function isEmailValid(email) {
 // focus가 될때 실행될 코드
 emailInput.addEventListener('focus', function () {
   emailInput.classList.add('focused-border'); //focus 기본동작
+
+  //빈값 에러가 존재한다면 실행될 코드
+  if (nullErr.style.display === 'block') {
+    emailInput.addEventListener('keyup', function () {
+      emailInput.classList.remove('err-border');
+      nullErr.style.display = 'none';
+    });
+  }
+  //유효성x 에러가 존재한다면 실행될 코드
   if (notAnEmailErr.style.display === 'block') {
     // 만약 이메일 유효성 에러div가 존재한다면
     emailInput.addEventListener('keyup', function (e) {
