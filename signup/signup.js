@@ -76,3 +76,33 @@ emailInput.addEventListener('blur', function (e) {
     emailInput.classList.remove('err-border');
   }
 });
+
+// ---------------------닉네임---------------
+
+const nameInput = document.querySelector('#user-name');
+const nameErr = document.querySelector('.null-name-err');
+
+// 닉네임의 인풋창이 이벤트를 잃었을 때 blur일 경우 실행될 함수
+nameInput.addEventListener('blur', function () {
+  nameInput.classList.remove('focused-border'); // 기존 실행될 focusout 코드
+  const userName = nameInput.value;
+  if (userName === '') {
+    nameErr.style.display = 'block';
+    nameInput.classList.add('err-border');
+  } else {
+    nameErr.style.display = 'none';
+    nameInput.classList.remove('err-border');
+  }
+});
+
+// 만약 사용자가 에러를 발견하고 focus했을 때 실행할 함수.
+nameInput.addEventListener('focus', function () {
+  if (nameErr.style.display === 'block') {
+    //에러메시지가 존재한다면
+    nameInput.addEventListener('keyup', function () {
+      //키가 한개라도 눌렀을 경우
+      nameErr.style.display = 'none'; // 초기화
+      nameInput.classList.remove('err-border'); // 초기화
+    });
+  }
+});

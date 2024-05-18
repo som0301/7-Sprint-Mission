@@ -220,6 +220,7 @@ input:focus::placeholder {
   border: 1px solid var(--blue);
 }
 
+/* --------for email err */
 .err-border {
   border: 1px solid red;
 }
@@ -234,7 +235,14 @@ input:focus::placeholder {
   color: red;
 }
 
-/* ---------------- */
+/* ---------for username err--- */
+
+.null-name-err {
+  display: none;
+  color: red;
+}
+
+/* ---------for pwd err ------- */
 
 .pwd-null-err {
   display: none;
