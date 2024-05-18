@@ -19,11 +19,11 @@ applyVisibilityToggle(pwInput, visibilityIcon);
 
 // 폼 체크해서 submit 버튼 활성화 기능
 registerFormCheck(loginForm, () => {
-    return (
-      emailInput.value !== '' &&
-      pwInput.value !== '' &&
-      validationMsg.getEmailValidateMsg(emailInput.value) === '' &&
-      validationMsg.getPwValidateMsg(pwInput.value) === ''
-    ) ? true : false;
+  return (
+    emailInput.value !== '' &&
+    pwInput.value !== '' &&
+    validationMsg.getEmailValidateMsg(emailInput.value) === '' &&
+    validationMsg.getPwValidateMsg(pwInput.value) === ''
+  );
 });
 

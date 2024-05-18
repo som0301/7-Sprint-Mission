@@ -26,7 +26,7 @@ applyVisibilityToggle(pwCheckInput, pwCheckvisibilityIcon);
 
 // 폼 체크해서 submit 버튼 활성화 기능
 registerFormCheck(signupForm, () => {
-    return (
+  return (
     emailInput.value !== '' &&
     nicknameInput.value !== '' &&
     pwInput.value !== '' &&
@@ -36,5 +36,5 @@ registerFormCheck(signupForm, () => {
     validationMsg.getPwValidateMsg(pwInput.value) === '' &&
     validationMsg.getPwCheckValidateMsg(pwCheckInput.value) === '' &&
     pwInput.value === pwCheckInput.value
-    ) ? true : false;
+  );
 });
