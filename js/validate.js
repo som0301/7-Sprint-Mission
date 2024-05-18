@@ -1,3 +1,16 @@
+function isInputEmtpy(input) {
+  const labelInput = input.previousElementSibling;
+
+  if (input.value === '') {
+    input.classList.add('error-input');
+    if (input.type === 'password')
+      input.parentElement.lastElementChild.textContent = labelInput.textContent + '를 입력해주세요.';
+    else input.parentElement.lastElementChild.textContent = labelInput.textContent + '을 입력해주세요.';
+    return true;
+  }
+  return false;
+}
+
 // 이메일 유효성
 function emailCheck(email) {
   const email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
@@ -8,10 +21,7 @@ export function validEmail({ target }) {
   const errorMsgEmail = target.nextElementSibling;
   const email = target.value;
 
-  if (email === '') {
-    errorMsgEmail.textContent = '이메일을 입력해주세요.';
-    target.classList.add('error-input');
-  } else {
+  if (!isInputEmtpy(target)) {
     if (emailCheck(email)) {
       errorMsgEmail.textContent = '';
       target.classList.remove('error-input');
@@ -27,10 +37,7 @@ export function validNickname({ target }) {
   const errorMsgNickname = target.nextElementSibling;
   const nickname = target.value;
 
-  if (nickname === '') {
-    errorMsgNickname.textContent = '닉네임을 입력해주세요';
-    target.classList.add('error-input');
-  } else {
+  if (!isInputEmtpy(target)) {
     errorMsgNickname.textContent = '';
     target.classList.remove('error-input');
   }
@@ -45,10 +52,7 @@ export function validPwd({ target }) {
   const errorMsgPwd = target.parentElement.lastElementChild;
   const pwd = target.value;
 
-  if (pwd === '') {
-    errorMsgPwd.textContent = '비밀번호를 입력해주세요.';
-    target.classList.add('error-input');
-  } else {
+  if (!isInputEmtpy(target)) {
     if (passwordCheck(pwd)) {
       errorMsgPwd.textContent = '';
       target.classList.remove('error-input');
