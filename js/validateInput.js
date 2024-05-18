@@ -1,21 +1,25 @@
 const emailInput = document.querySelector(".email-input");
 const passwordInput = document.querySelector(".password-input");
-const nicknameInput=document.querySelector(".nickname-input");
-const passwordConfirmInput=document.querySelector(".password-confirm-input");
+const nicknameInput = document.querySelector(".nickname-input");
+const passwordConfirmInput = document.querySelector(".password-confirm-input");
 const emailErrorMessage = document.querySelector(".email-error-message");
 const passwordErrorMessage = document.querySelector(".password-error-message");
-const nicknameErrorMessage=document.querySelector(".nickname-error-message");
-const passwordConfirmMessage=document.querySelector(".password-confirm-error-message");
-const submitButton = document.querySelector(".login_submit");
+const nicknameErrorMessage = document.querySelector(".nickname-error-message");
+const passwordConfirmMessage = document.querySelector(
+  ".password-confirm-error-message"
+);
+const loginSubmitButton = document.querySelector(".login_submit");
+const signupSubmitButton = document.querySelector(".signup_submit");
 const signupForm = document.getElementById("signupForm");
 const passwordButton = document.querySelector(".password-button");
-
+const passwordConfirmButton = document.querySelector(
+  ".password-confirm-button"
+);
 const isEmailValid = (email) => {
   const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
   const isEmail = emailPattern.test(email);
   return isEmail;
 };
-
 const isPasswordValid = (password) => {
   const passwordPattern = /^.{8,}$/;
   const isPassword = passwordPattern.test(password);
@@ -27,7 +31,6 @@ function setInputError(input, errEl, text) {
   errEl.className += " error-message-on";
   errEl.textContent = text;
 }
-
 function removeInputError(input, errEl) {
   input.classList.remove("sign-input-error");
   errEl.classList.remove("error-message-on");
@@ -84,51 +87,129 @@ function validatePasswordConfirm(password, passwordConfirm) {
   }
   removeInputError(passwordConfirmInput, passwordConfirmMessage);
 }
-function disableSubmitButton() {
-  const inputsAreEmpty = !emailInput.value || !passwordInput.value;
+
+function disableloginSubmitButton() {
+  if(!nicknameInput && !passwordConfirmInput){
+    const inputsAreEmpty =
+    !emailInput.value ||
+    !passwordInput.value ;
+
   const errorMessagesAreActive =
     emailErrorMessage.textContent !== "" ||
     passwordErrorMessage.textContent !== "";
 
   if (inputsAreEmpty || errorMessagesAreActive) {
-    submitButton.disabled = true;
-    submitButton.style.cursor = "default";
+    loginSubmitButton.disabled = true;
+    loginSubmitButton.style.cursor = "default";
   } else {
-    submitButton.disabled = false;
-    submitButton.style.cursor = "pointer";
-    submitButton.style.backgroundColor = "#3692FF";
+    loginSubmitButton.disabled = false;
+    loginSubmitButton.style.cursor = "pointer";
+    loginSubmitButton.style.backgroundColor = "#3692FF";
+  }
   }
 }
+function disablesignupSubmitButton() {
+  if(emailInput&&nicknameInput&&passwordInput&&passwordConfirmInput){
+    const inputsAreEmpty =
+    !emailInput.value ||
+    !nicknameInput.value ||
+    !passwordInput.value ||
+    !passwordConfirmInput.value;
+
+  const errorMessagesAreActive =
+    emailErrorMessage.textContent !== "" ||
+    nicknameErrorMessage.textContent !== "" ||
+    passwordErrorMessage.textContent !== "" ||
+    passwordConfirmMessage.textContent !== "";
+
+  if (inputsAreEmpty || errorMessagesAreActive) {
+    signupSubmitButton.disabled = true;
+    signupSubmitButton.style.cursor = "default";
+  } else {
+    signupSubmitButton.disabled = false;
+    signupSubmitButton.style.cursor = "pointer";
+    signupSubmitButton.style.backgroundColor = "#3692FF";
+  }
+  }
+}
+/*function updateSubmitButtonState() {
+  const inputs = [emailInput, nicknameInput, passwordInput, passwordConfirmInput];
+  const errorMessages = [emailErrorMessage, nicknameErrorMessage, passwordErrorMessage, passwordConfirmMessage];
+
+  const inputsAreEmpty = inputs.some(input => input && !input.value);
+  const errorMessagesAreActive = errorMessages.some(message => message && message.textContent !== "");
+
+  const shouldDisable = inputsAreEmpty || errorMessagesAreActive;
+
+  [loginSubmitButton, signupSubmitButton].forEach(button => {
+    if (button) {
+      button.disabled = shouldDisable;
+      button.style.cursor = shouldDisable ? "default" : "pointer";
+      button.style.backgroundColor = shouldDisable ? "" : "#3692FF";
+    }
+  });
+}*/
 
 const inputs = [
   { element: emailInput, validate: validateEmail },
   { element: passwordInput, validate: validatePassword },
-  { element: nicknameInput, validate: validateNickname },
-  { element: passwordConfirmInput, validate: () => validatePasswordConfirm(passwordInput.value, passwordConfirmInput.value) }
 ];
-
 inputs.forEach(({ element, validate }) => {
   element.addEventListener("focusout", () => {
     validate(element.value);
-    disableSubmitButton();
+    disableloginSubmitButton();
+    disablesignupSubmitButton();
   });
+});
+
+if (nicknameInput) {
+  nicknameInput.addEventListener("focusout", () => {
+    validateNickname(nicknameInput.value);
+    disablesignupSubmitButton();
+  });
+}
+if (passwordConfirmInput) {
+  passwordConfirmInput.addEventListener("focusout", () => {
+    validatePasswordConfirm(passwordInput.value, passwordConfirmInput.value);
+    disablesignupSubmitButton();
+  });
+}
+
+signupForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (!loginSubmitButton.disabled) {
+    window.location.href = "/items";
+  }
 });
 
 signupForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!submitButton.disabled) {
-    window.location.href = "index.html";
+  if (!signupSubmitButton.disabled) {
+    window.location.href = "login.html";
   }
 });
 
-passwordButton.addEventListener("click", () => {
-  if (passwordInput.type === "password") {
-    passwordInput.type = "text";
-    passwordButton.setAttribute("alt", "비밀번호 표시");
-    passwordButton.style.backgroundImage = "url('../image/eye.png')";
-  } else {
-    passwordButton.style.backgroundImage="url('../image/hidden.png')";
-    passwordInput.type = "password";
-    passwordButton.setAttribute("alt", "비밀번호 숨김");
+function togglePassword(input, button) {
+  if (input.type === "password") {
+    input.type = "text";
+    button.setAttribute("alt", "비밀번호 표시");
+    button.style.backgroundImage = "url('../image/eye.png')";
+    return;
   }
+  if (input.type === "text") {
+    input.type = "password";
+    button.setAttribute("alt", "비밀번호 숨김");
+    button.style.backgroundImage = "url('../image/hidden.png')";
+    return;
+  }
+}
+
+passwordButton.addEventListener("click", () => {
+  togglePassword(passwordInput, passwordButton);
 });
+
+if (passwordConfirmInput && passwordConfirmButton) {
+  passwordConfirmButton.addEventListener("click", () => {
+    togglePassword(passwordConfirmInput, passwordConfirmButton);
+  });
+}
