@@ -90,6 +90,15 @@ input {
   height: 18.07px;;
 }
 
+.error-message {
+  font-size: 15px;
+  color: #f74747;
+  font-weight: 600;
+  display: none;
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
 @media(max-width: 767px) {
   
 
