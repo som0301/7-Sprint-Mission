@@ -59,6 +59,65 @@ emailInput.addEventListener('focusout', function () {
   }
 });
 
-//사용자가 에러를 발견하고 다시 input창에 키프레스를 누르는 순간 모든에러제거.
+// input 이벤트리스너
 
-// 만약 올바르지 않는다는 에러메세지의 스타일이 블록이라면 다음 코드를 실행해라.
+// --------------------------------------------
+// 비밀번호
+
+const pwdInput = document.querySelector('#LOGIN-pwd');
+const pwdNullErr = document.querySelector('.pwd-null-err');
+const pwdShortErr = document.querySelector('.pwd-is-short-err');
+
+pwdInput.addEventListener('focusout', function () {
+  const passwordValue = pwdInput.value.trim();
+
+  //리셋기능
+  pwdNullErr.style.display = 'none';
+  pwdShortErr.style.display = 'none';
+  pwdInput.classList.remove('err-border');
+
+  if (passwordValue === '') {
+    // 빈문자열일떄
+    pwdNullErr.style.display = 'block';
+    pwdInput.classList.add('err-border');
+  } else if (passwordValue.length < 8) {
+    // 8글자미만일때
+    pwdShortErr.style.display = 'block';
+    pwdInput.classList.add('err-border');
+  }
+});
+
+// -------------------------
+// 로그인 버튼 활성화
+const loginForm = document.querySelector('#login-form');
+const loginBtn = document.querySelector('#login-btn');
+
+// 버튼 유효성 검사용 콜백함수.
+function btnValidate() {
+  if (
+    // 버튼이 off 될 수 있는 조건들
+    emailInput.value === '' || // 이메일 빈값
+    pwdInput.value === '' || // 패스워드 빈값
+    notAnEmailErr.style.display === 'block' || //에러메시지가 떠있을 경우
+    nullErr.style.display === 'block' ||
+    pwdNullErr.style.display === 'block' ||
+    pwdShortErr.style.display === 'block' ||
+    pwdInput.value.length < 8 || //비밀번호가 8자리 이하일 경우
+    isEmailValid(emailInput.value) === false || // 이메일 유효성 검사 실패일 경우
+    isEmailValid(emailInput.value) === notAnEmail
+  ) {
+    loginBtn.disabled = true;
+    loginBtn.classList.remove('correct-btn');
+  } else {
+    loginBtn.disabled = false;
+    loginBtn.classList.add('correct-btn');
+  }
+}
+
+// 버튼에 생동감을 주기 위한 keyup 이벤트
+emailInput.addEventListener('keyup', btnValidate);
+pwdInput.addEventListener('keyup', btnValidate);
+
+// 이메일과 pwd 포커스 아웃일때 실행할 btn 이벤트
+emailInput.addEventListener('focusout', btnValidate);
+pwdInput.addEventListener('focusout', btnValidate);

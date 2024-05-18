@@ -114,7 +114,14 @@ label {
   font-family: 'Pretendard';
 }
 
-.for-submit:hover {
+/* 비활성화를 위한 주석처리 */
+
+/* .for-submit:hover {
+  background-color: var(--blue);
+  cursor: pointer;
+} */
+
+.correct-btn {
   background-color: var(--blue);
   cursor: pointer;
 }
@@ -234,6 +241,18 @@ input:focus::placeholder {
 }
 
 .not-an-email-err {
+  display: none;
+  color: red;
+}
+
+/* ---------------- */
+
+.pwd-null-err {
+  display: none;
+  color: red;
+}
+
+.pwd-is-short-err {
   display: none;
   color: red;
 }
