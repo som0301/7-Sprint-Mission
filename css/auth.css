@@ -31,16 +31,7 @@ h1 {
   border: 0;
   padding: 16px 24px;
 }
-input.email-error {
-  border: 1px solid red;
-}
-input.nickname-error {
-  border: 1px solid red;
-}
-input.password-error {
-  border: 1px solid red;
-}
-input.password-confirm-error {
+input.sign-input-error {
   border: 1px solid red;
 }
 .error-message-on {
