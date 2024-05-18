@@ -1,9 +1,16 @@
 const email = document.getElementById("email");
-const emailNullMessage = document.createElement("p");
-const emailErrorMessage = document.createElement("p");
+const emailNullMessage = document.createElement("span");
+const emailErrorMessage = document.createElement("span");
 const password = document.getElementById("password");
-const passwordNullMessage = document.createElement("p");
-const passwordErrorMessage = document.createElement("p");
+const passwordNullMessage = document.createElement("span");
+const passwordErrorMessage = document.createElement("span");
+const submitButton = document.querySelector(".btn_large");
+
+// 로그인버튼 비활,활성화 객체
+const isValid = {
+  email: true,
+  password: true,
+};
 
 // 이메일 관련 이벤트핸들러
 function emailFocusOut(e) {
@@ -15,17 +22,21 @@ function emailFocusOut(e) {
     emailNullMessage.textContent = "이메일을 입력해주세요";
     emailNullMessage.classList.add("focusout");
     emailErrorMessage.remove();
+    isValid.email = true;
   } else if (!emailCheck(emailValue) && e.target.value !== "") {
     email.classList.add("focusout");
     email.after(emailErrorMessage);
     emailErrorMessage.textContent = "잘못된 이메일 형식입니다";
     emailErrorMessage.classList.add("focusout");
     emailNullMessage.remove();
+    isValid.email = true;
   } else {
     email.classList.remove("focusout");
     emailErrorMessage.remove();
     emailNullMessage.remove();
+    isValid.email = false;
   }
+  submitButtonDisabledCheck();
 }
 
 function emailInput(e) {
@@ -58,17 +69,21 @@ function passwordFocusOut(e) {
     passwordNullMessage.textContent = "비밀번호를 입력해주세요";
     passwordNullMessage.classList.add("focusout");
     passwordErrorMessage.remove();
+    isValid.password = true;
   } else if (e.target.value.length < 8) {
     password.classList.add("focusout");
     password.after(passwordErrorMessage);
     passwordErrorMessage.textContent = "비밀번호를 8자 이상 입력해주세요";
     passwordErrorMessage.classList.add("focusout");
     passwordNullMessage.remove();
+    isValid.password = true;
   } else {
     password.classList.remove("focusout");
     passwordErrorMessage.remove();
     passwordNullMessage.remove();
+    isValid.password = false;
   }
+  submitButtonDisabledCheck();
 }
 
 function passwordInput(e) {
@@ -80,6 +95,17 @@ function passwordInput(e) {
       password.classList.add("focusout");
       passwordErrorMessage.classList.add("focusout");
     }
+  }
+}
+
+// 로그인버튼 disabled 함수
+function submitButtonDisabledCheck() {
+  if (!isValid.email && !isValid.password) {
+    submitButton.disabled = false;
+    submitButton.classList.add("btn_large_enubled");
+  } else {
+    submitButton.disabled = true;
+    submitButton.classList.remove("btn_large_enubled");
   }
 }
 

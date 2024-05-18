@@ -1,4 +1,4 @@
-@import '/reset.css';
+@import "/reset.css";
 
 * {
   color: var(--Cool-gray-800);
@@ -49,13 +49,14 @@
   outline: 2px solid var(--main-color);
 }
 
-/* input.focusout과 p.focusout은 js파일에서 사용 */
+/* input.focusout과 span.focusout은 js파일에서 사용 */
 .auth-form input.focusout {
   outline: 2px solid var(--error-color);
   margin-bottom: 10px;
 }
 
-.auth-form p.focusout {
+.auth-form span.focusout {
+  display: block;
   color: var(--error-color);
   margin-bottom: 24px;
 }
@@ -90,11 +91,12 @@
   color: #fff;
   font-size: 20px;
   font-weight: 600;
-  cursor: pointer;
 }
 
-.auth-form .btn_large:hover {
+/* .btn_large_enubled js파일에서 사용 */
+.auth-form .btn_large_enubled {
   background-color: var(--main-color);
+  cursor: pointer;
 }
 
 .sns-login {

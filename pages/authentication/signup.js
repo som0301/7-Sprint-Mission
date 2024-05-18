@@ -1,14 +1,23 @@
 const email = document.getElementById("email");
-const emailNullMessage = document.createElement("p");
-const emailErrorMessage = document.createElement("p");
+const emailNullMessage = document.createElement("span");
+const emailErrorMessage = document.createElement("span");
 const nickname = document.getElementById("nickname");
-const nicknameNullMessage = document.createElement("p");
+const nicknameNullMessage = document.createElement("span");
 const password = document.getElementById("password");
-const passwordNullMessage = document.createElement("p");
-const passwordErrorMessage = document.createElement("p");
+const passwordNullMessage = document.createElement("span");
+const passwordErrorMessage = document.createElement("span");
 const passwordCheck = document.getElementById("password-check");
-const passwordCheckNullMessage = document.createElement("p");
-const passwordCheckErrorMessage = document.createElement("p");
+const passwordCheckNullMessage = document.createElement("span");
+const passwordCheckErrorMessage = document.createElement("span");
+const submitButton = document.querySelector(".btn_large");
+
+// 회원가입버튼 비활,활성화 객체
+const isValid = {
+  email: true,
+  nickname: true,
+  password: true,
+  passwordCheck: true,
+};
 
 // 이메일 관련 이벤트핸들러
 function emailFocusOut(e) {
@@ -20,17 +29,21 @@ function emailFocusOut(e) {
     emailNullMessage.textContent = "이메일을 입력해주세요";
     emailNullMessage.classList.add("focusout");
     emailErrorMessage.remove();
+    isValid.email = true;
   } else if (!emailCheck(emailValue) && e.target.value !== "") {
     email.classList.add("focusout");
     email.after(emailErrorMessage);
     emailErrorMessage.textContent = "잘못된 이메일 형식입니다";
     emailErrorMessage.classList.add("focusout");
     emailNullMessage.remove();
+    isValid.email = true;
   } else {
     email.classList.remove("focusout");
     emailErrorMessage.remove();
     emailNullMessage.remove();
+    isValid.email = false;
   }
+  submitButtonDisabledCheck();
 }
 
 function emailInput(e) {
@@ -62,10 +75,13 @@ function nicknameFocusOut(e) {
     nickname.after(nicknameNullMessage);
     nicknameNullMessage.textContent = "닉네임을 입력해주세요";
     nicknameNullMessage.classList.add("focusout");
+    isValid.nickname = true;
   } else {
     nickname.classList.remove("focusout");
     nicknameNullMessage.remove();
+    isValid.nickname = false;
   }
+  submitButtonDisabledCheck();
 }
 
 function nicknameInput(e) {
@@ -83,17 +99,21 @@ function passwordFocusOut(e) {
     passwordNullMessage.textContent = "비밀번호를 입력해주세요";
     passwordNullMessage.classList.add("focusout");
     passwordErrorMessage.remove();
+    isValid.password = true;
   } else if (e.target.value.length < 8) {
     password.classList.add("focusout");
     password.after(passwordErrorMessage);
     passwordErrorMessage.textContent = "비밀번호를 8자 이상 입력해주세요";
     passwordErrorMessage.classList.add("focusout");
     passwordNullMessage.remove();
+    isValid.password = true;
   } else {
     password.classList.remove("focusout");
     passwordErrorMessage.remove();
     passwordNullMessage.remove();
+    isValid.password = false;
   }
+  submitButtonDisabledCheck();
 }
 
 function passwordInput(e) {
@@ -116,17 +136,21 @@ function passwordCheckFocusOut(e) {
     passwordCheckNullMessage.textContent = "비밀번호를 입력해주세요";
     passwordCheckNullMessage.classList.add("focusout");
     passwordCheckErrorMessage.remove();
+    isValid.passwordCheck = true;
   } else if (password.value !== e.target.value) {
     passwordCheck.classList.add("focusout");
     passwordCheck.after(passwordCheckErrorMessage);
     passwordCheckErrorMessage.textContent = "비밀번호가 일치하지 않습니다";
     passwordCheckErrorMessage.classList.add("focusout");
     passwordCheckNullMessage.remove();
+    isValid.passwordCheck = true;
   } else {
     passwordCheck.classList.remove("focusout");
     passwordCheckErrorMessage.remove();
     passwordCheckNullMessage.remove();
+    isValid.passwordCheck = false;
   }
+  submitButtonDisabledCheck();
 }
 
 function passwordCheckInput(e) {
@@ -138,6 +162,22 @@ function passwordCheckInput(e) {
       passwordCheck.classList.add("focusout");
       passwordCheckErrorMessage.classList.add("focusout");
     }
+  }
+}
+
+// 회원가입버튼 disabled 함수
+function submitButtonDisabledCheck() {
+  if (
+    !isValid.email &&
+    !isValid.password &&
+    !isValid.nickname &&
+    !isValid.passwordCheck
+  ) {
+    submitButton.disabled = false;
+    submitButton.classList.add("btn_large_enubled");
+  } else {
+    submitButton.disabled = true;
+    submitButton.classList.remove("btn_large_enubled");
   }
 }
 
