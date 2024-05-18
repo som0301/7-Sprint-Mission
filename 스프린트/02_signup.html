@@ -1,59 +1,85 @@
 <!DOCTYPE html>
 <html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/스프린트/02_login_signup.css" />
+    <title>판다마켓 - 회원가입</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/스프린트/02_login_signup.css" />
-  <title>판다마켓 - 회원가입</title>
-</head>
+  <body>
+    <a href="/스프린트/01_index.html">
+      <img src="/스프린트/img/logo.png" class="logo" />
+    </a>
 
-<body>
-  <a href="/스프린트/01_index.html">
-    <img src="/스프린트/img/logo.png" class="logo" />
-  </a>
+    <content>
+      <form>
+        <div class="input_please">
+          <label
+            >이메일
+            <input
+              name="email"
+              type="email"
+              placeholder="이메일을 입력해주세요"
+              autocomplete="email"
+            />
+          </label>
+        </div>
 
-  <content>
-    <form>
-      <div class="input_please">
-        <label>이메일
-          <input name="email" type="email" placeholder="이메일을 입력해주세요" autocomplete="email" />
-        </label>
+        <div class="input_please">
+          <label
+            >닉네임
+            <input
+              name="username"
+              type="text"
+              placeholder="닉네임을 입력해주세요"
+              autocomplete="username"
+            />
+          </label>
+        </div>
+
+        <div class="input_please password">
+          <label
+            >비밀번호
+            <input
+              name="password"
+              type="password"
+              placeholder="비밀번호를 입력해주세요"
+            />
+            <img src="/스프린트/img/eye.png" class="no_eye" />
+          </label>
+        </div>
+
+        <div class="input_please password">
+          <label
+            >비밀번호 확인
+            <input
+              name="repeat"
+              type="password"
+              placeholder="비밀번호를 다시 한 번 입력해주세요"
+            />
+            <img src="/스프린트/img/eye.png" class="no_eye" />
+          </label>
+        </div>
+
+        <button type="submit">회원가입</button>
+      </form>
+
+      <div class="simple">
+        간편 로그인하기
+        <div class="simple_img">
+          <a href="https://www.google.com/"
+            ><img src="/스프린트/img/google.png"
+          /></a>
+          <a href="https://www.kakaocorp.com/page/"
+            ><img src="/스프린트/img/kakao.png"
+          /></a>
+        </div>
       </div>
 
-      <div class="input_please">
-        <label>닉네임
-          <input name="username" type="text" placeholder="닉네임을 입력해주세요" autocomplete="username" />
-        </label>
+      <div class="question">
+        이미 회원이신가요? <a href="/스프린트/02_login.html">로그인</a>
       </div>
-
-      <div class="input_please password">
-        <label>비밀번호
-          <input name="password" type="password" placeholder="비밀번호를 입력해주세요" />
-          <img src="/스프린트/img/eye.png" class="no_eye" />
-        </label>
-      </div>
-
-      <div class="input_please password">
-        <label>비밀번호 확인
-          <input name="repeat" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요" />
-          <img src="/스프린트/img/eye.png" class="no_eye" />
-        </label>
-      </div>
-
-      <button type="submit">회원가입</button>
-    </form>
-
-    <div class="simple">
-      간편 로그인하기
-      <div class="simple_img">
-        <a href="https://www.google.com/"><img src="/스프린트/img/google.png" /></a>
-        <a href="https://www.kakaocorp.com/page/"><img src="/스프린트/img/kakao.png" /></a>
-      </div>
-    </div>
-
-    <div class="question">이미 회원이신가요? <a href="/스프린트/02_login.html">로그인</a></div>
-  </content>
-</body>
-
+    </content>
+  </body>
 </html>

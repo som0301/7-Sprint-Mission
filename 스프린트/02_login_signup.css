@@ -9,6 +9,7 @@
   --gray100: #f3f4f6;
   --gray50: #f9fafb;
   --blue: #3692ff;
+  --soohyun: #f695d1;
 }
 
 * {
@@ -129,7 +130,6 @@ button {
   color: #3182f6;
 }
 
-
 @media (max-width: 767px) {
   * {
     color: yellow;
@@ -149,6 +149,7 @@ button {
 
   content,
   form {
+    max-width: 400px;
     width: 100%;
     gap: 16px;
   }
