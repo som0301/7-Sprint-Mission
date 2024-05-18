@@ -1,3 +1,5 @@
+import createErrorTag from './modules.js';
+
 const mainEventController = document.querySelector('main');
 const emailController = document.querySelector('#email');
 const passwordController = document.querySelector('#password');
@@ -15,16 +17,8 @@ let isvisible = [false, false];
 
 function emailValidationTest(email) {
   const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  
-  return regex.test(email);
-}
 
-function createErrorTag(alert, target, tagName) {
-  alert = document.createElement(tagName);
-  alert.classList.add('error');
-  target.parentElement.append(alert);
-  target.classList.add('login-input-error');
-  return alert;
+  return regex.test(email);
 }
 
 function activeLoginButton() {
@@ -121,13 +115,13 @@ function repeatPwCheck(e) {
 function switchVisible(e) {
   isvisible = !isvisible;
   if (isvisible) {
-    e.target.classList.remove('is-invisable');
-    e.target.classList.add('is-visiable');
-    passwordController.setAttribute('type','text');
+    e.target.classList.toggle('is-invisable');
+    e.target.classList.toggle('is-visiable');
+    e.target.parentElement.querySelector('.login-input').setAttribute('type','text');
   } else {
-    e.target.classList.remove('is-visiable');
-    e.target.classList.add('is-invisable');
-    passwordController.setAttribute('type','password');
+    e.target.classList.toggle('is-visiable');
+    e.target.classList.toggle('is-invisable');
+    e.target.parentElement.querySelector('.login-input').setAttribute('type','password');
   }
 }
 
@@ -137,5 +131,4 @@ emailController.addEventListener('focusout', emailCheck);
 passwordController.addEventListener('focusout', passwordCheck);
 nicknameController.addEventListener('focusout', nicknameCheck);
 repeatPwController.addEventListener('focusout', repeatPwCheck);
-pwVisibleController[0].addEventListener('click',switchVisible);
-pwVisibleController[1].addEventListener('click',switchVisible);
+pwVisibleController.forEach( (element) => element.addEventListener('click',switchVisible));
