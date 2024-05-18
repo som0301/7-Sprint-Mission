@@ -66,7 +66,7 @@
   position: relative;
 }
 
-.auth-form .btn_visibility_on_24px {
+.auth-form .btn_visibility {
   position: absolute;
   top: 16px;
   right: 24px;
@@ -76,7 +76,7 @@
   cursor: pointer;
 }
 
-.auth-form .btn_visibility_on_24px img {
+.auth-form .btn_visibility img {
   width: 20.47px;
   height: 18.07px;
 }

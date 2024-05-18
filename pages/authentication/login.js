@@ -5,6 +5,8 @@ const password = document.getElementById("password");
 const passwordNullMessage = document.createElement("span");
 const passwordErrorMessage = document.createElement("span");
 const submitButton = document.querySelector(".btn_large");
+const eyesButton = document.querySelector(".btn_visibility");
+const eyseImg = document.querySelector(".eyes-img");
 
 // 로그인버튼 비활,활성화 객체
 const isValid = {
@@ -109,7 +111,19 @@ function submitButtonDisabledCheck() {
   }
 }
 
+// 눈버튼 클릭 이벤트핸들러
+function eyesButtonClick() {
+  if (password.type === "password") {
+    password.type = "text";
+    eyseImg.src = "/images/btn_visibility_on_24px.svg";
+  } else if (password.type === "text") {
+    password.type = "password";
+    eyseImg.src = "/images/btn_visibility_off_24px.svg";
+  }
+}
+
 email.addEventListener("focusout", emailFocusOut);
 email.addEventListener("input", emailInput);
 password.addEventListener("focusout", passwordFocusOut);
 password.addEventListener("input", passwordInput);
+eyesButton.addEventListener("click", eyesButtonClick);

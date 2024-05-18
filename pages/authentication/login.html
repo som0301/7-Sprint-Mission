@@ -14,16 +14,23 @@
     <div class="container">
       <form class="auth-form">
         <label for="email">이메일</label>
-        <input type="email" id="email" placeholder="이메일을 입력해주세요" />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="이메일을 입력해주세요"
+        />
         <label for="password">비밀번호</label>
         <div class="input-container">
           <input
             type="password"
             id="password"
+            name="password"
             placeholder="비밀번호를 입력해주세요"
           />
-          <button class="btn_visibility_on_24px" type="button">
+          <button class="btn_visibility" type="button">
             <img
+              class="eyes-img"
               src="/images/btn_visibility_off_24px.svg"
               alt="비밀번호가리기아이콘"
             />

@@ -10,6 +10,8 @@ const passwordCheck = document.getElementById("password-check");
 const passwordCheckNullMessage = document.createElement("span");
 const passwordCheckErrorMessage = document.createElement("span");
 const submitButton = document.querySelector(".btn_large");
+const eyesButton = document.querySelectorAll(".btn_visibility");
+const eyseImg = document.querySelectorAll(".eyes-img");
 
 // 회원가입버튼 비활,활성화 객체
 const isValid = {
@@ -109,9 +111,8 @@ function passwordFocusOut(e) {
     isValid.password = true;
   } else {
     password.classList.remove("focusout");
-    passwordErrorMessage.remove();
     passwordNullMessage.remove();
-    isValid.password = false;
+    passwordErrorMessage.remove();
   }
   submitButtonDisabledCheck();
 }
@@ -125,6 +126,22 @@ function passwordInput(e) {
       password.classList.add("focusout");
       passwordErrorMessage.classList.add("focusout");
     }
+
+    if (e.target.value.length >= 8) {
+      passwordErrorMessage.remove();
+      password.classList.remove("focusout");
+    }
+
+    if (e.target.value === passwordCheck.value) {
+      passwordCheckErrorMessage.remove();
+      passwordCheck.classList.remove("focusout");
+      isValid.password = false;
+      isValid.passwordCheck = false;
+      submitButtonDisabledCheck();
+    } else if (e.target.value !== passwordCheck.value) {
+      isValid.password = true;
+      submitButtonDisabledCheck();
+    }
   }
 }
 
@@ -137,18 +154,10 @@ function passwordCheckFocusOut(e) {
     passwordCheckNullMessage.classList.add("focusout");
     passwordCheckErrorMessage.remove();
     isValid.passwordCheck = true;
-  } else if (password.value !== e.target.value) {
-    passwordCheck.classList.add("focusout");
-    passwordCheck.after(passwordCheckErrorMessage);
-    passwordCheckErrorMessage.textContent = "비밀번호가 일치하지 않습니다";
-    passwordCheckErrorMessage.classList.add("focusout");
-    passwordCheckNullMessage.remove();
-    isValid.passwordCheck = true;
   } else {
     passwordCheck.classList.remove("focusout");
-    passwordCheckErrorMessage.remove();
     passwordCheckNullMessage.remove();
-    isValid.passwordCheck = false;
+    passwordCheckErrorMessage.remove();
   }
   submitButtonDisabledCheck();
 }
@@ -161,6 +170,22 @@ function passwordCheckInput(e) {
     } else if (password.nextElementSibling === passwordCheckErrorMessage) {
       passwordCheck.classList.add("focusout");
       passwordCheckErrorMessage.classList.add("focusout");
+    }
+
+    if (e.target.value === password.value) {
+      passwordCheckErrorMessage.remove();
+      passwordCheck.classList.remove("focusout");
+      isValid.password = false;
+      isValid.passwordCheck = false;
+      submitButtonDisabledCheck();
+    } else if (e.target.value !== password.value) {
+      passwordCheck.classList.add("focusout");
+      passwordCheck.after(passwordCheckErrorMessage);
+      passwordCheckErrorMessage.textContent = "비밀번호가 일치하지 않습니다";
+      passwordCheckErrorMessage.classList.add("focusout");
+      passwordCheckNullMessage.remove();
+      isValid.passwordCheck = true;
+      submitButtonDisabledCheck();
     }
   }
 }
@@ -181,6 +206,26 @@ function submitButtonDisabledCheck() {
   }
 }
 
+// 눈버튼 클릭 이벤트핸들러
+function eyesButtonClick() {
+  const eyesOn = "/images/btn_visibility_on_24px.svg";
+  const eyesOff = "/images/btn_visibility_off_24px.svg";
+
+  if (this === eyesButton[0] && password.type === "password") {
+    password.type = "text";
+    eyseImg[0].src = eyesOn;
+  } else if (this === eyesButton[0] && password.type === "text") {
+    password.type = "password";
+    eyseImg[0].src = eyesOff;
+  } else if (this === eyesButton[1] && passwordCheck.type === "password") {
+    passwordCheck.type = "text";
+    eyseImg[1].src = eyesOn;
+  } else if (this === eyesButton[1] && passwordCheck.type === "text") {
+    passwordCheck.type = "password";
+    eyseImg[1].src = eyesOff;
+  }
+}
+
 email.addEventListener("focusout", emailFocusOut);
 email.addEventListener("input", emailInput);
 nickname.addEventListener("focusout", nicknameFocusOut);
@@ -189,3 +234,5 @@ password.addEventListener("focusout", passwordFocusOut);
 password.addEventListener("input", passwordInput);
 passwordCheck.addEventListener("focusout", passwordCheckFocusOut);
 passwordCheck.addEventListener("input", passwordCheckInput);
+eyesButton[0].addEventListener("click", eyesButtonClick);
+eyesButton[1].addEventListener("click", eyesButtonClick);
