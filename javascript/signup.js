@@ -1,18 +1,30 @@
+const mainEventController = document.querySelector('main');
 const emailController = document.querySelector('#email');
 const passwordController = document.querySelector('#password');
 const nicknameController = document.querySelector('#nickname');
 const repeatPwController = document.querySelector('#password-repeat');
 const pwVisibleController = document.querySelectorAll('.is-invisable');
+
 const loginButton = document.querySelector('.login-button');
+
 const MIN_PASSWORD_LENGTH = 8;
+
 let [emailAlert, passwordAlert, nicknameAlert, repeatPwAlert] = [null, null, null, null];
 let [emailPossibility, passwordPossibility, nicknamePossibility, repeatPwPossibility] = [false, false, false, false];
 let isvisible = [false, false];
 
 function emailValidationTest(email) {
   const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+  
   return regex.test(email);
+}
+
+function createErrorTag(alert, target, tagName) {
+  alert = document.createElement(tagName);
+  alert.classList.add('error');
+  target.parentElement.append(alert);
+  target.classList.add('login-input-error');
+  return alert;
 }
 
 function activeLoginButton() {
@@ -30,10 +42,7 @@ function activeLoginButton() {
 
 function emailCheck(e) {
   if(!emailAlert) {
-    emailAlert = document.createElement('p');
-    emailAlert.classList.add('error');
-    e.target.parentElement.append(emailAlert);
-    e.target.classList.add('login-input-error');
+    emailAlert = createErrorTag(emailAlert, e.target, 'p');
     emailPossibility = false;
   }
 
@@ -50,15 +59,11 @@ function emailCheck(e) {
     emailPossibility = true;
   }
 
-  activeLoginButton()
 }
 
 function passwordCheck(e) {
   if(!passwordAlert) {
-    passwordAlert = document.createElement('p');
-    passwordAlert.classList.add('error');
-    e.target.parentElement.append(passwordAlert);
-    e.target.classList.add('login-input-error');
+    passwordAlert = createErrorTag(passwordAlert, e.target, 'p');
     passwordPossibility = false;
   }
   
@@ -75,15 +80,11 @@ function passwordCheck(e) {
     passwordPossibility = true;
   }
 
-  activeLoginButton()
 }
 
 function nicknameCheck(e) {
   if(!nicknameAlert && !e.target.value) {
-    nicknameAlert = document.createElement('p');
-    nicknameAlert.classList.add('error');
-    e.target.parentElement.append(nicknameAlert);
-    e.target.classList.add('login-input-error');
+    nicknameAlert = createErrorTag(nicknameAlert, e.target, 'p');
     nicknameAlert.textContent = '닉네임을 입력해주세요';
     nicknamePossibility = false;
   }
@@ -93,19 +94,15 @@ function nicknameCheck(e) {
     nicknameAlert = null;
     nicknamePossibility = true;
   }
-  else if(e.target.value) {
-    nicknamePossibility = true;
-  }
+  // else if(e.target.value) {
+  //   nicknamePossibility = true;
+  // }
 
-  activeLoginButton()
 }
 
 function repeatPwCheck(e) {
   if(!repeatPwAlert) {
-    repeatPwAlert = document.createElement('p');
-    repeatPwAlert.classList.add('error');
-    e.target.parentElement.append(repeatPwAlert);
-    e.target.classList.add('login-input-error');
+    repeatPwAlert = createErrorTag(repeatPwAlert, e.target, 'p');
     repeatPwPossibility = false;
   }
   
@@ -119,7 +116,6 @@ function repeatPwCheck(e) {
     repeatPwPossibility = true;
   }
 
-  activeLoginButton()
 }
 
 function switchVisible(e) {
@@ -135,6 +131,8 @@ function switchVisible(e) {
   }
 }
 
+
+mainEventController.addEventListener('focusout', activeLoginButton);
 emailController.addEventListener('focusout', emailCheck);
 passwordController.addEventListener('focusout', passwordCheck);
 nicknameController.addEventListener('focusout', nicknameCheck);
