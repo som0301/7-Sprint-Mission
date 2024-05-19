@@ -81,9 +81,13 @@
   border: none;
   border-radius: 40px;
   background-color: var(--gray400);
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
+.btn-abled {
+  cursor: pointer;
+  background-color: var(--blue);
+}
 
 /* Form Footer */
 .form-footer{
