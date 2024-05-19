@@ -6,9 +6,9 @@ const notAnEmailErr = document.querySelector('.not-an-email-err');
 // focus가 될때 blue, blur가 될때 원래의 테두리를 가지는 코드(css스위치)
 allInputs.forEach((input) => {
   input.addEventListener('focus', () => input.classList.add('focused-border'));
-  input.addEventListener('blur', () =>
-    input.classList.remove('focused-border')
-  );
+  input.addEventListener('blur', () => {
+    input.classList.remove('focused-border');
+  });
 });
 
 // 이메일 유효성 검사 코드 - 반환값은 3개이다. true/false/이메일확인용변수
@@ -146,4 +146,76 @@ pwdInput.addEventListener('focus', function () {
       }
     });
   }
+});
+
+// ------------ 비밀번호 확인
+
+const pwdCheckInput = document.querySelector('#pwd-check');
+const pwdNotCorrectErr = document.querySelector('.pwd-is-not-correct');
+
+pwdCheckInput.addEventListener('keyup', function () {
+  const userPwdValue = pwdInput.value;
+  const userPwdCheckValue = pwdCheckInput.value;
+
+  if (userPwdValue === userPwdCheckValue) {
+    //만약 비밀번호의 인풋의 값이 존재한다면,
+    pwdCheckInput.classList.add('correct-border'); // 비밀번호가 일치하는 순간 초록색창으로 변경.
+    pwdCheckInput.classList.remove('err-border'); // 중복 제거
+  } else {
+    //
+    pwdCheckInput.classList.add('err-border');
+    pwdCheckInput.classList.remove('correct-border');
+  }
+});
+
+pwdCheckInput.addEventListener('blur', function () {
+  const userPwdValue = pwdInput.value;
+  const userPwdCheckValue = pwdCheckInput.value;
+  pwdCheckInput.classList.remove('correct-border');
+  if (!userPwdValue === userPwdCheckValue) {
+    pwdCheckInput.classList.add('err-border');
+    pwdCheckInput.classList.remove('correct-border');
+    pwdNotCorrectErr.style.display = 'block'; //안먹힘 왜???????
+  } else if (userPwdCheckValue === '') {
+    pwdCheckInput.classList.add('err-border');
+    pwdCheckInput.classList.remove('correct-border');
+  }
+});
+
+pwdCheckInput.addEventListener('focus', function () {
+  const userPwdValue = pwdInput.value;
+  const userPwdCheckValue = pwdCheckInput.value;
+  if (!userPwdValue === userPwdCheckValue) {
+    pwdCheckInput.classList.add('err-border');
+    pwdCheckInput.classList.remove('correct-border');
+    pwdNotCorrectErr.style.display = 'block';
+  } else {
+    pwdCheckInput.classList.remove('err-border');
+    pwdNotCorrectErr.style.display = 'none';
+  }
+});
+
+const joinBtn = document.querySelector('.for-submit');
+
+// 4개의 인풋 값들이 focus가 아웃됬을때 실행될 활성화용 버튼 함수.
+function checkBtn() {
+  if (
+    //활성화될 조건들 나열하기.
+    isEmailValid(emailInput.value) &&
+    !nameInput === '' &&
+    pwdInput.value === pwdCheckInput.value
+  ) {
+    joinBtn.disabled = false;
+    joinBtn.classList.add('active-button');
+    joinBtn.classList.remove('inactive-button');
+  } else {
+    joinBtn.disabled = true;
+    joinBtn.classList.remove('active-button');
+    joinBtn.classList.add('inactive-button');
+  }
+}
+
+//실패 ㅠㅜ
+allInputs.forEach((input) => {
+  input.addEventListener('blur', checkBtn());
 });

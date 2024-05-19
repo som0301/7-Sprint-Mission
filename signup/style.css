@@ -110,10 +110,18 @@ label {
   font-weight: 600;
 }
 
-.for-submit:hover {
+.active-button {
+  background-color: var(--blue);
+}
+
+.inactive-button {
+  background-color: #9ca3af;
+}
+
+/* .for-submit:hover {
   background-color: var(--blue);
   cursor: pointer;
-}
+} */
 
 .easy-login {
   display: flex;
@@ -257,4 +265,8 @@ input:focus::placeholder {
 .pwd-is-not-correct {
   display: none;
   color: red;
+}
+
+.correct-border {
+  border: 1px solid green;
 }
