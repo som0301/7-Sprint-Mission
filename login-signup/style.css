@@ -87,12 +87,17 @@ input {
 }
 
 .password_visibility {
+  background-image: url(../images/etc/btn_visibility_off.svg);
   position: absolute;
   bottom: 16px;
   right: 24px;
   width: 24px;
   height: 24px;
   cursor: pointer;
+}
+
+.password_visibility_on {
+  background-image: url(../images/etc/btn_visibility_on.svg);
 }
 
 .btn_large {

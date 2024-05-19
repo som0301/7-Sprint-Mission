@@ -79,7 +79,18 @@ function activeLoginButton() {
 emailInput.addEventListener("keyup", activeLoginButton);
 passInput.addEventListener("keyup", activeLoginButton);
 
-function toggleVisibility() {
-  // 클릭 시 이미지 변경
+const visibilityIcon = document.querySelectorAll(".password_visibility");
+
+function toggleVisibility(e) {
+  e.target.classList.toggle("password_visibility_on");
+  if (e.target.classList.contains("password_visibility_on") === true) {
+    e.target.previousElementSibling.setAttribute("type", "text");
+  } else {
+    e.target.previousElementSibling.setAttribute("type", "password");
+  }
   // 클릭 시 비밀번호 input의 type 변경
 }
+
+[].forEach.call(visibilityIcon, function (e) {
+  e.addEventListener("click", toggleVisibility, false);
+});
