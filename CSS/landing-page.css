@@ -36,7 +36,7 @@
 }
 
 .header-home__wrapper {
-  background-image: url(image-resources/img_header.png);
+  background-image: url(/image-resources/img_header.png);
 }
 
 .header-home {
@@ -98,7 +98,7 @@ main {
 .main-footer__wrapper {
   width: 100%;
   margin-top: 138px;
-  background-image: url(image-resources/Img_home_bottom.png);
+  background-image: url(/image-resources/Img_home_bottom.png);
 }
 
 .main-footer {
@@ -203,7 +203,7 @@ footer {
   }
 
   .bg_wrapper {
-    height: 771px;
+    height: 700px;
     padding-top: 84px;
   }
 
@@ -226,7 +226,7 @@ footer {
   }
 
   .main-footer__wrapper {
-    height: 927px;
+    height: 700px;
     padding-top: 201px;
     margin-top: 40px;
   }
@@ -256,7 +256,7 @@ footer {
   .bg_wrapper {
     height: 540px;
     padding-top: 48px;
-    background-size: 626.12px;
+    background-size: 600px;
   }
 
   .nav-bar {
@@ -264,7 +264,7 @@ footer {
   }
 
   .nav-bar__logo {
-    content: url(image-resources/img_logo.png);
+    content: url(/image-resources/img_logo.png);
   }
 
   .header-home {
@@ -299,7 +299,7 @@ footer {
   .main-footer__wrapper {
     padding-top: 121px;
     margin-top: 24px;
-    background-size: 497.91px;
+    background-size: 500px;
   }
 
   footer {
