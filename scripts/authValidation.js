@@ -1,6 +1,6 @@
 import {
   form,
-  inputStates,
+  formInputsData,
   formInputs,
   formValidationConfig,
 } from "./constants.js";
@@ -29,32 +29,28 @@ function isEmptyCheck(input) {
 }
 
 // 이메일 철자 검사
-function emailSpellCheck(email_text) {
+export function isEmailSpellCheck(email_text) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email_text);
 }
 
 // 비밀번호 길이 검사
-function passwordLengthCheck(password_text) {
+export function isPasswordLengthCheck(password_text) {
   // 비밀번호 길이가 8자 넘는지 체크
   return password_text.length >= 8;
 }
 
 // 비밀번호 일치 검사
-function PasswordMatchCheck(password_conf_text) {
+export function isPasswordMatchCheck(password_conf_text) {
   return password_conf_text === formInputs.password.value;
 }
 
 // 각 input 별로 유효성 검사 할당용 이벤트 핸들
-export function handleValidateInput(e, inputType) {
-  const validators = {
-    email: validateEmail,
-    nickname: validateNickname,
-    password: validatePassword,
-    passwordConf: validatePasswordConf,
-  };
+export function handleValidateInput(e, input_type) {
+  const inputInfo = formInputsData[input_type];
 
-  validators[inputType]();
+  // 해당 입력 필드의 유효성 검사 함수 호출
+  const isValid = validateInput(inputInfo);
 
   // 버튼 유효성 검사
   validateChangeButton();
@@ -68,78 +64,27 @@ export function handleValidateForm(e) {
 }
 
 // 각 입력 필드의 유효성 검사를 일반화
-function validateInput(
-  inputElement,
-  emptyErrorMessage = "",
-  errorMessage = "",
-  validationFunction = () => true
-) {
-  const eText = inputElement.nextElementSibling;
-  const value = inputElement.value;
+function validateInput({
+  element,
+  emptyErrMsg = "",
+  invalidErrMsg = "",
+  validationFunction = () => true,
+}) {
+  const eText = element.nextElementSibling;
+  const value = element.value;
 
-  if (isEmptyCheck(inputElement)) {
-    eText.textContent = emptyErrorMessage;
-    inputStates[inputElement.id] = false;
-
+  if (isEmptyCheck(element)) {
+    eText.textContent = emptyErrMsg;
+    formInputsData[element.id].inputStates = false;
     return false;
   }
 
   const isValid = validationFunction(value);
-  validationError(inputElement, !isValid);
-  eText.textContent = isValid ? "" : errorMessage;
-  inputStates[inputElement.id] = isValid;
+  validationError(element, !isValid);
+  eText.textContent = isValid ? "" : invalidErrMsg;
+  formInputsData[element.id].inputStates = isValid;
 
   return isValid;
-}
-
-// 이메일 유효성 검사
-function validateEmail() {
-  const emailInputElement = formInputs.email;
-  const isValidEmail = validateInput(
-    emailInputElement,
-    "이메일을 입력해주세요.",
-    "잘못된 이메일 형식입니다.",
-    emailSpellCheck
-  );
-
-  return isValidEmail;
-}
-
-// 닉네임 유효성 검사
-function validateNickname() {
-  const nicknameInputElement = formInputs.nickname;
-  const isValidNickname = validateInput(
-    nicknameInputElement,
-    "닉네임을 입력해주세요."
-  );
-
-  return isValidNickname;
-}
-
-// 비밀번호 유효성 검사
-function validatePassword() {
-  const passwordInputElement = formInputs.password;
-  const isValidPassword = validateInput(
-    passwordInputElement,
-    "비밀번호를 입력해주세요.",
-    "비밀번호를 8자 이상 입력해주세요.",
-    passwordLengthCheck
-  );
-
-  return isValidPassword;
-}
-
-// 비밀번호 확인의 유효성 검사
-function validatePasswordConf() {
-  const passwordConfInputElement = formInputs.passwordConf;
-  const isValidPasswordConf = validateInput(
-    passwordConfInputElement,
-    "비밀번호 확인을 입력해주세요.",
-    "비밀번호가 일치하지 않습니다.",
-    PasswordMatchCheck
-  );
-
-  return isValidPasswordConf;
 }
 
 // 폼 id
@@ -149,7 +94,9 @@ function getFormId() {
 
 // 전달받은 페이지 폼의 inputs 유효성 검사
 function validatePageInputs(fields) {
-  return fields.every((field) => inputStates[field]);
+  return fields.every((field) => {
+    return formInputsData[field].inputStates;
+  });
 }
 
 // 특정 폼에 대해 유효성 검사를 수행

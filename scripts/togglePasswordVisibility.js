@@ -1,5 +1,3 @@
-import { togglePasswordBtns } from "./constants.js";
-
 // 비밀번호 가시성 토글 클릭시 발생 이벤트 핸들
 export function handlePasswordVisibilityToggle(e) {
   const onImage = e.target.parentElement.querySelector(".visibility-on");

@@ -127,7 +127,7 @@ input img {
 
 /* 에러 보더 설정 */
 .err-border {
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 /* 유효성 검사 버튼 */
