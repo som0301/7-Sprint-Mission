@@ -3,34 +3,42 @@
     <head>
         <meta charset="utf-8">
         <title> 로그인 </title>
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"
+        />
         <link 
             rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"/>
-        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="/login.css">
         
         <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
-        <link rel="stylesheet" href="button.css">
+        <link rel="stylesheet" href="/button.css">
     </head>
 
     <body>
         <main>
             <!--메인 로그인 로고-->
-            <div>
-                <button class="login-logo width" onclick="location.href='../index/index.html'"> <img src="../img/logo.png"> </button>
+            <div class="login-logo">
+                <a href="/index/index.html"> <img  class="login-logo-img" src="img/logo.png"> </a>
             </div>
-            
+            <!-- 메인 컨테이너 -->
             <div class="form-container">
                 <form>
                     <div>
-                        <label class="width label-text">이메일</label>
-                        <input class="width input-text" type="email" placeholder="이메일을 입력해주세요" onfocus="this.placeholder=''"/>
+                        <label for="email" class="width label-text">이메일</label>
+                        <input id="email" class="width input-text" type="email" placeholder="이메일을 입력해주세요" /> 
+                        <!-- onfocus="this.placeholder=''" -->
+                        <div id="email-error" class = "error-message"></div>
                     </div>
                     <div class="password">
-                        <label class="width label-text">비밀번호</label>
-                        <input class="width input-text" type="password" placeholder="비밀번호를 입력해주세요">
-                        <img class="unvisible" src ="./img/btn_visibility_on_24px.png"
+                        <label for="password" class="width label-text">비밀번호</label>
+                        <input id="password" class="width input-text" type="password" placeholder="비밀번호를 입력해주세요">
+                        <img class="unvisible" src ="img/btn_visibility_on_24px.png">
+                        <div id="password-error" class = "error-messsage"></div>
                     </div>
-                    <button class="width button-large login-btn">로그인</button>
+                    <button class="width button login-btn button-large">로그인</button>
                 </form>
+
                 <div class="simple-login width">
                     <span>간편 로그인하기</span>
                     <div class="icons">
@@ -42,17 +50,8 @@
                 <div class="ask-signup">
                     <span>판다마켓이 처음이신가요?</span> <a id="signup" href="signup.html"> 회원가입</a>
                 </div>
-
-
             </div>
         </main>
-        
-
-
-
-
-
-
-
-
+        <script src="login_input.js"></script>
     </body>
+    </html>

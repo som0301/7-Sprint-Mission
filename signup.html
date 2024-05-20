@@ -15,44 +15,49 @@
         <main>
             <!--메인 로그인 로고-->
             <div class="signup-logo width">
-                <a href='../index/index.html'> <img class="signup-logo-img" src="../img/logo.png"> </a>
+                <a href='/index/index.html'> <img class="signup-logo-img" src="/img/logo.png"> </a>
             </div>
             
             <div class="form-container">
                 <form>
                     <div>
-                        <label class="width label-text">이메일</label>
-                        <input class="width input-text" type="email" placeholder="이메일을 입력해주세요" onfocus="this.placeholder=''"/>
+                        <label for = "email" class="width label-text">이메일</label>
+                        <input id = "email" class="width input-text" type="email" placeholder="이메일을 입력해주세요" />
+                        <div id="email-error" class = "error-message"></div>
                     </div>
                     <div>
-                        <label class="width label-text">닉네임</label>
-                        <input class="width input-text" placeholder="닉네임을 입력해주세요" onfocus="this.placeholder=''"/>
+                        <label for = "nickname" class="width label-text">닉네임</label>
+                        <input id="nickname" class="width input-text" placeholder="닉네임을 입력해주세요" />
+                        <div id="nickname-error" class = "error-message"></div>
                     </div>
                     <div class="password">
-                        <label class="width label-text">비밀번호</label>
-                        <input class="width input-text" type="password" placeholder="비밀번호를 입력해주세요">
-                        <img class="unvisible" src ="./img/btn_visibility_on_24px.png">
+                        <label for = "password" class="width label-text">비밀번호</label>
+                        <input id = "password" class="width input-text" type="password" placeholder="비밀번호를 입력해주세요">
+                        <img class="unvisible" src ="/img/btn_visibility_on_24px.png">
+                        <div id="password-error" class = "error-message"></div>
                     </div>
                    
-                    <div class="password">
-                        <label class="width label-text">비밀번호 확인</label>
-                        <input class="width input-text" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+                    <div class="password-check">
+                        <label for = "password-check" class="width label-text">비밀번호 확인</label>
+                        <input id = "password-check" class="width input-text" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+                        <div id="password-confirmation-error" class = "error-message"></div>
                     </div>
                     
-                    <button class="width button-large signup-btn">회원가입</button>
+                    <button class="widht button button-large signup-btn ">회원가입</button>
                 </form>
                 <div class="simple-login width">
                     <span>간편 로그인하기</span>
                     <div class="icons">
-                        <a href="https://www.google.com/"><img src="./img/ic_google.png"></a>
-                        <a href="https://www.kakaocorp.com/page/"><img src="./img/ic_kakao.png"></a>
+                        <a href="https://www.google.com/"><img src="/img/ic_google.png"></a>
+                        <a href="https://www.kakaocorp.com/page/"><img src="/img/ic_kakao.png"></a>
                     </div>
                 </div>
 
                 <div class="ask-login">
-                    <span>이미 회원이신가요?</span> <a id="login" href="login.html"> 로그인</a>
+                    <span>이미 회원이신가요?</span> <a id="login" href="/login.html"> 로그인</a>
                 </div>
-
-
             </div>
         </main>
+        <script = src="signup_input.js"></script>
+    </body>
+</html>
