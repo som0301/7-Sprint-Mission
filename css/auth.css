@@ -1,48 +1,59 @@
-.signup-container {
+.auth-container {
   max-width: 640px;
   margin: 0 auto;
 }
 
-.signup-logo-wrapper {
-  display: block;
+.auth-logo-wrapper {
   text-align: center;
   margin-top: 60px;
   margin-bottom: 40px;
 }
 
-.signup-input {
+.auth-input {
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
 }
 
-.signup-input-label {
+input.auth-input-error {
+  border: 1px solid #f74747;
+}
+
+input.nickname-input-error {
+  border: 1px solid #f74747;
+}
+
+input.password-field-error {
+  border: 1px solid #f74747;
+}
+
+input.verify-password-field-error {
+  border: 1px solid #f74747;
+}
+
+.error-message-on {
+  color: red;
+  position: relative;
+  left: 20px;
+  top: 5px
+}
+
+.auth-input-label {
   font-weight: 700;
   font-size: 18px;
   line-height: 21.48px;
   color: #1f2937;
   margin-bottom: 16px;
-}
-
-.email-label {
   width: fit-content;
 }
 
-.password-label {
-  width: fit-content;
-}
-
-.verify-password-label {
-  width: fit-content;
-}
-
-.signup-input-field-wrapper {
+.auth-input-field-wrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.signup-input-field {
+.auth-input-field {
   border-radius: 12px;
   border: none;
   background-color: #f3f4f6;
@@ -55,40 +66,45 @@
   padding: 16px 50px 16px 24px;
 }
 
-.signup-input-field:focus {
+.auth-input-field:focus {
   outline-color: var(--blue);
 }
 
-.signup-input-field::placeholder {
+.auth-input-field::placeholder {
   font-size: 16px;
   line-height: 24px;
   color: #9ca3af;
 }
 
-.signup-input-eye-icon-wrapper {
+.auth-input-eye-icon-wrapper {
   border: none;
 }
 
-.signup-input-eye-icon {
+.auth-input-eye-icon {
   position: absolute;
   cursor: pointer;
   right: 24px;
   top: 16px;
 }
 
-.signup-button {
+.auth-button {
   width: 100%;
   border-radius: 40px;
   padding: 20px;
   border: none;
-  background-color: #9ca3af;
+  background-color: var(--blue);
   color: #fff;
   font-size: 20px;
   line-height: 24px;
   font-weight: 600;
 }
 
-.social-signup-container {
+.button-disabled {
+  background: var(--gray-400);
+  cursor: default;
+}
+
+.social-auth-container {
   width: 100%;
   border-radius: 8px;
   background-color: #e6f2ff;
@@ -99,32 +115,32 @@
   padding: 16px 24px;
 }
 
-.social-signup-label {
+.social-auth-label {
   font-size: 16px;
   line-height: 24px;
   color: #1f2937;
   font-weight: 500;
 }
 
-.social-signup-icon-wrapper {
+.social-auth-icon-wrapper {
   display: flex;
   column-gap: 16px;
 }
 
-.signup-login {
+.auth-login-container {
   text-align: center;
   margin-top: 24px;
   column-gap: 4px;
 }
 
-.signup-login-text {
+.auth-login-text {
   font-weight: 500;
   font-size: 15px;
   line-height: 17.9px;
   color: #1f2937;
 }
 
-.signup-login-link {
+.auth-login-link {
   font-weight: 500px;
   font-size: 15px;
   line-height: 17.9px;
@@ -133,14 +149,14 @@
 }
 
 @media screen and (max-width: 767px) {
-  .signup-container {
+  .auth-container {
     max-width: 400px;
     width: 100%;
     padding: 0 16px;
     row-gap: 16px;
   }
 
-  .signup-logo-image {
+  .auth-logo-image {
     width: 198px;
     height: 66px;
   }

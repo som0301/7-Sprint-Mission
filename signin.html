@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인</title>
-    <link rel="stylesheet" href="css/signin.css" />
+    <link rel="stylesheet" href="css/auth.css" />
     <link rel="stylesheet" href="css/reset.css" />
   </head>
   <body>
-    <div class="login-container">
-      <div class="login-logo-wrapper">
+    <div class="auth-container">
+      <div class="auth-logo-wrapper">
         <h1>
           <a href="index.html">
             <img
@@ -24,46 +24,44 @@
       </div>
 
       <form method="post">
-        <div class="login-input">
-          <label class="login-input-label email-label" for="email"
-            >이메일</label
-          >
+        <div class="auth-input">
+          <label class="auth-input-label" for="email">이메일</label>
           <input
-            class="login-input-field"
+            class="auth-input-field"
             type="email"
             name="email"
             id="email"
             placeholder="이메일을 입력해주세요"
           />
+          <span class="email-error-message"></span>
         </div>
 
-        <div class="login-input">
-          <label class="login-input-label password-label" for="password"
-            >비밀번호</label
-          >
-          <div class="login-input-field-wrapper">
+        <div class="auth-input">
+          <label class="auth-input-label" for="password">비밀번호</label>
+          <div class="auth-input-field-wrapper">
             <input
-              class="login-input-field password-field"
+              class="auth-input-field auth-password-field"
               type="password"
               name="password"
               id="password"
               placeholder="비밀번호를 입력해주세요"
             />
-            <button class="login-input-eye-icon-wrapper">
+            <button class="auth-input-eye-icon-wrapper">
               <img
-                class="login-input-eye-icon"
+                class="auth-input-eye-icon"
                 src="img/icons/eye-invisible.svg"
                 alt="비밀번호 보기"
               />
             </button>
           </div>
+          <span class="password-error-message"></span>
         </div>
 
-        <button class="login-button" type="submit">로그인</button>
+        <button class="auth-button button-disabled" type="submit" disabled>로그인</button>
       </form>
-      <div class="social-login-container">
-        <span class="social-login-label">간편 로그인하기</span>
-        <div class="social-login-icon-wrapper">
+      <div class="social-auth-container">
+        <span class="social-auth-label">간편 로그인하기</span>
+        <div class="social-auth-icon-wrapper">
           <a
             href="https://www.google.com/"
             target="_blank"
@@ -91,10 +89,11 @@
         </div>
       </div>
 
-      <div class="login-signup">
-        <span class="login-signup-text">판다마켓이 처음이신가요?</span>
-        <a class="login-signup-link" href="signup.html">회원가입</a>
+      <div class="auth-login-container">
+        <span class="auth-login-text">판다마켓이 처음이신가요?</span>
+        <a class="auth-login-link" href="signup.html">회원가입</a>
       </div>
     </div>
+    <script src="js/validateLogin.js"></script>
   </body>
 </html>

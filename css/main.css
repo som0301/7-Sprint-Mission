@@ -255,6 +255,12 @@
     padding: 0 16px;
   }
 
+  .header-logo-image {
+    content: url("../img/logo/logo.png");
+    width: 103px;
+    height: 51px;
+  }
+
   .top-banner {
     background-size: contain;
     background-position: center bottom;
@@ -286,7 +292,6 @@
   .br-tag {
     display: none;
   }
-
 
   .product-wrapper {
     display: flex;
