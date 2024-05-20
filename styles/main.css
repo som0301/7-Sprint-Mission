@@ -1,10 +1,12 @@
+@import 'color.css';
+
 em {
     width: 72px;
     height: 25px;
     font-size: 18px;
     font-weight: 700;
     font-style: normal;
-    color: #3692ff;
+    color: var(--blue);
     line-height: 25.2px;
 }
 
@@ -26,7 +28,11 @@ body {
 }
 
 .header__logo {
-    display: block;
+    width: 153px;
+    height: 51px;
+    background-image: url('../img/logo/panda-market-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .header__login-btn {
@@ -35,7 +41,7 @@ body {
     justify-content: center;
     min-width: 128px;
     height: 48px;
-    background: #3692ff;
+    background: var(--blue);
     border-radius: 8px;
     font-weight: 700;
     font-size: 16px;
@@ -69,7 +75,7 @@ body {
 .top-banner__title {
     font-size: 40px;
     line-height: 140%;
-    color: #374151;
+    color: var(--gray700);
 }
 
 .top-banner__items-btn {
@@ -78,7 +84,7 @@ body {
     align-items: center;
     width: 355px;
     height: 60px;
-    background: #3692ff;
+    background: var(--blue);
     border-radius: 45.5px;
     font-weight: 700;
     font-size: 20px;
@@ -128,14 +134,14 @@ body {
     font-size: 40px;
     line-height: 140%;
     letter-spacing: 0.02em;
-    color: #374151;
+    color: var(--gray700);
 }
 
 .feature__content {
     font-size: 24px;
     line-height: 120%;
     letter-spacing: 0.08em;
-    color: #374151;
+    color: var(--gray700);
 }
 
 .bottom-banner {
@@ -153,7 +159,7 @@ body {
 .bottom-banner__title {
     font-size: 40px;
     line-height: 140%;
-    color: #374151;
+    color: var(--gray700);
 }
 
 .footer {
@@ -186,17 +192,9 @@ body {
     gap: 12px;
 }
 
-.social__logo {
-    display: block;
-}
-
 @media (min-width: 1200px) {
     .header {
         padding: 0 200px;
-    }
-
-    .header__logo__mobile {
-        display: none;
     }
 
     .top-banner,
@@ -229,17 +227,13 @@ body {
         padding: 0 24px;
     }
 
-    .header__logo__mobile {
-        display: none;
-    }
-
     .top-banner {
         flex-direction: column;
         height: 771px;
     }
 
     .top-banner__wrapper {
-        margin-top: 84px;
+        padding-top: 84px;
         align-items: center;
         row-gap: 24px;
     }
@@ -285,12 +279,12 @@ body {
     }
 
     .bottom-banner {
+        padding-top: 201px;
         flex-direction: column;
         height: 927px;
     }
 
     .bottom-banner__title {
-        margin-top: 201px;
         text-align: center;
     }
 
@@ -305,7 +299,9 @@ body {
     }
 
     .header__logo {
-        display: none;
+        width: 103px;
+        height: 51px;
+        background-image: url('../img/logo/panda-market-logo-mobile.png');
     }
 
     .top-banner {
@@ -315,7 +311,7 @@ body {
     }
 
     .top-banner__wrapper {
-        margin-top: 84px;
+        padding-top: 84px;
         align-items: center;
         row-gap: 24px;
     }
@@ -324,7 +320,7 @@ body {
         font-size: 32px;
         line-height: 140%;
         text-align: center;
-        color: #374151;
+        color: var(--gray700);
     }
 
     .top-banner__items-btn {
@@ -378,12 +374,12 @@ body {
 
     .bottom-banner {
         flex-direction: column;
+        padding-top: 121px;
         height: 540px;
         background-size: 498px 270px;
     }
 
     .bottom-banner__title {
-        margin-top: 121px;
         text-align: center;
     }
 

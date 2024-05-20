@@ -3,10 +3,7 @@
 .header {
     display: flex;
     justify-content: center;
-}
-
-.header__logo {
-    margin: 60px 0 40px;
+    padding-top: 60px;
 }
 
 .login__container {
@@ -20,24 +17,29 @@
     display: flex;
     flex-direction: column;
     row-gap: 24px;
+    margin-top: 40px;
 }
 
 .form__label {
     position: relative;
     display: flex;
     flex-direction: column;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 21.48px;
-    row-gap: 16px;
+    row-gap: 8px;
 }
 
 .label__name {
     width: fit-content;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.48px;
+    padding-bottom: 8px;
 }
 
-.input__wrapper {
+.label__wrapper {
+    display: flex;
     position: relative;
+    flex-direction: column;
+    row-gap: 8px;
 }
 
 .label__input {
@@ -51,15 +53,31 @@
     background-color: var(--gray100);
 }
 
-.label__input:focus-visible {
-    outline: 3px solid #3692ff;
+.visibility-btn {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/icon/btn__visibility-off.svg);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
 }
 
-.password__blind-logo {
-    position: absolute;
-    right: 24px;
-    bottom: 16px;
-    cursor: pointer;
+.visibility-btn.show {
+    background-image: url(../img/icon/btn__visibility-on.svg);
+}
+
+.error__message {
+    padding-left: 16px;
+    font-size: 15px;
+    color: var(--red);
+}
+
+.label__input:focus-visible {
+    outline: 1px solid var(--blue);
 }
 
 .submit-btn {
@@ -100,11 +118,19 @@
     text-decoration: underline;
 }
 
+@media (min-width: 768px) and (max-width: 1199px) {
+    .header {
+        padding-top: 48px;
+    }
+}
 @media (min-width: 375px) and (max-width: 767px) {
+    .header {
+        padding-top: 24px;
+    }
+
     .header__logo {
         width: 198px;
         height: 66px;
-        margin: 24px 0 24px;
     }
 
     .login__form {
@@ -117,7 +143,10 @@
     .form__label {
         font-size: 14px;
         line-height: 16.71px;
-        row-gap: 8px;
+    }
+
+    .label__name {
+        padding-bottom: 0;
     }
 
     .label__input {
