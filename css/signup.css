@@ -41,10 +41,16 @@ input {
 .visibility-icon {
   position: absolute;
   right: 20px;
+  cursor: pointer;
+  z-index: 2;
 }
 
 input:focus {
   outline: 1px solid var(--blue-color);
+}
+
+.input-warnning {
+  outline: 1px solid red;
 }
 
 input::placeholder {
@@ -62,6 +68,7 @@ button {
   margin: 24px 0;
   padding: 16px;
   width: 100%;
+  cursor:pointer;
 }
 
 .sns-login {

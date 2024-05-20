@@ -1,7 +1,3 @@
-* {
-	box-sizing: border-box;
-}
-
 :root {
   --white-sky-color: #CFE5FF;
   --light-sky-color: #E6F2FF;
@@ -19,6 +15,11 @@
   --gray100-color: #F3F4F6;
   --gray50-color: #F9FAFB;
   --white-color: #FFFFFF;
+}
+
+.button-disabled {
+  background: var(--gray400-color);
+  cursor: default;
 }
 
 

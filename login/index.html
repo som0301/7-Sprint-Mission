@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>판다마켓-로그인</title>
+  <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/login.css">
 </head>
@@ -14,15 +15,15 @@
     </div>
   </header>
   <main>
-    <form>
+    <form id="login-form" method="post">
       <label for="email">이메일</label>
-      <input id="email" name="email" placeholder="이메일을 입력해주세요" required>
+      <input id="email" name="email" type="email" placeholder="이메일을 입력해주세요" required>
       <label for="password">비밀번호</label>
       <div class="password-input">
         <input id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요" required>
         <img class="visibility-icon" src="/assets/icons/ic_visible_off.svg" alt="비밀번호 가리기 아이콘">
       </div>
-      <button>로그인</button>
+      <button id="login-btn" class="button-disabled submit" onclick="location.href='/items'" disabled>로그인</button>
     </form>
   </main>
   <footer>
@@ -38,5 +39,6 @@
       <a href="/signup">회원가입</a>
     </section>
   </footer>
+  <script type="module" src="/scripts/login.js"></script>
 </body>
 </html>

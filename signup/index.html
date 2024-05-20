@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>판다마켓-회원가입</title>
+  <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/common.css">
   <link rel="stylesheet" href="/css/signup.css">
 </head>
@@ -13,23 +14,23 @@
       <a href="/"><img src="/assets/images/img_logo_m.png" alt="판다마켓 로고"></a>
     </div>
   </header>
-  <main>
-    <form>
+  <main method="post">
+    <form id="signup-form" method="post">
       <label for="email">이메일</label>
-      <input id="email" name="email" placeholder="이메일을 입력해주세요" required>
+      <input id="email" name="email" type="email" placeholder="이메일을 입력해주세요" required>
       <label for="nickname">닉네임</label>
       <input id="nickname" name="nickname" placeholder="닉네임을 입력해주세요" required>
       <label for="password">비밀번호</label>
       <div class="password-input">
         <input id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요" required>
-        <img class="visibility-icon" src="/assets/icons/ic_visible_off.svg" alt="비밀번호 가리기 아이콘">
+        <img class="visibility-icon pw" src="/assets/icons/ic_visible_off.svg" alt="비밀번호 가리기 아이콘">
       </div>
       <label for="password-check">비밀번호 확인</label>
       <div class="password-input">
         <input id="password-check" name="password-check" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요" required>
-        <img class="visibility-icon" src="/assets/icons/ic_visible_off.svg" alt="비밀번호 가리기 아이콘">
+        <img class="visibility-icon pwcheck" src="/assets/icons/ic_visible_off.svg" alt="비밀번호 가리기 아이콘">
       </div>
-      <button>회원가입</button>
+      <button id="signup-btn" class="button-disabled submit" onclick="location.href='/items'" disabled>회원가입</button>
     </form>
   </main>
   <footer>
@@ -45,5 +46,6 @@
       <a href="/login">로그인</a>
     </section>
   </footer>
+  <script type="module" src="/scripts/signup.js"></script>
 </body>
 </html>
