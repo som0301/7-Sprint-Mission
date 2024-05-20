@@ -70,15 +70,16 @@
 
   .banner { 
     height: 771px;
+    align-items: flex-start;
     background-size: 120%;
     background-position-x: 50%;
+    padding-top: 84px;
   }
 
   div.wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
   }
 
   #bottomBanner h1 { 
@@ -92,10 +93,15 @@
     white-space: pre;
   }
   
-  #feauture1 { 
-    margin-bottom: 64px;  /** <section id="features" class="wrapper"> 이 부분 간격을
-                              주려고 했는데 왜 되질 않는지 모르겠습니다... **/
+  #feature1 { 
+    padding-bottom: 64px;
   }
+
+  #feature2 { 
+    padding-bottom: 64px;
+    flex-direction: column-reverse;
+  }
+
 
   .feature h1 { 
     display: flex;
@@ -119,12 +125,25 @@
   }
 
   .feature-content { 
+    width: 100%;
     margin-top: 20px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
     text-align: left;
+  }
+
+  #feature-content2 { 
+    text-align: right;
+  }
+
+  #feature-content2 h1 { 
+    justify-content: right;
   }
 
   #bottomBanner { 
     height: 927px;
+    padding-top: 201px;
     background-size: 110%;
     background-position-x: 50%;
   }
@@ -147,4 +166,90 @@
   header { 
     padding: 0 16px;
   }
+
+  .banner { 
+    align-items: flex-start;
+    background-size: 120%;
+    background-position-x: 50%;
+    padding-top: 48px;
+  }
+
+  div.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .wrapperh1 { 
+    text-align: center;
+  }
+
+  .pill-button { 
+    width: 154px;
+    height: 48px;
+    font-size: 16px;
+    padding: 16px 20px;
+  }
+  
+  div.feature { 
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .showimg { 
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .feature-content { 
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  #features { 
+    padding-top: 51px;
+    padding-bottom: 64px;
+  }
+
+  .feature h1 { 
+    display: flex;
+    white-space: pre;
+  }
+
+  #feature1 { 
+    padding-bottom: 64px;
+  }
+
+  #feature2 { 
+    padding-bottom: 58px;
+    flex-direction: column-reverse;
+  }
+
+  #feature-content2 { 
+    text-align: right;
+  }
+
+  #feature-content2 h1 { 
+    justify-content: right;
+  }
+
+  #bottomBanner { 
+    padding-top: 121px;
+    background-size: 110%;
+    background-position-y: 110%;
+  }
+
+  #believe-panda { 
+    text-align: center;
+  }
+
+  footer { 
+    padding: 32px 32px 64px 32px;
+  }
+
 }
