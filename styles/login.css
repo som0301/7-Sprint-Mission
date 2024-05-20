@@ -9,6 +9,18 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
+h1 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
 :root {
   --gray900: #1B1d1f;
   --gray800: #26282b;
@@ -21,29 +33,18 @@ body {
   --blue: #3692ff;
 }
 
-/* @media (min-width: 768px) {
-  body {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+section > p {
+  color: #f74747;
+  row-gap: 8px;
+  padding-left: 16px;
+  display: none;
+  font-size: 15px;
+  line-height: 17.9px;
+} 
 
-  header > a > #titleLogo {
-    width: 198px;
-    height: 66px;
-  }
-  
-  section {
-    width: 640px;
-  }
-
-  section > h1 {
-    font-size: 18px;
-    line-height: 16.71px;
-  }
-} */
+a.disabled {
+  pointer-events: none;
+}
 
 @media (min-width: 375px) and (max-width: 767px) {
 
@@ -62,7 +63,7 @@ body {
 
   main {
     gap: 16px;
-    width: 400px;
+    max-width: 400px;
   }
   
   main > section {
@@ -99,7 +100,16 @@ section {
   display: flex;
   flex-direction: column;
   width: 640px;
-  column-gap: 16px;
+  row-gap: 16px;
+  position: relative;
+}
+
+.CheckIcon{
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 56px;
+  right: 24px;
 }
 
 h1 {
@@ -112,14 +122,13 @@ input {
   height: 56px;
   border-radius: 12px;
   background-color: var(--gray100);
-  border: 0; 
+  border-width: 0; 
   padding-left: 24px;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   color: var(--gray800);
   outline-color: var(--blue);
-  /* width: 100%; */
 }
 
 input::placeholder {
@@ -128,19 +137,6 @@ input::placeholder {
 
 input:focus {
   outline-color: var(--blue) ;
-}
-
-.inputPW {
-  position: relative;
-
-}
-
-.inputPW > img {
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  bottom: 16px;
-  right: 24px;
 }
 
 button {
@@ -184,6 +180,7 @@ footer {
   font-size: 15px;
   font-weight: 500;
   line-height: 17.9px;
+  margin-top: 24px;
 }
 
 footer > p {

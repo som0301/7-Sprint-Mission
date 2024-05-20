@@ -25,23 +25,24 @@
 
 <body>
   <header>
-    <a href="index.html"><img src="images/logo/panda-market-logo.svg" id="titleLogo" /></a>
+    <a href="index.html"><img src="images/logo/panda-market-pandalogo.svg" id="titleLogo" /></a>
   </header>
   <main>
     <section>
       <h1>이메일</h1>
-      <input type="text" placeholder="이메일을 입력해주세요" />
+      <input type="text" id="ID" placeholder="이메일을 입력해주세요" />
+      <p id="emailNoneError">이메일을 입력해주세요</p>
+      <p id="emailSetError">잘못된 이메일입니다</p>
     </section>
     <section>
       <h1>비밀번호</h1>
-      
-        <input type="password" placeholder="비밀번호를 입력해주세요 " />
-        <div class="inputPW">
-          <img src="images/home/btn_visibility_button.png" />
-        </div>
+      <input type="password" id="PW" placeholder="비밀번호를 입력해주세요" />
+      <img src="images/home/btn_visibility_button.png" class="CheckIcon" id="pwCheckIcon"/>
+      <p id="pwNoneError">비밀번호를 입력해주세요</p>
+      <p id="pwLengthError">비밀번호를 8자 이상 입력해주세요</p>
     </section>
     <section>
-      <a href="login.html"><button disabled>로그인</button></a>
+      <a href="items.html" id="loginLink" class="disabled"><button id="loginButton" disabled="true">로그인</button></a>
     </section>
     <section>
       <div class="socialLogin">
@@ -56,6 +57,7 @@
   <footer>
     <p>판다마켓이 처음이신가요? <a href="signup.html">회원가입</a></p>
   </footer>
+  <script src="js/login.js"></script>
 </body>
 
 </html>
