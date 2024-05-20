@@ -29,28 +29,21 @@ header {
 }
 .login_click {
   color: #fff;
-  width: 50px;
-  height: 19px;
 }
 .banner {
-  background-color: #cfe5ff;
   height: 540px;
   display: flex;
   align-items: center;
-  background-repeat: no-repeat;
-  background-position: 80% bottom;
-  background-size: 55%;
-  background-image: url(../image/top.png);
+  background: url(../image/top.png) 80% bottom / 55% no-repeat #cfe5ff;
 }
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
-h1 {
+h2 {
   color: #374151;
   font-size: 40px;
-  font-weight: 700;
 }
 .gotosee {
   width: 357px;
@@ -85,7 +78,7 @@ h1 {
   align-items: flex-start;
   gap: 12px;
 }
-.title {
+span {
   color: #3692ff;
   font-size: 18px;
   font-weight: 700;
@@ -118,10 +111,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../image/bottom.png);
-  background-repeat: no-repeat;
-  background-position: 80% bottom;
-  background-size: 55%;
+  background: url(../image/bottom.png) 80% bottom / 55% no-repeat #cfe5ff;
 }
 footer {
   width: 100%;
@@ -177,7 +167,7 @@ footer {
     top: 100px;
     text-align: center;
   }
-  .banner > .wrapper > h1 > br {
+  .banner > .wrapper > h2 > br {
     display: none;
   }
   .section {
@@ -230,6 +220,11 @@ footer {
     flex-direction: column;
     background-position-x: center;
   }
+  .logo {
+    content: url(../image/logo-mobile.png);
+    width: 103px;
+    height: 51px;
+  }
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -238,13 +233,13 @@ footer {
     top: 50px;
     text-align: center;
   }
-  .banner > .wrapper > h1 {
+  .banner > .wrapper > h2 {
     font-size: 32px;
   }
   .banner > .wrapper > .gotosee {
     width: 154px;
     height: 48px;
-    padding:13px;
+    padding: 13px;
   }
   .section {
     display: flex;
@@ -271,8 +266,8 @@ footer {
   .feature-reverse {
     margin-right: 20px;
   }
-  .description{
-    font-size:16px;
+  .description {
+    font-size: 16px;
   }
   .section_last_rectangle {
     height: 540px;
@@ -285,7 +280,6 @@ footer {
   footer {
     padding: 32px;
     display: flex;
-    gap: 60px;
     flex-wrap: wrap;
   }
   .codeit {

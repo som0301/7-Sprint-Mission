@@ -1,27 +1,32 @@
 :root {
-    —gray-900: #1b1d1f;
-    —gray-800: #26282b;
-    —gray-600: #454c53;
-    —gray-500: #72787f;
-    —gray-400: #9ea4a8;
-    —gray-200: #e5e7eb;
-    —gray-100: #e8ebed;
-    —gray-50: #f7f7f8;
-    —blue: #3692ff;
-    —red: #f74747;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  img {
-    display: inline-block;
-    vertical-align: top;
-  }
+  —gray-900: #1b1d1f;
+  —gray-800: #26282b;
+  —gray-600: #454c53;
+  —gray-500: #72787f;
+  —gray-400: #9ea4a8;
+  —gray-200: #e5e7eb;
+  —gray-100: #e8ebed;
+  —gray-50: #f7f7f8;
+  —blue: #3692ff;
+  —red: #f74747;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+input:focus {
+  outline-color: #3692ff;
+}
