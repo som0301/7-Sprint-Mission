@@ -14,22 +14,36 @@
     <div class="container">
       <form class="auth-form">
         <label for="email">이메일</label>
-        <input type="email" id="email" placeholder="이메일을 입력해주세요" />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="이메일을 입력해주세요"
+        />
         <label for="password">비밀번호</label>
         <div class="input-container">
           <input
             type="password"
             id="password"
+            name="password"
             placeholder="비밀번호를 입력해주세요"
           />
-          <button class="btn_visibility_on_24px" type="button">
+          <button class="btn_visibility" type="button">
             <img
+              class="eyes-img"
               src="/images/btn_visibility_off_24px.svg"
               alt="비밀번호가리기아이콘"
             />
           </button>
         </div>
-        <button class="btn_large" type="submit">로그인</button>
+        <button
+          class="btn_large"
+          type="submit"
+          onclick="event.preventDefault(); location.href='../items/items.html'"
+          disabled
+        >
+          로그인
+        </button>
       </form>
       <div class="sns-login">
         <div>간편 로그인하기</div>
@@ -50,8 +64,9 @@
       </div>
       <div class="signup-page-move">
         판다마켓이 처음이신가요?
-        <a href="../authentication/signup.html">회원가입</a>
+        <a href="./signup.html">회원가입</a>
       </div>
     </div>
+    <script type="module" src="./login.js"></script>
   </body>
 </html>
