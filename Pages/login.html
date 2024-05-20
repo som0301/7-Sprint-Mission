@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="/styles/reset.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/styles/auth.css">
+  <!-- Auth JS -->
+  <script defer src="/scripts/auth.js"></script>
+  <!-- Reset CSS -->
+  <link rel="stylesheet" href="/styles/reset.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/styles/auth.css">
   <title>판다마켓/로그인</title>
 </head>
 <body>
@@ -28,13 +30,13 @@
           비밀번호
         </label>
         <input class="form-input" type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" />
-        <img class="ic-visivility" src="/images/ic_visibility.png" alt="비밀번호를 보거나 가릴수있는 토글기능의 눈모양 아이콘" />
+        <img class="ic-visivility" src="/images/ic_nonvisibility.png" alt="비밀번호를 보거나 가릴수있는 토글기능의 눈모양 아이콘" />
       </div>
-      <button class="form-btn" type="submit">로그인</button>
+      <button disabled class="form-btn" id="login-btn" type="button">로그인</button>
     </form>
     <footer class="form-footer">
       <div class="oauth-login-container">
-        <span>간편 로그인하기</span>
+        <span>간편 로그인하기</span> 
         <div class="oauth-login-container-links">
           <a href="https://www.google.com/"><img src="/images/ic_google.png" alt="구글 로그인 아이콘" /></a>
           <a href="https://www.kakaocorp.com/page/"><img src="/images/ic_kakaotalk.png" alt="카카오톡 로그인 아이콘" /></a>
