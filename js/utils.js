@@ -9,12 +9,15 @@ export function redirectPage(currentUrl) {
 }
 
 export function toggleVisibility(target) {
-    const passwordInput = target.previousElementSibling;
+    const passwordInput = target.parentElement.querySelector('input');
     if (passwordInput.type === 'password') {
+        console.log(passwordInput);
         passwordInput.type = 'text';
-        target.classList.add('show');
-    } else {
+        return target.classList.add('show');
+    }
+    if (passwordInput.type === 'text') {
+        console.log(passwordInput);
         passwordInput.type = 'password';
-        target.classList.remove('show');
+        return target.classList.remove('show');
     }
 }

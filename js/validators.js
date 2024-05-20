@@ -6,7 +6,7 @@ const validator = {
 };
 
 export function validateInput(value, fieldName) {
-    let validateFunction = validator[fieldName];
+    const validateFunction = validator[fieldName];
     return validateFunction(value, fieldName);
 }
 
