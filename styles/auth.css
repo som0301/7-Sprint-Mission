@@ -47,6 +47,7 @@ input:focus {
   position: absolute;
   right: 24px;
   cursor: pointer;
+  background-color: inherit;
 }
 
 .submit_btn_login {
@@ -82,6 +83,15 @@ input:focus {
 .social-login-btns {
   display: flex;
   gap: 16px;
+}
+
+.error-message {
+  display: none;
+  color: var(--red);
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 0 0 16px;
 }
 
 /* Auth Swith */
