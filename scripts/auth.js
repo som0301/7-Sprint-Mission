@@ -10,30 +10,30 @@ const visivilityIcon = document.querySelector(".ic-visivility");
 const ValidationInputs = {
   emailInput:{
     condition1: (value) => !value,
-    errmessage1: "이메일을 입력해주세요",
+    errMessage1: "이메일을 입력해주세요",
     condition2: (value) => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-    errmessage2: "잘못된 이메일 형식입니다.",
+    errMessage2: "잘못된 이메일 형식입니다.",
     validationStatusKey : "email"
   },
   passwordInput:{
     condition1: (value) => !value,
-    errmessage1: "비밀번호를 입력해주세요",
+    errMessage1: "비밀번호를 입력해주세요",
     condition2: (value) => value.length < 8,
-    errmessage2: "비밀번호를 8자 이상 입력해주세요",
+    errMessage2: "비밀번호를 8자 이상 입력해주세요",
     validationStatusKey : "password"
   },
   nickNameInput:{
     condition1: (value) => !value,
-    errmessage1: "닉네임을 입력해주세요",
+    errMessage1: "닉네임을 입력해주세요",
     condition2: (value) => null,
-    errmessage2: null,
+    errMessage2: null,
     validationStatusKey: "nickname"
   },
   passwordConfirmInput:{
     condition1: (value) => !value,
-    errmessage1: "비밀번호확인을 입력해주세요",
+    errMessage1: "비밀번호확인을 입력해주세요",
     condition2: (value) => value != passwordInput.value,
-    errmessage2: "비밀번호가 일치하지 않습니다.",
+    errMessage2: "비밀번호가 일치하지 않습니다.",
     validationStatusKey: "confirmPassword"
   }
 };
@@ -49,7 +49,7 @@ const ValidationStatus = {
 
 
 // 유효성 검사 함수
-function checkValidity(e, condition1,errmessage1,condition2,errmessage2,validationStatusKey){
+function checkValidity(e, condition1,errMessage1,condition2,errMessage2,validationStatusKey){
   const inputContainer = e.target.closest('.input-container')
   let errDiv = inputContainer.querySelector(".err-message");
   if(!errDiv){
@@ -59,12 +59,12 @@ function checkValidity(e, condition1,errmessage1,condition2,errmessage2,validati
   }
   if(condition1){
     e.target.classList.add("outline-red");
-    errDiv.innerText = `${errmessage1}`
+    errDiv.innerText = `${errMessage1}`
     errDiv.style.display = "block";
     ValidationStatus[validationStatusKey] = false;
   }else if(condition2) {
     e.target.classList.add("outline-red");
-    errDiv.innerText = `${errmessage2}`
+    errDiv.innerText = `${errMessage2}`
     errDiv.style.display = "block";
     ValidationStatus[validationStatusKey] = false;
   }
@@ -77,12 +77,11 @@ function checkValidity(e, condition1,errmessage1,condition2,errmessage2,validati
 }
 
 // 유효성 검사함수 핸들러
-function handleCheckValidity(e, validationInput) {
-  const {condition1, errmessage1, condition2, errmessage2,validationStatusKey} = validationInput;
+function handleCheckValidity(e, input) {
+  const {condition1, errMessage1, condition2, errMessage2,validationStatusKey} = ValidationInputs[input];
   const value = e.target.value;
-  checkValidity(e, condition1(value),errmessage1,condition2(value),errmessage2,validationStatusKey);
+  checkValidity(e, condition1(value),errMessage1,condition2(value),errMessage2,validationStatusKey);
 };
-
 
 // 버튼 상태 업데이트 함수
 function updateButtonState({email, nickname, password, confirmPassword}) {
@@ -112,22 +111,22 @@ function navigate(path) {
 
 // 유효성검사 이벤트리스너
 emailInput.addEventListener("focusout", (e) => {
-  handleCheckValidity(e, ValidationInputs.emailInput);
+  handleCheckValidity(e, "emailInput");
 });
 
 passwordInput.addEventListener("focusout", (e) =>{
-  handleCheckValidity(e, ValidationInputs.passwordInput);
+  handleCheckValidity(e, "passwordInput");
 });
 
 if(nickNameInput){
   nickNameInput.addEventListener("focusout", (e) =>{
-    handleCheckValidity(e, ValidationInputs.nickNameInput);
+    handleCheckValidity(e, "nickNameInput");
   });
 }
 
 if(passwordConfirmInput) {
   passwordConfirmInput.addEventListener("focusout", (e) =>{
-    handleCheckValidity(e, ValidationInputs.passwordConfirmInput);
+    handleCheckValidity(e, "passwordConfirmInput");
   });
 }
 
