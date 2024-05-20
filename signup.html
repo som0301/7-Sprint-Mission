@@ -1,136 +1,146 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>판다마켓 - 회원가입</title>
-        <link rel="icon" href="images/logo/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="styles/global.css" />
-        <link rel="stylesheet" href="styles/common.css" />
-        <link rel="stylesheet" href="styles/account.css" />
-        <link 
-            rel="stylesheet" 
-            as="style" 
-            crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" 
-        />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>판다마켓 - 회원가입</title>
+    <link rel="icon" href="images/logo/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/common.css" />
+    <link rel="stylesheet" href="styles/auth.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+  </head>
 
-    <body>
-        <main>
-            <section class="go-home-logo">
-                <a href="/"
-                ><img
-                    src="images/logo/panda-market-logo.png"
-                    alt="판다 마켓 홈"
-                    width="396"
-                /></a>
-            </section>
+  <body>
+    <main>
+      <section class="go-home-logo">
+        <a href="/"
+          ><img
+            src="images/logo/panda-market-logo.png"
+            alt="판다 마켓 홈"
+            width="396"
+        /></a>
+      </section>
 
-            <section class="input">
-                <form method="post" id="signup" class="form">
-                    <div class="input-area">
-                        <label for="email">이메일</label>
-                        <input id="email" 
-                            name="email" 
-                            type="text" 
-                            placeholder="이메일을 입력해주세요" 
-                            required
-                        />
-                        <h3 id="email-error" class="error-message email">유효하지 않은 이메일입니다.</h3>
-                    </div>
-                    <div class="input-area">
-                        <label for="nickname">닉네임</label>
-                        <input id="nickname" 
-                            name="nickname" 
-                            type="text" 
-                            placeholder="닉네임을 입력해주세요" 
-                            autocomplete="username"
-                            required
-                        /> 
-                        <h3 id="nickname-error" class="error-message email">닉네임을 입력해주세요.</h3>
-                    </div>
-                    <div class="input-area">
-                        <label for="password">비밀번호</label>
-                        <div class="password-input">
-                            <input id="password" 
-                                name="password" 
-                                class="password-event"
-                                type="password" 
-                                placeholder="비밀번호를 입력해주세요"  
-                                autocomplete="current-password"
-                                required 
-                            />
-                            <h3 id="password-error" class="error-message password">비밀번호를 입력해주세요.</h3>
-                            <button class="visibility-button" type="button">
-                                <img
-                                    class="visibility-off"
-                                    src="images/logo/btn_visibility_off.svg"
-                                    alt="비밀번호 가리기"
-                                    width="24"
-                                />
-                                <img
-                                    class="visibility-on"
-                                    src="images/logo/btn_visibility_on.svg"
-                                    alt="비밀번호 보이기"
-                                    width="24"
-                                />
-                            </button>
-                        </div>
-                    </div>
-                    <div class="input-area">
-                        <label for="password">비밀번호 확인</label>
-                        <div class="password-input">
-                            <input id="passwordConfirmation"
-                                name="passwordConfirmation" 
-                                class="password-event" 
-                                type="password" 
-                                placeholder="비밀번호를 다시 한번 입력해주세요"  
-                                autocomplete="current-password"
-                                required 
-                            />
-                            <h4 id="password-check-error" class="error-message password">비밀번호를 확인을 입력해주세요.</h4>
-                            <button class="visibility-button" type="button">
-                                <img
-                                    class="visibility-off"
-                                    src="images/logo/btn_visibility_off.svg"
-                                    alt="비밀번호 가리기"
-                                    width="24"
-                                />
-                                <img
-                                    class="visibility-on"
-                                    src="images/logo/btn_visibility_on.svg"
-                                    alt="비밀번호 보이기"
-                                    width="24"
-                                />
-                            </button>
-                        </div>
-                    </div>
-                    <button class="button pill-button acc-button">회원가입</button>
-                </form>
-            </section>
+      <section class="input">
+        <form method="post" id="signup" class="form">
+          <div class="input-area">
+            <label for="email">이메일</label>
+            <input
+              id="email"
+              name="email"
+              type="text"
+              placeholder="이메일을 입력해주세요"
+              required
+            />
+            <h3 id="email-error" class="error-message email">
+              이메일을 입력해주세요.
+            </h3>
+          </div>
+          <div class="input-area">
+            <label for="nickname">닉네임</label>
+            <input
+              id="nickname"
+              name="nickname"
+              type="text"
+              placeholder="닉네임을 입력해주세요"
+              autocomplete="username"
+              required
+            />
+            <h3 id="nickname-error" class="error-message email">
+              닉네임을 입력해주세요.
+            </h3>
+          </div>
+          <div class="input-area">
+            <label for="password">비밀번호</label>
+            <div class="password-input">
+              <input
+                id="password"
+                name="password"
+                class="password-event"
+                type="password"
+                placeholder="비밀번호를 입력해주세요"
+                autocomplete="current-password"
+                required
+              />
+              <h3 id="password-error" class="error-message password">
+                비밀번호를 입력해주세요.
+              </h3>
+              <button class="visibility-button" type="button">
+                <img
+                  class="visibility-off"
+                  src="images/logo/btn_visibility_off.svg"
+                  alt="비밀번호 가리기"
+                  width="24"
+                />
+                <img
+                  class="visibility-on"
+                  src="images/logo/btn_visibility_on.svg"
+                  alt="비밀번호 보이기"
+                  width="24"
+                />
+              </button>
+            </div>
+          </div>
+          <div class="input-area">
+            <label for="password">비밀번호 확인</label>
+            <div class="password-input">
+              <input
+                id="passwordConf"
+                name="passwordConf"
+                class="password-event"
+                type="password"
+                placeholder="비밀번호를 다시 한번 입력해주세요"
+                autocomplete="current-password"
+                required
+              />
+              <h4 id="password-check-error" class="error-message password">
+                비밀번호를 확인을 입력해주세요.
+              </h4>
+              <button class="visibility-button" type="button">
+                <img
+                  class="visibility-off"
+                  src="images/logo/btn_visibility_off.svg"
+                  alt="비밀번호 가리기"
+                  width="24"
+                />
+                <img
+                  class="visibility-on"
+                  src="images/logo/btn_visibility_on.svg"
+                  alt="비밀번호 보이기"
+                  width="24"
+                />
+              </button>
+            </div>
+          </div>
+          <button class="button pill-button acc-button">회원가입</button>
+        </form>
+      </section>
 
-            <section class="easy-login">
-                <h3>간편 로그인하기</h3>
-                    <div>
-                        <a href="https://www.google.com/" target="_blank"
-                        ><img
-                            src="images/social/google-logo.svg"
-                            alt="구글"
-                            width="42"
-                        /></a>
-                        <a href="https://www.kakaocorp.com/page/" target="_blank"
-                        ><img
-                            src="images/social/kakaotalk-logo.svg"
-                            alt="카카오톡"
-                            width="42"
-                        /></a>
-                    </div>
-            </section>
-            <section class="signup">
-                이미 회원이신가요? <a href="login.html">로그인</a>
-            </section>
-        </main>
+      <section class="easy-login">
+        <h3>간편 로그인하기</h3>
+        <div>
+          <a href="https://www.google.com/" target="_blank"
+            ><img src="images/social/google-logo.svg" alt="구글" width="42"
+          /></a>
+          <a href="https://www.kakaocorp.com/page/" target="_blank"
+            ><img
+              src="images/social/kakaotalk-logo.svg"
+              alt="카카오톡"
+              width="42"
+          /></a>
+        </div>
+      </section>
+      <section class="signup">
+        이미 회원이신가요? <a href="login.html">로그인</a>
+      </section>
+    </main>
 
-        <script type="module" src="scripts/account.js"></script>
-    </body>
+    <script type="module" src="scripts/auth.js"></script>
+  </body>
 </html>

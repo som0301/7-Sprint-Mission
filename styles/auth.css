@@ -1,0 +1,175 @@
+main {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.go-home-logo {
+  display: block;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+label {
+  color: #1f2937;
+  font-size: var(--fontsize-18); /*18px;*/
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  background-color: #f3f4f6;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1em;
+  line-height: 24px;
+  font-family: inherit;
+  margin: 16px 0 0;
+  font-weight: 400;
+}
+
+.input-area {
+  margin: 24px 0;
+}
+
+input::placeholder {
+  color: #9ca3af;
+}
+
+input:focus {
+  outline-color: var(--blue);
+}
+
+button {
+  font-weight: 600;
+  line-height: 24px;
+  width: 100%;
+}
+
+.easy-login {
+  margin: 24px 0 24px 0;
+  background-color: #e6f2ff;
+  display: flex;
+  border-radius: 8px;
+  padding: 16px 23px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  color: #1f2937;
+  font-size: 1em;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.easy-login img {
+  margin-left: 16px;
+}
+
+.signup {
+  color: #1f2937;
+  font-size: var(--fontsize-15); /*15px*/
+  line-height: 17.9px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.signup a {
+  color: var(--hyperlink-blue);
+  text-decoration: underline;
+}
+
+input img {
+  position: relative;
+  inset: 0;
+}
+
+.password-input {
+  position: relative;
+}
+
+.visibility-button {
+  position: absolute;
+  top: 32px;
+  right: 24px;
+  width: auto;
+}
+
+/* 비밀번호 가시성 토글 기본 비가시성 */
+.visibility-on {
+  display: none;
+}
+
+/* 유효성 에러 text 기본 비가시성 */
+.error-message {
+  margin: 8px 16px;
+  color: var(--error-red);
+  font-weight: 600;
+  font-size: var(--fontsize-15);
+
+  display: none;
+}
+
+/* 우선 순위 때문에 코드 맨 아래에 위치해야함 */
+
+/* 가시성 설정 */
+.visible-maker {
+  display: inline-block;
+}
+
+/* 비가시성 설정 */
+.hidden-maker {
+  display: none;
+}
+
+/* 에러 보더 설정 */
+.err-border {
+  border: 2px solid red;
+}
+
+/* 유효성 검사 버튼 */
+.valid-button {
+  background-color: var(--activate-button-blue);
+  cursor: pointer;
+}
+
+/* Tablet: 768px 이상 ~ 1199px 이하 */
+@media screen and (max-width: 1199px) {
+}
+
+/* Mobile: 767px 이하 */
+@media screen and (max-width: 767px) {
+  /*기본 패딩과 최대 넓이*/
+  main {
+    padding: 0 16px;
+    max-width: 400px;
+  }
+
+  /*사이즈 위치 조정*/
+  .go-home-logo {
+    margin: 24px 0;
+  }
+  .go-home-logo img {
+    width: 198px;
+  }
+
+  label {
+    font-size: 0.875em; /*14px;*/
+  }
+
+  input {
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .pill-button {
+    padding: 16px 10px;
+  }
+
+  .visibility-img {
+    top: 25px;
+  }
+}
