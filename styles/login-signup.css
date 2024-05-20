@@ -59,7 +59,7 @@
     right: 24px;
     width: 24px;
     height: 24px;
-    background-image: url(../img/icon/btn__visibility-off.svg);
+    background-image: url('https://jaehyeon-sprint-mission.netlify.app/img/icon/btn__visibility-off.svg');
     background-size: 24px 24px;
     background-repeat: no-repeat;
     border: none;
@@ -67,7 +67,7 @@
 }
 
 .visibility-btn.show {
-    background-image: url(../img/icon/btn__visibility-on.svg);
+    background-image: url('https://jaehyeon-sprint-mission.netlify.app/img/icon/btn__visibility-on.svg');
 }
 
 .error__message {

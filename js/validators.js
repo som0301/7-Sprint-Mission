@@ -20,19 +20,23 @@ function isValidEmail(value) {
     return emailRegex.test(value);
 }
 
-function validateEmpty(value, fieldName) {
-    let fieldNameText = '';
-    if (fieldName === 'password' || fieldName === 'passwordrepeat') {
-        fieldNameText = '비밀번호';
-
-        return isEmpty(value) ? `${fieldNameText}를 입력해주세요.` : ``;
-    } else if (fieldName === 'nickname') {
-        fieldNameText = '닉네임';
-    } else if (fieldName === 'email') {
-        fieldNameText = '이메일';
+function getFieldNameText(fieldName) {
+    switch (fieldName) {
+        case 'password':
+        case 'passwordrepeat':
+            return '비밀번호';
+        case 'nickname':
+            return '닉네임';
+        case 'email':
+            return '이메일';
+        default:
+            return '필드';
     }
+}
 
-    return isEmpty(value) ? `${fieldNameText}을 입력해주세요.` : ``;
+function validateEmpty(value, fieldName) {
+    const fieldNameText = getFieldNameText(fieldName);
+    return isEmpty(value) ? `${fieldNameText}을(를) 입력해주세요.` : ``;
 }
 
 function validateEmail(value, fieldName) {
