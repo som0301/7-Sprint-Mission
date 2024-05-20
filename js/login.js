@@ -1,17 +1,15 @@
-const userEmail = document.querySelector('#email');
-const userPwd = document.querySelector('#password');
-const loginBtn = document.querySelector('.btn-login');
+import { validEmail, validPwd, checkInput, passwordToggle } from './validate.js';
 
-function loginCheckInput(){
-    const emailCheck = userEmail.value;
-    const passwordCheck = userPwd.value;
+const inputs = document.querySelectorAll('.input-form input');
 
-    if((emailCheck === '') || (passwordCheck === '')){
-        loginBtn.disabled = true;
-    } else {
-        loginBtn.disabled = false;
-    }
-}
+//이벤트 핸들러 추가
+inputs[1].nextElementSibling.addEventListener('click', passwordToggle);
 
-const userInputs = [ userEmail, userPwd ];
-userInputs.forEach((input) => input.addEventListener('input', loginCheckInput));
+const userInputs = [...inputs];
+const valids = [validEmail, validPwd];
+
+for (let i = 0; i < valids.length; i++) userInputs[i].addEventListener('focusout', valids[i]);
+for (let i = 0; i < valids.length; i++) userInputs[i].addEventListener('keyup', valids[i]);
+
+userInputs.forEach(input => input.addEventListener('input', checkInput));
+userInputs.forEach(input => input.addEventListener('keyup', checkInput));

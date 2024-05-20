@@ -1,63 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/favicon.png" />
     <title>회원가입</title>
 
-    <link rel="stylesheet" href="/login.css">
-    <link rel="stylesheet" href="/common/button.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/login.css" />
+    <link rel="stylesheet" href="/common/button.css" />
+  </head>
+  <body>
     <main class="main">
-        <div class="login-header">
-            <a href="/">
-                <img src="/images/logo@3x.png" alt="" class="login-logo">
-            </a>
+      <div class="login-header">
+        <a href="/">
+          <img src="/images/logo@3x.png" alt="" class="login-logo" />
+        </a>
+      </div>
+      <div class="content">
+        <form class="login input-form">
+          <div class="input-div">
+            <label for="email">이메일</label>
+            <input type="email" id="email" placeholder="이메일을 입력해주세요" />
+            <div class="error-msg-email error-msg"></div>
+          </div>
+          <div class="input-div">
+            <label for="nickname">닉네임</label>
+            <input type="text" id="nickname" placeholder="닉네임을 입력해주세요" />
+            <div class="error-msg-nickname error-msg"></div>
+          </div>
+          <div class="input-div">
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" placeholder="비밀번호를 입력해주세요" />
+            <img src="/images/eye-off.svg" class="btn-visibility" />
+            <div class="error-msg-pwd error-msg"></div>
+          </div>
+          <div class="input-div">
+            <label for="password-repeat">비밀번호 확인</label>
+            <input type="password" id="password-repeat" placeholder="비밀번호를 다시 한 번 입력해주세요" />
+            <img src="/images/eye-off.svg" class="btn-visibility" />
+            <div class="error-msg-repeat error-msg"></div>
+          </div>
+
+          <button type="button" class="btn btn-large btn-login" onclick="location.href='/html/signin.html'" disabled>
+            회원가입
+          </button>
+        </form>
+
+        <div class="easy-login">
+          <span class="easy">간편 로그인하기</span>
+          <div>
+            <button class="social" onclick="location.href='https\://www.google.com'">
+              <img src="/images/google.svg" width="42px" height="42px" />
+            </button>
+            <!-- 이미지 버튼으로 수정해야함-->
+            <button clsss="social" onclick="location.href='https\://www.kakaocorp.com/page'">
+              <img src="/images/kakao.svg" width="42px" height="42px" />
+            </button>
+          </div>
         </div>
-        <div class="content">
-            <form class="login input-form">
-                <div class="input-div">
-                    <label for="email">이메일</label>
-                    <input type="email" id="email" placeholder="이메일을 입력해주세요">
-                </div>
-                <div class="input-div">
-                    <label for="nickname">닉네임</label>
-                    <input type="text" id="nickname" placeholder="닉네임을 입력해주세요">
-                </div>
-                <div class="input-div">
-                    <label for="password">비밀번호</label>
-                    <input type="password" id="password" placeholder="비밀번호를 입력해주세요">
-                    <button class="eye">
-                        <img src="/images/eye-off.png">
-                    </button>
-                </div>
-                <div class="input-div">
-                    <label for="password-repeat">비밀번호 확인</label>
-                    <input type="password" id="password-repeat" placeholder="비밀번호를 다시 한 번 입력해주세요">
-                    <button class="eye">
-                        <img src="/images/eye-off.png">
-                    </button>
-                </div>
 
-                <button class="btn btn-large btn-login">회원가입</button>
-            </form>
-
-            <div class="easy-login">
-                <span class="easy">간편 로그인하기</span>
-                <div>
-                    <button class="social" onclick="location.href='https\://www.google.com'"><img src="/images/google.png" width="42px" height="42px"></button> <!-- 이미지 버튼으로 수정해야함-->
-                    <button clsss="social" onclick="location.href='https\://www.kakaocorp.com/page'"><img src="/images/kakao.png" width="42px" height="42px"></button>
-                </div>
-            </div>
-
-            <div class="link">
-                <span class="text">이미 회원이신가요?</span>
-                <a href="/html/login.html" class="text join">로그인</a>
-            </div>
+        <div class="link">
+          <span class="text">이미 회원이신가요?</span>
+          <a href="/html/login.html" class="text join">로그인</a>
         </div>
+      </div>
     </main>
-    <script src="/js/signup.js"></script>
-</body>
+    <script type="module" src="/js/signup.js"></script>
+  </body>
 </html>

@@ -1,141 +1,158 @@
 @import '/common/color.css';
 
 * {
-    box-sizing: border-box;
-    font-family: Pretendard;
+  box-sizing: border-box;
+  font-family: Pretendard;
 }
 
-body{
-    display: flex;
-    justify-content: center;
+body {
+  display: flex;
+  justify-content: center;
 }
 
 /* 기본 설정 */
-.main{
-    margin-top: 60px;
-    width: 640px;
+.main {
+  margin-top: 60px;
+  width: 640px;
 }
 
 /* 로고 */
-.login-header{
-    text-align: center;
+.login-header {
+  text-align: center;
 }
 
-.login-logo{
-    width: 396px;
-    height: 132px;
-    text-align: center;
-    margin-bottom: 40px;
+.login-logo {
+  width: 396px;
+  height: 132px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 /* 폼 */
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.input-div{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    position: relative;
+.input-div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
 }
 
 /* 심화 요구사항 - 비밀번호에 눈 추가 */
-.eye{
-    position: absolute;
-    right: 24px;
-    top: 53px;
+.btn-visibility {
+  position: absolute;
+  right: 24px;
+  top: 53px;
+}
+
+.btn-visibility:hover {
+  cursor: pointer;
 }
 
 .input-form label {
-    color: var(--gray-800);
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 21.48px;
-    text-align: left;
+  color: var(--gray-800);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.48px;
+  text-align: left;
 }
-
 
 .input-form input {
-    background-color: var(--gray-100);
-    width: 100%;
-    padding: 16px 24px;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: left;
-    color: var(--gray-800);   
+  background-color: var(--gray-100);
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  color: var(--gray-800);
 }
 
-input{
-    border:none;
+input {
+  border: none;
 }
 
-input:focus{
-    border: none;
-    outline: 2px solid var(--main-color);
+input:focus {
+  border: none;
+  outline: 2px solid var(--main-color);
 }
 
 input::placeholder {
-    color: var(--gray-400);
+  color: var(--gray-400);
 }
 
 /* 간편 로그인 */
-.easy-login{
-    background-color: #E6F2FF;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 74px;
-    padding: 0 23px;
-    border-radius: 8px;
+.easy-login {
+  background-color: #e6f2ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 74px;
+  padding: 0 23px;
+  border-radius: 8px;
 
-    margin: 24px 0;
+  margin: 24px 0;
 }
 
 /* 회원가입 링크 */
 .link {
-    text-align: center;
-    font-family: Pretendard;
-    font-size: 15px;
-    line-height: 17.9px;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 15px;
+  line-height: 17.9px;
 }
 
-.text{
-    font-weight: 500;
-    color: var(--gray-800);
+.text {
+  font-weight: 500;
+  color: var(--gray-800);
 }
 
-.easy{
-    font-size: 16px;
-    line-height: 24px;
+.easy {
+  font-size: 16px;
+  line-height: 24px;
 }
 
-.join, .join:visited{
-    color: #3182F6;
+.join,
+.join:visited {
+  color: #3182f6;
 }
 
 /* 패드 사이즈 */
-@media (max-width:1199px){
-    .main{
-        max-width: 640px;
-        width: 70%;
-    }
+@media (max-width: 1199px) {
+  .main {
+    max-width: 640px;
+    width: 70%;
+  }
 }
 
 /* 모바일 사이즈 */
-@media (max-width:767px){
-    .login-logo{
-        width: 198px;
-        height: 66px;
-    }
+@media (max-width: 767px) {
+  .login-logo {
+    width: 198px;
+    height: 66px;
+  }
 
-    .main{
-        max-width: 400px;
-        width: 100%;
-        margin: 24px 16px 0;
-    }
+  .main {
+    max-width: 400px;
+    width: 100%;
+    margin: 24px 16px 0;
+  }
+}
+
+.error-input {
+  outline: 2px solid var(--error-color);
+}
+
+.error-msg {
+  font-family: Pretendard;
+  font-size: 15px;
+  font-weight: 600;
+
+  color: var(--error-color);
+  margin-left: 16px;
 }

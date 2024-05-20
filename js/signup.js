@@ -1,23 +1,18 @@
-const userEmail = document.querySelector('#email');
-const userNickname = document.querySelector('#nickname');
-const userPwd = document.querySelector('#password');
-const userPwdRepeat = document.querySelector('#password-repeat');
+import { validEmail, validNickname, validPwd, validRepeat, checkInput, passwordToggle } from './validate.js';
 
-const loginBtn = document.querySelector('.btn-login');
+const inputs = document.querySelectorAll('.input-form input');
 
-function joinCheckInput(){
-    const emailCheck = userEmail.value;
-    const nicknameCheck = userNickname.value;
-    const passwordCheck = userPwd.value;
-    const pwdRepeatCheck = userPwdRepeat.value;
+//이벤트 추가
+inputs[2].nextElementSibling.addEventListener('click', passwordToggle);
+inputs[3].nextElementSibling.addEventListener('click', passwordToggle);
 
-    if((emailCheck === '') || (nicknameCheck === '') ||
-        (passwordCheck === '') || (pwdRepeatCheck === '')){
-            loginBtn.disabled = true;
-    } else {
-        loginBtn.disabled = false;
-    }
-}
+const userInputs = [...inputs];
+const valids = [validEmail, validNickname, validPwd, validRepeat];
 
-const userInputs = [ userEmail, userPwd, userNickname, userPwdRepeat ];
-userInputs.forEach((input) => input.addEventListener('input', joinCheckInput));
+for (let i = 0; i < valids.length; i++) userInputs[i].addEventListener('focusout', valids[i]);
+for (let i = 0; i < valids.length; i++) userInputs[i].addEventListener('keyup', valids[i]);
+// 스프린트4 : 스프린트미션 피그마에는 'focusout할 때'라고 설명했지만 keyup 이벤트도 추가해야 깔끔하게 동작하는거 같아서 추가
+// 맞는 방법인진 모르겠다.
+
+userInputs.forEach(input => input.addEventListener('input', checkInput));
+userInputs.forEach(input => input.addEventListener('keyup', checkInput));
