@@ -1,25 +1,22 @@
 .login-container {
-  max-width: 400px ;
+  max-width: 400px;
   margin: 0 auto;
-  padding:16px;
+  padding: 16px;
 }
-
 
 .logo-home-cue {
   display: flex;
   justify-content: center;
   margin-top: 24px;
   margin-bottom: 24px;
-  width:198px;
+  width: 198px;
 }
-
 
 .input-area {
   margin-bottom: 24px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
-
 
 label {
   display: block;
@@ -27,7 +24,6 @@ label {
   font-size: 14px;
   font-weight: 700;
 }
-
 
 input {
   padding: 16px 24px;
@@ -45,12 +41,9 @@ input::placeholder {
   line-height: 24px;
 }
 
-
 input:focus {
-  outline-color: #3692FF
+  outline-color: #3692ff;
 }
-
-
 
 .input-wrapper {
   position: relative;
@@ -71,13 +64,13 @@ input:focus {
   border: none;
   border-radius: 999px;
   padding: 16px 126px;
-  background-color: #3692FF;
+  background-color: #3692ff;
   color: #ffffff;
   cursor: pointer;
 }
 
 .login-cue:hover {
-  background-color: #1967d6;  
+  background-color: #1967d6;
 }
 
 .soclal-login-area {
@@ -120,18 +113,18 @@ input:focus {
   border: none;
   border-radius: 999px;
   padding: 16px 126px;
-  background-color: #3692FF;
+  background-color: #3692ff;
   color: #ffffff;
   cursor: pointer;
 }
 
 .signup-cue:hover {
-  background-color: #1967d6;  
+  background-color: #1967d6;
 }
 
 @media (min-width: 768px) {
   .login-container {
-    max-width: 400px ;
+    max-width: 400px;
   }
 
   .logo-home-cue {
@@ -150,6 +143,20 @@ input:focus {
   .logo-home-cue {
     margin-top: 60px;
     margin-bottom: 40px;
-
   }
+}
+
+input.error {
+  border: 1px solid #ff0000;
+}
+
+#email-message {
+  display: none;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+#email-message.error {
+  display: block;
+  color: #ff0000;
 }

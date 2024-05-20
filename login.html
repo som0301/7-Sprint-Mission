@@ -7,6 +7,7 @@
     <link rel="icon" href="images/logo/favicon.ico" />
     <link rel="stylesheet" href="styles/home.css" />    
     <link rel = "stylesheet" href="styles/login.css"/>
+    <script src="/login.js"></script>
   </head> 
   
   <body>
@@ -15,19 +16,20 @@
         <a href="/"><img src="images/logo/logo.svg" alt="판다마켓 홈이동" width="396px"></a>
       </div>
 
-      <form>
+      <form class="form" method="post" onsubmit="" onfocus="" onblur="">
         <div class="input-area">
           <label for="email">이메일</label>
           <input id="email" name="email" type="email" placeholder="이메일을 입력해 주세요"/>
+          <p id="email-message">잘못된 이메일 형식입니다.</p>
         </div>
         <div class="input-area">
           <label for="password">비밀번호</label>
             <div class="input-wrapper">
-              <input id="password" name="password" type="password" placeholder="비밀번호를 입력해 주세요"/>
+              <input id="password" name="password" type="password" placeholder="비밀번호를 입력해 주세요" onkeydown="keydown()"/>
               <img src="images/icons/eye-invisible.svg" alt="비밀번호 숨김버튼" class="hide-password"/>
             </div>
         </div>
-        <cue type="submit" class="login-cue">로그인</cue>
+        <cue type="submit" class="login-cue" onclick="submit()">로그인</cue>
       </form>
 
       <div class="soclal-login-area">
