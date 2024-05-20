@@ -1,9 +1,4 @@
-import {
-  form,
-  formInputsData,
-  formInputs,
-  formValidationConfig,
-} from "./constants.js";
+import { form, formInputsData, formValidationConfig } from "./constants.js";
 
 // 에러시 에러 보더와 에러 메시지 추가
 function validationError(e, isChecked) {
@@ -42,7 +37,7 @@ export function isPasswordLengthCheck(password_text) {
 
 // 비밀번호 일치 검사
 export function isPasswordMatchCheck(password_conf_text) {
-  return password_conf_text === formInputs.password.value;
+  return password_conf_text === formInputsData["password"].element.value;
 }
 
 // 각 input 별로 유효성 검사 할당용 이벤트 핸들
