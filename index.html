@@ -3,93 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content="image/logo-meta.png" />
+    <meta property="og:title" content="판다마켓" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:url" content="https://sprint-7-sony.netlify.app" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet" />
     <title>판다마켓</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/define.css">
+    <link rel="stylesheet" href="css/define.css" />
     <link rel="stylesheet" href="fonts/pretendard.css" />
   </head>
   <body>
     <nav id="mainheader">
       <div id="mainheaderbg">
-      <a href="index.html">
-        <div>
-          <img src="image/logo.png" alt="로고" />
-        </div>
-      </a>
-      <div class="virtualbox"></div>
-      <a href="login.html"><button type="button">로그인</button></a>
-    </div>
-    </nav>
-    <header>
-      <div class="container">
-        <h2>
-          일상의 모든 물건을 <br />
-          거래해 보세요
-        </h2>
-        <a href="login.html"><button type="button" onclick="location.href='items.html'">구경하러 가기</button></a>
+        <a href="index.html">
+          <div class="nav-logo nav-media"></div>
+        </a>
+        <div class="virtualbox"></div>
+        <a href="login.html"><button type="button">로그인</button></a>
       </div>
-      <div class="container-img">
-        <img src="image\Img_home_top.svg" alt="Img_home_top" />
+    </nav>
+    <header id="header">
+      <div class="container" id="main-container">
+        <h2 class="big-message">일상의 모든 물건을 거래해 보세요</h2>
+        <a href="login.html"><button type="button" onclick="location.href='items.html'" id="media-headerbutton">구경하러 가기</button></a>
+      </div>
+      <div class="container-img" id="header-container-img">
+        <img src="image\Img_home_top.svg" alt="Img_home_top" id="header-img" />
       </div>
     </header>
-    <main>
-      <div class="container">
-        <img src="image\Img_home_01.svg" alt="Img_home_01" />
-        <div>
-          <p class="main-title">Hot item</p>
-          <h2 class="main-head">
-            인기 상품을<br />
-            확인해 보세요
-          </h2>
-          <p class="main-main">
-            가장 HOT한 중고거래 물품을<br />
-            판다 마켓에서 확인해 보세요
-          </p>
+    <main class="main main-media">
+      <div class="container main-media">
+        <img src="image\Img_home_01.svg" alt="Img_home_01" class="main-img" />
+        <div class="main-info main-media">
+          <p class="main-title main-media">Hot item</p>
+          <h2 class="main-head main-media">인기 상품을 확인해 보세요</h2>
+          <p class="main-main main-media">가장 HOT한 중고거래 물품을 <br />판다 마켓에서 확인해 보세요</p>
         </div>
       </div>
-      <div class="container-right">
-        <div>
-          <p class="main-title">Search</p>
-          <h2 class="main-head">
-            구매를 원하는<br />
-            상품을 검색하세요
-          </h2>
-          <p class="main-main">
-            구매하고 싶은 물품은 검색해서<br />
-            쉽게 찾아보세요
-          </p>
+      <div class="container right main-media">
+        <div class="main-info right main-media">
+          <p class="main-title main-media">Search</p>
+          <h2 class="main-head main-media">구매를 원하는 상품을 검색하세요</h2>
+          <p class="main-main main-media">구매하고 싶은 물품은 검색해서 <br />쉽게 찾아보세요</p>
         </div>
-        <img src="image\Img_home_02.svg" alt="Img_home_02" />
+        <img src="image\Img_home_02.svg" alt="Img_home_02" class="main-img" />
       </div>
-      <div class="container">
-        <img src="image\Img_home_03.svg" alt="Img_home_03" />
-        <div>
-          <p class="main-title">Register</p>
-          <h2 class="main-head">
-            판매를 원하는<br />
-            상품을 등록하세요
-          </h2>
-          <p class="main-main">
-            어떤 물건이든 판매하고 싶은 상품을<br />
-            쉽게 등록하세요
-          </p>
+      <div class="container main-media">
+        <img src="image\Img_home_03.svg" alt="Img_home_03" class="main-img" />
+        <div class="main-info main-media">
+          <p class="main-title main-media">Register</p>
+          <h2 class="main-head main-media">판매를 원하는 상품을 등록하세요</h2>
+          <p class="main-main main-media">어떤 물건이든 판매하고 싶은 상품을 <br />쉽게 등록하세요</p>
         </div>
       </div>
     </main>
-    <footer class="footer-top">
-      <h2 class="container">
-        믿을 수 있는 <br />
-        판다마켓 중고거래
-      </h2>
-      <div class="container-img">
-        <img src="image/Img_home_bottom.png" alt="Img_home_bottom" id="footerimg" />
+    <footer class="footer-top footer-media">
+      <div class="container" id="footer-container">
+        <h2 class="big-message footer-media">믿을 수 있는<br />판다마켓 중고거래</h2>
+      </div>
+      <div class="container-img" id="footer-img-container">
+        <img src="image/Img_home_bottom.png" alt="Img_home_bottom" id="footerimg" class="media-footerimg"/>
       </div>
     </footer>
     <footer class="footer-background">
-      <div class="footer-bottom">
+      <div class="footer-bottom footer-media">
         <div id="footer-name-year">
           <p>@codeit - 2024</p>
         </div>
