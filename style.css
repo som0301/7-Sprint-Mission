@@ -115,7 +115,7 @@ header {
   align-items: center;
   height: 540px;
   background-color: #cfe5ff;
-  background-image: url(image/Img_home_bottom.png);
+  background-image: url(/image/Img_home_bottom.png);
   background-repeat: no-repeat;
   background-size: 55%;
   background-position: 701px bottom;
