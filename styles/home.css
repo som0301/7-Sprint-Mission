@@ -1,54 +1,21 @@
 
 
-
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 70px;
-  background-color: #FFFFFF;
-  padding: 0 16px;
-  border-bottom: 1px solid #dfdfdf;
-
-}
-
-.button {
-  width: 128px;
-  height: 48px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #3692FF;
-  padding: 12px 20px 12px 20px;
-  border-radius: 8px;
-  gap: 10px;
-}
-
-.button:hover {
-  background-color: #1967d6;
-}
-
-#login-link {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 19.09px;
-  color: #FFFFFF;
-}
-
-.sky-box {
-  background-color: #CFE5FF;
+.banner {
+  background-color: #cfe5ff;
   height: 60vh;
   text-align: center;
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size:130%;
+  background-size: 130%;
 }
 
-.sky-box h1 {
+
+#hero {
+  background-image: url("../images/home/hero-image.png");
+}
+
+
+.banner h1 {
   font-weight: 700;
   font-size: 32px;
   line-height: 44.8px;
@@ -56,42 +23,21 @@ header {
   padding-bottom: 18px;
 }
 
-#hero {
-  background-image: url("../images/home/hero-image.png");
-}
- 
 
-
-.wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  padding: 0 16px;
+#bottomBanner {
+  background-image: url("../images/home/bottom-banner-image.png");
 }
 
 
-
-.look-button {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #3692FF;
-  border-radius: 999px;
-  padding: 14.5px 33.5px;
-}
-
-.look-button:hover {
-  background-color: #1967d6;
-}
-/* font-weight가  변화가 없는 이유를 모르겠습니다. ㅜㅜㅜ */
-.take-a-look {
-  color: #FFFFFF;
+#loginLink {
   font-size: 16px;
-  font-weight: 600px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 11.5px 23px;
 }
 
 #features {
-  padding: 51px
+  padding-top: 51px;
 }
 
 .feature {
@@ -103,33 +49,25 @@ header {
   margin-bottom: 20px;
 }
 
-.feature-right {
-  text-align: right;
-  display: flex;
-  align-items: center;
-  padding: 60px 0;
-  gap: 64px;
-  
-}
-
-.feature-title {
-  flex: 1;
-}
-
+/* feature class요소중 2번째 선택 */
 .feature:nth-child(2) {
   text-align: right;
 }
 
-.feature-blue-tag {
-  color: #3692FF;
+
+.feature-content {
+  flex: 1;
+}
+
+.feature-content h2 {
+  color: var(--blue);
   font-size: 16px;
   line-height: 22.4px;
   font-weight: 700;
   margin-bottom: 8px;
-
 }
 
-.feature-title h1 {
+.feature-content h1 {
   font-weight: 700;
   font-size: 24px;
   line-height: 33.6px;
@@ -143,59 +81,28 @@ header {
   margin-top: 20px;
 }
 
-#bottomBanner {
-  background-image: url("../images/home/bottom-banner-image.png");
-  margin-top: 200px;
-}
-
-
-footer {
-  background-color: #111827;
-  color: #9ca3af;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 32px;
-  font-size: 16px;
-  flex-wrap: wrap;
-}
-
-#copyright {
-  order: 3;
-  flex-basis: 100%;
-  color: #9ca3af;
-}
-
-
-#footerMenu {
-  display: flex;
-  gap: 30px;
-  color: #e5e7eb;
-}
-
-.break-on-desktop {
-  display: none;
-}
 
 @media (min-width: 768px) {
-  header {
-    padding: 0 24px;
-  }
-
-  .sky-box {
+  /* vh 요소는 높이값의 100분의 1의 단위입니다. 
+예를 들어 브라우저 높이값이 900px일때 1vh는 9px이라는 뜻
+ */
+  .banner {
     height: 90vh;
     background-size: 120%;
   }
-  
-  .sky-box h1 {
+
+  .banner h1 {
     font-size: 40px;
     line-height: 56px;
     padding-top: 84px;
     padding-bottom: 24px;
   }
 
-  #hero h1 br {
-    display: none;
+  .banner h1 {
+    font-size: 40px;
+    line-height: 56px;
+    padding-top: 84px;
+    padding-bottom: 24px;
   }
 
   #features {
@@ -203,13 +110,14 @@ footer {
     padding-bottom: 16px;
   }
 
-  .feature-blue-tag { 
+
+  .feature-content h2 {
     font-size: 18px;
     line-height: 25.2px;
     margin-bottom: 12px;
   }
 
-  .feature-title h1 {
+  .feature-content h1 {
     font-size: 32px;
     line-height: 44.8px;
   }
@@ -218,44 +126,11 @@ footer {
     font-size: 18px;
     line-height: 21.6px;
   }
-
-
-  .wrap {
-    padding: 0 16px;
-  }
-
-  
-
-  footer {
-    padding: 32px 104px 108px 104px;
-  }
-
-  .look-button {
-    padding: 16px 126px;
-  }
-
-  .take-a-look {
-    font-size: 20px;
-    font-weight: 700px;
-  }
-  /* flex-basis 와 order  찾아볼것!!!!!!! */
-  #copyright {
-    flex-basis: auto;
-    order: 0;
-  }
-  
 }
 
-  
+@media (min-width: 1280px) {
 
-
-@media (min-width: 1200px) {
-
-  header {
-    padding: 0 200px;
-  }
-
-  .sky-box {
+  .banner {
     text-align: left;
     height: 540px;
     display: flex;
@@ -264,8 +139,8 @@ footer {
     background-size: 55%;
   }
 
-  .sky-box h1 {
-    padding-top: 0px;
+  .banner h1 {
+    padding-top: 0;
     padding-bottom: 32px;
   }
 
@@ -273,12 +148,8 @@ footer {
     display: inline;
   }
 
-  footer {
-    padding: 32px 200px 108px 200px;
-  }
-
   #features {
-  padding: 138px 0;
+    padding: 138px 0;
   }
 
   .feature {
@@ -286,7 +157,10 @@ footer {
     display: flex;
     align-items: center;
     gap: 5%;
-  
+  }
+
+  .feature:nth-child(2) {
+    flex-direction: row-reverse;
   }
 
   .feature img {
@@ -294,8 +168,21 @@ footer {
     margin-bottom: 0;
   }
 
-  .break-on-desktop {
-    display: inline;
+  .feature-content h1 {
+    font-size: 40px;
+    line-height: 56px;
   }
 
+  .feature-description {
+    font-size: 24px;
+    line-height: 28.8px;
+    margin-top: 24px;
+  }
 }
+
+
+
+
+
+
+
