@@ -32,7 +32,6 @@
 .login-box,
 .signup-box {
   display: grid;
-  gap: 16px;
 }
 
 .login-label,
@@ -40,23 +39,37 @@
   color: var(--color-gray800);
   font-size: 18px;
   font-weight: 700;
+  margin: 16px 0 13px;
+}
+
+.email-input-container,
+.nickname-input-container,
+.password-input-container,
+.password-check-input-container {
+  background-color: var(--color-gray100);
+  max-width: 640px;
+  height: 56px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+input:focus {
+  border-color: var(--color-blue);
+  outline: none;
 }
 
 input {
   color: var(--color-gray800);
   font-size: 16px;
   font-weight: 400;
-  background-color: var(--color-gray100);
+  background-color: rgb(0, 0, 0, 0);
   width: 640px;
   height: 56px;
-  border-radius: 12px;
   border-color: rgb(0, 0, 0, 0);
+  border-radius: 12px;
   padding: 0 18px;
-}
-
-input:focus {
-  border-color: var(--color-blue);
-  outline: none;
+  /* margin-bottom: 8px; */
 }
 
 input::placeholder {
@@ -65,22 +78,16 @@ input::placeholder {
   font-weight: 400;
 }
 
-.login-pw-container {
-  position: relative;
-}
-
-/* .see-pw-btn {
+.toggle-pw-btn,
+.toggle-pw-btn-check {
   cursor: pointer;
-}
-
-.see-pw-img {
   width: 24px;
   height: 24px;
-  background-image: url(/images/ic_invisible-pw.png);
+  background-image: url(/images/icons/ic_invisible-pw.png);
   position: absolute;
   top: 16px;
   right: 18px;
-} */
+}
 
 .login-btn,
 .signup-btn {
