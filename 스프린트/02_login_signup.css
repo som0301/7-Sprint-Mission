@@ -1,0 +1,168 @@
+:root {
+  --gray900: #111827;
+  --gray800: #1f2937;
+  --gray700: #374151;
+  --gray600: #4b5563;
+  --gray500: #6b7280;
+  --gray400: #9ca3af;
+  --gray200: #e5e7eb;
+  --gray100: #f3f4f6;
+  --gray50: #f9fafb;
+  --blue: #3692ff;
+  --soohyun: #f695d1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 396px;
+}
+
+content,
+form {
+  display: flex;
+  flex-direction: column;
+  width: 640px;
+  gap: 24px;
+}
+
+.input_please {
+  height: 93px;
+  position: relative;
+}
+
+.input_please label {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.5px;
+  display: flex;
+}
+
+input {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 56px;
+  padding-left: 23px;
+  border-radius: 12px;
+  position: absolute;
+  bottom: 0;
+  border: none;
+  background-color: var(--gray100);
+}
+
+input::placeholder {
+  color: var(--gray400);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+input:focus {
+  outline: 2px ridge var(--blue);
+}
+
+.no_eye {
+  width: 24px;
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  cursor: pointer;
+}
+
+button {
+  height: 56px;
+  border-radius: 40px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  cursor: pointer;
+  background-color: var(--gray400);
+}
+
+.simple {
+  padding: 0 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 74px;
+  border-radius: 8px;
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #e6f2ff;
+}
+
+.simple_img {
+  height: 42px;
+}
+
+.simple img {
+  height: 100%;
+  margin-left: 16px;
+}
+
+.question {
+  text-align: center;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 17.9px;
+}
+
+.question a {
+  color: #3182f6;
+}
+
+@media (max-width: 767px) {
+  * {
+    color: yellow;
+  }
+
+  body {
+    padding: 0px 16px;
+  }
+
+  a {
+    margin: 24px auto;
+  }
+
+  .logo {
+    width: 198px;
+  }
+
+  content,
+  form {
+    max-width: 400px;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .input_please {
+    height: 81px;
+  }
+
+  .input_please label {
+    font-size: 14px;
+  }
+
+  .simple {
+    margin: 8px 0;
+  }
+}
