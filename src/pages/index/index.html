@@ -7,18 +7,23 @@
     />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./index.css"/>
     <title>판다마켓</title>
   </head>
   <body>
     <!-- 헤더 -->
     <header class="header">
       <div class="header__left">
-        <img src="./판다 얼굴.png" alt="판다 얼굴" class="left__logo" />
+        <img 
+            class="left__logo"
+            src="./assets/images/판다 얼굴.png"
+            alt="판다 얼굴" 
+            />
+
         <a class="left__title" href="/">판다마켓</a>
       </div>
       <div class="header__right">
-        <a class="right__login-anchor" href="/login.html"> 로그인 </a>
+        <a class="right__login-anchor" href="../signin/signin.html"> 로그인 </a>
       </div>
     </header>
 
@@ -26,14 +31,14 @@
     <section class="banner-top">
       <div class="banner-top__left">
         <p class="left__description">
-          일상의 모든 물건을<br/>
+          일상의 모든 물건을
           거래해 보세요
         </p>
-        <a href="/items.html" class="left__items-anchor">구경하러 가기</a>
+        <a href="../items/items.html" class="left__items-anchor">구경하러 가기</a>
       </div>
       <div class="banner-top__right">
         <img
-          src="./Img_home_top.png"
+          src="./assets/images/Img_home_top.png"
           alt="산위에 아파트 1개와 나무 2개 사이에 판다"
           class="right__banner-img"
         />
@@ -48,7 +53,12 @@
         <ul class="intro-list">
           <!-- 리스트 아이템 1 -->
           <li class="intro-list__item">
-            <img src="./Img_home_01.png" alt="판다가 옷 고르는 모습" class="item__img" />
+            <img 
+              class="item__img" 
+              src="./assets/images/Img_home_01.png" 
+              alt="판다가 옷 고르는 모습" 
+            />
+
             <div class="item__info">
               <p class="info__category">Hot item</p>
               <h1 class="info__title">
@@ -68,15 +78,23 @@
                 구매를 원하는 <br />
                 상품을 검색하세요
               </h1>
-              <p class="info__description">
-                구매하고 싶은 물품은 검색해서 <br> 쉽게 찾아보세요
+              <p class="info__description middle">
+                구매하고 싶은 물품은 검색해서 <br>쉽게 찾아보세요
               </p>
             </div>
-            <img src="./Img_home_02.png" alt="돋보기로 확인하는" class="item__img" />
+            <img 
+              class="item__img" 
+              src="./assets/images/Img_home_02.png" 
+              alt="돋보기로 확인하는 모습" 
+            />
           </li>
           <!-- 리스트 아이템 3 -->
           <li class="intro-list__item">
-            <img src="./Group 33682.png" alt="폴더에 아이템을 담으려는" class="item__img" />
+            <img 
+              class="item__img" 
+              src="./assets/images/Img_home_03.png" 
+              alt="폴더에 아이템을 담으려는 모습" 
+              />
             <div class="item__info">
               <p class="info__category">Register</p>
               <h1 class="info__title">
@@ -96,11 +114,15 @@
     <section class="banner-bottom">
       <div class="banner-bottom__box">
         <div class="banner-bottom__box--left">
-          <h1>믿을 수 있는 <br>
+          <p class="left__description"><span class="left__description--believe">믿을 수 있는</span><br>
             판다마켓 중고거래
-          </h1>
+          </p>
         </div>
-        <img src="./Img_home_bottom.png" alt="언덕 위에서 대화를 나누는 판다 2마리" class="item__img" />
+        <img 
+          class="item__img" 
+          src="./assets/images/Img_home_bottom.png" 
+          alt="언덕 위에서 대화를 나누는 판다 2마리" 
+          />
       </div>
     </section>
 
@@ -114,52 +136,20 @@
         </div>
         <div class="footer__right">
           <a href="https://www.facebook.com/" target="_blank">
-            <img src="ic_facebook.png" class="footer__icon" alt="페이스북 아이콘">
+            <img src="./assets/images/ic_facebook.png" class="footer__icon" alt="페이스북 아이콘">
           </a>
           <a href="https://www.twitter.com/" target="_blank">
-            <img src="ic_twitter.png" class="footer__icon" alt="트위터 아이콘">
+            <img src="./assets/images/ic_twitter.png" class="footer__icon" alt="트위터 아이콘">
           </a>
           <a href="https://www.youtube.com/" target="_blank">
-            <img src="ic_youtube.png" class="footer__icon" alt="유튜브 아이콘">
+            <img src="./assets/images/ic_youtube.png" class="footer__icon" alt="유튜브 아이콘">
           </a>
           <a href="https://www.instagram.com/" target="_blank">
-            <img src="ic_instagram.png" class="footer__icon" alt="인스타그램 아이콘">
+            <img src="./assets/images/ic_instagram.png" class="footer__icon" alt="인스타그램 아이콘">
           </a>
         </div>
       </div>
     </footer>
   </body>
 </html>
-<!-- 
-    랜딩 페이지의 url path는 루트(‘/’) 입니다.
-title은 “판다마켓”으로 설정해 주세요.
-화면의 너비가 1920px 이상이면 하늘색 배경색은 너비를 꽉 채우도록 채워지고, 내부 요소들의 위치는 고정되고, 여백만 커지도록 해주세요.
-화면의 너비가 1920px 보다 작아질 때, “판다마켓” 로고의 왼쪽 여백 200px“로그인" 버튼의 오른쪽 여백 200px이 유지되고, 화면의 너비가 작아질수록 두 요소간 거리가 가까워지도록 해주세요.
-클릭으로 기능이 동작해야 하는 경우, 사용자가 클릭할 수 있는 요소임을 알 수 있도록 cursor: pointer를 설정해 주세요.
-“판다마켓” 클릭 시 루트 페이지(‘/’)로 이동시켜주세요.
-“구경하러 가기" 클릭 시 (“/items”)페이지로 이동시켜주세요.(빈 페이지)
 
- -->
-
-<!-- 
-    “로그인”버튼 클릭 시 로그인 페이지(‘/login’)로 이동합니다
-“구경하러가기”버튼 클릭 시(’/items’)로 이동합니다.
-  -->
-
-<!-- 
-    페이스북, 트위터, 유튜브, 인스타그램 아이콘은 클릭 시 각각의 홈페이지로 새로운 창이 열리면서 이동 합니다.
-   -->
-
-<!-- 
-     “Privacy Policy”, “FAQ”는 클릭 시 각각 아래 페이지로 이동합니다- Privacy 페이지(‘/privacy’) - FAQ 페이지(‘/faq’)
-    -->
-
-<!-- 
-         PC사이즈만 고려해 주어진 디자인을 구현합니다.
-HTML, CSS 파일을 Netlify로 배포해 주세요. (참고: https://www.codeit.kr/learn/5309)
-
-     -->
-
-<!-- 
-        사용자의 브라우저가 크고 작아짐에 따라 페이지의 요소간 간격, 요소의 크기, font-size 등 모든 크기와 관련된 값이 크고 작아지도록 설정해 보세요.(설정값은 자유입니다)
-      -->
