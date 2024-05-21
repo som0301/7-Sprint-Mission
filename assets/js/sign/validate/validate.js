@@ -19,8 +19,7 @@ export default function validateForm({ target, currentTarget: form }) {
 		const errClsNm = 'error';
 		changeInputState(target, state, msg, errClsNm);
 
-		/** form 의 input 들의 value 값이 하나라도 undefined 거나 빈값이면 disabled 활성화 */
-		const formState = [...form.querySelectorAll('input')].some(({ value, classList }) => value === undefined || value === '' || classList.contains(errClsNm));
-		submitButton.disabled = formState;
+		/** 유효성 검사에 따라 submit 버튼 disabled 옵션 토글 */
+		submitButton.disabled = [...form.querySelectorAll('input')].some(({ value, classList }) => value === undefined || value === '' || classList.contains(errClsNm));
 	}
 }
