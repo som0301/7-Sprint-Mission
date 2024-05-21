@@ -8,7 +8,7 @@ export default function validateForm({ target, currentTarget: form }) {
 	if (target.tagName === 'INPUT') {
 		const { name: page } = submitButton; // 페이지 내 버튼의 name 속성으로 로그인, 회원가입 페이지 확인
 		const { name, value } = target; // input의 name, value
-		const empty = value === undefined || value === ''; // 값이 비었는지 확인
+		const empty = isEmpty(value); // 값이 비었는지 확인
 
 		/** 유효성 검사 */
 		let result;
