@@ -1,3 +1,4 @@
+import { isEmpty } from '../../isEmpty.js';
 import { submitButton } from '../tags.js';
 import changeInputState from '../../changeInputState.js';
 import valitateLogin from './page/validateLogin.js';
@@ -16,6 +17,7 @@ export default function validateForm({ target, currentTarget: form }) {
 		else if (page === 'sign') result = valitateSign({ name, empty, value, form });
 		const [state, msg] = result;
 
+		/** 에러 상태 관리 */
 		const errClsNm = 'error';
 		changeInputState(target, state, msg, errClsNm);
 
