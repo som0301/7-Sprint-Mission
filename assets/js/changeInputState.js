@@ -5,16 +5,16 @@ export default function changeInputState(target, state, msg, className) {
 	const preState = classList.contains(className);
 
 	/** 초기화 */
-	function initial() {
+	function initializeInputState() {
 		if (descText) descText.remove();
 		if (preState) classList.remove(className);
 	}
 
 	/** 변경 */
-	function change() {
+	function updateInputState() {
 		if (!descText) {
 			const p = document.createElement('p');
-			p.classList.add(`${className}`);
+			p.classList.add(className);
 			p.textContent = msg;
 			parent.append(p);
 		} else {
@@ -23,6 +23,6 @@ export default function changeInputState(target, state, msg, className) {
 		if (!preState) classList.add(className);
 	}
 
-	if (state) change();
-	else initial();
+	if (state) updateInputState();
+	else initializeInputState();
 }
