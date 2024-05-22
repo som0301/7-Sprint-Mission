@@ -4,7 +4,8 @@ function validateEmail(email) {
 }
 
 function validatePassword(password) {
-  return password.length >= 8;
+  const passwordReg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,}$/;
+  return passwordReg.test(password) && password.length >= 8;
 }
 
 function btnActive() {

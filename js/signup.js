@@ -1,10 +1,11 @@
 function validateEmail(email) {
-  const regExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  return regExp.test(email);
+  const emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  return emailReg.test(email);
 }
 
 function validatePassword(password) {
-  return password.length >= 8;
+  const passwordReg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,}$/;
+  return passwordReg.test(password) && password.length >= 8;
 }
 
 function btnActive() {
