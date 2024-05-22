@@ -1,3 +1,4 @@
+import { isEmpty } from '../../isEmpty.js';
 import { submitButton } from '../tags.js';
 import changeInputState from '../../changeInputState.js';
 import valitateLogin from './page/validateLogin.js';
@@ -8,7 +9,7 @@ export default function validateForm({ target, currentTarget: form }) {
 	if (target.tagName === 'INPUT') {
 		const { name: page } = submitButton; // 페이지 내 버튼의 name 속성으로 로그인, 회원가입 페이지 확인
 		const { name, value } = target; // input의 name, value
-		const empty = value === undefined || value === ''; // 값이 비었는지 확인
+		const empty = isEmpty(value); // 값이 비었는지 확인
 
 		/** 유효성 검사 */
 		let result;
@@ -16,11 +17,11 @@ export default function validateForm({ target, currentTarget: form }) {
 		else if (page === 'sign') result = valitateSign({ name, empty, value, form });
 		const [state, msg] = result;
 
+		/** 에러 상태 관리 */
 		const errClsNm = 'error';
 		changeInputState(target, state, msg, errClsNm);
 
-		/** form 의 input 들의 value 값이 하나라도 undefined 거나 빈값이면 disabled 활성화 */
-		const formState = [...form.querySelectorAll('input')].some(({ value, classList }) => value === undefined || value === '' || classList.contains(errClsNm));
-		submitButton.disabled = formState;
+		/** 유효성 검사에 따라 submit 버튼 disabled 옵션 토글 */
+		submitButton.disabled = [...form.querySelectorAll('input')].some(({ value, classList }) => value === undefined || value === '' || classList.contains(errClsNm));
 	}
 }
