@@ -1,0 +1,21 @@
+@import "/src/styles/Color.css";
+
+.header__tab-list {
+  list-style: none;
+  width: 109px;
+  height: 69px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__tab-list a {
+  color: var(--gray-600);
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.active a {
+  color: var(--main-color);
+}
