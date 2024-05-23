@@ -100,11 +100,11 @@ input:focus {
 }
 
 input.error {
-  border: 1px solid #f74747;
+  border: 1px solid var(--red);
 }
 
 .error-message {
-  color: #f74747;
+  color: var(--red);
   font-size: 15px;
   margin-top: 8px;
   display: none;
