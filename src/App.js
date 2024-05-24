@@ -1,10 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import "./style/Clear.css";
+import Header from "./Component/Header";
 
 function App() {
   return (
-    <div></div>
-    // 테스트
+    <root>
+      <Header/>
+      <main>
+
+      </main>
+    </root>
   );
 }
 
