@@ -43,6 +43,8 @@ h2 {
 }
 
 .item-favorite {
+  display: flex;
+  align-items: center;
   margin-top: 6px;
   font-size: 12px;
   font-weight: 500;
@@ -52,4 +54,5 @@ h2 {
 .item-favorite img {
   width: 13.4px;
   height: 11.65px;
+  margin-right: 4px;
 }
