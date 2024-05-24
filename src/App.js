@@ -1,15 +1,19 @@
 import './App.css';
 import "./style/Clear.css";
-import Header from "./Component/Header";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Header from "./component/Header";
+import HomePage from "./pages/HomePage";
+import UsedMarket from "./pages/UsedMarket";
 
 function App() {
   return (
-    <root>
+    <BrowserRouter>
       <Header/>
-      <main>
-
-      </main>
-    </root>
+      <Routes>
+        <Route path="/" element={<HomePage />}/>;
+        <Route path="items" element={<UsedMarket />}/>;
+      </Routes>
+    </BrowserRouter>
   );
 }
 

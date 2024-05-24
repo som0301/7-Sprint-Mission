@@ -1,23 +1,21 @@
 @import "./ColorList.css";
 
 header {
-    margin: 0 200px;
+    padding: 0 200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header > img {
+nav {
+    display: flex;
+    align-items:center;
+}
+
+.headerLogo {
     width: 153px;
     height: 51px;
     margin-right: 32px;
-}
-
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    /* color: var(--brand-blue); */
 }
 
 .menuList {
@@ -27,12 +25,15 @@ nav {
     color: var(--cool-Gray600);
     font-weight: 700;
     line-height: 21.48px;
+    width: 109px;
+    height: 69px;
 }
 
 .loginButton {
     border-radius: 8px;
     padding: 12px 23px;
+    font-weight: 600;
     background-color: var(--brand-blue);
-    font-size: 20px;
-    /* color: #ffffff; */
+    font-size: 16px;
+    color: #ffffff;
 }
