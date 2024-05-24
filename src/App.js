@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import NavBar from './Nav-bar';
 import FavoriteProductSection from './Favorite-product-section';
 import AllProductSection from './All-product-section';
-// import PaginationButton from './PaginationButton';
+import PaginationButtons from './PaginationButtons';
 import getItems from './api';
 import './css/reset.css';
 import './css/global.css';
@@ -13,7 +13,6 @@ function App() {
   const [allItems, setAllItems] = useState([]);
   const [order, setOrder] = useState('recent');
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(4);
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [productsError, setProductsError] = useState(null);
@@ -99,7 +98,11 @@ function App() {
         onClick={handleOrderClick}
         isLoading={isLoading}
       />
-      {/* <PaginationButton onClick isLoading={isLoading} /> */}
+      <PaginationButtons
+        onClick={handlePaginationClick}
+        isLoading={isLoading}
+        page={page}
+      />
     </>
   );
 }
