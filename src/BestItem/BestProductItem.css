@@ -1,0 +1,20 @@
+.best-container {
+  margin-top: 94px;
+}
+.best-title {
+  color: #111827;
+  font-size: 20px;
+}
+.bestproductlist {
+  display: flex;
+  column-gap: 24px;
+  justify-content: center;
+}
+.itemlist {
+  display: flex;
+  flex-direction: column;
+}
+.imgurl {
+  width: 282px;
+  height: 282px;
+}

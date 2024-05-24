@@ -1,10 +1,11 @@
 import Header from "../src/headers/header";
+import BestProductList from "./BestItem/BestProductList";
 
 function App() {
   return (
     <div>
       <Header />
-      <div>베스트 상품</div>
+      <BestProductList />
       <div>전체 상품</div>
     </div>
   );
