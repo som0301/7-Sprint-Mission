@@ -16,10 +16,9 @@ function App() {
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [productsError, setProductsError] = useState(null);
-
-  // const isMobile = 375 <= Window.innerWidth < 768;
-  // const isTabelet = 768 <= Window.innerWidth < 1200;
-  // const isPC = 1200 <= Window.innerWidth;
+  const [isMobile, setIsMobile] = useState(true);
+  const [isTablet, setIsTablet] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const getValidItems = async (options) => {
     let result;
@@ -49,6 +48,41 @@ function App() {
     const list = await getValidItems(options);
     setAllItems(list);
   };
+
+  useEffect(() => {
+    const mobileMediaQuery = window.matchMedia('screen and (max-width: 767px)');
+    const tabletMediaQuery = window.matchMedia(
+      'screen and (min-width: 768px) and (max-width: 1199px)'
+    );
+    const desktopMediaQuery = window.matchMedia(
+      'screen and (min-width: 1200px)'
+    );
+
+    const handleMobileChange = (e) => {
+      setIsMobile(e.matches);
+    };
+
+    const handleTabletChange = (e) => {
+      setIsTablet(e.matches);
+    };
+
+    const handleDesktopChange = (e) => {
+      setIsDesktop(e.matches);
+    };
+
+    mobileMediaQuery.addListener(handleMobileChange);
+    tabletMediaQuery.addListener(handleTabletChange);
+    desktopMediaQuery.addListener(handleDesktopChange);
+
+    handleMobileChange(mobileMediaQuery);
+    handleTabletChange(tabletMediaQuery);
+    handleDesktopChange(desktopMediaQuery);
+    return () => {
+      mobileMediaQuery.removeListener(handleMobileChange);
+      tabletMediaQuery.removeListener(handleTabletChange);
+      desktopMediaQuery.removeListener(handleDesktopChange);
+    };
+  }, []);
 
   useEffect(() => {
     loadFavoriteItems({ order: 'favorite', page: 1, pageSize: 1 });

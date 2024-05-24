@@ -76,3 +76,23 @@
 .orderby__recent {
   border-bottom: 1px solid var(--border-light-gray);
 }
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .product-list__favorite {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-list__all {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .product-list__favorite {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .product-list__all {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
