@@ -1,26 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "/src/components/header/Header";
+import BestProductsList from "./components/BestProductsList";
 import { getProducts } from "./components/api/api";
 
+import "/src/styles/Reset.css";
 import "./App.css";
-import { useEffect } from "react";
 
 function App() {
-  const [products, setProducts] = useState([]);
+  //const [products, setProducts] = useState([]);
+  const [bestProducts, setBestProducts] = useState([]);
+  //const [order, setOrder] = useState("createdAt");
 
-  const handleLoad = async () => {
-    const { list } = await getProducts();
-    setProducts(list);
+  const sortedBestProducts = bestProducts.sort(
+    (a, b) => b["favorite"] - a["favorite"]
+  );
+
+  const handleBestProductsLoad = async (options) => {
+    const { list } = await getProducts(options);
+    setBestProducts(list);
   };
 
   useEffect(() => {
-    handleLoad();
+    handleBestProductsLoad({
+      orderBy: "favorite",
+      pageSize: 4,
+      page: 1,
+    });
   }, []);
 
+  // useEffect(() => {
+  //   handleLoad();
+  // }, []);
+
   return (
-    <div>
+    <>
       <Header id="header" />
-    </div>
+      <main id="main">
+        <BestProductsList products={sortedBestProducts} />
+      </main>
+    </>
   );
 }
 

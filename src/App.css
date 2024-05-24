@@ -23,4 +23,35 @@ a {
 
 li {
   color: var(--gray-600);
+  list-style: none;
+}
+
+.products-list-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+
+main {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 200px;
+  width: 100%;
+  background-color: var(--white-color);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-bottom: 1px solid;
+  border-color: #dfdfdf;
 }

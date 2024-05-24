@@ -1,0 +1,36 @@
+.product-inform {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-inform p {
+  font-family: Pretendard;
+}
+
+.product-name,
+.product-price {
+  color: var(--gray-800);
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.product-favorite-count {
+  color: var(--gray-600);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.product-icon-heart-div {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
