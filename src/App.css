@@ -1,5 +1,7 @@
 @import "/src/styles/Color.css";
 
+/* //TODO: css 리팩토링 */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,6 +16,8 @@ body {
   width: 100%;
   color: #161346;
   margin-top: 70px;
+  display: flex;
+  justify-content: center;
 }
 
 a {
@@ -120,16 +124,34 @@ header {
   display: flex;
   gap: 16px;
   flex-direction: column;
-}
-
-.best-product-item {
   margin: 0 auto;
   display: inline-flex;
   white-space: nowrap;
 }
 
+.best-product-item > img {
+  height: 282px;
+}
+
+.all-product-item > img {
+  height: 221px;
+}
+
 .product-item > img {
   width: 100%;
+}
+
+.pagination {
+  display: flex;
+  gap: 4px;
+}
+
+.pagination-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 113px;
 }
 
 /* 패드 사이즈 */
@@ -147,8 +169,14 @@ header {
   .all-products-col {
     width: 31%;
   }
-}
 
+  .input-search {
+    width: 242px;
+  }
+  header {
+    padding: 0 34px;
+  }
+}
 @media (max-width: 767px) {
   .best-products-col {
     width: 100%;
@@ -164,6 +192,17 @@ header {
   }
 
   .all-products-col {
-    width: 45%;
+    width: 48.3%;
+  }
+
+  .input-search {
+    width: 292px;
+  }
+  .row {
+    gap: 8px;
+  }
+
+  .all-product-item > img {
+    height: 136px;
   }
 }

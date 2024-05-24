@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Button from "./common/Button";
 import Dropdown from "./Dropdown";
+import Pagination from "./Pagination";
 import ProductItem from "./ProductItem";
 import Search from "./Search";
 
-function AllProductsListItem({ product }) {
+function AllProductsListItem({ product, className }) {
   const [order, setOrder] = useState("recent");
 
   return (
@@ -14,6 +15,7 @@ function AllProductsListItem({ product }) {
       price={product.price}
       favoriteCount={product.favoriteCount}
       size="221px"
+      className={className}
     />
   );
 }
@@ -36,10 +38,16 @@ function AllProductsList({ products, className, setOrder, order }) {
         {products.map((product) => {
           return (
             <div className="all-products-col">
-              <AllProductsListItem product={product} />
+              <AllProductsListItem
+                className="all-product-item"
+                product={product}
+              />
             </div>
           );
         })}
+      </div>
+      <div className="pagination-div">
+        <Pagination />
       </div>
     </div>
   );

@@ -61,3 +61,7 @@ function App() {
 }
 
 export default App;
+
+// TODO: 반응형 모바일 로고 변경
+// TODO: 페이지네이션 구현
+// TODO: 중고마켓 눌렀을때 items로 이동
