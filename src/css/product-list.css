@@ -1,0 +1,28 @@
+.product__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.product__image {
+  margin: 1rem 0;
+}
+
+.product__name {
+  margin: 0.375rem 0;
+  font: 500, 0.875rem;
+  color: var(--text-color-gray-blue);
+}
+
+.product__price {
+  margin: 0.375rem 0;
+  font: 700, 1rem;
+  color: var(--text-color-gray-blue);
+}
+
+.product__favorite {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font: 500, 0.75rem;
+  color: var(--text-color-cool-gray);
+}

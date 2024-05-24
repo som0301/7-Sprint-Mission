@@ -1,16 +1,18 @@
 import heartImg from './image-resource/panda-product-favorite-count.svg';
+import './css/product-list.css';
+
 function ProductListItem({ item }) {
-  const { images, name, price, favoriteCount, description } = item;
+  const { id, images, price, favoriteCount, name } = item;
   return (
-    <>
-      <img src={images} alt={description} />
-      <h3>{name}</h3>
-      <span>{price}원</span>
-      <span>
-        <img src={heartImg} alt="하트" />
+    <li className="product__list" key={id}>
+      <img className="product__image" src={images} alt={name} />
+      <h3 className="product__name">{name}</h3>
+      <span className="product__price">{price}원</span>
+      <span className="product__favorite">
+        <img className="heart-symbol" src={heartImg} alt="하트" />
         {favoriteCount}
       </span>
-    </>
+    </li>
   );
 }
 
@@ -19,9 +21,7 @@ export default function ProductList({ items }) {
   return (
     <ul>
       {items.map((item) => (
-        <li key={item.id}>
-          <ProductListItem item={item} />
-        </li>
+        <ProductListItem item={item} />
       ))}
     </ul>
   );

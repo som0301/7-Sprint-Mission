@@ -10,10 +10,12 @@
   --btn-color-inactive: #9ca3af;
   /* text-color */
   --text-color-white: #ffffff;
+  --text-color-gray-blue: #1f2937;
   --text-color-cool-gray: #4b5563;
   --text-color-blue: #3692ff;
   /* line-height */
   --line-height-small: 19.09px;
+  --line-height-medium: 28px;
   /* font-family */
   --font-family-pretendard: Pretendard;
 }
