@@ -37,10 +37,10 @@
   background-color: var(--bg-color-white);
   border: 1px solid var(--border-light-gray);
   border-radius: 0.75rem;
+  cursor: pointer;
 }
 
 .drop-down__list__orderby {
-  /* display: none; */
   position: absolute;
   top: 3.125rem;
   right: 0;
@@ -60,6 +60,7 @@
   font-weight: 400;
   font-size: 1rem;
   color: var(--text-color-gray-blue);
+  cursor: pointer;
 }
 
 .orderby__recent {

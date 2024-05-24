@@ -90,7 +90,7 @@ function App() {
     <>
       <NavBar isMobile={isMobile} />
       <FavoriteProductSection items={favoriteItems} />
-      <AllProductSection items={allItems} />
+      <AllProductSection items={allItems} onClick={handleOrderClick} />
     </>
   );
 }
