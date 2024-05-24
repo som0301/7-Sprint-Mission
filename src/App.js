@@ -16,7 +16,7 @@ function App() {
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [productsError, setProductsError] = useState(null);
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
@@ -58,8 +58,7 @@ function App() {
     return list;
   };
 
-  const handleOrderClick = (e) => {
-    const nextOrder = e.target.name;
+  const handleOrderClick = (nextOrder) => {
     setOrder(nextOrder);
   };
 
