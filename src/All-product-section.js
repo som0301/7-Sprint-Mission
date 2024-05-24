@@ -4,7 +4,7 @@ import ProductList from './ProductList';
 import dropdownImg from './image-resource/panda-drop-down.svg';
 import './css/product-section.css';
 
-export default function AllProductSection({ onClick, items }) {
+export default function AllProductSection({ onClick, items, isLoading }) {
   const [openDropdown, setOpenDropdown] = useState(false);
 
   const onOrder = ({ target }) => {
@@ -37,12 +37,22 @@ export default function AllProductSection({ onClick, items }) {
           <img src={dropdownImg} alt="드롭다운 버튼" />
           {openDropdown && (
             <div className="drop-down__list__orderby">
-              <h3 onClick={onOrder} id="recent" className="orderby__recent">
+              <button
+                onClick={onOrder}
+                id="recent"
+                className="orderby__recent"
+                disabled={isLoading}
+              >
                 최신순
-              </h3>
-              <h3 onClick={onOrder} id="favorite" className="orderby__favorite">
+              </button>
+              <button
+                onClick={onOrder}
+                id="favorite"
+                className="orderby__favorite"
+                disabled={isLoading}
+              >
                 좋아요순
-              </h3>
+              </button>
             </div>
           )}
         </button>

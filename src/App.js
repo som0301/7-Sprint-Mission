@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import NavBar from './Nav-bar';
 import FavoriteProductSection from './Favorite-product-section';
 import AllProductSection from './All-product-section';
+// import PaginationButton from './PaginationButton';
 import getItems from './api';
 import './css/reset.css';
 import './css/global.css';
@@ -58,10 +59,6 @@ function App() {
     return list;
   };
 
-  const handleOrderClick = (nextOrder) => {
-    setOrder(nextOrder);
-  };
-
   const loadFavoriteItems = async (options) => {
     const list = await getValidItems(options);
     setFavoriteItems(list);
@@ -70,6 +67,14 @@ function App() {
   const loadAllItems = async (options) => {
     const list = await getValidItems(options);
     setAllItems(list);
+  };
+
+  const handleOrderClick = (nextOrder) => {
+    setOrder(nextOrder);
+  };
+
+  const handlePaginationClick = (nextPage) => {
+    setPage(nextPage);
   };
 
   useEffect(() => {
@@ -89,7 +94,12 @@ function App() {
     <>
       <NavBar isMobile={isMobile} />
       <FavoriteProductSection items={favoriteItems} />
-      <AllProductSection items={allItems} onClick={handleOrderClick} />
+      <AllProductSection
+        items={allItems}
+        onClick={handleOrderClick}
+        isLoading={isLoading}
+      />
+      {/* <PaginationButton onClick isLoading={isLoading} /> */}
     </>
   );
 }
