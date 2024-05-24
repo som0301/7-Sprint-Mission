@@ -1,15 +1,22 @@
-import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Items from './pages/Items/index';
 import './App.css';
-import Router from './Router';
 import Header from './Header';
 
 function App() {
   return (
     <>
       <Header />
-      <Router />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/items" element={<Items />} />
+      </Routes>
     </>
   );
 }
+
+const Home = () => {
+  return <div>Home Page</div>;
+};
 
 export default App;

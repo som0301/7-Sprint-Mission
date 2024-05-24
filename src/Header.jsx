@@ -7,7 +7,9 @@ const Header = () => {
     <header>
       <div className="nav-container">
         <button type="button" className="logo">
-          <img src={logo} alt="판다마켓로고" width="153" height="51" />
+          <Link to="/">
+            <img src={logo} alt="판다마켓로고" width="153" height="51" />
+          </Link>
         </button>
         <nav>
           <ul>
