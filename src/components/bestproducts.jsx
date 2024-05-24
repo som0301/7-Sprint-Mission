@@ -1,5 +1,6 @@
+import "../style/header.css";
+
 function BestProductListItem({ item }) {
-  console.log(item);
   return (
     <div className="BestProductListItem">
       <img
@@ -17,7 +18,6 @@ function BestProductListItem({ item }) {
 }
 
 function BestProductList({ items }) {
-  console.log(items);
   return (
     <div>
       {items.map((item) => {

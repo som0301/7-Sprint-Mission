@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getItems } from "./Api";
 import BestProductList from "./components/BestProducts";
+import Header from "./components/Header";
+import "./style/header.css";
 
 function App() {
   // const [order, setOrder] = useState("favorite");
@@ -17,9 +19,9 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="header">
       {/* <header className="App-header" /> */}
-      <div>로고 이미지</div>
+      <Header />
       <div> 베스트 상품 </div>
       <div> 전체 상품 </div>
       <BestProductList items={items} />

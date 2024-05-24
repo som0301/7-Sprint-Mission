@@ -1,12 +1,16 @@
-import logoimg from '../../assets/logoimg.svg';
-import '../style/header.css';
+import logoimg from "../assets/logoimg.svg";
+import MenuTab from "./MenuTab";
+import "../style/header.css";
 
-function Header({item}) {
-   return (
-    <ul> {logoimg} </ul>
-    <ul> MenuTab() </ul>
-
-   )
+function Header() {
+  return (
+    <div className="header">
+      <img class="logo-img" src={logoimg} alt="logoImg" />
+      {/* <div className="menu-tab"> */}
+      <MenuTab />
+      {/* </div> */}
+    </div>
+  );
 }
 
 export default Header;

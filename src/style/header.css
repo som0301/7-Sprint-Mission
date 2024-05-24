@@ -1,0 +1,43 @@
+.header {
+  border-bottom: 1px;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
+}
+
+/* ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+} */
+
+li {
+  list-style: none;
+  /* display: inline-block; */
+}
+
+.logo-img {
+  display: inline;
+  width: 153px;
+}
+
+.menu-tab {
+  display: inline-block;
+}
+
+.menu {
+  /* display: inline-block; */
+  font-family: Pretendard;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.48px;
+  text-align: center;
+  color: #4b5563;
+  margin: 16px;
+}
+
+.menu-active {
+  color: #3692ff;
+}

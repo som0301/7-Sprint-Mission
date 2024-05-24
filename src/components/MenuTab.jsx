@@ -1,10 +1,12 @@
-function TopMenu() {
+import "../style/header.css";
+
+function MenuTab() {
   return (
     <>
-      <ul>자유게시판</ul>
-      <ul>중고마켓</ul>
+      <li className="menu">자유게시판</li>
+      <li className="menu menu-active">중고마켓</li>
     </>
   );
 }
 
-export default TopMenu;
+export default MenuTab;
