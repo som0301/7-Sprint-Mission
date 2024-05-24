@@ -4,9 +4,9 @@ import './css/product-list.css';
 function ProductListItem({ item }) {
   const { id, images, price, favoriteCount, name } = item;
   return (
-    <li className="product__list" key={id}>
+    <li className="product" key={id}>
       <img className="product__image" src={images} alt={name} />
-      <h3 className="product__name">{name}</h3>
+      <h4 className="product__name">{name}</h4>
       <span className="product__price">{price}원</span>
       <span className="product__favorite">
         <img className="heart-symbol" src={heartImg} alt="하트" />
@@ -16,10 +16,10 @@ function ProductListItem({ item }) {
   );
 }
 
-export default function ProductList({ items }) {
+export default function ProductList({ className, items }) {
   console.log(items);
   return (
-    <ul>
+    <ul className={className}>
       {items.map((item) => (
         <ProductListItem item={item} />
       ))}

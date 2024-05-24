@@ -62,7 +62,7 @@ function App() {
     <>
       <NavBar />
       <FavoriteProductSection items={favoriteItems} />
-      {/* <AllProductSection /> */}
+      <AllProductSection items={allItems} />
     </>
   );
 }

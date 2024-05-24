@@ -1,7 +1,9 @@
 :root {
   /* bg-color */
   --bg-color-white: #ffffff;
+  --bg-color-light-gray: #f3f4f6;
   /* border-color */
+  --border-light-gray: #e5e7eb;
   --border-color-gray: #dfdfdf;
   /* btn-color */
   --btn-color-default: #3692ff;
@@ -21,8 +23,6 @@
 }
 
 * {
-  margin: 0;
-  padding: 0;
   border: none;
   outline: none;
   box-sizing: border-box;
