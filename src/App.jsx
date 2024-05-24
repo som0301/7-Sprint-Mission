@@ -13,6 +13,9 @@ function App() {
   const [bestProducts, setBestProducts] = useState([]);
   const [order, setOrder] = useState("recent");
   const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
+
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   const sortedProducts = allProducts.sort((a, b) => b[order] - a[order]);
 
@@ -26,6 +29,14 @@ function App() {
     setAllProducts(list);
   };
 
+  window.onresize = () => {
+    setWindowSize(window.innerWidth);
+
+    if (windowSize >= 1200) setPageSize(10);
+    else if (1200 > windowSize && windowSize >= 768) setPageSize(6);
+    else setPageSize(4);
+  };
+
   useEffect(() => {
     handleBestProductsLoad({
       orderBy: "favorite",
@@ -37,10 +48,10 @@ function App() {
   useEffect(() => {
     handleAllProductsLoad({
       orderBy: `${order}`,
-      pageSize: 10,
+      pageSize: `${pageSize}`,
       page: `${page}`,
     });
-  }, [order, page]);
+  }, [order, page, pageSize]);
 
   return (
     <>
