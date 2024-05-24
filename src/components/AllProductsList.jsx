@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import Button from "./common/Button";
 import Dropdown from "./Dropdown";
 import Pagination from "./Pagination";
@@ -29,6 +30,11 @@ function AllProductsList({
   setPage,
   page,
 }) {
+  const navigate = useNavigate();
+  const handleAddProduct = () => {
+    navigate("/additem");
+  };
+
   return (
     <div className={className}>
       <div className="all-products-header">
@@ -36,8 +42,12 @@ function AllProductsList({
         <div className="search-order-div">
           {/* .search-order-div 이 div에 마땅한 클래스네임을 모르겠다..*/}
           <Search className="input--color" />
-          <Button className="btn btn-product-register">상품 등록하기</Button>
-          {/* //TODO: 버튼 active 충돌 해결하기 */}
+          <Button
+            onClick={handleAddProduct}
+            className="btn btn-product-register"
+          >
+            상품 등록하기
+          </Button>
           <Dropdown order={order} setOrder={setOrder} />
         </div>
       </div>

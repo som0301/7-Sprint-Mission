@@ -37,7 +37,7 @@ li {
   letter-spacing: 0.02em;
 }
 
-#main {
+main {
   width: 1200px;
   margin: 0 auto;
   padding-top: 24px;
@@ -162,7 +162,7 @@ header {
     flex: 0 0 auto;
   }
 
-  #main {
+  main {
     width: 696px;
   }
 
@@ -187,7 +187,7 @@ header {
     max-width: 100%;
   }
 
-  #main {
+  main {
     width: 282px;
   }
 
