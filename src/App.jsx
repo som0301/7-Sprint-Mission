@@ -16,12 +16,20 @@ import NotFound from "./NotFound";
 import AddItem from "./AddItem";
 
 function App() {
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [isMobile, setIsMobile] = useState(windowSize < 768 ? true : false);
+
+  window.onresize = () => {
+    setWindowSize(window.innerWidth);
+    setIsMobile(windowSize < 768 ? true : false);
+  };
+
   return (
     <>
       <BrowserRouter>
-        <Header className="header" />
+        <Header isMobile={isMobile} />
         <Routes>
-          <Route path="/items" element={<Items />}></Route>
+          <Route path="/items" element={<Items isMobile={isMobile} />}></Route>
           <Route path="*" element={<NotFound />}></Route>
           <Route path="/additem" element={<AddItem />}></Route>
         </Routes>
@@ -31,6 +39,3 @@ function App() {
 }
 
 export default App;
-
-// TODO: 반응형 모바일 로고 변경
-// TODO: 중고마켓 눌렀을때 items로 이동

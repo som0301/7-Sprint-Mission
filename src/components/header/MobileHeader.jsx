@@ -3,7 +3,6 @@ import TabMenu from "./TabMenu";
 
 import LogoImage from "./LogoImage";
 import LogoText from "./LogoText";
-import { useState } from "react";
 
 const flexColumnStyle = {
   display: "flex",
@@ -12,18 +11,11 @@ const flexColumnStyle = {
   gap: "32px",
 };
 
-function Header() {
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
-  const [isMobile, setIsMobile] = useState(windowSize < 768 ? true : false);
-
-  window.onresize = () => {
-    setWindowSize(window.innerWidth);
-    setIsMobile(windowSize < 768 ? true : false);
-  };
+function Header({ isMobile }) {
   return (
     <header>
       <div style={flexColumnStyle}>
-        {!isMobile ? (
+        {isMobile ? (
           <LogoImage id="header-logo" />
         ) : (
           <LogoText id="header-logo" />

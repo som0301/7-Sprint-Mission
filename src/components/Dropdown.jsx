@@ -3,6 +3,8 @@ import { useState } from "react";
 
 import "/src/styles/Dropdown.css";
 
+import iconSort from "/src/assets/ic_sort.svg";
+
 const cursorPointerStyle = {
   curser: "pointer",
 };
@@ -24,6 +26,13 @@ function DropdownList({ setOrder }) {
 
 function Dropdown({ setOrder, order }) {
   const [isDropdownView, setDropdownView] = useState(false);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [isMobile, setIsMobile] = useState(windowSize < 768 ? true : false);
+
+  window.onresize = () => {
+    setWindowSize(window.innerWidth);
+    setIsMobile(windowSize < 768 ? true : false);
+  };
   const handleClickContainer = () => {
     setDropdownView(!isDropdownView);
   };
@@ -37,9 +46,14 @@ function Dropdown({ setOrder, order }) {
     <div className="dropdown" onBlur={handleBlurContainer}>
       <label onClick={handleClickContainer}>
         <button>
-          <span>{order === "recent" ? "최신순" : "좋아요순"}</span>
-          {/* //TODO: 최신순&좋아요순을 눌렀을 때 span 태그의 내용이 바뀌도록 수정 */}
-          <img src={iconArrowDown} />
+          {isMobile ? (
+            <img src={iconSort} />
+          ) : (
+            <>
+              <span>{order === "recent" ? "최신순" : "좋아요순"}</span>
+              <img src={iconArrowDown} />
+            </>
+          )}
         </button>
       </label>
       {isDropdownView && <DropdownList setOrder={setOrder} />}

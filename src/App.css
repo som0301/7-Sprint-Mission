@@ -1,6 +1,8 @@
 @import "/src/styles/Color.css";
 
 /* //TODO: css 리팩토링 */
+/* TODO: 헤더 반응형 갭 변경*/
+/* TODO: 모바일 버전 검색 부분 배치 변경 */
 
 * {
   box-sizing: border-box;

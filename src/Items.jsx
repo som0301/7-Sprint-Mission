@@ -8,7 +8,7 @@ import "./App.css";
 import AllProductsList from "./components/AllProductsList";
 import "/src/styles/Button.css";
 
-function Items() {
+function Items({ isMobile }) {
   const [allProducts, setAllProducts] = useState([]);
   const [bestProducts, setBestProducts] = useState([]);
   const [order, setOrder] = useState("recent");
@@ -76,6 +76,3 @@ function Items() {
 }
 
 export default Items;
-
-// TODO: 반응형 모바일 로고 변경
-// TODO: 중고마켓 눌렀을때 items로 이동

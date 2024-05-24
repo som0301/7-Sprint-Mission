@@ -7,5 +7,6 @@ function LogoImage({ id, className }) {
     </a>
   );
 }
+// TODO: NavLink로 변경하기..
 
 export default LogoImage;
