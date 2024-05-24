@@ -20,7 +20,15 @@ function AllProductsListItem({ product, className }) {
   );
 }
 
-function AllProductsList({ products, className, setOrder, order }) {
+function AllProductsList({
+  products,
+  className,
+  setOrder,
+  order,
+  handleProductsLoad,
+  setPage,
+  page,
+}) {
   return (
     <div className={className}>
       <div className="all-products-header">
@@ -47,7 +55,11 @@ function AllProductsList({ products, className, setOrder, order }) {
         })}
       </div>
       <div className="pagination-div">
-        <Pagination />
+        <Pagination
+          handleProductsLoad={handleProductsLoad}
+          setPage={setPage}
+          page={page}
+        />
       </div>
     </div>
   );

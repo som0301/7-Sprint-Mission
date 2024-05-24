@@ -12,6 +12,7 @@ function App() {
   const [allProducts, setAllProducts] = useState([]);
   const [bestProducts, setBestProducts] = useState([]);
   const [order, setOrder] = useState("recent");
+  const [page, setPage] = useState(1);
 
   const sortedProducts = allProducts.sort((a, b) => b[order] - a[order]);
 
@@ -37,9 +38,9 @@ function App() {
     handleAllProductsLoad({
       orderBy: `${order}`,
       pageSize: 10,
-      page: 1,
+      page: `${page}`,
     });
-  }, [order]);
+  }, [order, page]);
 
   return (
     <>
@@ -50,6 +51,9 @@ function App() {
           products={bestProducts}
         />
         <AllProductsList
+          handleProductsLoad={handleAllProductsLoad}
+          page={page}
+          setPage={setPage}
           order={order}
           setOrder={setOrder}
           className="all-products-list"
