@@ -27,20 +27,47 @@ body {
     border-bottom: 1px solid #dfdfdf;
 }
 
+.header__container {
+    display: flex;
+    align-items: center;
+    column-gap: 32px;
+}
 .header__logo {
     width: 153px;
     height: 51px;
     background-image: url('https://jaehyeon-sprint-mission.netlify.app/img/logo/panda-market-logo.png');
     background-size: contain;
     background-repeat: no-repeat;
+    text-indent: -9999px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 39px;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.48px;
+    color: var(--gray600);
+}
+
+.header__nav:hover {
+    color: var(--blue);
 }
 
 .header__login-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 128px;
-    height: 48px;
+    min-width: 88px;
+    height: 42px;
     background: var(--blue);
     border-radius: 8px;
     font-weight: 700;
@@ -227,6 +254,15 @@ body {
         padding: 0 24px;
     }
 
+    .header__container {
+        column-gap: 20px;
+    }
+
+    .header__nav {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 21.48px;
+    }
     .top-banner {
         flex-direction: column;
         height: 771px;
@@ -298,9 +334,23 @@ body {
         padding: 0 16px;
     }
 
+    .header__container {
+        column-gap: 16px;
+    }
+
+    .header__wrapper {
+        column-gap: 8px;
+    }
+
+    .header__nav {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19.09px;
+    }
+
     .header__logo {
-        width: 103px;
-        height: 51px;
+        width: 81px;
+        height: 40px;
         background-image: url('https://jaehyeon-sprint-mission.netlify.app/img/logo/panda-market-logo-mobile.png');
     }
 
