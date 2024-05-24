@@ -5,6 +5,8 @@ import ProductItem from "./ProductItem";
 import Search from "./Search";
 
 function AllProductsListItem({ product }) {
+  const [order, setOrder] = useState("recent");
+
   return (
     <ProductItem
       src={product.images}
