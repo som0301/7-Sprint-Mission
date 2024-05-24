@@ -18,7 +18,31 @@ function App() {
   const [productsError, setProductsError] = useState(null);
   const [isMobile, setIsMobile] = useState(true);
   const [isTablet, setIsTablet] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const mobileMediaQuery = window.matchMedia('screen and (max-width: 767px)');
+    const tabletMediaQuery = window.matchMedia(
+      'screen and (min-width: 768px) and (max-width: 1199px)'
+    );
+
+    const handleMobileChange = (e) => {
+      setIsMobile(e.matches);
+    };
+
+    const handleTabletChange = (e) => {
+      setIsTablet(e.matches);
+    };
+
+    mobileMediaQuery.addListener(handleMobileChange);
+    tabletMediaQuery.addListener(handleTabletChange);
+
+    handleMobileChange(mobileMediaQuery);
+    handleTabletChange(tabletMediaQuery);
+    return () => {
+      mobileMediaQuery.removeListener(handleMobileChange);
+      tabletMediaQuery.removeListener(handleTabletChange);
+    };
+  }, []);
 
   const getValidItems = async (options) => {
     let result;
@@ -50,51 +74,21 @@ function App() {
   };
 
   useEffect(() => {
-    const mobileMediaQuery = window.matchMedia('screen and (max-width: 767px)');
-    const tabletMediaQuery = window.matchMedia(
-      'screen and (min-width: 768px) and (max-width: 1199px)'
-    );
-    const desktopMediaQuery = window.matchMedia(
-      'screen and (min-width: 1200px)'
-    );
-
-    const handleMobileChange = (e) => {
-      setIsMobile(e.matches);
-    };
-
-    const handleTabletChange = (e) => {
-      setIsTablet(e.matches);
-    };
-
-    const handleDesktopChange = (e) => {
-      setIsDesktop(e.matches);
-    };
-
-    mobileMediaQuery.addListener(handleMobileChange);
-    tabletMediaQuery.addListener(handleTabletChange);
-    desktopMediaQuery.addListener(handleDesktopChange);
-
-    handleMobileChange(mobileMediaQuery);
-    handleTabletChange(tabletMediaQuery);
-    handleDesktopChange(desktopMediaQuery);
-    return () => {
-      mobileMediaQuery.removeListener(handleMobileChange);
-      tabletMediaQuery.removeListener(handleTabletChange);
-      desktopMediaQuery.removeListener(handleDesktopChange);
-    };
-  }, []);
+    const responsivePageSize = isMobile ? 1 : isTablet ? 2 : 4;
+    loadFavoriteItems({
+      order: 'favorite',
+      pageSize: responsivePageSize,
+    });
+  }, [isMobile, isTablet]);
 
   useEffect(() => {
-    loadFavoriteItems({ order: 'favorite', page: 1, pageSize: 1 });
-  }, []);
-
-  useEffect(() => {
-    loadAllItems({ order, page, pageSize, search });
-  }, [order]);
+    const responsivePageSize = isMobile ? 4 : isTablet ? 6 : 10;
+    loadAllItems({ order, page, pageSize: responsivePageSize, search });
+  }, [order, isMobile, isTablet]);
 
   return (
     <>
-      <NavBar />
+      <NavBar isMobile={isMobile} />
       <FavoriteProductSection items={favoriteItems} />
       <AllProductSection items={allItems} />
     </>
