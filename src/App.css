@@ -33,7 +33,7 @@ li {
   letter-spacing: 0.02em;
 }
 
-main {
+#main {
   width: 1200px;
   margin: 0 auto;
   padding-top: 24px;
@@ -58,12 +58,35 @@ header {
 
 .row {
   gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.col-xl-3 {
+.all-products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.best-products-col {
+  flex: 0 0 auto;
+  width: 25%;
   padding: 0;
   max-width: 282px;
 }
+
+.all-products-col {
+  flex: 0 0 auto;
+  width: 18%;
+  padding: 0;
+  max-width: 221px;
+}
+
+/* .col-xl-3 {
+  padding: 0;
+  max-width: 282px;
+} */
 
 .best-products-list {
   margin-bottom: 40px;
@@ -91,4 +114,56 @@ header {
   display: flex;
   gap: 12px;
   align-items: center;
+}
+
+.product-item {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.best-product-item {
+  margin: 0 auto;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.product-item > img {
+  width: 100%;
+}
+
+/* 패드 사이즈 */
+@media (max-width: 1199px) {
+  .best-products-col {
+    width: 40%;
+    max-width: none;
+    flex: 0 0 auto;
+  }
+
+  #main {
+    width: 696px;
+  }
+
+  .all-products-col {
+    width: 31%;
+  }
+}
+
+@media (max-width: 767px) {
+  .best-products-col {
+    width: 100%;
+    max-width: none;
+  }
+  .best-products-col {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #main {
+    width: 282px;
+  }
+
+  .all-products-col {
+    width: 45%;
+  }
 }

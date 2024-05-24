@@ -13,11 +13,12 @@ function AllProductsListItem({ product }) {
       name={product.name}
       price={product.price}
       favoriteCount={product.favoriteCount}
+      size="221px"
     />
   );
 }
 
-function AllProductsList({ products, className }) {
+function AllProductsList({ products, className, setOrder, order }) {
   return (
     <div className={className}>
       <div className="all-products-header">
@@ -27,14 +28,14 @@ function AllProductsList({ products, className }) {
           <Search className="input--color" />
           <Button className="btn btn-product-register">상품 등록하기</Button>
           {/* //TODO: 버튼 active 충돌 해결하기 */}
-          <Dropdown />
+          <Dropdown order={order} setOrder={setOrder} />
         </div>
       </div>
 
       <div className="row">
         {products.map((product) => {
           return (
-            <div className="col-xl-3 col-md-4">
+            <div className="all-products-col">
               <AllProductsListItem product={product} />
             </div>
           );

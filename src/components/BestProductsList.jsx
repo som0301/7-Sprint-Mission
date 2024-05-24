@@ -1,6 +1,6 @@
 import ProductItem from "./ProductItem";
 
-function BestProductsListItem({ product }) {
+function BestProductsListItem({ product, className }) {
   return (
     <ProductItem
       src={product.images}
@@ -8,6 +8,7 @@ function BestProductsListItem({ product }) {
       price={product.price}
       favoriteCount={product.favoriteCount}
       size="282px"
+      className={className}
     />
   );
 }
@@ -19,8 +20,11 @@ function BestProductsList({ products, className }) {
       <div className="row">
         {products.map((product) => {
           return (
-            <div className="col-xl-3 col-md-4">
-              <BestProductsListItem product={product} />
+            <div className="best-products-col">
+              <BestProductsListItem
+                className="best-product-item"
+                product={product}
+              />
             </div>
           );
         })}

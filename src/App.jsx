@@ -50,6 +50,8 @@ function App() {
           products={bestProducts}
         />
         <AllProductsList
+          order={order}
+          setOrder={setOrder}
           className="all-products-list"
           products={sortedProducts}
         />

@@ -2,28 +2,13 @@ import "/src/styles/ProductItem.css";
 import iconHeartEmpty from "/src/assets/ic_heart_empty_small.svg";
 //import iconHeartFill from "/src/assets/ic_heart_fill.svg"; // 나중에 채워진 하트
 
-const productItemStyle = {
-  display: "flex",
-  gap: "16px",
-  flexDirection: "column",
-};
-
-function ProductItem({
-  className,
-  src,
-  name,
-  price,
-  favoriteCount,
-  size = "336px",
-}) {
+function ProductItem({ className, src, name, price, favoriteCount }) {
   let priceComma = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   return (
-    <div className={className} style={productItemStyle}>
+    <div className={`${className} product-item`}>
       <img
         className="product-image"
         src={src}
-        width={size}
-        height={size}
         style={{ borderRadius: "16px" }}
       />
       <div className="product-inform">

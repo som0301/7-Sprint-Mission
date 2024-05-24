@@ -7,16 +7,22 @@ const cursorPointerStyle = {
   curser: "pointer",
 };
 
-function DropdownList() {
+function DropdownList({ setOrder }) {
+  const handleNewClick = () => setOrder("recent");
+  const handleBestClick = () => setOrder("favorite");
   return (
     <ul class="dropdown-ul">
-      <li class="dropdown-list">최신순</li>
-      <li class="dropdown-list">좋아요순</li>
+      <li class="dropdown-list" onClick={handleNewClick}>
+        최신순
+      </li>
+      <li class="dropdown-list" onClick={handleBestClick}>
+        좋아요순
+      </li>
     </ul>
   );
 }
 
-function Dropdown() {
+function Dropdown({ setOrder, order }) {
   const [isDropdownView, setDropdownView] = useState(false);
   const handleClickContainer = () => {
     setDropdownView(!isDropdownView);
@@ -31,12 +37,12 @@ function Dropdown() {
     <div className="dropdown" onBlur={handleBlurContainer}>
       <label onClick={handleClickContainer}>
         <button>
-          <span>최신순</span>
+          <span>{order === "recent" ? "최신순" : "좋아요순"}</span>
           {/* //TODO: 최신순&좋아요순을 눌렀을 때 span 태그의 내용이 바뀌도록 수정 */}
           <img src={iconArrowDown} />
         </button>
       </label>
-      {isDropdownView && <DropdownList />}
+      {isDropdownView && <DropdownList setOrder={setOrder} />}
     </div>
   );
 }
