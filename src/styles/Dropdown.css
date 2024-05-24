@@ -1,0 +1,47 @@
+@import "/src/styles/Color.css";
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown button {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray-800);
+}
+
+.dropdown-ul {
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  background-color: var(--white-color);
+
+  position: absolute;
+  top: 54px;
+}
+
+.dropdown-list {
+  font-size: 16px;
+  font-weight: 400;
+  width: 130px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-list:hover {
+  cursor: pointer;
+}
+
+.dropdown-list:first-child {
+  border-bottom: 1px solid var(--gray-200);
+}

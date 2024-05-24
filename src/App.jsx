@@ -5,19 +5,24 @@ import { getProducts } from "./components/api/api";
 
 import "/src/styles/Reset.css";
 import "./App.css";
+import AllProductsList from "./components/AllProductsList";
+import "/src/styles/Button.css";
 
 function App() {
-  //const [products, setProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
   const [bestProducts, setBestProducts] = useState([]);
-  //const [order, setOrder] = useState("createdAt");
+  const [order, setOrder] = useState("recent");
 
-  const sortedBestProducts = bestProducts.sort(
-    (a, b) => b["favorite"] - a["favorite"]
-  );
+  const sortedProducts = allProducts.sort((a, b) => b[order] - a[order]);
 
   const handleBestProductsLoad = async (options) => {
     const { list } = await getProducts(options);
     setBestProducts(list);
+  };
+
+  const handleAllProductsLoad = async (options) => {
+    const { list } = await getProducts(options);
+    setAllProducts(list);
   };
 
   useEffect(() => {
@@ -28,15 +33,26 @@ function App() {
     });
   }, []);
 
-  // useEffect(() => {
-  //   handleLoad();
-  // }, []);
+  useEffect(() => {
+    handleAllProductsLoad({
+      orderBy: `${order}`,
+      pageSize: 10,
+      page: 1,
+    });
+  }, [order]);
 
   return (
     <>
       <Header id="header" />
       <main id="main">
-        <BestProductsList products={sortedBestProducts} />
+        <BestProductsList
+          className="best-products-list"
+          products={bestProducts}
+        />
+        <AllProductsList
+          className="all-products-list"
+          products={sortedProducts}
+        />
       </main>
     </>
   );

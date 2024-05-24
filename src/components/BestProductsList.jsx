@@ -12,9 +12,9 @@ function BestProductsListItem({ product }) {
   );
 }
 
-function BestProductsList({ products }) {
+function BestProductsList({ products, className }) {
   return (
-    <div>
+    <div className={className}>
       <h2 className="products-list-title">베스트 상품</h2>
       <div className="row">
         {products.map((product) => {

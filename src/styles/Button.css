@@ -13,14 +13,21 @@ button:hover {
   font-weight: 600;
   color: white;
   border: none;
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn:hover {
   background-color: #1967d6;
+  color: var(--white-color);
 }
 
 .btn:active {
   background-color: #1251aa;
+  color: var(--white-color);
 }
 
 .btn-large {
@@ -32,18 +39,23 @@ button:hover {
 
 .btn-small {
   border-radius: 8px;
-  padding: 12px 20px;
-  width: 128px;
-  height: 48px;
+  padding: 12px 23px;
 
   font-size: 16px;
-  line-height: 19.09px;
 }
 
 .btn-login {
   background-color: var(--main-color);
   width: 100%;
   text-align: center;
+}
+
+.btn-product-register {
+  padding: 12px 23px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
 }
 
 /* sprint2 - 인풋이 다 입력되기 전까지는 로그인 버튼에 cursor: pointer가 작동하지 않게 */
