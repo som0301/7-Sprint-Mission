@@ -33,3 +33,8 @@
 a {
   text-decoration: none;
 }
+
+button:disabled {
+  background: var(--btn-color-inactive);
+  cursor: not-allowed;
+}

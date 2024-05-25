@@ -1,17 +1,23 @@
 import './css/pageButton.css';
 
-function PageButton({ children, onClick, isActive }) {
+function PageButton({ children, onClick, isActive, isLoading }) {
   return (
     <button
       onClick={onClick}
       className={`page-button ${isActive ? 'page-button__active' : ''}`}
+      disabled={isLoading}
     >
       {children}
     </button>
   );
 }
 
-export default function PaginationButtons({ onClick, page, setPage }) {
+export default function PaginationButtons({
+  onClick,
+  page,
+  setPage,
+  isLoading,
+}) {
   const onPreviousPage = () => {
     const isPageOutOfBounds = page <= 1;
     isPageOutOfBounds || onClick(page - 1);
@@ -28,7 +34,9 @@ export default function PaginationButtons({ onClick, page, setPage }) {
 
   return (
     <div className="pagination-buttons">
-      <PageButton onClick={onPreviousPage}>&lt;</PageButton>
+      <PageButton onClick={onPreviousPage} isLoading={isLoading}>
+        &lt;
+      </PageButton>
       {[1, 2, 3, 4, 5].map((pageNumber) => {
         return (
           <PageButton
@@ -37,12 +45,15 @@ export default function PaginationButtons({ onClick, page, setPage }) {
             onClick={() => {
               onPagination(pageNumber);
             }}
+            isLoading={isLoading}
           >
             {pageNumber}
           </PageButton>
         );
       })}
-      <PageButton onClick={onNextPage}>&gt;</PageButton>
+      <PageButton onClick={onNextPage} isLoading={isLoading}>
+        &gt;
+      </PageButton>
     </div>
   );
 }

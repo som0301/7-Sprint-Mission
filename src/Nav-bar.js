@@ -1,4 +1,4 @@
-import Button from './Button';
+import CommonButton from './CommonButton';
 import logoImgMobile from './image-resource/panda-logo-mobile.svg';
 import logoImg from './image-resource/panda-logo.svg';
 import './css/Nav-bar.css';
@@ -12,7 +12,7 @@ export default function NavBar({ isMobile }) {
         <li className="menu-list__community">자유게시판</li>
         <li className="menu-list__flee-market">중고마켓</li>
       </ul>
-      <Button>로그인</Button>
+      <CommonButton>로그인</CommonButton>
     </nav>
   );
 }

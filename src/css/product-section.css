@@ -70,9 +70,3 @@
   border-top: none;
   border-radius: 0 0 0.75rem 0.75rem;
 }
-
-.drop-down__list__orderby button:disabled {
-  background-color: var(--bg-color-light-gray);
-  color: var(--text-color-white);
-  cursor: not-allowed;
-}

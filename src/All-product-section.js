@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from './Button';
+import CommonButton from './CommonButton';
 import ProductList from './ProductList';
 import dropdownImg from './image-resource/panda-drop-down.svg';
 import './css/product-section.css';
@@ -24,7 +24,7 @@ export default function AllProductSection({ onClick, items, isLoading }) {
     <section className="product-section product-section__all">
       <div className="product-section__header">
         <h2 className="product-section__header-text">판매 중인 상품</h2>
-        <Button onClick={handleLinkClick}>상품 등록하기</Button>
+        <CommonButton onClick={handleLinkClick}>상품 등록하기</CommonButton>
         <input
           className="product-section__header__input"
           placeholder="🔍 검색할 상품을 입력해주세요"

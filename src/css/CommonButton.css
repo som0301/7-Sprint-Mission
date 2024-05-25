@@ -1,4 +1,4 @@
-.btn {
+.common-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,14 +12,10 @@
   cursor: pointer;
 }
 
-.btn:hover {
+.common-button:hover {
   background: var(--btn-color-hover);
 }
 
-.btn:active {
+.common-button:active {
   background: var(--btn-color-click);
-}
-
-.btn:disabled {
-  background: var(--btn-color-inactive);
 }
