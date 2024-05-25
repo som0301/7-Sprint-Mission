@@ -80,10 +80,12 @@ header {
 }
 
 .best-products-col {
+  display: flex;
   flex: 0 0 auto;
   width: 25%;
   padding: 0;
   max-width: 282px;
+  justify-content: center;
 }
 
 .all-products-col {
@@ -202,7 +204,7 @@ header {
   }
 
   .input-search {
-    width: 292px;
+    width: 250px;
   }
   .row {
     gap: 8px;
@@ -212,18 +214,16 @@ header {
     height: 136px;
   }
 
-  .search-order-div {
-    flex-wrap: wrap;
+  .all-products-header {
+    flex-direction: column;
+    gap: 8px;
   }
 
-  .search-order-div .input-search-div {
-    order: 2;
-  }
-  .search-order-div .btn-product-register {
-    order: 1;
-  }
-  .search-order-div .dropdown-ul {
-    order: 3;
+  .mobile-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
