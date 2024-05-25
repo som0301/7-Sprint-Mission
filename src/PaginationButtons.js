@@ -1,22 +1,36 @@
 import './css/pageButton.css';
 
-function PageButton({ children }) {
-  return <button className="page-button">{children}</button>;
+function PageButton({ children, onClick }) {
+  return (
+    <button onClick={onClick} className="page-button">
+      {children}
+    </button>
+  );
 }
 
-export default function PaginationButtons(onClick, page) {
-  const onPagination = () => {
-    onclick(1);
+export default function PaginationButtons({ onClick, page, setPage }) {
+  const onPreviousPage = () => {
+    onClick(page--);
   };
+
+  const onPagination = ({ target }) => {
+    const nextPage = +target.textContent;
+    onClick(nextPage);
+  };
+
+  const onNextPage = () => {
+    onClick(page++);
+  };
+
   return (
     <div className="pagination-buttons">
-      <PageButton onClick={onPagination}>&lt;</PageButton>
+      <PageButton onClick={onPreviousPage}>&lt;</PageButton>
       <PageButton onClick={onPagination}>1</PageButton>
       <PageButton onClick={onPagination}>2</PageButton>
       <PageButton onClick={onPagination}>3</PageButton>
       <PageButton onClick={onPagination}>4</PageButton>
       <PageButton onClick={onPagination}>5</PageButton>
-      <PageButton onClick={onPagination}>&gt;</PageButton>
+      <PageButton onClick={onNextPage}>&gt;</PageButton>
     </div>
   );
 }
