@@ -16,11 +16,9 @@ function App() {
   const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [productsError, setProductsError] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   const [isTablet, setIsTablet] = useState(false);
-
-  // 초기에 isMobile 이랑 isTablet이 false 니까, desktop 사이즈로 데이타 가져오는 이슈: 아마 IIFE로 초기 스테이트값 정해주고 시작하는게 좋을듯.
-  // 디펜던시리스트에 isMobile, isTablet 얘네가 있으니까, 데이터를 쓸데 없이 가져오는듯? 객체로 담아서 쓰는건 어떨까?
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     const mobileMediaQuery = window.matchMedia('screen and (max-width: 767px)');
@@ -39,8 +37,10 @@ function App() {
     mobileMediaQuery.addListener(handleMobileChange);
     tabletMediaQuery.addListener(handleTabletChange);
 
-    handleMobileChange(mobileMediaQuery);
-    handleTabletChange(tabletMediaQuery);
+    setIsMobile(mobileMediaQuery.matches);
+    setIsTablet(tabletMediaQuery.matches);
+    setIsInitialized(true);
+
     return () => {
       mobileMediaQuery.removeListener(handleMobileChange);
       tabletMediaQuery.removeListener(handleTabletChange);
@@ -80,17 +80,21 @@ function App() {
   };
 
   useEffect(() => {
+    if (!isInitialized) return;
+
     const responsivePageSize = isMobile ? 1 : isTablet ? 2 : 4;
     loadFavoriteItems({
       order: 'favorite',
       pageSize: responsivePageSize,
     });
-  }, [isMobile, isTablet]);
+  }, [isMobile, isTablet, isInitialized]);
 
   useEffect(() => {
+    if (!isInitialized) return;
+
     const responsivePageSize = isMobile ? 4 : isTablet ? 6 : 10;
     loadAllItems({ order, page, pageSize: responsivePageSize });
-  }, [order, page, isMobile, isTablet]);
+  }, [order, page, isMobile, isTablet, isInitialized]);
 
   return (
     <>
