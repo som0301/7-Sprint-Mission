@@ -1,8 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import Items from './pages/Items/index';
-import Community from './pages/Community/Community';
 import './App.css';
 import Header from './Header';
+import Home from './pages/Home/Home';
+import Items from './pages/Items/Items';
+import Community from './pages/Community/Community';
+import Login from './pages/Login/Login';
 
 function App() {
   return (
@@ -12,13 +14,10 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/community" element={<Community />} />
         <Route path="/items" element={<Items />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );
 }
-
-const Home = () => {
-  return <div>Home Page</div>;
-};
 
 export default App;
