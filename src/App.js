@@ -30,32 +30,21 @@ function App() {
       'screen and (min-width: 768px) and (max-width: 1199px)'
     );
 
-    const handleMobileChange = (e) => {
-      const nextIsMobile = e.matches;
-      setDeviceType((prevType) => ({
-        ...prevType,
-        isMobile: nextIsMobile,
-      }));
+    const handleDeviceChange = () => {
+      const nextIsMobile = mobileMediaQuery.matches;
+      const nextIsTablet = tabletMediaQuery.matches;
+      const nextDeviceType = { isMobile: nextIsMobile, isTablet: nextIsTablet };
+      setDeviceType(nextDeviceType);
     };
 
-    const handleTabletChange = (e) => {
-      const nextIsTablet = e.matches;
-      setDeviceType((prevType) => ({
-        ...prevType,
-        isTablet: nextIsTablet,
-      }));
-    };
+    mobileMediaQuery.addListener(handleDeviceChange);
+    tabletMediaQuery.addListener(handleDeviceChange);
 
-    handleMobileChange(mobileMediaQuery);
-    handleTabletChange(tabletMediaQuery);
+    handleDeviceChange();
     setIsInitialized(true);
-
-    mobileMediaQuery.addListener(handleMobileChange);
-    tabletMediaQuery.addListener(handleTabletChange);
-
     return () => {
-      mobileMediaQuery.removeListener(handleMobileChange);
-      tabletMediaQuery.removeListener(handleTabletChange);
+      mobileMediaQuery.removeListener(handleDeviceChange);
+      tabletMediaQuery.removeListener(handleDeviceChange);
     };
   }, []);
 
