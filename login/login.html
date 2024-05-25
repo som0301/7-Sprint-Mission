@@ -18,20 +18,27 @@
     </header>
     <div class="container">
       <main>
-        <form action="">
+        <form id="login-form" action="">
           <label for="LOGIN-id">이메일</label>
           <input
             id="LOGIN-id"
             type="email"
             placeholder="이메일을 입력해주세요"
           />
+          <div class="null-err">이메일을 입력해주세요</div>
+          <div class="not-an-email-err">잘못된 이메일 형식입니다</div>
+
           <label for="LOGIN-pwd">비밀번호</label>
           <input
             id="LOGIN-pwd"
             type="password"
             placeholder="비밀번호를 입력해주세요"
           />
-          <button class="for-submit" type="submit">로그인</button>
+          <div class="pwd-null-err">비밀번호를 입력해주세요</div>
+          <div class="pwd-is-short-err">비밀번호를 8자 이상 입력해주세요</div>
+          <button id="login-btn" class="for-submit" type="submit" disabled>
+            로그인
+          </button>
         </form>
         <div class="easy-login">
           <div class="easy-login-text">간편 로그인하기</div>
@@ -55,5 +62,6 @@
         </div>
       </main>
     </div>
+    <script src="login.js"></script>
   </body>
 </html>

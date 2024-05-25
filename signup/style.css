@@ -110,10 +110,18 @@ label {
   font-weight: 600;
 }
 
-.for-submit:hover {
+.active-button {
+  background-color: var(--blue);
+}
+
+.inactive-button {
+  background-color: #9ca3af;
+}
+
+/* .for-submit:hover {
   background-color: var(--blue);
   cursor: pointer;
-}
+} */
 
 .easy-login {
   display: flex;
@@ -150,7 +158,8 @@ label {
 
 form input {
   border-radius: 12px;
-  border: none;
+  border: 0px solid;
+  outline: 0px solid;
   background-color: #f3f4f6;
   width: 100%;
   height: 56px;
@@ -174,10 +183,10 @@ form input {
   color: var(--blue);
 }
 
-input:focus {
+/* input:focus {
   /* border:none 이기 때문에 outline으로 focus 색상 설정 */
-  outline-color: var(--blue);
-}
+/* outline-color: var(--blue);
+} */
 
 input:focus::placeholder {
   opacity: 0;
@@ -211,4 +220,53 @@ input:focus::placeholder {
   header {
     margin-bottom: 0;
   }
+}
+
+/* ---------------------- */
+
+.focused-border {
+  border: 1px solid var(--blue);
+}
+
+/* --------for email err */
+.err-border {
+  border: 1px solid red;
+}
+
+.null-err {
+  display: none;
+  color: red;
+}
+
+.not-an-email-err {
+  display: none;
+  color: red;
+}
+
+/* ---------for username err--- */
+
+.null-name-err {
+  display: none;
+  color: red;
+}
+
+/* ---------for pwd err ------- */
+
+.pwd-null-err {
+  display: none;
+  color: red;
+}
+
+.pwd-is-short-err {
+  display: none;
+  color: red;
+}
+
+.pwd-is-not-correct {
+  display: none;
+  color: red;
+}
+
+.correct-border {
+  border: 1px solid green;
 }
