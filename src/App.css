@@ -24,6 +24,7 @@ header {
   padding: 0;
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 .nav-container .logo img {
@@ -57,4 +58,5 @@ header {
   font-weight: 600;
   color: #fff;
   background-color: #3692ff;
+  cursor: pointer;
 }
