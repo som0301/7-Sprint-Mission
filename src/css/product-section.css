@@ -13,13 +13,17 @@
 }
 
 .product-section__header-text {
-  flex-basis: 12.5rem;
   flex-grow: 1;
   font-weight: 700;
   font-size: 1.25rem;
   color: var(--text-color-dark-gray);
 }
-
+.product-section__header__container {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 100%;
+  gap: 0.5rem;
+}
 .product-section__header__input {
   flex-basis: 18.75rem;
   height: 2.625rem;
@@ -72,4 +76,10 @@
 .orderby__favorite {
   border-top: none;
   border-radius: 0 0 0.75rem 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+  .product-section__header__container {
+    flex-basis: 21.875rem;
+  }
 }
