@@ -7,9 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.header__tab-list a {
   color: var(--gray-600);
   font-family: Pretendard;
   font-size: 18px;
@@ -18,4 +16,12 @@
 
 .active a {
   color: var(--main-color);
+}
+
+@media (max-width: 767px) {
+  .header__tab-list {
+    width: 72px;
+
+    font-size: 16px;
+  }
 }

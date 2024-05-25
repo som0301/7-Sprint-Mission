@@ -1,12 +1,12 @@
 import logoText from "/src/assets/logo-text.svg";
+import { Link } from "react-router-dom";
 
 function LogoText({ className }) {
   return (
-    <a href="/" style={{ display: "flex", alighItems: "center" }}>
+    <Link to="/">
       <img src={logoText} className={className} />
-    </a>
+    </Link>
   );
 }
-// TODO: NavLink로 변경하기..
 
 export default LogoText;

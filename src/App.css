@@ -2,7 +2,6 @@
 
 /* //TODO: css 리팩토링 */
 /* TODO: 헤더 반응형 갭 변경*/
-/* TODO: 모바일 버전 검색 부분 배치 변경 */
 
 * {
   box-sizing: border-box;
@@ -30,6 +29,12 @@ a {
 li {
   color: var(--gray-600);
   list-style: none;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
 
 .products-list-title {
@@ -184,6 +189,9 @@ header {
   header {
     padding: 0 34px;
   }
+  .header-left {
+    gap: 20px;
+  }
 }
 @media (max-width: 767px) {
   .best-products-col {
@@ -225,6 +233,8 @@ header {
     justify-content: space-between;
     align-items: center;
   }
-}
 
-/* TODO: input search div 확인하고 order 변경 */
+  .header-left {
+    gap: 16px;
+  }
+}

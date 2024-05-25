@@ -7,18 +7,11 @@ import { useState } from "react";
 
 import { useResponsiveApi } from "../../Responsive";
 
-const flexColumnStyle = {
-  display: "flex",
-  displayDirction: "column",
-  alignItems: "center",
-  gap: "32px",
-};
-
 function Header() {
   const { isMobile } = useResponsiveApi();
   return (
     <header>
-      <div style={flexColumnStyle}>
+      <div className="header-left">
         {!isMobile ? (
           <LogoImage id="header-logo" />
         ) : (
