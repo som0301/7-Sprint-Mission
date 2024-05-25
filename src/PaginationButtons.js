@@ -10,7 +10,8 @@ function PageButton({ children, onClick }) {
 
 export default function PaginationButtons({ onClick, page, setPage }) {
   const onPreviousPage = () => {
-    onClick(page--);
+    const isPageOutOfBounds = page <= 1 || page >= 5;
+    isPageOutOfBounds ? onClick(page--) : onClick(page);
   };
 
   const onPagination = ({ target }) => {
@@ -19,7 +20,8 @@ export default function PaginationButtons({ onClick, page, setPage }) {
   };
 
   const onNextPage = () => {
-    onClick(page++);
+    const isPageOutOfBounds = page <= 1 || page >= 5;
+    isPageOutOfBounds ? onClick(page--) : onClick(page);
   };
 
   return (

@@ -21,7 +21,6 @@ function App() {
 
   // 초기에 isMobile 이랑 isTablet이 false 니까, desktop 사이즈로 데이타 가져오는 이슈: 아마 IIFE로 초기 스테이트값 정해주고 시작하는게 좋을듯.
   // 디펜던시리스트에 isMobile, isTablet 얘네가 있으니까, 데이터를 쓸데 없이 가져오는듯? 객체로 담아서 쓰는건 어떨까?
-  // 페이지 값이 너무 높거나 낮아버리는 문제점. 페이지 최소는 1, 최대는 5로 정할까. 페이지 0되는 문제점.
 
   useEffect(() => {
     const mobileMediaQuery = window.matchMedia('screen and (max-width: 767px)');
