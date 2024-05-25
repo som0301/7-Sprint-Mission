@@ -1,8 +1,11 @@
 import './css/pageButton.css';
 
-function PageButton({ children, onClick }) {
+function PageButton({ children, onClick, isActive }) {
   return (
-    <button onClick={onClick} className="page-button">
+    <button
+      onClick={onClick}
+      className={`page-button ${isActive ? 'page-button__active' : ''}`}
+    >
       {children}
     </button>
   );
@@ -30,6 +33,7 @@ export default function PaginationButtons({ onClick, page, setPage }) {
         return (
           <PageButton
             key={pageNumber}
+            isActive={page === pageNumber}
             onClick={() => {
               onPagination(pageNumber);
             }}

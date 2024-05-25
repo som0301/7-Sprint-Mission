@@ -21,7 +21,7 @@
 }
 
 .page-button:hover,
-.page-button__on {
+.page-button__active {
   background-color: var(--bg-color-blue);
   color: var(--text-color-white);
 }
