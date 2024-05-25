@@ -44,6 +44,7 @@ function AllItemsSection() {
     const [ItemCount, setItemCount] = useState(getWidth());
     const [Order, setOrder] = useState("recent");
     const [Poninter, setPoninter] = useState(1);
+    const [Title, setTitle] = useState("전체 상품");
 
     const AllItemsLoad = async (ItemCount) => {
         const response = await CallAPI(Poninter, ItemCount, Order);
@@ -63,14 +64,21 @@ function AllItemsSection() {
         };
     }, []);
     
+
     useEffect(() => {
         AllItemsLoad(ItemCount, Order);
+        if(ItemCount < 10) {
+            setTitle("판매 중인 상품");
+        }
+        else {
+            setTitle("전체 상품")
+        }
     }, [ItemCount, Order]);
 
     return (
         <div className="AllItemLayer">
             <div className="AllItemMenu">
-                <h1>전체 상품</h1>
+                <h1>{Title}</h1>
                 <div className="ItemCustom">
                     <SeachInput></SeachInput>
                     <Link to="/additem"><button className="AddItemButton">상품 등록하기</button></Link>
