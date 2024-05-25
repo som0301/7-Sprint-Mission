@@ -10,18 +10,17 @@ function PageButton({ children, onClick }) {
 
 export default function PaginationButtons({ onClick, page, setPage }) {
   const onPreviousPage = () => {
-    const isPageOutOfBounds = page <= 1 || page >= 5;
-    isPageOutOfBounds ? onClick(page--) : onClick(page);
+    const isPageOutOfBounds = page <= 1;
+    isPageOutOfBounds || onClick(page - 1);
   };
 
-  const onPagination = ({ target }) => {
-    const nextPage = +target.textContent;
+  const onPagination = (nextPage) => {
     onClick(nextPage);
   };
 
   const onNextPage = () => {
-    const isPageOutOfBounds = page <= 1 || page >= 5;
-    isPageOutOfBounds ? onClick(page--) : onClick(page);
+    const isPageOutOfBounds = page >= 5;
+    isPageOutOfBounds || onClick(page + 1);
   };
 
   return (
@@ -29,7 +28,12 @@ export default function PaginationButtons({ onClick, page, setPage }) {
       <PageButton onClick={onPreviousPage}>&lt;</PageButton>
       {[1, 2, 3, 4, 5].map((pageNumber) => {
         return (
-          <PageButton key={pageNumber} onClick={onPagination}>
+          <PageButton
+            key={pageNumber}
+            onClick={() => {
+              onPagination(pageNumber);
+            }}
+          >
             {pageNumber}
           </PageButton>
         );
