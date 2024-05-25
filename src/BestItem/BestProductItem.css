@@ -1,7 +1,12 @@
 .best-container {
   margin-top: 94px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
 }
-.best-title {
+.best-container > h2 {
   color: #111827;
   font-size: 20px;
 }
@@ -13,8 +18,37 @@
 .itemlist {
   display: flex;
   flex-direction: column;
+  color:#1F2937;
 }
 .imgurl {
   width: 282px;
   height: 282px;
+  border-radius: 18px;
+  gap:16px;
+  padding-bottom: 16px;
+}
+.name{
+  font-size: 14px;
+  font-weight:500;
+  padding-bottom: 6px;
+}
+.price{
+  font-size: 16px;
+  font-weight: 700;
+  padding-bottom: 6px;
+}
+.favoriteCount{
+  font-size: 12px;
+  font-weight: 500;
+  color:#4B5563;
+  text-align: left;
+}
+.like{
+  display: flex;
+  align-items: center;
+  gap:4px;
+}
+.heart{
+  position: relative;
+  top: 1px;
 }

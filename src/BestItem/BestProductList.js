@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import BestProductItem from "./BestProductItem";
 import "./BestProductItem.css";
 import { useState } from "react";
-import '../reset.css';
 
 function BestProductList() {
   const [productList, setProductList] = useState([]);
@@ -20,7 +19,7 @@ function BestProductList() {
 
   return (
     <div className="best-container">
-      <h2 className="best-title">베스트 상품</h2>
+      <h2>베스트 상품</h2>
       <ul className="bestproductlist">
         {productList.map((item) => (
           <BestProductItem
