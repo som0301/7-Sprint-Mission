@@ -9,6 +9,11 @@ import './css/global.css';
 import './css/App.css';
 
 function App() {
+  const INITIAL_DEVICETYPE = {
+    isMobile: true,
+    isTablet: false,
+  };
+
   const [favoriteItems, setFavoriteItems] = useState([]);
   const [allItems, setAllItems] = useState([]);
   const [order, setOrder] = useState('recent');
@@ -18,11 +23,6 @@ function App() {
   const [productsError, setProductsError] = useState(null);
   const [deviceType, setDeviceType] = useState(INITIAL_DEVICETYPE);
   const [isInitialized, setIsInitialized] = useState(false);
-
-  const INITIAL_DEVICETYPE = {
-    isMobile: true,
-    isTablet: false,
-  };
 
   useEffect(() => {
     const mobileMediaQuery = window.matchMedia('screen and (max-width: 767px)');

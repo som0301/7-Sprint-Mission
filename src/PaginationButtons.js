@@ -27,11 +27,13 @@ export default function PaginationButtons({ onClick, page, setPage }) {
   return (
     <div className="pagination-buttons">
       <PageButton onClick={onPreviousPage}>&lt;</PageButton>
-      <PageButton onClick={onPagination}>1</PageButton>
-      <PageButton onClick={onPagination}>2</PageButton>
-      <PageButton onClick={onPagination}>3</PageButton>
-      <PageButton onClick={onPagination}>4</PageButton>
-      <PageButton onClick={onPagination}>5</PageButton>
+      {[1, 2, 3, 4, 5].map((pageNumber) => {
+        return (
+          <PageButton key={pageNumber} onClick={onPagination}>
+            {pageNumber}
+          </PageButton>
+        );
+      })}
       <PageButton onClick={onNextPage}>&gt;</PageButton>
     </div>
   );
