@@ -8,14 +8,20 @@ import "./App.css";
 import AllProductsList from "./components/AllProductsList";
 import "/src/styles/Button.css";
 
-function Items({ isMobile }) {
+import { useResponsiveApi } from "./Responsive";
+
+function Items() {
   const [allProducts, setAllProducts] = useState([]);
   const [bestProducts, setBestProducts] = useState([]);
   const [order, setOrder] = useState("recent");
   const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
 
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  // const [windowSize, setWindowSize] = useState(window.innerWidth);
+  // const [pageSize, setPageSize] = useState(10);
+
+  const { isDesktop, isTablet } = useResponsiveApi();
+  const allProductsPageSize = isDesktop ? 10 : isTablet ? 6 : 4;
+  const bestProductsPageSize = isDesktop ? 4 : isTablet ? 2 : 1;
 
   const sortedProducts = allProducts.sort((a, b) => b[order] - a[order]);
 
@@ -29,33 +35,35 @@ function Items({ isMobile }) {
     setAllProducts(list);
   };
 
-  window.onresize = () => {
-    setWindowSize(window.innerWidth);
+  // window.onresize = () => {
+  //   setWindowSize(window.innerWidth);
 
-    if (windowSize >= 1200) setPageSize(10);
-    else if (1200 > windowSize && windowSize >= 768) setPageSize(6);
-    else setPageSize(4);
-  };
+  //   console.log(windowSize); // 임시
+
+  //   if (windowSize >= 1200) setPageSize(10);
+  //   else if (1200 > windowSize && windowSize >= 768) setPageSize(6);
+  //   else setPageSize(4);
+  // };
 
   useEffect(() => {
     handleBestProductsLoad({
       orderBy: "favorite",
-      pageSize: 4,
+      pageSize: `${bestProductsPageSize}`,
       page: 1,
     });
-  }, []);
+  }, [bestProductsPageSize]);
 
   useEffect(() => {
     handleAllProductsLoad({
       orderBy: `${order}`,
-      pageSize: `${pageSize}`,
+      pageSize: `${allProductsPageSize}`,
       page: `${page}`,
     });
-  }, [order, page, pageSize]);
+  }, [order, page, allProductsPageSize]);
 
   return (
     <>
-      <Header className="header" />
+      {/* <Header className="header" /> */}
       <main>
         <BestProductsList
           className="best-products-list"

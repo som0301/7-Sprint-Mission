@@ -5,6 +5,8 @@ import LogoImage from "./LogoImage";
 import LogoText from "./LogoText";
 import { useState } from "react";
 
+import { useResponsiveApi } from "../../Responsive";
+
 const flexColumnStyle = {
   display: "flex",
   displayDirction: "column",
@@ -13,13 +15,7 @@ const flexColumnStyle = {
 };
 
 function Header() {
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
-  const [isMobile, setIsMobile] = useState(windowSize < 768 ? true : false);
-
-  window.onresize = () => {
-    setWindowSize(window.innerWidth);
-    setIsMobile(windowSize < 768 ? true : false);
-  };
+  const { isMobile } = useResponsiveApi();
   return (
     <header>
       <div style={flexColumnStyle}>

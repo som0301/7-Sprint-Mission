@@ -5,6 +5,8 @@ import "/src/styles/Dropdown.css";
 
 import iconSort from "/src/assets/ic_sort.svg";
 
+import { useResponsiveApi } from "/src/Responsive";
+
 const cursorPointerStyle = {
   curser: "pointer",
 };
@@ -26,13 +28,16 @@ function DropdownList({ setOrder }) {
 
 function Dropdown({ setOrder, order }) {
   const [isDropdownView, setDropdownView] = useState(false);
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
-  const [isMobile, setIsMobile] = useState(windowSize < 768 ? true : false);
+  //   const [windowSize, setWindowSize] = useState(window.innerWidth);
+  //   const [isMobile, setIsMobile] = useState(windowSize < 768 ? true : false);
 
-  window.onresize = () => {
-    setWindowSize(window.innerWidth);
-    setIsMobile(windowSize < 768 ? true : false);
-  };
+  //   window.onresize = () => {
+  //     setWindowSize(window.innerWidth);
+  //     setIsMobile(windowSize < 768 ? true : false);
+  //   };
+
+  const { isMobile } = useResponsiveApi();
+
   const handleClickContainer = () => {
     setDropdownView(!isDropdownView);
   };

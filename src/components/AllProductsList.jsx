@@ -55,7 +55,7 @@ function AllProductsList({
       <div className="row">
         {products.map((product) => {
           return (
-            <div className="all-products-col">
+            <div className="products-col all-products-col">
               <AllProductsListItem
                 className="all-product-item"
                 product={product}

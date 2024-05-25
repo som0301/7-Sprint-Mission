@@ -14,6 +14,7 @@ import "/src/styles/Button.css";
 import Items from "./Items";
 import NotFound from "./NotFound";
 import AddItem from "./AddItem";
+import { ResponsiveProvider } from "./Responsive";
 
 function App() {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
@@ -26,13 +27,23 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Header isMobile={isMobile} />
         <Routes>
-          <Route path="/items" element={<Items isMobile={isMobile} />}></Route>
+          <Route path="/items" element={<Items />}></Route>
           <Route path="*" element={<NotFound />}></Route>
           <Route path="/additem" element={<AddItem />}></Route>
         </Routes>
+      </BrowserRouter> */}
+      <BrowserRouter>
+        <ResponsiveProvider>
+          <Header isMobile={isMobile} />
+          <Routes>
+            <Route path="/items" element={<Items />}></Route>
+            <Route path="/additem" element={<AddItem />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
+          </Routes>
+        </ResponsiveProvider>
       </BrowserRouter>
     </>
   );

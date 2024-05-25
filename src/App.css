@@ -75,6 +75,10 @@ header {
   gap: 24px;
 }
 
+.products-col {
+  width: 100%;
+}
+
 .best-products-col {
   flex: 0 0 auto;
   width: 25%;
@@ -190,11 +194,11 @@ header {
   }
 
   main {
-    width: 282px;
+    width: 344px;
   }
 
   .all-products-col {
-    width: 48.3%;
+    width: 48.8%;
   }
 
   .input-search {
@@ -207,4 +211,20 @@ header {
   .all-product-item > img {
     height: 136px;
   }
+
+  .search-order-div {
+    flex-wrap: wrap;
+  }
+
+  .search-order-div .input--color {
+    order: 2;
+  }
+  .search-order-div .btn-product-register {
+    order: 1;
+  }
+  .search-order-div .dropdown-ul {
+    order: 3;
+  }
 }
+
+/* TODO: input search div 확인하고 order 변경 */
