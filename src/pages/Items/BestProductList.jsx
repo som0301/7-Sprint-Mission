@@ -12,9 +12,8 @@ const BestProductList = () => {
       .then((result) => setProduct(result.list));
   }, []);
 
-  console.log('ddd', product);
   return (
-    <section>
+    <section className="best-product">
       <h2>베스트 상품</h2>
       <ul className="item-list">
         {product.map((item) => (
