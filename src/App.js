@@ -9,10 +9,6 @@ import './css/global.css';
 import './css/App.css';
 
 function App() {
-  const INITIAL_DEVICETYPE = {
-    isMobile: true,
-    isTablet: false,
-  };
   const [favoriteItems, setFavoriteItems] = useState([]);
   const [allItems, setAllItems] = useState([]);
   const [order, setOrder] = useState('recent');
@@ -23,6 +19,11 @@ function App() {
   const [deviceType, setDeviceType] = useState(INITIAL_DEVICETYPE);
   const [isInitialized, setIsInitialized] = useState(false);
 
+  const INITIAL_DEVICETYPE = {
+    isMobile: true,
+    isTablet: false,
+  };
+
   useEffect(() => {
     const mobileMediaQuery = window.matchMedia('screen and (max-width: 767px)');
     const tabletMediaQuery = window.matchMedia(
@@ -30,7 +31,6 @@ function App() {
     );
 
     const handleMobileChange = (e) => {
-      console.log('isMobile: ' + e.matches);
       const nextIsMobile = e.matches;
       setDeviceType((prevType) => ({
         ...prevType,
@@ -39,7 +39,6 @@ function App() {
     };
 
     const handleTabletChange = (e) => {
-      console.log('isTablet: ' + e.matches);
       const nextIsTablet = e.matches;
       setDeviceType((prevType) => ({
         ...prevType,
@@ -47,12 +46,12 @@ function App() {
       }));
     };
 
-    mobileMediaQuery.addListener(handleMobileChange);
-    tabletMediaQuery.addListener(handleTabletChange);
-
     handleMobileChange(mobileMediaQuery);
     handleTabletChange(tabletMediaQuery);
     setIsInitialized(true);
+
+    mobileMediaQuery.addListener(handleMobileChange);
+    tabletMediaQuery.addListener(handleTabletChange);
 
     return () => {
       mobileMediaQuery.removeListener(handleMobileChange);
@@ -112,7 +111,7 @@ function App() {
 
   return (
     <>
-      <NavBar isMobile={false} />
+      <NavBar isMobile={deviceType.isMobile} />
       <FavoriteProductSection items={favoriteItems} />
       <AllProductSection
         items={allItems}
