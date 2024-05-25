@@ -19,12 +19,12 @@ function App() {
   }, []);
 
   return (
-    <div className="header">
+    <div>
       {/* <header className="App-header" /> */}
       <Header />
       <div> 베스트 상품 </div>
-      <div> 전체 상품 </div>
       <BestProductList items={items} />
+      <div> 전체 상품 </div>
     </div>
   );
 }

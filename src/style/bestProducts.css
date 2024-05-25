@@ -1,0 +1,21 @@
+.BestProductListItem-img {
+  border-radius: 16px;
+  width: 262px;
+}
+
+.item-title {
+  font-family: Pretendard;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16.71px;
+  text-align: left;
+}
+
+.price {
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.09px;
+  text-align: left;
+  margin-top: 6px;
+}

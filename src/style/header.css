@@ -1,17 +1,20 @@
 .header {
   border-bottom: 1px;
   display: flex;
-  /* flex-wrap: wrap; */
-  flex-direction: column;
-  /* align-items: center;
-  justify-content: center; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 200px;
 }
 
-/* ul {
+.logo-menutab {
+  display: flex;
+  align-items: center;
+}
+ul {
   display: inline;
   margin: 0;
   padding: 0;
-} */
+}
 
 li {
   list-style: none;
@@ -23,17 +26,13 @@ li {
   width: 153px;
 }
 
-.menu-tab {
-  display: inline-block;
-}
-
 .menu {
-  /* display: inline-block; */
+  display: inline-block;
   font-family: Pretendard;
   font-size: 18px;
   font-weight: 700;
   line-height: 21.48px;
-  text-align: center;
+  text-align: centers;
   color: #4b5563;
   margin: 16px;
 }

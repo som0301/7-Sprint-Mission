@@ -1,4 +1,5 @@
 import "../style/header.css";
+import "../style/bestProducts.css";
 
 function BestProductListItem({ item }) {
   return (
@@ -9,8 +10,8 @@ function BestProductListItem({ item }) {
         alt={item.name}
       />
       <div>
-        <h1>{item.name}팝니다</h1>
-        <p>{item.price}</p>
+        <h1 className="item-title">{item.name}팝니다</h1>
+        <p className="price">{item.price}원</p>
         <p>{item.favoriteCount}</p>
       </div>
     </div>

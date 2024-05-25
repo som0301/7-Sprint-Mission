@@ -5,10 +5,11 @@ import "../style/header.css";
 function Header() {
   return (
     <div className="header">
-      <img class="logo-img" src={logoimg} alt="logoImg" />
-      {/* <div className="menu-tab"> */}
-      <MenuTab />
-      {/* </div> */}
+      <div className="logo-menutab">
+        <img class="logo-img" src={logoimg} alt="logoImg" />
+        <MenuTab />
+      </div>
+      <button>로그인</button>
     </div>
   );
 }
