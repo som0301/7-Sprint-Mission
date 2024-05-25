@@ -1,4 +1,6 @@
 .product-section {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem;
 }
 
@@ -15,6 +17,7 @@
   flex-grow: 1;
   font-weight: 700;
   font-size: 1.25rem;
+  color: var(--text-color-dark-gray);
 }
 
 .product-section__header__input {
