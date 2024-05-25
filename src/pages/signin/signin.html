@@ -1,66 +1,102 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+  <head>
     <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"
     />
     <link
-    rel="stylesheet" href="./signin.css">
-    <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      rel="stylesheet"
+      href="./signin.css"
+    />
+    <link
+      rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>판다마켓</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- 메인 컨텐츠 -->
     <main class="main">
-        <header>
-            <a href="../index/index.html">
-                <img 
-                    class="container__logo" 
-                    src="../../images/logo.png" 
-                    alt="판다 마켓"
-                    />
-            </a>
-        </header>
-    <!-- 아이디 비밀번호 박스 -->
-        <div class="container">
-            <div class="email-box">
-                <label class="email-box__text">이메일</label>
-                <input class="email" placeholder="   이메일을 입력해주세요" type="email" onfocus="this.placeholder = ''" />
-            </div>
-            <div class="password-box">
-                <label class="password-box__text">비밀번호</label>
-                <input class="password" placeholder="   비밀번호를 입력해주세요" type="password" onfocus="this.placeholder = ''" /> 
-                <img 
-                    class="password-eye"
-                    src="../../images/closedEye.png" 
-                    alt="비밀번호감긴눈" 
-                    />
-                <button class="loginBtn" type="submit">로그인</button>
-            </div>
-            <!-- 하단 기능 -->
-            <footer>
-                <div class="simple-login">
-                    <p class="simple-login__left">간편 로그인하기</p>
-                    <div class="simple-login__right">
-                        <a href="https://www.google.com/">
-                            <img 
-                                class="simple-login__right__Google"
-                                src="../../images/GooleIcon.png" 
-                                alt="구글 아이콘" 
-                                />
-                        </a>
-                        <a href="https://www.kakaocorp.com/page/">
-                            <img src="../../images/KakaoIcon.png" alt="카카오 아이콘" class="simple-login__right__Kakao">
-                        </a>
-                    </div>
-                </div>
-                <p class="footer-signup">판다마켓이 처음이신가요? <a href="../signup/signup.html">회원가입</a></p>
-            </footer>
+      <header>
+        <a href="../index/index.html">
+          <img
+            class="container__logo"
+            src="../../images/logo.png"
+            alt="판다 마켓"
+          />
+        </a>
+      </header>
+      <!-- 아이디 비밀번호 박스 -->
+      <div class="container">
+        <div class="email-box">
+          <label class="email-box__text">이메일</label>
+          <input
+            class="email"
+            placeholder="이메일을 입력해주세요"
+            type="email"
+            onfocus="this.placeholder = ''"
+          />
+          <p class="email-valid"></p>
         </div>
+        <div class="password-box">
+          <label class="password-box__text">비밀번호</label>
+          <input
+            class="password"
+            placeholder="비밀번호를 입력해주세요"
+            type="password"
+            onfocus="this.placeholder = ''"
+          />
+          <img
+            class="password-eye"
+            src="../../images/closedEye.png"
+            alt="비밀번호감긴눈"
+          />
+          <p class="password-valid"></p>
+        </div>
+        <button
+          class="loginBtn"
+          type="submit"
+          disabled
+          onclick="location.href = '../items/items.html'"
+        >
+          로그인
+        </button>
+        <!-- 하단 기능 -->
+        <footer>
+          <div class="simple-login">
+            <p class="simple-login__left">간편 로그인하기</p>
+            <div class="simple-login__right">
+              <a href="https://www.google.com/">
+                <img
+                  class="simple-login__right__Google"
+                  src="../../images/GooleIcon.png"
+                  alt="구글 아이콘"
+                />
+              </a>
+              <a href="https://www.kakaocorp.com/page/">
+                <img
+                  src="../../images/KakaoIcon.png"
+                  alt="카카오 아이콘"
+                  class="simple-login__right__Kakao"
+                />
+              </a>
+            </div>
+          </div>
+          <p class="footer-signup">
+            판다마켓이 처음이신가요?
+            <a href="../signup/signup.html">회원가입</a>
+          </p>
+        </footer>
+      </div>
     </main>
-</body>
+  </body>
+  <script
+    type="module"
+    src="signin.js"
+  ></script>
 </html>
