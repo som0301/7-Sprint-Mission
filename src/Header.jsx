@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from './assets/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
+  const activeStyle = {
+    color: '#3692ff',
+  };
+
   return (
     <header>
       <div className="nav-container">
@@ -13,11 +17,23 @@ const Header = () => {
         </button>
         <nav>
           <ul>
-            <li>자유게시판</li>
             <li>
-              <Link to="/items" className="link">
+              <NavLink
+                to="/community"
+                className="link"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              >
+                자유게시판
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/items"
+                className="link"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+              >
                 중고마켓
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </nav>
