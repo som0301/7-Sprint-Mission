@@ -1,11 +1,7 @@
 import { useState } from "react";
 import "./ProductPage.css";
 import favoriteImg from "../assets/images/icons/ic_heart.svg";
-
-// 숫자를 쉼표로 구분하여 반환
-function getCommasToNumber(number) {
-  return number.toLocaleString();
-}
+import { getCommasToNumber } from "../utils/productUtils";
 
 function BestProductItem({ items }) {
   return (

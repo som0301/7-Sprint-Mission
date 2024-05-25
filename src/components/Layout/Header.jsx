@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Header.css";
 
-import logoImg from "../assets/images/logo/panda-market-logo.svg";
+import logoImg from "../../assets/images/logo/panda-market-logo.svg";
 
 function Header() {
   return (
@@ -17,9 +17,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <button id="login-button" className="button">
-        로그인
-      </button>
+      <button className="blue-button button">로그인</button>
     </header>
   );
 }

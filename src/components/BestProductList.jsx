@@ -11,7 +11,7 @@ function BestProductList() {
   const fetchData = async (options) => {
     let result;
     try {
-      result = await getItems("favorite", ITEM_INIT);
+      result = await getItems({ orderBy: "favorite", pageSize: ITEM_INIT });
     } catch (error) {
       console.log(error);
       return;
@@ -24,9 +24,7 @@ function BestProductList() {
 
   useEffect(() => {
     fetchData();
-  }, [items]);
-
-  // const { list } = result;
+  }, []);
 
   return (
     <section className="best-products">

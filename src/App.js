@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import Header from "./Header";
-import BestProductList from "./BestProductList";
-import AllProductList from "./AllProductList";
+import Header from "./components/Layout/Header";
+import BestProductList from "./components/BestProductList";
+import AllProductList from "./components/AllProductList";
 
 function App() {
   return (
