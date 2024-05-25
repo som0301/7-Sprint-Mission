@@ -1,0 +1,19 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  --solid-gray: #dfdfdf;
+
+  --blue: #3692ff;
+  --error-red: #f74747;
+
+  --hover-blue: #1967d6;
+  --focus-blue: #1251aa;
+  --hyperlink-blue: #3182f6;
+
+  --disable-button-gray: #9ca3af;
+  --activate-button-blue: var(--blue);
+
+  --fontsize-18: 1.125em;
+  --fontsize-15: 0.9375em;
+}

@@ -24,7 +24,8 @@ body {
 }
 
 main {
-  margin-top: 70px;
+  margin: 94px auto;
+  width: 1200px;
 }
 
 header {
@@ -68,4 +69,14 @@ header {
   font-weight: 600;
   border-radius: 8px;
   padding: 11.5px 23px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+img {
+  border-radius: 16px;
 }

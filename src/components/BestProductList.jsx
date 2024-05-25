@@ -1,25 +1,39 @@
-import { useState } from "react";
-import getItems from "../api";
+import { useEffect, useState } from "react";
+import getItems from "../api/api";
+import BestProductItem from "./BestProductItem";
+import "./ProductPage.css";
+
+const ITEM_INIT = 4;
 
 function BestProductList() {
-  const handleLoad = async (options) => {
+  const [items, setItems] = useState([]);
+
+  const fetchData = async (options) => {
     let result;
     try {
-      result = await getItems("favorite", 0, 0);
-      console.log(result.list);
+      result = await getItems("favorite", ITEM_INIT);
     } catch (error) {
       console.log(error);
       return;
     } finally {
     }
+
+    const { list } = result;
+    setItems(list);
   };
 
-  handleLoad();
+  useEffect(() => {
+    fetchData();
+  }, [items]);
+
   // const { list } = result;
 
   return (
-    <section>
-      <div>베스트 상품</div>
+    <section className="best-products">
+      <h1>베스트 상품</h1>
+      <ul className="list-area">
+        <BestProductItem items={items} />
+      </ul>
     </section>
   );
 }
