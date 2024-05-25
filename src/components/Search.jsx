@@ -3,8 +3,7 @@ import "/src/styles/Search.css";
 
 function Search({ name, className }) {
   return (
-    <div>
-      {/* <img src={iconSearch} /> */}
+    <div className="input-search-div">
       <input
         name={name}
         className="input-search"

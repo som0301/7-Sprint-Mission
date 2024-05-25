@@ -216,7 +216,7 @@ header {
     flex-wrap: wrap;
   }
 
-  .search-order-div .input--color {
+  .search-order-div .input-search-div {
     order: 2;
   }
   .search-order-div .btn-product-register {

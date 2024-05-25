@@ -8,7 +8,7 @@ export function ResponsiveProvider({ children }) {
     setIsTablet(769 <= window.innerWidth && window.innerWidth < 1200);
     setIsMobile(window.innerWidth < 768);
   };
-  // 뷰포트 너비가 768px 미만일 경우 MO 모드로 간주한다.
+
   const IS_DESKTOP = matchMedia("screen and (min-width: 1200px)").matches;
   const IS_TABLET = matchMedia("screen and (max-width: 1199px)").matches;
   const IS_MOBILE = matchMedia("screen and (max-width: 767px)").matches;

@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Header from "/src/components/header/Header";
 import BestProductsList from "./components/BestProductsList";
 import { getProducts } from "./components/api/api";
 
@@ -16,9 +15,6 @@ function Items() {
   const [order, setOrder] = useState("recent");
   const [page, setPage] = useState(1);
 
-  // const [windowSize, setWindowSize] = useState(window.innerWidth);
-  // const [pageSize, setPageSize] = useState(10);
-
   const { isDesktop, isTablet } = useResponsiveApi();
   const allProductsPageSize = isDesktop ? 10 : isTablet ? 6 : 4;
   const bestProductsPageSize = isDesktop ? 4 : isTablet ? 2 : 1;
@@ -34,16 +30,6 @@ function Items() {
     const { list } = await getProducts(options);
     setAllProducts(list);
   };
-
-  // window.onresize = () => {
-  //   setWindowSize(window.innerWidth);
-
-  //   console.log(windowSize); // 임시
-
-  //   if (windowSize >= 1200) setPageSize(10);
-  //   else if (1200 > windowSize && windowSize >= 768) setPageSize(6);
-  //   else setPageSize(4);
-  // };
 
   useEffect(() => {
     handleBestProductsLoad({
@@ -63,7 +49,6 @@ function Items() {
 
   return (
     <>
-      {/* <Header className="header" /> */}
       <main>
         <BestProductsList
           className="best-products-list"
