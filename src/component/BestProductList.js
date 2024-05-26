@@ -16,7 +16,7 @@ function BestProductsList({ products, className }) {
   return (
     <div className={className}>
       <h2 className="products-list-title">베스트 상품</h2>
-      <div className="row-list">
+      <div className="grid-list best">
         {products.map((product) => {
           return <BestProductListItem key={product.id} product={product} />;
         })}

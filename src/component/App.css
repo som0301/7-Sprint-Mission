@@ -26,10 +26,10 @@ main {
   height: 221px;
 }
 
-.row-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 23px;
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(5, 5fr);
+  gap: 24px;
 }
 
 .search {
@@ -67,5 +67,18 @@ main {
   .best-items {
     display: flex;
     width: 696px;
+  }
+
+  .best.product-image {
+    width: 343px;
+    height: 343px;
+  }
+
+  .grid-list.best {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-list.all {
+    grid-template-columns: repeat(2, 2fr);
   }
 }

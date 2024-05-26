@@ -48,7 +48,7 @@ function AllproductsList({ products, className }) {
           </select>
         </div>
       </div>
-      <div className="row-list">
+      <div className="grid-list all">
         {SortedProducts.map((product) => {
           return <AllProductListItem key={product.id} product={product} />;
         })}
