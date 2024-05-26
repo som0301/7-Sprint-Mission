@@ -36,13 +36,19 @@
   font-size: 16px;
   font-weight: 600;
 }
+.selected {
+  color: var(--blue);
+}
 @media (min-width: 744px) and (max-width: 1199px) {
   .gnb {
     margin: 10px 24px;
   }
 }
-@media (min-width: 375px) and (max-width: 767px) {
+@media (max-width: 744px) {
   .gnb {
     margin: 10px 16px;
+  }
+  .gnb-left {
+    font-size: 16px;
   }
 }

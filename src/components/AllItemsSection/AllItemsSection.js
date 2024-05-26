@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./AllItemsSection.css";
 import { getProducts } from "../../api";
 import ItemCard from "../ItemCard/ItemCard";
+import { Link } from "react-router-dom";
 
 const AllItemsSection = () => {
   const [items, setItems] = useState([]);
@@ -11,18 +12,21 @@ const AllItemsSection = () => {
   const [pageCount, setPageCount] = useState(1);
   const [buttons, setButtons] = useState([]);
   const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
-  const imageSize = {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [imageSize, setImageSize] = useState({
     imageWidth: "221px",
     imageHeight: "221px",
-  };
+  });
 
-  const changePageSize = (windowInnerWidth) => {
-    if (windowInnerWidth < 1199 && windowInnerWidth > 744) {
+  const changeWindowInnerWidth = (windowInnerWidth) => {
+    if (windowInnerWidth >= 744 && windowInnerWidth < 1199) {
       setPageSize(6);
     } else if (windowInnerWidth < 744) {
       setPageSize(4);
+      setImageSize({ imageWidth: "168px", imageHeight: "168px" });
     } else {
       setPageSize(10);
+      setImageSize({ imageWidth: "221px", imageHeight: "221px" });
     }
   };
 
@@ -31,15 +35,14 @@ const AllItemsSection = () => {
   };
 
   useEffect(() => {
-    changePageSize(windowInnerWidth);
     window.addEventListener("resize", handleResize);
+    changeWindowInnerWidth(windowInnerWidth);
   }, [windowInnerWidth]);
 
   const handleLoad = async ({ page, pageSize, orderBy }) => {
     const productsData = await getProducts({ page, pageSize, orderBy });
     setItems(productsData.list);
     setPageCount(Math.ceil(productsData.totalCount / pageSize));
-    console.log(pageCount);
   };
 
   const createPageButtonArray = () => {
@@ -50,8 +53,9 @@ const AllItemsSection = () => {
     return setButtons(buttonArray);
   };
 
-  const handleChangePage = (e) => {
+  const handlePageClick = (e) => {
     setPage(e.target.value);
+    setCurrentPage(e.target.value);
   };
 
   const handleChangeSort = (e) => {
@@ -75,9 +79,9 @@ const AllItemsSection = () => {
             className="all-items-section-search-input"
             placeholder="검색할 상품을 입력해주세요"
           />
-          <button className="all-items-section-product-add-button">
+          <Link to="/additem" className="all-items-section-product-add-button">
             상품 등록하기
-          </button>
+          </Link>
           <select
             className="all-items-section-sort-options-select"
             onChange={handleChangeSort}
@@ -97,9 +101,11 @@ const AllItemsSection = () => {
         {buttons.map((pageNum) => (
           <button
             key={pageNum}
-            className="all-items-section-paination-button"
+            className={`all-items-section-paination-button ${
+              pageNum == currentPage ? "select-page" : ""
+            }`}
             value={pageNum}
-            onClick={handleChangePage}
+            onClick={handlePageClick}
           >
             {pageNum}
           </button>

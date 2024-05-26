@@ -35,6 +35,9 @@
   font-weight: 400;
 }
 .all-items-section-product-add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 12px 23px;
   background-color: var(--blue);
   border: none;
@@ -75,15 +78,21 @@
   border-radius: 40px;
   cursor: pointer;
 }
+
+.select-page {
+  background-color: var(--blue);
+  color: var(--white);
+}
 @media (min-width: 744px) and (max-width: 1199px) {
   .all-items-section-content {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(1, auto);
+    grid-column-gap: 16px;
   }
 }
-@media (min-width: 375px) and (max-width: 767px) {
+@media (min-width: 375px) and (max-width: 743px) {
   .all-items-section-content {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, auto);
+    grid-column-gap: 8px;
+    grid-row-gap: 32px;
   }
 }

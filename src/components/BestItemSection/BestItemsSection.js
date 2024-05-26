@@ -8,16 +8,16 @@ const BestItemsSection = () => {
   const [pageSize, setPageSize] = useState(4);
   const [orderBy, setOderBy] = useState("favorite");
   const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
-  const imageSize = {
-    imageWidth: "282px",
-    imageHeight: "282px",
-  };
+  const [imageSize, setImageSize] = useState({
+    imageWidth: "221px",
+    imageHeight: "221px",
+  });
   const handleLoad = async ({ page, pageSize, orderBy }) => {
     const productsData = await getProducts({ page, pageSize, orderBy });
     setItems(productsData.list);
   };
-  const changePageSize = (windowInnerWidth) => {
-    if (windowInnerWidth < 1199 && windowInnerWidth > 744) {
+  const changeWindowInnerWidth = (windowInnerWidth) => {
+    if (windowInnerWidth >= 744 && windowInnerWidth < 1199) {
       setPageSize(2);
     } else if (windowInnerWidth < 744) {
       setPageSize(1);
@@ -31,7 +31,7 @@ const BestItemsSection = () => {
   };
 
   useEffect(() => {
-    changePageSize(windowInnerWidth);
+    changeWindowInnerWidth(windowInnerWidth);
     window.addEventListener("resize", handleResize);
   }, [windowInnerWidth]);
 
