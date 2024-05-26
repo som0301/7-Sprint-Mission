@@ -1,0 +1,25 @@
+.item-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.item-card-image {
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+.item-card-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+.item-card-price {
+  font-size: 16px;
+  font-weight: 700;
+}
+.item-card-favorite-count {
+  display: flex;
+  align-items: center;
+  gap: 5.27px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray600);
+}
