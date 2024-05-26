@@ -1,13 +1,12 @@
-import React from 'react';
 import { useState, useEffect } from 'react';
-import NavBar from './Nav-bar';
-import FavoriteProductSection from './FavoriteProductSection';
-import AllProductSection from './AllProductSection';
-import PaginationButtons from './PaginationButtons';
+import NavBar from './components/Nav-bar';
+import FavoriteProductSection from './components/FavoriteProductSection';
+import AllProductSection from './components/AllProductSection';
+import PaginationButtons from './components/PaginationButtons';
 import getItems from './api';
-import './css/reset.css';
-import './css/global.css';
-import './css/App.css';
+import './styles/reset.css';
+import './styles/global.css';
+import './styles/App.css';
 
 function App() {
   const INITIAL_DEVICETYPE = {

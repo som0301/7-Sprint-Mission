@@ -1,4 +1,4 @@
-import './css/CommonButton.css';
+import '../styles/CommonButton.css';
 
 export default function CommonButton({ children, onClick, className }) {
   return (

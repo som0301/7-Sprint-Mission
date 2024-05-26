@@ -1,5 +1,5 @@
-import heartImg from './image-resource/panda-product-favorite-count.svg';
-import './css/product-list.css';
+import heartImg from '../image-resource/panda-product-favorite-count.svg';
+import '../styles/product-list.css';
 
 function ProductListItem({ item }) {
   const { images, price, favoriteCount, name } = item;

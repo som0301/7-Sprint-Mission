@@ -1,7 +1,6 @@
-import React from 'react';
-import ProductSectionHeader from './ProductSectionHeader.js';
-import ProductList from './ProductList.js';
-import './css/product-section.css';
+import ProductSectionHeader from './ProductSectionHeader';
+import ProductList from './ProductList';
+import '../styles/product-section.css';
 
 export default function FavoriteProductSection({ items }) {
   const HEADER_TEXT = '베스트 상품';

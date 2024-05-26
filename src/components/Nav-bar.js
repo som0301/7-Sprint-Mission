@@ -1,7 +1,7 @@
 import CommonButton from './CommonButton';
-import logoImgMobile from './image-resource/panda-logo-mobile.svg';
-import logoImg from './image-resource/panda-logo.svg';
-import './css/Nav-bar.css';
+import logoImgMobile from '../image-resource/panda-logo-mobile.svg';
+import logoImg from '../image-resource/panda-logo.svg';
+import '../styles/Nav-bar.css';
 
 export default function NavBar({ isMobile }) {
   const responsiveLogoImg = isMobile ? logoImgMobile : logoImg;

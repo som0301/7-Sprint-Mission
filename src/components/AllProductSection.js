@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import CommonButton from './CommonButton.js';
-import ProductSectionHeader from './ProductSectionHeader.js';
-import ProductList from './ProductList.js';
-import dropdownImg from './image-resource/panda-drop-down.svg';
-import './css/product-section.css';
+import CommonButton from './CommonButton';
+import ProductSectionHeader from './ProductSectionHeader';
+import ProductList from './ProductList';
+import dropdownImg from '../image-resource/panda-drop-down.svg';
+import '../styles/product-section.css';
 
 function OrderbyButton({ onOrder, id, className, isLoading, children }) {
   return (

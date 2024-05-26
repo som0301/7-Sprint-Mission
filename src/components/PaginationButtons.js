@@ -1,4 +1,4 @@
-import './css/pageButton.css';
+import '../styles/pageButton.css';
 
 function PageButton({ children, onClick, isActive, isLoading }) {
   return (
