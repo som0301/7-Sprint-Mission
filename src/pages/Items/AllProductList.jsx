@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AllProductItem from './AllProductItem';
 import Pagination from './Pagination';
 import { getProductItem } from './api';
 import searchIcon from '../../assets/search_icon.svg';
 
 const AllProductList = () => {
+  const navigate = useNavigate();
   // api 상태 관리
   const [product, setProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -59,7 +61,11 @@ const AllProductList = () => {
               placeholder="검색할 상품을 입력해주세요"
             />
           </div>
-          <button className="product-registration-btn" type="button">
+          <button
+            className="product-registration-btn"
+            type="button"
+            onClick={() => navigate('/additem')}
+          >
             상품 등록하기
           </button>
           <div className="order-wrap">

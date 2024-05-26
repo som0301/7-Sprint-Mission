@@ -120,6 +120,7 @@
   font-weight: 600;
   color: #fff;
   background-color: #3692ff;
+  cursor: pointer;
 }
 
 .all-product .top-container .order-select {
