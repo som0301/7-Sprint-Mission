@@ -1,10 +1,10 @@
 import './css/CommonButton.css';
 
-export default function CommonButton({ children, onClick, classNames }) {
+export default function CommonButton({ children, onClick, className }) {
   return (
     <button
       onClick={onClick}
-      className={`common-button ${classNames}`}
+      className={`common-button ${className}`}
       type="button"
     >
       {children}

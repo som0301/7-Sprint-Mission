@@ -1,7 +1,8 @@
+import React from 'react';
 import { useState, useEffect } from 'react';
 import NavBar from './Nav-bar';
-import FavoriteProductSection from './Favorite-product-section';
-import AllProductSection from './All-product-section';
+import FavoriteProductSection from './FavoriteProductSection';
+import AllProductSection from './AllProductSection';
 import PaginationButtons from './PaginationButtons';
 import getItems from './api';
 import './css/reset.css';
@@ -35,6 +36,7 @@ function App() {
       const nextIsTablet = tabletMediaQuery.matches;
       const nextDeviceType = { isMobile: nextIsMobile, isTablet: nextIsTablet };
       setDeviceType(nextDeviceType);
+      console.log('haha');
     };
 
     mobileMediaQuery.addListener(handleDeviceChange);
