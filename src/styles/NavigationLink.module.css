@@ -1,0 +1,62 @@
+.home {
+    width: 153px;
+    height: 51px;
+    background-image: url('/img/logo/panda-market-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.48px;
+    color: var(--gray600);
+}
+
+.nav:hover {
+    color: var(--blue);
+}
+
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 88px;
+    height: 42px;
+    background: var(--blue);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+}
+
+.login:hover {
+    background: #1967d6;
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .nav {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 21.48px;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+    .home {
+        width: 81px;
+        height: 40px;
+        background-image: url('/img/logo/panda-market-logo-mobile.png');
+    }
+
+    .nav {
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 19.09px;
+    }
+}
