@@ -1,15 +1,20 @@
-nav {
+.navbar {
   height: 70px;
 }
 
-.logo {
+.navbar-logo {
   width: 51px;
 }
 
 .navbar-links {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  gap: 32px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.navbar-link.active {
+  color: #3692ff;
 }
 
 .button {
