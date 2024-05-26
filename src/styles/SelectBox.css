@@ -1,0 +1,88 @@
+.SelectBox {
+  position: relative;
+  width: 120px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--gray200-color);
+  background-size: 20px;
+  cursor: pointer;
+}
+
+.SelectBox-title {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.SelectBox-ic-mobile {
+  display: none;
+}
+
+.SelectBox-label {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 15px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: inherit;
+  height: inherit;
+  border: 0 none;
+  outline: 0 none;
+  padding-left: 15px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.SelectBox-option-list {
+  position: absolute;
+  width: 120px;
+  top: 50px;
+  left: 0;
+  width: 120px;
+  border-radius: 10px;
+  background: var(--white-color);
+  border: 1px solid var(--gray200-color);
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.SelectBox-option-item {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 35px;
+  border-bottom: 1px solid var(--gray200-color);
+  padding: 5px 15px 5px;
+  transition: 0.1s;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .SelectBox {
+    width: 50px;
+  }
+  .SelectBox-title {
+    display: none;
+  }
+
+  .SelectBox-ic-down {
+    display: none;
+  }
+
+  .SelectBox-ic-mobile {
+    display: block;
+  }
+
+  .SelectBox-option-list {
+    left: -70px;
+  }
+}

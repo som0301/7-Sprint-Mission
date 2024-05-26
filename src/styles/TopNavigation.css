@@ -1,0 +1,86 @@
+.TopNavigation-wrapper {
+  position: relative;
+  z-index: 10;
+}
+
+.TopNavigation {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 200px;
+  border-bottom: 1px solid #bbb;
+}
+
+.TopNavigation-logo-img {
+  content: url(../assets/images/img_logo_s.png);
+}
+
+.TopNavigation-link-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.TopNavigation-btn-login {
+  font-family: "Pretendard";
+  font-weight: 300;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  text-decoration: none;
+  border-radius: 5px;
+  width: 88px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.TopNavigation-link-list {
+  display: flex;
+  gap: 30px;
+  font-size: 17px;
+}
+
+.TopNavigation-link-list a,
+.TopNavigation-link-list a:visited {
+  text-decoration-line: none;
+  text-decoration: none;
+  font-family: "Pretendard";
+  font-weight: bold;
+  color: #000000;
+}
+
+a.TopNavigation-used-market-link,
+a.TopNavigation-used-market-link:visited {
+  color: var(--blue-color);
+  font-weight: bold;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .TopNavigation {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .TopNavigation {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .TopNavigation-logo-img {
+    content: url(../assets/images/img_logo_chracter_s.png);
+  }
+}

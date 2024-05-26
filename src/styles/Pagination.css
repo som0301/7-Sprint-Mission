@@ -1,0 +1,45 @@
+.Pagination {
+  display: flex;
+  gap: 5px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.Pagination span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--gray200-color);
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--gray500-color);
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.Pagination span:hover,
+.Pagination span:active,
+.Pagination span:focus,
+.Pagination span:target,
+.Pagination span.Pagination-btn-focus {
+  background-color: var(--light-blue-color);
+  box-shadow: -1px 17px 22px -14px rgba(0, 0, 0, 0.75);
+}
+
+.Pagination-selected-item {
+  background-color: var(--light-blue-color);
+  box-shadow: -1px 17px 22px -14px rgba(0, 0, 0, 0.75);
+}
+
+.Pagination span.Pagination-btn-disabled,
+.Pagination span.Pagination-btn-disabled:hover {
+  color: var(--gray200-color);
+  background-color: white;
+  box-shadow: none;
+  cursor: default;
+}
