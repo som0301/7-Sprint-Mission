@@ -18,9 +18,9 @@ function App() {
   const [allItems, setAllItems] = useState([]);
   const [order, setOrder] = useState('recent');
   const [page, setPage] = useState(1);
-  const [search, setSearch] = useState('');
+  // const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [productsError, setProductsError] = useState(null);
+  // const [productsError, setProductsError] = useState(null);
   const [deviceType, setDeviceType] = useState(INITIAL_DEVICETYPE);
   const [isInitialized, setIsInitialized] = useState(false);
 
@@ -55,7 +55,8 @@ function App() {
       setIsLoading(true);
       result = await getItems(options);
     } catch (error) {
-      setProductsError(error);
+      // setProductsError(error);
+      alert(error);
     } finally {
       setIsLoading(false);
     }
@@ -107,6 +108,7 @@ function App() {
         items={allItems}
         onClick={handleOrderClick}
         isLoading={isLoading}
+        order={order}
       />
       <PaginationButtons
         onClick={handlePaginationClick}

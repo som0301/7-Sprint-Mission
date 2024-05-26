@@ -41,8 +41,9 @@ function OrderbyButtonList({ onOrder, isLoading }) {
   );
 }
 
-function DropdownButton({ onOrder, isLoading }) {
+function DropdownButton({ onOrder, isLoading, order }) {
   const [openDropdown, setOpenDropdown] = useState(false);
+  const isFavorite = order === 'favorite';
 
   const handleDropdownClick = () => {
     setOpenDropdown(!openDropdown);
@@ -54,7 +55,11 @@ function DropdownButton({ onOrder, isLoading }) {
       className="product-section__header__drop-down"
       type="button"
     >
-      <img src={dropdownImg} alt="드롭다운 버튼" />
+      <h3 className="dropdown-header">
+        {isFavorite ? '좋아요순' : '최신순'}
+        <span className="dropdown-header__emoji">👇</span>
+      </h3>
+      <img className="dropdown-image" src={dropdownImg} alt="드롭다운 버튼" />
       {openDropdown && (
         <OrderbyButtonList onOrder={onOrder} isLoading={isLoading} />
       )}
@@ -62,7 +67,12 @@ function DropdownButton({ onOrder, isLoading }) {
   );
 }
 
-export default function AllProductSection({ onClick, items, isLoading }) {
+export default function AllProductSection({
+  onClick,
+  items,
+  isLoading,
+  order,
+}) {
   const HEADER_TEXT = '판매 중인 상품';
 
   const onOrder = ({ target }) => {
@@ -87,7 +97,7 @@ export default function AllProductSection({ onClick, items, isLoading }) {
           className="product-section__header__input"
           placeholder="🔍 검색할 상품을 입력해주세요"
         />
-        <DropdownButton onOrder={onOrder} isLoading={isLoading} />
+        <DropdownButton onOrder={onOrder} isLoading={isLoading} order={order} />
       </ProductSectionHeader>
       <ProductList className="product-list__all" items={items} />
     </section>

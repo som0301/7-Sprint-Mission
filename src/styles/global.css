@@ -18,17 +18,16 @@
   --text-color-cool-gray: #4b5563;
   --text-color-gray: #6b7280;
   --text-color-blue: #3692ff;
-  /* line-height */
-  --line-height-small: 19.09px;
-  --line-height-medium: 28px;
-  /* font-family */
-  --font-family-pretendard: Pretendard;
 }
 
 * {
   border: none;
   outline: none;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'pretendard';
 }
 
 a {
