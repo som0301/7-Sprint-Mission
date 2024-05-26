@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import BestProductItem from './BestProductItem';
+import { getProductItem } from './api';
 
 const BestProductList = () => {
   const [product, setProduct] = useState([]);
+  const [pageSize, setPageSize] = useState(4);
 
   useEffect(() => {
-    fetch(
-      'https://panda-market-api.vercel.app/products?page=1&pageSize=4&orderBy=favorite'
-    )
-      .then((response) => response.json())
-      .then((result) => setProduct(result.list));
+    const getBestProduct = async () => {
+      const data = await getProductItem(1, pageSize, 'favorite');
+      setProduct(data);
+    };
+
+    getBestProduct();
   }, []);
 
   return (
