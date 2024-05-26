@@ -2,18 +2,18 @@ import React, { useEffect, useState } from 'react';
 import BestProductItem from './BestProductItem';
 import { getProductItem } from './api';
 
-const BestProductList = () => {
+const BestProductList = ({ pageSize }) => {
   const [product, setProduct] = useState([]);
-  const [pageSize, setPageSize] = useState(4);
 
   useEffect(() => {
     const getBestProduct = async () => {
       const data = await getProductItem(1, pageSize, 'favorite');
       setProduct(data.list);
+      console.log(data);
     };
 
     getBestProduct();
-  }, []);
+  }, [pageSize]);
 
   return (
     <section className="best-product">
