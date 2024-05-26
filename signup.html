@@ -58,9 +58,9 @@
               id="password"
               placeholder="비밀번호를 입력해주세요"
             />
-            <button class="auth-input-eye-icon-wrapper">
+            <button class="toggle-password-button auth-input-eye-icon-wrapper">
               <img
-                class="auth-input-eye-icon"
+                class="toggle-password-image auth-input-eye-icon"
                 src="img/icons/eye-invisible.svg"
                 alt="비밀번호 보기"
               />
@@ -81,9 +81,9 @@
               id="verify-password"
               placeholder="비밀번호를 다시 한 번 입력해주세요"
             />
-            <button class="auth-input-eye-icon-wrapper">
+            <button class="toggle-password-button auth-input-eye-icon-wrapper">
               <img
-                class="auth-input-eye-icon"
+                class="toggle-password-image auth-input-eye-icon"
                 src="img/icons/eye-invisible.svg"
                 alt="비밀번호 보기"
               />
@@ -92,7 +92,13 @@
           <span class="verify-password-error-message"></span>
         </div>
 
-        <button class="auth-button button-disabled" type="submit" disabled>회원가입</button>
+        <button
+          class="auth-button button-disabled signup-button"
+          type="submit"
+          disabled
+        >
+          회원가입
+        </button>
       </form>
       <div class="social-auth-container">
         <span class="social-auth-label">간편 로그인하기</span>
@@ -129,6 +135,6 @@
         <a class="auth-login-link" href="signin.html">로그인</a>
       </div>
     </div>
-    <script src="js/validateSignUp.js"></script>
+    <script type="module" src="js/signup.js"></script>
   </body>
 </html>
