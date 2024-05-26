@@ -182,3 +182,17 @@ h1 {
   justify-content: center;
   gap: 4px;
 }
+
+.circle.active {
+  background-color: var(--activate-button-blue);
+  color: white;
+}
+
+.circle.disabled {
+  border: 1px solid #f3f4f6;
+  cursor: default;
+}
+
+.arrow-image.disabled {
+  opacity: 0.3;
+}

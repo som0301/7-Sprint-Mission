@@ -13,8 +13,8 @@ export function getCustomRound(number) {
   }
 }
 
-// 페이지 수
-export function getPageNumber(number) {
+// 페이지 수 배열로 얻기
+export function getPageNumberArray(number) {
   const numbers = [];
   for (let i = 1; i <= number; i++) {
     numbers.push(i);
@@ -24,7 +24,7 @@ export function getPageNumber(number) {
 
 // 링크 스타일(기본은 color)
 export function getLinkStyle({
-  isActive,
+  isActive = false,
   linkColorProp = "color",
   linkColor = "var(--activate-button-blue)",
 }) {

@@ -3,26 +3,31 @@ import getItems from "../api/api";
 import AllProductItem from "./AllProductItem";
 import ProductSearch from "./ProductSearch";
 import Pagination from "./Pagination";
+import { getCustomRound } from "../utils/Utils";
 
 const ITEM_INIT = 10;
 const PAGE_INIT = 1;
 
 function AllProductList() {
   const [items, setItems] = useState([]);
-  // 전체 페이지의 수
+  // 전체 아이템의 수
   const [totalCount, setTotalCount] = useState(0);
   // 현재 페이지 아이템 수
   // const [itemsPerPage, setItemPerPage] = useState(ITEM_INIT);
   // 페이지 정렬
   const [orderBy, setOrderBy] = useState("recent");
+  // 현재 몇번째 페이지인지
+  const [currentPage, setCurrentPage] = useState(PAGE_INIT);
+  // 현재 총 페이지의 수
+  const [pageNumber, setPageNumber] = useState(0);
 
-  const fetchData = async (options) => {
+  const fetchData = async ({ orderBy, currentPage }) => {
     let result;
     try {
       result = await getItems({
-        orderBy: options.orderBy,
+        orderBy: orderBy,
         pageSize: ITEM_INIT,
-        page: PAGE_INIT,
+        page: currentPage,
       });
     } catch (error) {
       console.log(error);
@@ -31,23 +36,24 @@ function AllProductList() {
     }
 
     setTotalCount(result.totalCount);
+    setPageNumber(getCustomRound(result.totalCount / ITEM_INIT));
 
     const { list } = result;
-
-    console.log("데이타 업뎃");
-    console.log(list);
-
     setItems(list);
   };
 
   useEffect(() => {
-    fetchData({ orderBy });
-  }, [orderBy]);
+    fetchData({ orderBy, currentPage });
+  }, [orderBy, currentPage]);
 
   const handleOptionChange = (option) => {
     const order = option ? (option === "최신순" ? "recent" : "favorite") : "";
 
     setOrderBy(order);
+  };
+
+  const handlePageChange = (option) => {
+    setCurrentPage(option);
   };
 
   return (
@@ -60,7 +66,11 @@ function AllProductList() {
         <AllProductItem items={items} />
       </ul>
       <div className="pagination">
-        <Pagination totalCount={totalCount} />
+        <Pagination
+          onPageChange={handlePageChange}
+          pageNumber={pageNumber}
+          currentPage={currentPage}
+        />
       </div>
     </section>
   );
