@@ -1,0 +1,146 @@
+.ProductController {
+  width: 1200px;
+  margin: 0 auto;
+  padding-right: 130px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.ProductController-title {
+  font-family: "Pretendard";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.ProductController-mobile-title {
+  display: none;
+}
+
+.ProductControllerItem-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 25px;
+  margin-bottom: 11px;
+}
+
+.ProductControllerItem-info {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ProductControllerItem-price {
+  font-weight: Bold;
+}
+
+.ProductControllerItem-favorite {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  font-size: 11px;
+}
+
+.ProductController-control-section {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.ProductController-search-input {
+  background-color: var(--gray100-color);
+  border-radius: 7px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.ProductController-search-input input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  width: 200px;
+  height: 100%;
+}
+
+.ProductController-control-section select {
+  border-radius: 7px;
+}
+
+.ProductController-btn-register-prod {
+  font-family: "Pretendard";
+  font-weight: 300;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  text-decoration: none;
+  border-radius: 7px;
+  width: 133px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .ProductController {
+    width: 750px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 110px;
+  }
+
+  .ProductController-mobile-title {
+    display: block;
+  }
+
+  .ProductController-pc-title {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ProductController {
+    width: 420px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 110px;
+  }
+
+  .ProductController {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .ProductController-btn-register-prod {
+    position: absolute;
+    top: -15px;
+    right: 0px;
+  }
+
+  .ProductController-control-section {
+    width: 420px;
+    height: 42px;
+    margin-top: 10px;
+  }
+
+  .ProductController-search-input {
+    width: 100%;
+  }
+
+  .ProductController-search-input input {
+    width: 100%;
+  }
+}

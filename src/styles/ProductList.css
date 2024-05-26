@@ -1,0 +1,82 @@
+.ProductList {
+  width: 1300px;
+  margin: 0 auto;
+  padding: 0 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ProductList-container {
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  margin-bottom: 100px;
+}
+
+.ProductList-title {
+  font-family: "Pretendard";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.ProductList-mobile-title {
+  display: none;
+}
+
+.ProductListItem-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 25px;
+  margin-bottom: 11px;
+}
+
+.ProductListItem-info {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ProductListItem-price {
+  font-weight: Bold;
+}
+
+.ProductListItem-favorite {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  font-size: 11px;
+}
+
+/* Tablet */
+@media (max-width: 1200px) {
+  .ProductList {
+    width: 750px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ProductList-mobile-title {
+    display: block;
+  }
+
+  .ProductList-pc-title {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ProductList {
+    width: 450px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+}
