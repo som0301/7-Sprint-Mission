@@ -35,7 +35,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 200px;
-  background-color: var(--white);
+  background-color: White;
   border-bottom: 1px solid var(--solid-gray);
 
   flex-wrap: wrap;
@@ -43,7 +43,7 @@ header {
 
 .button {
   background-color: var(--blue);
-  color: var(--white);
+  color: White;
   display: inline-flex;
   align-items: center;
   justify-content: center;

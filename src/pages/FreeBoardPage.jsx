@@ -1,4 +1,4 @@
-function FreeBoard() {
+function FreeBoardPage() {
   return (
     <>
       <h1>자유게시판</h1>
@@ -6,4 +6,4 @@ function FreeBoard() {
   );
 }
 
-export default FreeBoard;
+export default FreeBoardPage;

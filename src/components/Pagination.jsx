@@ -6,6 +6,10 @@ const ITEM_INIT = 10;
 
 function Pagination({ totalCount }) {
   const pageNumber = getPageNumber(getCustomRound(totalCount / ITEM_INIT));
+  // 현재 몇번째 페이지인지
+  // const [currentPage, setCurrentPage] = useState(1);
+
+  const handleLodePage = () => {};
 
   return (
     <>
@@ -19,7 +23,7 @@ function Pagination({ totalCount }) {
       <div className="page-nums">
         {pageNumber?.map((num, index) => {
           return (
-            <div className="circle" key={index}>
+            <div className="circle" key={index} onClick={handleLodePage}>
               {num}
             </div>
           );

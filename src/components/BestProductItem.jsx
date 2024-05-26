@@ -1,4 +1,3 @@
-import { useState } from "react";
 import favoriteImg from "../assets/images/icons/ic_heart.svg";
 import { getCommasToNumber } from "../utils/Utils";
 
@@ -15,11 +14,7 @@ function BestProductItem({ items }) {
               <span id="item-name">{item.name}</span>
               <span id="item-price">{bestPrice}원</span>
               <div className="favorite-area">
-                <img
-                  id="favorite-image"
-                  src={favoriteImg}
-                  alt="좋아요 이미지"
-                />
+                <img id="favorite-image" src={favoriteImg} alt="좋아요 하트" />
                 <div id="item-favorite"> {item.favoriteCount}</div>
               </div>
             </div>

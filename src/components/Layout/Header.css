@@ -32,10 +32,10 @@ h3 {
   color: #4b5563;
 }
 
-a:hover {
+.menu a:hover {
   color: var(--blue);
 }
 
-a:focus {
+.menu a:focus {
   color: var(--blue);
 }

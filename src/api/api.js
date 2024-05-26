@@ -5,6 +5,7 @@ export async function getItems({
 }) {
   const query = `orderBy=${orderBy}&pageSize=${pageSize}&page=${page}`;
 
+  console.log("쿼리 : ");
   console.log(query);
   const response = await fetch(
     `https://panda-market-api.vercel.app/products?${query}`
@@ -13,6 +14,7 @@ export async function getItems({
     throw new Error("데이터를 불러오는데 실패했습니다");
   }
   const body = await response.json();
+
   return body;
 }
 

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import getItems from "../api/api";
 import BestProductItem from "./BestProductItem";
-import "./ProductPage.css";
 
 const ITEM_INIT = 4;
 

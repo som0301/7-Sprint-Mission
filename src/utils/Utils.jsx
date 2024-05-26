@@ -26,7 +26,7 @@ export function getPageNumber(number) {
 export function getLinkStyle({
   isActive,
   linkColorProp = "color",
-  linkColor = "var(--blue)",
+  linkColor = "var(--activate-button-blue)",
 }) {
   return {
     [linkColorProp]: isActive ? linkColor : "",

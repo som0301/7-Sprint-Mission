@@ -2,7 +2,7 @@ import BestProductList from "../components/BestProductList";
 import AllProductList from "../components/AllProductList";
 import "../components/ProductPage.css";
 
-function UsedMarket() {
+function UsedMarketPage() {
   return (
     <main>
       <BestProductList />
@@ -11,4 +11,4 @@ function UsedMarket() {
   );
 }
 
-export default UsedMarket;
+export default UsedMarketPage;

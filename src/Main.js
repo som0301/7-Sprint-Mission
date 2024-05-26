@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./components/App";
 import HomePage from "./pages/HomePage";
-import FreeBoard from "./pages/FreeBoard";
-import UsedMarket from "./pages/UsedMarket";
+import FreeBoardPage from "./pages/FreeBoardPage";
+import UsedMarketPage from "./pages/UsedMarketPage";
+import AdditemPage from "./pages/AdditemPage";
+import Loginpage from "./pages/Loginpage";
 
 function Main() {
   return (
@@ -10,8 +12,10 @@ function Main() {
       <App>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="freeboard" element={<FreeBoard />} />
-          <Route path="usedmarket" element={<UsedMarket />} />
+          <Route path="/freeboard" element={<FreeBoardPage />} />
+          <Route path="/items" element={<UsedMarketPage />} />
+          <Route path="/additems" element={<AdditemPage />} />
+          <Route path="/login" element={<Loginpage />} />
         </Routes>
       </App>
     </BrowserRouter>

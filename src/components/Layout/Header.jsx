@@ -21,14 +21,16 @@ function Header() {
           </div>
           <div className="menu">
             <h3>
-              <NavLink to="/usedmarket" style={getLinkStyle}>
+              <NavLink to="/items" style={getLinkStyle}>
                 중고마켓
               </NavLink>
             </h3>
           </div>
         </div>
       </div>
-      <button className="blue-button button">로그인</button>
+      <button className="blue-button button">
+        <Link to="/login">로그인</Link>
+      </button>
     </header>
   );
 }
