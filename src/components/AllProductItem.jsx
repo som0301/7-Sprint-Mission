@@ -1,11 +1,10 @@
-import "./ProductPage.css";
 import favoriteImg from "../assets/images/icons/ic_heart.svg";
-import { getCommasToNumber } from "../utils/productUtils";
+import { getCommasToNumber } from "../utils/Utils";
 
 function AllProductItem({ items }) {
   return (
     <>
-      {items.map((item) => {
+      {items?.map((item) => {
         const bestPrice = getCommasToNumber(item.price);
 
         return (

@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import getItems from "../api/api";
 import AllProductItem from "./AllProductItem";
 import ProductSearch from "./ProductSearch";
-import "./ProductPage.css";
+import Pagination from "./Pagination";
 
 const ITEM_INIT = 10;
 const PAGE_INIT = 1;
 
 function AllProductList() {
   const [items, setItems] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
 
   const fetchData = async (options) => {
     let result;
@@ -24,9 +25,10 @@ function AllProductList() {
     } finally {
     }
 
+    setTotalCount(result.totalCount);
+
     const { list } = result;
     setItems(list);
-    console.log(list);
   };
 
   useEffect(() => {
@@ -42,6 +44,9 @@ function AllProductList() {
       <ul className="list-area all-area">
         <AllProductItem items={items} />
       </ul>
+      <div className="pagination">
+        <Pagination totalCount={totalCount} />
+      </div>
     </section>
   );
 }

@@ -2,11 +2,11 @@
   margin: 24px auto 40px;
 }
 
-h3 {
+h1 {
   font-weight: 700;
-  font-size: 18px;
-  line-height: 21.48px;
-  color: #4b5563;
+  font-size: 20px;
+  line-height: 28px;
+  color: #111827;
 }
 
 .list span {
@@ -149,4 +149,36 @@ h3 {
 
 .dropdown-menu li:hover {
   background-color: #f0f0f0;
+}
+
+/* pagination */
+.pagination {
+  margin-top: 40px;
+}
+
+.page-nums {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  background-color: white;
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.09px;
+  border: 1px solid #e5e7eb;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
 }
