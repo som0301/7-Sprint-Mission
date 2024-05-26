@@ -4,6 +4,8 @@ header {
   position: fixed;
   z-index: 2;
   border: 1px solid #dfdfdf;
+  top: 0;
+  background-color: white;
 }
 
 .header-logo {
