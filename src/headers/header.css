@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+.link{
+  text-decoration: none;
+  display: inline-block;
+}
+.link img{
+  display: block;
+}
 header {
   width: 100%;
   height: 70px;
@@ -14,6 +21,8 @@ header {
   position: fixed;
   top: 0;
   left: 0;
+  background-color: #fff;
+  z-index:1;
 }
 h1 {
   display: flex;
@@ -30,12 +39,6 @@ h1 {
 h2 {
   font-size: 18px;
   color: #4b5563;
-}
-a {
-  text-decoration: none;
-}
-.activeLink {
-  color: #3692ff;
 }
 .login {
   background-color: #3692ff;

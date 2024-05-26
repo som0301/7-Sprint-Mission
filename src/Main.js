@@ -5,7 +5,6 @@ import App from "./App";
 function Main() {
     return (
       <BrowserRouter>
-      <Header />
         <Routes>
           <Route path="/" element={<Header />} />
           <Route path="/items" element={<App />} />

@@ -1,10 +1,10 @@
-import "./BestProductItem.css";
-import heart from '../images/heart.svg';
+import "./ProductItem.css";
+import heart from './images/heart.svg';
 
-function BestProductItem({ imgUrl, name, price, favoriteCount }) {
+function ProductItem({ imgUrl, name, price, favoriteCount }) {
   return (
     <li className="itemlist">
-      <img src={imgUrl} alt="베스트 상품" className="imgurl" />
+      <img src={imgUrl} alt="상품" className="imgurl" />
       <span className="name">{name}</span>
       <span className="price">{price}</span>
       <div className="like">
@@ -15,4 +15,4 @@ function BestProductItem({ imgUrl, name, price, favoriteCount }) {
   );
 }
 
-export default BestProductItem;
+export default ProductItem;

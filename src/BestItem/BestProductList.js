@@ -1,7 +1,10 @@
-import { useEffect } from "react";
-import BestProductItem from "./BestProductItem";
-import "./BestProductItem.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ProductItem from "../ProductItem";
+import "../ProductItem.css";
+
+function formatNumber(number) {
+  return new Intl.NumberFormat('ko-KR').format(number);
+}
 
 function BestProductList() {
   const [productList, setProductList] = useState([]);
@@ -18,15 +21,15 @@ function BestProductList() {
   }, []);
 
   return (
-    <div className="best-container">
+    <div className="container best">
       <h2>베스트 상품</h2>
-      <ul className="bestproductlist">
+      <ul className="best-productlist">
         {productList.map((item) => (
-          <BestProductItem
+          <ProductItem
             key={item.id}
             imgUrl={item.images[0]}
             name={item.name}
-            price={item.price}
+            price={formatNumber(item.price)}
             favoriteCount={item.favoriteCount}
           />
         ))}
