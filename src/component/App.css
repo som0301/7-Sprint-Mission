@@ -8,6 +8,9 @@ body {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   width: 1200px;
   margin: 0 auto;
   padding-top: 24px;
@@ -34,12 +37,15 @@ main {
   height: 42px;
   padding: 9px 20px 9px 16px;
   background-color: #f3f4f6;
-  outline: none;
+  outline: 0;
+  border-radius: 12px;
 }
 
 .all-products-Navbar {
   display: flex;
   justify-content: space-between;
+  height: 42px;
+  margin-bottom: 24px;
 }
 
 .all-products-Nav {
@@ -55,4 +61,11 @@ main {
   border-color: #e5e7eb;
   padding: 12px 20px 12px 20px;
   font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  .best-items {
+    display: flex;
+    width: 696px;
+  }
 }
