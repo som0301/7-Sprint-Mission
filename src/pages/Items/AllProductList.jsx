@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import AllProductItem from './AllProductItem';
+import Pagination from './Pagination';
 import { getProductItem } from './api';
 import searchIcon from '../../assets/search_icon.svg';
 
 const AllProductList = () => {
   // api 상태 관리
   const [product, setProduct] = useState([]);
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [order, setOrder] = useState('recent');
   // orderSelect 상태 관리
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [orderBy, setOrderBy] = useState('최신순');
+  // pagination 상태 관리
+  const [totalCount, setTotalCount] = useState(0);
 
   const handleOrderSelectClick = () => {
     setIsDropdownVisible((prev) => !prev);
@@ -30,13 +33,18 @@ const AllProductList = () => {
     setIsDropdownVisible(false);
   };
 
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   useEffect(() => {
     const getAllProduct = async () => {
-      const data = await getProductItem(page, pageSize, order);
-      setProduct(data);
+      const data = await getProductItem(currentPage, pageSize, order);
+      setProduct(data.list);
+      setTotalCount(data.totalCount);
     };
     getAllProduct();
-  }, [order]);
+  }, [order, currentPage]);
 
   return (
     <section className="all-product">
@@ -87,6 +95,12 @@ const AllProductList = () => {
           </li>
         ))}
       </ul>
+      <Pagination
+        currentPage={currentPage}
+        totalItems={totalCount}
+        itemsPerPage={pageSize}
+        onPageChange={handlePageChange}
+      />
     </section>
   );
 };

@@ -9,7 +9,7 @@ const BestProductList = () => {
   useEffect(() => {
     const getBestProduct = async () => {
       const data = await getProductItem(1, pageSize, 'favorite');
-      setProduct(data);
+      setProduct(data.list);
     };
 
     getBestProduct();

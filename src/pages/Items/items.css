@@ -25,7 +25,7 @@
   width: 282px;
   height: 282px;
   border-radius: 16px;
-  background-color: yellow;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.03);
 }
 
 .best-product .item-name {
@@ -60,6 +60,7 @@
 /* AllProductList.jsx */
 .all-product {
   margin-top: 47px;
+  padding-bottom: 113px;
 }
 
 .all-product .top-container {
@@ -175,7 +176,7 @@
   width: 219.54px;
   height: 219.54px;
   border-radius: 16px;
-  background-color: yellow;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.03);
 }
 
 .all-product .item-name {
@@ -205,4 +206,30 @@
   width: 13.4px;
   height: 11.65px;
   margin-right: 4px;
+}
+
+/* pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 40px;
+}
+
+.pagination .pagination-button,
+.pagination .page-number {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #fff;
+  color: #6b7280;
+  cursor: pointer;
+}
+
+.pagination .active {
+  color: #fff;
+  background-color: #3692ff;
 }
