@@ -1,0 +1,21 @@
+nav {
+  height: 70px;
+}
+
+.logo {
+  width: 51px;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  background-color: #3692ff;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
