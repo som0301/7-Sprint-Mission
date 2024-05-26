@@ -1,0 +1,160 @@
+.flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header-inner {
+  width: 396px;
+  height: 132px;
+  display: flex;
+  align-items: center;
+  margin: 60px 0px 40px;
+}
+
+.header-inner .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.container {
+  width: 640px;
+  height: 430px;
+}
+
+.auth-wrap label {
+  font: 700 18px/21.48px 'Pretendard';
+  color: var(--Cool-Gray-800);
+}
+
+.auth-wrap .input-text {
+  display: block;
+  margin: 16px 0px 24px;
+  padding: 16px 24px;
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  background-color: var(--Cool-Gray-100);
+  border-style: none;
+  font: 400 16px/24px 'Pretendard';
+  color: var(--Cool-Gray-400);
+}
+
+.auth-wrap .input-text:focus {
+  outline: 2px solid var(--Bright-Blue);
+}
+
+.input-password-box {
+  position: relative;
+}
+
+.auth-wrap .pwd-toggle {
+  position: absolute;
+  right: 25px;
+  top: 19px;
+}
+
+.auth-wrap .pwd-toggle:hover {
+  cursor: pointer;
+}
+
+.auth-wrap .auth-btn {
+  display: block;
+  height: 56px;
+  border-radius: 40px;
+  padding: 16px 124px;
+  text-align: center;
+  gap: 10px;
+  background-color: var(--Cool-Gray-400);
+  font: 600 20px/24px 'Pretendard';
+  color: var(--white);
+  text-decoration: none;
+}
+
+.auth-wrap .auth-btn:hover {
+  background-color: var(--Bright-Blue);
+}
+
+.auth-wrap .auth-btn--disabled {
+  pointer-events: none;
+}
+
+.login-social {
+  height: 74px;
+  border-radius: 8px;
+  background-color: var(--Alice-Blue);
+  margin: 24px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 23px;
+}
+
+.login-social-text {
+  font: 600 16px/24px 'Pretendard';
+  color: var(--Cool-Gray-800);
+}
+
+.login-social-logo img {
+  margin-left: 10px;
+}
+
+.auth-bottom {
+  text-align: center;
+  font: 600 15px/17.9px 'Pretendard';
+}
+
+.auth-bottom-text {
+  color: var(--Cool-Gray-800);
+}
+
+.auth-bottom-link {
+  color: var(--Sky-Blue);
+}
+
+.error-input {
+  font: 600 15px / 17.9px Pretendard;
+  color: var(--Sunset-Orange);
+  margin: 8px 16px 24px;
+  margin: 16px 0px 8px;
+  display: block;
+}
+
+.error-outline {
+  outline: var(--Sunset-Orange) solid 2px;
+}
+
+@media (max-width: 768px) {
+  .flex-center {
+    padding: 0 16px;
+  }
+
+  div.header-inner {
+    margin: 0 24px;
+  }
+
+  .header-inner .logo img:first-child {
+    width: 15%;
+  }
+
+  .header-inner .logo img:last-child {
+    width: 40%;
+  }
+
+  .auth-wrap label {
+    font: 700 14px / 21.48px 'Pretendard';
+    color: var(--Cool-Gray-800);
+  }
+
+  .auth-wrap .input-text {
+    margin: 8px 0px 16px;
+  }
+
+  .container {
+    width: 100%;
+    height: 430px;
+    max-width: 400px;
+  }
+}
