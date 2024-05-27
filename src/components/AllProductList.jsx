@@ -74,10 +74,7 @@ function AllProductList() {
 
   return (
     <section className="all-products">
-      <div className="all-products-bar">
-        <h1>전체 상품</h1>
-        <ProductSearch onOptionChange={handleOptionChange} />
-      </div>
+      <ProductSearch onOptionChange={handleOptionChange} />
       <ul className="list-area all-area">
         <AllProductItem items={items} />
       </ul>

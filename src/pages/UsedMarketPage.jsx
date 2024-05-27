@@ -4,10 +4,10 @@ import "../components/ProductPage.css";
 
 const UsedMarketPage = () => {
   return (
-    <main>
+    <>
       <BestProductList />
       <AllProductList />
-    </main>
+    </>
   );
 };
 

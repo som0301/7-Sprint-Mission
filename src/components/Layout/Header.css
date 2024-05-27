@@ -39,3 +39,32 @@ h3 {
 .menu a:focus {
   color: var(--blue);
 }
+
+/* Tablet Styles */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .nav {
+    width: 100%;
+    padding: 0 24px;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 767px) {
+  .nav {
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  .menu-area {
+    gap: 8px;
+  }
+
+  .menu {
+    width: auto;
+  }
+
+  h3 {
+    font-size: 16px;
+    line-height: 19.09px;
+  }
+}
