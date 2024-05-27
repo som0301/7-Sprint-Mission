@@ -1,0 +1,49 @@
+.product-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-image {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.product-information-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-name {
+  color: var(--color-coolgray-800);
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.671rem;
+}
+
+.product-price {
+  color: var(--color-coolgray-800);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.909rem;
+}
+
+.product-favorite-container {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  gap: 4px;
+}
+
+.product-heart {
+  width: 16px;
+  height: 16px;
+}
+
+.product-favorite-count {
+  color: var(--color-coolgray-600);
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.432rem;
+}
