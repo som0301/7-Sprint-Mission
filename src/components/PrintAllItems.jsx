@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getItems } from "../api.js";
+import ItemBox from "./ItemBox";
 
 function PrintAllItems() {
   const [items, setItems] = useState([]);
@@ -15,19 +16,8 @@ function PrintAllItems() {
 
   return (
     <div>
-      <h1>전체 아이템</h1>
-      <ul>
-        {items.map((item) => {
-          return (
-            <div key={item.id}>
-              <img src={item.images[0]} alt={item.name} width='280px' />
-              <div>{item.name}</div>
-              <div>{item.price}원</div>
-              <div>{item.favoriteCount}</div>
-            </div>
-          );
-        })}
-      </ul>
+      <h1>전체 상품</h1>
+      <ItemBox items={items} />
     </div>
   );
 }
