@@ -4,16 +4,23 @@ import AllProductItem from "./AllProductItem";
 import ProductSearch from "./ProductSearch";
 import Pagination from "./Pagination";
 import { getCustomRound } from "../utils/Utils";
+import { useMediaQuery } from "react-responsive";
 
 const ITEM_INIT = 10;
 const PAGE_INIT = 1;
+const TABLET_ITEM_NUM = 6;
+const MOBILE_ITEM_NUM = 4;
 
 function AllProductList() {
+  const isDesktop = useMediaQuery({ minWidth: 1200 });
+  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1200 });
+  const isMobile = useMediaQuery({ maxWidth: 767 });
+
   const [items, setItems] = useState([]);
   // 전체 아이템의 수
   const [totalCount, setTotalCount] = useState(0);
   // 현재 페이지 아이템 수
-  // const [itemsPerPage, setItemPerPage] = useState(ITEM_INIT);
+  const [itemsPerPage, setItemPerPage] = useState(ITEM_INIT);
   // 페이지 정렬
   const [orderBy, setOrderBy] = useState("recent");
   // 현재 몇번째 페이지인지
@@ -26,7 +33,7 @@ function AllProductList() {
     try {
       result = await getItems({
         orderBy: orderBy,
-        pageSize: ITEM_INIT,
+        pageSize: itemsPerPage,
         page: currentPage,
       });
     } catch (error) {
@@ -40,11 +47,23 @@ function AllProductList() {
 
     const { list } = result;
     setItems(list);
+
+    if (isMobile) setItemPerPage(() => MOBILE_ITEM_NUM);
+    else if (isTablet) {
+      setItemPerPage(() => TABLET_ITEM_NUM);
+    } else {
+      setItemPerPage(() => ITEM_INIT);
+    }
+
+    console.log("이즈 타블렛: " + isTablet);
+    console.log("이즈 모바일: " + isMobile);
+    console.log("이즈 데스크탑: " + isDesktop);
+    console.log("아이템 개수: " + itemsPerPage);
   };
 
   useEffect(() => {
-    fetchData({ orderBy, currentPage });
-  }, [orderBy, currentPage]);
+    fetchData({ orderBy, itemsPerPage, currentPage });
+  }, [orderBy, currentPage, isDesktop, isTablet, isMobile, itemsPerPage]);
 
   const handleOptionChange = (option) => {
     const order = option ? (option === "최신순" ? "recent" : "favorite") : "";

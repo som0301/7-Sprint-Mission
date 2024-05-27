@@ -1,15 +1,14 @@
 import arrowLeftImg from "../assets/images/icons/arrow_left.svg";
 import arrowRightImg from "../assets/images/icons/arrow_right.svg";
-import { getCustomRound, getPageNumberArray } from "../utils/Utils";
+import { getPageNumberArray } from "../utils/Utils";
 import { useState, useEffect } from "react";
-
-const ITEM_INIT = 10;
 
 function Pagination({ onPageChange, pageNumber, currentPage }) {
   // 페이지 개수만큼 배열에
   const pageNumberArray = getPageNumberArray(pageNumber);
   // 활성화 된 페이지
   const [activePage, setActivePage] = useState(1);
+  // 화살표 비활성화
   const [isArrowDisabled, setIsArrowDisabled] = useState([false, false]);
 
   const handleLodePage = (num) => {
