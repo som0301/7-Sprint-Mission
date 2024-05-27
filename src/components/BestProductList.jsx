@@ -2,7 +2,7 @@
 function BestProductList() {
     return (
         <>
-            <div></div>
+            <div>베스트 상품</div>
         </>
     );
 }

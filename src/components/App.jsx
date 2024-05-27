@@ -11,8 +11,9 @@ function App() {
         <Router>
             <Header />
             <Routes>
-                <Route path="/additem" element={<AddItem />} />
+                <Route path="/" exact element={<Items />} />
                 <Route path="/items" element={<Items />} />
+                <Route path="/additem" element={<AddItem />} />
             </Routes>
         </Router>
     );

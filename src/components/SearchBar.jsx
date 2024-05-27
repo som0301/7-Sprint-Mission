@@ -2,7 +2,7 @@
 function SearchBar() {
     return (
         <>
-            <SearchBar />
+            <h2>임시 검색창</h2>
         </>
     );
 }
