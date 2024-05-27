@@ -51,6 +51,7 @@ function AllProductList() {
       setPageNumber(getCustomRound(result.totalCount / TABLET_ITEM_NUM));
     } else {
       setItemPerPage(() => ITEM_INIT);
+      setPageNumber(getCustomRound(result.totalCount / ITEM_INIT));
     }
 
     const { list } = result;

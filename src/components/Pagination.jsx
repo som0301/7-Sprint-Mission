@@ -4,7 +4,6 @@ import { getPageNumberArray } from "../utils/Utils";
 import { useState, useEffect } from "react";
 
 function Pagination({ onPageChange, pageNumber, currentPage }) {
-  console.log(pageNumber);
   // 페이지 개수만큼 배열에
   const pageNumberArray = getPageNumberArray(pageNumber);
   // 활성화 된 페이지
