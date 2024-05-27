@@ -18,7 +18,7 @@ const AllItemsSection = () => {
     imageHeight: "221px",
   });
 
-  const changeWindowInnerWidth = (windowInnerWidth) => {
+  const changePageSize = (windowInnerWidth) => {
     if (windowInnerWidth >= 744 && windowInnerWidth < 1199) {
       setPageSize(6);
     } else if (windowInnerWidth < 744) {
@@ -36,11 +36,12 @@ const AllItemsSection = () => {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    changeWindowInnerWidth(windowInnerWidth);
+    changePageSize(windowInnerWidth);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  //여기는 의존성배열에 값이 없어도 왜 함수가 실행이될까...
 
   const handleLoad = async ({ page, pageSize, orderBy }) => {
     const productsData = await getProducts({ page, pageSize, orderBy });

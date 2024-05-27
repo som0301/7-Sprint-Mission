@@ -12,11 +12,16 @@ const BestItemsSection = () => {
     imageWidth: "221px",
     imageHeight: "221px",
   });
-  const handleLoad = async ({ page, pageSize, orderBy }) => {
-    const productsData = await getProducts({ page, pageSize, orderBy });
+  const handleLoad = async ({ pageSize, orderBy }) => {
+    const productsData = await getProducts({ page: 1, pageSize, orderBy });
     setItems(productsData.list);
   };
-  const changeWindowInnerWidth = (windowInnerWidth) => {
+
+  const handleResize = () => {
+    setWindowInnerWidth(window.innerWidth);
+  };
+
+  const changePageSize = (windowInnerWidth) => {
     if (windowInnerWidth >= 744 && windowInnerWidth < 1199) {
       setPageSize(2);
     } else if (windowInnerWidth < 744) {
@@ -26,17 +31,16 @@ const BestItemsSection = () => {
     }
   };
 
-  const handleResize = () => {
-    setWindowInnerWidth(window.innerWidth);
-  };
-
   useEffect(() => {
-    changeWindowInnerWidth(windowInnerWidth);
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    changePageSize(windowInnerWidth);
+  }, [windowInnerWidth]);
 
   useEffect(() => {
     handleLoad({ pageSize, orderBy });
