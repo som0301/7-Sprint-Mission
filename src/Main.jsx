@@ -14,7 +14,7 @@ function Main() {
           <Route path="/" element={<HomePage />} />
           <Route path="/freeboard" element={<FreeBoardPage />} />
           <Route path="/items" element={<UsedMarketPage />} />
-          <Route path="/additems" element={<AdditemPage />} />
+          <Route path="/additem" element={<AdditemPage />} />
           <Route path="/login" element={<Loginpage />} />
         </Routes>
       </App>
