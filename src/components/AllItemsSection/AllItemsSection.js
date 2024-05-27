@@ -3,6 +3,7 @@ import "./AllItemsSection.css";
 import { getProducts } from "../../api";
 import ItemCard from "../ItemCard/ItemCard";
 import { Link } from "react-router-dom";
+import { searchIcon, dropDownIcon } from "../../assets/images";
 
 const AllItemsSection = () => {
   const [items, setItems] = useState([]);
@@ -13,6 +14,7 @@ const AllItemsSection = () => {
   const [buttons, setButtons] = useState([]);
   const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isDropDown, setIsDropDown] = useState(false);
   const [imageSize, setImageSize] = useState({
     imageWidth: "221px",
     imageHeight: "221px",
@@ -41,7 +43,7 @@ const AllItemsSection = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  //여기는 의존성배열에 값이 없어도 왜 함수가 실행이될까...
+  //여기는 의존성배열에 windowInnerWidth이 없어도 왜 함수가 실행이될까...
 
   const handleLoad = async ({ page, pageSize, orderBy }) => {
     const productsData = await getProducts({ page, pageSize, orderBy });
@@ -63,8 +65,9 @@ const AllItemsSection = () => {
     setCurrentPage(pageNum);
   };
 
-  const handleChangeSort = (e) => {
-    setorderBy(e.target.value);
+  const handleChangeSort = (orderBy) => {
+    setorderBy(orderBy);
+    setIsDropDown(false);
   };
 
   const handlePreviousPage = () => {
@@ -94,20 +97,60 @@ const AllItemsSection = () => {
       <div className="all-items-section-header">
         <h1 className="all-items-section-title">전체상품</h1>
         <div className="all-items-section-toolbar">
-          <input
-            className="all-items-section-search-input"
-            placeholder="검색할 상품을 입력해주세요"
-          />
+          <div className="all-items-section-search-input-wrapper">
+            <img
+              className="icon-search"
+              src={searchIcon}
+              alt="상품검색창 돋보기아이콘"
+            />
+            <input
+              className="all-items-section-search-input"
+              placeholder="검색할 상품을 입력해주세요"
+            />
+          </div>
           <Link to="/additem" className="all-items-section-product-add-button">
             상품 등록하기
           </Link>
-          <select
-            className="all-items-section-sort-options-select"
-            onChange={handleChangeSort}
-          >
-            <option value="recent">최신순</option>
-            <option value="favorite">좋아요순</option>
-          </select>
+          <div>
+            <button
+              className="all-items-section-sort-options-drop-down-button"
+              onClick={() => setIsDropDown(!isDropDown)}
+            >
+              {orderBy === "recent" ? (
+                <span>
+                  최신순{" "}
+                  <img
+                    src={dropDownIcon}
+                    alt="정렬기능을하는 드롭다운메뉴 아래화살표모양 아이콘"
+                  />
+                </span>
+              ) : (
+                <span>
+                  좋아요순{" "}
+                  <img
+                    src={dropDownIcon}
+                    alt="정렬기능을하는 드롭다운메뉴 아래화살표모양 아이콘"
+                  />
+                </span>
+              )}
+            </button>
+            {isDropDown && (
+              <div className="drop-down-menu">
+                <button
+                  className="all-items-section-sort-options-drop-down-button"
+                  onClick={() => handleChangeSort("recent")}
+                >
+                  최신순
+                </button>
+                <button
+                  className="all-items-section-sort-options-drop-down-button"
+                  onClick={() => handleChangeSort("favorite")}
+                >
+                  좋아요순
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
       <ul className="all-items-section-content">

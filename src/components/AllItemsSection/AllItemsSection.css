@@ -17,10 +17,13 @@
   display: flex;
   gap: 10px;
 }
+.all-items-section-search-input-wrapper {
+  position: relative;
+}
 .all-items-section-search-input {
   width: 325px;
   height: 42px;
-  padding: 9px 20px 9px 16px;
+  padding: 9px 30px;
   background-color: var(--gray100);
   outline: none;
   border: none;
@@ -34,6 +37,15 @@
   font-size: 16px;
   font-weight: 400;
 }
+.icon-search {
+  position: absolute;
+  z-index: 1;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
 .all-items-section-product-add-button {
   display: flex;
   justify-content: center;
@@ -46,11 +58,23 @@
   font-weight: 600;
   color: var(--white);
 }
-.all-items-section-sort-options-select {
+.all-items-section-sort-options-drop-down-button {
+  width: 120px;
+  height: 42px;
   font-size: 16px;
   padding: 12px 20px;
   border: 1px solid var(--gray200);
   border-radius: 12px;
+  background-color: var(--white);
+}
+.all-items-section-sort-options-drop-down-button span {
+  display: flex;
+  justify-content: space-between;
+}
+.drop-down-menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
 }
 .all-items-section-content {
   display: grid;
