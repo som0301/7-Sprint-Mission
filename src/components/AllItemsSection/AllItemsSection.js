@@ -37,7 +37,10 @@ const AllItemsSection = () => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     changeWindowInnerWidth(windowInnerWidth);
-  }, [windowInnerWidth]);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleLoad = async ({ page, pageSize, orderBy }) => {
     const productsData = await getProducts({ page, pageSize, orderBy });
@@ -54,12 +57,27 @@ const AllItemsSection = () => {
   };
 
   const handlePageClick = (e) => {
-    setPage(e.target.value);
-    setCurrentPage(e.target.value);
+    const pageNum = Number(e.target.value);
+    setPage(pageNum);
+    setCurrentPage(pageNum);
   };
 
   const handleChangeSort = (e) => {
     setorderBy(e.target.value);
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      setPage(currentPage - 1);
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < pageCount) {
+      setPage(currentPage + 1);
+      setCurrentPage(currentPage + 1);
+    }
   };
 
   useEffect(() => {
@@ -97,7 +115,12 @@ const AllItemsSection = () => {
         ))}
       </ul>
       <div className="all-items-section-paination-wrapper">
-        <button className="all-items-section-paination-button">&lt;</button>
+        <button
+          className="all-items-section-paination-button"
+          onClick={handlePreviousPage}
+        >
+          &lt;
+        </button>
         {buttons.map((pageNum) => (
           <button
             key={pageNum}
@@ -110,7 +133,12 @@ const AllItemsSection = () => {
             {pageNum}
           </button>
         ))}
-        <button className="all-items-section-paination-button">&gt;</button>
+        <button
+          className="all-items-section-paination-button"
+          onClick={handleNextPage}
+        >
+          &gt;
+        </button>
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import ItemCard from "../ItemCard/ItemCard";
 const BestItemsSection = () => {
   const [items, setItems] = useState([]);
   const [pageSize, setPageSize] = useState(4);
-  const [orderBy, setOderBy] = useState("favorite");
+  const [orderBy, setOrderBy] = useState("favorite");
   const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
   const [imageSize, setImageSize] = useState({
     imageWidth: "221px",
@@ -33,11 +33,14 @@ const BestItemsSection = () => {
   useEffect(() => {
     changeWindowInnerWidth(windowInnerWidth);
     window.addEventListener("resize", handleResize);
-  }, [windowInnerWidth]);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     handleLoad({ pageSize, orderBy });
-  }, [pageSize]);
+  }, [pageSize, orderBy]);
 
   return (
     <section className="best-items-section-container">
