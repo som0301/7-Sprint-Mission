@@ -94,6 +94,18 @@ input:focus {
   text-underline-offset: 2px;
 }
 
+.error-message {
+  display: none;
+  color: #F74747;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 8px 0 0 16px;
+}
+
+.error-input {
+  border: 1px solid #F74747;
+}
+
 @media (min-width: 768px) {
   .auth-container {
     max-width: 640px;
