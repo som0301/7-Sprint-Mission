@@ -4,18 +4,15 @@ import AllProductItem from "./AllProductItem";
 import ProductSearch from "./ProductSearch";
 import Pagination from "./Pagination";
 import { getCustomRound } from "../utils/Utils";
-import { useMediaQuery } from "react-responsive";
+import useDeviceType from "../hooks/useDeviceType";
 
-const ITEM_INIT = 10;
 const PAGE_INIT = 1;
+const ITEM_INIT = 10;
 const TABLET_ITEM_NUM = 6;
 const MOBILE_ITEM_NUM = 4;
 
 function AllProductList() {
-  const isDesktop = useMediaQuery({ minWidth: 1200 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1200 });
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-
+  // 아이템 리스트
   const [items, setItems] = useState([]);
   // 전체 아이템의 수
   const [totalCount, setTotalCount] = useState(0);
@@ -27,6 +24,8 @@ function AllProductList() {
   const [currentPage, setCurrentPage] = useState(PAGE_INIT);
   // 현재 총 페이지의 수
   const [pageNumber, setPageNumber] = useState(0);
+  // 반응형 타입
+  const { isTablet, isMobile, isDesktop } = useDeviceType();
 
   const fetchData = async ({ orderBy, currentPage }) => {
     let result;
@@ -54,11 +53,6 @@ function AllProductList() {
     } else {
       setItemPerPage(() => ITEM_INIT);
     }
-
-    console.log("이즈 타블렛: " + isTablet);
-    console.log("이즈 모바일: " + isMobile);
-    console.log("이즈 데스크탑: " + isDesktop);
-    console.log("아이템 개수: " + itemsPerPage);
   };
 
   useEffect(() => {
