@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './Header';
-import AddItem from './AddItem';
-import Items from './Items';
+import Header from './Header/Header';
+import AddItem from './Items/AddItem';
+import Items from './Items/Items';
 import '../styles/fonts.css';
 import '../styles/color.css';
 import '../styles/reset.css';
