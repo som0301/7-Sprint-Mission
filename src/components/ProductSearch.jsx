@@ -39,7 +39,7 @@ function ProductSearch({ onOptionChange }) {
           ></input>
         </div>
         <button id="add-item-button" className="blue-button button">
-          <Link to="/additems">상품 등록하기</Link>
+          <Link to="/additem">상품 등록하기</Link>
         </button>
         <div className="dropdown">
           <button className="dropdown-toggle" onClick={toggleDropdown}>

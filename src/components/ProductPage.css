@@ -170,8 +170,14 @@ h1 {
   text-align: center;
 }
 
-.dropdown-menu li:hover {
+.dropdown-menu > :nth-child(1):hover {
   background-color: #f0f0f0;
+  border-radius: 12px 12px 0 0;
+}
+
+.dropdown-menu > :nth-child(2):hover {
+  background-color: #f0f0f0;
+  border-radius: 0 0 12px 12px;
 }
 
 /* pagination */
