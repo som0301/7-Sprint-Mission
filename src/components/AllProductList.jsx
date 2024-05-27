@@ -42,17 +42,19 @@ function AllProductList() {
     }
 
     setTotalCount(result.totalCount);
-    setPageNumber(getCustomRound(result.totalCount / ITEM_INIT));
 
-    const { list } = result;
-    setItems(list);
-
-    if (isMobile) setItemPerPage(() => MOBILE_ITEM_NUM);
-    else if (isTablet) {
+    if (isMobile) {
+      setItemPerPage(() => MOBILE_ITEM_NUM);
+      setPageNumber(getCustomRound(result.totalCount / MOBILE_ITEM_NUM));
+    } else if (isTablet) {
       setItemPerPage(() => TABLET_ITEM_NUM);
+      setPageNumber(getCustomRound(result.totalCount / TABLET_ITEM_NUM));
     } else {
       setItemPerPage(() => ITEM_INIT);
     }
+
+    const { list } = result;
+    setItems(list);
   };
 
   useEffect(() => {
