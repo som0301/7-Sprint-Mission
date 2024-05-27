@@ -13,7 +13,7 @@ function ProductItem({ className, src, name, price, favoriteCount, size }) {
         <p className="product-name">{name}</p>
         <p className="product-price">{price}원</p>
         <p className="favoritteCount">
-          <img src={favoriteHeart} />
+          <img src={favoriteHeart} alt="favoriteHeart" />
           {favoriteCount}
         </p>
       </div>

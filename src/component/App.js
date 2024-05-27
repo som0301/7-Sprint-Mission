@@ -1,16 +1,12 @@
 import Header from "./Header";
 import { getProducts } from "../Api";
 import { useEffect, useState } from "react";
-import ProductItem from "./ProductItem";
-import BestProductListItem from "./BestProductList";
 import BestProductsList from "./BestProductList";
 import "./App.css";
 import AllproductsList from "./AllProductList";
 import "./mediaQuary.css";
 
 function App() {
-  const [order, setOrder] = useState("");
-  const [items, setItems] = useState([]);
   const [bestProduct, setBestProduct] = useState([]);
   const [allProduct, setAllProduct] = useState([]);
   const [bestProductCount, setBestProductCount] = useState(4);
