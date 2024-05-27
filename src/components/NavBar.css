@@ -13,7 +13,7 @@
   font-weight: 700;
 }
 
-.navbar-link.active {
+.navbar-link:active {
   color: #3692ff;
 }
 

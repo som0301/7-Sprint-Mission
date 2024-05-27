@@ -1,23 +1,13 @@
-import "./App.css";
 import NavBar from "./components/NavBar";
-import { getItems } from "./api";
+
 import { useState, useEffect } from "react";
+import { Router } from "react-router-dom";
+import PrintBestItems from "./components/PrintBestItems.jsx";
 
 function App() {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    getItems().then((data) => {
-      setItems(data);
-    });
-  }
-  , []);
-
-
   return (
     <>
-      <NavBar />
-      
+      <PrintBestItems />
     </>
   );
 }
