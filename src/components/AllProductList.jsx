@@ -16,55 +16,43 @@ function AllProductList() {
   const [items, setItems] = useState([]);
   // 전체 아이템의 수
   const [totalCount, setTotalCount] = useState(0);
-  // 현재 페이지 아이템 수
-  const [itemsPerPage, setItemPerPage] = useState(ITEM_INIT);
   // 페이지 정렬
   const [orderBy, setOrderBy] = useState("recent");
-  // 현재 몇번째 페이지인지
+  // 현재 몇 번째 페이지인지
   const [currentPage, setCurrentPage] = useState(PAGE_INIT);
-  // 현재 총 페이지의 수
-  const [pageNumber, setPageNumber] = useState(0);
   // 반응형 타입
   const { isTablet, isMobile, isDesktop } = useDeviceType();
+  // 현재 페이지 아이템 수
+  const itemsPerPage = isMobile
+    ? MOBILE_ITEM_NUM
+    : isTablet
+    ? TABLET_ITEM_NUM
+    : ITEM_INIT;
 
-  const fetchData = async ({ orderBy, currentPage }) => {
-    let result;
+  // 전체 페이지 수 계산
+  const pageNumber = getCustomRound(totalCount / itemsPerPage);
+
+  const fetchData = async ({ orderBy, currentPage, itemsPerPage }) => {
     try {
-      result = await getItems({
-        orderBy: orderBy,
+      const result = await getItems({
+        orderBy,
         pageSize: itemsPerPage,
         page: currentPage,
       });
+
+      setTotalCount(result.totalCount);
+      setItems(result.list);
     } catch (error) {
       console.log(error);
-      return;
-    } finally {
     }
-
-    setTotalCount(result.totalCount);
-
-    if (isMobile) {
-      setItemPerPage(() => MOBILE_ITEM_NUM);
-      setPageNumber(getCustomRound(result.totalCount / MOBILE_ITEM_NUM));
-    } else if (isTablet) {
-      setItemPerPage(() => TABLET_ITEM_NUM);
-      setPageNumber(getCustomRound(result.totalCount / TABLET_ITEM_NUM));
-    } else {
-      setItemPerPage(() => ITEM_INIT);
-      setPageNumber(getCustomRound(result.totalCount / ITEM_INIT));
-    }
-
-    const { list } = result;
-    setItems(list);
   };
 
   useEffect(() => {
-    fetchData({ orderBy, itemsPerPage, currentPage });
-  }, [orderBy, currentPage, isDesktop, isTablet, isMobile, itemsPerPage]);
+    fetchData({ orderBy, currentPage, itemsPerPage });
+  }, [orderBy, currentPage, isDesktop, isTablet, isMobile]);
 
   const handleOptionChange = (option) => {
-    const order = option ? (option === "최신순" ? "recent" : "favorite") : "";
-
+    const order = option === "최신순" ? "recent" : "favorite";
     setOrderBy(order);
   };
 
@@ -76,7 +64,9 @@ function AllProductList() {
     <section className="all-products">
       <ProductSearch onOptionChange={handleOptionChange} />
       <ul className="list-area all-area">
-        <AllProductItem items={items} />
+        {items.map((item) => (
+          <AllProductItem key={item.id} item={item} />
+        ))}
       </ul>
       <div className="pagination">
         <Pagination
