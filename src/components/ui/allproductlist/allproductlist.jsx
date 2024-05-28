@@ -25,15 +25,10 @@ const itemViewMediaTitle = {
   mobile: '판매 중인 상품',
 }
 
-function AllProductList() {
+function AllProductList({mediaState}) {
   const [items, setItems] = useState([]);
   const [orderBy, setOrderBy] = useState('recent');
   const [page, setPage] = useState(1);
-  const [mediaState, setMediaState] = useState('desktop');
-
-  const handleSetMediaState = (value) => setMediaState(value);
-
-  reactiveItemCount({handleSetMediaState});
 
   const handleLoad = async (options) => {
     let result;
@@ -79,7 +74,7 @@ function AllProductList() {
               상품 등록하기
             </button>
           </form>
-          <CustomSelect onChange={handleOrderBySelect} orderBy={orderBy} />
+          <CustomSelect onChange={handleOrderBySelect} orderBy={orderBy} mediaState={mediaState}/>
         </div>
       </div>
       <div className={classModuleName('product-list', styles)}>

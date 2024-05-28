@@ -16,15 +16,10 @@ const itemViewMediaState = {
   mobile: 1,
 }
 
-function BestProductList() {
+function BestProductList({mediaState}) {
   const [items, setItems] = useState([]);
   const [orderBy, setOrderBy] = useState('favorite');
   const [page, setPage] = useState(1);
-  const [mediaState, setMediaState] = useState('desktop');
-
-  const handleSetMediaState = (value) => setMediaState(value);
-
-  reactiveItemCount({handleSetMediaState});
 
   const handleLoad = async (options) => {
     let result;
