@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Pretendard-Regular', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    vertical-align: top;
+}
+
+img {
+    display: inline-block;
+    vertical-align: top;
+}
