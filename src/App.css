@@ -1,38 +1,240 @@
-.App {
-  text-align: center;
+@import "/src/styles/Color.css";
+
+/* //TODO: css 리팩토링 */
+/* TODO: 헤더 반응형 갭 변경*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Pretendard;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  width: 100%;
+  color: #161346;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  color: var(--gray-600);
+  list-style: none;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.products-list-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+}
+
+main {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 200px;
+  width: 100%;
+  background-color: var(--white-color);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-bottom: 1px solid;
+  border-color: #dfdfdf;
+}
+
+.row {
+  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.all-products-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 24px;
+}
+
+.products-col {
+  width: 100%;
+}
+
+.best-products-col {
+  display: flex;
+  flex: 0 0 auto;
+  width: 25%;
+  padding: 0;
+  max-width: 282px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.all-products-col {
+  flex: 0 0 auto;
+  width: 18%;
+  padding: 0;
+  max-width: 221px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* .col-xl-3 {
+  padding: 0;
+  max-width: 282px;
+} */
+
+.best-products-list {
+  margin-bottom: 40px;
+}
+
+.input--color {
+  background-color: var(--gray-100);
+  border: none;
+  color: var(--gray-400);
+
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+.all-products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-order-div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.product-item {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  margin: 0 auto;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.best-product-item > img {
+  height: 282px;
+}
+
+.all-product-item > img {
+  height: 221px;
+}
+
+.product-item > img {
+  width: 100%;
+}
+
+.pagination {
+  display: flex;
+  gap: 4px;
+}
+
+.pagination-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 113px;
+}
+
+/* 패드 사이즈 */
+@media (max-width: 1199px) {
+  .best-products-col {
+    width: 40%;
+    max-width: none;
+    flex: 0 0 auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  main {
+    width: 696px;
+  }
+
+  .all-products-col {
+    width: 31%;
+  }
+
+  .input-search {
+    width: 242px;
+  }
+  header {
+    padding: 0 34px;
+  }
+  .header-left {
+    gap: 20px;
+  }
+}
+@media (max-width: 767px) {
+  .best-products-col {
+    width: 100%;
+    max-width: none;
+  }
+  .best-products-col {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  main {
+    width: 344px;
+  }
+
+  .all-products-col {
+    width: 48.8%;
+  }
+
+  .input-search {
+    width: 250px;
+  }
+  .row {
+    gap: 8px;
+  }
+
+  .all-product-item > img {
+    height: 136px;
+  }
+
+  .all-products-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mobile-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-left {
+    gap: 16px;
   }
 }
