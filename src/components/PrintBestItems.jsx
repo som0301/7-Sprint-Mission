@@ -14,9 +14,11 @@ function PrintBestItems() {
     loadItems();
   }, []);
   return (
-    <div>
+    <div className='container-best-items'>
       <h1>베스트 상품</h1>
-      <ItemBox items={items} />
+      <div className='best-items>'>
+        <ItemBox items={items} />
+      </div>
     </div>
   );
 }

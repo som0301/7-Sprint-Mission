@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getItems } from "../api.js";
 import ItemBox from "./ItemBox";
+import "../pages/MarketPage.css";
 
 function PrintAllItems() {
   const [items, setItems] = useState([]);
@@ -15,9 +16,11 @@ function PrintAllItems() {
   }, []);
 
   return (
-    <div>
+    <div className='container-all-items'>
       <h1>전체 상품</h1>
-      <ItemBox items={items} />
+      <div className='all-items'>
+        <ItemBox items={items} />
+      </div>
     </div>
   );
 }

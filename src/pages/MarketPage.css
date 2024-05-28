@@ -1,0 +1,46 @@
+ul {
+  display: flex;
+}
+.item-box {
+  width: 100%;
+}
+
+.item-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.item-info {
+  flex-direction: column;
+}
+
+.item-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.item-price {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.item-favorite-count {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.h1 {
+  font-weight: 700px;
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.container-best-items {
+  margin-top: 216x;
+}
+
+.all-items {
+  display: grid;
+}

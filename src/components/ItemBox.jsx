@@ -1,3 +1,5 @@
+import "../pages/MarketPage.css"
+
 function ItemBox({ items }) {
   return (
     <ul>
