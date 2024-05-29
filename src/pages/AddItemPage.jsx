@@ -1,8 +1,15 @@
+import styled from 'styled-components';
+import AddItemForm from '../components/AddItemForm';
+
+const StyledAddItemMain = styled.div`
+  width: 1200px;
+`;
+
 function AddItem() {
   return (
-    <>
-      <h2>상품 등록하기</h2>
-    </>
+    <StyledAddItemMain>
+      <AddItemForm />
+    </StyledAddItemMain>
   );
 }
 
