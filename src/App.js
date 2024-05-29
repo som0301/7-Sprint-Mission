@@ -18,11 +18,11 @@ function App() {
   const [allItems, setAllItems] = useState([]);
   const [order, setOrder] = useState('recent');
   const [page, setPage] = useState(1);
-  // const [search, setSearch] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  // const [productsError, setProductsError] = useState(null);
   const [deviceType, setDeviceType] = useState(INITIAL_DEVICETYPE);
   const [isInitialized, setIsInitialized] = useState(false);
+  // const [search, setSearch] = useState('');
+  // const [productsError, setProductsError] = useState(null);
 
   useEffect(() => {
     const mobileMediaQuery = window.matchMedia('screen and (max-width: 767px)');
@@ -35,7 +35,6 @@ function App() {
       const nextIsTablet = tabletMediaQuery.matches;
       const nextDeviceType = { isMobile: nextIsMobile, isTablet: nextIsTablet };
       setDeviceType(nextDeviceType);
-      console.log('haha');
     };
 
     mobileMediaQuery.addListener(handleDeviceChange);
