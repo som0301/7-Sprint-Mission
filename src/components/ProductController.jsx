@@ -1,6 +1,6 @@
 import "../styles/ProductController.css";
 import searchImg from "../assets/icons/ic_search.svg";
-import SelectBox from "../components/SelectBox";
+import SelectBox from "./SelectBox";
 
 function ProductController({ order, handleSelect }) {
   return (
