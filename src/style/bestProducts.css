@@ -1,4 +1,20 @@
-.BestProductListItem-img {
+.best-products-container {
+  /* max-width: 1200px; */
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0px 120px;
+
+  /* max-width: 1200px; */
+}
+
+.best-product-box {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  /* width: 25%; */
+}
+.best-product-img {
   border-radius: 16px;
   width: 262px;
 }
@@ -18,4 +34,12 @@
   line-height: 19.09px;
   text-align: left;
   margin-top: 6px;
+}
+
+.like {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 12px;
+  color: #4b5563;
 }
