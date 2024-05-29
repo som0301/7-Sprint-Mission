@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
-import BestProductsList from "./components/BestProductsList";
-import { getProducts } from "./components/api/api";
+import { useState, useEffect } from 'react';
+import BestProductsList from '../components/BestProductsList';
+import { getProducts } from '../components/api/api';
 
-import "/src/styles/Reset.css";
-import "./App.css";
-import AllProductsList from "./components/AllProductsList";
-import "/src/styles/Button.css";
+import '/src/styles/Reset.css';
+import '/src/App.css';
+import AllProductsList from '/src/components/AllProductsList';
+import '/src/styles/Button.css';
 
-import { useResponsiveApi } from "./Responsive";
+import { useResponsiveApi } from '../Responsive';
 
 function Items() {
   const [allProducts, setAllProducts] = useState([]);
   const [bestProducts, setBestProducts] = useState([]);
-  const [order, setOrder] = useState("recent");
+  const [order, setOrder] = useState('recent');
   const [page, setPage] = useState(1);
 
   const { isDesktop, isTablet } = useResponsiveApi();
@@ -33,7 +33,7 @@ function Items() {
 
   useEffect(() => {
     handleBestProductsLoad({
-      orderBy: "favorite",
+      orderBy: 'favorite',
       pageSize: `${bestProductsPageSize}`,
       page: 1,
     });
@@ -51,7 +51,7 @@ function Items() {
     <>
       <main>
         <BestProductsList
-          className="best-products-list"
+          className='best-products-list'
           products={bestProducts}
         />
         <AllProductsList
@@ -60,7 +60,7 @@ function Items() {
           setPage={setPage}
           order={order}
           setOrder={setOrder}
-          className="all-products-list"
+          className='all-products-list'
           products={sortedProducts}
         />
       </main>

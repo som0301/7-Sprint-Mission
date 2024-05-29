@@ -1,15 +1,17 @@
-import React, { Component } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "/src/components/header/Header";
+import React, { Component } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from '/src/components/header/Header';
 
-import "/src/styles/Reset.css";
-import "./App.css";
-import "/src/styles/Button.css";
+import '/src/styles/Reset.css';
+import './App.css';
+import '/src/styles/Button.css';
 
-import Items from "./Items";
-import NotFound from "./NotFound";
-import AddItem from "./AddItem";
-import { ResponsiveProvider } from "./Responsive";
+import ItemsPage from './pages/ItemsPage';
+import NotFoundPage from './pages/NotFoundPage';
+import AddItemPage from './pages/AddItemPage';
+import HomePage from './pages/HomePage';
+import BoardPage from './pages/BoardPage';
+import { ResponsiveProvider } from './Responsive';
 
 function App() {
   return (
@@ -18,9 +20,12 @@ function App() {
         <ResponsiveProvider>
           <Header />
           <Routes>
-            <Route path="/items" element={<Items />}></Route>
-            <Route path="/additem" element={<AddItem />}></Route>
-            <Route path="*" element={<NotFound />}></Route>
+            <Route path='/' element={<HomePage />}>
+              <Route path='board' element={<BoardPage />} />
+              <Route path='items' element={<ItemsPage />} />
+              <Route path='additem' element={<AddItemPage />} />
+              <Route path='*' element={<NotFoundPage />} />
+            </Route>
           </Routes>
         </ResponsiveProvider>
       </BrowserRouter>

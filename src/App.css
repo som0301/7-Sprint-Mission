@@ -1,4 +1,4 @@
-@import "/src/styles/Color.css";
+@import '/src/styles/Color.css';
 
 /* //TODO: css 리팩토링 */
 /* TODO: 헤더 반응형 갭 변경*/
@@ -126,8 +126,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
-.search-order-div {
+.search-container {
   display: flex;
   gap: 12px;
   align-items: center;
@@ -167,6 +166,9 @@ header {
   margin-bottom: 113px;
 }
 
+.product-image {
+  border-radius: 16px;
+}
 /* 패드 사이즈 */
 @media (max-width: 1199px) {
   .best-products-col {
