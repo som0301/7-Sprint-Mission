@@ -78,7 +78,10 @@ function AllItemsSection() {
     return (
         <div className="AllItemLayer">
             <div className="AllItemMenu">
-                <h1>{Title}</h1>
+                <div className="AllItemTitle">
+                    <h1>{Title}</h1>
+                    <Link to="/additem"><button className="AddItemButton">상품 등록하기</button></Link>
+                </div>
                 <div className="ItemCustom">
                     <SeachInput></SeachInput>
                     <Link to="/additem"><button className="AddItemButton">상품 등록하기</button></Link>
