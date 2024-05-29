@@ -1,24 +1,6 @@
-.UsedMarket-main {
+.main {
   margin-top: 110px;
   display: flex;
   flex-direction: column;
   gap: 150px;
-}
-
-/* Tablet */
-@media (max-width: 1200px) {
-  .ProductController {
-    width: 750px;
-    margin: 0 auto;
-    padding: 0 50px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .UsedMarket-best-title {
-    width: 420px;
-    margin: 0 auto;
-    padding: 0 10px;
-  }
 }

@@ -1,11 +1,11 @@
-.Pagination {
+.pagination {
   display: flex;
   gap: 5px;
   margin: 0 auto;
   margin-bottom: 30px;
 }
 
-.Pagination span {
+.pagination button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,22 +22,22 @@
   user-select: none;
 }
 
-.Pagination span:hover,
-.Pagination span:active,
-.Pagination span:focus,
-.Pagination span:target,
-.Pagination span.Pagination-btn-focus {
+.pagination button:hover,
+.pagination button:active,
+.pagination button:focus,
+.pagination button:target,
+.pagination button.btn-focus {
   background-color: var(--light-blue-color);
   box-shadow: -1px 17px 22px -14px rgba(0, 0, 0, 0.75);
 }
 
-.Pagination-selected-item {
+.pagination-selected-item {
   background-color: var(--light-blue-color);
   box-shadow: -1px 17px 22px -14px rgba(0, 0, 0, 0.75);
 }
 
-.Pagination span.Pagination-btn-disabled,
-.Pagination span.Pagination-btn-disabled:hover {
+.pagination button.btn-disabled,
+.pagination button.btn-disabled:hover {
   color: var(--gray200-color);
   background-color: white;
   box-shadow: none;

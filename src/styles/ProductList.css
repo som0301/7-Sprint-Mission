@@ -26,7 +26,7 @@
   display: none;
 }
 
-.ProductListItem-img {
+.imgbox {
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -34,7 +34,7 @@
   margin-bottom: 11px;
 }
 
-.ProductListItem-info {
+.info {
   font-family: "Pretendard";
   font-weight: 500;
   font-size: 15px;
@@ -43,11 +43,11 @@
   gap: 5px;
 }
 
-.ProductListItem-price {
+.price {
   font-weight: Bold;
 }
 
-.ProductListItem-favorite {
+.favorite {
   display: flex;
   flex-direction: row;
   gap: 5px;

@@ -2,23 +2,20 @@ import "../styles/TopNavigation.css";
 
 function TopNavigation() {
   return (
-    <div className="TopNavigation-wrapper">
-      <div className="TopNavigation">
-        <div className="TopNavigation-link-section">
+    <div className="top-navigation-wrapper">
+      <div className="top-navigation">
+        <div className="link-section">
           <a href="/">
-            <img className="TopNavigation-logo-img" alt="판다마켓 로고" />
+            <img className="logo-img" alt="판다마켓 로고" />
           </a>
-          <div className="TopNavigation-link-list">
+          <div className="link-list">
             <a href="/">자유게시판</a>
-            <a href="/" className="TopNavigation-used-market-link">
+            <a href="/" className="used-market-link">
               중고마켓
             </a>
           </div>
         </div>
-        <a
-          href="/login"
-          className="TopNavigation-btn-login TopNavigation-element-click"
-        >
+        <a href="/login" className="btn-login element-click">
           로그인
         </a>
       </div>

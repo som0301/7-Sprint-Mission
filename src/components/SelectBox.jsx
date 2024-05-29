@@ -22,17 +22,17 @@ function SelectBox({ handleSelect }) {
   };
 
   return (
-    <div className="SelectBox">
-      <button onClick={handleOpenList} className="SelectBox-label">
-        <p className="SelectBox-title">{selectedText}</p>
-        <img src={arrowDownImg} className="SelectBox-ic-down" />
-        <img src={mobileSelectImg} className="SelectBox-ic-mobile" />
+    <div className="select-box">
+      <button onClick={handleOpenList} className="select-btn">
+        <p className="selected-text">{selectedText}</p>
+        <img src={arrowDownImg} className="ic-down" />
+        <img src={mobileSelectImg} className="ic-mobile" />
       </button>
       {isListOpen && (
-        <ul onClick={handleOpenList} className="SelectBox-option-list">
+        <ul onClick={handleOpenList} className="option-list">
           {selectList.map((item) => {
             return (
-              <li onClick={handleSelectItem} className="SelectBox-option-item">
+              <li onClick={handleSelectItem} className="option-item">
                 {item}
               </li>
             );

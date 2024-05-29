@@ -2,7 +2,7 @@ import "../styles/AddItem.css";
 
 function AddItem() {
   return (
-    <div className="Additem">
+    <div className="additem">
       <header>
         <p>빈 페이지</p>
       </header>

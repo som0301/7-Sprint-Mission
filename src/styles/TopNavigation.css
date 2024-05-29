@@ -1,9 +1,9 @@
-.TopNavigation-wrapper {
+.top-navigation-wrapper {
   position: relative;
   z-index: 10;
 }
 
-.TopNavigation {
+.top-navigation {
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -17,18 +17,18 @@
   border-bottom: 1px solid #bbb;
 }
 
-.TopNavigation-logo-img {
+.logo-img {
   content: url(../assets/images/img_logo_s.png);
 }
 
-.TopNavigation-link-section {
+.link-section {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
 
-.TopNavigation-btn-login {
+.btn-login {
   font-family: "Pretendard";
   font-weight: 300;
   background-color: var(--blue-color);
@@ -44,14 +44,14 @@
   flex-shrink: 0;
 }
 
-.TopNavigation-link-list {
+.link-list {
   display: flex;
   gap: 30px;
   font-size: 17px;
 }
 
-.TopNavigation-link-list a,
-.TopNavigation-link-list a:visited {
+.link-list a,
+.link-list a:visited {
   text-decoration-line: none;
   text-decoration: none;
   font-family: "Pretendard";
@@ -59,15 +59,15 @@
   color: #000000;
 }
 
-a.TopNavigation-used-market-link,
-a.TopNavigation-used-market-link:visited {
+a.used-market-link,
+a.used-market-link:visited {
   color: var(--blue-color);
   font-weight: bold;
 }
 
 /* Tablet */
 @media (max-width: 1200px) {
-  .TopNavigation {
+  .top-navigation {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -75,12 +75,12 @@ a.TopNavigation-used-market-link:visited {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .TopNavigation {
+  .top-navigation {
     padding-left: 16px;
     padding-right: 16px;
   }
 
-  .TopNavigation-logo-img {
+  .logo-img {
     content: url(../assets/images/img_logo_chracter_s.png);
   }
 }

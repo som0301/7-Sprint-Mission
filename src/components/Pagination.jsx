@@ -1,14 +1,15 @@
 import "../styles/Pagination.css";
 import { useEffect, useState } from "react";
 
+const VISIBLE_PAGE_COUNT = 5;
+
 function Pagination({ totalProdCount, page, allProdPageSize, onClickPage }) {
   const [pageButtons, setPageButtons] = useState([]);
-  const visiblePageCount = 5;
 
   const handlePage = () => {
     const enablePageCount = totalProdCount / allProdPageSize;
     const newPageButtons = [];
-    for (let i = 0; i < visiblePageCount; i++) {
+    for (let i = 0; i < VISIBLE_PAGE_COUNT; i++) {
       if (i + 1 === page) {
         newPageButtons.push({ page: i + 1, state: "focus" });
       } else if (i < enablePageCount) {
@@ -29,30 +30,30 @@ function Pagination({ totalProdCount, page, allProdPageSize, onClickPage }) {
   };
 
   return (
-    <div className="Pagination">
-      <span className="Pagination-btn-disabled">&lt;</span>
+    <div className="pagination">
+      <button className="btn-disabled">&lt;</button>
       {pageButtons.map((item, index) => {
         return (
           <>
             {item.state === "focus" && (
-              <span key={item.page} className="Pagination-btn-focus">
+              <button key={item.page} className="btn-focus">
                 {item.page}
-              </span>
+              </button>
             )}
             {item.state === "enable" && (
-              <span key={item.page} onClick={pageClick}>
+              <button key={item.page} onClick={pageClick}>
                 {item.page}
-              </span>
+              </button>
             )}
             {item.state === "disable" && (
-              <span key={item.page} className="Pagination-btn-disabled">
+              <button key={item.page} className="btn-disabled">
                 {item.page}
-              </span>
+              </button>
             )}
           </>
         );
       })}
-      <span className="Pagination-btn-disabled">&gt;</span>
+      <button className="btn-disabled">&gt;</button>
     </div>
   );
 }

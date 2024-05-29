@@ -5,18 +5,12 @@ import Pagination from "../components/Pagination";
 
 function ProductListItem({ item }) {
   return (
-    <div className="ProductListItem">
-      <img
-        className="ProductListItem-img"
-        src={item.images[0]}
-        alt={item.title}
-      />
-      <div className="ProductListItem-info">
+    <div className="product-list-item">
+      <img className="imgbox" src={item.images[0]} alt={item.title} />
+      <div className="info">
         <p>{item.name}</p>
-        <p className="ProductListItem-price">
-          {Number(item.price).toLocaleString("ko-KR")}원
-        </p>
-        <div className="ProductListItem-favorite">
+        <p className="price">{Number(item.price).toLocaleString("ko-KR")}원</p>
+        <div className="favorite">
           <img src={heartImg} alt="좋아요수"></img>
           <p>{item.favoriteCount}</p>
         </div>
