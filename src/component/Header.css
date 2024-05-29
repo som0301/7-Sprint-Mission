@@ -1,0 +1,58 @@
+.navbar {
+  height: 70px;
+  border-bottom: 1px solid #dfdfdf;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* 세로 가운데 정렬 */
+  padding: 0 200px;
+}
+
+.navbar img {
+  width: 40px;
+  border-radius: 11.18px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.pandaMarketLogoTxt {
+  font-family: "ROKAF Sans";
+  font-size: 25.63px;
+  font-weight: 700;
+  line-height: 34.6px;
+  color: #3692ff;
+  margin-left: 10px;
+  margin-right: 32px;
+}
+
+.navbar > div {
+  display: flex;
+  align-items: center; /* 세로 가운데 정렬 */
+}
+
+.menuPage {
+  width: 109px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.48px;
+  text-align: center;
+  gap: 15px; /* 항목 사이의 간격 */
+}
+
+.menuPage:last-child {
+  color: #3692ff;
+}
+
+.loginBtn {
+  width: 88px;
+  height: 42px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.09px;
+  color: #ffffff;
+  background-color: #3692ff;
+  border-radius: 8px;
+  border: none;
+  padding: 12px 23px;
+}

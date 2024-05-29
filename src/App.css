@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+.main {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  top: 24px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 제목-상품간 간격 설정 */
+.bestProducts,
+.allProducts {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+.bestProducts > span,
+.allProducts span {
+  font-family: Pretendard;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 2%;
+  font-weight: 700;
+}
+
+.allProductsTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.allProductsTitle div {
+  display: flex;
+  gap: 12px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.allProductsTitle input {
+  width: 325px;
+  height: 42px;
+  outline: none;
+  border-style: none;
+  border-radius: 12px;
+  padding: 9px 20px 9px 16px;
+  background-color: #f3f4f6;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.allProductsTitle input::placeholder {
+  color: #9ca3af;
+}
+
+.allProductsTitle button {
+  border-style: none;
+  border-radius: 8px;
+  padding: 12px 23px;
+  color: #ffffff;
+  background-color: #3692ff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.09px;
+}
+
+.allProducts select {
+  outline: none;
+  border: 1px solid #e5e7eb;
+  height: 42px;
+  border-radius: 12px;
+  padding: 12px 20px;
+  gap: 10px;
+  color: #1f2937;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }

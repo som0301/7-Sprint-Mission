@@ -1,0 +1,32 @@
+.bestProducts > div {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.ProductList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ProductList > img {
+  width: 282px;
+  height: 282px;
+  border-radius: 16px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.productPrice {
+  font-weight: bold;
+}
+
+.description > p:last-child {
+  color: #4b5563;
+}
