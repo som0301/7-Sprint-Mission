@@ -1,15 +1,29 @@
 .header {
-  border-bottom: 1px;
+  border-bottom: 1px solid #dfdfdf;
   display: flex;
+  height: 69px;
   justify-content: space-between;
   align-items: center;
   padding: 0 200px;
+}
+
+.login-btn {
+  background-color: #3692ff;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  gap: 10px;
+  border: none;
 }
 
 .logo-menutab {
   display: flex;
   align-items: center;
 }
+
 ul {
   display: inline;
   margin: 0;
@@ -32,7 +46,7 @@ li {
   font-size: 18px;
   font-weight: 700;
   line-height: 21.48px;
-  text-align: centers;
+  text-align: center;
   color: #4b5563;
   margin: 16px;
 }

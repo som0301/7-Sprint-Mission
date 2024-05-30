@@ -9,7 +9,7 @@ function Header() {
         <img class="logo-img" src={logoimg} alt="logoImg" />
         <MenuTab />
       </div>
-      <button>로그인</button>
+      <button className="login-btn">로그인</button>
     </div>
   );
 }

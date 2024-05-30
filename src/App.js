@@ -3,7 +3,7 @@ import { getItems } from "./Api";
 import BestProductList from "./components/BestProducts";
 import Header from "./components/Header";
 import "./style/header.css";
-
+import "./app.css";
 function App() {
   // const [order, setOrder] = useState("favorite");
   const [items, setItems] = useState([]);
@@ -22,7 +22,7 @@ function App() {
     <div>
       {/* <header className="App-header" /> */}
       <Header />
-      <div> 베스트 상품 </div>
+      {/* <div> 베스트 상품 </div> */}
       <BestProductList items={items} />
       <div> 전체 상품 </div>
     </div>

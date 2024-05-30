@@ -20,15 +20,18 @@ function BestProductListItem({ item }) {
 
 function BestProductList({ items }) {
   return (
-    <div className="best-product-box">
-      {items.map((item) => {
-        return (
-          <div>
-            <BestProductListItem item={item} />
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <div className="best-product-title"> 베스트 상품 </div>
+      <div className="best-product-box">
+        {items.map((item) => {
+          return (
+            <div>
+              <BestProductListItem item={item} />
+            </div>
+          );
+        })}
+      </div>
+    </>
   );
 }
 
