@@ -2,7 +2,7 @@ import styles from './itemsnav.module.css';
 import logo from '../../../images/logos/logo.png';
 import logoSmall from '../../../images/logos/logo-small.svg';
 import '../../../css/define.css';
-import { classModuleName, reactiveItemCount } from '../../../modules';
+import { classModuleName } from '../../../modules';
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
@@ -12,14 +12,9 @@ const viewLogoStyle = {
   mobile: logoSmall,
 };
 
-function ItemsNav() {
-  const [mediaState, setMediaState] = useState('desktop');
+function ItemsNav({mediaState}) {
   const location = useLocation();
   const className = location.pathname === '/items' ? 'nav-link current-location' : 'nav-link';
-
-  const handleSetMediaState = (value) => setMediaState(value);
-
-  reactiveItemCount({ handleSetMediaState });
 
   useEffect(() => {}, [mediaState]);
 

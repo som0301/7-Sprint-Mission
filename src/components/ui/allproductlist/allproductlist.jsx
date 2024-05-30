@@ -1,4 +1,4 @@
-import { classModuleName, reactiveItemCount } from '../../../modules';
+import { classModuleName } from '../../../modules';
 import styles from './allproductlist.module.css';
 import { getProducts } from '../../../api';
 import { useState, useEffect } from 'react';

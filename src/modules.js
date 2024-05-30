@@ -34,26 +34,6 @@ export function debounce(fn, ms) {
   };
 }
 
-export function reactiveItemCount({handleSetMediaState}) {
-  const mediaQueryMobile = window.matchMedia('(min-width: 375px) and (max-width: 767px)');
-  const mediaQueryTablet = window.matchMedia('(min-width: 768px) and (max-width: 1199px)');
-  const mediaQueryDesktop = window.matchMedia('(min-width: 1201px)');
-  
-  function handleMediaQueryChange() {
-    if (mediaQueryMobile.matches) {
-      handleSetMediaState('mobile');
-    } else if (mediaQueryTablet.matches) {
-      handleSetMediaState('tablet');
-    } else if (mediaQueryDesktop.matches) {
-      handleSetMediaState('desktop');
-    }
-  }
-
-  // 각 미디어 쿼리에 대해 이벤트 리스너 등록
-  mediaQueryMobile.addEventListener('change', handleMediaQueryChange);
-  mediaQueryTablet.addEventListener('change', handleMediaQueryChange);
-  mediaQueryDesktop.addEventListener('change', handleMediaQueryChange);
-}
 
 const GlobalContext = createContext();
 

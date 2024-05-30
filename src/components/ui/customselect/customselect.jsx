@@ -26,10 +26,9 @@ function CustomSelect({ onChange, orderBy, mediaState }) {
     const nextValue = e.target.getAttribute('data-value');
     onChange(nextValue);
   };
-  console.log(mediaState);
+
   const ReactiveSortIcon = () => {
     if (mediaState === 'mobile') {
-      console.log('sort');
       return <img src={sortIcon} alt="sort" />;
     } else
       return (
@@ -41,7 +40,6 @@ function CustomSelect({ onChange, orderBy, mediaState }) {
   };
 
   useEffect(() => {
-    console.log('test');
   }, [mediaState]);
 
   return (

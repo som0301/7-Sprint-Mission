@@ -1,4 +1,4 @@
-import { classModuleName, reactiveItemCount } from '../../../modules';
+import { classModuleName } from '../../../modules';
 import Product from '../../modules/product/product';
 import { getProducts } from '../../../api';
 import { useState, useEffect } from 'react';
