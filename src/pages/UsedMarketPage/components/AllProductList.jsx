@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import getItems from "../api/api";
+import getItems from "../../../api/api";
 import AllProductItem from "./AllProductItem";
 import ProductSearch from "./ProductSearch";
 import Pagination from "./Pagination";
-import { getCustomRound } from "../utils/Utils";
-import useDeviceType from "../hooks/useDeviceType";
+import { getCustomRound } from "../../../utils/Utils";
+import useDeviceType from "../../../hooks/useDeviceType";
 
 const PAGE_INIT = 1;
 const ITEM_INIT = 10;
@@ -52,8 +52,7 @@ function AllProductList() {
   }, [orderBy, currentPage, isDesktop, isTablet, isMobile]);
 
   const handleOptionChange = (option) => {
-    const order = option === "최신순" ? "recent" : "favorite";
-    setOrderBy(order);
+    setOrderBy(option);
   };
 
   const handlePageChange = (option) => {

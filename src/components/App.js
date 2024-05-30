@@ -1,10 +1,14 @@
 import Header from "./Layout/Header";
+import { Outlet } from "react-router-dom";
 
-function App({ children }) {
+function App() {
   return (
     <>
+      <h1>teststst</h1>
       <Header />
-      <main>{children}</main>
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 }

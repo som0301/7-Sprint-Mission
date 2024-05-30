@@ -92,6 +92,13 @@ h1 {
   flex: 0 0 calc(20% - 23.75px);
 }
 
+form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
 .search-bar {
   display: flex;
   gap: 12px;

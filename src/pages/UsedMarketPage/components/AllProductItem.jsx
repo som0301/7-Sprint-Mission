@@ -1,5 +1,5 @@
-import favoriteImg from "../assets/images/icons/ic_heart.svg";
-import { getCommasToNumber } from "../utils/Utils";
+import favoriteImg from "../../../assets/images/icons/ic_heart.svg";
+import { getCommasToNumber } from "../../../utils/Utils";
 
 function AllProductItem({ item }) {
   const bestPrice = getCommasToNumber(item.price);
