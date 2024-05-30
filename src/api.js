@@ -1,6 +1,6 @@
 const BASE_URL = 'https://panda-market-api.vercel.app/products';
 
-export default async function getItems({
+export async function getItems({
   page = 1,
   pageSize,
   order = 'recent',

@@ -1,52 +1,24 @@
 import { useState, useEffect } from 'react';
-import NavBar from './components/Nav-bar';
-import FavoriteProductSection from './components/FavoriteProductSection';
-import AllProductSection from './components/AllProductSection';
-import PaginationButtons from './components/PaginationButtons';
-import getItems from './api';
-import './styles/reset.css';
-import './styles/global.css';
-import './styles/App.css';
+import FavoriteProductSection from '../components/FavoriteProductSection';
+import AllProductSection from '../components/AllProductSection';
+import PaginationButtons from '../components/PaginationButtons';
+import { getItems } from '../api';
+import useMediaQuery from '../hooks/useMediaQuery';
+import '../styles/reset.css';
+import '../styles/global.css';
+import '../styles/App.css';
 
-function App() {
-  const INITIAL_DEVICETYPE = {
-    isMobile: true,
-    isTablet: false,
-  };
+const INITIAL_DEVICETYPE = 'Mobile';
 
+function ItemsPage() {
   const [favoriteItems, setFavoriteItems] = useState([]);
   const [allItems, setAllItems] = useState([]);
   const [order, setOrder] = useState('recent');
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  const [deviceType, setDeviceType] = useState(INITIAL_DEVICETYPE);
-  const [isInitialized, setIsInitialized] = useState(false);
+  const [deviceType, isInitialized] = useMediaQuery();
   // const [search, setSearch] = useState('');
   // const [productsError, setProductsError] = useState(null);
-
-  useEffect(() => {
-    const mobileMediaQuery = window.matchMedia('screen and (max-width: 767px)');
-    const tabletMediaQuery = window.matchMedia(
-      'screen and (min-width: 768px) and (max-width: 1199px)'
-    );
-
-    const handleDeviceChange = () => {
-      const nextIsMobile = mobileMediaQuery.matches;
-      const nextIsTablet = tabletMediaQuery.matches;
-      const nextDeviceType = { isMobile: nextIsMobile, isTablet: nextIsTablet };
-      setDeviceType(nextDeviceType);
-    };
-
-    mobileMediaQuery.addListener(handleDeviceChange);
-    tabletMediaQuery.addListener(handleDeviceChange);
-
-    handleDeviceChange();
-    setIsInitialized(true);
-    return () => {
-      mobileMediaQuery.removeListener(handleDeviceChange);
-      tabletMediaQuery.removeListener(handleDeviceChange);
-    };
-  }, []);
 
   const getValidItems = async (options) => {
     let result;
@@ -83,7 +55,8 @@ function App() {
 
   useEffect(() => {
     if (!isInitialized) return;
-    const { isMobile, isTablet } = deviceType;
+    const isMobile = deviceType === 'Mobile';
+    const isTablet = deviceType === 'Tablet';
     const responsivePageSize = isMobile ? 1 : isTablet ? 2 : 4;
     loadFavoriteItems({
       order: 'favorite',
@@ -94,14 +67,14 @@ function App() {
   useEffect(() => {
     if (!isInitialized) return;
 
-    const { isMobile, isTablet } = deviceType;
+    const isMobile = deviceType === 'Mobile';
+    const isTablet = deviceType === 'Tablet';
     const responsivePageSize = isMobile ? 4 : isTablet ? 6 : 10;
     loadAllItems({ order, page, pageSize: responsivePageSize });
   }, [order, page, deviceType, isInitialized]);
 
   return (
     <>
-      <NavBar isMobile={deviceType.isMobile} />
       <FavoriteProductSection items={favoriteItems} />
       <AllProductSection
         items={allItems}
@@ -119,4 +92,4 @@ function App() {
   );
 }
 
-export default App;
+export default ItemsPage;
