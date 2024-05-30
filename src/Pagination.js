@@ -46,7 +46,7 @@ function Pagination(pageNumber, currentPage, onPageChange) {
         className="pagination-button"
         onClick={() => handlePageChange(currentPage + 1)}
       >
-        <img src={arrowright} alt="오른쪽 화살표" />
+        <img src={arrowleft} alt="왼쪽 화살표" />
       </button>
     </div>
   );
