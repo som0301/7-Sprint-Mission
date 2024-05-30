@@ -31,7 +31,7 @@ function Pagination({ totalProdCount, page, allProdPageSize, onClickPage }) {
 
   return (
     <div className="pagination">
-      <button className="btn-disabled">&lt;</button>
+      <button className="btn-prev">&lt;</button>
       {pageButtons.map((item, index) => {
         return (
           <>
@@ -53,7 +53,7 @@ function Pagination({ totalProdCount, page, allProdPageSize, onClickPage }) {
           </>
         );
       })}
-      <button className="btn-disabled">&gt;</button>
+      <button className="btn-next">&gt;</button>
     </div>
   );
 }

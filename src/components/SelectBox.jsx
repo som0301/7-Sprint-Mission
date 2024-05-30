@@ -3,8 +3,7 @@ import arrowDownImg from "../assets/icons/ic_arrow_down.svg";
 import mobileSelectImg from "../assets/icons/ic_sort.svg";
 import { useEffect, useState } from "react";
 
-function SelectBox({ handleSelect }) {
-  const selectList = ["최신순", "좋아요순"];
+function SelectBox({ handleSelect, selectList }) {
   const [isListOpen, setIsListOpen] = useState(false);
   const [selectedText, setSelectedText] = useState(selectList[0]);
 

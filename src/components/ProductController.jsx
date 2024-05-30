@@ -3,6 +3,8 @@ import searchImg from "../assets/icons/ic_search.svg";
 import SelectBox from "./SelectBox";
 
 function ProductController({ order, handleSelect }) {
+  const selectList = ["최신순", "좋아요순"];
+
   return (
     <div className="product-controller">
       <p className="title pc-title">전체 상품</p>
@@ -15,7 +17,7 @@ function ProductController({ order, handleSelect }) {
         <a href="/addItem" className="btn-register-prod">
           상품 등록하기
         </a>
-        <SelectBox handleSelect={handleSelect} />
+        <SelectBox handleSelect={handleSelect} selectList={selectList} />
       </div>
     </div>
   );

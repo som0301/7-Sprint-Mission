@@ -22,6 +22,16 @@
   user-select: none;
 }
 
+.pagination button.btn-prev,
+.pagination button.btn-next,
+.pagination button.btn-prev:hover,
+.pagination button.btn-next:hover {
+  color: var(--gray200-color);
+  background-color: white;
+  box-shadow: none;
+  cursor: default;
+}
+
 .pagination button:hover,
 .pagination button:active,
 .pagination button:focus,
