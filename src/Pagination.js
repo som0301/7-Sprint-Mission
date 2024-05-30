@@ -19,12 +19,21 @@ function Pagination({ pageNumber, currentPage, onPageChange }) {
     }
   };
 
+  const buttonStyle={
+    cursor:'pointer',
+  }
+
+  const disabledButtonStyle={
+    cursor:'not-allowed',
+  }
+
   return (
     <div className="button-wrapper">
       <button
         className="pagination-button"
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
+        style={currentPage===1?disabledButtonStyle:buttonStyle}
       >
         <img src={arrowleft} alt="왼쪽 화살표" />
       </button>
@@ -35,6 +44,7 @@ function Pagination({ pageNumber, currentPage, onPageChange }) {
             page === currentPage ? "select-page" : ""
           }`}
           onClick={() => handlePageChange(page)}
+          style={buttonStyle}
         >
           {page}
         </button>
@@ -43,6 +53,7 @@ function Pagination({ pageNumber, currentPage, onPageChange }) {
         className="pagination-button"
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === pageNumber}
+        style={currentPage===1?disabledButtonStyle:buttonStyle}
       >
         <img src={arrowright} alt="오른쪽 화살표" />
       </button>
