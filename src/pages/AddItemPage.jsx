@@ -7,12 +7,14 @@ const INITIAL_VALUE = {
   images: [],
   name: '',
   description: '',
-  price: 0,
+  price: '',
   tags: [],
 };
 
 export default function AddItemPage() {
   const [values, setValues] = useState(INITIAL_VALUE);
+  const isActive =
+    values.name && values.description && values.price && values.tags.length;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +35,12 @@ export default function AddItemPage() {
     <form id="addItemForm" className="add-item__form">
       <div>
         <h2>상품 등록하기</h2>
-        <CommonButton type="submit" onSubmit={hanleSubmit}>
+        <CommonButton
+          type="submit"
+          form="addItemForm"
+          onSubmit={hanleSubmit}
+          isActive={isActive}
+        >
           등록
         </CommonButton>
       </div>
@@ -52,6 +59,8 @@ export default function AddItemPage() {
           value={values.name}
           onChange={handleInputChange}
           type="text"
+          placeholder="상품명을 입력해주세요"
+          required
         />
       </label>
       <label>
@@ -61,6 +70,8 @@ export default function AddItemPage() {
           value={values.description}
           onChange={handleInputChange}
           type="text"
+          placeholder="상품 소개를 입력해주세요"
+          required
         ></textarea>
       </label>
       <label>
@@ -69,16 +80,14 @@ export default function AddItemPage() {
           name="price"
           value={values.price}
           onChange={handleInputChange}
-          type="number"
+          type="text"
+          placeholder="판매 가격을 입력해주세요"
+          required
         />
       </label>
       <label>
         <h3>태그</h3>
-        <TagInput
-          name="tags"
-          value={values.tags}
-          onChange={handleInputChange}
-        />
+        <TagInput name="tags" value={values.tags} onChange={handleChange} />
       </label>
     </form>
   );

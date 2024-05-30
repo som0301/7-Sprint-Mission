@@ -8,10 +8,12 @@ export default function CommonButton({
   className,
   path,
   type = 'button',
+  isActive,
 }) {
   return (
     <Link to={path}>
       <button
+        disabled={!isActive}
         onClick={onClick}
         onSubmit={onSubmit}
         className={`common-button ${className}`}

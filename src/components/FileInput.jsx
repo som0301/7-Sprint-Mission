@@ -6,7 +6,6 @@ export default function FileInput({ name, value = [], onChange }) {
   const handleChange = (e) => {
     const nextValue = e.target.files[0];
     onChange(name, [...value, nextValue]);
-    console.log(value);
   };
 
   const handleDelete = (e) => {
@@ -29,7 +28,13 @@ export default function FileInput({ name, value = [], onChange }) {
 
   return (
     <>
-      <input onChange={handleChange} type="file" />;
+      <input
+        id="fileinput"
+        onChange={handleChange}
+        type="file"
+        style={{ display: 'none' }}
+      />
+      <label htmlFor="fileinput">이미지 등록</label>
       <ul>
         {previews[0] &&
           previews.map((item) => {

@@ -1,41 +1,47 @@
 import { useState, useEffect } from 'react';
-
+// 미완 (임시로 fileInput 복붙)
 export default function TagInput({ name, value = [], onChange }) {
-  const [tags, setTags] = useState([]);
-  const handleChange = (e) => {
-    const nextValue = e.target.files[0];
-    onChange(name, [...value, nextValue]);
-    console.log(value);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      const nextValue = e.target.value.split(' ');
+      const distinctNextValue = [...new Set([...value, ...nextValue])];
+      onChange(name, distinctNextValue);
+      setInputValue('');
+      e.preventDefault();
+    }
   };
 
   const handleDelete = (e) => {
-    const targetPreview = e.target.id;
-    const targetIndex = tags.indexOf(targetPreview);
+    const targetID = e.target.id;
+    const targetIndex = value.indexOf(targetID);
     onChange(name, [
       ...value.slice(0, targetIndex),
       ...value.slice(targetIndex + 1),
     ]);
   };
 
-  useEffect(() => {
-    const nextTags = value.map((item) => URL.createObjectURL(item));
-    setTags((prevTags) => [...nextTags]);
-
-    return () => {
-      value.forEach((item) => URL.revokeObjectURL(item));
-    };
-  }, [value]);
-
   return (
     <>
-      <input onChange={handleChange} type="text" />;
+      <input
+        value={inputValue}
+        onChange={(e) => {
+          setInputValue(e.target.value);
+        }}
+        onKeyDown={handleKeyDown}
+        type="text"
+        placeholder="판매 가격을 입력해주세요"
+        required
+      />
+      ;
       <ul>
-        {tags[0] &&
-          tags.map((item) => {
+        {value[0] &&
+          value.map((item) => {
             return (
               <li key={item}>
-                <img src={item} alt="이미지 미리보기" />
-                <button id={item} type="button" onClick={handleDelete}>
+                <span>{item}</span>
+                <button onClick={handleDelete} id={item} type="button">
                   X
                 </button>
               </li>
