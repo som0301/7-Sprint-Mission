@@ -33,9 +33,10 @@ function App() {
   }, []);
 
   return (
-    <div>
-      {/* <header className="App-header" /> */}
+
+      <>
       <Header />
+      <div className="main-container">
       <div className="best-products-container">
         <BestProductList items={bestProducts} />
       </div>
@@ -43,6 +44,7 @@ function App() {
         <AllProductList items={allProducts} />
       </div>
     </div>
+    </>
   );
 }
 

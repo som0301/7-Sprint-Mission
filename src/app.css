@@ -1,3 +1,21 @@
-body {
+/* .vsc-initialized {
   margin: 0;
+  padding: 0;
 }
+
+html {
+  margin: 0;
+} */
+body {
+  padding: 0;;
+  
+}
+
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* .vsc-initialized {
+  display: none;
+} */
