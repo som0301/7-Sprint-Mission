@@ -18,11 +18,11 @@ export default function Nav() {
         <Link to="/community">
           <li className="menu-list__community">자유게시판</li>
         </Link>
-        <Link to="/item">
+        <Link to="/items">
           <li className="menu-list__flee-market">중고마켓</li>
         </Link>
       </ul>
-      <CommonButton>로그인</CommonButton>
+      <CommonButton path="/login">로그인</CommonButton>
     </nav>
   );
 }

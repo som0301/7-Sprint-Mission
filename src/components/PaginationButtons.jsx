@@ -1,11 +1,15 @@
 import '../styles/pageButton.css';
 
 function PageButton({ children, onClick, isActive, isLoading }) {
+  const handleClick = () => {
+    if (!isLoading) {
+      onClick();
+    }
+  };
   return (
     <button
-      onClick={onClick}
+      onClick={handleClick}
       className={`page-button ${isActive ? 'page-button__active' : ''}`}
-      disabled={isLoading}
     >
       {children}
     </button>

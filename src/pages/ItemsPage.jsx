@@ -78,11 +78,11 @@ function ItemsPage() {
       {loadingError?.message && <p>{loadingError.message}</p>}
       <AllProductSection
         items={allItems}
-        onClick={handleOrderClick}
+        handleOrderClick={handleOrderClick}
         isLoading={isLoading}
         order={order}
       />
-      {loadingError?.message && <p>{loadingError.message}</p>}ß
+      {loadingError?.message && <p>{loadingError.message}</p>}
       <PaginationButtons
         onClick={handlePaginationClick}
         isLoading={isLoading}
