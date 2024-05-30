@@ -1,7 +1,7 @@
 import AddItem from "./pages/AddItem";
 import UsedMarket from "./pages/UsedMarket";
 import NotFound from "./pages/NotFound";
-import App from "./App";
+import App from "./components/App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./styles/reset.css";
 import "./styles/global.css";

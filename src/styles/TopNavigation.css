@@ -44,6 +44,10 @@
   flex-shrink: 0;
 }
 
+.top-navigation .page-focus {
+  color: var(--blue-color);
+}
+
 .top-navigation .link-list {
   display: flex;
   gap: 30px;
@@ -59,11 +63,11 @@
   color: #000000;
 }
 
-/* .top-navigation a.used-market-link,
-.top-navigation a.used-market-link:visited {
-  color: var(--blue-color);
-  font-weight: bold;
-} */
+.top-navigation .btn-profile {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 /* Tablet */
 @media (max-width: 1200px) {

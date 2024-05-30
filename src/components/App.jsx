@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import TopNavigation from "./components/TopNavigation";
+import TopNavigation from "./TopNavigation";
 
 function App() {
   return (

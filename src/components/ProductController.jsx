@@ -15,7 +15,7 @@ function ProductController({ order, handleSelect }) {
           <img src={searchImg} />
           <input placeHolder="검색할 상품을 입력해주세요." />
         </div>
-        <Link to="/addItem" className="btn-register-prod">
+        <Link to="/additem" className="btn-register-prod">
           상품 등록하기
         </Link>
         <SelectBox handleSelect={handleSelect} selectList={selectList} />
