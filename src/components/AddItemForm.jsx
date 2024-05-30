@@ -1,4 +1,4 @@
-import { Input, Tag } from './Input';
+import { FileInput, Input, Tag, TagContainer } from './Input';
 import { styled } from 'styled-components';
 import Button from './common/Button';
 import { useState } from 'react';
@@ -27,24 +27,26 @@ function AddItemForm() {
     description: '',
     price: '',
     tags: { tags },
+    images: null,
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (name, value) => {
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
     }));
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    handleChange(name, value);
+  };
+
   const handleNumberChange = (e) => {
     const { name } = e.target;
     const value = Number(e.target.value);
     if (isNaN(value)) return;
-    setValues((prevValues) => ({
-      ...prevValues,
-      [name]: value,
-    }));
+    handleChange(name, value);
   };
 
   const handleTagChange = (e) => {
@@ -52,7 +54,8 @@ function AddItemForm() {
     if (value.trim() === '') return;
     if (tags.length === 10) return;
     setTags((prevTags) => [...new Set([...prevTags, value.trim()])]);
-    setValues((prevValues) => ({ ...prevValues, ['tags']: tags }));
+    handleChange('tags', tags);
+    // setValues((prevValues) => ({ ...prevValues, ['tags']: tags }));
   };
 
   const handleKeyDown = (e) => {
@@ -73,12 +76,6 @@ function AddItemForm() {
     console.log(values);
   };
 
-  const TagContainer = styled.div`
-    display: flex;
-    gap: 12px;
-    margin-top: 12px;
-  `;
-
   return (
     <StyledForm onSubmit={handleSubmit}>
       <StyledFormHeader>
@@ -87,13 +84,14 @@ function AddItemForm() {
           등록
         </Button>
       </StyledFormHeader>
+      <FileInput name='images' value={values.images} onChange={handleChange} />
       <Input
         name='name'
         value={values.name}
         id='ProductName'
         type='text'
         placeholder='상품명을 입력해주세요'
-        onChange={handleChange}
+        onChange={handleInputChange}
       >
         상품명
       </Input>
@@ -103,7 +101,7 @@ function AddItemForm() {
         id='ProductDescription'
         type='textarea'
         placeholder='상품 소개를 입력해주세요'
-        onChange={handleChange}
+        onChange={handleInputChange}
       >
         상품 소개
       </Input>

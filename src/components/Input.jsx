@@ -1,6 +1,9 @@
 import '/src/styles/Color.css';
 import styled, { css } from 'styled-components';
 import iconTagCancel from '/src/assets/ic_tag_cancel.svg';
+import iconPlus from '/src/assets/ic_plus.svg';
+import iconImageCancel from '/src/assets/ic_cancel.svg';
+import { useEffect, useRef, useState } from 'react';
 
 const WEIGHTS = {};
 
@@ -64,9 +67,10 @@ const StyledTag = styled.div`
   gap: 8px;
 `;
 
-const ImgButton = styled.button`
-  margin: 0;
-  padding: 0;
+export const TagContainer = styled.div`
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
 `;
 
 export function Tag({ children }) {
@@ -117,5 +121,119 @@ export function Input({
         />
       )}
     </StyledInputContainer>
+  );
+}
+
+const imgStyle = css`
+  width: 282px;
+  height: 282px;
+`;
+
+const StyledFileUploadButton = styled.button`
+  ${InputStyle}
+  ${imgStyle}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  & > span {
+    color: var(--gray-400);
+  }
+`;
+
+function FileUploadButton({ onClick }) {
+  return (
+    <StyledFileUploadButton type='button' onClick={onClick}>
+      <img src={iconPlus} alt='이미지 등록' />
+      <span>이미지 등록</span>
+    </StyledFileUploadButton>
+  );
+}
+
+const File = styled.input`
+  visibility: hidden;
+  position: absolute;
+`;
+
+const StyledPreviewImage = styled.img`
+  ${imgStyle}
+`;
+
+const PreviewImagediv = styled.div`
+  ${imgStyle}
+  position:relative;
+
+  & > img:first-child {
+    ${imgStyle}
+    border-radius: 12px;
+  }
+
+  & > img:last-child {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;
+
+export function PreviewImage({ preview, onClick }) {
+  return (
+    <PreviewImagediv>
+      {/* <StyledPreviewImage src={preview} alt='이미지 미리보기' /> */}
+      <img src={preview} alt='이미지 미리보기' />
+      <img src={iconImageCancel} alt='취소' onClick={onClick} />
+    </PreviewImagediv>
+  );
+}
+
+export function FileInput({ name, value, onChange }) {
+  const [preview, setPreview] = useState();
+  const inputRef = useRef();
+
+  const handleChange = (e) => {
+    const nextImage = e.target.files[0];
+    onChange(name, nextImage);
+  };
+
+  const handleClearClick = () => {
+    const inputNode = inputRef.current;
+    if (!inputNode) return;
+
+    inputNode.value = '';
+    onChange(name, null);
+  };
+
+  useEffect(() => {
+    if (!value) return;
+
+    const nextPreview = URL.createObjectURL(value);
+    setPreview(nextPreview);
+  }, [value]);
+
+  return (
+    <>
+      <div style={{ display: 'flex', gap: '24px' }}>
+        <FileUploadButton
+          onClick={() => {
+            inputRef.current?.click();
+          }}
+        ></FileUploadButton>
+
+        <File
+          type='file'
+          accept='image/png, image/jpeg'
+          onChange={handleChange}
+          ref={inputRef}
+        />
+        {value && <PreviewImage preview={preview} onClick={handleClearClick} />}
+      </div>
+    </>
   );
 }
