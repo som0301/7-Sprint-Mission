@@ -1,6 +1,13 @@
+import { NavLink } from "react-router-dom";
 import "../styles/TopNavigation.css";
 
 function TopNavigation() {
+  function getLinkStyle({ isActive }) {
+    return {
+      color: isActive ? "var(--blue-color)" : undefined,
+    };
+  }
+
   return (
     <div className="top-navigation-wrapper">
       <div className="top-navigation">
@@ -9,10 +16,16 @@ function TopNavigation() {
             <img className="logo-img" alt="판다마켓 로고" />
           </a>
           <div className="link-list">
-            <a href="/">자유게시판</a>
-            <a href="/" className="used-market-link">
+            <NavLink to="/board" style={getLinkStyle}>
+              자유게시판
+            </NavLink>
+            <NavLink
+              to="/items"
+              style={getLinkStyle}
+              className="used-market-link"
+            >
               중고마켓
-            </a>
+            </NavLink>
           </div>
         </div>
         <a href="/login" className="btn-login element-click">

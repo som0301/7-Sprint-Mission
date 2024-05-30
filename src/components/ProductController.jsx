@@ -1,4 +1,5 @@
 import "../styles/ProductController.css";
+import { Link } from "react-router-dom";
 import searchImg from "../assets/icons/ic_search.svg";
 import SelectBox from "./SelectBox";
 
@@ -14,9 +15,9 @@ function ProductController({ order, handleSelect }) {
           <img src={searchImg} />
           <input placeHolder="검색할 상품을 입력해주세요." />
         </div>
-        <a href="/addItem" className="btn-register-prod">
+        <Link to="/addItem" className="btn-register-prod">
           상품 등록하기
-        </a>
+        </Link>
         <SelectBox handleSelect={handleSelect} selectList={selectList} />
       </div>
     </div>

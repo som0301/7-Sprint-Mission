@@ -1,5 +1,4 @@
 import "../styles/UsedMarket.css";
-import TopNavigation from "../components/TopNavigation";
 import ProductList from "../components/ProductList";
 import BestProductList from "../components/BestProductList";
 import { useEffect, useState } from "react";
@@ -72,28 +71,21 @@ function UsedMarket() {
   }, [isTablet, isMobile, order, page, totalProdCount]);
 
   return (
-    <div>
-      <header className="header">
-        <TopNavigation />
-      </header>
-      <main className="main">
-        <div>
-          <BestProductList items={bestItems} />
-        </div>
-        <div>
-          <ProductList
-            items={items}
-            order={order}
-            page={page}
-            handleSelect={handleSelect}
-            onClickPage={onClickPage}
-            totalProdCount={totalProdCount}
-            allProdPageSize={allProdPageSize}
-          />
-        </div>
-      </main>
-      <footer></footer>
-      <body></body>
+    <div className="used-market">
+      <div>
+        <BestProductList items={bestItems} />
+      </div>
+      <div>
+        <ProductList
+          items={items}
+          order={order}
+          page={page}
+          handleSelect={handleSelect}
+          onClickPage={onClickPage}
+          totalProdCount={totalProdCount}
+          allProdPageSize={allProdPageSize}
+        />
+      </div>
     </div>
   );
 }
