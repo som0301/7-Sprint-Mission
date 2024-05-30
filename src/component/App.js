@@ -5,12 +5,14 @@ import BestProductsList from "./BestProductList";
 import "./App.css";
 import AllproductsList from "./AllProductList";
 import "./mediaQuary.css";
+import PageNation from "./PageNation";
 
 function App() {
   const [bestProduct, setBestProduct] = useState([]);
   const [allProduct, setAllProduct] = useState([]);
   const [bestProductCount, setBestProductCount] = useState(4);
   const [allProductCount, setAllProductCount] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const handleScreenSize = () => {
@@ -42,14 +44,16 @@ function App() {
 
   const handleBestProductLoad = async (options) => {
     const { list } = await getProducts(options);
-    //console.log("products", list);
     setBestProduct(list);
-    //console.log("items", list);
   };
 
   const handleAllProductLoad = async (options) => {
     const { list } = await getProducts(options);
     setAllProduct(list);
+  };
+
+  const onPageChange = (page) => {
+    setCurrentPage(page);
   };
 
   useEffect(() => {
@@ -63,10 +67,10 @@ function App() {
   useEffect(() => {
     handleAllProductLoad({
       orderBy: "recent",
-      page: 1,
+      page: currentPage,
       pageSize: allProductCount,
     });
-  }, [allProductCount]);
+  }, [allProductCount, currentPage]);
 
   return (
     <>
@@ -74,6 +78,7 @@ function App() {
       <main>
         <BestProductsList className="best-items" products={bestProductSorted} />
         <AllproductsList className="All-items" products={AllProductSorted} />
+        <PageNation currentPage={currentPage} onPageChange={onPageChange} />
       </main>
     </>
   );
