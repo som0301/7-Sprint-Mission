@@ -1,24 +1,29 @@
 .best-products-container {
-  /* max-width: 1200px; */
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 0px 120px;
-
-  /* max-width: 1200px; */
+  max-width: 1200px;
+  padding: 24px 120px;
 }
 
+.best-products-group {
+  display: flex;
+  justify-content: space-between;
+}
 .best-product-title {
+  height: 42px;
+  display: block;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  text-align: left;
 }
-.best-product-box {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  /* width: 25%; */
+
+.best-product {
+  width: 262px;
 }
 .best-product-img {
   border-radius: 16px;
-  width: 262px;
+  width: 100%;
 }
 
 .item-title {

@@ -1,30 +1,47 @@
 import { useEffect, useState } from "react";
-import { getItems } from "./Api";
+import getItems from "./Api";
 import BestProductList from "./components/BestProducts";
+import AllProductList from "./components/AllProducts";
 import Header from "./components/Header";
 import "./style/header.css";
 import "./app.css";
 function App() {
-  // const [order, setOrder] = useState("favorite");
-  const [items, setItems] = useState([]);
-  // const sortedItems = items.sort((a, b) => b[order] - a[order]);
+  const [bestProducts, setBestProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
 
-  const handleLoad = async (options) => {
-    const { list } = await getItems(options);
-    setItems(list);
+  const handleLoadBestProducts = async () => {
+    const { list } = await getItems({
+      orderBy: "favorite",
+      page: 1,
+      pageSize: 4,
+    });
+    setBestProducts(list);
+  };
+
+  const handleLoadAllProducts = async () => {
+    const { list } = await getItems({
+      orderBy: "recent",
+      page: 1,
+      pageSize: 10,
+    });
+    setAllProducts(list);
   };
 
   useEffect(() => {
-    handleLoad({ orderBy: "favorite", page: 1, pageSize: 4 });
+    handleLoadBestProducts();
+    handleLoadAllProducts();
   }, []);
 
   return (
     <div>
       {/* <header className="App-header" /> */}
       <Header />
-      {/* <div> 베스트 상품 </div> */}
-      <BestProductList items={items} />
-      <div> 전체 상품 </div>
+      <div className="best-products-container">
+        <BestProductList items={bestProducts} />
+      </div>
+      <div className="all-products-container">
+        <AllProductList items={allProducts} />
+      </div>
     </div>
   );
 }

@@ -22,13 +22,9 @@ function BestProductList({ items }) {
   return (
     <>
       <div className="best-product-title"> 베스트 상품 </div>
-      <div className="best-product-box">
+      <div className="best-products-group">
         {items.map((item) => {
-          return (
-            <div>
-              <BestProductListItem item={item} />
-            </div>
-          );
+          return <BestProductListItem key={item.id} item={item} />;
         })}
       </div>
     </>
