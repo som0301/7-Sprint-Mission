@@ -4,7 +4,6 @@ import ProductItem from "../ProductItem";
 import { Link } from "react-router-dom";
 import Pagination from "../Pagination";
 import { getReviews } from "../api";
-import sort from "../images/sort.svg";
 
 function AllProductList() {
   const PC_ITEM = 10;
