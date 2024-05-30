@@ -4,6 +4,7 @@ import AllProductSection from '../components/AllProductSection';
 import PaginationButtons from '../components/PaginationButtons';
 import { getItems } from '../api';
 import useMediaQuery from '../hooks/useMediaQuery';
+import useAsync from '../hooks/useAsync';
 import '../styles/reset.css';
 import '../styles/global.css';
 import '../styles/App.css';
@@ -15,34 +16,28 @@ function ItemsPage() {
   const [allItems, setAllItems] = useState([]);
   const [order, setOrder] = useState('recent');
   const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   const [deviceType, isInitialized] = useMediaQuery();
+  const [isLoading, loadingError, getItemsAsync] = useAsync(getItems);
+
   // const [search, setSearch] = useState('');
   // const [productsError, setProductsError] = useState(null);
 
   const getValidItems = async (options) => {
-    let result;
-    try {
-      setIsLoading(true);
-      result = await getItems(options);
-    } catch (error) {
-      // setProductsError(error);
-      alert(error);
-    } finally {
-      setIsLoading(false);
-    }
+    const result = await getItemsAsync(options);
+    if (!result) return;
     const { list } = result;
     return list;
   };
 
   const loadFavoriteItems = async (options) => {
-    const list = await getValidItems(options);
-    setFavoriteItems(list);
+    const nextItems = await getValidItems(options);
+    setFavoriteItems((prevItems) => nextItems);
   };
 
   const loadAllItems = async (options) => {
-    const list = await getValidItems(options);
-    setAllItems(list);
+    const nextItems = await getValidItems(options);
+    setAllItems((prevItems) => nextItems);
   };
 
   const handleOrderClick = (nextOrder) => {
@@ -66,7 +61,6 @@ function ItemsPage() {
 
   useEffect(() => {
     if (!isInitialized) return;
-
     const isMobile = deviceType === 'Mobile';
     const isTablet = deviceType === 'Tablet';
     const responsivePageSize = isMobile ? 4 : isTablet ? 6 : 10;
