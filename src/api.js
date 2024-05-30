@@ -15,3 +15,15 @@ export async function getItems({
   const body = await response.json();
   return body;
 }
+
+export async function submitItems(FormData) {
+  const response = await fetch(`${BASE_URL}`, {
+    method: 'POST',
+    body: FormData,
+  });
+  if (!response.ok) {
+    throw new Error('데이터를 전송하는데 실패했습니다');
+  }
+  const body = await response.json();
+  return body;
+}

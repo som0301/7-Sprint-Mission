@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import { Helmet } from 'react-helmet';
 import FavoriteProductSection from '../components/FavoriteProductSection';
 import AllProductSection from '../components/AllProductSection';
 import PaginationButtons from '../components/PaginationButtons';
@@ -74,6 +75,9 @@ function ItemsPage() {
 
   return (
     <>
+      <Helmet>
+        <title>상품 목록</title>
+      </Helmet>
       <FavoriteProductSection items={favoriteItems} />
       {loadingError?.message && <p>{loadingError.message}</p>}
       <AllProductSection
