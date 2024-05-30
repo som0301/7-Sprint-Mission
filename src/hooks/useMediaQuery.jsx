@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const useMediaQuery = () => {
-  const [deviceType, setDeviceType] = useState(null);
+  const [deviceType, setDeviceType] = useState('Mobile');
   const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {

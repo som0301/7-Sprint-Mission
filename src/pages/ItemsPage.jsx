@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import FavoriteProductSection from '../components/FavoriteProductSection';
 import AllProductSection from '../components/AllProductSection';
 import PaginationButtons from '../components/PaginationButtons';
@@ -9,36 +9,41 @@ import '../styles/reset.css';
 import '../styles/global.css';
 import '../styles/App.css';
 
-const INITIAL_DEVICETYPE = 'Mobile';
-
 function ItemsPage() {
   const [favoriteItems, setFavoriteItems] = useState([]);
   const [allItems, setAllItems] = useState([]);
   const [order, setOrder] = useState('recent');
   const [page, setPage] = useState(1);
-  // const [isLoading, setIsLoading] = useState(false);
   const [deviceType, isInitialized] = useMediaQuery();
   const [isLoading, loadingError, getItemsAsync] = useAsync(getItems);
 
   // const [search, setSearch] = useState('');
-  // const [productsError, setProductsError] = useState(null);
 
-  const getValidItems = async (options) => {
-    const result = await getItemsAsync(options);
-    if (!result) return;
-    const { list } = result;
-    return list;
-  };
+  const getValidItems = useCallback(
+    async (options) => {
+      const result = await getItemsAsync(options);
+      if (!result) return;
+      const { list } = result;
+      return list;
+    },
+    [getItemsAsync]
+  );
 
-  const loadFavoriteItems = async (options) => {
-    const nextItems = await getValidItems(options);
-    setFavoriteItems((prevItems) => nextItems);
-  };
+  const loadFavoriteItems = useCallback(
+    async (options) => {
+      const nextItems = await getValidItems(options);
+      setFavoriteItems((prevItems) => nextItems);
+    },
+    [getValidItems]
+  );
 
-  const loadAllItems = async (options) => {
-    const nextItems = await getValidItems(options);
-    setAllItems((prevItems) => nextItems);
-  };
+  const loadAllItems = useCallback(
+    async (options) => {
+      const nextItems = await getValidItems(options);
+      setAllItems((prevItems) => nextItems);
+    },
+    [getValidItems]
+  );
 
   const handleOrderClick = (nextOrder) => {
     setOrder(nextOrder);
@@ -57,7 +62,7 @@ function ItemsPage() {
       order: 'favorite',
       pageSize: responsivePageSize,
     });
-  }, [deviceType, isInitialized]);
+  }, [deviceType, isInitialized, loadFavoriteItems]);
 
   useEffect(() => {
     if (!isInitialized) return;
@@ -65,17 +70,19 @@ function ItemsPage() {
     const isTablet = deviceType === 'Tablet';
     const responsivePageSize = isMobile ? 4 : isTablet ? 6 : 10;
     loadAllItems({ order, page, pageSize: responsivePageSize });
-  }, [order, page, deviceType, isInitialized]);
+  }, [order, page, deviceType, isInitialized, loadAllItems]);
 
   return (
     <>
       <FavoriteProductSection items={favoriteItems} />
+      {loadingError?.message && <p>{loadingError.message}</p>}
       <AllProductSection
         items={allItems}
         onClick={handleOrderClick}
         isLoading={isLoading}
         order={order}
       />
+      {loadingError?.message && <p>{loadingError.message}</p>}ß
       <PaginationButtons
         onClick={handlePaginationClick}
         isLoading={isLoading}
