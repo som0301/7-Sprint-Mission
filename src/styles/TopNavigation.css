@@ -17,18 +17,18 @@
   border-bottom: 1px solid #bbb;
 }
 
-.logo-img {
+.top-navigation .logo-img {
   content: url(../assets/images/img_logo_s.png);
 }
 
-.link-section {
+.top-navigation .link-section {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 30px;
 }
 
-.btn-login {
+.top-navigation .btn-login {
   font-family: "Pretendard";
   font-weight: 300;
   background-color: var(--blue-color);
@@ -44,14 +44,14 @@
   flex-shrink: 0;
 }
 
-.link-list {
+.top-navigation .link-list {
   display: flex;
   gap: 30px;
   font-size: 17px;
 }
 
-.link-list a,
-.link-list a:visited {
+.top-navigation .link-list a,
+.top-navigation .link-list a:visited {
   text-decoration-line: none;
   text-decoration: none;
   font-family: "Pretendard";
@@ -59,8 +59,8 @@
   color: #000000;
 }
 
-a.used-market-link,
-a.used-market-link:visited {
+.top-navigation a.used-market-link,
+.top-navigation a.used-market-link:visited {
   color: var(--blue-color);
   font-weight: bold;
 }
@@ -80,7 +80,7 @@ a.used-market-link:visited {
     padding-right: 16px;
   }
 
-  .logo-img {
+  .top-navigation .logo-img {
     content: url(../assets/images/img_logo_chracter_s.png);
   }
 }

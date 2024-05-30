@@ -8,17 +8,17 @@
   cursor: pointer;
 }
 
-.selected-text {
+.select-box .selected-text {
   font-family: "Pretendard";
   font-weight: 500;
   font-size: 15px;
 }
 
-.ic-mobile {
+.select-box .ic-mobile {
   display: none;
 }
 
-.select-btn {
+.select-box .select-btn {
   display: flex;
   justify-content: space-between;
   padding-right: 15px;
@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 
-.option-list {
+.select-box .option-list {
   position: absolute;
   width: 120px;
   top: 50px;
@@ -47,7 +47,7 @@
   overflow: hidden;
 }
 
-.option-item {
+.select-box .option-item {
   font-family: "Pretendard";
   font-weight: 500;
   font-size: 15px;
@@ -70,19 +70,19 @@
   .select-box {
     width: 50px;
   }
-  .selected-text {
+  .select-box .selected-text {
     display: none;
   }
 
-  .ic-down {
+  .select-box .ic-down {
     display: none;
   }
 
-  .ic-mobile {
+  .select-box .ic-mobile {
     display: block;
   }
 
-  .option-list {
+  .select-box .option-list {
     left: -70px;
   }
 }

@@ -4,7 +4,7 @@
   padding: 0 100px;
 }
 
-.container {
+.best-product-list .container {
   height: 220px;
   display: flex;
   flex-direction: row;
@@ -12,18 +12,18 @@
   gap: 40px 20px;
 }
 
-.title {
+.best-product-list .title {
   font-family: "Pretendard";
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 10px;
 }
 
-.mobile-title {
+.best-product-list-item .mobile-title {
   display: none;
 }
 
-.img {
+.best-product-list-item .img {
   width: 250px;
   height: 250px;
   object-fit: cover;
@@ -31,7 +31,7 @@
   margin-bottom: 11px;
 }
 
-.info {
+.best-product-list-item .info {
   font-family: "Pretendard";
   font-weight: 500;
   font-size: 15px;
@@ -40,11 +40,11 @@
   gap: 5px;
 }
 
-.price {
+.best-product-list-item .price {
   font-weight: Bold;
 }
 
-.favorite {
+.best-product-list-item .favorite {
   display: flex;
   flex-direction: row;
   gap: 5px;
@@ -52,7 +52,7 @@
   font-size: 11px;
 }
 
-.top-section {
+.best-product-list-item .top-section {
   margin-bottom: 20px;
   display: flex;
   flex-direction: row;
@@ -62,13 +62,13 @@
   padding-right: 130px;
 }
 
-.controll-section {
+.best-product-list-item .controll-section {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
 
-.search-input {
+.best-product-list-item .search-input {
   background-color: var(--gray100-color);
   border-radius: 7px;
   position: relative;
@@ -77,7 +77,7 @@
   padding-left: 10px;
 }
 
-.search-input input {
+.best-product-list-item .search-input input {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   outline: none;
@@ -85,11 +85,11 @@
   height: 100%;
 }
 
-.controll-section select {
+.best-product-list-item .controll-section select {
   border-radius: 7px;
 }
 
-.btn-register-prod {
+.best-product-list-item .btn-register-prod {
   font-family: "Pretendard";
   font-weight: 300;
   background-color: var(--blue-color);
@@ -113,19 +113,19 @@
     padding: 0 20px;
   }
 
-  .container {
+  .best-product-list .container {
     height: 300px;
   }
 
-  .mobile-title {
+  .best-product-list-item .mobile-title {
     display: block;
   }
 
-  .pc-title {
+  .best-product-list-item .pc-title {
     display: none;
   }
 
-  .img {
+  .best-product-list-item .img {
     width: 330px;
     height: 330px;
   }
@@ -139,37 +139,37 @@
     padding: 0 10px;
   }
 
-  .container {
+  .best-product-list .container {
     height: 400px;
   }
 
-  .top-section {
+  .best-product-list-item .top-section {
     flex-direction: column;
     align-items: flex-start;
     position: relative;
   }
 
-  .btn-register-prod {
+  .best-product-list-item .btn-register-prod {
     position: absolute;
     top: -15px;
     right: 0px;
   }
 
-  .controll-section {
+  .best-product-list-item .controll-section {
     width: 420px;
     height: 42px;
     margin-top: 10px;
   }
 
-  .search-input {
+  .best-product-list-item .search-input {
     width: 100%;
   }
 
-  .search-input input {
+  .best-product-list-item .search-input input {
     width: 100%;
   }
 
-  .img {
+  .best-product-list-item .img {
     width: 435px;
     height: 435px;
   }

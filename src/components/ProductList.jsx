@@ -38,9 +38,9 @@ function ProductList({
     ErrorMsg = <p>상품이 존재하지 않습니다.</p>;
   }
   return (
-    <div className="ProductList">
+    <div className="product-list">
       <ProductController order={order} handleSelect={handleSelect} />
-      <div className="ProductList-container">
+      <div className="container">
         {isError
           ? ErrorMsg
           : items.map((item) => {

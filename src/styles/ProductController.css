@@ -9,23 +9,23 @@
   gap: 5px;
 }
 
-.title {
+.product-controller .title {
   font-family: "Pretendard";
   font-weight: bold;
   font-size: 20px;
 }
 
-.mobile-title {
+.product-controller .mobile-title {
   display: none;
 }
 
-.control-section {
+.product-controller .control-section {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
 
-.search-input {
+.product-controller .search-input {
   background-color: var(--gray100-color);
   border-radius: 7px;
   position: relative;
@@ -34,7 +34,7 @@
   padding-left: 10px;
 }
 
-.search-input input {
+.product-controller .search-input input {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   outline: none;
@@ -42,11 +42,11 @@
   height: 100%;
 }
 
-.control-section select {
+.product-controller .control-section select {
   border-radius: 7px;
 }
 
-.btn-register-prod {
+.product-controller .btn-register-prod {
   font-family: "Pretendard";
   font-weight: 300;
   background-color: var(--blue-color);
@@ -71,11 +71,11 @@
     padding-right: 110px;
   }
 
-  .mobile-title {
+  .product-controller .mobile-title {
     display: block;
   }
 
-  .pc-title {
+  .product-controller .pc-title {
     display: none;
   }
 }
@@ -92,23 +92,23 @@
     position: relative;
   }
 
-  .btn-register-prod {
+  .product-controller .btn-register-prod {
     position: absolute;
     top: -15px;
     right: 0px;
   }
 
-  .control-section {
+  .product-controller .control-section {
     width: 420px;
     height: 42px;
     margin-top: 10px;
   }
 
-  .search-input {
+  .product-controller .search-input {
     width: 100%;
   }
 
-  .search-input input {
+  .product-controller .search-input input {
     width: 100%;
   }
 }
