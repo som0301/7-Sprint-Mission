@@ -30,7 +30,7 @@ function Pagination(pageNumber, currentPage, onPageChange) {
         className="pagination-button"
         onClick={() => handlePageChange(currentPage - 1)}
       >
-        <img src={arrowleft} alt="ì™¼ìª½ í™”ì‚´í‘œ" />
+        <img src={arrowleft} alt="¿ÞÂÊ È­»ìÇ¥" />
       </button>
       {getPageNumberArray.map((pageNumber) => (
         <button
@@ -46,7 +46,7 @@ function Pagination(pageNumber, currentPage, onPageChange) {
         className="pagination-button"
         onClick={() => handlePageChange(currentPage + 1)}
       >
-        <img src={arrowleft} alt="ì™¼ìª½ í™”ì‚´í‘œ" />
+        <img src={arrowright} alt="¿À¸¥ÂÊ È­»ìÇ¥" />
       </button>
     </div>
   );
