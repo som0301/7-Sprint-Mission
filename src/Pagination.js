@@ -7,7 +7,6 @@ function getPageNumber(number) {
   const numbers = [];
   for (let i = 1; i <= number; i++) {
     numbers.push(i);
-    console.log(numbers);
   }
   return numbers;
 }
