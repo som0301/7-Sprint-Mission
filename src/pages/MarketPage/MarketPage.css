@@ -1,0 +1,61 @@
+@import url("../../components/globals.css");
+
+.MarketPage {
+  width: 344px;
+
+  margin: 24px auto 0;
+}
+
+.MarketPage.best {
+  width: 343px;
+}
+
+.MarketPage-title {
+  color: var(--gray900);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.4em;
+  letter-spacing: 2%;
+}
+
+.MarketPage-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 16px;
+}
+
+@media (min-width: 768px) {
+  .MarketPage {
+    width: 696px;
+  }
+
+  .MarketPage.best {
+    width: 696px;
+  }
+
+  .MarketPage-items {
+    gap: 16px;
+
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .MarketPage {
+    width: 1201px;
+  }
+
+  .MarketPage.best {
+    width: 1200px;
+  }
+
+  .MarketPage-items {
+    gap: 24px;
+
+    margin-top: 24px;
+  }
+}
