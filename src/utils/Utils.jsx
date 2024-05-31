@@ -49,3 +49,5 @@ export const getPageRange = (currentPage, totalPageSize, maximumRange) => {
 
   return pages;
 };
+
+
