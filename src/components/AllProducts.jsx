@@ -1,6 +1,7 @@
 import "../style/allProducts.css"; // 필요한 스타일 파일을 생성하고 추가하세요.
 import heartIcon from "../assets/ic_heart.png";
 import searchIcon from "../assets/ic_search.svg";
+import OrderDropdown from "./OrderDropdown";
 
 function AllProductListItem({ item }) {
   return (
@@ -18,7 +19,7 @@ function AllProductListItem({ item }) {
   );
 }
 
-function AllProductList({ items }) {
+function AllProductList({ items, orderBy, setOrderBy }) {
   return (
     <>
       <div className="all-product-bar">
@@ -30,7 +31,7 @@ function AllProductList({ items }) {
             placeholder="검색할 상품을 입력해주세요"
           />
           <button class="register-product">상품 등록하기</button>
-          <select></select>
+          <OrderDropdown orderBy={orderBy} setOrderBy={setOrderBy} />
         </div>
       </div>
       <div className="all-products-group">

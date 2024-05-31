@@ -1,0 +1,23 @@
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.dropdown-container .order-dropdown {
+  width: 130px;
+  height: 42px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+
+.dropdown-container .order-dropdown option:active {
+  width: 130px;
+  height: 42px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
