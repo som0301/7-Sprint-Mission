@@ -24,6 +24,7 @@ function Header() {
         <nav>
           <ul>
             <li>
+              {/* 5. 29 현재 링크가 community 경로와 일치하면 getLinkStyle컴포넌트에서 return을 반환한다! */}
               <NavLink to="/community" style={getLinkStyle}>
                 자유게시판
               </NavLink>

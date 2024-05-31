@@ -1,12 +1,12 @@
 import React from "react";
-import BestItems from "./components/BestItems";
-import AllItems from "./components/AllItems";
+// import BestItems from "./components/BestItems";
+// import AllItems from "./components/AllItems";
 
 function MarketPage() {
   return (
     <div className="wrapper">
-      <BestItems />
-      <AllItems />
+      {/* <BestItems /> */}
+      {/* <AllItems /> */}
     </div>
   );
 }
