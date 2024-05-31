@@ -1,0 +1,14 @@
+:root {
+  --border-gray: #dfdfdf;
+  --login-normal-blue: #3692ff;
+  --login-normal-font-color: #ffffff;
+  --gray-900: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
