@@ -1,10 +1,10 @@
 import "./InputImage.css";
 import iconPlus from "../assets/images/icon_plus.svg";
-import { attachObjectParticle } from "../modules/js/utils.js";
+import iconDelete from "../assets/images/icon_delete.svg";
 import { useState } from "react";
 import { useEffect } from "react";
 
-function InputImage({ id, name }) {
+function InputImage({ id, name, onChange }) {
   const [currentImage, setCurrentImage] = useState(null);
   const [preview, setPreview] = useState(null);
 
@@ -21,7 +21,15 @@ function InputImage({ id, name }) {
   }, [currentImage]);
 
   const handleImageChange = (e) => {
-    setCurrentImage(e.target.files[0]);
+    const imageFile = e.target.files[0];
+    setCurrentImage(imageFile);
+    onChange(id, imageFile);
+    e.target.value = null;
+  };
+
+  const handleImageDelete = () => {
+    setCurrentImage(null);
+    onChange(id, null);
   };
 
   return (
@@ -42,7 +50,21 @@ function InputImage({ id, name }) {
           onChange={handleImageChange}
         />
         {currentImage && (
-          <img className="InputImage-preview" src={preview}></img>
+          <div
+            className="InputImage-preview"
+            style={{
+              backgroundImage: `url(${preview})`,
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+            }}
+          >
+            <img
+              className="InputImage-preview-delete"
+              src={iconDelete}
+              onClick={handleImageDelete}
+            ></img>
+          </div>
         )}
       </div>
       <p className="InputImage-warning"></p>
