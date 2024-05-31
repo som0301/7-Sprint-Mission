@@ -28,6 +28,7 @@
   display: flex;
   justify-content: space-between;
 }
+
 .all-product-components {
   display: flex;
   gap: 12px;
@@ -50,6 +51,10 @@
   color: #9ca3af;
   border: none;
   border-radius: 12px;
+}
+
+.search-input:not(:placeholder-shown) {
+  color: #4b5563;
 }
 
 .register-product {
