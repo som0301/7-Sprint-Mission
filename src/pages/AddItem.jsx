@@ -5,8 +5,10 @@ import grayXIc from "../assets/icons/ic_x_gray.svg";
 import plusIc from "../assets/icons/ic_plus.svg";
 import { useEffect, useState } from "react";
 import FileInput from "../components/FileInput";
+import Tag from "../components/Tag";
 
 function AddItem() {
+  const [tags, setTags] = useState([]);
   const [preview, setPreview] = useState(null);
   const [isFormComplete, setIsFormComplete] = useState(false);
   const [values, setValues] = useState({
@@ -23,23 +25,39 @@ function AddItem() {
     const nextPreview = URL.createObjectURL(blob);
     setPreview(nextPreview);
     return () => {
-      setPreview();
+      setPreview(null);
       URL.revokeObjectURL(nextPreview);
     };
   }, [values.imgFile]);
 
   useEffect(() => {
     for (const key in values) {
-      if (!values[key]) return;
+      if (key === "tag") continue;
+      if (!values[key] || tags.length === 0) {
+        setIsFormComplete(false);
+        return;
+      }
     }
     setIsFormComplete(true);
-  }, [values]);
+  }, [values, tags]);
 
   const handleFileInputChange = (name, value) => {
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
     }));
+  };
+
+  const handleImgDelete = (tagName) => {
+    setPreview(null);
+    setValues((prevValues) => ({
+      ...prevValues,
+      imgFile: null,
+    }));
+  };
+
+  const handleDeletetag = (tagName) => {
+    setTags(tags.filter((element) => element !== tagName));
   };
 
   const handleChange = (e) => {
@@ -50,9 +68,23 @@ function AddItem() {
     }));
   };
 
+  const handleTagInput = (e) => {
+    if (e.key === "Enter") {
+      !tags.includes(e.target.value) && setTags([...tags, e.target.value]);
+      setValues((prevValues) => ({
+        ...prevValues,
+        tag: "",
+      }));
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="add-item">
-      <form id="add-item-form" method="post">
+      <form id="add-item-form" onSubmit={handleSubmit}>
         <div className="header">
           <p className="title">상품 등록하기</p>
           <button
@@ -87,7 +119,7 @@ function AddItem() {
                   src={blueXIc}
                   alt="삭제 버튼"
                   className="btn-delete"
-                  onClick={() => setPreview(null)}
+                  onClick={handleImgDelete}
                 />
               </div>
             )}
@@ -132,7 +164,15 @@ function AddItem() {
           value={values.tag}
           placeholder="태그를 입력해주세요"
           onChange={handleChange}
+          onKeyDown={handleTagInput}
         />
+        <div className="tag-container">
+          {tags.map((item) => {
+            return (
+              <Tag name={item} key={item} onDeleteClick={handleDeletetag}></Tag>
+            );
+          })}
+        </div>
       </form>
     </div>
   );

@@ -100,6 +100,12 @@
   height: 200px;
 }
 
+.add-item .tag-container {
+  display: flex;
+  gap: 10px;
+  flex-flow: wrap;
+}
+
 /* Tablet */
 @media (max-width: 1200px) {
   .add-item #add-item-form {
