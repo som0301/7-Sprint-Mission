@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import AllProductItem from './AllProductItem';
 import Pagination from './Pagination';
 import { getProductItem } from './api';
 import searchIcon from '../../assets/search_icon.svg';
 
 const AllProductList = ({ pageSize, title, TopContainer }) => {
-  const navigate = useNavigate();
   // api 상태 관리
   const [product, setProduct] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -53,13 +52,11 @@ const AllProductList = ({ pageSize, title, TopContainer }) => {
                 placeholder="검색할 상품을 입력해주세요"
               />
             </div>
-            <button
-              className="product-registration-btn"
-              type="button"
-              onClick={() => navigate('/additem')}
-            >
-              상품 등록하기
-            </button>
+            <Link to="/additem">
+              <button className="product-registration-btn" type="button">
+                상품 등록하기
+              </button>
+            </Link>
             <div className="order-wrap">
               <button
                 type="button"
@@ -94,13 +91,11 @@ const AllProductList = ({ pageSize, title, TopContainer }) => {
         <div className="top-container-m">
           <div className="top-wrap">
             <h2>{title}</h2>
-            <button
-              className="product-registration-btn"
-              type="button"
-              onClick={() => navigate('/additem')}
-            >
-              상품 등록하기
-            </button>
+            <Link to="/additem">
+              <button className="product-registration-btn" type="button">
+                상품 등록하기
+              </button>
+            </Link>
           </div>
           <div className="bottom-wrap">
             <div className="search-wrap">
