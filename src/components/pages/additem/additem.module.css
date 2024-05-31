@@ -111,6 +111,11 @@
   font-weight: 400;
 }
 
+.input-value-box.tag > button {
+  border: none;
+  background-color: #fff;
+}
+
 .button-delete {
   width: 24px;
   height: 24px;
@@ -123,6 +128,8 @@
 }
 
 .tag-container {
+  display: flex;
+  gap: 12px;
   margin-bottom: 87px;
 }
 

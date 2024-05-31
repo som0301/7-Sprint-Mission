@@ -4,7 +4,7 @@ import Button from './../../modules/button/button';
 import styles from './additem.module.css';
 import Tag from '../../modules/tag/tag';
 import { classModuleName } from '../../../modules';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ImageFileInput from './../../modules/imagefileinput/imagefileinput';
 
 const buttonStyle = {
@@ -13,7 +13,7 @@ const buttonStyle = {
 
 const INITIAL_VALUES = {
   images: '',
-  tags: [1, 1],
+  tags: [],
   price: '',
   description: '',
   name: '',
@@ -21,7 +21,7 @@ const INITIAL_VALUES = {
 
 function AddItem({ mediaState }) {
   const [values, setValues] = useState(INITIAL_VALUES);
-  const [enableSubmit, setEnableSubmit] = useState(false);
+  const [enableSubmit, setEnableSubmit] = useState(true);
 
   const handleChange = (name, value) => {
     setValues((prevValues) => ({
@@ -40,26 +40,43 @@ function AddItem({ mediaState }) {
     }
     handleChange(name, value);
     setEnableSubmit(handleSubmitCheck());
-    console.log(enableSubmit);
   };
 
   const handleSubmitCheck = () => {
     const keys = Object.keys(values);
-    let check = true;
+    let check = false;
     keys.forEach((e) => {
       if (e === 'images') {
         return;
       }
       if (Array.isArray(values[e])) {
-        if (values[e].length) {
-          check = false;
+        if (!values[e].length) {
+          check = true;
         }
       } else if (!values[e]) {
-        check = false;
+        check = true;
       }
     });
     return check;
   };
+
+  const handleKeyDownEnter = (e) => {
+    if(e.key === 'Enter' && e.target.value) {
+      const { name, value } = e.target;
+      setValues((prevValues) => ({
+        ...prevValues,
+        [name] : [...prevValues[name], value]
+      }));
+      e.target.value = '';
+    }
+  }
+
+  const handleTagDelete = (deleteKey) => {
+    setValues((prevValues) => ({
+      ...prevValues,
+      tags : prevValues.tags.filter((tag,index) => index !== deleteKey)
+    }))
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -74,7 +91,7 @@ function AddItem({ mediaState }) {
         <form className={classModuleName('input-form', styles)}>
           <div className={classModuleName('input-header-container', styles)}>
             <h2>상품 등록하기</h2>
-            <Button inlineStyle={buttonStyle} isDisable={true} type="submit" name="submit" onClick={handleSubmit}>
+            <Button inlineStyle={buttonStyle} isDisable={enableSubmit} type="submit" name="submit" onClick={handleSubmit}>
               등록
             </Button>
           </div>
@@ -112,10 +129,12 @@ function AddItem({ mediaState }) {
           </div>
           <div className={classModuleName('input-container', styles)}>
             <label htmlFor="tag">태그</label>
-            <input id="tag" className={classModuleName('input-value-box', styles)} placeholder="태그를 입력해주세요" type="text" name="name" />
+            <input id="tag" className={classModuleName('input-value-box', styles)} placeholder="태그를 입력해주세요" type="text" name="tags" onKeyDown={handleKeyDownEnter}/>
           </div>
           <div className={classModuleName('tag-container', styles)}>
-            <Tag style={styles} value="티셔츠" className="input-value-box tag" />
+            {values.tags.map((tag,index)=>{
+              return <Tag index={index} key={index} style={styles} value={tag} className="input-value-box tag" onDelete={handleTagDelete}/>
+            })}
           </div>
         </form>
       </main>
