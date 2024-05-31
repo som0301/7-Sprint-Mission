@@ -7,10 +7,10 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin-top: 24px;
+  padding-top: 24px;
 
   @media (max-width: 1199px) {
-    margin-top: 16px;
+    padding-top: 16px;
   }
   @media (max-width: 767px) {
     gap: 16px;

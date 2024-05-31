@@ -1,13 +1,14 @@
 import ProductItem from './ProductItem';
 
 function BestProductsListItem({ product, className }) {
+  const { id, images, name, price, favoriteCount } = product;
   return (
     <ProductItem
-      src={product.images}
-      name={product.name}
-      price={product.price}
-      favoriteCount={product.favoriteCount}
-      size='282px'
+      id={id}
+      src={images}
+      name={name}
+      price={price}
+      favoriteCount={favoriteCount}
       className={className}
     />
   );

@@ -1,25 +1,25 @@
-import Button from "../common/Button";
-import TabMenu from "./TabMenu";
+import Button, { StyledButton } from '../common/Button';
+import TabMenu from './TabMenu';
 
-import LogoImage from "./LogoImage";
-import LogoText from "./LogoText";
-import { useState } from "react";
+import LogoImage from './LogoImage';
+import LogoText from './LogoText';
+import { useState } from 'react';
 
-import { useResponsiveApi } from "../../Responsive";
+import { useResponsiveApi } from '../../Responsive';
 
 function Header() {
   const { isMobile } = useResponsiveApi();
   return (
     <header>
-      <div className="header-left">
+      <div className='header-left'>
         {!isMobile ? (
-          <LogoImage id="header-logo" />
+          <LogoImage id='header-logo' />
         ) : (
-          <LogoText id="header-logo" />
+          <LogoText id='header-logo' />
         )}
-        <TabMenu class="header__tab" />
+        <TabMenu class='header__tab' />
       </div>
-      <Button className="btn btn-small">로그인</Button>
+      <StyledButton size='small'>로그인</StyledButton>
     </header>
   );
 }

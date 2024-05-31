@@ -1,6 +1,7 @@
 import Button from './common/Button';
 import Search from './Search';
 import Dropdown from './Dropdown';
+import { StyledButton } from './common/Button';
 
 export function AllProductsListHeader({ onClick, order, setOrder }) {
   return (
@@ -8,9 +9,9 @@ export function AllProductsListHeader({ onClick, order, setOrder }) {
       <h2 className='products-list-title'>전체 상품</h2>
       <div className='search-container'>
         <Search className='input--color' />
-        <Button onClick={onClick} className='btn btn-product-register'>
+        <StyledButton onClick={onClick} size='small'>
           상품 등록하기
-        </Button>
+        </StyledButton>
         <Dropdown order={order} setOrder={setOrder} />
       </div>
     </div>
@@ -22,9 +23,9 @@ export function MobileAllProductsListHeader({ onClick, order, setOrder }) {
     <div className='all-products-header'>
       <div className='mobile-header'>
         <h2 className='products-list-title'>전체 상품</h2>
-        <Button onClick={onClick} className='btn btn-product-register'>
+        <StyledButton onClick={onClick} size='small'>
           상품 등록하기
-        </Button>
+        </StyledButton>
       </div>
       <div className='search-container'>
         <Search className='input--color' />

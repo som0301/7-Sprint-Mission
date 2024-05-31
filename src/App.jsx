@@ -12,6 +12,7 @@ import AddItemPage from './pages/AddItemPage';
 import HomePage from './pages/HomePage';
 import BoardPage from './pages/BoardPage';
 import { ResponsiveProvider } from './Responsive';
+import ItemDetailPage from './pages/ItemDetailPage';
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
             <Route path='/' element={<HomePage />}>
               <Route path='board' element={<BoardPage />} />
               <Route path='items' element={<ItemsPage />} />
+              <Route
+                path='items/:productId'
+                element={<ItemDetailPage />}
+              ></Route>
               <Route path='additem' element={<AddItemPage />} />
               <Route path='*' element={<NotFoundPage />} />
             </Route>

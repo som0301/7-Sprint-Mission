@@ -171,6 +171,9 @@ header {
 }
 /* 패드 사이즈 */
 @media (max-width: 1199px) {
+  body {
+    display: block;
+  }
   .best-products-col {
     width: 40%;
     max-width: none;
@@ -189,13 +192,16 @@ header {
     width: 242px;
   }
   header {
-    padding: 0 34px;
+    padding: 0 24px;
   }
   .header-left {
     gap: 20px;
   }
 }
 @media (max-width: 767px) {
+  header {
+    padding: 0 16px;
+  }
   .best-products-col {
     width: 100%;
     max-width: none;

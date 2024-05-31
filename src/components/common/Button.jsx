@@ -34,9 +34,15 @@ export const StyledButton = styled.button`
 
   &:hover {
     cursor: pointer;
+    background-color: #1967d6;
+  }
+
+  &:active {
+    background-color: #1251aa;
   }
 
   &:disabled {
     cursor: default;
+    background-color: var(--gray-400);
   }
 `;

@@ -1,14 +1,14 @@
-import Button from "../common/Button";
-import TabMenu from "./TabMenu";
+import Button from '../common/Button';
+import TabMenu from './TabMenu';
 
-import LogoImage from "./LogoImage";
-import LogoText from "./LogoText";
+import LogoImage from './LogoImage';
+import LogoText from './LogoText';
 
 const flexColumnStyle = {
-  display: "flex",
-  displayDirction: "column",
-  alignItems: "center",
-  gap: "32px",
+  display: 'flex',
+  displayDirction: 'column',
+  alignItems: 'center',
+  gap: '32px',
 };
 
 function Header({ isMobile }) {
@@ -16,13 +16,13 @@ function Header({ isMobile }) {
     <header>
       <div style={flexColumnStyle}>
         {isMobile ? (
-          <LogoImage id="header-logo" />
+          <LogoImage id='header-logo' />
         ) : (
-          <LogoText id="header-logo" />
+          <LogoText id='header-logo' />
         )}
-        <TabMenu class="header__tab" />
+        <TabMenu class='header__tab' />
       </div>
-      <Button className="btn btn-small">로그인</Button>
+      <StyledButton size='small'>로그인</StyledButton>
     </header>
   );
 }

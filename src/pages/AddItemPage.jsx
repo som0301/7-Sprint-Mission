@@ -6,10 +6,11 @@ const StyledAddItemMain = styled.div`
   width: 1200px;
 
   @media (max-width: 1199px) {
-    width: 696px;
+    width: 100%;
+    padding: 0 24px;
   }
   @media (max-width: 767px) {
-    width: 344px;
+    padding: 0 16px;
   }
 `;
 

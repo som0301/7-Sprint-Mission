@@ -14,15 +14,15 @@ import {
 import { useResponsiveApi } from '/src/Responsive';
 
 function AllProductsListItem({ product, className }) {
-  const { images, name, price, favoriteCount } = product;
+  const { id, images, name, price, favoriteCount } = product;
 
   return (
     <ProductItem
+      id={id}
       src={images}
       name={name}
       price={price}
       favoriteCount={favoriteCount}
-      size='221px'
       className={className}
     />
   );
