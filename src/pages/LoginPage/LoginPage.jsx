@@ -1,8 +1,21 @@
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../layout/Logo';
 import '../../assets/css/sign.css';
+import setUserFormFunc from '../../assets/js/user';
 
 function LoginPage() {
+	const navigate = useNavigate();
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		navigate('/signup');
+	};
+
+	useEffect(() => {
+		setUserFormFunc();
+	}, []);
+
 	return (
 		<main id='signupPage'>
 			<article className='login'>
@@ -10,7 +23,7 @@ function LoginPage() {
 					<Logo />
 				</section>
 				<section className='login__body'>
-					<form method='get' action='/pages/items/'>
+					<form onSubmit={handleSubmit}>
 						<article className='input-box'>
 							<label htmlFor='login_email'>이메일</label>
 							<input type='text' name='email' id='login_email' placeholder='이메일을 입력해주세요' autoComplete='true' />
@@ -19,12 +32,12 @@ function LoginPage() {
 							<label htmlFor='login_password'>비밀번호</label>
 							<div>
 								<input type='password' name='password' id='login_password' placeholder='비밀번호를 입력해주세요' />
-								<button type='button' className='btn_visibility'>
+								<button type='button' className='btn-visibility'>
 									<img src='/assets/images/icon/ic-visibility-off.svg' alt='비가시성 아이콘' draggable='false' />
 								</button>
 							</div>
 						</article>
-						<button type='submit' name='login' className='btn btn_large' disabled={true}>
+						<button type='submit' name='login' className='btn btn--large' disabled={true}>
 							<span>로그인</span>
 						</button>
 					</form>

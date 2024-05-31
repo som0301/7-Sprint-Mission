@@ -1,4 +1,9 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import facebookIcon from '../assets/images/sns/ic-facebook-white.svg';
+import twitterIcon from '../assets/images/sns/ic-twitter-white.svg';
+import youtubeIcon from '../assets/images/sns/ic-youtube-white.svg';
+import instagramIcon from '../assets/images/sns/ic-instagram-white.svg';
 
 function RootFooter() {
 	return (
@@ -14,22 +19,22 @@ function RootFooter() {
 				<ul className='sns_link'>
 					<li>
 						<a href='https://www.facebook.com/' target='_blank' rel='noreferrer noopener'>
-							<img src='/assets/images/sns/ic-facebook-white.svg' alt='페이스북 아이콘' draggable='false' />
+							<img src={facebookIcon} alt='페이스북 아이콘' draggable='false' />
 						</a>
 					</li>
 					<li>
 						<a href='https://twitter.com/' target='_blank' rel='noreferrer noopener'>
-							<img src='/assets/images/sns/ic-twitter-white.svg' alt='트위터 아이콘' draggable='false' />
+							<img src={twitterIcon} alt='트위터 아이콘' draggable='false' />
 						</a>
 					</li>
 					<li>
 						<a href='https://www.youtube.com/' target='_blank' rel='noreferrer noopener'>
-							<img src='/assets/images/sns/ic-youtube-white.svg' alt='유튜브 아이콘' draggable='false' />
+							<img src={youtubeIcon} alt='유튜브 아이콘' draggable='false' />
 						</a>
 					</li>
 					<li>
 						<a href='https://www.instagram.com/' target='_blank' rel='noreferrer noopener'>
-							<img src='/assets/images/sns/ic-instagram-white.svg' alt='인스타그램 아이콘' draggable='false' />
+							<img src={instagramIcon} alt='인스타그램 아이콘' draggable='false' />
 						</a>
 					</li>
 				</ul>

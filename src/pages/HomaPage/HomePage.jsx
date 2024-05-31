@@ -1,10 +1,11 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './HomePage.css';
 import imageHomeTop from '../../assets/images/home/img-home-top.png';
 import imageIntroduce1 from '../../assets/images/home/img-home-01.png';
 import imageIntroduce2 from '../../assets/images/home/img-home-02.png';
 import imageIntroduce3 from '../../assets/images/home/img-home-03.png';
 import imageHomeBottom from '../../assets/images/home/img-home-bottom.png';
+import './HomePage.css';
 
 function HomePage() {
 	return (
@@ -16,7 +17,7 @@ function HomePage() {
 						<br />
 						거래해 보세요
 					</p>
-					<Link to={'/items/'} className='btn btn_large'>
+					<Link to={'/items/'} className='btn btn--large'>
 						구경하러 가기
 					</Link>
 					<img src={imageHomeTop} alt='판다마켓 메인비주얼' draggable='false' />
