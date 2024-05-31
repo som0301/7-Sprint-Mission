@@ -1,14 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './Header/Header';
-import AddItem from './Items/AddItem';
-import Items from './Items/Items';
-import '../styles/fonts.css';
-import '../styles/color.css';
-import '../styles/reset.css';
+import GlobalStyle from './styles/GlobalStyle';
+import Header from 'shared/ui/header/Header';
+import AddItem from 'pages/additem/AddItemPage';
+import Items from 'pages/items/ItemsPage';
 
 function App() {
     return (
         <Router>
+            <GlobalStyle />
             <Header />
             <Routes>
                 <Route path="/" exact element={<Items />} />
