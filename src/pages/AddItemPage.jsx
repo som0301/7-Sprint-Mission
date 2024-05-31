@@ -1,6 +1,6 @@
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import AddItemForm from '../components/AddItemForm';
-import { useResponsiveApi } from '../Responsive';
 
 const StyledAddItemMain = styled.div`
   width: 1200px;
@@ -15,9 +15,14 @@ const StyledAddItemMain = styled.div`
 
 function AddItem() {
   return (
-    <StyledAddItemMain>
-      <AddItemForm />
-    </StyledAddItemMain>
+    <>
+      <Helmet>
+        <title>판다마켓 - 상품 등록</title>
+      </Helmet>
+      <StyledAddItemMain>
+        <AddItemForm />
+      </StyledAddItemMain>
+    </>
   );
 }
 

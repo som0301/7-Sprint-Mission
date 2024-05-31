@@ -8,6 +8,7 @@ import AllProductsList from '/src/components/AllProductsList';
 import '/src/styles/Button.css';
 
 import { useResponsiveApi } from '../Responsive';
+import { Helmet } from 'react-helmet';
 
 function Items() {
   const [allProducts, setAllProducts] = useState([]);
@@ -49,6 +50,9 @@ function Items() {
 
   return (
     <>
+      <Helmet>
+        <title>중고 마켓</title>
+      </Helmet>
       <main>
         <BestProductsList
           className='best-products-list'
