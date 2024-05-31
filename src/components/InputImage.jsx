@@ -36,7 +36,7 @@ function InputImage({ id, name, onChange }) {
     <form className="InputImage">
       <h2 className="InputImage-title">{name}</h2>
       <div className="InputImage-container">
-        <label className="InputImage-regist" for={id}>
+        <label className="InputImage-regist image-size" for={id}>
           <div>
             <img src={iconPlus}></img>
             <p>이미지 등록</p>
@@ -51,7 +51,7 @@ function InputImage({ id, name, onChange }) {
         />
         {currentImage && (
           <div
-            className="InputImage-preview"
+            className="InputImage-preview image-size"
             style={{
               backgroundImage: `url(${preview})`,
               backgroundSize: "contain",
