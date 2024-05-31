@@ -1,0 +1,71 @@
+@import url("globals.css");
+
+.InputImage {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 0;
+
+  width: 100%;
+}
+
+.InputImage-container {
+  display: flex;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .InputImage-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .InputImage-title {
+    font-size: 1.8rem;
+  }
+}
+
+.InputImage-title {
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.InputImage-regist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 282px;
+  height: 282px;
+  border-radius: 12px;
+  background-color: var(--gray100);
+}
+
+.InputImage-regist > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  width: 74px;
+  height: 84px;
+  margin: 0 auto;
+}
+
+.InputImage-preview {
+  width: 282px;
+  height: 282px;
+  object-fit: contain;
+}
+
+.InputImage-content {
+  display: none;
+}
+
+.InputImage-content:focus {
+  outline: 1px solid var(--blue);
+}
