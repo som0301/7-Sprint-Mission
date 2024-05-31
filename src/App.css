@@ -25,17 +25,17 @@ li {
   list-style: none;
 }
 
+main {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
+}
+
 .products-list-title {
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
   letter-spacing: 0.02em;
-}
-
-main {
-  width: 1200px;
-  margin: 0 auto;
-  padding-top: 24px;
 }
 
 .row {
@@ -80,11 +80,8 @@ main {
   border: none;
   color: var(--gray-400);
 
-  font-family: Pretendard;
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
-  text-align: left;
 }
 
 .all-products-header {

@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet';
 import AddItemForm from '../components/AddItemForm';
+import { StyledMain } from '../components/common/CommonComponents';
 
 function AddItem() {
   return (

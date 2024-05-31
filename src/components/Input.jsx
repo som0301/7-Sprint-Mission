@@ -43,6 +43,10 @@ const InputStyle = css`
     top: 16px;
     left: 24px;
   }
+
+  &:focus {
+    outline: 2px solid var(--main-color);
+  }
 `;
 
 const StyledInput = styled.input`

@@ -1,26 +1,22 @@
-import Button, { StyledButton } from '../common/Button';
+import { StyledButton } from '../common/Button';
 import TabMenu from './TabMenu';
 
 import LogoImage from './LogoImage';
-import LogoText from './LogoText';
-import { useState } from 'react';
-
-import { useResponsiveApi } from '../../Responsive';
 import styled from 'styled-components';
 
+import { useNavigate } from 'react-router-dom';
+
 function Header() {
-  const { isMobile } = useResponsiveApi();
+  const navigate = useNavigate();
   return (
     <StyledHeader>
       <div className='header-left'>
-        {!isMobile ? (
-          <LogoImage id='header-logo' />
-        ) : (
-          <LogoText id='header-logo' />
-        )}
+        <LogoImage type='header' />
         <TabMenu class='header__tab' />
       </div>
-      <StyledButton size='small'>로그인</StyledButton>
+      <StyledButton size='small' onClick={() => navigate('/login')}>
+        로그인
+      </StyledButton>
     </StyledHeader>
   );
 }

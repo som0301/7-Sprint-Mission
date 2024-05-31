@@ -13,6 +13,8 @@ import HomePage from './pages/HomePage';
 import BoardPage from './pages/BoardPage';
 import { ResponsiveProvider } from './Responsive';
 import ItemDetailPage from './pages/ItemDetailPage';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <BrowserRouter>
         <ResponsiveProvider>
           <Routes>
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/signup' element={<SignUpPage />} />
             <Route path='/' element={<HomePage />}>
               <Route path='board' element={<BoardPage />} />
               <Route path='items' element={<ItemsPage />} />

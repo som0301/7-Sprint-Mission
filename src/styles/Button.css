@@ -1,4 +1,11 @@
 @import '/src/styles/Color.css';
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
 
 /* sprint3 - 모바일 사이즈 일때 '구경하러 가기' 버튼 사이즈 줄어들게 */
 @media (max-width: 767px) {
