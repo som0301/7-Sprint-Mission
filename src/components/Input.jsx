@@ -5,12 +5,14 @@ import iconPlus from '/src/assets/ic_plus.svg';
 import iconImageCancel from '/src/assets/ic_cancel.svg';
 import { useEffect, useRef, useState } from 'react';
 
+/* text style css 함수 */
 const TextStyle = css`
   font-size: 16px;
   font-weight: 400;
   color: var(--gray-800);
 `;
 
+/* input */
 export const StyledInputContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -52,51 +54,6 @@ const StyledTextArea = styled.textarea`
   ${InputStyle}
 `;
 
-const StyledTag = styled.div`
-  display: inline-flex;
-  background-color: var(--gray-50);
-  padding: 12px 12px 12px 16px;
-  border-radius: 26px;
-
-  ${TextStyle}
-
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-`;
-
-export const TagContainer = styled.div`
-  display: flex;
-  flex-flow: wrap;
-  gap: 12px;
-  margin-top: 12px;
-
-  & img:hover {
-    cursor: pointer;
-  }
-`;
-
-export function Tag({ idx, children, onClick }) {
-  const tagRef = useRef();
-  const handleClick = () => {
-    const tagNode = tagRef.current;
-    if (!tagNode) return;
-
-    tagNode.value = '';
-    onClick(idx);
-  };
-
-  return (
-    <StyledTag ref={tagRef}>
-      <span>{children}</span>
-      {/* <button type='button'>
-        
-      </button> */}
-      <img src={iconTagCancel} onClick={handleClick} />
-    </StyledTag>
-  );
-}
-
 export function Input({
   name,
   value,
@@ -136,6 +93,50 @@ export function Input({
   );
 }
 
+/* tag */
+const StyledTag = styled.div`
+  display: inline-flex;
+  background-color: var(--gray-50);
+  padding: 12px 12px 12px 16px;
+  border-radius: 26px;
+
+  ${TextStyle}
+
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+`;
+
+export const TagContainer = styled.div`
+  display: flex;
+  flex-flow: wrap;
+  gap: 12px;
+  margin-top: 12px;
+
+  & img:hover {
+    cursor: pointer;
+  }
+`;
+
+export function Tag({ idx, children, onClick }) {
+  const tagRef = useRef();
+  const handleClick = () => {
+    const tagNode = tagRef.current;
+    if (!tagNode) return;
+
+    tagNode.value = '';
+    onClick(idx);
+  };
+
+  return (
+    <StyledTag ref={tagRef}>
+      <span>{children}</span>
+      <img src={iconTagCancel} onClick={handleClick} />
+    </StyledTag>
+  );
+}
+
+/* file */
 const imgStyle = css`
   width: 282px;
   height: 282px;

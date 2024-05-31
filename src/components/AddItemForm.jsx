@@ -8,11 +8,19 @@ const StyledForm = styled.form`
   flex-direction: column;
   gap: 24px;
   margin-top: 24px;
+
+  @media (max-width: 1199px) {
+    margin-top: 16px;
+  }
+  @media (max-width: 767px) {
+    gap: 16px;
+  }
 `;
 
 const StyledFormHeader = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 const FormHeaderTitle = styled.h2`
@@ -40,11 +48,13 @@ function AddItemForm() {
     }));
   };
 
+  // 모든 input 변경할때 사용
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     handleChange(name, value);
   };
 
+  // 가격: 가격 입력할 때
   const handleNumberChange = (e) => {
     const { name } = e.target;
     const uncomValue = String(e.target.value).replace(/[^\d]+/g, '');
@@ -53,6 +63,7 @@ function AddItemForm() {
     handleChange(name, value);
   };
 
+  // 태그: 태그 상태 변경
   const handleTagChange = (e) => {
     const { value } = e.target;
     if (value.trim() === '') return;
@@ -63,11 +74,13 @@ function AddItemForm() {
     });
   };
 
+  // 태그: 태그 엔터키 눌렀을 때 submit 동작 막기
   const handleKeyDown = (e) => {
     if (e.code !== 'Enter') return;
     e.preventDefault();
   };
 
+  // 태그: 엔터키 마지막으로 눌렀을때 tag 등록하고 현재 tag input 비우기
   const handleKeyUp = (e) => {
     if (e.code === 'Enter') {
       e.preventDefault();
@@ -76,17 +89,19 @@ function AddItemForm() {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(values); // 아직 POST 구현 안해서 확인용 콘솔로그
-  };
-
+  // 태그: 태그삭제할때
   const handleDeleteTag = (idx) => {
     setTags((prevTags) => {
       const nextTags = [...prevTags];
       nextTags.splice(idx, 1);
       return nextTags;
     });
+  };
+
+  // 등록 버튼 : 등록 눌렀을 때
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(values); // 아직 POST 구현 안해서 확인용 콘솔로그
   };
 
   useEffect(() => {
@@ -98,7 +113,6 @@ function AddItemForm() {
       isCheck &&
       JSON.stringify(initialValues.tags) !== JSON.stringify(values.tags);
     setIsFilled(isCheck);
-    isCheck = isCheck && values.tags == 0;
   }, [values]);
 
   useEffect(() => {
