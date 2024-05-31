@@ -76,6 +76,20 @@ function AddItemForm() {
     console.log(values);
   };
 
+  const handleDeleteTag = (idx) => {
+    // 특정 key값을 가진 컴포넌트의 인덱스를 찾기
+    // 그러고 그 요소를 삭제한 배열을 다시 set..
+
+    setTags((prevTags) => {
+      const nextTags = [...prevTags];
+      nextTags.splice(idx, 1);
+      return [...nextTags];
+    });
+
+    handleChange('tags', tags);
+  };
+
+  //TODO: tags 확인하면 한개 덜 나오는거 수정
   return (
     <StyledForm onSubmit={handleSubmit}>
       <StyledFormHeader>
@@ -129,7 +143,9 @@ function AddItemForm() {
         <TagContainer>
           {tags.map((tag, index) => (
             //   <StyledTag key={index}>{tag}</StyledTag>
-            <Tag key={index}>{tag}</Tag>
+            <Tag key={index} idx={index} onClick={handleDeleteTag}>
+              {tag}
+            </Tag>
           ))}
         </TagContainer>
       </div>

@@ -5,8 +5,6 @@ import iconPlus from '/src/assets/ic_plus.svg';
 import iconImageCancel from '/src/assets/ic_cancel.svg';
 import { useEffect, useRef, useState } from 'react';
 
-const WEIGHTS = {};
-
 const TextStyle = css`
   font-size: 16px;
   font-weight: 400;
@@ -71,16 +69,29 @@ export const TagContainer = styled.div`
   display: flex;
   gap: 12px;
   margin-top: 12px;
+
+  & img:hover {
+    cursor: pointer;
+  }
 `;
 
-export function Tag({ children }) {
+export function Tag({ idx, children, onClick }) {
+  const tagRef = useRef();
+  const handleClick = () => {
+    const tagNode = tagRef.current;
+    if (!tagNode) return;
+
+    tagNode.value = '';
+    onClick(idx);
+  };
+
   return (
-    <StyledTag>
+    <StyledTag ref={tagRef}>
       <span>{children}</span>
       {/* <button type='button'>
         
       </button> */}
-      <img src={iconTagCancel} />
+      <img src={iconTagCancel} onClick={handleClick} />
     </StyledTag>
   );
 }
@@ -155,10 +166,6 @@ function FileUploadButton({ onClick }) {
 const File = styled.input`
   visibility: hidden;
   position: absolute;
-`;
-
-const StyledPreviewImage = styled.img`
-  ${imgStyle}
 `;
 
 const PreviewImagediv = styled.div`
