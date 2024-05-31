@@ -34,7 +34,7 @@ function AddItem({ mediaState }) {
     let { name, value } = e.target;
     if (name === 'price') {
       value = Number(value.replaceAll(',', ''));
-      if (value === 0) {
+      if (value === 0 || isNaN(value)) {
         value = '';
       }
     }
