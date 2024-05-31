@@ -16,7 +16,7 @@ function PrintAllItems() {
   }, []);
 
   return (
-    <div className='container-all-items'>
+    <div className='container-items'>
       <h1>전체 상품</h1>
       <div className='all-items'>
         <ItemBox items={items} />

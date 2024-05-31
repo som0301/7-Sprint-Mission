@@ -14,7 +14,7 @@ function PrintBestItems() {
     loadItems();
   }, []);
   return (
-    <div className='container-best-items'>
+    <div className='container-items'>
       <h1>베스트 상품</h1>
       <div className='best-items>'>
         <ItemBox items={items} />
