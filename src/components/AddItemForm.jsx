@@ -47,8 +47,9 @@ function AddItemForm() {
 
   const handleNumberChange = (e) => {
     const { name } = e.target;
-    const value = Number(e.target.value);
-    if (isNaN(value)) return;
+    const uncomValue = String(e.target.value).replace(/[^\d]+/g, '');
+    const value = uncomValue.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+
     handleChange(name, value);
   };
 
@@ -98,7 +99,6 @@ function AddItemForm() {
       JSON.stringify(initialValues.tags) !== JSON.stringify(values.tags);
     setIsFilled(isCheck);
     isCheck = isCheck && values.tags == 0;
-    // TODO: 금액 지웠을때.. 아니 근데 금액 지워도 0원 등록할 수 있잖아
   }, [values]);
 
   useEffect(() => {
