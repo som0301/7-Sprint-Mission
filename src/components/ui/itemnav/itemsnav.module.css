@@ -63,16 +63,12 @@
   position: fixed;
   background-color: #fff;
   z-index: 1;
+  top: 0;
 }
 
 .nav-container {
   display: flex;
   flex-direction: row;
-}
-
-.nav-button {
-  padding: 12px 23px;
-  font-size: 1.6rem;
 }
 
 .nav-link-container {

@@ -89,7 +89,7 @@ function AddItem({ mediaState }) {
   return (
     <>
       <ItemsNav mediaState={mediaState} rightComponent={<img src={userIcon} alt="userIcon"></img>} />
-      <main className={classModuleName('main', styles)}>
+      <section className={classModuleName('main', styles)}>
         <form className={classModuleName('input-form', styles)}>
           <div className={classModuleName('input-header-container', styles)}>
             <h2>상품 등록하기</h2>
@@ -99,7 +99,7 @@ function AddItem({ mediaState }) {
           </div>
           <div className={classModuleName('input-container', styles)}>
             <p>상품 이미지</p>
-            <ImageFileInput name="images" value={values.images} styles={styles} onChange={handleChange} />
+            <ImageFileInput mediaState={mediaState} name="images" value={values.images} styles={styles} onChange={handleChange} />
           </div>
           <div className={classModuleName('input-container', styles)}>
             <label htmlFor="name">상품명</label>
@@ -139,7 +139,7 @@ function AddItem({ mediaState }) {
             })}
           </div>
         </form>
-      </main>
+      </section>
     </>
   );
 }

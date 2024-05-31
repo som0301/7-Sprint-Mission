@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { classModuleName } from '../../../modules';
 import inputImage from '../../../images/others/File_Input_image.svg';
+import deleteImage from '../../../images/icons/ic_X.svg';
 
 function ImageFileInput({ name, value, onChange, styles }) {
   const [preview, setPreview] = useState();
@@ -40,7 +41,7 @@ function ImageFileInput({ name, value, onChange, styles }) {
         {value && <img src={preview} alt="이미지 미리보기" className={classModuleName('preview', styles)} />}
         {value && (
           <button onClick={handleClearClick} className={classModuleName('button-delete', styles)}>
-            X
+            <img src={deleteImage} alt="삭제" />
           </button>
         )}
       </div>
