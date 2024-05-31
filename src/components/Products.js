@@ -1,5 +1,5 @@
-import "./common.css";
-import "./Products.css";
+import "../styles/common.css";
+import "../styles/Products.css";
 
 // 가격표시 형식 변환
 function formatPrice(price) {
@@ -7,13 +7,14 @@ function formatPrice(price) {
 }
 
 function ProductList({ product }) {
+  const { images, name, price, favoriteCount } = product;
   return (
     <div className="ProductList">
-      <img src={product.images} alt={product.name} />
+      <img src={images} alt={product.name} />
       <div className="description">
-        <p>{product.name}</p>
-        <p className="productPrice">{formatPrice(product.price)}원</p>
-        <p>{product.favoriteCount}</p>
+        <p>{name}</p>
+        <p className="productPrice">{formatPrice(price)}원</p>
+        <p>{favoriteCount}</p>
       </div>
     </div>
   );

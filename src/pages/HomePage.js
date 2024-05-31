@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { getProducts } from "./Api";
-import Header from "./component/Header";
-import Products from "./component/Products";
-import "./component/common.css";
-import "./App.css";
+import { Link } from "react-router-dom";
+import { getProducts } from "../utils/Api";
+import Products from "../components/Products";
+import "../styles/common.css";
+import "../styles/HomePage.css";
 
-function App() {
+function HomePage() {
   const [order, setOrder] = useState("recent"); // 전체 상품의 기본 정렬을 최신순으로 설정
   const [bestProducts, setBestProducts] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
@@ -34,7 +34,6 @@ function App() {
 
   return (
     <>
-      <Header />
       <div className="main">
         <div className="bestProducts">
           <span>베스트 상품</span>
@@ -45,7 +44,9 @@ function App() {
             <span>전체 상품</span>
             <div>
               <input placeholder="검색할 상품을 입력해주세요" />
-              <button>상품 등록하기</button>
+              <Link to="/additem">
+                <button>상품 등록하기</button>
+              </Link>
               <select
                 name="SelectOrder"
                 onChange={handleOrderChange}
@@ -63,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;
