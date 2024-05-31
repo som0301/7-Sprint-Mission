@@ -9,6 +9,7 @@ import '/src/styles/Button.css';
 
 import { useResponsiveApi } from '../Responsive';
 import { Helmet } from 'react-helmet';
+import { StyledMain } from '../components/common/CommonComponents';
 
 function Items() {
   const [allProducts, setAllProducts] = useState([]);
