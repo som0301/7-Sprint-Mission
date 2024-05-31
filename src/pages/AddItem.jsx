@@ -3,14 +3,41 @@ import sampleImg from "../assets/images/img_sample.png";
 import blueXIc from "../assets/icons/ic_x_blue.svg";
 import grayXIc from "../assets/icons/ic_x_gray.svg";
 import plusIc from "../assets/icons/ic_plus.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import FileInput from "../components/FileInput";
 
 function AddItem() {
-  const [prodImg, setProdImg] = useState("");
-  const [title, setTitle] = useState("");
-  const [discription, setDiscription] = useState("");
-  const [price, setPrice] = useState("");
-  const [tag, setTag] = useState([]);
+  const [preview, setPreview] = useState(null);
+  const [values, setValues] = useState({
+    title: "",
+    discription: "",
+    price: "",
+    tag: "",
+    imgFile: null,
+  });
+
+  useEffect(() => {
+    if (!values.imgFile) return;
+    const blob = new Blob([values.imgFile], { type: "image/jpeg" });
+    const nextPreview = URL.createObjectURL(blob);
+    setPreview(nextPreview);
+    return () => {
+      setPreview();
+      URL.revokeObjectURL(nextPreview);
+    };
+  }, [values.imgFile]);
+
+  const handleChange = (name, value) => {
+    setValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
+
+  // const handleInputChange = (e) => {
+  //   const { name, value } = e.target;
+  //   handleChange(name, value);
+  // };
 
   return (
     <div className="add-item">
@@ -22,49 +49,75 @@ function AddItem() {
           </button>
         </div>
         <div className="img">
-          <label>상품 이미지</label>
+          <label className="input-label">상품 이미지</label>
           <div className="img-container">
             <div className="add-img">
-              <img src={plusIc} alt="플러스_아이콘" />
-              <p>이미지 등록</p>
+              <FileInput
+                name="imgFile"
+                value={values.imgFile}
+                onChange={handleChange}
+              >
+                <img src={plusIc} alt="플러스_아이콘" />
+                <p>이미지 등록</p>
+              </FileInput>
             </div>
-            <div className="added-img">
-              <img src={sampleImg} alt="등록된_이미지" className="upload-img" />
-              <img src={blueXIc} alt="삭제 버튼" className="btn-delete" />
-            </div>
+            {preview && (
+              <div className="added-img">
+                {/* <img src={sampleImg} alt="등록된_이미지" className="upload-img" /> */}
+                <img
+                  src={preview}
+                  alt="이미지 미리보기"
+                  className="upload-img"
+                />
+                <img
+                  src={blueXIc}
+                  alt="삭제 버튼"
+                  className="btn-delete"
+                  onClick={() => setPreview(null)}
+                />
+              </div>
+            )}
           </div>
         </div>
-        <label htmlFor="title">상품명</label>
+        <label htmlFor="title" className="input-label">
+          상품명
+        </label>
         <input
           id="title"
           name="title"
-          value={title}
+          value={values.title}
           placeholder="상품명을 입력해주세요"
-          // onChange={}
+          onChange={handleChange}
         />
-        <label htmlFor="discription">상품 소개</label>
+        <label htmlFor="discription" className="input-label">
+          상품 소개
+        </label>
         <textarea
           id="discription"
           name="discription"
-          // value={discription}
+          value={values.discription}
           placeholder="상품 소개를 입력해주세요"
-          // onChange={}
+          onChange={handleChange}
         />
-        <label htmlFor="price">판매가격</label>
+        <label htmlFor="price" className="input-label">
+          판매가격
+        </label>
         <input
           id="price"
           name="price"
-          value={price}
+          value={values.price}
           placeholder="판매 가격을 입력해주세요"
-          // onChange={}
+          onChange={handleChange}
         />
-        <label htmlFor="tag">태그</label>
+        <label htmlFor="tag" className="input-label">
+          태그
+        </label>
         <input
           id="tag"
           name="tag"
-          value={tag}
+          value={values.tag}
           placeholder="태그를 입력해주세요"
-          // onChange={}
+          onChange={handleChange}
         />
       </form>
     </div>

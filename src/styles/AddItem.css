@@ -51,8 +51,10 @@
 }
 
 .add-item .upload-img {
+  border-radius: 10px;
   width: 282px;
   height: 282px;
+  object-fit: cover;
 }
 .add-item .added-img {
   position: relative;
@@ -64,9 +66,10 @@
   position: absolute;
   top: 8px;
   right: 8px;
+  cursor: pointer;
 }
 
-.add-item label {
+.add-item .input-label {
   font-family: "Pretendard";
   font-weight: bold;
   font-size: 18px;
