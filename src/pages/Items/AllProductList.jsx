@@ -13,7 +13,6 @@ const AllProductList = ({ pageSize, title, TopContainer }) => {
   const [order, setOrder] = useState('recent');
   // orderSelect 상태 관리
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-  const [orderBy, setOrderBy] = useState('최신순');
   // pagination 상태 관리
   const [totalCount, setTotalCount] = useState(0);
 
@@ -22,15 +21,8 @@ const AllProductList = ({ pageSize, title, TopContainer }) => {
   };
 
   const handleDropdownClick = (e) => {
-    const orderText = e.target.innerText;
+    e.target.id === 'recent' ? setOrder('recent') : setOrder('favorite');
 
-    orderText === '최신순'
-      ? setOrder('recent')
-      : orderText === '좋아요순'
-      ? setOrder('favorite')
-      : setOrder('recent');
-
-    setOrderBy(orderText);
     setIsDropdownVisible(false);
   };
 
@@ -43,7 +35,6 @@ const AllProductList = ({ pageSize, title, TopContainer }) => {
       const data = await getProductItem(currentPage, pageSize, order);
       setProduct(data.list);
       setTotalCount(data.totalCount);
-      console.log(data);
     };
     getAllProduct();
   }, [order, currentPage, pageSize]);
@@ -75,14 +66,22 @@ const AllProductList = ({ pageSize, title, TopContainer }) => {
                 className="order-select"
                 onClick={handleOrderSelectClick}
               >
-                {orderBy}
+                {order === 'recent' ? '최신순' : '좋아요순'}
               </button>
               {isDropdownVisible && (
                 <ul className="order-dropdown">
-                  <li className="order-option" onClick={handleDropdownClick}>
+                  <li
+                    className="order-option"
+                    id="recent"
+                    onClick={handleDropdownClick}
+                  >
                     최신순
                   </li>
-                  <li className="order-option" onClick={handleDropdownClick}>
+                  <li
+                    className="order-option"
+                    id="favorite"
+                    onClick={handleDropdownClick}
+                  >
                     좋아요순
                   </li>
                 </ul>
@@ -120,10 +119,18 @@ const AllProductList = ({ pageSize, title, TopContainer }) => {
               ></button>
               {isDropdownVisible && (
                 <ul className="order-dropdown">
-                  <li className="order-option" onClick={handleDropdownClick}>
+                  <li
+                    className="order-option"
+                    id="recent"
+                    onClick={handleDropdownClick}
+                  >
                     최신순
                   </li>
-                  <li className="order-option" onClick={handleDropdownClick}>
+                  <li
+                    className="order-option"
+                    id="favorite"
+                    onClick={handleDropdownClick}
+                  >
                     좋아요순
                   </li>
                 </ul>
