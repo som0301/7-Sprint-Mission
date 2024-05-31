@@ -1,7 +1,7 @@
 import { FileInput, Input, Tag, TagContainer } from './Input';
 import { styled } from 'styled-components';
-import Button from './common/Button';
-import { useState } from 'react';
+import Button, { StyledButton } from './common/Button';
+import { useEffect, useState } from 'react';
 
 const StyledForm = styled.form`
   display: flex;
@@ -20,15 +20,18 @@ const FormHeaderTitle = styled.h2`
   font-weight: 700;
 `;
 
+const initialValues = {
+  name: '',
+  description: '',
+  price: '',
+  tags: [],
+  images: null,
+};
+
 function AddItemForm() {
+  const [isfilled, setIsFilled] = useState(false);
   const [tags, setTags] = useState([]);
-  const [values, setValues] = useState({
-    name: '',
-    description: '',
-    price: '',
-    tags: { tags },
-    images: null,
-  });
+  const [values, setValues] = useState(initialValues);
 
   const handleChange = (name, value) => {
     setValues((prevValues) => ({
@@ -53,9 +56,10 @@ function AddItemForm() {
     const { value } = e.target;
     if (value.trim() === '') return;
     if (tags.length === 10) return;
-    setTags((prevTags) => [...new Set([...prevTags, value.trim()])]);
-    handleChange('tags', tags);
-    // setValues((prevValues) => ({ ...prevValues, ['tags']: tags }));
+    setTags((prevTags) => {
+      const nextTags = [...new Set([...prevTags, value.trim()])];
+      return [...nextTags];
+    });
   };
 
   const handleKeyDown = (e) => {
@@ -73,30 +77,41 @@ function AddItemForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values);
+    console.log(values); // 아직 POST 구현 안해서 확인용 콘솔로그
   };
 
   const handleDeleteTag = (idx) => {
-    // 특정 key값을 가진 컴포넌트의 인덱스를 찾기
-    // 그러고 그 요소를 삭제한 배열을 다시 set..
-
     setTags((prevTags) => {
       const nextTags = [...prevTags];
       nextTags.splice(idx, 1);
-      return [...nextTags];
+      return nextTags;
     });
-
-    handleChange('tags', tags);
   };
 
-  //TODO: tags 확인하면 한개 덜 나오는거 수정
+  useEffect(() => {
+    let isCheck = true;
+    for (let value in values) {
+      isCheck = isCheck && initialValues[value] !== values[value];
+    }
+    isCheck =
+      isCheck &&
+      JSON.stringify(initialValues.tags) !== JSON.stringify(values.tags);
+    setIsFilled(isCheck);
+    isCheck = isCheck && values.tags == 0;
+    // TODO: 금액 지웠을때.. 아니 근데 금액 지워도 0원 등록할 수 있잖아
+  }, [values]);
+
+  useEffect(() => {
+    handleChange('tags', tags);
+  }, [tags]);
+
   return (
     <StyledForm onSubmit={handleSubmit}>
       <StyledFormHeader>
         <FormHeaderTitle>상품 등록하기</FormHeaderTitle>
-        <Button type='submit' className='btn btn-small'>
+        <StyledButton disabled={!isfilled} type='submit' size='small'>
           등록
-        </Button>
+        </StyledButton>
       </StyledFormHeader>
       <FileInput name='images' value={values.images} onChange={handleChange} />
       <Input

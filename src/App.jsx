@@ -18,7 +18,6 @@ function App() {
     <>
       <BrowserRouter>
         <ResponsiveProvider>
-          <Header />
           <Routes>
             <Route path='/' element={<HomePage />}>
               <Route path='board' element={<BoardPage />} />

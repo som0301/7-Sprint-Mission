@@ -67,6 +67,7 @@ const StyledTag = styled.div`
 
 export const TagContainer = styled.div`
   display: flex;
+  flex-flow: wrap;
   gap: 12px;
   margin-top: 12px;
 
@@ -138,6 +139,15 @@ export function Input({
 const imgStyle = css`
   width: 282px;
   height: 282px;
+
+  @media (max-width: 1199px) {
+    width: 162px;
+    height: 162px;
+  }
+  @media (max-width: 767px) {
+    width: 168px;
+    height: 168px;
+  }
 `;
 
 const StyledFileUploadButton = styled.button`
@@ -190,6 +200,18 @@ const PreviewImagediv = styled.div`
   }
 `;
 
+const FileUploadContainer = styled.div`
+  display: flex;
+  gap: 24px;
+
+  @media (max-width: 1199px) {
+    gap: 16px;
+  }
+  @media (max-width: 767px) {
+    gap: 8px;
+  }
+`;
+
 export function PreviewImage({ preview, onClick }) {
   return (
     <PreviewImagediv>
@@ -226,7 +248,7 @@ export function FileInput({ name, value, onChange }) {
 
   return (
     <>
-      <div style={{ display: 'flex', gap: '24px' }}>
+      <FileUploadContainer>
         <FileUploadButton
           onClick={() => {
             inputRef.current?.click();
@@ -240,7 +262,7 @@ export function FileInput({ name, value, onChange }) {
           ref={inputRef}
         />
         {value && <PreviewImage preview={preview} onClick={handleClearClick} />}
-      </div>
+      </FileUploadContainer>
     </>
   );
 }
