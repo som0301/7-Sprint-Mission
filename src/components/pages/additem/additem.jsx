@@ -39,7 +39,6 @@ function AddItem({ mediaState }) {
       }
     }
     handleChange(name, value);
-    setEnableSubmit(handleSubmitCheck());
   };
 
   const handleSubmitCheck = () => {
@@ -82,7 +81,10 @@ function AddItem({ mediaState }) {
     e.preventDefault();
   };
 
-  useEffect(()=>{},[enableSubmit]);
+  useEffect(()=>{
+    const check = handleSubmitCheck();
+    setEnableSubmit(check);
+  },[values]);
 
   return (
     <>
