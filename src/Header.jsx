@@ -1,11 +1,9 @@
 import React from 'react';
 import logo from './assets/logo.svg';
 import logoMobile from './assets/logo_mobile.svg';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
-  const navigate = useNavigate();
-
   const activeStyle = {
     color: '#3692ff',
   };
@@ -13,22 +11,24 @@ const Header = () => {
   return (
     <header>
       <div className="nav-container">
-        <button type="button" className="logo" onClick={() => navigate('/')}>
-          <img
-            src={logo}
-            alt="판다마켓로고"
-            width="153"
-            height="51"
-            className="logo-pt"
-          />
-          <img
-            src={logoMobile}
-            alt="판다마켓로고"
-            width="81"
-            height="27"
-            className="logo-m"
-          />
-        </button>
+        <Link to="/">
+          <button type="button" className="logo">
+            <img
+              src={logo}
+              alt="판다마켓로고"
+              width="153"
+              height="51"
+              className="logo-pt"
+            />
+            <img
+              src={logoMobile}
+              alt="판다마켓로고"
+              width="81"
+              height="27"
+              className="logo-m"
+            />
+          </button>
+        </Link>
         <nav>
           <ul>
             <li>
@@ -53,13 +53,11 @@ const Header = () => {
         </nav>
       </div>
       <div>
-        <button
-          type="button"
-          className="login-btn"
-          onClick={() => navigate('/login')}
-        >
-          로그인
-        </button>
+        <Link to="/login">
+          <button type="button" className="login-btn">
+            로그인
+          </button>
+        </Link>
       </div>
     </header>
   );
