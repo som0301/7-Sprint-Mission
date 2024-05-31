@@ -8,6 +8,7 @@ import FileInput from "../components/FileInput";
 
 function AddItem() {
   const [preview, setPreview] = useState(null);
+  const [isFormComplete, setIsFormComplete] = useState(false);
   const [values, setValues] = useState({
     title: "",
     discription: "",
@@ -27,24 +28,38 @@ function AddItem() {
     };
   }, [values.imgFile]);
 
-  const handleChange = (name, value) => {
+  useEffect(() => {
+    for (const key in values) {
+      if (!values[key]) return;
+    }
+    setIsFormComplete(true);
+  }, [values]);
+
+  const handleFileInputChange = (name, value) => {
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
     }));
   };
 
-  // const handleInputChange = (e) => {
-  //   const { name, value } = e.target;
-  //   handleChange(name, value);
-  // };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setValues((prevValues) => ({
+      ...prevValues,
+      [name]: value,
+    }));
+  };
 
   return (
     <div className="add-item">
       <form id="add-item-form" method="post">
         <div className="header">
           <p className="title">상품 등록하기</p>
-          <button type="submit" className="btn-register btn-disabled">
+          <button
+            type="submit"
+            className={"btn-register"}
+            disabled={!isFormComplete}
+          >
             등록
           </button>
         </div>
@@ -55,7 +70,7 @@ function AddItem() {
               <FileInput
                 name="imgFile"
                 value={values.imgFile}
-                onChange={handleChange}
+                onChange={handleFileInputChange}
               >
                 <img src={plusIc} alt="플러스_아이콘" />
                 <p>이미지 등록</p>
@@ -63,7 +78,6 @@ function AddItem() {
             </div>
             {preview && (
               <div className="added-img">
-                {/* <img src={sampleImg} alt="등록된_이미지" className="upload-img" /> */}
                 <img
                   src={preview}
                   alt="이미지 미리보기"

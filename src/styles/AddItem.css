@@ -26,10 +26,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-.add-item .btn-disabled {
+.add-item .btn-register:disabled,
+.add-item .btn-register[disabled] {
   background-color: var(--gray400-color);
+  cursor: default;
 }
 
 .add-item .img-container {

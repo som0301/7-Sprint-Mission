@@ -13,7 +13,7 @@ function ProductController({ order, handleSelect }) {
       <div className="control-section">
         <div className="search-input">
           <img src={searchImg} />
-          <input placeHolder="검색할 상품을 입력해주세요." />
+          <input placeholder="검색할 상품을 입력해주세요." />
         </div>
         <Link to="/additem" className="btn-register-prod">
           상품 등록하기
