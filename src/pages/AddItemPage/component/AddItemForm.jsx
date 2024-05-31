@@ -73,8 +73,7 @@ function AddItemForm() {
       values.name &&
       values.description &&
       values.price !== null &&
-      values.tags.length > 0 &&
-      values.images !== null
+      values.tags.length > 0
     )
   }
 
