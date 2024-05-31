@@ -66,14 +66,14 @@ function AllProductList() {
           <div className="mobile-wrapper-top">
             <div className="mobile-wrapper-top-first">
               <h2>판매중인 상품</h2>
-              <button>
-                <Link to="/addItem" target="_blank" className="link">
+              <button className="button">
+                <Link to="/additem" target="_blank" className="product-link">
                   상품 등록하기
                 </Link>
               </button>
             </div>
             <div className="mobile-wrapper-bottom">
-              <label>
+              <label className="all-label">
                 <img src={search} alt="검색" width={"15px"} height={"15px"} />
                 <div className="search-input">검색할 상품을 입력해주세요</div>
               </label>
@@ -102,12 +102,12 @@ function AllProductList() {
           <div className="wrapper-top">
             <h2>판매중인 상품</h2>
             <div className="all-container-header">
-              <label>
+              <label className="all-label">
                 <img src={search} alt="검색" width={"15px"} height={"15px"} />
                 <div className="search-input">검색할 상품을 입력해주세요</div>
               </label>
-              <button>
-                <Link to="/addItem" target="_blank" className="link">
+              <button className="button">
+                <Link to="/additem" target="_blank" className="link">
                   상품 등록하기
                 </Link>
               </button>
@@ -138,12 +138,12 @@ function AllProductList() {
           <div className="wrapper-top">
             <h2>전체 상품</h2>
             <div className="all-container-header">
-              <label>
+              <label className="all-label">
                 <img src={search} alt="검색" width={"15px"} height={"15px"} />
                 <div className="search-input">검색할 상품을 입력해주세요</div>
               </label>
-              <button>
-                <Link to="/addItem" target="_blank" className="link">
+              <button className="button">
+                <Link to="/additem" target="_blank" className="link">
                   상품 등록하기
                 </Link>
               </button>
