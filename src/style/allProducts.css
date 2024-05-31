@@ -57,7 +57,7 @@
   color: #4b5563;
 }
 
-.register-product {
+.register-product-button {
   width: auto;
   height: 42px;
   padding: 12px 23px;
@@ -69,6 +69,10 @@
   text-align: left;
   color: #ffffff;
   background-color: #3692ff;
+}
+
+.register-product-button:hover {
+  background-color: #1251aa;
 }
 .all-product {
   display: flex;

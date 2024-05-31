@@ -14,23 +14,22 @@ function App() {
   const [page, setPage] = useState(1);
 
   const handleLoadBestProducts = async () => {
-    const { list } = await getItems({
-      orderBy: "favorite",
-      page: 1,
-      pageSize: 4,
-    });
+    const { list } = await getItems(
+      {
+        orderBy: "favorite",
+        page: 1,
+        pageSize: 4,
+      }
+    );
     setBestProducts(list);
   };
 
   const handleLoadAllProducts = async () => {
-    const { list } = await getItems(
-      {
-        orderBy: orderBy,
-        page: page,
-        pageSize: 10,
-      },
-      []
-    );
+    const { list } = await getItems({
+      orderBy: orderBy,
+      page: page,
+      pageSize: 10,
+    });
     setAllProducts(list);
   };
 

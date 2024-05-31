@@ -29,7 +29,12 @@ function AllProductList({ items, orderBy, setOrderBy }) {
             type="text"
             placeholder="검색할 상품을 입력해주세요"
           />
-          <button class="register-product">상품 등록하기</button>
+          <button
+            onClick="location.href='/additem'"
+            class="register-product-button"
+          >
+            상품 등록하기
+          </button>
           <OrderDropdown orderBy={orderBy} setOrderBy={setOrderBy} />
         </div>
       </div>

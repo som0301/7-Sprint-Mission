@@ -20,6 +20,10 @@
   border: none;
 }
 
+.login-btn:hover {
+  background-color: #1251aa;
+}
+
 .logo-menutab {
   display: flex;
   align-items: center;
