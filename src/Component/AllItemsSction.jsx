@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
-import favicon from "../images/logo/favoriteIcon.svg";
-import CallAPI from "../api/CallAPI";
-import "../style/AllItemsSection.css"
-import SeachInput from "./SeachInput";
-import DropDownSort from "./DropDownSort";
-import Pageination from "../component/Pageination";
+import favicon from "../../src/images/logo/favoriteIcon.svg";
+import CallAPI from "../api/callAPI";
+import "../style/allItemsSection.css"
+import SeachInput from "./seachInput";
+import DropDownSort from "./dropDownSort";
+import Pageination from "./pageination";
 
 function getWidth() {
     let width = window.innerWidth;

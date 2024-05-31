@@ -1,4 +1,4 @@
-@import "./ColorList.css";
+@import "../style/colorList.css";
 
 header {
     padding: 0 200px;

@@ -1,10 +1,10 @@
 import './App.css';
-import "./style/Clear.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Header from "./component/Header";
-import HomePage from "./pages/HomePage";
-import UsedMarket from "./pages/UsedMarket";
-import AddItemPage from './pages/AddItemPage';
+import "./style/reset.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "../src/component/header";
+import HomePage from "../src/pages/homePage";
+import UsedMarket from "../src/pages/usedMarket";
+import AddItemPage from '../src/pages/addItemPage';
 
 function App() {
   return (

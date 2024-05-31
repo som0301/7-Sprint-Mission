@@ -1,11 +1,8 @@
-import "../style/UsedMarket.css";
-import { useState } from "react";
-import BestItemsSection from "../component/BestItemsSection";
-import AllItemsSection from "../component/AllItemsSction";
+import "../../src/style/usedMarket.css";
+import BestItemsSection from "../component/bestItemsSection";
+import AllItemsSection from "../component/allItemsSction";
 
-function Main() {
-    const [bestPoint, setBestPoint] = useState(1);
-    const [allPoint, setAllPoint] = useState(1);
+function usedMarket() {
     return (
         <main>
             <section className="bestItem">
@@ -18,4 +15,4 @@ function Main() {
     );
 }
 
-export default Main;
+export default usedMarket;

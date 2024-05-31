@@ -1,9 +1,8 @@
 import { NavLink, useLocation  } from "react-router-dom";
-import Logo from "C:/Users/ouran/Desktop/tmp/7-Sprint-Mission/src/images/logo/panda-market-pandalogo.svg";
-import "../style/Header.css";
+import Logo from "../../src/images/logo/panda-market-pandalogo.svg";
+import "../../src/style/header.css";
 
 function Header() {
-
     const location = useLocation();
     const marketAction = location.pathname === `/items` || location.pathname === `/additem`;
     return (
@@ -16,6 +15,7 @@ function Header() {
                 </NavLink>
             </nav>
             <button className="loginButton">로그인</button>
+            <img></img>
         </header>
     );
 }
