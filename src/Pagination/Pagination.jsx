@@ -1,5 +1,5 @@
-import arrowleft from "./images/arrow_left.svg";
-import arrowright from "./images/arrow_right.svg";
+import arrowleft from "../images/arrow_left.svg";
+import arrowright from "../images/arrow_right.svg";
 import "./pagination.css";
 
 function getPageNumber(number) {
@@ -35,7 +35,7 @@ function Pagination({ pageNumber, currentPage, onPageChange }) {
         disabled={currentPage === 1}
         style={currentPage===1?disabledButtonStyle:buttonStyle}
       >
-        <img src={arrowleft} alt="¿ÞÂÊ È­»ìÇ¥" />
+        <img src={arrowleft} alt="ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½Ç¥" />
       </button>
       {getPageNumberArray.map((page) => (
         <button
@@ -55,7 +55,7 @@ function Pagination({ pageNumber, currentPage, onPageChange }) {
         disabled={currentPage === pageNumber}
         style={currentPage===1?disabledButtonStyle:buttonStyle}
       >
-        <img src={arrowright} alt="¿À¸¥ÂÊ È­»ìÇ¥" />
+        <img src={arrowright} alt="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½Ç¥" />
       </button>
     </div>
   );

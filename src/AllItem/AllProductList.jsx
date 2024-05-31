@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import search from "../images/search.svg";
 import ProductItem from "../ProductItem";
 import { Link } from "react-router-dom";
-import Pagination from "../Pagination";
+import Pagination from "../Pagination/Pagination";
 import { getReviews } from "../api";
 
 function AllProductList() {
@@ -67,7 +67,7 @@ function AllProductList() {
             <div className="mobile-wrapper-top-first">
               <h2>판매중인 상품</h2>
               <button>
-                <Link to="/additem" target="_blank" className="link">
+                <Link to="/addItem" target="_blank" className="link">
                   상품 등록하기
                 </Link>
               </button>
@@ -107,7 +107,7 @@ function AllProductList() {
                 <div className="search-input">검색할 상품을 입력해주세요</div>
               </label>
               <button>
-                <Link to="/additem" target="_blank" className="link">
+                <Link to="/addItem" target="_blank" className="link">
                   상품 등록하기
                 </Link>
               </button>
@@ -143,7 +143,7 @@ function AllProductList() {
                 <div className="search-input">검색할 상품을 입력해주세요</div>
               </label>
               <button>
-                <Link to="/additem" target="_blank" className="link">
+                <Link to="/addItem" target="_blank" className="link">
                   상품 등록하기
                 </Link>
               </button>
