@@ -1,7 +1,35 @@
+@media (min-width: 1200px) {
+  .select {
+    width: 130px;
+  }
+  .select .selected {
+    padding: 8px 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .select {
+    width: 130px;
+  }
+  .select .selected {
+    padding: 8px 20px;
+  }
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .select {
+    width: 42px;
+    grid-area: s;
+  }
+  .select .selected {
+    padding: 9px;
+  }
+  .select ul {
+    right: 0;
+  }
+}
+
 .select {
   display: flex;
   flex-direction: column;
-  width: 130px;
   border: 1px solid var(--color-coolgray-200);
   border-radius: 12px;
   cursor: pointer;
@@ -12,7 +40,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 20px;
 }
 
 .select .selected:focus {
@@ -28,15 +55,14 @@
   max-width: 90px;
 }
 
-
 .select .selected .arrow {
   width: 24px;
   height: 24px;
-  background: url("../../../images/icons/ic_arrow_down.svg") no-repeat;
+  background: url('../../../images/icons/ic_arrow_down.svg') no-repeat;
 }
 
 .select ul {
-  width: 100%;
+  width: 130px;
   border: 1px solid var(--color-coolgray-200);
   position: absolute;
   top: 108%;

@@ -1,0 +1,8 @@
+.button {
+  padding: 12px 23px;
+  font-size: 1.6rem;
+}
+
+.button.disable {
+  background-color: var(--color-coolgray-400);
+}

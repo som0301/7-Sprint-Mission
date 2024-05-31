@@ -1,6 +1,7 @@
 import styles from './itemsnav.module.css';
 import logo from '../../../images/logos/logo.png';
 import logoSmall from '../../../images/logos/logo-small.svg';
+import Button from '../../modules/button/button';
 import '../../../css/define.css';
 import { classModuleName } from '../../../modules';
 import { useLocation } from 'react-router-dom';
@@ -12,9 +13,9 @@ const viewLogoStyle = {
   mobile: logoSmall,
 };
 
-function ItemsNav({mediaState}) {
+function ItemsNav({ mediaState, rightComponent }) {
   const location = useLocation();
-  const className = location.pathname === '/items' ? 'nav-link current-location' : 'nav-link';
+  const className = location.pathname === '/items' || location.pathname === '/additem' ? 'nav-link current-location' : 'nav-link';
 
   useEffect(() => {}, [mediaState]);
 
@@ -33,9 +34,7 @@ function ItemsNav({mediaState}) {
           </a>
         </div>
       </div>
-      <button type="button" className={classModuleName('nav-button', styles)}>
-        로그인
-      </button>
+    {rightComponent}
     </nav>
   );
 }

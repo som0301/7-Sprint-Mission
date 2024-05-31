@@ -9,6 +9,10 @@ export function createErrorTag(alert, target, tagName) {
 }
 
 export const classModuleName = (className = '', styles) => {
+  if(!className) {
+    throw new Error('className을 전달해야합니다');
+  }
+
   const splitNames = className.split(' ');
 
   if (splitNames.length === 1) return `${styles[className]}`;

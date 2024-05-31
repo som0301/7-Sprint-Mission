@@ -26,7 +26,6 @@ function CustomSelect({ onChange, orderBy, mediaState }) {
     const nextValue = e.target.getAttribute('data-value');
     onChange(nextValue);
   };
-
   const ReactiveSortIcon = () => {
     if (mediaState === 'mobile') {
       return <img src={sortIcon} alt="sort" />;
