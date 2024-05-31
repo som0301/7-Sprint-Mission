@@ -59,7 +59,6 @@ function BestItemsSection() {
 
     useEffect(() => {
         BestItemsLoad(ItemCount);
-        console.log("best"+ItemCount);
     }, [ItemCount]);
 
     return (

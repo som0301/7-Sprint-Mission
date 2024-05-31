@@ -121,6 +121,10 @@
         line-height: 28px;
     }
 
+    .AllItemTitle > a {
+        text-decoration: none;
+    }
+    
     .AllItemMenu .AllItemTitle > a > button {
         display: block;
     }
