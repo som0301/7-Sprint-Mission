@@ -12,19 +12,7 @@
 
 .InputImage-container {
   display: flex;
-  gap: 24px;
-}
-
-@media (min-width: 768px) {
-  .InputImage-title {
-    font-size: 1.8rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .InputImage-title {
-    font-size: 1.8rem;
-  }
+  gap: 8px;
 }
 
 .InputImage-title {
@@ -38,9 +26,6 @@
   justify-content: center;
   align-items: center;
 
-  width: 282px;
-  height: 282px;
-  border-radius: 12px;
   background-color: var(--gray100);
 }
 
@@ -57,9 +42,19 @@
 }
 
 .InputImage-preview {
-  width: 282px;
-  height: 282px;
-  object-fit: contain;
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+}
+
+.InputImage-preview-delete {
+  width: 24px;
+  height: 24px;
+
+  cursor: pointer;
 }
 
 .InputImage-content {
@@ -68,4 +63,32 @@
 
 .InputImage-content:focus {
   outline: 1px solid var(--blue);
+}
+
+.image-size {
+  width: 168px;
+  height: 168px;
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .InputImage-container {
+    gap: 16px;
+  }
+
+  .image-size {
+    width: 162px;
+    height: 162px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .InputImage-container {
+    gap: 24px;
+  }
+
+  .image-size {
+    width: 282px;
+    height: 282px;
+  }
 }
