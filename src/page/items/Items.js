@@ -1,13 +1,12 @@
-import Header from "./Header";
-import { getProducts } from "../Api";
+import Header from "../../component/Header";
+import { getProducts } from "../../Api";
 import { useEffect, useState } from "react";
 import BestProductsList from "./BestProductList";
-import "./App.css";
+import "./Items.css";
 import AllproductsList from "./AllProductList";
-import "./mediaQuary.css";
 import PageNation from "./PageNation";
 
-function App() {
+function Items() {
   const [bestProduct, setBestProduct] = useState([]);
   const [allProduct, setAllProduct] = useState([]);
   const [bestProductCount, setBestProductCount] = useState(4);
@@ -59,10 +58,10 @@ function App() {
   useEffect(() => {
     handleBestProductLoad({
       orderBy: "favorite",
-      page: 1,
+      page: currentPage,
       pageSize: bestProductCount,
     });
-  }, [bestProductCount]);
+  }, [bestProductCount, currentPage]);
 
   useEffect(() => {
     handleAllProductLoad({
@@ -84,4 +83,7 @@ function App() {
   );
 }
 
-export default App;
+export default Items;
+
+//1. "/items" : 상품페이지
+//2. "/addItem" : 상품 등록 페이지

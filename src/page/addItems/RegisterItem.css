@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.register-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.file-input-label {
+  display: block;
+
+  background-image: url(../../assets/images/file-input-image.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 282px;
+  height: 282px;
+  cursor: pointer;
+}
+
+.file-input-title {
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 16px;
+}
+
+#input-file {
+  display: none;
+}

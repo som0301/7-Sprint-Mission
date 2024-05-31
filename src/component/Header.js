@@ -1,4 +1,4 @@
-import headerLogo from "./images/topLogo.png";
+import headerLogo from "../assets/images/topLogo.png";
 import "./Header.css";
 import "./Library.css";
 
