@@ -29,7 +29,7 @@ function Header() {
         </nav>
       </div>
 
-      <Link to="/sigin" className="btn-primary header_btn_signin">
+      <Link to="/signin" className="btn-primary header_btn_signin">
         로그인
       </Link>
     </header>

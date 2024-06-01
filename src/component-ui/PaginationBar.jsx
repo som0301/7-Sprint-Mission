@@ -3,18 +3,18 @@ import { ReactComponent as RightArrow } from '../image/righticon.svg'
 import './PaginationBar.css'
 
 const PaginationBar = ({ pageTotal, activePage, onPageChange }) => {
-  const maxVisiblePages = 5
+  const MAX_VISIBLE_PAGES = 5
   let startPage
 
-  if (pageTotal <= maxVisiblePages) {
+  if (pageTotal <= MAX_VISIBLE_PAGES) {
     startPage = 1
   } else {
-    startPage = Math.max(activePage - Math.floor(maxVisiblePages / 2), 1)
-    startPage = Math.min(startPage, pageTotal - maxVisiblePages + 1)
+    startPage = Math.max(activePage - Math.floor(MAX_VISIBLE_PAGES / 2), 1)
+    startPage = Math.min(startPage, pageTotal - MAX_VISIBLE_PAGES + 1)
   }
 
   const pages = Array.from(
-    { length: Math.min(maxVisiblePages, pageTotal - startPage + 1) },
+    { length: Math.min(MAX_VISIBLE_PAGES, pageTotal - startPage + 1) },
     (_, i) => startPage + i
   )
 

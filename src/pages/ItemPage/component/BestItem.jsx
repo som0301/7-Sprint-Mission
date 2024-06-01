@@ -13,8 +13,8 @@ function BestItem() {
   const [itemList, setItemList] = useState([])
   const [pageSize, setPageSize] = useState(getPageSize())
 
-  const fetchData = async ({ ordeBy, pageSize }) => {
-    const products = await getProducts({ ordeBy, pageSize })
+  const fetchData = async ({ orderBy, pageSize }) => {
+    const products = await getProducts({ orderBy, pageSize })
     setItemList(products.list)
   }
 
@@ -24,7 +24,7 @@ function BestItem() {
     }
 
     window.addEventListener('resize', handleResize)
-    fetchData({ ordeBy: 'favorite', pageSize })
+    fetchData({ orderBy: 'favorite', pageSize })
 
     return () => {
       window.removeEventListener('resize', handleResize)
@@ -35,7 +35,7 @@ function BestItem() {
     <div className="best-item-container">
       <h1 className="container-title">베스트 상품</h1>
       <div className="best-item-list">
-        {itemList?.map((item) => (
+        {itemList.map((item) => (
           <ItemCard item={item} key={`best-item-${item.id}`} />
         ))}
       </div>
