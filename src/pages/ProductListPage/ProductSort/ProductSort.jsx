@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { BREAK_POINTS } from '../../../funcs';
+import React, { useState, useMemo } from 'react';
+import useMediaQuery from '../../../hooks/useMediaQuery';
 import SortIcon from '../../../assets/images/icon/ic-arrow-down.svg';
 import MobileSortIcon from '../../../assets/images/icon/ic-sort.svg';
 import './ProductSort.css';
@@ -9,15 +9,17 @@ const ORDERBY_TEXT = {
 	favorite: '좋아요순',
 };
 
-const getPageSize = () => {
-	const width = window.innerWidth;
-	if (width <= BREAK_POINTS['mobile']) return MobileSortIcon;
-	else return SortIcon;
-};
-
 function ProductSort({ orderBy, setOrderBy }) {
+	const mediaQuery = useMediaQuery();
+	const icon = useMemo(() => {
+		switch (mediaQuery) {
+			case 'mobile':
+				return MobileSortIcon;
+			default:
+				return SortIcon;
+		}
+	}, [mediaQuery]);
 	const [isVisible, setIsVisible] = useState(false);
-	const [icon, setIcon] = useState(SortIcon);
 
 	const handleToggle = () => setIsVisible(isVisible ? false : true);
 
@@ -26,15 +28,6 @@ function ProductSort({ orderBy, setOrderBy }) {
 		setOrderBy(e.target.dataset.orderby);
 		handleToggle();
 	};
-
-	const handleResize = () => setIcon(getPageSize());
-
-	useEffect(() => {
-		handleResize();
-
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
 
 	return (
 		<article className='dropdown-list'>

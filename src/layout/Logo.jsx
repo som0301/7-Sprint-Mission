@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { BREAK_POINTS } from '../funcs';
+import useMediaQuery from '../hooks/useMediaQuery';
 import DesktopLogoImage from '../assets/images/logo/logo.svg';
 import MobileLogoImage from '../assets/images/logo/logo-text.png';
 
-const getPageSize = (type, size) => {
-	const width = window.innerWidth;
-	if (width <= BREAK_POINTS['mobile']) return MobileLogoImage;
-	else return DesktopLogoImage;
-};
-
 function Logo() {
-	const [logoImage, setLogoImage] = useState(getPageSize());
-
-	const handleResize = () => {
-		setLogoImage(getPageSize());
-	};
-
-	useEffect(() => {
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	}, []);
+	const mediaQuery = useMediaQuery();
+	const logoImage = useMemo(() => {
+		switch (mediaQuery) {
+			case 'mobile':
+				return MobileLogoImage;
+			default:
+				return DesktopLogoImage;
+		}
+	}, [mediaQuery]);
 
 	return (
 		<Link to={'/'}>

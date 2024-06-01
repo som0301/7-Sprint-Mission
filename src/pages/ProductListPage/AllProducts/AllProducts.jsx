@@ -2,22 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isEmpty } from 'lodash';
 import { getDataFunc } from '../../../api';
-import { BREAK_POINTS } from '../../../funcs';
+import useMediaQuery from '../../../hooks/useMediaQuery';
 import ProductCard from '../ProductCard/ProductCard';
 import ProductSearch from '../ProductSearch/ProductSearch';
 import ProductSort from '../ProductSort/ProductSort';
 import ProductPagiagion from '../ProductPagiagion/ProductPagiagion';
 
-const getPageSize = () => {
-	const width = window.innerWidth;
-	if (width <= BREAK_POINTS['mobile']) return 4;
-	else if (width <= BREAK_POINTS['tablet']) return 6;
-	else return 12;
+const PAGE_SIZES = {
+	mobile: 4,
+	tablet: 6,
+	desktop: 12,
 };
 
 function AllProducts() {
+	const mediaQuery = useMediaQuery();
+	const pageSize = PAGE_SIZES[mediaQuery];
 	const [page, setPage] = useState(1);
-	const [pageSize, setPageSize] = useState(getPageSize());
 	const [totalPageSize, setTotalPageSize] = useState(0);
 	const [orderBy, setOrderBy] = useState('recent');
 	const [items, setItems] = useState([]);
@@ -36,10 +36,7 @@ function AllProducts() {
 
 	useEffect(() => {
 		getProduct(page, pageSize, orderBy, keyword);
-
-		window.addEventListener('resize', handleResize);
-		return () => window.removeEventListener('resize', handleResize);
-	}, [page, orderBy, pageSize, keyword]);
+	}, [page, pageSize, orderBy, keyword]);
 
 	return (
 		<article className='products'>
