@@ -120,3 +120,21 @@ button:hover {
   width: 282px;
   height: 282px;
 }
+.tag-container-value{
+  background-color:#F9FAFB;
+  border-radius: 26px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color:#1F2937;
+  display: inline-flex;
+  align-items: center;
+  margin-right:12px;
+}
+.delete-tag{
+  border: none;
+  background:none;
+  width:22px;
+  height:24px;
+  margin-left:8px;
+}
