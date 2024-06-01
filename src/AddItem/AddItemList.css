@@ -4,6 +4,15 @@
   box-sizing: border-box;
   font-family: sans-serif;
 }
+.all-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.wrapper {
+  width: 1200px;
+  padding: 0 20px;
+}
 .register {
   font-size: 28px;
   color: #1f2937;
@@ -14,26 +23,20 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 16px;
-  margin-right: 360px;
-  margin-left: 360px;
 }
 .add-button.disabled {
   background-color: #9ca3af;
   cursor: not-allowed;
 }
-.add-button{
-  background-color:#3692FF;
-  cursor:pointer;
+.add-button {
+  background-color: #3692ff;
+  cursor: pointer;
   color: #fff;
   font-size: 16px;
   font-weight: 600;
   padding: 12px 20px;
   border: none;
   border-radius: 8px;
-}
-.add-total {
-  margin-left: 360px;
-  margin-right: 360px;
 }
 .add-product {
   display: flex;
@@ -46,20 +49,22 @@
   font-size: 18px;
   font-weight: 700;
   color: #1f2937;
+  display: inline-block;
+  height:auto;
 }
 .add-product-input {
   background-color: #f3f4f6;
   border-radius: 12px;
   border: none;
-  color:#1F2937;
+  color: #1f2937;
   font-size: 16px;
   font-weight: 400;
   width: 100%;
   height: 56px;
   padding: 16px 24px;
 }
-.add-product-input::placeholder{
-  color:#9ca3af ;
+.add-product-input::placeholder {
+  color: #9ca3af;
 }
 .introduce {
   height: 200px;
@@ -116,25 +121,62 @@ button:hover {
 .img-delete-button-img {
   display: block;
 }
-.current-Image{
+.current-Image {
   width: 282px;
   height: 282px;
 }
-.tag-container-value{
-  background-color:#F9FAFB;
+.tag-container-value {
+  background-color: #f9fafb;
   border-radius: 26px;
   padding: 12px;
   font-size: 16px;
   font-weight: 400;
-  color:#1F2937;
+  color: #1f2937;
   display: inline-flex;
   align-items: center;
-  margin-right:12px;
+  margin-right: 12px;
 }
-.delete-tag{
+.delete-tag {
   border: none;
-  background:none;
-  width:22px;
-  height:24px;
-  margin-left:8px;
+  background: none;
+  width: 22px;
+  height: 24px;
+  margin-left: 8px;
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .wrapper{
+    width:375px;
+    padding: 0 10px;
+  }
+  .add-label{
+    font-size:14px;
+  }
+  .custom-file-upload, .current-Image,.img-delete {
+    width: 168px;
+    height:168px;
+  }
+  .img-delete-button{
+    left:134px;
+  }
+  .register{
+    font-size:20px;
+  }
+  .add-img{
+    gap:8px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .wrapper{
+    width:768px;
+  }
+  .custom-file-upload, .current-Image, .img-delete{
+    width:162px;
+    height:162px;
+  }
+  .img-delete-button{
+    left:130px;
+  }
+  .add-img{
+    gap:16px;
+  }
 }
