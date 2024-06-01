@@ -5,10 +5,10 @@
         "baseUrl": "src"
     },
     "paths": {
-        "app/*": ["app/*"],
-        "entities/*": ["entities/*"],
-        "pages/*": ["pages/*"],
-        "shared/*": ["shared/*"]
+        "app/*": ["src/app/*"],
+        "entities/*": ["src/entities/*"],
+        "pages/*": ["src/pages/*"],
+        "shared/*": ["src/shared/*"]
     },
     "include": ["src"]
 }

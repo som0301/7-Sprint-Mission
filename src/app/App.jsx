@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import GlobalStyle from './styles/GlobalStyle';
+import GlobalStyle from 'app/styles/GlobalStyle';
 import Header from 'shared/ui/header/Header';
 import AddItem from 'pages/additem/AddItemPage';
 import Items from 'pages/items/ItemsPage';
