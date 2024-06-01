@@ -1,18 +1,74 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components"
-import test from "../../src/images/home/fileinputbutton.svg";
 
 const Img = styled.img`
     width: 282px;
     height: 282px;
     border-radius: 12px
+    
 `;
 
-const Input = styled.input `
+const InputContainer = styled.div `
     width: 282px;
     height: 282px;
     border-radius: 12px;
-    background-image: url("../images/home/fileinputbutton.svg");
+    position: relative;
+    border: 1px solid #eee;
+    background-color: #f7f8fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:before {
+        content: '+';
+        font-size: 24px;
+        color: #999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &:after {
+        content: '이미지 등록';
+        font-size: 14px;
+        color: #999;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translateX(-50%); 
+    }
+
+`;
+
+const Input = styled.input `
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;  
+`;
+
+const FileInputLayer = styled.div `
+    display: flex;
+    gap: 24px;
+
+`
+
+const PreviewContainer = styled.div `
+    position: relative;
+`;
+
+const PreviewDeleteButton = styled.button `
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+    color: #fff;
+    background-color: #3692ff;
 `;
 
 function FileInput({name, value, onChange}) {
@@ -51,11 +107,15 @@ function FileInput({name, value, onChange}) {
     }, [value]);
 
     return (
-        <div>
-            <Input type="file" disabled={fileOnOff} onChange={handleChange} ref={inputRef} />
-            <Img src={preview} alt="미리보기 이미지" />
-            {value && <button onClick={handleDeleteClick}>X</button>}
-        </div>
+        <FileInputLayer>
+            <InputContainer>
+                <Input type="file" disabled={fileOnOff} onChange={handleChange} ref={inputRef} />
+            </InputContainer>
+            <PreviewContainer>
+                <Img src={preview} alt=" "/>
+                {value && <PreviewDeleteButton onClick={handleDeleteClick}>X</PreviewDeleteButton>}
+            </PreviewContainer>
+        </FileInputLayer>
     );
 }
 
