@@ -101,7 +101,9 @@ function AddItemPage() {
       <form onSubmit={handleSubmit}>
         <div className="add-item-bar">
           <h1>상품 등록하기</h1>
-          <button disabled={!isAllValid}>등록</button>
+          <button className="button" disabled={!isAllValid}>
+            등록
+          </button>
         </div>
         <h2 id="item-img-h2">상품 이미지</h2>
         <FileInput

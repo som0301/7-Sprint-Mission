@@ -35,9 +35,9 @@
   font-family: inherit;
 }
 
-.add-item-bar button:disabled {
+.add-item-bar .button:disabled {
   background-color: var(--disable-button-gray);
-  color: white;
+  pointer-events: visible;
   cursor: not-allowed;
 }
 
