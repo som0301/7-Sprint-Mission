@@ -19,7 +19,7 @@
 	padding: 8px 16px;
 	padding-left: 48px;
 	width: 100%;
-	min-width: 320px;
+	min-width: auto;
 	min-height: auto;
 	height: 42px;
 	background-color: var(--cool-grey-100);
