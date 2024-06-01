@@ -1,8 +1,8 @@
 import React from "react";
 import "./SecondHandMarket.css";
-import Header from "../../components/Header/Header.js";
-import BestItemsSection from "../../components/BestItemSection/BestItemsSection.js";
-import AllItemsSection from "../../components/AllItemsSection/AllItemsSection.js";
+import Header from "../../components/Header/Header.jsx";
+import BestItemsSection from "../../components/BestItemSection/BestItemsSection.jsx";
+import AllItemsSection from "../../components/AllItemsSection/AllItemsSection.jsx";
 
 const SecondHandMarket = () => {
   return (

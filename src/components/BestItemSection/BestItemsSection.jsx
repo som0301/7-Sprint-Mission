@@ -7,40 +7,30 @@ const BestItemsSection = () => {
   const [items, setItems] = useState([]);
   const [pageSize, setPageSize] = useState(4);
   const [orderBy, setOrderBy] = useState("favorite");
-  const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
-  const [imageSize, setImageSize] = useState({
-    imageWidth: "221px",
-    imageHeight: "221px",
-  });
+  // const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
+
   const handleLoad = async ({ pageSize, orderBy }) => {
     const productsData = await getProducts({ page: 1, pageSize, orderBy });
     setItems(productsData.list);
   };
 
-  const handleResize = () => {
-    setWindowInnerWidth(window.innerWidth);
-  };
-
-  const changePageSize = (windowInnerWidth) => {
-    if (windowInnerWidth >= 744 && windowInnerWidth < 1199) {
-      setPageSize(2);
-    } else if (windowInnerWidth < 744) {
-      setPageSize(1);
-    } else {
-      setPageSize(4);
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
+    const changePageSize = () => {
+      const windowInnerWidth = window.innerWidth;
+      if (windowInnerWidth >= 744 && windowInnerWidth < 1199) {
+        setPageSize(2);
+      } else if (windowInnerWidth < 744) {
+        setPageSize(1);
+      } else {
+        setPageSize(4);
+      }
+    };
+
+    window.addEventListener("resize", changePageSize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", changePageSize);
     };
   }, []);
-
-  useEffect(() => {
-    changePageSize(windowInnerWidth);
-  }, [windowInnerWidth]);
 
   useEffect(() => {
     handleLoad({ pageSize, orderBy });
@@ -51,7 +41,11 @@ const BestItemsSection = () => {
       <h1 className="best-items-section-title">베스트상품</h1>
       <ul className="best-items-section-content">
         {items.map((item) => (
-          <ItemCard key={item.id} item={item} imageSize={imageSize} />
+          <ItemCard
+            key={item.id}
+            item={item}
+            imageClassName={"best-items-section-image"}
+          />
         ))}
       </ul>
     </section>

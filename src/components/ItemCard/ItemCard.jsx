@@ -2,14 +2,12 @@ import React from "react";
 import "./ItemCard.css";
 import { favoriteIcon } from "../../assets/images/index";
 
-const ItemCard = ({ item, imageSize }) => {
+const ItemCard = ({ item, imageClassName }) => {
   const { images, name, price, favoriteCount } = item;
-  const { imageWidth, imageHeight } = imageSize;
   return (
     <div className="item-card-container">
       <img
-        className="item-card-image"
-        style={{ width: imageWidth, height: imageHeight }}
+        className={`item-card-image ${imageClassName}`}
         src={images}
         alt={`${name} 이미지`}
       />
