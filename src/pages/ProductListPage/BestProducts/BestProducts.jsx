@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { isEmpty } from 'lodash';
-import { getDataFunc } from '../../../api';
+import { getProductList } from '../../../api';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import ProductCard from '../ProductCard/ProductCard';
 
@@ -14,13 +14,16 @@ function BestProducts() {
 	const mediaQuery = useMediaQuery();
 	const pageSize = PAGE_SIZES[mediaQuery];
 	const [items, setItems] = useState([]);
+	const [error, setError] = useState(false);
 
 	const getProduct = async (pageSize) => {
 		try {
-			const result = await getDataFunc({ params: { orderBy: 'favorite', pageSize } });
+			setError(false);
+			const result = await getProductList({ pageSize, orderBy: 'favorite' });
 			setItems(result?.list);
 		} catch (e) {
 			console.error(e);
+			setError(e.message);
 		}
 	};
 

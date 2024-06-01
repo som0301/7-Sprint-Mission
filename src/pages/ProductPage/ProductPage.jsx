@@ -5,22 +5,18 @@ import { isEmpty } from 'lodash';
 
 function ProductPage() {
 	const { itemId } = useParams();
-	const [item, setItem] = useState({
-		images: '',
-		name: '',
-		price: 0,
-		description: '',
-		createdAt: '',
-		favoriteCount: 0,
-		isFavorite: false,
-	});
+	const [item, setItem] = useState(null);
+	const [error, setError] = useState(false);
 
 	const getProduct = useCallback(async () => {
 		try {
-			const result = await getDataFunc({ id: itemId });
+			setError(false);
+			const result = await getProductInfo(itemId);
 			setItem(result);
 		} catch (e) {
+			setError(e.message);
 			console.error(e);
+			setItem(null);
 		}
 	}, [itemId]);
 
