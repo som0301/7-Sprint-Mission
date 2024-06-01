@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { isEmpty } from 'lodash';
 import { getDataFunc } from '../../../api';
 import { BREAK_POINTS } from '../../../funcs';
 import ProductCard from '../ProductCard/ProductCard';
@@ -69,11 +70,7 @@ function AllProducts() {
 				<ProductSort orderBy={orderBy} changeOrderBy={changeOrderBy} />
 			</section>
 
-			<section className='products__body products__body--all'>
-				{items?.map((item) => (
-					<ProductCard key={`best-product-${item.id}`} item={item} />
-				))}
-			</section>
+			<section className='products__body products__body--all'>{isEmpty(items) ? <b>{error}</b> : items.map((item) => <ProductCard key={`all-products-${item.id}`} item={item} />)}</section>
 
 			<section className='products__foot'>
 				<ProductPagiagion currentPage={page} totalPageSize={totalPageSize} maximumPage={5} changeHandler={handleChangePage} />

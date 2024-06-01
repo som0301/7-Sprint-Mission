@@ -6,10 +6,12 @@ import './ProductCard.css';
 function ProductCard({ item }) {
 	const { id, images, name, price, favoriteCount } = item;
 	return (
+		<>
+			{isEmpty(item) ? (
+				<p>제품 데이터를 가져오는데 실패했습니다.</p>
+			) : (
 		<Link to={`/items/${id}`} className='productCard'>
-			<section className='productCard__img'>
-				<img src={images[0]} alt={`${name} 이미지`} draggable='false' />
-			</section>
+					<section className='productCard__img'>{isEmpty(images) ? <p>등록된 이미지가 없습니다.</p> : <img src={images[0]} alt={`${name || '-'} 이미지`} draggable='false' />}</section>
 			<section className='productCard__name'>
 				<p>{name}</p>
 			</section>
@@ -22,6 +24,8 @@ function ProductCard({ item }) {
 				<p>{favoriteCount}</p>
 			</section>
 		</Link>
+			)}
+		</>
 	);
 }
 

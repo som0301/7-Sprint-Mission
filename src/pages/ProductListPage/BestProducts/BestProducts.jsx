@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { isEmpty } from 'lodash';
 import { getDataFunc } from '../../../api';
 import { BREAK_POINTS } from '../../../funcs';
 import ProductCard from '../ProductCard/ProductCard';
@@ -39,11 +40,8 @@ function BestProducts() {
 			<section className='products__head'>
 				<h1>베스트 상품</h1>
 			</section>
-			<section className='products__body products__body--best'>
-				{items?.map((item) => (
-					<ProductCard key={`best-product-${item.id}`} item={item} />
-				))}
-			</section>
+
+			<section className='products__body products__body--best'>{isEmpty(items) ? <b>{error}</b> : items.map((item) => <ProductCard key={`best-products-${item.id}`} item={item} />)}</section>
 		</article>
 	);
 }
