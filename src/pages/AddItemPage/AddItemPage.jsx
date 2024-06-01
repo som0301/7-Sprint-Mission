@@ -19,17 +19,16 @@ function AddItemPage() {
 
   // tag 버튼을 그리기 위한 정보 담을 배열
   const [tagValueArray, setTagValueArray] = useState([]);
-  const isAllValidRef = useRef(false);
+  // 모든 유효성이 true인지
+  const [isAllValid, setIsAllValid] = useState(false);
 
   function handleChange(e) {
     const { id, value } = e.target;
     const trimmedValue = value.trim();
+
     setFormData((prevData) => ({
       ...prevData,
-      [id]: {
-        value,
-        isValid: id === "itemTag" ? prevData[id].isValid : trimmedValue !== "",
-      },
+      [id]: { value, isValid: trimmedValue !== "" },
     }));
   }
 
@@ -44,7 +43,6 @@ function AddItemPage() {
           itemTag: { ...prevData.itemTag, isValid: newTagArray.length > 0 },
         }));
       }
-
       e.target.value = "";
     }
   }
@@ -59,7 +57,13 @@ function AddItemPage() {
   }
 
   useEffect(() => {
-    isAllValidRef.current = validateAllInputs(formData);
+    const allValid = validateAllInputs(formData);
+    setIsAllValid(allValid);
+
+    // console.log("폼 제목 값" + formData["itemTitle"].isValid);
+    // console.log("폼 정보 값" + formData["itemIntro"].isValid);
+    // console.log("폼 가격 값" + formData["itemCost"].isValid);
+    // console.log("폼 태그 값" + formData["itemTag"].isValid);
   }, [tagValueArray, formData]);
 
   function handleSubmit(e) {
@@ -71,7 +75,7 @@ function AddItemPage() {
       <form onSubmit={handleSubmit}>
         <div className="add-item-bar">
           <h1>상품 등록하기</h1>
-          <button>등록</button>
+          <button disabled={!isAllValid}>등록</button>
         </div>
         <h2>상품 이미지</h2>
         <div className="add-image-wrapper">
@@ -102,7 +106,6 @@ function AddItemPage() {
         <input
           id="itemTag"
           placeholder="태그를 입력해주세요"
-          onChange={handleChange}
           onKeyDown={handleTagChange}
         ></input>
         <div className="tag-wrapper">

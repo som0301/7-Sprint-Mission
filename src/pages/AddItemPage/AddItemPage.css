@@ -24,7 +24,7 @@
 }
 
 .add-item-bar button {
-  background-color: var(--disable-button-gray);
+  background-color: var(--activate-button-blue);
   font-weight: 700;
   font-size: 16px;
   line-height: 19.09px;
@@ -33,6 +33,12 @@
   border-radius: 8px;
   margin: 0;
   font-family: inherit;
+}
+
+.add-item-bar button:disabled {
+  background-color: var(--disable-button-gray);
+  color: white;
+  cursor: not-allowed;
 }
 
 .add-item-bar {
