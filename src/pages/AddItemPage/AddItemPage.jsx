@@ -1,9 +1,11 @@
 import "./AddItemPage.css";
-import React, { useState, useEffect, useRef } from "react";
-import logoImg from "../../assets/images/icons/ic_plus.svg";
-import ItemTag from "./ItemTag";
+import React, { useState, useEffect } from "react";
 
-export function validateAllInputs(inputsData) {
+import ItemTag from "./ItemTag";
+import { getFormatNumber } from "../../utils/Utils";
+import FileInput from "./FileInput";
+
+function validateAllInputs(inputsData) {
   const allValid = Object.values(inputsData).every((input) => input.isValid);
   return allValid;
 }
@@ -21,8 +23,21 @@ function AddItemPage() {
   const [tagValueArray, setTagValueArray] = useState([]);
   // 모든 유효성이 true인지
   const [isAllValid, setIsAllValid] = useState(false);
+  // 판매 가격
+  const [price, setPrice] = useState("");
+  // 파일 정보
+  const [fileValue, setFileValue] = useState(null);
 
-  function handleChange(e) {
+  // tag 배열 정보과 유효성 업데이트
+  const updateTagAndValidity = (newTagArray) => {
+    setTagValueArray(newTagArray);
+    setFormData((prevData) => ({
+      ...prevData,
+      itemTag: { ...prevData.itemTag, isValid: newTagArray.length > 0 },
+    }));
+  };
+
+  const handleChange = (e) => {
     const { id, value } = e.target;
     const trimmedValue = value.trim();
 
@@ -30,45 +45,56 @@ function AddItemPage() {
       ...prevData,
       [id]: { value, isValid: trimmedValue !== "" },
     }));
-  }
+  };
 
-  function handleTagChange(e) {
+  const handleTagChange = (e) => {
     if (e.key === "Enter") {
+      // 앞 뒤 빈칸 제거
       const newValue = e.target.value.trim();
-      if (newValue && !tagValueArray.includes(newValue)) {
-        const newTagArray = [...tagValueArray, newValue];
-        setTagValueArray(newTagArray);
-        setFormData((prevData) => ({
-          ...prevData,
-          itemTag: { ...prevData.itemTag, isValid: newTagArray.length > 0 },
-        }));
+      // 새로운 값이 비어있지 않은 경우에만 처리
+      if (newValue) {
+        // 빈 칸을 기준으로 분할하여 각각의 값을 태그로 추가
+        // 새로운 태그들이 태그 배열에 포함되어 있지 않은 경우만
+        const newTags = newValue
+          .split(" ")
+          .filter((tag) => !tagValueArray.includes(tag));
+        if (newTags.length > 0) {
+          const newTagArray = [...tagValueArray, ...newTags];
+          updateTagAndValidity(newTagArray);
+        }
       }
+      // 작업 완료 후 빈칸으로 초기화
       e.target.value = "";
     }
-  }
+  };
 
-  function handleTagCancel(tagValue) {
+  const handleTagCancel = (tagValue) => {
     const newTagArray = tagValueArray.filter((value) => value !== tagValue);
-    setTagValueArray(newTagArray);
-    setFormData((prevData) => ({
-      ...prevData,
-      itemTag: { ...prevData.itemTag, isValid: newTagArray.length > 0 },
-    }));
-  }
+    updateTagAndValidity(newTagArray);
+  };
+
+  const handlePriceChange = (e) => {
+    const inputPrice = e.target.value;
+
+    // 판매 가격 숫자만 입력 및 세자릿수마다 콤마 추가
+    const formattedPrice = getFormatNumber(inputPrice);
+
+    setPrice(formattedPrice);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const handleFileChange = (value) => {
+    console.log(value);
+    setFileValue((prevValues) => value);
+  };
 
   useEffect(() => {
     const allValid = validateAllInputs(formData);
     setIsAllValid(allValid);
-
-    // console.log("폼 제목 값" + formData["itemTitle"].isValid);
-    // console.log("폼 정보 값" + formData["itemIntro"].isValid);
-    // console.log("폼 가격 값" + formData["itemCost"].isValid);
-    // console.log("폼 태그 값" + formData["itemTag"].isValid);
   }, [tagValueArray, formData]);
-
-  function handleSubmit(e) {
-    e.preventDefault();
-  }
 
   return (
     <section className="add-item-page">
@@ -78,11 +104,11 @@ function AddItemPage() {
           <button disabled={!isAllValid}>등록</button>
         </div>
         <h2>상품 이미지</h2>
-        <div className="add-image-wrapper">
-          <img id="add-img" src={logoImg} alt="추가하기" />
-          <span>이미지 등록</span>
-        </div>
-
+        <FileInput
+          name="imgFile"
+          value={fileValue}
+          onChange={handleFileChange}
+        />
         <h2>상품명</h2>
         <input
           id="itemTitle"
@@ -99,7 +125,9 @@ function AddItemPage() {
         <h2>판매가격</h2>
         <input
           id="itemCost"
+          value={price}
           placeholder="판매가격을 입력해주세요"
+          onChange={handlePriceChange}
           onBlur={handleChange}
         ></input>
         <h2>태그</h2>

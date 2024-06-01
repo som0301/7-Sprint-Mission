@@ -3,6 +3,11 @@ export function getCommasToNumber(number) {
   return number.toLocaleString();
 }
 
+// 숫자만 입력 및 숫자 쉼표로 구분하여 반환
+export function getFormatNumber(number) {
+  return number.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 // 아이템 수에 따라 페이지 수 구할 때 나머지 있다면 올림
 export function getCustomRound(number) {
   const decimalPart = number % 1;
@@ -49,5 +54,3 @@ export const getPageRange = (currentPage, totalPageSize, maximumRange) => {
 
   return pages;
 };
-
-
