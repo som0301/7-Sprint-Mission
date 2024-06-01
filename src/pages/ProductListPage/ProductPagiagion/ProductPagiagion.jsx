@@ -34,8 +34,8 @@ function ProductPagiagion({ currentPage, totalPageSize, maximumRange = DEFAULT_R
 			{isEmpty(pageRange) ? (
 				''
 			) : (
-		<article className='pagination'>
-			<section className='pagination__left'>
+				<article className='pagination'>
+					<section className='pagination__left'>
 						<button
 							className='pagination__button'
 							disabled={currentPage <= 1}
@@ -43,10 +43,10 @@ function ProductPagiagion({ currentPage, totalPageSize, maximumRange = DEFAULT_R
 								handleClick(Math.max(1, currentPage - 1));
 							}}>
 							<img src={currentPage <= 1 ? GreyLeftCaretIcon : LeftCaretIcon} alt='이전 페이지 아이콘' draggable='false' />
-				</button>
-			</section>
+						</button>
+					</section>
 
-			<section className='pagination__center'>
+					<section className='pagination__center'>
 						{pageRange.map((item) => (
 							<button
 								key={`page-num-${item}`}
@@ -54,12 +54,12 @@ function ProductPagiagion({ currentPage, totalPageSize, maximumRange = DEFAULT_R
 								onClick={() => {
 									handleClick(item);
 								}}>
-						{item}
-					</button>
-				))}
-			</section>
+								{item}
+							</button>
+						))}
+					</section>
 
-			<section className='pagination__right'>
+					<section className='pagination__right'>
 						<button
 							className='pagination__button'
 							disabled={currentPage >= totalPageSize}
@@ -67,9 +67,9 @@ function ProductPagiagion({ currentPage, totalPageSize, maximumRange = DEFAULT_R
 								handleClick(Math.min(totalPageSize, currentPage + 1));
 							}}>
 							<img src={currentPage >= totalPageSize ? GreyRightCaretIcon : RightCaretIcon} alt='다음 페이지 아이콘' draggable='false' />
-				</button>
-			</section>
-		</article>
+						</button>
+					</section>
+				</article>
 			)}
 		</>
 	);

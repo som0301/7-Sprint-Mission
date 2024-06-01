@@ -30,23 +30,8 @@ function AllProducts() {
 			setTotalPageSize(Math.ceil(result?.totalCount / pageSize));
 		} catch (e) {
 			console.error(e);
+			setError(e.message);
 		}
-	};
-
-	const searchKeyword = (value) => {
-		setKeyword(value);
-	};
-
-	const handleResize = () => {
-		setPageSize(getPageSize());
-	};
-
-	const handleChangePage = (pageNum) => {
-		setPage(pageNum);
-	};
-
-	const changeOrderBy = (order) => {
-		setOrderBy(order);
 	};
 
 	useEffect(() => {
@@ -65,15 +50,15 @@ function AllProducts() {
 					상품 등록하기
 				</Link>
 
-				<ProductSearch searchKeyword={searchKeyword} />
+				<ProductSearch setKeyword={setKeyword} />
 
-				<ProductSort orderBy={orderBy} changeOrderBy={changeOrderBy} />
+				<ProductSort orderBy={orderBy} setOrderBy={setOrderBy} />
 			</section>
 
 			<section className='products__body products__body--all'>{isEmpty(items) ? <b>{error}</b> : items.map((item) => <ProductCard key={`all-products-${item.id}`} item={item} />)}</section>
 
 			<section className='products__foot'>
-				<ProductPagiagion currentPage={page} totalPageSize={totalPageSize} maximumPage={5} changeHandler={handleChangePage} />
+				<ProductPagiagion currentPage={page} totalPageSize={totalPageSize} maximumPage={5} setPage={setPage} />
 			</section>
 		</article>
 	);
