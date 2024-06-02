@@ -1,0 +1,9 @@
+.button {
+  padding: 12px 23px;
+  font-size: 1.6rem;
+  text-wrap: nowrap;
+}
+
+.button.disable {
+  background-color: var(--color-coolgray-400);
+}

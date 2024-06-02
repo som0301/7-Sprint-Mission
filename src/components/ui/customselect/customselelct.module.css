@@ -1,0 +1,91 @@
+@media (min-width: 1200px) {
+  .select {
+    width: 130px;
+  }
+  .select .selected {
+    padding: 8px 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .select {
+    width: 130px;
+  }
+  .select .selected {
+    padding: 8px 20px;
+  }
+}
+@media (min-width: 375px) and (max-width: 767px) {
+  .select {
+    width: 42px;
+    grid-area: s;
+  }
+  .select .selected {
+    padding: 9px;
+  }
+  .select ul {
+    right: 0;
+  }
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-coolgray-200);
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.select .selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select .selected:focus {
+  outline: 2px solid var(--color-brand-blue);
+  border-radius: 12px;
+}
+
+.select .selected .selected-value {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  color: var(--color-coolgray-800);
+  max-width: 90px;
+}
+
+.select .selected .arrow {
+  width: 24px;
+  height: 24px;
+  background: url('../../../images/icons/ic_arrow_down.svg') no-repeat;
+}
+
+.select ul {
+  width: 130px;
+  border: 1px solid var(--color-coolgray-200);
+  position: absolute;
+  top: 108%;
+  background: #fff;
+  margin: 1px 0 0 -1px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.select ul li {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  color: var(--color-coolgray-800);
+  padding: 8px 5px;
+  text-align: center;
+  list-style: none;
+}
+
+.select ul li:hover {
+  background-color: var(--color-coolgray-200);
+}
+
+.option-line {
+  border-top: 1px solid var(--color-coolgray-200);
+}

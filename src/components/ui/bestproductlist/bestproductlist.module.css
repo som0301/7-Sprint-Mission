@@ -1,0 +1,18 @@
+.best-product-list {
+  margin-top: 94px;
+  margin-bottom: 40px;
+}
+
+.best-product-list-title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  letter-spacing: 2%;
+  color: var(--color-coolgray-900);
+}
+
+.best-product-list-container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
