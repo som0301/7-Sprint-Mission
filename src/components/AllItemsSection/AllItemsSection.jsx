@@ -12,38 +12,25 @@ const AllItemsSection = () => {
   const [orderBy, setorderBy] = useState("recent");
   const [pageCount, setPageCount] = useState(1);
   const [buttons, setButtons] = useState([]);
-  const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
   const [currentPage, setCurrentPage] = useState(1);
   const [isDropDown, setIsDropDown] = useState(false);
-  const [imageSize, setImageSize] = useState({
-    imageWidth: "221px",
-    imageHeight: "221px",
-  });
-
-  const changePageSize = (windowInnerWidth) => {
-    if (windowInnerWidth >= 744 && windowInnerWidth < 1199) {
-      setPageSize(6);
-    } else if (windowInnerWidth < 744) {
-      setPageSize(4);
-      setImageSize({ imageWidth: "168px", imageHeight: "168px" });
-    } else {
-      setPageSize(10);
-      setImageSize({ imageWidth: "221px", imageHeight: "221px" });
-    }
-  };
-
-  const handleResize = () => {
-    setWindowInnerWidth(window.innerWidth);
-  };
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    changePageSize(windowInnerWidth);
+    const windowInnerWidth = window.innerWidth;
+    const changePageSize = () => {
+      if (windowInnerWidth >= 744 && windowInnerWidth < 1199) {
+        setPageSize(6);
+      } else if (windowInnerWidth < 744) {
+        setPageSize(4);
+      } else {
+        setPageSize(10);
+      }
+    };
+    window.addEventListener("resize", changePageSize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", changePageSize);
     };
   }, []);
-  //여기는 의존성배열에 windowInnerWidth이 없어도 왜 함수가 실행이될까...
 
   const handleLoad = async ({ page, pageSize, orderBy }) => {
     const productsData = await getProducts({ page, pageSize, orderBy });
@@ -155,7 +142,11 @@ const AllItemsSection = () => {
       </div>
       <ul className="all-items-section-content">
         {items.map((item) => (
-          <ItemCard key={item.id} item={item} imageSize={imageSize} />
+          <ItemCard
+            key={item.id}
+            item={item}
+            imageClassName={"all-items-section-image"}
+          />
         ))}
       </ul>
       <div className="all-items-section-paination-wrapper">

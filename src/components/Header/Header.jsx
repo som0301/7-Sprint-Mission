@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Header.css";
 import { pandaMarketLogoImage } from "../../assets/images";
 import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
+  const pathName = location.pathname;
   return (
     <header className="header-wrapper">
       <nav className="gnb">
@@ -17,7 +18,11 @@ const Header = () => {
             />
           </a>
           <a>자유게시판</a>
-          <a className={`${location.pathname == "/items" ? "selected" : ""}`}>
+          <a
+            className={`${
+              pathName == "/items" || pathName == "/additem" ? "selected" : ""
+            }`}
+          >
             중고마켓
           </a>
         </div>

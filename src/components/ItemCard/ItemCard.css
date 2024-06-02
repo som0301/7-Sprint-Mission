@@ -7,6 +7,14 @@
   border-radius: 16px;
   margin-bottom: 10px;
 }
+.best-items-section-image {
+  width: 282px;
+  height: 282px;
+}
+.all-items-section-image {
+  width: 221px;
+  height: 221px;
+}
 .item-card-name {
   font-size: 14px;
   font-weight: 500;
@@ -22,4 +30,20 @@
   font-size: 12px;
   font-weight: 500;
   color: var(--gray600);
+}
+@media (min-width: 744px) and (max-width: 1199px) {
+  .best-items-section-image {
+    width: 336px;
+    height: 336px;
+  }
+}
+@media (min-width: 375px) and (max-width: 743px) {
+  .best-items-section-image {
+    width: 343px;
+    height: 343px;
+  }
+  .all-items-section-image {
+    width: 168px;
+    height: 168px;
+  }
 }

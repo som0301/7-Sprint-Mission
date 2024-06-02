@@ -1,0 +1,6 @@
+.second-hand-market-add-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--snowwhite);
+}
