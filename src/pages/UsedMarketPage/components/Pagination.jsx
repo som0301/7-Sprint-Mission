@@ -1,6 +1,6 @@
-import arrowLeftImg from "../assets/images/icons/arrow_left.svg";
-import arrowRightImg from "../assets/images/icons/arrow_right.svg";
-import { getPageNumberArray } from "../utils/Utils";
+import arrowLeftImg from "../../../assets/images/icons/arrow_left.svg";
+import arrowRightImg from "../../../assets/images/icons/arrow_right.svg";
+import { getPageNumberArray } from "../../../utils/Utils";
 import { useState, useEffect } from "react";
 
 function Pagination({ onPageChange, pageNumber, currentPage }) {
@@ -41,7 +41,7 @@ function Pagination({ onPageChange, pageNumber, currentPage }) {
         />
       </button>
       <div className="page-nums">
-        {pageNumberArray?.map((num, index) => {
+        {pageNumberArray.map((num, index) => {
           return (
             <button
               className={`circle ${num === activePage ? "active" : ""}`}

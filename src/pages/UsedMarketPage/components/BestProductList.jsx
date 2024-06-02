@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import getItems from "../api/api";
+import getItems from "../../../api/api";
 import BestProductItem from "./BestProductItem";
-import useDeviceType from "../hooks/useDeviceType";
+import useDeviceType from "../../../hooks/useDeviceType";
 
 const ITEM_INIT = 4;
 const TABLET_ITEM_NUM = 2;
