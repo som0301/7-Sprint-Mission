@@ -4,6 +4,7 @@ import searchIcon from "./icon_search.svg";
 import dropDownIcon from "./icon_dropdown.svg";
 import plusIcon from "./icon_plus.svg";
 import xIcon from "./icon_x.svg";
+import xIconBlue from "./icon_x-blue.svg";
 export {
   pandaMarketLogoImage,
   favoriteIcon,
@@ -11,4 +12,5 @@ export {
   dropDownIcon,
   plusIcon,
   xIcon,
+  xIconBlue,
 };
