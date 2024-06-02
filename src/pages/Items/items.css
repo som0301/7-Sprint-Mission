@@ -21,7 +21,6 @@
 .best-product .item-img {
   display: block;
   border-radius: 16px;
-  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.03);
 }
 
 .best-product .item-name {
@@ -172,7 +171,6 @@
 .all-product .item-img {
   display: block;
   border-radius: 16px;
-  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.03);
 }
 
 .all-product .item-name {

@@ -9,7 +9,6 @@ const BestProductList = ({ pageSize }) => {
     const getBestProduct = async () => {
       const data = await getProductItem(1, pageSize, 'favorite');
       setProduct(data.list);
-      console.log(data);
     };
 
     getBestProduct();
