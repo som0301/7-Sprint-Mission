@@ -1,16 +1,19 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MarketPage from "./pages/MarketPage";
+import AddItemPage from "./pages/AddItemPage";
 import NavBar from "./components/NavBar";
-
-import { useState, useEffect } from "react";
-import { Router } from "react-router-dom";
-import PrintBestItems from "./components/PrintBestItems.jsx";
-import PrintAllItems from "./components/PrintAllItems.jsx";
+import "./App.css";
+import "./global.css";
 
 function App() {
   return (
-    <>
-      <PrintBestItems />
-      <PrintAllItems />
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route path='/items' element={<MarketPage />} />
+        <Route path='/additem' element={<AddItemPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

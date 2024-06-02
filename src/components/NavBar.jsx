@@ -1,14 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import "./NavBar.css";
+import Logo from "../images/logo-home.png";
 
 function NavBar() {
   return (
     <>
       <div className='navbar'>
-        <div className='navbar-logo'>
-          <Link to='/'>
-            <img src='src/images/logo-home.png' alt='logo' />
+        <div className='navbar-box'>
+          <Link to='/' className='navbar-logo'>
+            <img src={Logo} alt='logo' width='153px' />
           </Link>
         </div>
         <ul className='navbar-links'>
@@ -19,7 +20,7 @@ function NavBar() {
             <Link to='/about'>중고마켓</Link>
           </li>
         </ul>
-        <div className='button'>
+        <div className='button-login'>
           <Link to='/signin'>로그인</Link>
         </div>
       </div>
