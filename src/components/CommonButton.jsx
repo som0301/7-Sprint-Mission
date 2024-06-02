@@ -8,7 +8,7 @@ export default function CommonButton({
   className,
   path,
   type = 'button',
-  isActive,
+  isActive = true,
 }) {
   return (
     <Link to={path}>

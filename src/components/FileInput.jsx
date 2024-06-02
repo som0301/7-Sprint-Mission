@@ -1,4 +1,50 @@
 import { useState, useEffect } from 'react';
+import styled, { css } from 'styled-components';
+import { DeleteButton } from './TagInput';
+
+const card = css`
+  width: 168px;
+  height: 168px;
+  border-radius: 12px;
+`;
+
+const ImageInputLabel = styled.label`
+  ${card};
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 42px 0;
+  background-color: #f3f4f6;
+  color: #9ca3af;
+`;
+
+const ImageInputPlus = styled.span`
+  display: block;
+  font-size: 48px;
+  line-height: 48px;
+`;
+
+const ImagePreviewCards = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
+
+const ImagePreviewCard = styled.li`
+  position: relative;
+`;
+
+const ImagePreview = styled.img`
+  ${card};
+`;
+
+const ImageDeleteButton = styled(DeleteButton)`
+  position: absolute;
+  top: 12px;
+  right: 12px;
+`;
 
 export default function FileInput({ name, value = [], onChange }) {
   const [previews, setPreviews] = useState([]);
@@ -34,20 +80,26 @@ export default function FileInput({ name, value = [], onChange }) {
         type="file"
         style={{ display: 'none' }}
       />
-      <label htmlFor="fileinput">이미지 등록</label>
-      <ul>
+      <ImagePreviewCards>
+        <ImageInputLabel htmlFor="fileinput">
+          <ImageInputPlus>+</ImageInputPlus>이미지 등록
+        </ImageInputLabel>
         {previews[0] &&
           previews.map((item) => {
             return (
-              <li key={item}>
-                <img src={item} alt="이미지 미리보기" />
-                <button id={item} type="button" onClick={handleDelete}>
+              <ImagePreviewCard key={item}>
+                <ImagePreview src={item} alt="이미지 미리보기" />
+                <ImageDeleteButton
+                  id={item}
+                  type="button"
+                  onClick={handleDelete}
+                >
                   X
-                </button>
-              </li>
+                </ImageDeleteButton>
+              </ImagePreviewCard>
             );
           })}
-      </ul>
+      </ImagePreviewCards>
     </>
   );
 }
