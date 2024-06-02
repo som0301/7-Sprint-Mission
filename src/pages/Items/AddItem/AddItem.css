@@ -1,0 +1,92 @@
+/* AddItem.jsx */
+.form-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 0 170px;
+  color: #1f2937;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-submit h2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.form-submit button {
+  padding: 12px 20px;
+  width: 88px;
+  height: 42px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #9ca3af;
+  cursor: pointer;
+}
+
+.form-container .first-label {
+  margin-top: 16px;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 24px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.form-container input,
+.form-container #item-description {
+  margin-top: 12px;
+  padding: 16px 24px;
+  width: 100%;
+  height: 56px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #f3f4f6;
+  outline: none;
+}
+
+.form-container #item-description {
+  height: 200px;
+  resize: none;
+}
+
+.form-container input::placeholder,
+.form-container #item-description::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9ca3af;
+}
+
+.form-container input[type='file'] {
+  display: none;
+}
+
+/* ImageInput.jsx */
+.form-container .image-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  width: 282px;
+  height: 282px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #9ca3af;
+  background-color: #f3f4f6;
+  cursor: pointer;
+}

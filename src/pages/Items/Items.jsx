@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './items.css';
+import './Items.css';
 import BestProductList from './BestProductList';
 import AllProductList from './AllProductList';
 
