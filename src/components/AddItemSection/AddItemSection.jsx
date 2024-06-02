@@ -37,6 +37,7 @@ export const AddItemSection = () => {
     if (!inputNode) return;
     inputNode.value = "";
     setProductImageFile(null);
+    setFilePreview(null);
   };
   const handleAddTag = () => {
     if (!productTag) return;
@@ -49,6 +50,7 @@ export const AddItemSection = () => {
       handleAddTag();
     }
   };
+  //한글로 태그 추가할때 마지막글자로 태그가 하나더 추가되는 현상이있는데 이유를 모르겠습니다 ㅠㅠ
   const handleDeleteTag = (tagText) => {
     setProductTags(productTags.filter((tag) => tag !== tagText));
   };
