@@ -5,7 +5,7 @@ import OrderDropdown from "./OrderDropdown";
 function AllProductListItem({ item }) {
   return (
     <div className="all-product">
-      <img className="all-product-img" src={item.images} alt={item.name} />
+      <img className="all-product-img" src={item.images} alt={item.nagme} />
       <div>
         <h1 className="item-title">{item.name}팝니다</h1>
         <p className="price">{Number(item.price).toLocaleString()}원</p>
@@ -20,6 +20,7 @@ function AllProductListItem({ item }) {
 
 function AllProductList({ items, orderBy, setOrderBy }) {
   return (
+    
     <>
       <div className="all-product-bar">
         <div className="all-product-title"> 전체 상품 </div>
