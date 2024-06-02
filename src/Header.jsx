@@ -1,12 +1,14 @@
 import React from 'react';
 import logo from './assets/logo.svg';
 import logoMobile from './assets/logo_mobile.svg';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const activeStyle = {
     color: '#3692ff',
   };
+
+  const location = useLocation();
 
   return (
     <header>
@@ -44,7 +46,11 @@ const Header = () => {
               <NavLink
                 to="/items"
                 className="link"
-                style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                style={({ isActive }) =>
+                  isActive || location.pathname === '/additem'
+                    ? activeStyle
+                    : undefined
+                }
               >
                 중고마켓
               </NavLink>

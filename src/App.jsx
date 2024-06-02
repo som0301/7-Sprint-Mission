@@ -4,7 +4,7 @@ import Header from './Header';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/Login';
 import Items from './pages/Items/Items';
-import AddItem from './pages/AddItem/AddItem';
+import AddItem from './pages/Items/AddItem/AddItem';
 import Community from './pages/Community/Community';
 
 function App() {
