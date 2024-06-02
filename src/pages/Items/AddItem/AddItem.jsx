@@ -43,7 +43,11 @@ const AddItem = () => {
     <form className="form-container">
       <div className="form-submit">
         <h2>상품 등록하기</h2>
-        <button type="submit" disabled={!disabled}>
+        <button
+          type="submit"
+          disabled={!disabled}
+          onClick={(e) => e.preventDefault()}
+        >
           등록
         </button>
       </div>
