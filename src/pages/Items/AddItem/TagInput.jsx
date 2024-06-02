@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const TagInput = () => {
+const TagInput = ({ isValueCheck }) => {
   const [tagArr, setTagArr] = useState(new Set());
   const [inputValue, setInputValue] = useState('');
 
@@ -12,6 +12,7 @@ const TagInput = () => {
     if (e.key === 'Enter' && inputValue.trim()) {
       setTagArr((prev) => new Set([...prev, inputValue.trim()]));
       setInputValue('');
+      isValueCheck(inputValue, 'tag');
     }
   };
 
@@ -19,6 +20,7 @@ const TagInput = () => {
     const deleteTag = [...tagArr].filter((tag) => tagName !== tag);
 
     setTagArr(new Set([...deleteTag]));
+    isValueCheck(deleteTag, 'tag');
   };
 
   return (
