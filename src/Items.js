@@ -1,9 +1,10 @@
 import AllProductList from "./AllItem/AllProductList";
 import BestProductList from "./BestItem/BestProductList";
+import "./ProductItem.css";
 
 function Items(){
     return (
-        <div>
+        <div className="body">
         <BestProductList />
         <AllProductList />
         </div>
