@@ -8,7 +8,9 @@ const AddItem = () => {
     <form className="form-container">
       <div className="form-submit">
         <h2>상품 등록하기</h2>
-        <button type="submit">등록</button>
+        <button type="submit" onClick={(e) => e.preventDefault()}>
+          등록
+        </button>
       </div>
       <ImageInput />
       <label htmlFor="item-title">상품명</label>
