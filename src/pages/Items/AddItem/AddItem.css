@@ -110,6 +110,7 @@
   height: 282px;
   border: 1px solid #f9fafb;
   border-radius: 12px;
+  object-fit: cover;
 }
 
 .form-container .image-delete {
