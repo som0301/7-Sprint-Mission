@@ -1,7 +1,7 @@
 // AllProduct.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import S from './AllProduct.module.css';
+import Style from './AllProduct.module.css';
 import { getProductList } from '../utils/Getproduct';
 import { Pagination } from './Pagination';
 import { favoriteCount } from '../utils/FavoriteCount';
@@ -54,23 +54,23 @@ function AllProduct() {
 
   return (
     <>
-      <div className={S.main_allproduct_container}>
-        <h1 className={S.allproduct_header_title}>전체 상품</h1>
-        <div className={S.all_product_header_right}>
+      <div className={Style.main_allproduct_container}>
+        <h1 className={Style.allproduct_header_title}>전체 상품</h1>
+        <div className={Style.all_product_header_right}>
           <input
             value={searchTerm}
             onChange={handleSearchChange}
             placeholder="검색할 상품을 입력해주세요"
-            className={S.search_product}
+            className={Style.search_product}
           />
           <Link
             to="/additem"
-            className={S.all_product_additem}
+            className={Style.all_product_additem}
           >
             <a>상품 등록하기</a>
           </Link>
           <select
-            className={S.orderBy}
+            className={Style.orderBy}
             value={orderBy}
             onChange={e => setOrderBy(e.target.value)}
           >
@@ -79,7 +79,7 @@ function AllProduct() {
           </select>
         </div>
       </div>
-      <ul className={S.main_all_product}>
+      <ul className={Style.main_all_product}>
         {filteredItems?.map(({ id, images, name, price, favoriteCount }) => {
           console.log(filteredItems);
           return (
@@ -89,11 +89,11 @@ function AllProduct() {
                 width={220}
                 height={220}
               />
-              <div className={S.main_product_detail}>
-                <p className={S.product_name}>{name}</p>
-                <p className={S.product_price}>{price.toLocaleString()}</p>
+              <div className={Style.main_product_detail}>
+                <p className={Style.product_name}>{name}</p>
+                <p className={Style.product_price}>{price.toLocaleString()}</p>
                 <button
-                  className={S.product_favorite}
+                  className={Style.product_favorite}
                   onClick={() => handleAllFavoriteCount(id)}
                 >
                   {favoriteCount}
@@ -104,7 +104,7 @@ function AllProduct() {
         })}
       </ul>
 
-      <div className={S.pageButton}>
+      <div className={Style.pageButton}>
         <Pagination
           pageLimit={5}
           defaultpage={1}
