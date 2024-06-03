@@ -1,13 +1,7 @@
-import { useState } from 'react';
 import useFetchItems from 'pages/items/hooks/useFetchItems';
 
-function Allitems() {
-    const [page, setPage] = useState(1);
-    const [pageSize, setPageSize] = useState(10);
-    const [order, setOrder] = useState('recent');
-    const [search, setSearch] = useState('');
+function ItemsList({ type, page, pageSize, order, search }) {
     const { items, loading, error } = useFetchItems({ page, pageSize, order, search });
-    console.log(items);
     return (
         <div>
             {loading && <p>Loading...</p>}
@@ -17,4 +11,4 @@ function Allitems() {
     );
 }
 
-export default Allitems;
+export default ItemsList;

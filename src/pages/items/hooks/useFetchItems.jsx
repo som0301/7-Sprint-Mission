@@ -21,7 +21,6 @@ function useFetchItems({ page, pageSize, order, search }) {
         fetchItems();
     }, [page, pageSize, order, search]);
 
-    console.log(items);
     return { items, loading, error };
 }
 
