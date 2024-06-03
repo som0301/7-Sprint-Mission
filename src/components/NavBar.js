@@ -6,8 +6,7 @@ function NavBar() {
       <button>중고마켓</button>
       <button>로그인</button>
     </div>
-
-  )
+  );
 }
 
 export default NavBar;

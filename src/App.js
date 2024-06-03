@@ -1,98 +1,47 @@
 // import './App.css';
-import { useEffect, useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { Link, Routes, Route } from 'react-router-dom';
 
-import { getProducts } from "./api";
-
-import ProductList from "./components/ProductList";
-import NavBar from "./components/NavBar";
-
-import { Pagination } from "@mui/material";
+import Home from './components/Home';
+import Items from './components/Items';
+import Login from './components/Login';
+import { useNavigation } from './components/useNavigation';
+import ItemsLayout from './pages/ItemsLayout';
+import SignUp from './components/SignUp';
+import SignUpLayout from './pages/SignUpLayout';
+import AddItem from './components/AddItem';
+import AddItemLayout from './pages/AddItemLayout';
 
 export default App;
 
 function App() {
-  const [items, setItems] = useState([]);
-  const [page, setPage] = useState(1);
-  const [pageCount, setPageCount] = useState(1);
-  const [orderBy, setOrderBy] = useState("recent");
-  const [keyword, setKeyword] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [loadingError, setLoadingError] = useState(null);
-
-  const handleNewestClick = () => setOrderBy("recent");
-
-  const handleBestClick = () => setOrderBy("favorite");
-
-  const handleLoad = async (options) => {
-    let result;
-    try {
-      setIsLoading(true);
-      setLoadingError(null);
-      result = await getProducts(options);
-    } catch (error) {
-      setLoadingError(error);
-      return; // 에러 핸들링 후 undefined 반환하고 함수 실행 종료
-    } finally {
-      setIsLoading(false);
-    }
-    const {
-      list, totalCount
-    } = result;
-    const nextPageCount = (totalCount/list.length);
-    setItems(list);
-    setPageCount(nextPageCount);
+  const { navigate } = useNavigation();
+  const handleNavigate = () => {
+    navigate('/items');
   };
-
-  const handlePageChange = (nextPage) => {
-    setPage(nextPage);
-  }
-
-  const PageNumCount = () => {
-    for (let i = 1; i <= pageCount; i = i+1 ){
-      return <button onClick={() => handlePageChange(i)}>{i}</button>;
-    }
-  };
-
-  const handleSearchSubmit = async (e) => {
-    e.preventDefault();
-    setKeyword(e.target["keyword"].value); // search 스테이트 값을 인풋의 값으로 변경
-    handleLoad({ keyword });
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.target.key === "Enter") {
-      handleSearchSubmit(e);
-    }
-  };
-
-  useEffect(() => {
-    handleLoad({ orderBy, keyword, page });
-  }, [orderBy, keyword, page]);
-
-  const sortedItems = items.sort((a, b) => b[orderBy] - a[orderBy]);
-
-  const navigate = useNavigate();
-
-  
 
   return (
-    <div>
-      <NavBar />
-      <p>베스트 상품</p>
-      <bestProductList />
-      <p>판매 중인 상품</p>
-      <form onSubmit={handleSearchSubmit}>
-        <input name='keyword' onKeyDown={handleKeyDown} />
-      </form>
-      <button onClick={() => navigate('/additem')}>상품 등록하기</button>
-      <button onClick={handleNewestClick}>최신순</button>
-      <button onClick={handleBestClick}>좋아요순</button>
-      <ProductList items={sortedItems} />
-      <button onClick={() => handlePageChange(page-1)}>&lt;</button>
-      <PageNumCount />
-      <button onClick={() => handlePageChange(page+1)}>&gt;</button>
-      <Pagination count={pageCount} />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route index element={<Home />} />
+        </Route>
+        <Route path="/login" element={<Login />}>
+          <Route />
+        </Route>
+        <Route path="/signup" element={<SignUpLayout />}>
+          <Route index element={<SignUp />} />
+        </Route>
+        <Route path="/items" element={<ItemsLayout />}>
+          <Route index element={<Items />} />
+        </Route>
+        <Route path="/additem" element={<AddItemLayout />}>
+          <Route index element={<AddItem />} />
+        </Route>
+      </Routes>
+      <div>
+        <Link to="/items">구경하러 가기</Link>
+        <button onClick={handleNavigate}>구경하러 가기</button>
+      </div>
+    </>
   );
 }
