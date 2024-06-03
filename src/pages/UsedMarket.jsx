@@ -1,10 +1,15 @@
 import "../styles/UsedMarket.css";
-import TopNavigation from "../components/TopNavigation";
 import ProductList from "../components/ProductList";
 import BestProductList from "../components/BestProductList";
 import { useEffect, useState } from "react";
 import { getProducts } from "../api";
 import { useMediaQuery } from "react-responsive";
+
+const PAGE_SIZES = {
+  PC: { regular: 10, best: 4 },
+  TABLET: { regular: 6, best: 2 },
+  MOBILE: { regular: 4, best: 1 },
+};
 
 function UsedMarket() {
   const [items, setItems] = useState([]);
@@ -32,19 +37,19 @@ function UsedMarket() {
   const handleLoad = (order) => {
     if (!isTablet && !isMobile) {
       // PC
-      setAllProdPageSize(() => 10);
-      bestProdHandleLoad(1, 4);
-      allProdHandleLoad(order, page, 10);
+      setAllProdPageSize(() => PAGE_SIZES.PC.regular);
+      bestProdHandleLoad(1, PAGE_SIZES.PC.best);
+      allProdHandleLoad(order, page, PAGE_SIZES.PC.regular);
     } else if (isTablet && !isMobile) {
       // Tablet
-      setAllProdPageSize(() => 6);
-      bestProdHandleLoad(1, 2);
-      allProdHandleLoad(order, page, 6);
+      setAllProdPageSize(() => PAGE_SIZES.TABLET.regular);
+      bestProdHandleLoad(1, PAGE_SIZES.TABLET.best);
+      allProdHandleLoad(order, page, PAGE_SIZES.TABLET.regular);
     } else if (isMobile) {
       // isMobile
-      setAllProdPageSize(() => 4);
-      bestProdHandleLoad(1, 1);
-      allProdHandleLoad(order, page, 4);
+      setAllProdPageSize(() => PAGE_SIZES.MOBILE.regular);
+      bestProdHandleLoad(1, PAGE_SIZES.MOBILE.best);
+      allProdHandleLoad(order, page, PAGE_SIZES.MOBILE.regular);
     }
   };
 
@@ -66,29 +71,21 @@ function UsedMarket() {
   }, [isTablet, isMobile, order, page, totalProdCount]);
 
   return (
-    <div className="App">
-      <header className="UsedMarket-header">
-        <TopNavigation />
-      </header>
-      <main className="UsedMarket-main">
-        <div>
-          <BestProductList items={bestItems} className="UsedMarket-best-prod" />
-        </div>
-        <div>
-          <ProductList
-            items={items}
-            order={order}
-            page={page}
-            handleSelect={handleSelect}
-            onClickPage={onClickPage}
-            totalProdCount={totalProdCount}
-            allProdPageSize={allProdPageSize}
-            className="UsedMarket-all-prod"
-          />
-        </div>
-      </main>
-      <footer></footer>
-      <body></body>
+    <div className="used-market">
+      <div>
+        <BestProductList items={bestItems} />
+      </div>
+      <div>
+        <ProductList
+          items={items}
+          order={order}
+          page={page}
+          handleSelect={handleSelect}
+          onClickPage={onClickPage}
+          totalProdCount={totalProdCount}
+          allProdPageSize={allProdPageSize}
+        />
+      </div>
     </div>
   );
 }

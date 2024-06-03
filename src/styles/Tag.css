@@ -1,0 +1,20 @@
+.tag {
+  color: var(--gray800-color);
+  background-color: var(--gray100-color);
+  border-radius: 99999px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 16px;
+  height: 48px;
+}
+
+.tag .tag-name {
+  user-select: none;
+}
+
+.tag .tag-btn-delete {
+  cursor: pointer;
+}

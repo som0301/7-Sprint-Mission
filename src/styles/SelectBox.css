@@ -1,4 +1,4 @@
-.SelectBox {
+.select-box {
   position: relative;
   width: 120px;
   height: 42px;
@@ -8,17 +8,17 @@
   cursor: pointer;
 }
 
-.SelectBox-title {
+.select-box .selected-text {
   font-family: "Pretendard";
   font-weight: 500;
   font-size: 15px;
 }
 
-.SelectBox-ic-mobile {
+.select-box .ic-mobile {
   display: none;
 }
 
-.SelectBox-label {
+.select-box .select-btn {
   display: flex;
   justify-content: space-between;
   padding-right: 15px;
@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 
-.SelectBox-option-list {
+.select-box .option-list {
   position: absolute;
   width: 120px;
   top: 50px;
@@ -47,7 +47,7 @@
   overflow: hidden;
 }
 
-.SelectBox-option-item {
+.select-box .option-item {
   font-family: "Pretendard";
   font-weight: 500;
   font-size: 15px;
@@ -67,22 +67,22 @@
 
 /* Mobile */
 @media (max-width: 768px) {
-  .SelectBox {
+  .select-box {
     width: 50px;
   }
-  .SelectBox-title {
+  .select-box .selected-text {
     display: none;
   }
 
-  .SelectBox-ic-down {
+  .select-box .ic-down {
     display: none;
   }
 
-  .SelectBox-ic-mobile {
+  .select-box .ic-mobile {
     display: block;
   }
 
-  .SelectBox-option-list {
+  .select-box .option-list {
     left: -70px;
   }
 }
