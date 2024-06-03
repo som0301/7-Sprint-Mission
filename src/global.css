@@ -3,6 +3,9 @@
   --login-normal-blue: #3692ff;
   --login-normal-font-color: #ffffff;
   --gray-900: #111827;
+  --gray-800: #1f2937;
+  --addButton-gray-400: #9ca3af;
+  --gray-100: #f3f4f6;
 }
 
 * {

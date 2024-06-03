@@ -84,18 +84,9 @@ header {
   height: 115.4rem;
   margin: 0 auto;
   margin-top: 2.4rem;
-  background-color: lightgray;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.main_product_bestproduct {
-  background-color: red;
-}
-
-.all_product_header {
-  background-color: yellow;
 }
 
 .main_product_bestproduct > .main_product_bestproduct_title,
@@ -113,7 +104,11 @@ header {
 }
 
 .main_allproduct_container {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+  padding: 0 2.3rem;
 }
 
 .main_all_product {
@@ -135,6 +130,24 @@ header {
   width: 62rem;
   display: flex;
   justify-content: space-between;
+}
+
+.search_product {
+  width: 32.5rem;
+}
+
+.all_product_additem {
+  text-decoration: none;
+  width: 9rem;
+  height: 4.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: var(--login-normal-blue);
+  border-radius: 1.4rem;
+  color: var(--login-normal-font-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main_product_detail > .product_description {
