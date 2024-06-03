@@ -21,13 +21,14 @@ function AllProductList() {
   // 현재 몇 번째 페이지인지
   const [currentPage, setCurrentPage] = useState(PAGE_INIT);
   // 반응형 타입
-  const { isTablet, isMobile, isDesktop } = useDeviceType();
+  const deviceType = useDeviceType();
   // 현재 페이지 아이템 수
-  const itemsPerPage = isMobile
-    ? MOBILE_ITEM_NUM
-    : isTablet
-    ? TABLET_ITEM_NUM
-    : ITEM_INIT;
+  const itemsPerPage =
+    deviceType === "mobile"
+      ? MOBILE_ITEM_NUM
+      : deviceType === "tablet"
+      ? TABLET_ITEM_NUM
+      : ITEM_INIT;
 
   // 전체 페이지 수 계산
   const pageNumber = getCustomRound(totalCount / itemsPerPage);
@@ -49,7 +50,7 @@ function AllProductList() {
 
   useEffect(() => {
     fetchData({ orderBy, currentPage, itemsPerPage });
-  }, [orderBy, currentPage, isDesktop, isTablet, isMobile]);
+  }, [orderBy, currentPage, itemsPerPage]);
 
   const handleOptionChange = (option) => {
     setOrderBy(option);

@@ -5,28 +5,23 @@ import ItemTag from "./ItemTag";
 import { getFormatNumber } from "../../utils/Utils";
 import FileInput from "./FileInput";
 
-function validateAllInputs(inputsData) {
-  const allValid = Object.values(inputsData).every((input) => input.isValid);
-  return allValid;
-}
-
 function AddItemPage() {
   // form 데이터 객체
-  const [formData, setFormData] = useState({
+  const [itemIntroduction, setFormData] = useState({
     itemTitle: { value: "", isValid: false },
     itemIntro: { value: "", isValid: false },
-    itemCost: { value: "", isValid: false },
+    itemPrice: { value: "", isValid: false },
     itemTag: { value: "", isValid: false },
   });
 
   // tag 버튼을 그리기 위한 정보 담을 배열
   const [tagValueArray, setTagValueArray] = useState([]);
-  // 모든 유효성이 true인지
-  const [isAllValid, setIsAllValid] = useState(false);
-  // 판매 가격
-  const [price, setPrice] = useState("");
   // 파일 정보
   const [fileValue, setFileValue] = useState(null);
+  // 폼 inpust 모든 유효성 검사
+  const isFormValid = Object.values(itemIntroduction).every(
+    (input) => input.isValid
+  );
 
   // tag 배열 정보과 유효성 업데이트
   const updateTagAndValidity = (newTagArray) => {
@@ -79,7 +74,10 @@ function AddItemPage() {
     // 판매 가격 숫자만 입력 및 세자릿수마다 콤마 추가
     const formattedPrice = getFormatNumber(inputPrice);
 
-    setPrice(formattedPrice);
+    setFormData((prevData) => ({
+      ...prevData,
+      itemPrice: { value: formattedPrice, isValid: formattedPrice !== "" },
+    }));
   };
 
   const handleSubmit = (e) => {
@@ -91,17 +89,14 @@ function AddItemPage() {
     setFileValue((prevValues) => value);
   };
 
-  useEffect(() => {
-    const allValid = validateAllInputs(formData);
-    setIsAllValid(allValid);
-  }, [tagValueArray, formData]);
+  useEffect(() => {}, [tagValueArray, itemIntroduction]);
 
   return (
     <section className="add-item-page">
       <form onSubmit={handleSubmit}>
         <div className="add-item-bar">
           <h1>상품 등록하기</h1>
-          <button className="button" disabled={!isAllValid}>
+          <button className="button" disabled={!isFormValid}>
             등록
           </button>
         </div>
@@ -117,30 +112,30 @@ function AddItemPage() {
           className=""
           placeholder="상품명을 입력해주세요"
           onBlur={handleChange}
-        ></input>
+        />
         <h2>상품 소개</h2>
         <textarea
           id="itemIntro"
           placeholder="상품소개를 입력해주세요"
           onBlur={handleChange}
-        ></textarea>
+        />
         <h2>판매가격</h2>
         <input
-          id="itemCost"
-          value={price}
+          id="itemPrice"
+          value={itemIntroduction.itemPrice.value}
           placeholder="판매가격을 입력해주세요"
           onChange={handlePriceChange}
           onBlur={handleChange}
-        ></input>
+        />
         <h2>태그</h2>
         <input
           id="itemTag"
           placeholder="태그를 입력해주세요"
           onKeyDown={handleTagChange}
-        ></input>
+        />
         <div className="tag-wrapper">
           {tagValueArray.map((value, index) => (
-            <ItemTag key={index} value={value} onCencle={handleTagCancel} />
+            <ItemTag key={index} value={value} onCancle={handleTagCancel} />
           ))}
         </div>
       </form>

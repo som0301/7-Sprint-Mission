@@ -11,14 +11,14 @@ function BestProductList() {
   // 아이템 리스트
   const [items, setItems] = useState([]);
   // 반응형 타입
-  const { isTablet, isMobile, isDesktop } = useDeviceType();
-
+  const deviceType = useDeviceType();
   // 현재 페이지 아이템 수
-  const itemsPerPage = isMobile
-    ? MOBILE_ITEM_NUM
-    : isTablet
-    ? TABLET_ITEM_NUM
-    : ITEM_INIT;
+  const itemsPerPage =
+    deviceType === "mobile"
+      ? MOBILE_ITEM_NUM
+      : deviceType === "tablet"
+      ? TABLET_ITEM_NUM
+      : ITEM_INIT;
 
   const fetchData = async (itemsPerPage) => {
     try {
@@ -34,7 +34,7 @@ function BestProductList() {
 
   useEffect(() => {
     fetchData(itemsPerPage);
-  }, [itemsPerPage, isTablet, isMobile, isDesktop]);
+  }, [itemsPerPage]);
 
   return (
     <section className="best-products">

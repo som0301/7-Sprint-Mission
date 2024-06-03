@@ -24,9 +24,7 @@ function ProductSearch({ onOptionChange }) {
     setIsOpen(!isOpen);
   };
 
-  const { getDeviceType } = useDeviceType();
-
-  const deviceType = getDeviceType();
+  const deviceType = useDeviceType();
 
   const handleOptionClick = (option) => {
     setSelectedOption(option === FAVORITE_ORDER ? "좋아요순" : "최신순");
@@ -52,7 +50,7 @@ function ProductSearch({ onOptionChange }) {
               value={keyword}
               onChange={handleKeywordChange}
               placeholder="검색할 상품을 입력해주세요"
-            ></input>
+            />
           </div>
           <button id="add-item-button" className="blue-button button">
             <Link to="/additem">상품 등록하기</Link>

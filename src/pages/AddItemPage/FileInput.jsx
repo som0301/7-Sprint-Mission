@@ -32,7 +32,7 @@ function FileInput({ value, onChange }) {
           ref={inputRef}
           id="fileInput"
           type="file"
-          accept="image/png, image/jpeg"
+          accept="image/png, image/jpeg, image/gif, image/svg+xml, application/pdf, image/webp"
           onChange={handleChange}
         />
         <div className="add-image-wrapper">

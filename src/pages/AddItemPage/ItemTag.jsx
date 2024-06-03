@@ -1,8 +1,8 @@
 import xIcon from "../../assets/images/icons/ic_x.svg";
 
-function ItemTag({ value, onCencle }) {
+function ItemTag({ value, onCancle }) {
   function handleCencleClick() {
-    onCencle(value);
+    onCancle(value);
   }
 
   return (
