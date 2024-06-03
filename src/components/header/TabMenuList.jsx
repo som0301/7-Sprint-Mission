@@ -1,9 +1,8 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "/src/styles/header/TabMenuList.css";
+import { NavLink } from 'react-router-dom';
+import '/src/styles/header/TabMenuList.css';
 
 const activeStyle = {
-  color: "#3692FF",
+  color: '#3692FF',
 };
 
 function TabMenuList({ className, children, src }) {

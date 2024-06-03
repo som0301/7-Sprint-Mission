@@ -1,4 +1,4 @@
-@import "/src/styles/Color.css";
+@import '/src/styles/Color.css';
 
 /* //TODO: css 리팩토링 */
 /* TODO: 헤더 반응형 갭 변경*/
@@ -8,14 +8,8 @@
   margin: 0;
   font-family: Pretendard;
 }
-
-html {
-  font-size: 16px;
-}
-
 body {
   width: 100%;
-  color: #161346;
   margin-top: 70px;
   display: flex;
   justify-content: center;
@@ -31,10 +25,10 @@ li {
   list-style: none;
 }
 
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 32px;
+main {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 24px;
 }
 
 .products-list-title {
@@ -42,29 +36,6 @@ li {
   font-weight: 700;
   line-height: 28px;
   letter-spacing: 0.02em;
-}
-
-main {
-  width: 1200px;
-  margin: 0 auto;
-  padding-top: 24px;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  padding: 0 200px;
-  width: 100%;
-  background-color: var(--white-color);
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  border-bottom: 1px solid;
-  border-color: #dfdfdf;
 }
 
 .row {
@@ -100,11 +71,6 @@ header {
   max-width: 221px;
 }
 
-/* .col-xl-3 {
-  padding: 0;
-  max-width: 282px;
-} */
-
 .best-products-list {
   margin-bottom: 40px;
 }
@@ -114,11 +80,8 @@ header {
   border: none;
   color: var(--gray-400);
 
-  font-family: Pretendard;
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
-  text-align: left;
 }
 
 .all-products-header {
@@ -126,8 +89,7 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-
-.search-order-div {
+.search-container {
   display: flex;
   gap: 12px;
   align-items: center;
@@ -167,8 +129,14 @@ header {
   margin-bottom: 113px;
 }
 
+.product-image {
+  border-radius: 16px;
+}
 /* 패드 사이즈 */
 @media (max-width: 1199px) {
+  body {
+    display: block;
+  }
   .best-products-col {
     width: 40%;
     max-width: none;
@@ -185,12 +153,6 @@ header {
 
   .input-search {
     width: 242px;
-  }
-  header {
-    padding: 0 34px;
-  }
-  .header-left {
-    gap: 20px;
   }
 }
 @media (max-width: 767px) {
@@ -225,16 +187,5 @@ header {
   .all-products-header {
     flex-direction: column;
     gap: 8px;
-  }
-
-  .mobile-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .header-left {
-    gap: 16px;
   }
 }

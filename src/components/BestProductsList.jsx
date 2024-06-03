@@ -1,13 +1,14 @@
-import ProductItem from "./ProductItem";
+import ProductItem from './ProductItem';
 
 function BestProductsListItem({ product, className }) {
+  const { id, images, name, price, favoriteCount } = product;
   return (
     <ProductItem
-      src={product.images}
-      name={product.name}
-      price={product.price}
-      favoriteCount={product.favoriteCount}
-      size="282px"
+      id={id}
+      src={images}
+      name={name}
+      price={price}
+      favoriteCount={favoriteCount}
       className={className}
     />
   );
@@ -16,13 +17,13 @@ function BestProductsListItem({ product, className }) {
 function BestProductsList({ products, className }) {
   return (
     <div className={className}>
-      <h2 className="products-list-title">베스트 상품</h2>
-      <div className="row">
+      <h2 className='products-list-title'>베스트 상품</h2>
+      <div className='row'>
         {products.map((product) => {
           return (
-            <div className="best-products-col">
+            <div className='best-products-col' key={product.id}>
               <BestProductsListItem
-                className="best-product-item"
+                className='best-product-item'
                 product={product}
               />
             </div>

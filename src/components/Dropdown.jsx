@@ -1,21 +1,21 @@
-import iconArrowDown from "/src/assets/ic_arrow_down.svg";
-import { useState } from "react";
+import iconArrowDown from '/src/assets/ic_arrow_down.svg';
+import { useState } from 'react';
 
-import "/src/styles/Dropdown.css";
+import '/src/styles/Dropdown.css';
 
-import iconSort from "/src/assets/ic_sort.svg";
+import iconSort from '/src/assets/ic_sort.svg';
 
-import { useResponsiveApi } from "/src/Responsive";
+import { useResponsiveApi } from '/src/Responsive';
 
 function DropdownList({ setOrder }) {
-  const handleNewClick = () => setOrder("recent");
-  const handleBestClick = () => setOrder("favorite");
+  const handleNewClick = () => setOrder('recent');
+  const handleBestClick = () => setOrder('favorite');
   return (
-    <ul class="dropdown-ul">
-      <li class="dropdown-list" onClick={handleNewClick}>
+    <ul className='dropdown-ul'>
+      <li className='dropdown-list' onClick={handleNewClick}>
         최신순
       </li>
-      <li class="dropdown-list" onClick={handleBestClick}>
+      <li className='dropdown-list' onClick={handleBestClick}>
         좋아요순
       </li>
     </ul>
@@ -36,14 +36,14 @@ function Dropdown({ setOrder, order }) {
   };
 
   return (
-    <div className="dropdown" onBlur={handleBlurContainer}>
+    <div className='dropdown' onBlur={handleBlurContainer}>
       <label onClick={handleClickContainer}>
         <button>
           {isMobile ? (
             <img src={iconSort} />
           ) : (
             <>
-              <span>{order === "recent" ? "최신순" : "좋아요순"}</span>
+              <span>{order === 'recent' ? '최신순' : '좋아요순'}</span>
               <img src={iconArrowDown} />
             </>
           )}
