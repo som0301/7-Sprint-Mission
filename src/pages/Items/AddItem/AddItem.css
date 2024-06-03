@@ -117,19 +117,17 @@
   position: absolute;
   top: 10px;
   right: 12px;
+  padding: 0;
   width: 20px;
   height: 20px;
   border: none;
   background-color: transparent;
-  background-image: url('/src/assets/ic_X.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   cursor: pointer;
 }
 
-.form-container .image-delete:hover {
-  background-image: url('/src/assets/ic_X_hover.svg');
+.form-container .image-delete > img {
+  width: 20px;
+  height: 20px;
 }
 
 /* TagInput.jsx */
@@ -155,19 +153,17 @@
 }
 
 .form-container .tag-box .tag-flex > button {
+  padding: 0;
   width: 20px;
   height: 20px;
   border: none;
   background-color: transparent;
-  background-image: url(/src/assets/ic_X.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   cursor: pointer;
 }
 
-.form-container .tag-box .tag-flex > button:hover {
-  background-image: url(/src/assets/ic_X_hover.svg);
+.form-container .tag-box .tag-flex > button > img {
+  width: 20px;
+  height: 20px;
 }
 
 /* PC */
