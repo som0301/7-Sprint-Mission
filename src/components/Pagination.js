@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import S from './Pagination.module.css';
+import Style from './Pagination.module.css';
 
 export function Pagination({ pageLimit, defaultPage = 1, onChange }) {
   const [current, setCurrent] = useState(defaultPage);
@@ -21,26 +21,39 @@ export function Pagination({ pageLimit, defaultPage = 1, onChange }) {
   };
 
   const handleChangePage = page => {
-    return () => {
-      setCurrent(page);
-    };
+    setCurrent(page);
   };
 
   return (
-    <div>
-      <button onClick={handlePrePage}>&lt;</button>
+    <>
+      <div className={Style.pageButton_box}>
+        <button
+          className={Style.pageButton}
+          onClick={handlePrePage}
+        >
+          &lt;
+        </button>
 
-      {Array.from({ length: pageLimit }, (_, index) => index + 1).map(page => {
-        return (
-          <button
-            key={page}
-            onClick={handleChangePage(page)}
-          >
-            {page}
-          </button>
-        );
-      })}
-      <button onClick={handelNextPage}>&gt;</button>
-    </div>
+        {Array.from({ length: pageLimit }, (_, index) => index + 1).map(
+          page => {
+            return (
+              <button
+                className={Style.pageButton}
+                key={page}
+                onClick={() => handleChangePage(page)}
+              >
+                {page}
+              </button>
+            );
+          }
+        )}
+        <button
+          className={Style.pageButton}
+          onClick={handelNextPage}
+        >
+          &gt;
+        </button>
+      </div>
+    </>
   );
 }

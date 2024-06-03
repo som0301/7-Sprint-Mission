@@ -10,7 +10,8 @@ function Header() {
             <img
               className={S.header_logo}
               src={PandaFace}
-            ></img>
+              alt="판다얼굴"
+            />
             <a className={S.logo_title}>판다마켓</a>
           </div>
           <nav className={S.header_nav}>

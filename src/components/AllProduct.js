@@ -48,7 +48,7 @@ function AllProduct() {
     }
   }, [searchTerm, allItems]);
 
-  const handleSearchChange = e => {
+  const handleSearchTermChange = e => {
     setSearchTerm(e.target.value);
   };
 
@@ -59,7 +59,7 @@ function AllProduct() {
         <div className={Style.all_product_header_right}>
           <input
             value={searchTerm}
-            onChange={handleSearchChange}
+            onChange={handleSearchTermChange}
             placeholder="검색할 상품을 입력해주세요"
             className={Style.search_product}
           />
