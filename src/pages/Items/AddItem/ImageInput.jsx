@@ -10,7 +10,7 @@ const ImageInput = () => {
     setImgFile(e.target.files[0]);
   };
 
-  const handleImageUproadClick = () => {
+  const handleImageUploadClick = () => {
     fileInputRef.current.click();
   };
 
@@ -48,7 +48,7 @@ const ImageInput = () => {
         <button
           type="button"
           className="image-btn"
-          onClick={handleImageUproadClick}
+          onClick={handleImageUploadClick}
         >
           <img src={plusIcon} alt="plusicon" />
           <span>이미지 등록</span>
