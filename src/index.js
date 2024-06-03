@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./styles/global.css"; 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  // 5.29 React.StrictMode는 개발 중 더 안전하고 안정적인 React 애플리케이션을 작성하는 데 유용한 도구
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
