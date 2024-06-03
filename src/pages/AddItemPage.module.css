@@ -21,7 +21,7 @@
 }
 
 .top_add_button {
-  background-color: var(--gray-400);
+  background-color: var(--login-normal-blue);
   border: none;
   border-radius: 0.8rem;
   width: 8.8rem;
