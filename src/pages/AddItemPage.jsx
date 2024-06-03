@@ -11,7 +11,7 @@ const Form = styled.form`
   gap: 16px;
   max-width: 1200px;
   padding: 16px;
-  margin: 0 auto 100px;
+  margin: 0 auto 40px;
 `;
 
 const FormHeader = styled.div`
@@ -90,6 +90,18 @@ export default function AddItemPage() {
     formdata.append('images');
   };
 
+  const handlePriceChange = (e) => {
+    const numberValue = parseFloat(e.target.value.replace(/[^\d.]/g, ''));
+    let formattedValue = '';
+    if (!isNaN(numberValue)) {
+      formattedValue = numberValue.toLocaleString('ko-KR', {
+        style: 'currency',
+        currency: 'KRW',
+      });
+    }
+    handleChange('price', formattedValue);
+  };
+
   return (
     <Form id="addItemForm">
       <FormHeader>
@@ -138,7 +150,7 @@ export default function AddItemPage() {
         <Input
           name="price"
           value={values.price}
-          onChange={handleInputChange}
+          onChange={handlePriceChange}
           type="text"
           placeholder="판매 가격을 입력해주세요"
           required
