@@ -1,0 +1,26 @@
+.pagination-container {
+  width: 304px;
+  height: 40px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.pagination-button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7eb;
+  border-radius: 40px;
+  color: #6b7280;
+  background-color: #fff;
+  margin-right: 4px;
+}
+
+.pagination-button:last-child {
+  margin-right: 0;
+}
+
+.pagination-button.active {
+  background-color: #3692ff;
+  color: #fff;
+  border: 1px solid #3692ff;
+}
