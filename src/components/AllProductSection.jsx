@@ -1,24 +1,31 @@
-import { useState } from 'react';
 import CommonButton from './CommonButton';
 import ProductSectionHeader from './ProductSectionHeader';
 import ProductList from './ProductList';
+import useToggle from '../hooks/useToggle';
 import dropdownImg from '../image-resource/panda-drop-down.svg';
 import '../styles/product-section.css';
 
+const HEADER_TEXT = '판매 중인 상품';
+
 function OrderbyButton({ onOrder, id, className, isLoading, children }) {
+  const handleClick = (e) => {
+    if (!isLoading) {
+      onOrder(e);
+    }
+  };
   return (
-    <button
-      onClick={onOrder}
-      id={id}
-      className={className}
-      disabled={isLoading}
-    >
+    <button onClick={handleClick} id={id} className={className}>
       {children}
     </button>
   );
 }
 
-function OrderbyButtonList({ onOrder, isLoading }) {
+function OrderbyButtonList({ handleOrderClick, isLoading }) {
+  const onOrder = ({ target }) => {
+    const nextOrder = target.id;
+    handleOrderClick(nextOrder);
+  };
+
   return (
     <div className="drop-down__list__orderby">
       <OrderbyButton
@@ -41,55 +48,45 @@ function OrderbyButtonList({ onOrder, isLoading }) {
   );
 }
 
-function DropdownButton({ onOrder, isLoading, order }) {
-  const [openDropdown, setOpenDropdown] = useState(false);
+function DropdownButton({ handleOrderClick, isLoading, order }) {
+  const [isDropdownOpen, toggleDropdown] = useToggle();
   const isFavorite = order === 'favorite';
 
-  const handleDropdownClick = () => {
-    setOpenDropdown(!openDropdown);
-  };
-
   return (
-    <button
-      onClick={handleDropdownClick}
-      className="product-section__header__drop-down"
-      type="button"
-    >
-      <h3 className="dropdown-header">
-        {isFavorite ? '좋아요순' : '최신순'}
-        <span className="dropdown-header__emoji">👇</span>
-      </h3>
-      <img className="dropdown-image" src={dropdownImg} alt="드롭다운 버튼" />
-      {openDropdown && (
-        <OrderbyButtonList onOrder={onOrder} isLoading={isLoading} />
+    <div className="drop-down__wrapper">
+      <button
+        onClick={toggleDropdown}
+        className="product-section__header__drop-down"
+        type="button"
+      >
+        <h3 className="dropdown-header">
+          {isFavorite ? '좋아요순' : '최신순'}
+          <span className="dropdown-header__emoji">👇</span>
+        </h3>
+        <img className="dropdown-image" src={dropdownImg} alt="드롭다운 버튼" />
+      </button>
+      {isDropdownOpen && (
+        <OrderbyButtonList
+          handleOrderClick={handleOrderClick}
+          isLoading={isLoading}
+        />
       )}
-    </button>
+    </div>
   );
 }
 
 export default function AllProductSection({
-  onClick,
+  handleOrderClick,
   items,
   isLoading,
   order,
 }) {
-  const HEADER_TEXT = '판매 중인 상품';
-
-  const onOrder = ({ target }) => {
-    const nextOrder = target.id;
-    onClick(nextOrder);
-  };
-
-  const handleLinkClick = () => {
-    window.location.href = './additem';
-  };
-
   return (
     <section className="product-section product-section__all">
       <ProductSectionHeader text={HEADER_TEXT}>
         <CommonButton
           className="product-section__header__button"
-          onClick={handleLinkClick}
+          path="/additem"
         >
           상품 등록하기
         </CommonButton>
@@ -97,7 +94,11 @@ export default function AllProductSection({
           className="product-section__header__input"
           placeholder="🔍 검색할 상품을 입력해주세요"
         />
-        <DropdownButton onOrder={onOrder} isLoading={isLoading} order={order} />
+        <DropdownButton
+          handleOrderClick={handleOrderClick}
+          isLoading={isLoading}
+          order={order}
+        />
       </ProductSectionHeader>
       <ProductList className="product-list__all" items={items} />
     </section>

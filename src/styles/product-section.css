@@ -30,12 +30,15 @@
   font-size: 1rem;
 }
 
+.drop-down__wrapper {
+  position: relative;
+}
+
 .product-section__header__drop-down {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  flex-basis: 2.625rem;
+  width: 2.625rem;
   height: 2.625rem;
   background-color: var(--bg-color-white);
   border: 1px solid var(--border-light-gray);
@@ -99,12 +102,12 @@
     order: 2;
   }
 
-  .product-section__header__drop-down {
+  .drop-down__wrapper {
     order: 3;
   }
 
   .product-section__header__drop-down {
-    flex-basis: 8.125rem;
+    width: 8.125rem;
   }
 
   .dropdown-header {

@@ -3,9 +3,7 @@ import '../styles/product-list.css';
 
 function ProductListItem({ item }) {
   const { images, price, favoriteCount, name } = item;
-  const formattedPrice = (function formatNumber(price) {
-    return new Intl.NumberFormat('ko-KR').format(price);
-  })(price);
+  const formattedPrice = new Intl.NumberFormat('ko-KR').format(price);
 
   return (
     <>
