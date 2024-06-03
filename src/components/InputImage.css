@@ -1,0 +1,94 @@
+@import url("globals.css");
+
+.InputImage {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 0;
+
+  width: 100%;
+}
+
+.InputImage-container {
+  display: flex;
+  gap: 8px;
+}
+
+.InputImage-title {
+  color: #1f2937;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+.InputImage-regist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--gray100);
+}
+
+.InputImage-regist > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  width: 74px;
+  height: 84px;
+  margin: 0 auto;
+}
+
+.InputImage-preview {
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 10px;
+
+  box-sizing: border-box;
+}
+
+.InputImage-preview-delete {
+  width: 24px;
+  height: 24px;
+
+  cursor: pointer;
+}
+
+.InputImage-content {
+  display: none;
+}
+
+.InputImage-content:focus {
+  outline: 1px solid var(--blue);
+}
+
+.image-size {
+  width: 168px;
+  height: 168px;
+  border-radius: 12px;
+}
+
+@media (min-width: 768px) {
+  .InputImage-container {
+    gap: 16px;
+  }
+
+  .image-size {
+    width: 162px;
+    height: 162px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .InputImage-container {
+    gap: 24px;
+  }
+
+  .image-size {
+    width: 282px;
+    height: 282px;
+  }
+}
