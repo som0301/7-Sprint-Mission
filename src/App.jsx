@@ -32,10 +32,6 @@ function App() {
     fetchBestList();
   };
 
-  useEffect(() => {
-    fetchBestList();
-  }, []);
-
   const fetchAllList = async () => {
     const { list } = await getProductList({
       page,
@@ -57,6 +53,7 @@ function App() {
   };
 
   useEffect(() => {
+    fetchBestList();
     fetchAllList();
   }, [page, orderBy]);
 
@@ -151,7 +148,7 @@ function App() {
                       </p>
                       <button
                         className={S.product_favorite}
-                        onClick={() => handleAllFavoriteCount}
+                        onClick={() => handleAllFavoriteCount(id)}
                       >
                         {favoriteCount}
                       </button>

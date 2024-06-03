@@ -21,7 +21,7 @@
 }
 
 .top_add_button {
-  background-color: var(--addButton-gray-400);
+  background-color: var(--gray-400);
   border: none;
   border-radius: 0.8rem;
   width: 8.8rem;
@@ -29,6 +29,10 @@
   color: var(--login-normal-font-color);
   font-size: 1.6rem;
   font-weight: 600;
+}
+
+.top_add_button:disabled {
+  background-color: var(--gray-400);
 }
 
 .product_add__label {
