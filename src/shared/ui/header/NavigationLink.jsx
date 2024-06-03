@@ -1,10 +1,12 @@
 import { Link, NavLink } from 'react-router-dom';
 import styled, { css } from 'styled-components';
+import Logo from 'shared/assets/image/panda-market-logo.png';
+import MobileLogo from 'shared/assets/image/panda-market-logo-mobile.png';
 
 const homeStyle = css`
     width: 153px;
     height: 51px;
-    background-image: url('src/shared/assets/image/panda-market-logo.png');
+    background-image: url(${Logo});
     background-size: contain;
     background-repeat: no-repeat;
     text-indent: -9999px;
@@ -14,7 +16,7 @@ const homeStyle = css`
     @media (min-width: 375px) and (max-width: 767px) {
         width: 81px;
         height: 40px;
-        background-image: url('src/shared/assets/image/panda-market-logo-mobile.png');
+        background-image: url(${MobileLogo});
     }
 `;
 
