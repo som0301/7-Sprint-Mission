@@ -4,6 +4,7 @@ import plusIc from '../assets/icons/ic_plus.svg';
 import { useEffect, useState } from 'react';
 import FileInput from '../components/FileInput';
 import Tag from '../components/Tag';
+import Button from '../components/Button';
 
 function AddItem() {
   const [tags, setTags] = useState([]);
@@ -115,10 +116,9 @@ function AddItem() {
                   alt='이미지 미리보기'
                   className='upload-img'
                 />
-
-                <button onClick={handleImgDelete} className='btn-delete'>
-                  <img src={blueXIc} alt='삭제 버튼' />
-                </button>
+                <Button onClick={handleImgDelete}>
+                  <img src={blueXIc} alt='삭제 버튼' className='btn-delete' />
+                </Button>
               </div>
             )}
           </div>

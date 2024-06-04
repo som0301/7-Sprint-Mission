@@ -47,11 +47,6 @@
   overflow: hidden;
 }
 
-.select-box .option-item-btn {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-}
 .select-box .option-item {
   font-family: 'Pretendard';
   font-weight: 500;

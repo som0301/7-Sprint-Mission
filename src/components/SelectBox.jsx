@@ -2,6 +2,7 @@ import '../styles/SelectBox.css';
 import arrowDownImg from '../assets/icons/ic_arrow_down.svg';
 import mobileSelectImg from '../assets/icons/ic_sort.svg';
 import { useState } from 'react';
+import Button from './Button';
 
 function SelectBox({ handleSelect, selectList }) {
   const [isListOpen, setIsListOpen] = useState(false);
@@ -36,13 +37,9 @@ function SelectBox({ handleSelect, selectList }) {
           <ul className='option-list'>
             {selectList.map((item) => {
               return (
-                <button
-                  key={item}
-                  onClick={handleSelectItem}
-                  className='option-item-btn'
-                >
+                <Button key={item} onClick={handleSelectItem}>
                   <li className='option-item'>{item}</li>
-                </button>
+                </Button>
               );
             })}
           </ul>
