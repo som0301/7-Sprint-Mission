@@ -7,7 +7,7 @@ function usePageSize(type) {
         if (type === 'all') {
             if (device === 'mobile') return 4;
             if (device === 'tablet') return 6;
-            if (device === 'desktop') return 12;
+            if (device === 'desktop') return 10;
         }
         if (type === 'best') {
             if (device === 'mobile') return 1;
