@@ -1,31 +1,30 @@
-import { NavLink, useLocation } from "react-router-dom";
-import "../styles/TopNavigation.css";
-import userProfileImg from "../assets/icons/ic_user_profile.svg";
+import { NavLink, useLocation } from 'react-router-dom';
+import '../styles/TopNavigation.css';
+import userProfileImg from '../assets/icons/ic_user_profile.svg';
 
 function TopNavigation() {
   const location = useLocation();
-  const isAdditemPage = location.pathname === "/additem" ? true : false;
-  const usedMarketClassName = isAdditemPage ? "page-focus" : "";
+  const isAdditemPage = location.pathname === '/additem' ? true : false;
   function getLinkStyle({ isActive }) {
     return {
-      color: isActive ? "var(--blue-color)" : undefined,
+      color: isActive ? 'var(--blue-color)' : undefined,
     };
   }
   return (
-    <div className="top-navigation-wrapper">
-      <div className="top-navigation">
-        <div className="link-section">
-          <a href="/">
-            <img className="logo-img" alt="판다마켓 로고" />
+    <div className='top-navigation-wrapper'>
+      <div className='top-navigation'>
+        <div className='link-section'>
+          <a href='/'>
+            <img className='logo-img' alt='판다마켓 로고' />
           </a>
-          <div className="link-list">
-            <NavLink to="/board" style={getLinkStyle} className="page-focus">
+          <div className='link-list'>
+            <NavLink to='/board' style={getLinkStyle} className='page-focus'>
               자유게시판
             </NavLink>
             <NavLink
-              to="/items"
+              to='/items'
               style={
-                isAdditemPage ? { color: "var(--blue-color)" } : getLinkStyle
+                isAdditemPage ? { color: 'var(--blue-color)' } : getLinkStyle
               }
             >
               중고마켓
@@ -33,11 +32,11 @@ function TopNavigation() {
           </div>
         </div>
         {isAdditemPage ? (
-          <button className="btn-profile">
-            <img src={userProfileImg} alt="기본_사용자_프로필_이미지" />
+          <button className='btn-profile'>
+            <img src={userProfileImg} alt='기본_사용자_프로필_이미지' />
           </button>
         ) : (
-          <a href="/login" className="btn-login element-click">
+          <a href='/login' className='btn-login element-click'>
             로그인
           </a>
         )}
