@@ -30,14 +30,13 @@ function AddItem() {
   }, [values.imgFile]);
 
   useEffect(() => {
-    for (const key in values) {
-      if (key === 'tag') continue;
-      if (!values[key] || tags.length === 0) {
-        setIsFormComplete(false);
-        return;
-      }
-    }
-    setIsFormComplete(true);
+    const isComplete =
+      Object.keys(values)
+        .filter((key) => key !== 'tag')
+        .filter((key) => key !== 'imgFile')
+        .every((key) => values[key]) && tags.length > 0;
+
+    setIsFormComplete(isComplete);
   }, [values, tags]);
 
   const handleFileInputChange = (name, value) => {
@@ -55,8 +54,8 @@ function AddItem() {
     }));
   };
 
-  const handleDeletetag = (tagName) => {
-    setTags(tags.filter((element) => element !== tagName));
+  const handleDeletetag = (e) => {
+    setTags(tags.filter((element) => element !== e.target.name));
   };
 
   const handleChange = (e) => {
@@ -151,6 +150,7 @@ function AddItem() {
           name='price'
           value={values.price}
           placeholder='판매 가격을 입력해주세요'
+          type='number'
           onChange={handleChange}
         />
         <label htmlFor='tag' className='input-label'>

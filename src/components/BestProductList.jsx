@@ -18,24 +18,13 @@ function BestProductListItem({ item }) {
 }
 
 function BestProductList({ items }) {
-  let isError = false;
-  let ErrorMsg = '';
-  if (!Array.isArray(items)) {
-    isError = true;
-    ErrorMsg = <p>items에 배열이 아닌 값이 들어왔습니다.</p>;
-  } else if (items.length === 0) {
-    isError = true;
-    ErrorMsg = <p>상품이 존재하지 않습니다.</p>;
-  }
   return (
     <div className='best-product-list'>
       <p className='title'>베스트 상품</p>
       <div className='container'>
-        {isError
-          ? ErrorMsg
-          : items.map((item) => {
-              return <BestProductListItem key={item.id} item={item} />;
-            })}
+        {items?.map((item) => {
+          return <BestProductListItem key={item.id} item={item} />;
+        })}
       </div>
     </div>
   );

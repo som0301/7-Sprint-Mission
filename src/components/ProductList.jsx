@@ -28,24 +28,13 @@ function ProductList({
   totalProdCount,
   allProdPageSize,
 }) {
-  let isError = false;
-  let ErrorMsg = '';
-  if (!Array.isArray(items)) {
-    isError = true;
-    ErrorMsg = <p>items에 배열이 아닌 값이 들어왔습니다.</p>;
-  } else if (items.length === 0) {
-    isError = true;
-    ErrorMsg = <p>상품이 존재하지 않습니다.</p>;
-  }
   return (
     <div className='product-list'>
       <ProductController order={order} handleSelect={handleSelect} />
       <div className='container'>
-        {isError
-          ? ErrorMsg
-          : items.map((item) => {
-              return <ProductListItem key={item.id} item={item} />;
-            })}
+        {items?.map((item) => {
+          return <ProductListItem key={item.id} item={item} />;
+        })}
       </div>
       <Pagination
         page={page}
