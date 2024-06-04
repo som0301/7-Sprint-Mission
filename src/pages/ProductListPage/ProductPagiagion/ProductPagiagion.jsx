@@ -1,4 +1,5 @@
 import React from 'react';
+import { isEmpty } from 'lodash';
 import LeftCaretIcon from '../../../assets/images/icon/caret/ic-caret-L.svg';
 import RightCaretIcon from '../../../assets/images/icon/caret/ic-caret-R.svg';
 import GreyLeftCaretIcon from '../../../assets/images/icon/caret/ic-caret-L-grey.svg';
@@ -23,48 +24,54 @@ const getPageRange = (currentPage, totalPageSize, maximumRange) => {
 	return pageRange;
 };
 
-function ProductPagiagion({ currentPage, totalPageSize, maximumRange = DEFAULT_RANGE, changeHandler }) {
-	const handleClick = (num) => changeHandler(num);
+function ProductPagiagion({ currentPage, totalPageSize, maximumRange = DEFAULT_RANGE, setPage }) {
+	const handleClick = (num) => setPage(num);
 
 	const pageRange = getPageRange(currentPage, totalPageSize, maximumRange);
 
 	return (
-		<article className='pagination'>
-			<section className='pagination__left'>
-				<button
-					className='pagination__button'
-					disabled={currentPage === 1}
-					onClick={() => {
-						handleClick(Math.max(1, currentPage - 1));
-					}}>
-					<img src={currentPage === 1 ? GreyLeftCaretIcon : LeftCaretIcon} alt='이전 페이지 아이콘' draggable='false' />
-				</button>
-			</section>
+		<>
+			{isEmpty(pageRange) ? (
+				''
+			) : (
+				<article className='pagination'>
+					<section className='pagination__left'>
+						<button
+							className='pagination__button'
+							disabled={currentPage <= 1}
+							onClick={() => {
+								handleClick(Math.max(1, currentPage - 1));
+							}}>
+							<img src={currentPage <= 1 ? GreyLeftCaretIcon : LeftCaretIcon} alt='이전 페이지 아이콘' draggable='false' />
+						</button>
+					</section>
 
-			<section className='pagination__center'>
-				{pageRange?.map((item) => (
-					<button
-						key={`page-num-${item}`}
-						className={`pagination__button${item === currentPage ? ' active' : ''}`}
-						onClick={() => {
-							handleClick(item);
-						}}>
-						{item}
-					</button>
-				))}
-			</section>
+					<section className='pagination__center'>
+						{pageRange.map((item) => (
+							<button
+								key={`page-num-${item}`}
+								className={`pagination__button${item === currentPage ? ' active' : ''}`}
+								onClick={() => {
+									handleClick(item);
+								}}>
+								{item}
+							</button>
+						))}
+					</section>
 
-			<section className='pagination__right'>
-				<button
-					className='pagination__button'
-					disabled={currentPage === totalPageSize}
-					onClick={() => {
-						handleClick(Math.min(totalPageSize, currentPage + 1));
-					}}>
-					<img src={currentPage === totalPageSize ? GreyRightCaretIcon : RightCaretIcon} alt='이전 페이지 아이콘' draggable='false' />
-				</button>
-			</section>
-		</article>
+					<section className='pagination__right'>
+						<button
+							className='pagination__button'
+							disabled={currentPage >= totalPageSize}
+							onClick={() => {
+								handleClick(Math.min(totalPageSize, currentPage + 1));
+							}}>
+							<img src={currentPage >= totalPageSize ? GreyRightCaretIcon : RightCaretIcon} alt='다음 페이지 아이콘' draggable='false' />
+						</button>
+					</section>
+				</article>
+			)}
+		</>
 	);
 }
 

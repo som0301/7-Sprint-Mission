@@ -8,6 +8,7 @@ import ProductListPage from './pages/ProductListPage/ProductListPage';
 import ProductPage from './pages/ProductPage/ProductPage';
 import PrivacyPage from './pages/PrivacyPage/PrivacyPage';
 import FAQPage from './pages/FAQPage/FAQPage';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 function Main() {
 	return (
@@ -15,6 +16,7 @@ function Main() {
 			<Routes>
 				<Route path='/' element={<App />}>
 					<Route index element={<HomePage />} />
+					<Route path='*' element={<PageNotFound />} />
 					<Route path='items'>
 						<Route index element={<ProductListPage />} />
 						<Route path=':itemId' element={<ProductPage />} />
