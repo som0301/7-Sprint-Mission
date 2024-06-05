@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import '/src/styles/Color.css';
 
 export const StyledMain = styled.div`
   width: 1200px;
@@ -60,4 +61,21 @@ export const FormHeaderTitle = styled.h2`
 export const StyledSignForm = styled.form`
   ${FormStyle}
   width: 100%;
+`;
+
+export const ContentText = styled.p`
+  font-size: 16px;
+  font-weight: 400;
+
+  color: var(--gray-800);
+`;
+
+export const DisplayContainer = styled.div`
+  display: flex;
+  flex-direction: ${({ $col }) => ($col ? 'column' : 'row')};
+  gap: ${({ $gap }) => $gap}px;
+
+  &.comment {
+    border-bottom: 1px solid var(--gray-200);
+  }
 `;
