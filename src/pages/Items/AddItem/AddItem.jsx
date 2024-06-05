@@ -8,7 +8,7 @@ import DescriptionInput from './DescriptionInput';
 
 const AddItem = () => {
   const [disabled, setDisabled] = useState(false);
-  const [isValues, setIsValues] = useState({
+  const [isValid, setIsValid] = useState({
     title: false,
     description: false,
     price: false,
@@ -17,14 +17,14 @@ const AddItem = () => {
 
   const isValueCheck = (currentValue, name) => {
     if (currentValue.length > 0) {
-      setIsValues((prev) => {
+      setIsValid((prev) => {
         return {
           ...prev,
           [name]: true,
         };
       });
     } else if (currentValue.length < 1) {
-      setIsValues((prev) => {
+      setIsValid((prev) => {
         return {
           ...prev,
           [name]: false,
@@ -34,10 +34,10 @@ const AddItem = () => {
   };
 
   useEffect(() => {
-    const allTrue = Object.values(isValues).every((value) => value === true);
+    const allTrue = Object.values(isValid).every((value) => value === true);
 
     setDisabled(allTrue);
-  }, [isValues]);
+  }, [isValid]);
 
   return (
     <form className="form-container">

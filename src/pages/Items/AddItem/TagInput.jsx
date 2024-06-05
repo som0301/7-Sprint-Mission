@@ -32,7 +32,7 @@ const TagInput = ({ isValueCheck }) => {
         type="text"
         placeholder="태그를 입력해주세요"
         value={inputValue}
-        onKeyUp={handleKeyUp}
+        onkeypUp={handleKeyUp}
         onChange={handleInputChange}
       />
       {[...tagArr].map((tag, index) => (
