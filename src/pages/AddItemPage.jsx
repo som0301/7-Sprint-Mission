@@ -4,64 +4,6 @@ import FileInput from '../components/FileInput';
 import TagInput from '../components/TagInput.jsx';
 import styled, { css } from 'styled-components';
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  max-width: 1200px;
-  padding: 16px;
-  margin: 0 auto 40px;
-`;
-
-const FormHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-`;
-
-const FormHeaderText = styled.h2`
-  font-weight: 700;
-  font-size: 20px;
-  font-family: Pretendard;
-`;
-
-const Label = styled.label`
-  width: 100%;
-`;
-
-const LabelHeaderText = styled.h3`
-  font-weight: 700;
-  font-size: 14px;
-  font-family: Pretendard;
-  margin-bottom: 12px;
-`;
-
-const inputContents = css`
-  display: block;
-  width: 100%;
-  height: 56px;
-  padding: 16px 24px;
-  border-radius: 12px;
-  background-color: #f3f4f6;
-  &::placeholder {
-    font-weight: 400;
-    font-size: 16px;
-    color: #9ca3af;
-  }
-`;
-
-const Input = styled.input`
-  ${inputContents}
-`;
-
-const Textarea = styled.textarea`
-  min-height: 200px;
-  resize: none;
-  ${inputContents};
-`;
-
 const INITIAL_VALUE = {
   images: [],
   name: '',
@@ -163,5 +105,63 @@ export default function AddItemPage() {
     </Form>
   );
 }
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 1200px;
+  padding: 16px;
+  margin: 0 auto 40px;
+`;
+
+const FormHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+const FormHeaderText = styled.h2`
+  font-weight: 700;
+  font-size: 20px;
+  font-family: Pretendard;
+`;
+
+const Label = styled.label`
+  width: 100%;
+`;
+
+const LabelHeaderText = styled.h3`
+  font-weight: 700;
+  font-size: 14px;
+  font-family: Pretendard;
+  margin-bottom: 12px;
+`;
+
+const inputContents = css`
+  display: block;
+  width: 100%;
+  height: 56px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background-color: #f3f4f6;
+  &::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    color: #9ca3af;
+  }
+`;
+
+const Input = styled.input`
+  ${inputContents}
+`;
+
+const Textarea = styled.textarea`
+  min-height: 200px;
+  resize: none;
+  ${inputContents};
+`;
 
 export { Input };

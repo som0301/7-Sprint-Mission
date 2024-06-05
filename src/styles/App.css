@@ -1,0 +1,58 @@
+/* footer {
+  height: 160px;
+  padding: 32px 200px;
+  background: #111827;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright {
+  font: 400 16px / 19.09px Pretendard;
+  color: #9ca3af;
+}
+
+.info {
+  display: flex;
+  gap: 30px;
+  font: 400 16px / 19.09px Pretendard;
+}
+
+.info a {
+  color: #e5e7eb;
+}
+
+.contact-list {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+}
+
+.contact-list a {
+  font: 400 16px / 19.09px Pretendard;
+  color: var(--text-color-white);
+}
+
+태블릿
+footer {
+  padding: 32px 104px;
+}
+
+모바일
+footer {
+  padding: 32px;
+}
+
+.footer-container {
+  align-content: space-between;
+  height: 100%;
+  position: relative;
+}
+
+.copyright {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+} */

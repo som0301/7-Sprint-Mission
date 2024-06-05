@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CommonButton from './CommonButton';
 import ProductSectionHeader from './ProductSectionHeader';
 import ProductList from './ProductList';
@@ -84,12 +85,11 @@ export default function AllProductSection({
   return (
     <section className="product-section product-section__all">
       <ProductSectionHeader text={HEADER_TEXT}>
-        <CommonButton
-          className="product-section__header__button"
-          path="/additem"
-        >
-          상품 등록하기
-        </CommonButton>
+        <Link to="/additem">
+          <CommonButton className="product-section__header__button">
+            상품 등록하기
+          </CommonButton>
+        </Link>
         <input
           className="product-section__header__input"
           placeholder="🔍 검색할 상품을 입력해주세요"

@@ -7,7 +7,6 @@ import { getItems } from '../api';
 import useMediaQuery from '../hooks/useMediaQuery';
 import useAsync from '../hooks/useAsync';
 import '../styles/reset.css';
-import '../styles/global.css';
 import '../styles/App.css';
 
 function ItemsPage() {
