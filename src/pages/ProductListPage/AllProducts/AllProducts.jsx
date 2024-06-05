@@ -22,16 +22,20 @@ function AllProducts() {
 	const [orderBy, setOrderBy] = useState('recent');
 	const [items, setItems] = useState([]);
 	const [keyword, setKeyword] = useState('');
-	const [error, setError] = useState(false);
+	const [error, setError] = useState(undefined);
 
 	const getProductList = async (page, pageSize, orderBy, keyword) => {
 		try {
+			setError(undefined);
 			const result = await getProductDataList({ page, pageSize, orderBy, keyword });
 			setItems(result?.list);
 			setTotalPageSize(Math.ceil(result?.totalCount / pageSize));
 		} catch (e) {
+			setError(e.message || '잠시후에 다시 시도해주세요.');
 			console.error(e);
-			setError(e.message);
+			setPage(1);
+			setItems([]);
+			setTotalPageSize(0);
 		}
 	};
 

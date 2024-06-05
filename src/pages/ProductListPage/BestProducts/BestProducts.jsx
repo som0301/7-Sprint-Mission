@@ -14,16 +14,17 @@ function BestProducts() {
 	const mediaQuery = useMediaQuery();
 	const pageSize = PAGE_SIZES[mediaQuery];
 	const [items, setItems] = useState([]);
-	const [error, setError] = useState(false);
+	const [error, setError] = useState(undefined);
 
 	const getProductList = async (pageSize) => {
 		try {
-			setError(false);
+			setError(undefined);
 			const result = await getProductDataList({ pageSize, orderBy: 'favorite' });
 			setItems(result?.list);
 		} catch (e) {
-			console.error(e);
 			setError(e.message);
+			console.error(e);
+			setItems([]);
 		}
 	};
 
