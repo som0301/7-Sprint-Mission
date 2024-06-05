@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import Logo from "../images/logo-home.png";
 
@@ -17,7 +17,7 @@ function NavBar() {
             <Link to='/'>자유게시판</Link>
           </li>
           <li>
-            <Link to='/about'>중고마켓</Link>
+            <Link to='/items'>중고마켓</Link>
           </li>
         </ul>
         <div className='button-login'>
