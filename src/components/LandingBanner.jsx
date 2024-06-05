@@ -29,7 +29,7 @@ export default function LandingBanner({
         </h2>
         {isTop && (
           <Link to="/items">
-            <RoundButton>구경하러 가기</RoundButton>
+            <RoundButton className="w-[355px]">구경하러 가기</RoundButton>
           </Link>
         )}
       </div>

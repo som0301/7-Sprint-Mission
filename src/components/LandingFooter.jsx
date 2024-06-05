@@ -44,18 +44,22 @@ function ContactList() {
   return (
     <ul className="md:order-3 flex justify-end gap-3 ">
       <li>
-        <img src={facebookImg} alt="페이스북 링크" />
+        <Link to="https://www.facebook.com/">
+          <img src={facebookImg} alt="페이스북 링크" />
+        </Link>
       </li>
       <li>
-        <img src={twitterImg} alt="트위터 링크" />
+        <Link to="https://x.com/">
+          <img src={twitterImg} alt="트위터 링크" />
+        </Link>
       </li>
       <li>
-        <Link>
+        <Link to="https://www.youtube.com/">
           <img src={youtubeImg} alt="유튜브 링크" />
         </Link>
       </li>
       <li>
-        <Link>
+        <Link to="https://www.instagram.com/">
           <img src={instagramImg} alt="인스타그램 링크" />
         </Link>
       </li>
