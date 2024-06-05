@@ -16,7 +16,6 @@ function Main() {
 			<Routes>
 				<Route path='/' element={<App />}>
 					<Route index element={<HomePage />} />
-					<Route path='*' element={<PageNotFound />} />
 					<Route path='items'>
 						<Route index element={<ProductListPage />} />
 						<Route path=':itemId' element={<ProductPage />} />
@@ -27,6 +26,7 @@ function Main() {
 				</Route>
 				<Route path='/login' element={<LoginPage />} />
 				<Route path='/signup' element={<SignupPage />} />
+				<Route path='*' element={<PageNotFound />} />
 			</Routes>
 		</BrowserRouter>
 	);
