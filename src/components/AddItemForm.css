@@ -52,18 +52,21 @@ textarea {
 .AddItemForm .input-box:nth-child(3) textarea {
   height: 200px;
 }
-
 .img-box {
   display: flex;
+  align-items: center;
+}
+
+.img-preview-container {
+  position: relative;
+  margin-left: 24px;
 }
 
 .img-preview {
-  position: relative;
   width: 282px;
   height: 282px;
   border: 1px solid #9ca3af;
   border-radius: 12px;
-  margin-left: 24px;
 }
 
 .img-delete-button {
@@ -75,6 +78,11 @@ textarea {
   border-radius: 50%;
   background-color: #9ca3af;
   padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .img-delete-button:hover {
