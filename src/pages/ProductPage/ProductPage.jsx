@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProductInfo } from '../../api';
+import { getProductData } from '../../api/productApi';
 import { isEmpty } from 'lodash';
 
 function ProductPage() {
@@ -11,7 +11,7 @@ function ProductPage() {
 	const getProduct = useCallback(async () => {
 		try {
 			setError(false);
-			const result = await getProductInfo(itemId);
+			const result = await getProductData(itemId);
 			setItem(result);
 		} catch (e) {
 			setError(e.message);

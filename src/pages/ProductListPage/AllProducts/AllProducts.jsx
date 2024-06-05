@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isEmpty } from 'lodash';
-import { getProductList } from '../../../api';
+import { getProductDataList } from '../../../api/productApi';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import ProductCard from '../ProductCard/ProductCard';
 import ProductSearch from '../ProductSearch/ProductSearch';
@@ -24,9 +24,9 @@ function AllProducts() {
 	const [keyword, setKeyword] = useState('');
 	const [error, setError] = useState(false);
 
-	const getProduct = async (page, pageSize, orderBy, keyword) => {
+	const getProductList = async (page, pageSize, orderBy, keyword) => {
 		try {
-			const result = await getProductList({ page, pageSize, orderBy, keyword });
+			const result = await getProductDataList({ page, pageSize, orderBy, keyword });
 			setItems(result?.list);
 			setTotalPageSize(Math.ceil(result?.totalCount / pageSize));
 		} catch (e) {
@@ -36,7 +36,7 @@ function AllProducts() {
 	};
 
 	useEffect(() => {
-		getProduct(page, pageSize, orderBy, keyword);
+		getProductList(page, pageSize, orderBy, keyword);
 	}, [page, pageSize, orderBy, keyword]);
 
 	return (
