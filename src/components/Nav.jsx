@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import CommonButton from './CommonButton';
 import useMediaQuery from '../hooks/useMediaQuery';
 import logoImgMobile from '../image-resource/panda-logo-mobile.svg';
 import logoImg from '../image-resource/panda-logo.svg';
 
 export default function Nav() {
+  const location = useLocation();
+  const isCommunity = location.pathname === '/community';
+  const isItems = location.pathname === '/items';
   const [deviceType] = useMediaQuery();
   const isMobile = deviceType === 'Mobile';
   const responsiveLogoImg = isMobile ? logoImgMobile : logoImg;
@@ -18,10 +21,12 @@ export default function Nav() {
       </Link>
       <ul className="flex items-center gap-x-2 flex-grow font-bold text-base font-primary">
         <Link to="/community">
-          <li className="text-gray-600">자유게시판</li>
+          <li className={isCommunity ? 'text-blue' : 'text-gray-600'}>
+            자유게시판
+          </li>
         </Link>
         <Link to="/items">
-          <li className="text-blue">중고마켓</li>
+          <li className={isItems ? 'text-blue' : 'text-gray-600'}>중고마켓</li>
         </Link>
       </ul>
       <Link to="/login">

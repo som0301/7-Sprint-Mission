@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import CommonButton from '../components/CommonButton';
 import FileInput from '../components/FileInput';
 import TagInput from '../components/TagInput.jsx';
@@ -45,64 +46,69 @@ export default function AddItemPage() {
   };
 
   return (
-    <Form id="addItemForm">
-      <FormHeader>
-        <FormHeaderText>상품 등록하기</FormHeaderText>
-        <CommonButton
-          type="submit"
-          form="addItemForm"
-          onSubmit={hanleSubmit}
-          isActive={isActive}
-        >
-          등록
-        </CommonButton>
-      </FormHeader>
-      <Label>
-        <LabelHeaderText>상품 이미지</LabelHeaderText>
-        <FileInput
-          onChange={handleChange}
-          name="images"
-          value={values.images}
-        />
-      </Label>
-      <Label>
-        <LabelHeaderText>상품명</LabelHeaderText>
-        <Input
-          name="name"
-          value={values.name}
-          onChange={handleInputChange}
-          type="text"
-          placeholder="상품명을 입력해주세요"
-          required
-        />
-      </Label>
-      <Label>
-        <LabelHeaderText>상품 소개</LabelHeaderText>
-        <Textarea
-          name="description"
-          value={values.description}
-          onChange={handleInputChange}
-          type="text"
-          placeholder="상품 소개를 입력해주세요"
-          required
-        ></Textarea>
-      </Label>
-      <Label>
-        <LabelHeaderText>판매가격</LabelHeaderText>
-        <Input
-          name="price"
-          value={values.price}
-          onChange={handlePriceChange}
-          type="text"
-          placeholder="판매 가격을 입력해주세요"
-          required
-        />
-      </Label>
-      <Label>
-        <LabelHeaderText>태그</LabelHeaderText>
-        <TagInput name="tags" value={values.tags} onChange={handleChange} />
-      </Label>
-    </Form>
+    <>
+      <Helmet>
+        <title>상품 등록</title>
+      </Helmet>
+      <Form id="addItemForm">
+        <FormHeader>
+          <FormHeaderText>상품 등록하기</FormHeaderText>
+          <CommonButton
+            type="submit"
+            form="addItemForm"
+            onSubmit={hanleSubmit}
+            isActive={isActive}
+          >
+            등록
+          </CommonButton>
+        </FormHeader>
+        <Label>
+          <LabelHeaderText>상품 이미지</LabelHeaderText>
+          <FileInput
+            onChange={handleChange}
+            name="images"
+            value={values.images}
+          />
+        </Label>
+        <Label>
+          <LabelHeaderText>상품명</LabelHeaderText>
+          <Input
+            name="name"
+            value={values.name}
+            onChange={handleInputChange}
+            type="text"
+            placeholder="상품명을 입력해주세요"
+            required
+          />
+        </Label>
+        <Label>
+          <LabelHeaderText>상품 소개</LabelHeaderText>
+          <Textarea
+            name="description"
+            value={values.description}
+            onChange={handleInputChange}
+            type="text"
+            placeholder="상품 소개를 입력해주세요"
+            required
+          ></Textarea>
+        </Label>
+        <Label>
+          <LabelHeaderText>판매가격</LabelHeaderText>
+          <Input
+            name="price"
+            value={values.price}
+            onChange={handlePriceChange}
+            type="text"
+            placeholder="판매 가격을 입력해주세요"
+            required
+          />
+        </Label>
+        <Label>
+          <LabelHeaderText>태그</LabelHeaderText>
+          <TagInput name="tags" value={values.tags} onChange={handleChange} />
+        </Label>
+      </Form>
+    </>
   );
 }
 
