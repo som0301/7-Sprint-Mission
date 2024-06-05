@@ -1,11 +1,11 @@
 import favoriteImg from "../../../assets/images/icons/ic_heart.svg";
 import { getCommasToNumber } from "../../../utils/Utils";
 
-function BestProductItem({ item }) {
+function BestProductItem({ item, onClick }) {
   const bestPrice = getCommasToNumber(item.price);
 
   return (
-    <li className="list" key={item.id}>
+    <li className="list" key={item.id} onClick={onClick}>
       <img className="item-image" src={item.images} alt={item.name} />
       <div className="item-content">
         <span id="item-name">{item.name}</span>

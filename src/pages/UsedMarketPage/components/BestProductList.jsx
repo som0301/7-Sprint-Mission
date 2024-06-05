@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import getItems from "../../../api/api";
 import BestProductItem from "./BestProductItem";
 import useDeviceType from "../../../hooks/useDeviceType";
+import { Link } from "react-router-dom";
 
 const ITEM_INIT = 4;
 const TABLET_ITEM_NUM = 2;
@@ -41,7 +42,9 @@ function BestProductList() {
       <h1>베스트 상품</h1>
       <ul className="list-area">
         {items.map((item) => (
-          <BestProductItem key={item.id} item={item} />
+          <Link key={item.id} to={`/items/${item.id}`}>
+            <BestProductItem item={item} />
+          </Link>
         ))}
       </ul>
     </section>

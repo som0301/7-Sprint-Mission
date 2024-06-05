@@ -6,6 +6,7 @@ import UsedMarketPage from "./pages/UsedMarketPage/UsedMarketPage";
 import AddItemPage from "./pages/AddItemPage/AddItemPage";
 import Loginpage from "./pages/Loginpage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 
 function Main() {
   return (
@@ -14,7 +15,10 @@ function Main() {
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
           <Route path="freeboard" element={<FreeBoardPage />} />
-          <Route path="items" element={<UsedMarketPage />} />
+          <Route path="items">
+            <Route index element={<UsedMarketPage />} />
+            <Route path=":productId" element={<ProductDetailPage />} />
+          </Route>
           <Route path="additem" element={<AddItemPage />} />
           <Route path="login" element={<Loginpage />} />
           <Route path="*" element={<NotFoundPage />} />
