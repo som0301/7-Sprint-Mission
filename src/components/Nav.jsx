@@ -6,9 +6,14 @@ import logoImg from '../image-resource/panda-logo.svg';
 
 export default function Nav() {
   const location = useLocation();
+  const [deviceType] = useMediaQuery();
   const isCommunity = location.pathname === '/community';
   const isItems = location.pathname === '/items';
-  const [deviceType] = useMediaQuery();
+  /* no nav in auth pages */
+  const isLogin = location.pathname === '/login';
+  const isSignup = location.pathname === '/signup';
+  if (isLogin || isSignup) return;
+
   const isMobile = deviceType === 'Mobile';
   const responsiveLogoImg = isMobile ? logoImgMobile : logoImg;
   return (

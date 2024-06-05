@@ -17,11 +17,13 @@ export default function AuthContainer({ children }) {
   const logo = isMobile ? logoImgMobile : logoImg;
   return (
     <div className="px-4 md:px-12">
-      <img
-        className="mx-auto my-6 md:mt-12 md:mb-10 xl:mt-[60px]"
-        src={logo}
-        alt="판다마켓 로고"
-      />
+      <Link to="/">
+        <img
+          className="mx-auto my-6 md:mt-12 md:mb-10 xl:mt-[60px]"
+          src={logo}
+          alt="판다마켓 로고"
+        />
+      </Link>
       {children}
       <SNSBox />
       <AuthLink isLogin={isLogin} isSignup={isSignup} />
