@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ProductItem from "./ProductItem";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 function AllProductListItem({ product, className }) {
   return (
@@ -43,9 +43,11 @@ function AllproductsList({ products, className }) {
               className="search"
               placeholder="검색할 상품을 입력해  주세요."
             />
-            <button className="small-button" onClick={onClickToAddItem}>
-              상품 등록하기
-            </button>
+            <Link to="/additem">
+              <button className="small-button" onClick={onClickToAddItem}>
+                상품 등록하기
+              </button>
+            </Link>
             <select
               className="drop-down"
               value={sortOption}

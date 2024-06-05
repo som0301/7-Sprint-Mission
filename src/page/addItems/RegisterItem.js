@@ -3,7 +3,9 @@ import "../../component/Library.css";
 import "./RegisterItem.css";
 import FileInput from "./FileInput";
 function RegisterItem() {
-  const [imageValues, setImageValues] = useState(null);
+  const [imageValues, setImageValues] = useState({
+    productImage: null,
+  });
 
   const handleImageChange = (name, value) => {
     setImageValues((prevImageValue) => ({
@@ -16,7 +18,12 @@ function RegisterItem() {
     <div>
       <main>
         <form>
-          <FileInput />
+          <FileInput
+            name="productImage"
+            value={imageValues.productImage}
+            onChange={handleImageChange}
+            initialPreview=""
+          />
         </form>
       </main>
     </div>
