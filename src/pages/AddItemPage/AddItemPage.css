@@ -202,6 +202,7 @@ input::placeholder {
 #previewImage {
   width: 282px;
   height: 282px;
+  object-fit: contain;
 }
 
 /* Tablet Styles */

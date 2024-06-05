@@ -14,10 +14,6 @@ function Header() {
     setIsAddItemPage(location.pathname === "/additem");
   }, [location]);
 
-  const handleLinkStyle = (e) => {
-    return isAddItemPage ? getLinkStyle({ isActive: true }) : getLinkStyle(e);
-  };
-
   return (
     <header className="nav">
       <div id="logo-menu">
@@ -34,7 +30,14 @@ function Header() {
           </div>
           <div className="menu">
             <h3>
-              <NavLink to="/items" style={handleLinkStyle}>
+              <NavLink
+                to="/items"
+                style={
+                  isAddItemPage
+                    ? getLinkStyle({ isActive: true })
+                    : getLinkStyle
+                }
+              >
                 중고마켓
               </NavLink>
             </h3>

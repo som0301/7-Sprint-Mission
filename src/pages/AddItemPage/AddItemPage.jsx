@@ -11,11 +11,9 @@ function AddItemPage() {
     itemTitle: { value: "", isValid: false },
     itemIntro: { value: "", isValid: false },
     itemPrice: { value: "", isValid: false },
-    itemTag: { value: "", isValid: false },
+    itemTag: { value: [], isValid: false },
   });
 
-  // tag 버튼을 그리기 위한 정보 담을 배열
-  const [tagValueArray, setTagValueArray] = useState([]);
   // 파일 정보
   const [fileValue, setFileValue] = useState(null);
   // 폼 inpust 모든 유효성 검사
@@ -25,10 +23,9 @@ function AddItemPage() {
 
   // tag 배열 정보과 유효성 업데이트
   const updateTagAndValidity = (newTagArray) => {
-    setTagValueArray(newTagArray);
     setFormData((prevData) => ({
       ...prevData,
-      itemTag: { ...prevData.itemTag, isValid: newTagArray.length > 0 },
+      itemTag: { value: newTagArray, isValid: newTagArray.length > 0 },
     }));
   };
 
@@ -52,9 +49,9 @@ function AddItemPage() {
         // 새로운 태그들이 태그 배열에 포함되어 있지 않은 경우만
         const newTags = newValue
           .split(" ")
-          .filter((tag) => !tagValueArray.includes(tag));
+          .filter((tag) => !itemIntroduction.itemTag.value.includes(tag));
         if (newTags.length > 0) {
-          const newTagArray = [...tagValueArray, ...newTags];
+          const newTagArray = [...itemIntroduction.itemTag.value, ...newTags];
           updateTagAndValidity(newTagArray);
         }
       }
@@ -64,7 +61,9 @@ function AddItemPage() {
   };
 
   const handleTagCancel = (tagValue) => {
-    const newTagArray = tagValueArray.filter((value) => value !== tagValue);
+    const newTagArray = itemIntroduction.itemTag.value.filter(
+      (value) => value !== tagValue
+    );
     updateTagAndValidity(newTagArray);
   };
 
@@ -85,11 +84,10 @@ function AddItemPage() {
   };
 
   const handleFileChange = (value) => {
-    console.log(value);
-    setFileValue((prevValues) => value);
+    setFileValue(() => value);
   };
 
-  useEffect(() => {}, [tagValueArray, itemIntroduction]);
+  useEffect(() => {}, [itemIntroduction]);
 
   return (
     <section className="add-item-page">
@@ -134,7 +132,7 @@ function AddItemPage() {
           onKeyDown={handleTagChange}
         />
         <div className="tag-wrapper">
-          {tagValueArray.map((value, index) => (
+          {itemIntroduction.itemTag.value.map((value, index) => (
             <ItemTag key={index} value={value} onCancle={handleTagCancel} />
           ))}
         </div>
