@@ -31,7 +31,6 @@
 
 .nav-link {
   text-decoration: none;
-  color: #3692ff;
 }
 
 ul {
@@ -53,6 +52,7 @@ li {
 }
 
 .menu {
+  text-decoration: none;
   display: inline-block;
   font-family: Pretendard;
   font-size: 18px;

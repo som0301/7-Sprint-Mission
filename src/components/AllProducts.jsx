@@ -1,6 +1,7 @@
 import "../style/allProducts.css"; // 필요한 스타일 파일을 생성하고 추가하세요.
 import heartIcon from "../assets/ic_heart.png";
 import OrderDropdown from "./OrderDropdown";
+import { useNavigate } from "react-router-dom";
 
 function AllProductListItem({ item }) {
   return (
@@ -19,8 +20,12 @@ function AllProductListItem({ item }) {
 }
 
 function AllProductList({ items, orderBy, setOrderBy }) {
+  const navigate = useNavigate();
+  function handleLink() {
+    navigate("/additem");
+  }
+
   return (
-    
     <>
       <div className="all-product-bar">
         <div className="all-product-title"> 전체 상품 </div>
@@ -30,10 +35,7 @@ function AllProductList({ items, orderBy, setOrderBy }) {
             type="text"
             placeholder="검색할 상품을 입력해주세요"
           />
-          <button
-            onClick="location.href='/additem'"
-            class="register-product-button"
-          >
+          <button onClick={handleLink} class="register-product-button">
             상품 등록하기
           </button>
           <OrderDropdown orderBy={orderBy} setOrderBy={setOrderBy} />
