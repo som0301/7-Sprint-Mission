@@ -1,13 +1,17 @@
-import React from 'react';
 import styled from 'styled-components';
 import useFetchItems from 'pages/items/hooks/useFetchItems';
 import useViewport from 'pages/items/hooks/useViewport';
+import HeartIcon from 'shared/assets/image/ic_heart.svg';
 
 const ItemWrapper = styled.div`
     display: flex;
     flex-direction: column;
     row-gap: 16px;
     max-width: 1200px;
+    padding: ${({ deviceType }) => {
+        if (deviceType === 'tablet') return '0 24px';
+        if (deviceType === 'mobile') return '0 16px';
+    }}}
 `;
 
 const ItemType = styled.h2`
@@ -18,30 +22,80 @@ const ItemType = styled.h2`
 const ItemInfo = styled.ul`
     display: flex;
     flex-wrap: wrap;
-    column-gap: ${({ type, deviceType }) => {
+    justify-content: space-between;
+    row-gap: ${({ type, deviceType }) => {
         if (type === 'all') {
-            if (deviceType === 'tablet') return '16px';
-            if (deviceType === 'mobile') return '8px';
+            if (deviceType === 'mobile') return '32px';
         }
-        return '24px';
+        return '40px';
     }};
     list-style: none;
     padding: 0;
 `;
 
-const ItemCard = styled.li``;
+const ItemCard = styled.li`
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+`;
 
 const ItemImage = styled.img`
-    width: 282px;
-    height: 282px;
+    width: ${({ type, deviceType }) => {
+        if (type === 'all') {
+            if (deviceType === 'mobile') {
+                return '168px';
+            }
+            return '221px';
+        }
+        if (type === 'best') {
+            if (deviceType === 'desktop') return '282px';
+            if (deviceType === 'tablet') return '336px';
+            if (deviceType === 'mobile') return '343px';
+        }
+    }};
+    height: ${({ type, deviceType }) => {
+        if (type === 'all') {
+            if (deviceType === 'mobile') {
+                return '168px';
+            }
+            return '221px';
+        }
+        if (type === 'best') {
+            if (deviceType === 'desktop') return '282px';
+            if (deviceType === 'tablet') return '336px';
+            if (deviceType === 'mobile') return '343px';
+        }
+    }};
     border-radius: 16px;
 `;
 
-const ItemName = styled.p``;
+const ItemName = styled.p`
+    padding-top: 10px;
+    font-size: 14px;
+    line-height: 16.71px;
+`;
 
-const ItemPrice = styled.p``;
+const ItemPrice = styled.p`
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.09px;
+`;
 
-const FavoriteCount = styled.p``;
+const FavoriteWrapper = styled.div`
+    display: flex;
+    column-gap: 4px;
+`;
+
+const FavoriteIcon = styled.img`
+    width: 16px;
+    height: 16px;
+`;
+
+const FavoriteCount = styled.p`
+    font-size: 12px;
+    line-height: 14.32px;
+    color: var(--gray600);
+`;
 
 function ItemsList({ type, page, pageSize, order, search }) {
     const { items, loading, error } = useFetchItems({ page, pageSize, order, search });
@@ -57,10 +111,13 @@ function ItemsList({ type, page, pageSize, order, search }) {
                 {items &&
                     items.map((item) => (
                         <ItemCard key={item.id}>
-                            <ItemImage src={item.images} alt={item.name} />
+                            <ItemImage type={type} deviceType={deviceType} src={item.images} alt={item.name} />
                             <ItemName>{item.name}</ItemName>
                             <ItemPrice>{item.price}원</ItemPrice>
-                            <FavoriteCount> {item.favoriteCount}</FavoriteCount>
+                            <FavoriteWrapper>
+                                <FavoriteIcon src={HeartIcon} />
+                                <FavoriteCount> {item.favoriteCount}</FavoriteCount>
+                            </FavoriteWrapper>
                         </ItemCard>
                     ))}
             </ItemInfo>
