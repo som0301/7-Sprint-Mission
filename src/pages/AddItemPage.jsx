@@ -1,11 +1,7 @@
 import AddItemForm from "../components/AddItemForm";
 
-function App() {
-  return (
-    <>
-      <AddItemForm />
-    </>
-  );
+function AddItemPage() {
+  return <AddItemForm />;
 }
 
-export default App;
+export default AddItemPage;
