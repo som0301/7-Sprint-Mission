@@ -1,6 +1,6 @@
-import hotItemFeatureImg from '../image-resource/Img_home_01.svg';
-import searchFeatureImg from '../image-resource/Img_home_02.svg';
-import registerItemFeatureImg from '../image-resource/Img_home_03.svg';
+import hotItemFeatureImg from '../image-resource/Img-home-01.svg';
+import searchFeatureImg from '../image-resource/Img-home-02.svg';
+import registerItemFeatureImg from '../image-resource/Img-home-03.svg';
 
 const HOT_ALT = '판다의 핫아이템';
 const SEARCH_ALT = '구매할 상품을 고르는 이미지';

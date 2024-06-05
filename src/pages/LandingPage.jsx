@@ -2,8 +2,8 @@ import { Helmet } from 'react-helmet';
 import LandingBanner from '../components/LandingBanner';
 import LandingFeatureList from '../components/LandingFeatureList';
 import LandingFooter from '../components/LandingFooter';
-import topBannerImg from '../image-resource/Img_home_top.svg';
-import bottomBannerImg from '../image-resource/Img_home_bottom.svg';
+import topBannerImg from '../image-resource/Img-home-top.svg';
+import bottomBannerImg from '../image-resource/Img-home-bottom.svg';
 
 const TOP_HEADER_F = '일상의 모든 물건을';
 const TOP_HEADER_S = '거래해보세요';
