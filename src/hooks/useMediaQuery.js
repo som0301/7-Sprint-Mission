@@ -1,20 +1,6 @@
 import { useState, useEffect } from 'react';
 
 /**
- * 미디어쿼리 상수 (단위: pixel)
- *
- * @constant {Object} BREAK_POINTS
- * @property {number} mobile - 너비 768px 미만
- * @property {number} tablet - 너비 1200px 미만
- * @property {number} desktop - 그 이상
- */
-const BREAK_POINTS = {
-	mobile: 768,
-	tablet: 1200,
-	desktop: Infinity,
-};
-
-/**
  * 커스텀 훅: useMediaQuery
  *
  * 현재 화면 크기에 따라 'mobile', 'tablet', 'desktop' 중 하나의 문자열을 반환합니다.
@@ -22,6 +8,10 @@ const BREAK_POINTS = {
  *
  * @function useMediaQuery
  * @returns {string} 현재 화면 크기에 해당하는 모드 ('mobile', 'tablet', 'desktop')
+ * @description
+ * 768px 미만 => 'mobile'
+ * 1200px 미만 => 'tablet'
+ * 1200px 이상 => 'desktop'
  * @example
  * import useMediaQuery from './useMediaQuery';
  *
@@ -36,8 +26,12 @@ function useMediaQuery() {
 	useEffect(() => {
 		const handleResize = () => {
 			const width = window.innerWidth;
-			for (const key in BREAK_POINTS) {
-				if (width < BREAK_POINTS[key]) return setMode(key);
+			if (width < 768) {
+				return setMode('mobile');
+			} else if (width < 1200) {
+				return setMode('tablet');
+			} else {
+				return setMode('desktop');
 			}
 		};
 
