@@ -38,10 +38,6 @@ const InputStyle = css`
 
   &::placeholder {
     color: var(--gray-400);
-
-    position: absolute;
-    top: 16px;
-    left: 24px;
   }
 
   &:focus {

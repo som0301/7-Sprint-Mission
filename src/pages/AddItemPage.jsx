@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 import AddItemForm from '../components/AddItemForm';
 import { StyledMain } from '../components/common/CommonComponents';
 
-function AddItem() {
+function AddItemPage() {
   return (
     <>
       <Helmet>
@@ -15,4 +15,4 @@ function AddItem() {
   );
 }
 
-export default AddItem;
+export default AddItemPage;

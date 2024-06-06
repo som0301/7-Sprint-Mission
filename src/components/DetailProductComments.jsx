@@ -3,6 +3,7 @@ import imageEmpty from '/src/assets/Img_inquiry_empty.svg';
 import { ContentText, FlexWrapper } from './common/CommonComponents';
 import { styled } from 'styled-components';
 import { Text } from './common/CommonComponents';
+import Kebab from './Kebab';
 
 const ProfileImage = styled.img`
   width: 40px;
@@ -42,9 +43,10 @@ function Comment({ comment }) {
             {nickname}
           </Text>
           <Text $SIZE='12' $WEIGHT='400' $COLOR='400'>
-            {detailDate(createdAt)}
+            {detailDate(updatedAt)}
           </Text>
         </FlexWrapper>
+        <Kebab />
       </FlexWrapper>
     </FlexWrapper>
   );

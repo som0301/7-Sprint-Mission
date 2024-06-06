@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getDetailProduct, getProductComments } from '../components/api/api';
@@ -42,31 +43,39 @@ function ItemDetailPage() {
   }, []);
 
   return (
-    <StyledMain>
-      <DetailProduct product={detailProduct} />
+    <>
+      <Helmet>
+        <title>상품 상세 페이지</title>
+      </Helmet>
 
-      <CommentForm>
-        <Input
-          type='textarea'
-          placeholder='개인정보를 공유 및 요청하거나 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.'
-        >
-          문의하기
-        </Input>
-        <FlexWrapper $RIGHT>
-          <StyledButton size='small' disabled>
-            등록
+      <StyledMain>
+        <DetailProduct product={detailProduct} />
+
+        <CommentForm>
+          <Input
+            type='textarea'
+            placeholder='개인정보를 공유 및 요청하거나 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.'
+          >
+            문의하기
+          </Input>
+          <FlexWrapper $RIGHT>
+            <StyledButton size='small' disabled>
+              등록
+            </StyledButton>
+          </FlexWrapper>
+        </CommentForm>
+
+        <FlexWrapper $col $gap='24' className='comment-wrapper'>
+          <DetailProductComments comments={comments} />
+        </FlexWrapper>
+        <FlexWrapper className='button-wrapper' $center>
+          <StyledButton size='medium' onClick={handleMoveLink}>
+            목록으로 돌아가기
+            <img src={iconBack} alt='뒤로가기' />
           </StyledButton>
         </FlexWrapper>
-      </CommentForm>
-
-      <DetailProductComments comments={comments} />
-      <FlexWrapper className='button-wrapper' $center>
-        <StyledButton size='medium' onClick={handleMoveLink}>
-          목록으로 돌아가기
-          <img src={iconBack} alt='뒤로가기' />
-        </StyledButton>
-      </FlexWrapper>
-    </StyledMain>
+      </StyledMain>
+    </>
   );
 }
 

@@ -14,6 +14,8 @@ const FavoriteDiv = styled.div`
   border: 1px solid var(--gray-200);
   padding: 4px 12px;
   color: var(--gray-500);
+
+  margin-top: 24px;
 `;
 // size small / large
 

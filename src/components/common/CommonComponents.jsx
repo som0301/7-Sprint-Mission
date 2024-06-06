@@ -75,6 +75,10 @@ export const Text = styled.p`
   font-weight: ${({ $WEIGHT }) => $WEIGHT ?? '400'};
   color: ${({ $COLOR }) =>
     $COLOR ? `var(--gray-${$COLOR})` : `var(--gray-400)`};
+
+  &.product-description {
+    line-height: 22.4px; // 피그마 그대로
+  }
 `;
 
 export const FlexWrapper = styled.div`
@@ -84,20 +88,25 @@ export const FlexWrapper = styled.div`
   justify-content: ${({ $center, $RIGHT }) =>
     $center ? 'center' : $RIGHT ? 'flex-end' : ''};
 
+  flex-flow: ${({ $wrap }) => ($wrap ? 'wrap' : '')};
+
   &.comment {
     border-bottom: 1px solid var(--gray-200);
     padding-bottom: 24px;
-    margin-top: 24px;
+
+    position: relative;
   }
 
-  &.button-wrapper {
-    padding-top: ${({ $Empty }) => ($Empty ? '24' : '40')}px;
+  &.comment-wrapper{
+    margin: 24px 0 40px;
   }
 
   &.detail {
     padding-bottom: 32px;
     margin-bottom: 24px;
     border-bottom: 1px solid var(--gray-200);
+
+    flex-direction: ${({ $isMobile }) => ($isMobile ? 'column' : 'row')};
   }
 
   &.detail-content {

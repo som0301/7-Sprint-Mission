@@ -7,17 +7,20 @@ import { FlexWrapper, Text } from './common/CommonComponents';
 import iconKebab from '/src/assets/ic_kebab.svg';
 import { Dropdown } from './Dropdown';
 import { useState } from 'react';
+import Kebab from './Kebab';
 
 const DetailItemImage = styled.img`
-  width: ${({ $isDesktop }) => ($isDesktop ? '486' : '340')}px;
-  height: ${({ $isDesktop }) => ($isDesktop ? '486' : '340')}px;
+  width: ${({ $isDesktop, $isTablet }) =>
+    $isDesktop ? '486px' : $isTablet ? '340px' : '100%'};
+  height: ${({ $isDesktop, $isTablet }) =>
+    $isDesktop ? '486px' : $isTablet ? '340px' : '100%'};
   border-radius: 16px;
 `;
 
 function DetailProduct({ product }) {
   const { name, description, price, images, tags, favoriteCount, isFavorite } =
     product;
-  const { isDesktop } = useResponsiveApi();
+  const { isDesktop, isTablet, isMobile } = useResponsiveApi();
 
   const [isKebab, setIsKebab] = useState(false);
 
@@ -26,8 +29,13 @@ function DetailProduct({ product }) {
   };
 
   return (
-    <FlexWrapper className='detail' $gap='24'>
-      <DetailItemImage src={images} alt='product' $isDesktop={isDesktop} />
+    <FlexWrapper className='detail' $gap='24' $isMobile={isMobile}>
+      <DetailItemImage
+        src={images}
+        alt='product'
+        $isDesktop={isDesktop}
+        $isTablet={isTablet}
+      />
       <FlexWrapper $col className='detail-content'>
         <FlexWrapper $col $gap='16'>
           <FlexWrapper $col $gap='16' className='detail-product-title'>
@@ -37,10 +45,7 @@ function DetailProduct({ product }) {
             <Text $SIZE='40' $WEIGHT='600' $COLOR='800'>
               {price}원
             </Text>
-            <img src={iconKebab} alt='kebab' onClick={handleDisplay} />
-            {isKebab && (
-              <Dropdown first='수정' second='삭제' className='kebab-drowdown' />
-            )}
+            <Kebab />
           </FlexWrapper>
 
           <FlexWrapper $col $gap='23'>
@@ -48,13 +53,20 @@ function DetailProduct({ product }) {
               <Text $SIZE='14' $WEIGHT='500' $COLOR='600'>
                 상품 소개
               </Text>
-              <p>{description}</p>
+              <Text
+                $SIZE='16'
+                $WEIGHT='400'
+                $COLOR='800'
+                className='product-description'
+              >
+                {description}
+              </Text>
             </FlexWrapper>
             <FlexWrapper $col $gap='8'>
               <Text $SIZE='14' $WEIGHT='500' $COLOR='600'>
                 상품 태그
               </Text>
-              <FlexWrapper $gap='8'>
+              <FlexWrapper $gap='8' $wrap>
                 {tags &&
                   tags.map((tag, index) => (
                     <StyledProductTag key={index}>#{tag}</StyledProductTag>
