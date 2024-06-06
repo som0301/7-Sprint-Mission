@@ -23,10 +23,10 @@ function Main() {
 					<Route path='additem' element={<ProductPage />} />
 					<Route path='privacy' element={<PrivacyPage />} />
 					<Route path='faq' element={<FAQPage />} />
+					<Route path='login' element={<LoginPage />} />
+					<Route path='signup' element={<SignupPage />} />
+					<Route path='*' element={<PageNotFound />} />
 				</Route>
-				<Route path='/login' element={<LoginPage />} />
-				<Route path='/signup' element={<SignupPage />} />
-				<Route path='*' element={<PageNotFound />} />
 			</Routes>
 		</BrowserRouter>
 	);
