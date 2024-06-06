@@ -133,7 +133,7 @@ export default function SignUpPage() {
             disabled={!isComplete}
             className="w-full mb-6"
           >
-            로그인
+            회원가입
           </RoundButton>
         </form>
       </AuthContainer>
