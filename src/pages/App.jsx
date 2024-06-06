@@ -2,15 +2,16 @@ import { Outlet } from 'react-router-dom';
 import Header from '/src/components/header/Header';
 import { Helmet } from 'react-helmet';
 
-function HomePage() {
+function App() {
   return (
     <>
       <Helmet>
-        <title>판다마켓 - 홈페이지</title>
+        <title>판다마켓 - 일상의 모든 물건을 거래해보세요</title>
       </Helmet>
-      <h2> 홈페이지 </h2>
+      <Header />
+      <Outlet />
     </>
   );
 }
 
-export default HomePage;
+export default App;
