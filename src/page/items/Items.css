@@ -16,6 +16,10 @@ main {
   max-width: 1200px;
 }
 
+.small-button {
+  cursor: pointer;
+}
+
 .best.product-image {
   width: 282px;
   height: 282px;

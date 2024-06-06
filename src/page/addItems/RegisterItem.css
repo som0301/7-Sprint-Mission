@@ -28,3 +28,40 @@
 #input-file {
   display: none;
 }
+
+.img-preview {
+  width: 282px;
+  height: 282px;
+  border-radius: 12px;
+}
+
+.file-img-container {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.input {
+  display: block;
+  border-radius: 12px;
+  border-style: none;
+  background-color: #f3f4f6;
+  padding-left: 24px;
+  height: 56px;
+}
+
+.input.description {
+  height: 200px;
+  padding-bottom: 160px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.box.tag {
+  margin-bottom: 170px;
+}

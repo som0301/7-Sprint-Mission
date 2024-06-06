@@ -52,6 +52,19 @@
   display: inline-block;
 }
 
+.small-button:hover {
+  background-color: #1967d6;
+}
+
+.small-button:active {
+  background-color: #1251aa;
+}
+
+.small-button:disabled {
+  background-color: #9ca3af;
+  border: 1px solid;
+}
+
 input:focus {
   outline-color: #3692ff;
 }
