@@ -136,6 +136,10 @@ ul.kebab-drowdown {
   right: 0;
 }
 
+.products-col:hover {
+  cursor: pointer;
+}
+
 /* 패드 사이즈 */
 @media (max-width: 1199px) {
   body {

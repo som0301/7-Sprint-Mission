@@ -43,7 +43,7 @@ function DetailProduct({ product }) {
               {name}
             </Text>
             <Text $SIZE='40' $WEIGHT='600' $COLOR='800'>
-              {price}원
+              {price ? price.toLocaleString() : '0'}원
             </Text>
             <Kebab />
           </FlexWrapper>

@@ -21,7 +21,7 @@ function BestProductsList({ products, className }) {
       <div className='row'>
         {products.map((product) => {
           return (
-            <div className='best-products-col' key={product.id}>
+            <div className='products-col best-products-col' key={product.id}>
               <BestProductsListItem
                 className='best-product-item'
                 product={product}
