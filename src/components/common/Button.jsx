@@ -45,4 +45,9 @@ export const StyledButton = styled.button`
     cursor: default;
     background-color: var(--gray-400);
   }
+
+  &.back {
+    display: flex;
+    gap: 10px;
+  }
 `;
