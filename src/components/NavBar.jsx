@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import Logo from "../images/logo-home.png";
 
@@ -17,7 +17,15 @@ function NavBar() {
             <Link to='/'>자유게시판</Link>
           </li>
           <li>
-            <Link to='/items'>중고마켓</Link>
+            <Link
+              to='/items'
+              style={{
+                color:
+                  useLocation().pathname === "/items" ? "#3692ff" : "#4b5563",
+              }}
+            >
+              중고마켓
+            </Link>
           </li>
         </ul>
         <div className='button-login'>
