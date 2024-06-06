@@ -5,6 +5,7 @@ import HomePage from './pages/HomaPage/HomePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import SignupPage from './pages/SignupPage/SignupPage';
 import ProductListPage from './pages/ProductListPage/ProductListPage';
+import ProductAddPage from './pages/ProductAddPage/ProductAddPage';
 import ProductPage from './pages/ProductPage/ProductPage';
 import PrivacyPage from './pages/PrivacyPage/PrivacyPage';
 import FAQPage from './pages/FAQPage/FAQPage';
@@ -20,7 +21,7 @@ function Main() {
 						<Route index element={<ProductListPage />} />
 						<Route path=':itemId' element={<ProductPage />} />
 					</Route>
-					<Route path='additem' element={<ProductPage />} />
+					<Route path='additem' element={<ProductAddPage />} />
 					<Route path='privacy' element={<PrivacyPage />} />
 					<Route path='faq' element={<FAQPage />} />
 					<Route path='login' element={<LoginPage />} />
