@@ -11,9 +11,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 1200px;
   margin: 0 auto;
   padding-top: 24px;
+  max-width: 1200px;
+}
+
+.small-button {
+  cursor: pointer;
 }
 
 .best.product-image {
@@ -42,10 +46,13 @@ main {
 }
 
 .all-products-Navbar {
-  display: flex;
-  justify-content: space-between;
   height: 42px;
   margin-bottom: 24px;
+}
+
+.all-products-Navbar-box {
+  display: flex;
+  justify-content: space-between;
 }
 
 .all-products-Nav {

@@ -1,4 +1,4 @@
-import favoriteHeart from "./images/icon-heart.png";
+import favoriteHeart from "../../assets/images/icon-heart.png";
 
 function ProductItem({ className, src, name, price, favoriteCount, size }) {
   return (

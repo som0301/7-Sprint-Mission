@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ProductItem from "./ProductItem";
+import { Link, Navigate } from "react-router-dom";
 
 function AllProductListItem({ product, className }) {
   return (
@@ -20,6 +21,10 @@ function AllproductsList({ products, className }) {
     setSortOption(e.target.value);
   };
 
+  const onClickToAddItem = () => {
+    return <Navigate to={"/additem"} />;
+  };
+
   const SortedProducts = [...products].sort((a, b) => {
     if (sortOption === "favorite") {
       return b.favoriteCount - a.favoriteCount;
@@ -31,21 +36,27 @@ function AllproductsList({ products, className }) {
   return (
     <div className={className}>
       <div className="all-products-Navbar">
-        <h2 className="products-list-title">전체 상품</h2>
-        <div className="all-products-Nav">
-          <input
-            className="search"
-            placeholder="검색할 상품을 입력해  주세요."
-          />
-          <button className="small-button">상품 등록하기</button>
-          <select
-            className="drop-down"
-            value={sortOption}
-            onChange={handleSortChange}
-          >
-            <option value="recent">최신순</option>
-            <option value="favorite">좋아요순</option>
-          </select>
+        <div className="all-products-Navbar-box">
+          <h2 className="products-list-title">전체 상품</h2>
+          <div className="all-products-Nav">
+            <input
+              className="search"
+              placeholder="검색할 상품을 입력해  주세요."
+            />
+            <Link to="/additem">
+              <button className="small-button" onClick={onClickToAddItem}>
+                상품 등록하기
+              </button>
+            </Link>
+            <select
+              className="drop-down"
+              value={sortOption}
+              onChange={handleSortChange}
+            >
+              <option value="recent">최신순</option>
+              <option value="favorite">좋아요순</option>
+            </select>
+          </div>
         </div>
       </div>
       <div className="grid-list all">
