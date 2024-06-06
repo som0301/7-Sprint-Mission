@@ -1,13 +1,11 @@
-import styled from 'styled-components';
-import { useResponsiveApi } from '../Responsive';
-import Favorite from './Favorite';
-import { StyledProductTag } from './Input';
-import '/src/styles/Color.css';
-import { FlexWrapper, Text } from './common/CommonComponents';
-import iconKebab from '/src/assets/ic_kebab.svg';
-import { Dropdown } from './Dropdown';
 import { useState } from 'react';
-import Kebab from './Kebab';
+import styled from 'styled-components';
+import { useResponsiveApi } from '/src/Responsive';
+import Favorite from '/src/components/Favorite';
+import { StyledProductTag } from '/src/components/Input';
+import { FlexWrapper, Text } from '/src/components/common/CommonComponents';
+import Kebab from '/src/components/Kebab';
+import '/src/styles/Color.css';
 
 const DetailItemImage = styled.img`
   width: ${({ $isDesktop, $isTablet }) =>

@@ -1,4 +1,4 @@
-import { StyledButton } from './common/Button';
+import { StyledButton } from '/src/components/common/Button';
 import {
   StyledForm,
   StyledSignForm,

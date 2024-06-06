@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import iconCancel from '/src/assets/ic_cancel.svg';
 import imageTempProduct from '/src/assets/image_addProduct.svg';
-import Input from './Input';
+import Input from '/src/components/Input';
 
 function FileInput() {
   return (

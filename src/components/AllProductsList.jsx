@@ -1,15 +1,11 @@
-import { useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
-import Button from './common/Button';
-import Dropdown from './Dropdown';
-import Pagination from './Pagination';
-import ProductItem from './ProductItem';
-import Search from './Search';
+import { useNavigate } from 'react-router-dom';
+import Pagination from '/src/components/Pagination';
+import ProductItem from '/src/components/ProductItem';
 
 import {
   AllProductsListHeader,
   MobileAllProductsListHeader,
-} from './AllProductsListHeader';
+} from '/src/components/AllProductsListHeader';
 
 import { useResponsiveApi } from '/src/Responsive';
 

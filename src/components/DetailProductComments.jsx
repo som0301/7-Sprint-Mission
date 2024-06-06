@@ -1,9 +1,12 @@
+import { styled } from 'styled-components';
 import iconProfile from '/src/assets/ic_profile.svg';
 import imageEmpty from '/src/assets/Img_inquiry_empty.svg';
-import { ContentText, FlexWrapper } from './common/CommonComponents';
-import { styled } from 'styled-components';
-import { Text } from './common/CommonComponents';
-import Kebab from './Kebab';
+import {
+  ContentText,
+  FlexWrapper,
+} from '/src/components/common/CommonComponents';
+import { Text } from '/src/components/common/CommonComponents';
+import Kebab from '/src/components/Kebab';
 
 const ProfileImage = styled.img`
   width: 40px;

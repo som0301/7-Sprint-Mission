@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import {
   StyledMain,
   StyledSignMain,
-} from '../components/common/CommonComponents';
-import LogoImage from '../components/header/LogoImage';
-import LoginForm from '../components/LoginForm';
+} from '/src/components/common/CommonComponents';
+import LogoImage from '/src/components/header/LogoImage';
+import LoginForm from '/src/components/LoginForm';
 
 // 고정 스타일이라 스타일 객체로..
 function LoginPage() {

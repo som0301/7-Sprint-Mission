@@ -1,11 +1,11 @@
 import { Helmet } from 'react-helmet';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getDetailProduct, getProductComments } from '../components/api/api';
-import Button, { StyledButton } from '../components/common/Button';
-import DetailProduct from '../components/DetailProduct';
-import DetailProductComments from '../components/DetailProductComments';
-import { Input } from '../components/Input';
+import { getDetailProduct, getProductComments } from '/src/api/api';
+import { StyledButton } from '/src/components/common/Button';
+import DetailProduct from '/src/components/DetailProduct';
+import DetailProductComments from '/src/components/DetailProductComments';
+import { Input } from '/src/components/Input';
 import {
   FlexWrapper,
   StyledMain,

@@ -1,4 +1,4 @@
-import ProductItem from './ProductItem';
+import ProductItem from '/src/components/ProductItem';
 
 function BestProductsListItem({ product, className }) {
   const { id, images, name, price, favoriteCount } = product;

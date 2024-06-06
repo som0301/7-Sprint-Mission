@@ -1,13 +1,11 @@
-import { FileInput, Input, Tag, TagContainer } from './Input';
-import { styled } from 'styled-components';
-import Button, { StyledButton } from './common/Button';
+import { FileInput, Input, Tag, TagContainer } from '/src/components/Input';
+import { StyledButton } from '/src/components/common/Button';
 import { useEffect, useState } from 'react';
 import {
   StyledForm,
   StyledFormHeader,
   FormHeaderTitle,
 } from '/src/components/common/CommonComponents';
-
 
 const initialValues = {
   name: '',
