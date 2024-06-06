@@ -30,7 +30,7 @@ button {
   cursor: pointer;
 }
 
-button:enabled {
+.submit-button:enabled {
   background-color: #3692ff;
 }
 
