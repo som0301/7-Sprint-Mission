@@ -9,7 +9,7 @@ function TagList() {
   };
 
   const addTag = (tag) => {
-    if (!tagList.includes(tag) && tagList.length < 10 && tag !== "") {
+    if (!tagList.includes(tag) && tag !== "") {
       setTagList([...tagList, tag]);
       setTags("");
     }

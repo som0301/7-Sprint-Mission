@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FileInput from "./FileInput";
 import TagList from "./TagList";
 import "./AddItemForm.css";
@@ -28,11 +28,19 @@ function AddItemForm() {
     console.log(values);
   };
 
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  useEffect(() => {
+    const { productName, description, price } = values;
+    const isValid = productName && description && price;
+    setIsFormValid(isValid);
+  }, [values]);
+
   return (
     <div className='add-item'>
       <header>
         <h1>상품 등록하기</h1>
-        <button type='submit'>등록</button>
+        <button type='submit' disabled={!isFormValid}>등록</button>
       </header>
       <div>
         <form className='AddItemForm' onSubmit={handleSubmit}>
