@@ -9,7 +9,7 @@ import useAsync from '../hooks/useAsync';
 import '../styles/reset.css';
 import '../styles/App.css';
 
-function ItemsPage() {
+export default function ItemListPage() {
   const [favoriteItems, setFavoriteItems] = useState([]);
   const [allItems, setAllItems] = useState([]);
   const [order, setOrder] = useState('recent');
@@ -95,5 +95,3 @@ function ItemsPage() {
     </>
   );
 }
-
-export default ItemsPage;
