@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FileInput from "./FileInput";
+import TagList from "./TagList";
 import "./AddItemForm.css";
 
 function AddItemForm() {
@@ -8,7 +9,6 @@ function AddItemForm() {
     productName: "",
     description: "",
     price: "",
-    tags: "",
   });
 
   const handleChange = (name, value) => {
@@ -75,12 +75,7 @@ function AddItemForm() {
           </div>
           <div className='input-box'>
             <h2>태그</h2>
-            <input
-              name='tags'
-              value={values.tags}
-              onChange={handleInputChange}
-              placeholder='태그를 입력해주세요'
-            />
+            <TagList />
           </div>
         </form>
       </div>
