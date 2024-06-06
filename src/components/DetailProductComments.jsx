@@ -1,7 +1,8 @@
 import iconProfile from '/src/assets/ic_profile.svg';
 import imageEmpty from '/src/assets/Img_inquiry_empty.svg';
-import { ContentText, DisplayContainer } from './common/CommonComponents';
+import { ContentText, FlexWrapper } from './common/CommonComponents';
 import { styled } from 'styled-components';
+import { Text } from './common/CommonComponents';
 
 const ProfileImage = styled.img`
   width: 40px;
@@ -32,25 +33,33 @@ function Comment({ comment }) {
   };
 
   return (
-    <DisplayContainer className='comment' $col $gap='24'>
+    <FlexWrapper className='comment' $col $gap='24'>
       <ContentText>{content}</ContentText>
-      <DisplayContainer gap='8'>
+      <FlexWrapper $gap='8'>
         <ProfileImage src={image ?? iconProfile} alt='profile' />
-        <div>
-          <p>{nickname}</p>
-          <p>{detailDate(createdAt)}</p>
-        </div>
-      </DisplayContainer>
-    </DisplayContainer>
+        <FlexWrapper $gap='4' $col $center>
+          <Text $SIZE='14' $WEIGHT='400' $COLOR='600'>
+            {nickname}
+          </Text>
+          <Text $SIZE='12' $WEIGHT='400' $COLOR='400'>
+            {detailDate(createdAt)}
+          </Text>
+        </FlexWrapper>
+      </FlexWrapper>
+    </FlexWrapper>
   );
 }
+// TODO: 댓글 컴포넌트의 이름이 list.. 이거 참고
+// TODO: 댓글들 여백 주기.. 여기말고 DetailProductComments를 불러오는 곳에 div를 씌워서 해야할듯
 
 function EmptyComments() {
   return (
-    <div>
-      <img src={imageEmpty} alt='empty' />
-      <p>아직 문의가 없습니다.</p>
-    </div>
+    <FlexWrapper $col className='comment-empty'>
+      <img width='200' height='224' src={imageEmpty} alt='empty' />
+      <Text $SIZE='16' $WEIGHT='400' $COLOR='400'>
+        아직 문의가 없습니다.
+      </Text>
+    </FlexWrapper>
   );
 }
 

@@ -3,19 +3,10 @@ import { useResponsiveApi } from '../Responsive';
 import Favorite from './Favorite';
 import { StyledProductTag } from './Input';
 import '/src/styles/Color.css';
-
-const DetailItemContainer = styled.div`
-  display: flex;
-  gap: 24px;
-`;
-
-const DetailItemInnerContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ $gap }) => $gap}px;
-  justify-content: ${({ $between }) => ($between ? `space-between` : '')};
-  align-items: ${({ $between }) => ($between ? `baseline` : '')};
-`;
+import { FlexWrapper, Text } from './common/CommonComponents';
+import iconKebab from '/src/assets/ic_kebab.svg';
+import { Dropdown } from './Dropdown';
+import { useState } from 'react';
 
 const DetailItemImage = styled.img`
   width: ${({ $isDesktop }) => ($isDesktop ? '486' : '340')}px;
@@ -23,50 +14,59 @@ const DetailItemImage = styled.img`
   border-radius: 16px;
 `;
 
-const SubTitle = styled.p`
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--gray-600);
-`;
-
-const Title = styled.h2`
-  font-size: ${({ type }) => (type == 'name' ? `24` : `40`)}px;
-  font-weight: 600;
-  color: var(--gray-800);
-`;
-
 function DetailProduct({ product }) {
   const { name, description, price, images, tags, favoriteCount, isFavorite } =
     product;
   const { isDesktop } = useResponsiveApi();
+
+  const [isKebab, setIsKebab] = useState(false);
+
+  const handleDisplay = () => {
+    setIsKebab((prev) => !prev);
+  };
+
   return (
-    <DetailItemContainer>
+    <FlexWrapper className='detail' $gap='24'>
       <DetailItemImage src={images} alt='product' $isDesktop={isDesktop} />
-      <DetailItemInnerContainer $between>
-        <DetailItemInnerContainer $gap='16'>
-          <Title type='name'>{name}</Title>
-          <Title type='price'>{price}원</Title>
-          <hr />
-          <DetailItemInnerContainer $gap='23'>
-            <DetailItemInnerContainer $gap='8'>
-              <SubTitle>상품 소개</SubTitle>
+      <FlexWrapper $col className='detail-content'>
+        <FlexWrapper $col $gap='16'>
+          <FlexWrapper $col $gap='16' className='detail-product-title'>
+            <Text $SIZE='24' $WEIGHT='600' $COLOR='800'>
+              {name}
+            </Text>
+            <Text $SIZE='40' $WEIGHT='600' $COLOR='800'>
+              {price}원
+            </Text>
+            <img src={iconKebab} alt='kebab' onClick={handleDisplay} />
+            {isKebab && (
+              <Dropdown first='수정' second='삭제' className='kebab-drowdown' />
+            )}
+          </FlexWrapper>
+
+          <FlexWrapper $col $gap='23'>
+            <FlexWrapper $col $gap='8'>
+              <Text $SIZE='14' $WEIGHT='500' $COLOR='600'>
+                상품 소개
+              </Text>
               <p>{description}</p>
-            </DetailItemInnerContainer>
-            <DetailItemInnerContainer $gap='8'>
-              <SubTitle>상품 태그</SubTitle>
-              <div>
+            </FlexWrapper>
+            <FlexWrapper $col $gap='8'>
+              <Text $SIZE='14' $WEIGHT='500' $COLOR='600'>
+                상품 태그
+              </Text>
+              <FlexWrapper $gap='8'>
                 {tags &&
                   tags.map((tag, index) => (
                     <StyledProductTag key={index}>#{tag}</StyledProductTag>
                   ))}
-              </div>
-            </DetailItemInnerContainer>
-          </DetailItemInnerContainer>
-        </DetailItemInnerContainer>
+              </FlexWrapper>
+            </FlexWrapper>
+          </FlexWrapper>
+        </FlexWrapper>
 
         <Favorite>{favoriteCount}</Favorite>
-      </DetailItemInnerContainer>
-    </DetailItemContainer>
+      </FlexWrapper>
+    </FlexWrapper>
   );
 }
 

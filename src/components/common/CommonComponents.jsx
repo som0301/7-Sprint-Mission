@@ -3,13 +3,14 @@ import '/src/styles/Color.css';
 
 export const StyledMain = styled.div`
   width: 1200px;
+  padding: 24px 0;
 
   @media (max-width: 1199px) {
     width: 100%;
-    padding: 0 24px;
+    padding: 24px;
   }
   @media (max-width: 767px) {
-    padding: 0 16px;
+    padding: 24px 16px;
   }
 `;
 
@@ -40,7 +41,6 @@ const FormStyle = css`
 
 export const StyledForm = styled.form`
   ${FormStyle}
-  padding-top: 24px;
 
   @media (max-width: 1199px) {
     padding-top: 16px;
@@ -70,12 +70,65 @@ export const ContentText = styled.p`
   color: var(--gray-800);
 `;
 
-export const DisplayContainer = styled.div`
+export const Text = styled.p`
+  font-size: ${({ $SIZE }) => $SIZE ?? '16'}px;
+  font-weight: ${({ $WEIGHT }) => $WEIGHT ?? '400'};
+  color: ${({ $COLOR }) =>
+    $COLOR ? `var(--gray-${$COLOR})` : `var(--gray-400)`};
+`;
+
+export const FlexWrapper = styled.div`
   display: flex;
   flex-direction: ${({ $col }) => ($col ? 'column' : 'row')};
   gap: ${({ $gap }) => $gap}px;
+  justify-content: ${({ $center, $RIGHT }) =>
+    $center ? 'center' : $RIGHT ? 'flex-end' : ''};
 
   &.comment {
     border-bottom: 1px solid var(--gray-200);
+    padding-bottom: 24px;
+    margin-top: 24px;
   }
+
+  &.button-wrapper {
+    padding-top: ${({ $Empty }) => ($Empty ? '24' : '40')}px;
+  }
+
+  &.detail {
+    padding-bottom: 32px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  &.detail-content {
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+
+    & > div:first-child {
+      width: 100%;
+    }
+  }
+
+  &.comment-empty {
+    align-items: center;
+  }
+
+  &.detail-product-title {
+    border-bottom: 1px solid var(--gray-200);
+    padding-bottom: 16px;
+
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+`;
+
+export const CommentForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `;

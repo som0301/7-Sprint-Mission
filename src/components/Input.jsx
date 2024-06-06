@@ -115,8 +115,8 @@ const StyledTag = styled.div`
 `;
 
 export const StyledProductTag = styled.div`
-  padding: 6px 16px;
   ${TagStyle}
+  padding: 6px 16px;
 `;
 
 export const TagContainer = styled.div`

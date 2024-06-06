@@ -8,30 +8,6 @@ import {
   FormHeaderTitle,
 } from '/src/components/common/CommonComponents';
 
-// const StyledForm = styled.form`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 24px;
-//   padding-top: 24px;
-
-//   @media (max-width: 1199px) {
-//     padding-top: 16px;
-//   }
-//   @media (max-width: 767px) {
-//     gap: 16px;
-//   }
-// `;
-
-// const StyledFormHeader = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// `;
-
-// const FormHeaderTitle = styled.h2`
-//   font-size: 28px;
-//   font-weight: 700;
-// `;
 
 const initialValues = {
   name: '',
