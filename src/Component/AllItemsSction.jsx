@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
-import favicon from "../images/logo/favoriteIcon.svg";
-import CallAPI from "../api/CallAPI";
-import "../style/AllItemsSection.css"
-import SeachInput from "./SeachInput";
-import DropDownSort from "./DropDownSort";
+import favicon from "../../src/images/logo/favoriteIcon.svg";
+import CallAPI from "../api/callAPI";
+import "../style/allItemsSection.css"
+import SeachInput from "./seachInput";
+import DropDownSort from "./dropDownSort";
+import Pageination from "./pageination";
 
 function getWidth() {
     let width = window.innerWidth;
@@ -45,10 +46,12 @@ function AllItemsSection() {
     const [Order, setOrder] = useState("recent");
     const [Poninter, setPoninter] = useState(1);
     const [Title, setTitle] = useState("전체 상품");
+    const [pageSize, setPageSize] = useState();
 
     const AllItemsLoad = async (ItemCount) => {
         const response = await CallAPI(Poninter, ItemCount, Order);
         setAllItemsList(response.list);
+        setPageSize(Math.ceil(response.totalCount / ItemCount));
     };
     useEffect(() => {
 
@@ -64,6 +67,9 @@ function AllItemsSection() {
         };
     }, []);
     
+    const onPageChange = (pageNumber) => {
+        setPoninter(pageNumber);
+    }
 
     useEffect(() => {
         AllItemsLoad(ItemCount, Order);
@@ -73,12 +79,15 @@ function AllItemsSection() {
         else {
             setTitle("전체 상품")
         }
-    }, [ItemCount, Order]);
+    }, [ItemCount, Order, Poninter]);
 
     return (
         <div className="AllItemLayer">
             <div className="AllItemMenu">
-                <h1>{Title}</h1>
+                <div className="AllItemTitle">
+                    <h1>{Title}</h1>
+                    <Link to="/additem"><button className="AddItemButton">상품 등록하기</button></Link>
+                </div>
                 <div className="ItemCustom">
                     <SeachInput></SeachInput>
                     <Link to="/additem"><button className="AddItemButton">상품 등록하기</button></Link>
@@ -89,6 +98,9 @@ function AllItemsSection() {
                 {AlltItemsList.map((item) => (
                     <AllItem item={item} key={item.id}></AllItem>
                 ))}
+            </div>
+            <div className="Pagination">
+                <Pageination pageSize={pageSize} activePage={Poninter} onPageChange={onPageChange}></Pageination>
             </div>
         </div>
     );

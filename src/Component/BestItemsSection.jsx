@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import favicon from "../images/logo/favoriteIcon.svg";
-import CallAPI from "../api/CallAPI";
-import "../style/BestItemsSection.css";
+import CallAPI from "../api/callAPI";
+import "../../src/style/bestItemsSection.css";
 
 function getWidth() {
     let width = window.innerWidth;
@@ -59,7 +59,6 @@ function BestItemsSection() {
 
     useEffect(() => {
         BestItemsLoad(ItemCount);
-        console.log("best"+ItemCount);
     }, [ItemCount]);
 
     return (

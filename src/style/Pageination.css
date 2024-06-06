@@ -1,0 +1,30 @@
+@import "../style/colorList.css";
+
+.PaginationBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.PaginationButton {
+    border: 1px solid var(--cool-Gray200);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: var(--cool-Gray500);
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.PaginationButton:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.PaginationButton.active {
+    background-color: var(--brand-blue);
+    color: #fff;
+}

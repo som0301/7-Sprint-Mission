@@ -1,4 +1,4 @@
-@import "../style/ColorList.css";
+@import "../style/colorList.css";
 
 .SortMenu {
     border-radius: 12px;
@@ -6,4 +6,18 @@
     padding: 12px 20px;
     border: 1px var(--cool-Gray200) solid;
     color: var(--cool-Gray800);
+}
+
+/* 모바일버전 */
+@media (400px < width < 768px) {
+    .SortMenu {
+        width: 42px;
+        height: 42px;
+        background-image: url("../images/home/sorticon.svg");
+        background-position: center;
+        background-size: cover;
+        -webkit-appearance: none; /* 크롬, 사파리, 오페라 */
+        -moz-appearance: none; /* 파이어폭스 */
+        appearance: none; /* 기본 브라우저 */
+    }
 }

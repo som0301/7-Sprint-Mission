@@ -1,4 +1,4 @@
-@import "../style/ColorList.css";
+@import "../style/colorList.css";
 
 .AllItemLayer {
     width: 1200px;
@@ -11,6 +11,10 @@
     margin-bottom: 24px;
 }
 
+.AllItemMenu .AllItemTitle > a > button {
+    display: none;
+}
+
 .ItemCustom {
     display: flex;
     align-items: center;
@@ -20,6 +24,9 @@
 .AddItemButton {
     border-radius: 8px;
     padding: 12px 23px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.09px;
     color: white;
     background-color: var(--brand-blue);
 }
@@ -28,6 +35,7 @@
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .AllItem > img {
@@ -97,23 +105,36 @@
         gap: 8px;
     }
 
-    .AllItemMenu {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
+    .AllItemTitle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
     }
 
-    .AllItemMenu > h1 {
-        grid-column: 1 / 2;
-        grid-row: 1 / 2;
+    .AllItemMenu {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .AllItemMenu .AllItemTitle > h1 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .AllItemTitle > a {
+        text-decoration: none;
+    }
+    
+    .AllItemMenu .AllItemTitle > a > button {
+        display: block;
     }
 
     .ItemCustom {
-        grid-column: 1 / 3;
-        grid-row: 2 / 3;
+        column-gap: 8px;
     }
-    .AddItemButton {
-        grid-column: 2 /3;
-        grid-row: 1 / 3;
+
+    .ItemCustom > a > button {
+        display: none;
     }
 }
