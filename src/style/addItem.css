@@ -29,6 +29,8 @@
 }
 
 .input-title {
+  display: block;
+  margin-top: 12px;
   font-family: Pretendard;
   font-size: 18px;
   font-weight: 700;
@@ -60,4 +62,59 @@
   resize: none;
   height: 200px;
   padding-top: 16px;
+}
+
+.file-input-container {
+  display: flex;
+}
+
+.file-input-rectangle {
+  width: 282px;
+  height: 282px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.file-input {
+  display: none;
+}
+
+.register-img-text {
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.file-input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-item-preview {
+  object-fit: contain;
+  margin-left: 24px;
+  border-radius: 12px;
+}
+
+.add-item-preview-wrapper {
+  position: relative;
+}
+
+.cancel-preview-img-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #3962ff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

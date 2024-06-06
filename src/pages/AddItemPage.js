@@ -1,7 +1,7 @@
-import AddItemHeader from "../components/AddItemHeader";
 import "../style/addItem.css";
+import AddItemHeader from "../components/AddItemHeader";
 import AddItemImage from "../components/AddItemImage";
-import AddItemInput from "../components/\bAddItemInput";
+import AddItemInput from "../components/AddItemInput";
 import AddItemInputTag from "../components/AddItemInputTag";
 
 function AddItemPage() {
