@@ -33,10 +33,12 @@
   cursor: default;
 }
 
+/* TitleInput.jsx */
 .form-container .first-label {
   margin-top: 16px;
 }
 
+/* PriceInput.jsx, DescriptionInput.jsx */
 .form-container label {
   display: block;
   margin-top: 24px;
@@ -70,11 +72,11 @@
   color: #9ca3af;
 }
 
+/* ImageInput.jsx */
 .form-container input[type='file'] {
   display: none;
 }
 
-/* ImageInput.jsx */
 .form-container .image-container {
   display: flex;
   justify-content: first;
