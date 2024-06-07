@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import useViewport from 'pages/items/hooks/useViewport';
 import SearchIcon from 'shared/assets/image/ic_search.svg';
-import DropDownIcon from 'shared/assets/image/ic_arrow_down.svg';
+import DropDown from 'pages/items/components/DropDown';
 
 const ItemToolbarWrapper = styled.div`
     display: flex;
@@ -15,7 +14,7 @@ const SearchItem = styled.input`
     background-repeat: no-repeat;
     border: none;
     border-radius: 12px;
-    height: 40px;
+    height: 42px;
     padding: 9px 20px 9px 44px;
     width: 325px;
 `;
@@ -28,7 +27,7 @@ const MoveAddItem = styled.a`
     height: 42px;
     background: var(--blue);
     border-radius: 8px;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 16px;
     color: #fff;
 
@@ -37,35 +36,25 @@ const MoveAddItem = styled.a`
     }
 `;
 
-const SortItem = styled.button`
-    position: relative;
-    border-radius: 12px;
-    border: 1px solid var(--gray-200);
+const SortItem = styled.div`
     display: flex;
-    align-items: center;
-    gap: 24px;
+    position: relative;
+    padding: 0;
+    border-radius: 12px;
     font-size: 16px;
 `;
 
-const SortBy = styled.span`
-    font-size: 16px;
-    line-height: 24px;
-`;
-
-const DropDown = styled.img`
-width: 24px
-height: 24px`;
-
-function ItemToolbar({ deviceType }) {
+function ItemToolbar({ type, deviceType, order, setOrder }) {
     return (
-        <ItemToolbarWrapper>
-            <SearchItem $deviceType={deviceType} placeholder="검색할 상품을 입력해주세요"></SearchItem>
-            <MoveAddItem>상품 등록하기</MoveAddItem>
-            <SortItem $deviceType={deviceType}>
-                <SortBy>최신순</SortBy>
-                <DropDown />
-            </SortItem>
-        </ItemToolbarWrapper>
+        type === 'all' && (
+            <ItemToolbarWrapper>
+                <SearchItem $deviceType={deviceType} placeholder="검색할 상품을 입력해주세요"></SearchItem>
+                <MoveAddItem>상품 등록하기</MoveAddItem>
+                <SortItem>
+                    <DropDown $deviceType={deviceType} order={order} setOrder={setOrder} />
+                </SortItem>
+            </ItemToolbarWrapper>
+        )
     );
 }
 

@@ -19,6 +19,7 @@ const ListWrapper = styled.div`
 function ItemsPage() {
     const [page, setPage] = useState(1);
     const [search, setSearch] = useState('');
+    const [order, setOrder] = useState('recent');
     const { deviceType } = useViewport();
 
     const allItemsPageSize = usePageSize('all');
@@ -26,8 +27,15 @@ function ItemsPage() {
     return (
         <Container>
             <ListWrapper $deviceType={deviceType}>
-                <ItemsList type="best" page={page} pageSize={bestItemsPageSize} order="favorite" search={search} />
-                <ItemsList type="all" page={page} pageSize={allItemsPageSize} order="recent" search={search} />
+                <ItemsList type="best" page={page} pageSize={bestItemsPageSize} order={order} search={search} />
+                <ItemsList
+                    type="all"
+                    page={page}
+                    pageSize={allItemsPageSize}
+                    order={order}
+                    setOrder={setOrder}
+                    search={search}
+                />
             </ListWrapper>
         </Container>
     );

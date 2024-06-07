@@ -103,18 +103,17 @@ const FavoriteCount = styled.p`
     color: var(--gray600);
 `;
 
-function ItemsList({ type, page, pageSize, order, search }) {
+function ItemsList({ type, page, pageSize, order, setOrder, search }) {
     const { items, loading, error } = useFetchItems({ page, pageSize, order, search });
     const { deviceType } = useViewport();
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
-
     return (
         <ItemContainer $deviceType={deviceType}>
             <ItemWrapper>
                 <ItemType>{type === 'best' ? '베스트 상품' : '전체 상품'}</ItemType>
-                <ItemToolbar $deviceType={deviceType} />
+                <ItemToolbar type={type} deviceType={deviceType} order={order} setOrder={setOrder} />
             </ItemWrapper>
             <ItemInfo $type={type} $deviceType={deviceType}>
                 {items &&
