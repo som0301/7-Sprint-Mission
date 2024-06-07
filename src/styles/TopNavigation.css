@@ -14,7 +14,7 @@
   left: 0;
   right: 0;
   padding: 16px 200px;
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid var(--gray200-color);
 }
 
 .top-navigation .logo-img {
@@ -29,7 +29,7 @@
 }
 
 .top-navigation .btn-login {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-weight: 300;
   background-color: var(--blue-color);
   color: var(--white-color);
@@ -58,7 +58,7 @@
 .top-navigation .link-list a:visited {
   text-decoration-line: none;
   text-decoration: none;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-weight: bold;
   color: #000000;
 }

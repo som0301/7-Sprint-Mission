@@ -3,8 +3,7 @@ import UsedMarket from './pages/UsedMarket';
 import NotFound from './pages/NotFound';
 import App from './components/App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './styles/reset.css';
-import './styles/global.css';
+
 import Item from './pages/Item';
 
 function Main() {

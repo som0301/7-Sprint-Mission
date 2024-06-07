@@ -1,20 +1,7 @@
+@import './global';
+@import './reset';
+
 .item {
   margin: 110px auto 0;
-  padding: 0 360px;
-}
-
-.item .item-container {
-  display: flex;
-}
-
-.item .item-img {
-  border-radius: 10px;
-  width: 486px;
-  height: 486px;
-  object-fit: cover;
-}
-
-.item .item-info {
-  display: flex;
-  flex-direction: column;
+  width: 1000px;
 }

@@ -1,5 +1,5 @@
 import '../styles/BestProductList.css';
-import heartImg from '../assets/icons/ic_heart.svg';
+import heartImg from '../assets/icons/ic_heart_s.svg';
 import { Link } from 'react-router-dom';
 
 function BestProductListItem({ item }) {
