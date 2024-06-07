@@ -91,45 +91,49 @@ function AllProductList() {
             </div>
           </div>
         )}
-       {(window.innerWidth >= 768 && window.innerWidth <= 1199) || window.innerWidth >= 1200 ? (
-    <div className="wrapper-top">
-      <h2>{window.innerWidth >= 768 ? "판매중인 상품" : "전체 상품"}</h2>
-      <div className="all-container-header">
-        <label className="all-label">
-          <img src={search} alt="검색" width={"15px"} height={"15px"} />
-          <div className="search-input">검색할 상품을 입력해주세요</div>
-        </label>
-        <button className="button">
-          <Link to="/additem" className="link">
-            상품 등록하기
-          </Link>
-        </button>
-        <select
-          id="sort-select"
-          className="custom-select"
-          onChange={(e) => {
-            setOrderBy(e.target.value);
-          }}
-        >
-          <option value="recent" className="option-input">
-            최신순
-          </option>
-          <option value="favorite" className="option-input">
-            좋아요순
-          </option>
-        </select>
+        {(window.innerWidth >= 768 && window.innerWidth <= 1199) ||
+        window.innerWidth >= 1200 ? (
+          <div className="wrapper-top">
+            <h2>{window.innerWidth >= 768 ? "판매중인 상품" : "전체 상품"}</h2>
+            <div className="all-container-header">
+              <label className="all-label">
+                <img src={search} alt="검색" width={"15px"} height={"15px"} />
+                <div className="search-input">검색할 상품을 입력해주세요</div>
+              </label>
+              <button className="button">
+                <Link to="/additem" className="product-link">
+                  상품 등록하기
+                </Link>
+              </button>
+              <select
+                id="sort-select"
+                className="custom-select"
+                onChange={(e) => {
+                  setOrderBy(e.target.value);
+                }}
+              >
+                <option value="recent" className="option-input">
+                  최신순
+                </option>
+                <option value="favorite" className="option-input">
+                  좋아요순
+                </option>
+              </select>
+            </div>
+          </div>
+        ) : null}
       </div>
-    </div> ):null}
-    </div>
       <ul className="all-productlist">
         {productList.map((item) => (
-          <ProductItem
-            key={item.id}
-            imgUrl={item.images[0]}
-            name={item.name}
-            price={item.price}
-            favoriteCount={item.favoriteCount}
-          />
+          <Link to={`./${item.id}`} key={item.id} className="link">
+            <ProductItem
+              key={item.id}
+              imgUrl={item.images[0]}
+              name={item.name}
+              price={item.price}
+              favoriteCount={item.favoriteCount}
+            />
+          </Link>
         ))}
       </ul>
       <Pagination

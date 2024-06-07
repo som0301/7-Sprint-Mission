@@ -106,8 +106,12 @@
   gap: 4px;
   color: #9ca3af;
 }
-.link {
+.product-link {
   color: #fff;
+  text-decoration: none;
+}
+.link {
+  text-decoration: none;
 }
 select {
   width: 130px;
