@@ -3,7 +3,7 @@ import heart from "./images/heart.svg";
 
 
 function formatNumber(number) {
-  return new Intl.NumberFormat("ko-KR").format(number);
+  return new Intl.NumberFormat("ko-KR").format(number) + "원";
 }
 
 function ProductItem({ imgUrl, name, price, favoriteCount }) {
