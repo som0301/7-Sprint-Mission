@@ -5,19 +5,23 @@
   gap: 24px;
   width: 1200px;
 }
+
 .add-item-section-container:last-child {
   margin-bottom: 170px;
 }
+
 .add-item-section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: -8px;
 }
+
 .add-item-section-title {
   font-size: 28px;
   font-weight: 700;
 }
+
 .add-item-section-submit-button {
   width: 88px;
   height: 42px;
@@ -32,7 +36,7 @@
   cursor: pointer;
 }
 
-.abled {
+.add-item-section-submit-button:disabled {
   background-color: var(--blue);
 }
 
@@ -41,10 +45,12 @@
   flex-direction: column;
   gap: 12px;
 }
+
 .add-item-section-file-input-box {
   display: flex;
   gap: 24px;
 }
+
 .add-item-section-input-add-image-button {
   display: flex;
   flex-direction: column;
@@ -60,9 +66,11 @@
   background-color: var(--gray100);
   cursor: pointer;
 }
+
 .add-item-section-preview-image-wrapper {
   position: relative;
 }
+
 .add-item-section-preview-image-delete-button {
   position: absolute;
   top: 8px;
@@ -72,19 +80,24 @@
   outline: none;
   cursor: pointer;
 }
+
 .add-item-section-preview-image {
   width: 282px;
   height: 282px;
   border-radius: 12px;
   border: 1px solid var(--gray50);
+  object-fit: cover;
 }
+
 label {
   font-size: 18px;
   font-weight: 700;
 }
+
 input[type="file"] {
   display: none;
 }
+
 input {
   height: 56px;
   padding-left: 24px;
@@ -92,7 +105,9 @@ input {
   outline: none;
   border-radius: 12px;
   background-color: var(--gray100);
+  font-size: 16px;
 }
+
 input::placeholder {
   color: var(--gray400);
   font-size: 16px;
@@ -102,6 +117,7 @@ input::placeholder {
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
+
 textarea {
   resize: none;
   height: 200px;
@@ -110,7 +126,9 @@ textarea {
   outline: none;
   border-radius: 12px;
   background-color: var(--gray100);
+  font-size: 16px;
 }
+
 textarea::placeholder {
   color: var(--gray400);
   font-size: 16px;
@@ -120,6 +138,7 @@ textarea::placeholder {
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
+
 .add-item-section-tag {
   display: flex;
   align-items: center;
@@ -132,12 +151,14 @@ textarea::placeholder {
   border-radius: 26px;
   background-color: var(--gray50);
 }
+
 .add-item-section-tag button {
   outline: none;
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
+
 .add-item-section-tags {
   display: flex;
   gap: 12px;
