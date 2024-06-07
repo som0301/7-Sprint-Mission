@@ -25,7 +25,7 @@ function ItemsPage() {
     const bestItemsPageSize = usePageSize('best');
     return (
         <Container>
-            <ListWrapper deviceType={deviceType}>
+            <ListWrapper $deviceType={deviceType}>
                 <ItemsList type="best" page={page} pageSize={bestItemsPageSize} order="favorite" search={search} />
                 <ItemsList type="all" page={page} pageSize={allItemsPageSize} order="recent" search={search} />
             </ListWrapper>

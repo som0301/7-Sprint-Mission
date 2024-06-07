@@ -9,9 +9,9 @@ const ItemContainer = styled.div`
     flex-direction: column;
     row-gap: 16px;
     max-width: 1200px;
-    padding: ${({ deviceType }) => {
-        if (deviceType === 'tablet') return '0 24px';
-        if (deviceType === 'mobile') return '0 16px';
+    padding: ${({ $deviceType }) => {
+        if ($deviceType === 'tablet') return '0 24px';
+        if ($deviceType === 'mobile') return '0 16px';
     }}}
 `;
 
@@ -29,9 +29,9 @@ const ItemInfo = styled.ul`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    row-gap: ${({ type, deviceType }) => {
-        if (type === 'all') {
-            if (deviceType === 'mobile') return '32px';
+    row-gap: ${({ $type, $deviceType }) => {
+        if ($type === 'all') {
+            if ($deviceType === 'mobile') return '32px';
         }
         return '40px';
     }};
@@ -46,30 +46,30 @@ const ItemCard = styled.li`
 `;
 
 const ItemImage = styled.img`
-    width: ${({ type, deviceType }) => {
-        if (type === 'all') {
-            if (deviceType === 'mobile') {
+    width: ${({ $type, $deviceType }) => {
+        if ($type === 'all') {
+            if ($deviceType === 'mobile') {
                 return '168px';
             }
             return '221px';
         }
-        if (type === 'best') {
-            if (deviceType === 'desktop') return '282px';
-            if (deviceType === 'tablet') return '336px';
-            if (deviceType === 'mobile') return '343px';
+        if ($type === 'best') {
+            if ($deviceType === 'desktop') return '282px';
+            if ($deviceType === 'tablet') return '336px';
+            if ($deviceType === 'mobile') return '343px';
         }
     }};
-    height: ${({ type, deviceType }) => {
-        if (type === 'all') {
-            if (deviceType === 'mobile') {
+    height: ${({ $type, $deviceType }) => {
+        if ($type === 'all') {
+            if ($deviceType === 'mobile') {
                 return '168px';
             }
             return '221px';
         }
-        if (type === 'best') {
-            if (deviceType === 'desktop') return '282px';
-            if (deviceType === 'tablet') return '336px';
-            if (deviceType === 'mobile') return '343px';
+        if ($type === 'best') {
+            if ($deviceType === 'desktop') return '282px';
+            if ($deviceType === 'tablet') return '336px';
+            if ($deviceType === 'mobile') return '343px';
         }
     }};
     border-radius: 16px;
@@ -111,16 +111,16 @@ function ItemsList({ type, page, pageSize, order, search }) {
     if (error) return <p>Error: {error}</p>;
 
     return (
-        <ItemContainer deviceType={deviceType}>
+        <ItemContainer $deviceType={deviceType}>
             <ItemWrapper>
                 <ItemType>{type === 'best' ? '베스트 상품' : '전체 상품'}</ItemType>
-                <ItemToolbar deviceType={deviceType} />
+                <ItemToolbar $deviceType={deviceType} />
             </ItemWrapper>
-            <ItemInfo type={type} deviceType={deviceType}>
+            <ItemInfo $type={type} $deviceType={deviceType}>
                 {items &&
                     items.map((item) => (
                         <ItemCard key={item.id}>
-                            <ItemImage type={type} deviceType={deviceType} src={item.images} alt={item.name} />
+                            <ItemImage $type={type} $deviceType={deviceType} src={item.images} alt={item.name} />
                             <ItemName>{item.name}</ItemName>
                             <ItemPrice>{item.price.toLocaleString()}원</ItemPrice>
                             <FavoriteWrapper>

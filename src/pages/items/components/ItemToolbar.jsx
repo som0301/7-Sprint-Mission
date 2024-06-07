@@ -59,9 +59,9 @@ height: 24px`;
 function ItemToolbar({ deviceType }) {
     return (
         <ItemToolbarWrapper>
-            <SearchItem deviceType={deviceType} placeholder="검색할 상품을 입력해주세요"></SearchItem>
+            <SearchItem $deviceType={deviceType} placeholder="검색할 상품을 입력해주세요"></SearchItem>
             <MoveAddItem>상품 등록하기</MoveAddItem>
-            <SortItem deviceType={deviceType}>
+            <SortItem $deviceType={deviceType}>
                 <SortBy>최신순</SortBy>
                 <DropDown />
             </SortItem>
