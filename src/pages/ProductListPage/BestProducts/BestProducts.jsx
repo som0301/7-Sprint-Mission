@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { isEmpty } from 'lodash';
 import { getProductDataList } from '../../../api/productApi';
-import useMediaQuery from '../../../hooks/useMediaQuery';
 import ProductCard from '../ProductCard/ProductCard';
 
 const PAGE_SIZES = {
@@ -10,9 +9,8 @@ const PAGE_SIZES = {
 	desktop: 4,
 };
 
-function BestProducts() {
-	const mediaQuery = useMediaQuery();
-	const pageSize = PAGE_SIZES[mediaQuery];
+function BestProducts({ deviceType }) {
+	const pageSize = PAGE_SIZES[deviceType];
 	const [items, setItems] = useState([]);
 	const [error, setError] = useState(undefined);
 
@@ -29,8 +27,8 @@ function BestProducts() {
 	};
 
 	useEffect(() => {
-		getProductList(pageSize);
-	}, [pageSize]);
+		if (deviceType !== undefined) getProductList(pageSize);
+	}, [deviceType, pageSize]);
 
 	return (
 		<article className='products'>

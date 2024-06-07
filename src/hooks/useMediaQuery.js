@@ -21,7 +21,7 @@ import { useState, useEffect } from 'react';
  * };
  */
 function useMediaQuery() {
-	const [mode, setMode] = useState('');
+	const [mode, setMode] = useState(undefined);
 
 	useEffect(() => {
 		const handleResize = () => {
