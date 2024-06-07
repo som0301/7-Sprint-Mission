@@ -42,7 +42,7 @@ const ProductDetailComments = ({ comments }) => {
                   {comment.writer.nickname}
                 </div>
                 <span className="product-profile-time">
-                  {timeAgo(comment.createdAt)}
+                  {timeAgo(comment.updatedAt)}
                 </span>
               </div>
             </div>
