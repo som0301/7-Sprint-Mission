@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+.item-link {
+  text-decoration: none;
+}
+
 /* BestProductList.jsx */
 .best-product h2 {
   margin-top: 24px;

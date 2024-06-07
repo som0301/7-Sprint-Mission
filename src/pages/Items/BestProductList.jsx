@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import BestProductItem from './BestProductItem';
 import { getProductItem } from './api';
 
@@ -20,12 +21,14 @@ const BestProductList = ({ pageSize }) => {
       <ul className="item-list">
         {product.map((item) => (
           <li key={item.id}>
-            <BestProductItem
-              imgUrl={item.images[0]}
-              name={item.name}
-              price={item.price}
-              favoriteCount={item.favoriteCount}
-            />
+            <Link to={`./${item.id}`} className="item-link">
+              <BestProductItem
+                imgUrl={item.images[0]}
+                name={item.name}
+                price={item.price}
+                favoriteCount={item.favoriteCount}
+              />
+            </Link>
           </li>
         ))}
       </ul>

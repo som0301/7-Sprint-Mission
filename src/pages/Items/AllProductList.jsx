@@ -137,12 +137,14 @@ const AllProductList = ({ pageSize, title, TopContainer }) => {
       <ul className="item-list">
         {product.map((item) => (
           <li key={item.id}>
-            <AllProductItem
-              imgUrl={item.images[0]}
-              name={item.name}
-              price={item.price}
-              favoriteCount={item.favoriteCount}
-            />
+            <Link to={`./${item.id}`} className="item-link">
+              <AllProductItem
+                imgUrl={item.images[0]}
+                name={item.name}
+                price={item.price}
+                favoriteCount={item.favoriteCount}
+              />
+            </Link>
           </li>
         ))}
       </ul>
