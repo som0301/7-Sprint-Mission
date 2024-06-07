@@ -99,7 +99,7 @@ function AllProductList({ mediaState }) {
     setKeyword(e.target.value);
   }
 
-  const handleInputBlur = (e) => {
+  const handleInputBlur = () => {
     handleLoad({ orderBy, page, pageSize: itemViewMediaState[mediaState], keyword });
   }
 

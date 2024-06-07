@@ -7,3 +7,7 @@
 .button.disable {
   background-color: var(--color-coolgray-400);
 }
+
+.link {
+  display: grid;
+}

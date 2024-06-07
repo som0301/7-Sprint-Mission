@@ -1,5 +1,3 @@
-import ItemsNav from './../../ui/itemnav/itemsnav';
-import userIcon from '../../../images/icons/ic_user.svg';
 import Button from './../../modules/button/button';
 import styles from './additem.module.css';
 import Tag from '../../modules/tag/tag';

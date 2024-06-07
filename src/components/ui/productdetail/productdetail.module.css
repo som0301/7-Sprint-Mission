@@ -1,0 +1,142 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  margin-top: 92px;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 88px;
+  margin-bottom: 250px;
+}
+
+.product-info-container {
+  width: 100%;
+  position: relative;
+}
+
+.product-name {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.864rem;
+  color: var(--color-coolgray-800);
+  margin-bottom: 16px;
+}
+
+.product-price {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 4.773rem;
+  color: var(--color-coolgray-800);
+  margin-bottom: 16px;
+}
+
+.line {
+  border: 1px solid var(--color-coolgray-200);
+  margin-bottom: 16px;
+}
+
+.product-detail-title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.671rem;
+  color: var(--color-coolgray-600);
+  margin-bottom: 8px;
+}
+
+.product-detail-description {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.24rem;
+  color: var(--color-coolgray-800);
+  margin-bottom: 23px;
+}
+
+.tag-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.favorite-count-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  padding: 4px 12px;
+  border: 1px solid var(--color-coolgray-200);
+  border-radius: 35px;
+}
+
+.favorite-count-container > img {
+  width: 32px;
+  height: 32px;
+}
+
+.favorite-count-container > p {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.909rem;
+  color: var(--color-coolgray-500);
+}
+
+.comment-input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.comment-input-form > h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.909rem;
+  color: var(--color-coolgray-900);
+}
+
+.comment-input-form > textarea {
+  background-color: var(--color-coolgray-100);
+  height: 5.6rem;
+  border: 0;
+  border-radius: 12px;
+  color: var(--color-coolgray-800);
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+  padding: 16px 24px;
+  height: 104px;
+  resize: none;
+}
+
+.comment-input-form > textarea::placeholder {
+  color: var(--color-coolgray-400);
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+}
+
+.comment-input-form > textarea:focus-visible {
+  outline: 4px solid var(--color-brand-blue);
+}
+
+.comment-input-form button {
+  justify-self: flex-end;
+}

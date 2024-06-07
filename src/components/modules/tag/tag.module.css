@@ -6,6 +6,7 @@
   width: max-content;
   align-items: center;
   height: max-content;
+  background-color: var(--color-coolgray-100);
 }
 
 .tag > p {
@@ -17,5 +18,5 @@
 
 .tag > button {
   border: none;
-  background-color: #fff;
+  background-color: var(--color-coolgray-100);
 }
