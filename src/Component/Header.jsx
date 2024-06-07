@@ -1,6 +1,6 @@
 import { NavLink, useLocation  } from "react-router-dom";
 import Logo from "../../src/images/logo/panda-market-pandalogo.svg";
-import "../../src/style/header.css";
+import "../../src/style/Header.css";
 import { useEffect, useRef } from "react";
 import maskIcon from "../../src/images/home/maskicon.png"
 

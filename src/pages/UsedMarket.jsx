@@ -1,6 +1,6 @@
-import "../../src/style/usedMarket.css";
-import BestItemsSection from "../component/bestItemsSection";
-import AllItemsSection from "../component/allItemsSction";
+import "../../src/style/UsedMarket.css";
+import BestItemsSection from "../Component/BestItemsSection";
+import AllItemsSection from "../Component/AllItemsSction";
 
 function usedMarket() {
     return (

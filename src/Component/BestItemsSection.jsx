@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import favicon from "../images/logo/favoriteIcon.svg";
-import CallAPI from "../api/callAPI";
-import "../../src/style/bestItemsSection.css";
+import CallAPI from "../api/CallAPI";
+import "../../src/style/BestItemsSection.css";
 
 function getWidth() {
     let width = window.innerWidth;

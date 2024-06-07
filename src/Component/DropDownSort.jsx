@@ -1,4 +1,4 @@
-import "../../src/style/dropDownSort.css"
+import "../../src/style/DropDownSort.css"
 import React from "react";
 function DropDownSort( {setOrder} ) {
 

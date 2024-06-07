@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import FileInput from "../../src/component/fileInput";
-import "../../src/style/addItemPage.css";
+import FileInput from "../Component/FileInput";
+import "../../src/style/AddItemPage.css";
 
 
 function AddItemPage() {
