@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
 import { getReviews } from "../api";
 
+const PC_ITEM = 10;
+const TABLET_ITEM = 6;
+const MOBILE_ITEM = 4;
+
 function AllProductList() {
-  const PC_ITEM = 10;
-  const TABLET_ITEM = 6;
-  const MOBILE_ITEM = 4;
   const [productList, setProductList] = useState([]);
   const [orderby, setOrderBy] = useState("recent"); //페이지 정렬 기준
   const [currentPage, setCurrentPage] = useState(1); //몇번째 페이지인지
@@ -16,8 +17,6 @@ function AllProductList() {
   const [pageSize, setPageSize] = useState(PC_ITEM); // 보이는 아이템 수
   const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
   const [isDropDown, setIsDropDown] = useState(false);
-  const handleNewestClick = () => setOrderBy("recent");
-  const handleFavoriteClick = () => setOrderBy("favorite");
 
   const getAllProduct = async ({ currentPage, pageSize, orderby }) => {
     try {
@@ -67,7 +66,7 @@ function AllProductList() {
             <div className="mobile-wrapper-top-first">
               <h2>판매중인 상품</h2>
               <button className="button">
-                <Link to="/additem" target="_blank" className="product-link">
+                <Link to="/additem" className="product-link">
                   상품 등록하기
                 </Link>
               </button>
@@ -79,13 +78,7 @@ function AllProductList() {
               </label>
               <select
                 onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "recent") {
-                    return handleNewestClick();
-                  }
-                  if (value === "favorite") {
-                    return handleFavoriteClick();
-                  }
+                  setOrderBy(e.target.value);
                 }}
               >
                 <option value="recent" className="option-input">
@@ -98,79 +91,36 @@ function AllProductList() {
             </div>
           </div>
         )}
-        {window.innerWidth >= 768 && window.innerWidth <= 1199 && (
-          <div className="wrapper-top">
-            <h2>판매중인 상품</h2>
-            <div className="all-container-header">
-              <label className="all-label">
-                <img src={search} alt="검색" width={"15px"} height={"15px"} />
-                <div className="search-input">검색할 상품을 입력해주세요</div>
-              </label>
-              <button className="button">
-                <Link to="/additem" target="_blank" className="link">
-                  상품 등록하기
-                </Link>
-              </button>
-              <select
-                id="sort-select"
-                className="custom-select"
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "recent") {
-                    return handleNewestClick();
-                  }
-                  if (value === "favorite") {
-                    return handleFavoriteClick();
-                  }
-                }}
-              >
-                <option value="recent" className="option-input">
-                  최신순
-                </option>
-                <option value="favorite" className="option-input">
-                  좋아요순
-                </option>
-              </select>
-            </div>
-          </div>
-        )}
-        {window.innerWidth >= 1200 && (
-          <div className="wrapper-top">
-            <h2>전체 상품</h2>
-            <div className="all-container-header">
-              <label className="all-label">
-                <img src={search} alt="검색" width={"15px"} height={"15px"} />
-                <div className="search-input">검색할 상품을 입력해주세요</div>
-              </label>
-              <button className="button">
-                <Link to="/additem" target="_blank" className="link">
-                  상품 등록하기
-                </Link>
-              </button>
-              <select
-                id="sort-select"
-                className="custom-select"
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "recent") {
-                    return handleNewestClick();
-                  }
-                  if (value === "favorite") {
-                    return handleFavoriteClick();
-                  }
-                }}
-              >
-                <option value="recent" className="option-input">
-                  최신순
-                </option>
-                <option value="favorite" className="option-input">
-                  좋아요순
-                </option>
-              </select>
-            </div>
-          </div>
-        )}
+       {(window.innerWidth >= 768 && window.innerWidth <= 1199) || window.innerWidth >= 1200 ? (
+    <div className="wrapper-top">
+      <h2>{window.innerWidth >= 768 ? "판매중인 상품" : "전체 상품"}</h2>
+      <div className="all-container-header">
+        <label className="all-label">
+          <img src={search} alt="검색" width={"15px"} height={"15px"} />
+          <div className="search-input">검색할 상품을 입력해주세요</div>
+        </label>
+        <button className="button">
+          <Link to="/additem" className="link">
+            상품 등록하기
+          </Link>
+        </button>
+        <select
+          id="sort-select"
+          className="custom-select"
+          onChange={(e) => {
+            setOrderBy(e.target.value);
+          }}
+        >
+          <option value="recent" className="option-input">
+            최신순
+          </option>
+          <option value="favorite" className="option-input">
+            좋아요순
+          </option>
+        </select>
       </div>
+    </div> ):null}
+    </div>
       <ul className="all-productlist">
         {productList.map((item) => (
           <ProductItem

@@ -1,6 +1,5 @@
-
-import Header from "../src/headers/header";
-import Items from './Items';
+import Header from "./headers/Header";
+import Items from "./Items";
 
 function App() {
   return (

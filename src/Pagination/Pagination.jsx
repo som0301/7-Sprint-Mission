@@ -11,7 +11,7 @@ function getPageNumber(number) {
 }
 
 function Pagination({ pageNumber, currentPage, onPageChange }) {
-  const getPageNumberArray = getPageNumber(pageNumber);
+  const PageNumberArray = getPageNumber(pageNumber);
 
   const handlePageChange = (newPage) => {
     if (newPage >= 1 && newPage <= pageNumber) {
@@ -19,32 +19,22 @@ function Pagination({ pageNumber, currentPage, onPageChange }) {
     }
   };
 
-  const buttonStyle={
-    cursor:'pointer',
-  }
-
-  const disabledButtonStyle={
-    cursor:'not-allowed',
-  }
-
   return (
     <div className="button-wrapper">
       <button
         className="pagination-button"
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        style={currentPage===1?disabledButtonStyle:buttonStyle}
       >
-        <img src={arrowleft} alt="���� ȭ��ǥ" />
+        <img src={arrowleft} alt="왼쪽 화살표" />
       </button>
-      {getPageNumberArray.map((page) => (
+      {PageNumberArray.map((page) => (
         <button
           key={page}
           className={`pagination-button ${
-            page === currentPage ? "select-page" : ""
+            page === currentPage ? "selectd-page" : ""
           }`}
           onClick={() => handlePageChange(page)}
-          style={buttonStyle}
         >
           {page}
         </button>
@@ -53,9 +43,8 @@ function Pagination({ pageNumber, currentPage, onPageChange }) {
         className="pagination-button"
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === pageNumber}
-        style={currentPage===1?disabledButtonStyle:buttonStyle}
       >
-        <img src={arrowright} alt="������ ȭ��ǥ" />
+        <img src={arrowright} alt="오른쪽 화살표" />
       </button>
     </div>
   );

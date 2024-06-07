@@ -33,7 +33,7 @@ h1 {
 }
 .header-tab {
   display: flex;
-  width: 218px;
+  width: 200px;
   height: 69px;
   align-items: center;
   justify-content: space-around;
@@ -58,24 +58,28 @@ h2 {
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
-  header{
-    padding:0;
-  }
   .header-top {
     width: 100%;
     display: flex;
     justify-content: center;
+    text-align: center; 
   }
   .title {
     font-size: 20px;
     font-weight: 700;
     color: #3692ff;
-    width: 100%;
+    margin-left:5px;
   }
   h1 {
     gap: 10px;
+    display: flex; 
+    align-items: center;
   }
   .link {
     font-size: 16px;
+  }
+  .product-link{
+    text-decoration: none;
+    color:#fff;
   }
 }

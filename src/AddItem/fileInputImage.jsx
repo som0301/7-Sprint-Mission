@@ -1,4 +1,4 @@
-import "./AddItemList.css";
+import "./AddItem.css";
 import plus from "../images/plus.svg";
 import deleteIcon from "../images/deleteIcon.svg";
 import { useEffect, useState } from "react";

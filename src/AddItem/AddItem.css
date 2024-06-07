@@ -66,7 +66,7 @@
 .add-product-input::placeholder {
   color: #9ca3af;
 }
-.introduce {
+.introduction {
   height: 200px;
   resize: none;
 }
@@ -124,6 +124,7 @@ button:hover {
 .current-Image {
   width: 282px;
   height: 282px;
+  object-fit: cover;
 }
 .tag-container-value {
   background-color: #f9fafb;
@@ -133,7 +134,6 @@ button:hover {
   font-weight: 400;
   color: #1f2937;
   display: inline-flex;
-  align-items: center;
   margin-right: 12px;
 }
 .delete-tag {
