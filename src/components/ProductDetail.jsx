@@ -1,5 +1,6 @@
 import styles from '../styles/ProductDetail.module.scss';
 import heartImg from '../assets/icons/ic_heart_m.svg';
+import moreBtnImg from '../assets/icons/ic_more.svg';
 import Button from './Button';
 
 function ProductDetail({ product }) {
@@ -13,6 +14,9 @@ function ProductDetail({ product }) {
       <div className={styles['info']}>
         <div className={styles['info-top']}>
           <h1 className={styles['title']}>{product.name}</h1>
+          <Button className={styles['more-btn']}>
+            <img src={moreBtnImg} alt='더보기 이미지' />
+          </Button>
           <p className={styles['price']}>
             {Number(product.price).toLocaleString('ko-KR')}원
           </p>

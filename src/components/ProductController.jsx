@@ -1,4 +1,4 @@
-import '../styles/ProductController.css';
+import '../styles/ProductController.scss';
 import { Link } from 'react-router-dom';
 import searchImg from '../assets/icons/ic_search.svg';
 import SelectBox from './SelectBox';

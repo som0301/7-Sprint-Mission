@@ -1,4 +1,4 @@
-import '../styles/ProductList.css';
+import '../styles/ProductList.scss';
 import { Link } from 'react-router-dom';
 import heartImg from '../assets/icons/ic_heart_s.svg';
 import ProductController from '../components/ProductController';

@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from 'react-router-dom';
-import '../styles/TopNavigation.css';
+import '../styles/TopNavigation.scss';
 import userProfileImg from '../assets/icons/ic_user_profile.svg';
 
 function TopNavigation() {

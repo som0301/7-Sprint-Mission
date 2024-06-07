@@ -1,4 +1,4 @@
-import '../styles/BestProductList.css';
+import '../styles/BestProductList.scss';
 import heartImg from '../assets/icons/ic_heart_s.svg';
 import { Link } from 'react-router-dom';
 

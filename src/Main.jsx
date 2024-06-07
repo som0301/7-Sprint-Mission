@@ -3,7 +3,6 @@ import UsedMarket from './pages/UsedMarket';
 import NotFound from './pages/NotFound';
 import App from './components/App';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 import Item from './pages/Item';
 
 function Main() {

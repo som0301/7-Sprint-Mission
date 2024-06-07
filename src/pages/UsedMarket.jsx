@@ -1,9 +1,9 @@
-import "../styles/UsedMarket.css";
-import ProductList from "../components/ProductList";
-import BestProductList from "../components/BestProductList";
-import { useEffect, useState } from "react";
-import { getProducts } from "../api";
-import { useMediaQuery } from "react-responsive";
+import '../styles/UsedMarket.scss';
+import ProductList from '../components/ProductList';
+import BestProductList from '../components/BestProductList';
+import { useEffect, useState } from 'react';
+import { getProducts } from '../api';
+import { useMediaQuery } from 'react-responsive';
 
 const PAGE_SIZES = {
   PC: { regular: 10, best: 4 },
@@ -14,13 +14,13 @@ const PAGE_SIZES = {
 function UsedMarket() {
   const [items, setItems] = useState([]);
   const [bestItems, setBestItems] = useState([]);
-  const [order, setOrder] = useState("recent");
+  const [order, setOrder] = useState('recent');
   const [page, setPage] = useState(1);
   const [allProdPageSize, setAllProdPageSize] = useState(10);
   const [totalProdCount, setTotalProdCount] = useState(0);
 
-  const isTablet = useMediaQuery({ query: "(max-width: 1200px)" });
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isTablet = useMediaQuery({ query: '(max-width: 1200px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   const allProdHandleLoad = async (order, page, pageSize) => {
     const { list, totalCount } = await getProducts(order, page, pageSize);
@@ -29,7 +29,7 @@ function UsedMarket() {
   };
 
   const bestProdHandleLoad = async (page, pageSize) => {
-    const { list, totalCount } = await getProducts("favorite", page, pageSize);
+    const { list, totalCount } = await getProducts('favorite', page, pageSize);
     setBestItems(list);
     setTotalProdCount(totalCount);
   };
@@ -54,10 +54,10 @@ function UsedMarket() {
   };
 
   const handleSelect = (selectedValue) => {
-    if (selectedValue === "최신순") {
-      setOrder("recent");
-    } else if (selectedValue === "좋아요순") {
-      setOrder("favorite");
+    if (selectedValue === '최신순') {
+      setOrder('recent');
+    } else if (selectedValue === '좋아요순') {
+      setOrder('favorite');
     }
     setPage(1);
   };
@@ -71,7 +71,7 @@ function UsedMarket() {
   }, [isTablet, isMobile, order, page, totalProdCount]);
 
   return (
-    <div className="used-market">
+    <div className='used-market'>
       <div>
         <BestProductList items={bestItems} />
       </div>

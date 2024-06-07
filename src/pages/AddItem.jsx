@@ -1,4 +1,4 @@
-import '../styles/AddItem.css';
+import '../styles/AddItem.scss';
 import blueXIc from '../assets/icons/ic_x_blue.svg';
 import plusIc from '../assets/icons/ic_plus.svg';
 import { useEffect, useState } from 'react';

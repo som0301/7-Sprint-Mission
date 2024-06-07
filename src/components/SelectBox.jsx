@@ -1,4 +1,4 @@
-import '../styles/SelectBox.css';
+import '../styles/SelectBox.scss';
 import arrowDownImg from '../assets/icons/ic_arrow_down.svg';
 import mobileSelectImg from '../assets/icons/ic_sort.svg';
 import { useState } from 'react';

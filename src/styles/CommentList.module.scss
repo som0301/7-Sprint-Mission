@@ -1,2 +1,39 @@
 .comment-list {
+  font-family: 'Pretendard';
+  font-size: 16px;
+  margin-bottom: 40px;
+  color: var(--gray800-color);
+}
+
+.no-comment {
+  margin: 20px auto;
+}
+
+.comment-list-item {
+  border-bottom: 1px solid var(--gray200-color);
+  padding: 23px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+.comment-list-item .more-btn {
+  position: absolute;
+  right: 0;
+}
+
+.comment-list-item .user-profile {
+  display: flex;
+  gap: 10px;
+}
+
+.comment-list-item .user-name {
+  color: var(--gray600-color);
+  font-size: 16px;
+}
+
+.comment-list-item .date {
+  color: var(--gray400-color);
+  font-size: 12px;
 }

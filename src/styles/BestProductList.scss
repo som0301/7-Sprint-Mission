@@ -1,3 +1,6 @@
+@import './global';
+@import './reset';
+
 .best-product-list {
   width: 1300px;
   margin: 0 auto;
@@ -13,7 +16,7 @@
 }
 
 .best-product-list .title {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 10px;
@@ -32,12 +35,13 @@
 }
 
 .best-product-list-item .info {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-weight: 500;
   font-size: 15px;
   display: flex;
   flex-direction: column;
   gap: 5px;
+  color: var(--gray800-color);
 }
 
 .best-product-list-item .price {
@@ -90,7 +94,7 @@
 }
 
 .best-product-list-item .btn-register-prod {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-weight: 300;
   background-color: var(--blue-color);
   color: var(--white-color);

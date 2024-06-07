@@ -2,6 +2,76 @@
 @import './reset';
 
 .item {
-  margin: 110px auto 0;
+  margin: 110px auto;
   width: 1000px;
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.item .register-comment {
+  font-family: 'Pretendard';
+  font-weight: 800;
+  margin: 10px 0 100px;
+}
+
+.item .register-comment textarea {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-size: 14px;
+  color: var(--gray800-color);
+  line-height: 24px;
+  background: var(--gray100-color);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0;
+  padding: 16px 24px;
+  width: 100%;
+  height: 104px;
+  resize: none;
+}
+
+.item .register-comment button {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  background-color: var(--gray400-color);
+  color: var(--white-color);
+  text-decoration: none;
+  border-radius: 5px;
+  width: 74px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
+}
+
+.item .index-btn {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  text-decoration: none;
+  border-radius: 99999px;
+  width: 240px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+/* Tablet */
+@media (max-width: $tablet-max-width) {
+  .item {
+    margin: 110px 23px;
+    width: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: $mobile-max-width) {
 }

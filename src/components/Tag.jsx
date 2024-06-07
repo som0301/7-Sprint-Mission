@@ -1,4 +1,4 @@
-import '../styles/Tag.css';
+import '../styles/Tag.scss';
 import grayXIc from '../assets/icons/ic_x_gray.svg';
 import Button from './Button';
 

@@ -1,4 +1,4 @@
-import '../styles/Pagination.css';
+import '../styles/Pagination.scss';
 import { useEffect, useState } from 'react';
 
 const VISIBLE_PAGE_COUNT = 5;
@@ -36,17 +36,17 @@ function Pagination({ totalProdCount, page, allProdPageSize, onClickPage }) {
         return (
           <>
             {item.state === 'focus' && (
-              <button key={item.page} className='btn-focus'>
+              <button key={'focus_' + item.page} className='btn-focus'>
                 {item.page}
               </button>
             )}
             {item.state === 'enable' && (
-              <button key={item.page} onClick={pageClick}>
+              <button key={'enable_' + item.page} onClick={pageClick}>
                 {item.page}
               </button>
             )}
             {item.state === 'disable' && (
-              <button key={item.page} className='btn-disabled'>
+              <button key={'disable_' + item.page} className='btn-disabled'>
                 {item.page}
               </button>
             )}
