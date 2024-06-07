@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import SearchIcon from '../../../assets/images/icon/ic-search.svg';
 import './ProductSearch.css';
 
-function ProductSearch({ searchKeyword }) {
+function ProductSearch({ setKeyword }) {
 	const [value, setValue] = useState('');
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		searchKeyword(value);
+		setKeyword(value);
 	};
 
 	const handleChange = (e) => {

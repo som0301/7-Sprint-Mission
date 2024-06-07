@@ -1,14 +1,38 @@
-const DEFAULT_URL = 'https://panda-market-api.vercel.app/products';
+import httpClient from './httpClient';
 
-export async function getDataFunc({ url = DEFAULT_URL, params, id }) {
-	const query = new URLSearchParams(params).toString();
-	// console.log(`${id ? url + '/' + id : url}${query ? '?' + query : ''}`);
-	try {
-		const response = await fetch(`${id ? url + '/' + id : url}${query ? '?' + query : ''}`);
-		if (!response.ok) throw new Error(response.status);
-		const data = await response.json();
-		return data;
-	} catch (error) {
-		console.error('제품 데이터를 가져오는데 실패했습니다:', error);
-	}
-}
+const API_URL = 'https://panda-market-api.vercel.app';
+const ERROR_MESSAGE = '제품 데이터를 가져오는데 실패했습니다.';
+
+/**
+ * 제품 목록 가져오기
+ *
+ * @function getProductList
+ * @param {number} page - 페이지 번호
+ * @param {number} pageSize - 페이지 당 상품 수
+ * @param {string} orderBy - 정렬 기준
+ * @param {string} keyword - 검색 키워드 [ favorite, recent ]
+ * @returns {Promise<Object>} The response data parsed as JSON.
+ */
+export const getProductList = async ({ page = 1, pageSize = 4, orderBy = 'favorite', keyword = '' }) => {
+	return await httpClient.get(`${API_URL}/products`, { page, pageSize, orderBy, keyword }).catch((e) => {
+		throw new Error(ERROR_MESSAGE, e);
+	});
+};
+
+/**
+ * 제품 정보 가져오기
+ *
+ * @function getProductInfo
+ * @param {number} id - 제품 식별 번호
+ * @returns {Promise<Object>} The response data parsed as JSON.
+ */
+export const getProductInfo = async (id) => {
+	if (!id) throw new Error('제품 id를 입력해주세요.');
+	return await httpClient.get(`${API_URL}/products/${id}`).catch((e) => {
+		throw new Error(ERROR_MESSAGE, e);
+	});
+};
+
+// const updateProductInfo = async (id, params) => {};
+
+// const deleteProductData = async (id, params) => {};
