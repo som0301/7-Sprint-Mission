@@ -2,9 +2,11 @@ import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import SignUp from './pages/login/signup';
 import Items from './pages/items/Items';
+import ProductDetail from './ui/productdetail/productdetail';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddItem from './pages/additem/additem';
 import { useState, useEffect } from 'react';
+import Nav from './ui/nav/nav';
 
 const mediaQueryMobile = window.matchMedia('(min-width: 375px) and (max-width: 767px)');
 const mediaQueryTablet = window.matchMedia('(min-width: 768px) and (max-width: 1200px)');
@@ -49,11 +51,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/items" element={<Items mediaState={mediaState}/>} />
-        <Route path="/additem" element={<AddItem mediaState={mediaState} />} />
+        <Route path="/" element={<Nav mediaState={mediaState}/>}>
+          <Route index element={<Home mediaState={mediaState}/>} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="items">
+            <Route index element={<Items mediaState={mediaState} />}/>
+            <Route path=':productId' element={<ProductDetail mediaState={mediaState} />}/>
+          </Route>
+          <Route path="additem" element={<AddItem mediaState={mediaState} />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

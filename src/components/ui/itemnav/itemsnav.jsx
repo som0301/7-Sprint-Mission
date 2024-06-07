@@ -4,7 +4,7 @@ import logoSmall from '../../../images/logos/logo-small.svg';
 import Button from '../../modules/button/button';
 import '../../../css/define.css';
 import { classModuleName } from '../../../modules';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const viewLogoStyle = {
@@ -13,30 +13,45 @@ const viewLogoStyle = {
   mobile: logoSmall,
 };
 
-function ItemsNav({ mediaState, rightComponent }) {
+function getLinkStyle({isActive}) {
+  return {
+    color: isActive ? 'var(--color-brand-blue)' : 'var(--color-coolgray-600)',
+  }
+}
+
+function ItemsNav({ mediaState }) {
   const location = useLocation();
-  const className = location.pathname === '/items' || location.pathname === '/additem' ? 'nav-link current-location' : 'nav-link';
+  const currentLocation = location.pathname;
+  
+  const currentPageIsLogin = () => {
+    if(currentLocation === '/login' || currentLocation === '/signup') return true;
+    else return false;
+  }
 
-  useEffect(() => {}, [mediaState]);
-
-  return (
-    <nav className={classModuleName('items-nav', styles)}>
+  if(currentPageIsLogin()) {
+    console.log(currentLocation);
+    return <></>
+  }
+  else {
+    return (
+      <nav className={classModuleName('items-nav', styles)}>
       <div className={classModuleName('nav-container', styles)}>
-        <a href="/">
+        <Link to="/">
           <img src={viewLogoStyle[mediaState]} alt="로고" className={classModuleName('nav-logo', styles)} />
-        </a>
-        <div className={classModuleName('nav-link-container', styles)}>
-          <a href="/" className={classModuleName('nav-link', styles)}>
+        </Link>
+        {currentLocation !== '/' && <div className={classModuleName('nav-link-container', styles)}>
+          <NavLink style={getLinkStyle} to="/" className={classModuleName('nav-link', styles)}>
             자유게시판
-          </a>
-          <a href="/items" className={classModuleName(className, styles)}>
+          </NavLink>
+          <NavLink style={getLinkStyle} to="items" className={classModuleName('nav-link', styles)}>
             중고마켓
-          </a>
-        </div>
+          </NavLink>
+        </div>}
       </div>
-    {rightComponent}
+      <Button link='login'>로그인</Button>
     </nav>
   );
+  }
 }
 
 export default ItemsNav;

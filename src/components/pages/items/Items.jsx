@@ -11,7 +11,6 @@ function Items({mediaState}) {
   
   return (
     <>
-      <ItemsNav mediaState={mediaState} rightComponent={<Button>로그인</Button>}/>
       <main className={classModuleName('items-main-container', styles)}>
         <BestProductList mediaState={mediaState} />
         <AllProductList mediaState={mediaState} />

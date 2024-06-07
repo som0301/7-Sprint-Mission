@@ -118,8 +118,8 @@ function AllProductList({ mediaState }) {
         handleInputBlur={handleInputBlur}
       />
       <div className={classModuleName('product-list', styles)}>
-        {items.map(({ images, name, price, favoriteCount, id }) => {
-          return <Product key={id} images={images} name={name} price={price} favoriteCount={favoriteCount} width={ITEM_WIDTH[mediaState]}></Product>;
+        {items.map((item) => {
+          return <Product key={item.id} item={item} width={ITEM_WIDTH[mediaState]}></Product>;
         })}
       </div>
       <footer>
