@@ -16,8 +16,16 @@ export async function getItems({
   return body;
 }
 
-export async function getItemsDetail({ productId = 0 }) {
-  const query = `${productId}`;
+export async function getItemDetails({
+  productId = 0,
+  comments = null,
+  limit = 1,
+  cursor = 0,
+}) {
+  let query = `${productId}`;
+  if (comments !== null) {
+    query += `/comments?limit=${limit}&cursor=${cursor}`;
+  }
 
   const response = await fetch(
     `https://panda-market-api.vercel.app/products/${query}`

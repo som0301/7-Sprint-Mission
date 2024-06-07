@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-// 기기 타입을 판별하는 함수 정의
 const getDeviceType = ({ isTablet, isMobile, isDesktop }) => {
   if (isTablet) {
     return "tablet";
@@ -13,6 +12,7 @@ const getDeviceType = ({ isTablet, isMobile, isDesktop }) => {
   }
 };
 
+// 기기 타입을 판별하는 함수 정의
 const useDeviceType = () => {
   const [deviceType, setDeviceType] = useState({
     isMobile: window.innerWidth <= 767,

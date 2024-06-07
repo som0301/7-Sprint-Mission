@@ -16,7 +16,7 @@ function AddItemPage() {
 
   // 파일 정보
   const [fileValue, setFileValue] = useState(null);
-  // 폼 inpust 모든 유효성 검사
+  // 폼 inputs 모든 유효성 검사
   const isFormValid = Object.values(itemIntroduction).every(
     (input) => input.isValid
   );

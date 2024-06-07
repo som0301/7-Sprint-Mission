@@ -5,6 +5,7 @@ import ProductSearch from "./ProductSearch";
 import Pagination from "./Pagination";
 import { getCustomRound } from "../../../utils/Utils";
 import useDeviceType from "../../../hooks/useDeviceType";
+import { Link } from "react-router-dom";
 
 const PAGE_INIT = 1;
 const ITEM_INIT = 10;
@@ -65,7 +66,9 @@ function AllProductList() {
       <ProductSearch onOptionChange={handleOptionChange} />
       <ul className="list-area all-area">
         {items.map((item) => (
-          <AllProductItem key={item.id} item={item} />
+          <Link key={item.id} to={`/items/${item.id}`}>
+            <AllProductItem item={item} />
+          </Link>
         ))}
       </ul>
       <div className="pagination">
