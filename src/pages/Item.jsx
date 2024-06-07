@@ -10,6 +10,7 @@ import turnBackImg from '../assets/icons/ic_turn_back.svg';
 function Item() {
   const params = useParams();
   const [comments, setComments] = useState([]);
+  const [inputComment, setInputComment] = useState('');
   const [item, setItem] = useState({
     name: '',
     description: '',
@@ -27,6 +28,9 @@ function Item() {
     setComments(list);
   };
 
+  const handleInputChange = (e) => {
+    setInputComment(e.target.value);
+  };
   useEffect(() => {
     handleLoadItem(params.itemId);
     handleLoadComments(params.itemId);
@@ -42,9 +46,11 @@ function Item() {
         <textarea
           id='comment-textarea'
           name='comment-textarea'
+          value={inputComment}
+          onChange={handleInputChange}
           placeholder='개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.'
         />
-        <button>등록</button>
+        <button disabled={!inputComment}>등록</button>
       </div>
 
       <div className={styles['comment-container']}>

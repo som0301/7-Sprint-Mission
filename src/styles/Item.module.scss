@@ -36,7 +36,7 @@
 .item .register-comment button {
   font-family: 'Pretendard';
   font-weight: 300;
-  background-color: var(--gray400-color);
+  background-color: var(--blue-color);
   color: var(--white-color);
   text-decoration: none;
   border-radius: 5px;
@@ -46,6 +46,10 @@
   justify-content: center;
   align-items: center;
   float: right;
+}
+
+.item .register-comment button:disabled {
+  background-color: var(--gray400-color);
 }
 
 .item .index-btn {
