@@ -1,4 +1,5 @@
 .button {
+  width: fit-content;
   padding: 12px 23px;
   font-size: 1.6rem;
   text-wrap: nowrap;

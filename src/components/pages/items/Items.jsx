@@ -1,9 +1,7 @@
 import styles from './Items.module.css';
-import ItemsNav from '../../ui/itemnav/itemsnav';
 import BestProductList from '../../ui/bestproductlist/bestproductlist';
 import AllProductList from '../../ui/allproductlist/allproductlist';
 import { classModuleName } from '../../../modules';
-import Button from '../../modules/button/button';
 
 
 

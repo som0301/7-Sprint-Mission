@@ -14,6 +14,7 @@ function ProductDetail() {
   const location = useLocation();
   const { images, name, price, description, tags, id, favoriteCount } = location.state.item;
   const priceChangeKR = new Intl.NumberFormat('ko-KR').format(price);
+
   const handleLoad = async (options) => {
     let result;
     try {
@@ -64,13 +65,14 @@ function ProductDetail() {
           <form className={classModuleName('comment-input-form', styles)}>
             <h2>문의 하기</h2>
             <textarea value={commentInput} onChange={handleChange} placeholder="개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다."></textarea>
-            <Button link='/items' type='button' isDisable={!commentInput}>등록</Button>
+            <Button type='button' isDisable={!commentInput}>등록</Button>
           </form>
           <div className={classModuleName('comments-container', styles)}>
             {comments.map((comment) => {
               return <Comment key={comment.id} comment={comment} />;
             })}
           </div>
+          <Button></Button>
         </section>
       </div>
     </div>
