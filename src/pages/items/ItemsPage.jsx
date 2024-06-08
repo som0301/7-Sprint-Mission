@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import ItemsList from 'pages/items/components/ItemsList';
 import usePageSize from 'pages/items/hooks/usePageSize';
-import useViewport from 'pages/items/hooks/useViewport';
+import useViewport from 'shared/hooks/useViewport';
+import ItemsList from 'pages/items/components/ItemsList';
+import Pagination from 'pages/items/components/Pagination';
 
 const Container = styled.div`
     display: flex;
@@ -27,7 +28,7 @@ function ItemsPage() {
     return (
         <Container>
             <ListWrapper $deviceType={deviceType}>
-                <ItemsList type="best" page={page} pageSize={bestItemsPageSize} order="favorite" search={search} />
+                <ItemsList type="best" page={1} pageSize={bestItemsPageSize} order="favorite" search={search} />
                 <ItemsList
                     type="all"
                     page={page}
@@ -36,6 +37,7 @@ function ItemsPage() {
                     setOrder={setOrder}
                     search={search}
                 />
+                <Pagination type="all" page={page} setPage={setPage} />
             </ListWrapper>
         </Container>
     );

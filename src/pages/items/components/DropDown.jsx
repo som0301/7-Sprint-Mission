@@ -10,10 +10,11 @@ const DropDownButton = styled.button`
     border-radius: 12px;
     border: 1px solid var(--gray200);
     background-color: #fff;
-    font-size: 16px;padding: ${({ $deviceType }) => {
+    font-size: 16px;
+    padding: ${({ $deviceType }) => {
         if ($deviceType === 'mobile') return '0 9px';
         if ($deviceType !== 'mobile') return '0 20px;';
-    }}}
+    }};
 `;
 
 const DropDownIcon = styled.img`
@@ -40,6 +41,7 @@ const DropDownMenu = styled.ul`
     top: 46px;
     right: 0;
     width: 130px;
+    z-index: 1;
 `;
 
 const DropDownItem = styled.li`

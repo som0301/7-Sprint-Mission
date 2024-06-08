@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import useFetchItems from 'pages/items/hooks/useFetchItems';
-import useViewport from 'pages/items/hooks/useViewport';
+import useViewport from 'shared/hooks/useViewport';
 import ItemToolbar from 'pages/items/components/ItemToolbar';
 import HeartIcon from 'shared/assets/image/ic_heart.svg';
 
@@ -12,7 +12,7 @@ const ItemContainer = styled.div`
     padding: ${({ $deviceType }) => {
         if ($deviceType === 'tablet') return '0 24px';
         if ($deviceType === 'mobile') return '0 16px';
-    }}}
+    }};
 `;
 
 const ItemWrapper = styled.div`
@@ -79,6 +79,7 @@ const ItemImage = styled.img`
         }
     }};
     border-radius: 16px;
+    box-shadow: 0 8px 24px #959da533;
 `;
 
 const ItemName = styled.p`

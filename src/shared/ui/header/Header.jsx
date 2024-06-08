@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import NavigationLink from './NavigationLink';
-import useViewport from 'pages/items/hooks/useViewport';
+import useViewport from 'shared/hooks/useViewport';
 
 const HeaderWrapper = styled.header`
     position: fixed;
@@ -13,6 +13,7 @@ const HeaderWrapper = styled.header`
     left: 0;
     background: #fff;
     border-bottom: 1px solid #dfdfdf;
+    z-index: 2;
     padding: ${({ $deviceType }) => {
         if ($deviceType === 'desktop') return '0 200px';
         if ($deviceType === 'tablet') return '0 34px 0 24px';

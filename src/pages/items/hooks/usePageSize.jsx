@@ -1,4 +1,4 @@
-import useViewport from 'pages/items/hooks/useViewport';
+import useViewport from 'shared/hooks/useViewport';
 
 function usePageSize(type) {
     const { deviceType } = useViewport();
