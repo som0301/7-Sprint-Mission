@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
-import { getItemDetails as getProductDetails } from "../../api/api";
+import { getProductDetails } from "../../api/api";
 import { useEffect, useState } from "react";
 import ProductDetails from "./components/ProductDetails";
 import CommentsSection from "./components/CommentsSection";
+import GoBackToListButton from "./components/GoBackToListButton";
 
 function ProductDetailPage() {
   // 해당 페이지의 productId를 받아옴
@@ -15,12 +16,19 @@ function ProductDetailPage() {
   항상 참(true)으로 평가가 되고
   데이터를 가져와서 각 속성을 설정하는 과정에서 비동기 처리를 완료하기 전에 ProductDetails 컴포넌트가 렌더링되기 때문에 에러가 발생
   빈 객체에는 images, tags, name, price, description 등의 속성이 없으므로 해당 속성에 접근할 때 undefined가 반환되어 에러가 발생
+  null로 초기값을 줘서 값이 할당 안되면 false가 되게 해야함
   간단하게 처리 가능한데 돌고 돌았음..
+
+  AllProductList나 BestProductList에서는 왜 문제가 없나 봤더니 데이터를 받는
+  const [items, setItems] = useState([]);가 배열이고 그 안에 객체들이 담겨있어 
+  map에서 빈배열을 처리할 때는 콜백 함수가 호출되지 않기 때문에 문제가 발생하지 않는다고 함 
+  객체는 속성이 없을 때 접근하려하면 오류가 발생할 수 있음을 명심
   */
 
   // 상품 상세 내용을 서버에서 받아올 객체
   const [productDetails, setProductDetails] = useState(null);
-  const [productComments, setProductComments] = useState(null);
+  // 코멘트 관련 내용을 서버에서 받아올 객체
+  const [productComments, setProductComments] = useState([]);
 
   const fetchData = async () => {
     try {
@@ -44,8 +52,9 @@ function ProductDetailPage() {
       setProductDetails(validatedProductDetails); 
       */
 
+      console.log(productDetailsResult);
       setProductDetails(productDetailsResult);
-      setProductComments(productCommentResult);
+      setProductComments(productCommentResult.list);
 
       console.log(productCommentResult);
     } catch (error) {
@@ -64,7 +73,8 @@ function ProductDetailPage() {
       )} 원래는 이렇게 했으나 더 깔끔하게 변경하고 싶었음*/}
       {/* ProductDetails 값이 있을 때만 컴포넌트를 렌더링 */}
       {productDetails && <ProductDetails productDetails={productDetails} />}
-      <CommentsSection />
+      <CommentsSection productComments={productComments} />
+      <GoBackToListButton />
     </section>
   );
 }

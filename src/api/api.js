@@ -16,10 +16,10 @@ export async function getItems({
   return body;
 }
 
-export async function getItemDetails({
+export async function getProductDetails({
   productId = 0,
   comments = null,
-  limit = 1,
+  limit = 3,
   cursor = 0,
 }) {
   let query = `${productId}`;
