@@ -1,0 +1,36 @@
+@import url("../../components/globals.css");
+
+.ProductDetailPage {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  width: 344px;
+  max-width: 1200px;
+
+  margin: 16px auto 0;
+  padding: 16px;
+}
+
+.ProductDetailPage > *:last-child {
+  align-self: center;
+}
+
+.ProductDetailPage-comments-not-found {
+  width: 200px;
+  height: 224px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .ProductDetailPage {
+    width: 696px;
+    margin: 24px auto 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .ProductDetailPage {
+    width: 1201px;
+  }
+}
