@@ -18,25 +18,31 @@ const ItemContainer = styled.div`
 const ItemWrapper = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
 `;
 
-const ItemType = styled.h2`
+export const ItemType = styled.h2`
     font-size: 20px;
     line-height: 140%;
+    display: ${({ $type, $deviceType }) => {
+        if ($type === 'all') {
+            if ($deviceType === 'mobile') return 'none';
+        }
+    }};
 `;
 
 const ItemInfo = styled.ul`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    list-style: none;
+    padding: 0;
     row-gap: ${({ $type, $deviceType }) => {
         if ($type === 'all') {
             if ($deviceType === 'mobile') return '32px';
         }
         return '40px';
     }};
-    list-style: none;
-    padding: 0;
 `;
 
 const ItemCard = styled.li`
@@ -111,8 +117,10 @@ function ItemsList({ type, page, pageSize, order, setOrder, search }) {
     if (error) return <p>Error: {error}</p>;
     return (
         <ItemContainer $deviceType={deviceType}>
-            <ItemWrapper>
-                <ItemType>{type === 'best' ? '베스트 상품' : '전체 상품'}</ItemType>
+            <ItemWrapper $deviceType={deviceType}>
+                <ItemType $type={type} $deviceType={deviceType}>
+                    {type === 'best' ? '베스트 상품' : deviceType === 'desktop' ? '전체 상품' : '판매 중인 상품'}
+                </ItemType>
                 <ItemToolbar type={type} deviceType={deviceType} order={order} setOrder={setOrder} />
             </ItemWrapper>
             <ItemInfo $type={type} $deviceType={deviceType}>

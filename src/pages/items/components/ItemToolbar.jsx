@@ -1,10 +1,19 @@
 import styled from 'styled-components';
 import SearchIcon from 'shared/assets/image/ic_search.svg';
 import DropDown from 'pages/items/components/DropDown';
+import { ItemType } from 'pages/items/components/ItemsList';
 
 const ItemToolbarWrapper = styled.div`
     display: flex;
-    column-gap: 12px;
+    flex-direction: ${({ $deviceType }) => {
+        if ($deviceType === 'mobile') return 'column';
+    }};
+    column-gap: ${({ $deviceType }) => {
+        if ($deviceType !== 'mobile') return '12px';
+    }};
+    row-gap: ${({ $deviceType }) => {
+        if ($deviceType === 'mobile') return '8px';
+    }};
 `;
 
 const SearchItem = styled.input`
@@ -16,14 +25,18 @@ const SearchItem = styled.input`
     border-radius: 12px;
     height: 42px;
     padding: 9px 20px 9px 44px;
-    width: 325px;
+    width: ${({ $deviceType }) => {
+        if ($deviceType === 'desktop') return '325px';
+        if ($deviceType === 'tablet') return '242px';
+        if ($deviceType === 'mobile') return '294px';
+    }}}
 `;
 
 const MoveAddItem = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 133px;
+    width: 133px;
     height: 42px;
     background: var(--blue);
     border-radius: 8px;
@@ -36,6 +49,13 @@ const MoveAddItem = styled.a`
     }
 `;
 
+const SearchSortWrapper = styled.div`
+    display: flex;
+    gap: ${({ $deviceType }) => {
+        if ($deviceType === 'mobile') return '8px';
+    }}}
+`;
+
 const SortItem = styled.div`
     display: flex;
     position: relative;
@@ -44,15 +64,38 @@ const SortItem = styled.div`
     font-size: 16px;
 `;
 
+const MobileToolBarWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
 function ItemToolbar({ type, deviceType, order, setOrder }) {
     return (
         type === 'all' && (
-            <ItemToolbarWrapper>
-                <SearchItem $deviceType={deviceType} placeholder="검색할 상품을 입력해주세요"></SearchItem>
-                <MoveAddItem>상품 등록하기</MoveAddItem>
-                <SortItem>
-                    <DropDown $deviceType={deviceType} order={order} setOrder={setOrder} />
-                </SortItem>
+            <ItemToolbarWrapper $deviceType={deviceType}>
+                {deviceType !== 'mobile' ? (
+                    <>
+                        <SearchItem $deviceType={deviceType} placeholder="검색할 상품을 입력해주세요" />
+                        <MoveAddItem>상품 등록하기</MoveAddItem>
+                        <SortItem>
+                            <DropDown deviceType={deviceType} order={order} setOrder={setOrder} />
+                        </SortItem>
+                    </>
+                ) : (
+                    <>
+                        <MobileToolBarWrapper>
+                            <ItemType>판매 중인 상품</ItemType>
+                            <MoveAddItem>상품 등록하기</MoveAddItem>
+                        </MobileToolBarWrapper>
+                        <SearchSortWrapper>
+                            <SearchItem $deviceType={deviceType} placeholder="검색할 상품을 입력해주세요" />
+                            <SortItem>
+                                <DropDown deviceType={deviceType} order={order} setOrder={setOrder} />
+                            </SortItem>
+                        </SearchSortWrapper>
+                    </>
+                )}
             </ItemToolbarWrapper>
         )
     );

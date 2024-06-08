@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import ItemsList from 'pages/items/components/ItemsList';
-import usePageSize from './hooks/usePageSize';
-import useViewport from './hooks/useViewport';
+import usePageSize from 'pages/items/hooks/usePageSize';
+import useViewport from 'pages/items/hooks/useViewport';
 
 const Container = styled.div`
     display: flex;
@@ -12,8 +12,8 @@ const Container = styled.div`
 const ListWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: ${({ deviceType }) => (deviceType === 'mobile' ? '87px' : '94px')};
-    row-gap: ${({ deviceType }) => (deviceType === 'mobile' ? '24px' : '40px')};
+    margin-top: ${({ $deviceType }) => ($deviceType === 'mobile' ? '87px' : '94px')};
+    row-gap: ${({ $deviceType }) => ($deviceType === 'mobile' ? '24px' : '40px')};
 `;
 
 function ItemsPage() {
@@ -27,7 +27,7 @@ function ItemsPage() {
     return (
         <Container>
             <ListWrapper $deviceType={deviceType}>
-                <ItemsList type="best" page={page} pageSize={bestItemsPageSize} order={order} search={search} />
+                <ItemsList type="best" page={page} pageSize={bestItemsPageSize} order="favorite" search={search} />
                 <ItemsList
                     type="all"
                     page={page}
