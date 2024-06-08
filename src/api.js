@@ -25,8 +25,10 @@ export async function getItemByID(productId = '') {
   return body;
 }
 
-export async function getCommentsByID(productId = '') {
-  const response = await fetch(`${BASE_URL}/${productId}/comments`);
+export async function getCommentsByID(productId = '', limit = 5, cursor = 0) {
+  const response = await fetch(
+    `${BASE_URL}/${productId}/comments?limit=${limit}&cursor=${cursor}`
+  );
   if (!response.ok) {
     throw new Error('데이터를 불러오는데 실패했습니다');
   }

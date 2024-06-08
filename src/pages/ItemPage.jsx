@@ -14,7 +14,7 @@ const INITIAL_PRODUCT = {
   images: [],
   favoriteCount: 0,
 };
-const INITIAL_COMMENTS = {};
+const INITIAL_COMMENTS = [];
 
 export default function ItemPage() {
   const { productId } = useParams();
@@ -41,33 +41,39 @@ export default function ItemPage() {
     [getValidItem]
   );
 
-  // const getValidComments = useCallback(
-  //   async (productId) => {
-  //     const result = await getCommentsAsync(productId);
-  //     if (!result) return;
-  //     return result;
-  //   },
-  //   [getCommentsAsync]
-  // );
+  const getValidComments = useCallback(
+    async (productId) => {
+      const result = await getCommentsAsync(productId);
+      if (!result) return;
+      const { list } = result;
+      return Array.isArray(list) ? list : [];
+    },
+    [getCommentsAsync]
+  );
 
-  // const loadcomments = useCallback(
-  //   async (options) => {
-  //     const nextItems = await getValidComments(options);
-  //     setProduct((prevItems) => nextItems);
-  //   },
-  //   [getValidComments]
-  // );
+  const loadcomments = useCallback(
+    async (options) => {
+      const nextItems = await getValidComments(options);
+      setComments((prevItems) => nextItems);
+    },
+    [getValidComments]
+  );
 
   useEffect(() => {
     loadItem(productId);
-    // loadcomments(productId);
   }, [productId, loadItem]);
 
+  useEffect(() => {
+    loadcomments(productId);
+  }, [productId, loadcomments]);
+
   return (
-    <div className="p-4">
+    <div className="max-w-[1200px] mx-auto xl:px-0 p-4 pb-40">
       <ProductDescription product={product} />
+      {itemLoadingError && <span>{itemLoadingError.message}</span>}
       <ProductReviews comments={comments} />
-      <Link to="/items">
+      {commentsLoadingError && <span>{commentsLoadingError.message}</span>}
+      <Link to="/items" className="flex justify-center">
         <RoundButton className="w-[240px]">목록으로 돌아가기</RoundButton>
       </Link>
     </div>

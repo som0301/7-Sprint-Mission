@@ -26,7 +26,7 @@ export default function ProductDescription({ product }) {
             alt="수정하기"
           />
         </div>
-        <div className="pt-4 pb-6 border-t border-solid border-gray-200 ">
+        <div className="pt-4 border-t border-solid border-gray-200 ">
           <h3 className="mb-2 font-medium text-sm text-gray-600">상품 소개</h3>
           <p className="mb-6 font-normal text-base text-gray-600">
             {description}
