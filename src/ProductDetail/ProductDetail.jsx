@@ -1,11 +1,12 @@
 import back from "../images/back.svg";
+import "./ProductDetail.css";
 import { getProductId, getProductIdComments } from "../api";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "./ProductDetail.css";
 import ProductComment from "./ProductComment";
 import ProductDetailInfo from "./ProductDetailInfo";
 import ProductInqury from "./ProductInqury";
+import { Link } from "react-router-dom";
 
 function ProductDetail() {
   const { productId } = useParams();
@@ -27,20 +28,23 @@ function ProductDetail() {
   console.log(ItemComment);
 
   return (
-    <div>
+    <div className="detail-wrapper">
       <ProductDetailInfo detailItem={detailItem} />
+      <div className="line"></div>
       <ProductInqury />
       <ProductComment comment={ItemComment} />
-      <button>
-        목록으로 돌아가기
-        <img
-          src={back}
-          alt="목록으로 돌아가기"
-          width={"24px"}
-          height={"24px"}
-        />
-      </button>
-      
+      <Link to="/items" className="comment-link">
+        <button className="list-button">
+          목록으로 돌아가기
+          <img
+            src={back}
+            alt="목록으로 돌아가기"
+            width={"24px"}
+            height={"24px"}
+            className="list-img"
+          />
+        </button>
+      </Link>
     </div>
   );
 }

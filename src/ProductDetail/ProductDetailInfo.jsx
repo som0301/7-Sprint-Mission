@@ -1,5 +1,5 @@
 import React from "react";
-import heart from "../images/heart.svg";
+import detail_heart from "../images/detail-heart.svg";
 import morebutton from "../images/morebutton.svg";
 
 const ProductDetailInfo = ({ detailItem }) => {
@@ -10,6 +10,7 @@ const ProductDetailInfo = ({ detailItem }) => {
   return (
     <div className="detailInfo">
       <img
+      className="img-detail"
         src={detailItem.images}
         alt="상품 상세 사진"
         width={"486px"}
@@ -23,7 +24,7 @@ const ProductDetailInfo = ({ detailItem }) => {
         </div>
 
         <h1 className="detailItem-price">{formatNumber(detailItem.price)}</h1>
-        <div className="line"></div>
+        <div className="top-wrapper-line"></div>
         <p className="top-wrapper-title">상품 소개</p>
         <p className="detailItem-description">{detailItem.description}</p>
         <p className="top-wrapper-title">상품 태그</p>
@@ -35,10 +36,11 @@ const ProductDetailInfo = ({ detailItem }) => {
             ))
           : null}
 
-        <div className="favortie-count">
-          <img src={heart} alt="좋아요" />
-          {detailItem.favoriteCount}
-        </div>
+        <button className="favorite-count">
+          <img src={detail_heart} alt="좋아요" width={"32px"} height={"32px"}/>
+          <span className="favorite-count-number">{detailItem.favoriteCount}</span>
+        </button>
+
       </div>
     </div>
   );

@@ -1,16 +1,13 @@
 import "./ProductItem.css";
 import heart from "./images/heart.svg";
 
-
 function formatNumber(number) {
   return new Intl.NumberFormat("ko-KR").format(number) + "원";
 }
 
 function ProductItem({ imgUrl, name, price, favoriteCount }) {
-
   return (
     <li className="itemlist">
-      
       <img src={imgUrl} alt="상품" className="imgurl" />
       <span className="name">{name}</span>
       <span className="price">{formatNumber(price)}</span>
@@ -24,7 +21,6 @@ function ProductItem({ imgUrl, name, price, favoriteCount }) {
         />
         <span className="favoriteCount">{favoriteCount}</span>
       </div>
-  
     </li>
   );
 }

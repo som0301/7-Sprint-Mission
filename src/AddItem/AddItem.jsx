@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import AddItemHeader from "./AddItemHeader";
 import "./AddItem.css";
 import FileInputImage from "./FileInputImage";
 import deleteTag from "../images/deleteTag.svg";
@@ -73,7 +72,6 @@ function AddItem() {
 
   return (
     <div className="all-wrapper">
-      <AddItemHeader />
       <div className="wrapper">
         <div className="add-top">
           <h2 className="register">상품 등록하기</h2>
