@@ -16,7 +16,7 @@ export async function getItems({
   return body;
 }
 
-export async function getItemByID({ productId }) {
+export async function getItemByID(productId = '') {
   const response = await fetch(`${BASE_URL}/${productId}`);
   if (!response.ok) {
     throw new Error('데이터를 불러오는데 실패했습니다');
@@ -25,7 +25,7 @@ export async function getItemByID({ productId }) {
   return body;
 }
 
-export async function getCommentsByID({ productId }) {
+export async function getCommentsByID(productId = '') {
   const response = await fetch(`${BASE_URL}/${productId}/comments`);
   if (!response.ok) {
     throw new Error('데이터를 불러오는데 실패했습니다');

@@ -3,6 +3,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'custom-layout': 'auto 1fr',
+      },
       fontFamily: {
         primary: 'Pretendard',
       },

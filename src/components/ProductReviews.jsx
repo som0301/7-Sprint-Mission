@@ -1,3 +1,8 @@
 export default function ProductReviews({ comments }) {
-  return <div>리뷰 </div>;
+  // const {
+  //   message,
+  //   details: { limit },
+  // } = comments;
+
+  return <div></div>;
 }
