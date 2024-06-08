@@ -1,0 +1,11 @@
+@import url("./globals.css");
+
+.Tag {
+  display: inline;
+  padding: 6px 16px;
+  border-radius: 26px;
+  background-color: var(--gray100);
+}
+
+.Tag-content {
+}
