@@ -19,13 +19,15 @@ function SellList({ type = "", items }) {
       </div>
       <div className={`SellList-items ${type}`}>
         {items.map((item) => (
-          <ItemCard
-            className={type}
-            images={item.images}
-            name={item.name}
-            price={item.price}
-            favoriteCount={item.favoriteCount}
-          ></ItemCard>
+          <Link to={`/items/${item.id}`}>
+            <ItemCard
+              className={type}
+              images={item.images}
+              name={item.name}
+              price={item.price}
+              favoriteCount={item.favoriteCount}
+            ></ItemCard>
+          </Link>
         ))}
       </div>
     </section>
