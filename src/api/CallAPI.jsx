@@ -10,3 +10,9 @@ export async function CallItemDetail(id) {
     const body = await response.json();
     return body;
 }
+
+export async function CallItemComment(id, limit=5) {
+    const response = await fetch(`https://panda-market-api.vercel.app/products/${id}/comments?limit=${limit}`);
+    const body = await response.json();
+    return body;
+}

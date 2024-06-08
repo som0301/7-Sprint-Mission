@@ -1,21 +1,56 @@
 import { useEffect, useState } from "react";
 import heartIcon from "../../src/images/logo/favoriteIcon.svg";
 import { CallItemDetail } from "../api/CallAPI";
-import { useLocation } from "react-router-dom";
+import { CallItemComment } from "../api/CallAPI";
+import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
+import BackIcon from "../../src/images/home/ic_back.svg";
 import More from "../../src/images/home/ic_kebab.svg";
+import UserIcon from "../../src/images/home/maskicon.png"
 
 const ItemDetailLayer = styled.div`
+    width: 100%;
+    max-width: 1200px;
     display: flex;
-    justify-content: center;
-    margin-top: 24px;
+    padding-bottom: 32px;
+    border-bottom: solid 1px #E5E7EB;
+    margin-bottom: 24px;
     gap: 24px;
+
+    /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+        gap: 16px;
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+        flex-direction: column;
+        gap: 16px;
+    }
+
 `;
 
 const ItemImg = styled.img`
     width: 486px;
     height: 486px;
     border-radius: 16px;
+
+        /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
 `;
 
 const ItemNamePrice = styled.div `
@@ -31,13 +66,44 @@ const ItemNamePrice = styled.div `
         height: 24px;
         right: 0;
     }
+    /* 테블릿버전 */
+    @media (768px < width < 1280px) {
 
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
 `;
 
 const ItemName = styled.p `
     font-size: 24px;
     line-height: 28.64px;
     font-weight: 600;
+    /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
 `;
 
 const ItemPrice = styled.p `
@@ -45,6 +111,22 @@ const ItemPrice = styled.p `
     line-height: 47.73px;
     font-weight: 600;
     margin-bottom: 16px;
+        /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
 `;
 
 const DescriptionLayer = styled.div `
@@ -67,6 +149,22 @@ const DescriptionLayer = styled.div `
         color: #1f2937;
         margin-bottom: 23px;
     }
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
 `;
 
 const ItemTags = styled.p `
@@ -76,11 +174,43 @@ const ItemTags = styled.p `
     line-height: 16.71px;
     margin-top: 24px;
     margin-bottom: 8px;
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
 `;
 
 const TageList = styled.div `
     display: flex;
     gap: 8px;
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
 `;
 
 const Tag = styled.button `
@@ -89,6 +219,22 @@ const Tag = styled.button `
     background-color: #f3f4f6;
     color: #1f2937;
     height: 36px;
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
 `;
 
 const FavoriteCount = styled.div `
@@ -100,33 +246,305 @@ const FavoriteCount = styled.div `
     padding: 4px 12px;
     gap: 4px;
     border: solid 1px #E5E7EB;
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
 `;
 
 const Detail = styled.div `
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
 `;
+
+const Question = styled.div `
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    gap: 16px;
+
+    h1 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 19.09px;
+        color: #111827;
+    }
+
+    input {
+        width: 1200px;
+        height: 104px;
+        padding: 16px 24px;
+        background-color:#F3F4F6;
+        box-sizing: border-box;
+    }
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
+`;
+
+const ButtonLayer = styled.div `
+    display: flex;
+    justify-content: flex-end;
+    
+    button {
+        width: fit-content;
+        border-radius: 8px;
+        padding: 12px 23px;
+        background-color: #9ca3af;
+        color: #ffffff;
+    }
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
+`;
+
+const UserQuestionList = styled.div `
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    
+    p {
+        font-size: 16px;
+        color: #1f2937;
+        line-height: 22.4px;
+        font-weight: 400;
+    }
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
+`;
+
+const Comment = styled.div `
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-bottom: solid 1px #E5E7EB;
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
+`;
+
+const CommentDetail = styled.div `
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    h1 {
+        font-size: 14px;
+        line-height: 16.71px;
+        color: #4b5563;
+        font-weight: 400;
+    }
+    h2 {
+        font-size: 12px;
+        line-height: 14.32px;
+        font-weight: 400;
+    }
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
+`;
+
+const CommentData = styled.div `
+    display: flex;
+    margin-bottom: 24px;
+    gap: 8px;
+    img {
+        width: 40px;
+        height: 40px;
+    }
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    .addItemLayer {
+        max-width: 696px;
+    }
+
+    .itemSubmitButton {
+        max-width: 696px;
+    }
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
+
+`;
+
+const BackListButton = styled.div `
+    background-color: #3692FF;
+    gap: 10px;
+    display: flex;
+    border-radius: 40px;
+    padding: 12px 71px;
+    color: #ffffff;
+    justify-content: center;
+    align-items: center;
+            /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+
+    }
+`;
+
+const Section = styled.div `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 24px;
+
+             /* 테블릿버전 */
+    @media (768px < width < 1280px) {
+        padding: 24px;
+    }
+
+    /* 모바일버전 */
+    @media (400px < width < 768px) {
+        padding: 16px;
+    }
+
+`;
+
+function DateFomet(strdate) {
+    const date = new Date(strdate);
+
+    const year = date.getUTCFullYear();
+    const month = String(date.getUTCMonth() + 1).padStart(2, '0');
+    const day = String(date.getUTCDate()).padStart(2, '0');
+    const hours = String(date.getUTCHours()).padStart(2, '0');
+    const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+    const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+    const formattedDate = `${year}/${month}/${day}`;
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+    return `${formattedDate} ${formattedTime}`;
+}
 
 function ItemDetail() {
     const [item, setItem] = useState([]);
+    const [itemComments, setItemComments] = useState([]);
     const location = useLocation();
     const itemId = (location.pathname.split("/").pop());
 
     const ItemLoad = async () => {
         const response = await CallItemDetail(itemId);
         setItem(response);
-        console.log(item);
     };
+
+    const ItemComments = async () => {
+        const resopnse = await CallItemComment(itemId);
+        setItemComments(resopnse.list);
+        console.log(itemComments);
+    }
 
     useEffect(() => {
         ItemLoad();
+        ItemComments();
     }, [itemId]);
 
     if (!item) return <div>Loading...</div>;
 
     return(
-        <section>
+        <Section>
             <ItemDetailLayer>
                 <ItemImg src={item.images} alt="상품사진" />
                 <Detail>
@@ -157,9 +575,36 @@ function ItemDetail() {
                     </FavoriteCount>
                 </Detail>
             </ItemDetailLayer>
-            <div className="상품문의"></div>
-            <div className="상품 질문"></div>
-        </section>
+            <Question>
+                <h1>문의하기</h1>
+                <input placeholder="개인정보를 공유 및 요청하거나, 명예 훼손,
+                무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 
+                이에 대한 민형사상 책임은 게시자에게 있습니다." />
+                <ButtonLayer>
+                    <button>등록</button>
+                </ButtonLayer>
+                <UserQuestionList>
+                    {itemComments.map((comment, index) => (
+                        <Comment key={index}>
+                            <p>{comment.content}</p>
+                            <CommentData>
+                                <img src={UserIcon} alt="유저아이콘" />
+                                <CommentDetail>
+                                    <h1>{comment.writer.nickname}</h1>
+                                    <h2>{DateFomet(comment.updatedAt)}</h2>
+                                </CommentDetail>
+                            </CommentData>
+                        </Comment>
+                    ))}
+                </UserQuestionList>
+            </Question>
+            <NavLink to="/items">
+                <BackListButton>
+                    <p>목록으로 돌아가기</p>
+                    <img src={BackIcon} alt="돌아가기 아이콘"></img>
+                </BackListButton>
+            </NavLink>
+        </Section>
     );
 }
 
