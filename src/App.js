@@ -5,6 +5,7 @@ import Header from "../src/Component/Header";
 import HomePage from "../src/pages/HomePage";
 import UsedMarket from "../src/pages/UsedMarket";
 import AddItemPage from '../src/pages/AddItemPage';
+import ItemDetail from "../src/pages/ItemDetail";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<HomePage />} />;
-        <Route path="items" element={<UsedMarket />} />;
+        <Route path="items" element={<UsedMarket />} />
+        <Route path="items/:productId" element={<ItemDetail />} />
         <Route path="additem" element={<AddItemPage />} />;
       </Routes>
     </BrowserRouter>

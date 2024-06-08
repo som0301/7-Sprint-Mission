@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import favicon from "../images/logo/favoriteIcon.svg";
-import CallAPI from "../api/CallAPI";
+import {CallItemSearch} from "../api/CallAPI";
 import "../../src/style/BestItemsSection.css";
+import { Link, NavLink } from "react-router-dom";
 
 function getWidth() {
     let width = window.innerWidth;
@@ -22,7 +23,9 @@ function getWidth() {
 function BestItem({item}) {
     return (
         <div className="BestItem">
-            <img src={item.images[0]} alt={item.name}/>
+            <NavLink to={`/items/${item.id}`}>
+                <img src={item.images[0]} alt={item.name}/>
+            </NavLink>
             <div className="ItemHistory">
                 <p>{item.name}</p>
                 <h1>{item.price.toLocaleString()}원</h1>
@@ -40,7 +43,7 @@ function BestItemsSection() {
     const [ItemCount, setItemCount] = useState(getWidth());
 
     const BestItemsLoad = async (ItemCount) => {
-        const response = await CallAPI(1, ItemCount);
+        const response = await CallItemSearch(1, ItemCount);
         setBestItemsList(response.list);
     };
     useEffect(() => {

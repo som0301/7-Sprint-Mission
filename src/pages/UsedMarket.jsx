@@ -1,6 +1,7 @@
 import "../../src/style/UsedMarket.css";
 import BestItemsSection from "../Component/BestItemsSection";
 import AllItemsSection from "../Component/AllItemsSction";
+import { Outlet } from "react-router-dom";
 
 function usedMarket() {
     return (

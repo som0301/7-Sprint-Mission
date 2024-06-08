@@ -6,7 +6,7 @@ import maskIcon from "../../src/images/home/maskicon.png"
 
 function Header() {
     const location = useLocation();
-    const marketAction = location.pathname === `/items` || location.pathname === `/additem`;
+    const marketAction = /^(\/items(\/\d+)?|\/additem)$/.test(location.pathname);
     const mask = useRef();
     const loginButton = useRef();
 

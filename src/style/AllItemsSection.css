@@ -38,7 +38,7 @@
     margin-bottom: 40px;
 }
 
-.AllItem > img {
+.AllItem > a > img {
     width: 221px;
     height: 221px;
     margin-bottom: 16px;
