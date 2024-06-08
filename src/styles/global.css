@@ -101,3 +101,7 @@ textarea:focus {
     padding: 0 16px;
   }
 }
+
+textarea {
+  resize: none;
+}

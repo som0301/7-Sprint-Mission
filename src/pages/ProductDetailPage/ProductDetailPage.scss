@@ -1,0 +1,257 @@
+@mixin font-style($size, $weight, $color, $lineHeight) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: $lineHeight;
+}
+
+.productDetailsMain {
+  width: 1200px;
+
+  h1 {
+    @include font-style(24px, 600, var(--gray800), 28.64px);
+  }
+
+  h2 {
+    @include font-style(40px, 600, var(--gray800), 47.73px);
+  }
+
+  h3 {
+    @include font-style(14px, 500, var(--gray800), 16.71px);
+  }
+
+  .dividerLine {
+    border: 1px solid var(--gray200);
+    margin-bottom: 16px;
+  }
+
+  p {
+    @include font-style(16px, 400, var(--gray800), 22.4px);
+  }
+
+  span {
+    @include font-style(16px, 400, var(--gray800), 24px);
+  }
+
+  .kebabImage {
+    cursor: pointer;
+  }
+
+  .goBackButton {
+    margin: auto;
+    margin-top: 40px;
+    background-color: var(--activate-button-blue);
+    padding: 12px 71px 12px 71px;
+    border-radius: 40px;
+    @include font-style(18px, 600, white, 24px);
+    font-family: inherit;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .productDetailsWrapper {
+    .productDetails {
+      display: flex;
+      gap: 24px;
+
+      margin-bottom: 32px;
+
+      #productImage {
+        width: 486px;
+        height: 486px;
+      }
+    }
+
+    .productInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+
+      .titleWrapper {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+      }
+
+      .kebabImage {
+        width: 24px;
+        height: 24px;
+      }
+
+      h2 {
+        margin-bottom: 16px;
+      }
+
+      #dividerLine {
+        margin-bottom: 16px;
+        width: 680px;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+      }
+
+      p {
+        margin-bottom: 23px;
+      }
+
+      .productTagsWrapper {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .productTags {
+          display: inline-block;
+          padding: 6px 16px 6px 16px;
+          background-color: var(--gray100);
+          border-radius: 26px;
+          cursor: pointer;
+        }
+      }
+
+      .favoriteButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+
+        width: 87px;
+        height: 40px;
+
+        padding: 4px 12px 4px 12px;
+        border: 1px solid var(--gray200);
+        border-radius: 35px;
+
+        img {
+          width: 32px;
+          height: 32px;
+        }
+
+        h3 {
+          margin: 0;
+          @include font-style(16px, 500, var(--gray500), 19.09px);
+        }
+      }
+    }
+    #centerLine {
+      margin-bottom: 24px;
+    }
+  }
+
+  .commentsSection {
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+
+      h3 {
+        @include font-style(16px, 600, var(--gray900), 19.09px);
+      }
+
+      textarea {
+        width: 100%;
+        height: 104px;
+        border: none;
+        border-radius: 12px;
+        padding: 16px 24px 16px 24px;
+
+        background-color: var(--gray100);
+      }
+
+      textarea::placeholder {
+        @include font-style(16px, 400, var(--gray400), 24px);
+      }
+
+      button {
+        font-family: inherit;
+        padding: 12px 23px 12px 23px;
+        border-radius: 8px;
+        background-color: var(--activate-button-blue);
+        @include font-style(16px, 600, white, 19.09px);
+        align-self: flex-end;
+      }
+
+      button:disabled {
+        background-color: var(--gray400);
+      }
+    }
+
+    p {
+      @include font-style(16px, 400, var(--gray800), 22.4px);
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .comment {
+      margin-bottom: 24px;
+
+      .commentContentWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+
+        img {
+          width: 24px;
+          height: 24px;
+        }
+      }
+      .writerWrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        img {
+          width: 40px;
+          height: 40px;
+
+          background-color: lightblue;
+        }
+
+        .nicknameWrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 4px;
+
+          h3 {
+            @include font-style(14px, 400, var(--gray600), 16.71px);
+          }
+
+          h4 {
+            @include font-style(12px, 400, var(--gray400), 14.32px);
+          }
+        }
+      }
+    }
+
+    .emptyComment {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+
+      h3 {
+        @include font-style(16px, 400, var(--gray400), 24px);
+      }
+    }
+  }
+}

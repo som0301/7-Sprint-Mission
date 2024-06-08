@@ -1,19 +1,20 @@
 import Comment from "./Comment";
 import emptyImg from "../../../assets/images/icons/Img_inquiry_empty.svg";
+import { useState } from "react";
 
 const CommentsSection = ({ productComments }) => {
   const isCommentEmpty = productComments.length === 0 ? true : false;
-  let isSubmitValid = false;
+  const [isSubmitValid, setIsSubmitValid] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
   const handleChange = (e) => {
-    isSubmitValid = !!e.target.value;
+    setIsSubmitValid(!!e.target.value);
   };
 
   return (
-    <div className="CommentsSection">
+    <div className="commentsSection">
       <form onSubmit={handleSubmit}>
         <h3>문의하기</h3>
         <textarea
@@ -25,7 +26,7 @@ const CommentsSection = ({ productComments }) => {
         <button disabled={!isSubmitValid}>등록</button>
       </form>
       {isCommentEmpty && (
-        <div>
+        <div className="emptyComment">
           <img src={emptyImg} alt="문의가 없다는 수화기 든 판다" />
           <h3>아직 문의가 없습니다.</h3>
         </div>

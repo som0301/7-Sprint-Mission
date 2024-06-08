@@ -8,17 +8,23 @@ const Comment = ({ comment }) => {
   const formattedTime = getFormatTime(comment.updatedAt);
 
   return (
-    <div className="Comment">
-      <p>{comment.content} </p>
-      <img src={kebabImg} alt="더보기" />
-      <img
-        src={comment.writer.image}
-        alt={`${comment.writer.nickname}의 프로필 사진`}
-      />
-      <h3>{comment.writer.nickname}</h3>
-      <h4>
-        {formattedTime} {`(${elapsedTime})`}
-      </h4>
+    <div className="comment">
+      <div className="commentContentWrapper">
+        <p>{comment.content} </p>
+        <img className="kebabImage" src={kebabImg} alt="더보기" />
+      </div>
+      <div className="writerWrapper">
+        <img
+          src={comment.writer.image}
+          alt={`${comment.writer.nickname}의 프로필 사진`}
+        />
+        <div className="nicknameWrapper">
+          <h3>{comment.writer.nickname}</h3>
+          <h4>
+            {formattedTime} {`(${elapsedTime})`}
+          </h4>
+        </div>
+      </div>
     </div>
   );
 };

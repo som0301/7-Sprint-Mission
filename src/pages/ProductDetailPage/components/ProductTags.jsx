@@ -1,7 +1,7 @@
 const ProductTags = ({ tag }) => {
   return (
     <>
-      <span>#{tag} </span>
+      <span className="productTags">#{tag} </span>
     </>
   );
 };

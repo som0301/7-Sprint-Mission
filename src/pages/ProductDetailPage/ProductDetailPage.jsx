@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ProductDetails from "./components/ProductDetails";
 import CommentsSection from "./components/CommentsSection";
 import GoBackToListButton from "./components/GoBackToListButton";
+import "./ProductDetailPage.scss";
 
 function ProductDetailPage() {
   // 해당 페이지의 productId를 받아옴
@@ -27,7 +28,7 @@ function ProductDetailPage() {
 
   // 상품 상세 내용을 서버에서 받아올 객체
   const [productDetails, setProductDetails] = useState(null);
-  // 코멘트 관련 내용을 서버에서 받아올 객체
+  // 코멘트 리스트를 서버에서 받아올 배열
   const [productComments, setProductComments] = useState([]);
 
   const fetchData = async () => {
@@ -41,18 +42,6 @@ function ProductDetailPage() {
         comments: true,
       });
 
-      /* 데이터를 받아온 후에 validatedProductDetails 생성. 값이 없을 때 발생하는 오류 방지였으나 값이 없을 때 렌더링 방지 후 필요없음을 깨달음
-      const validatedProductDetails = {
-        images: result?.images || [],
-        tags: result?.tags || [],
-        name: result?.name || "",
-        price: result?.price || "",
-        description: result?.description || "",
-      };
-      setProductDetails(validatedProductDetails); 
-      */
-
-      console.log(productDetailsResult);
       setProductDetails(productDetailsResult);
       setProductComments(productCommentResult.list);
 
@@ -67,11 +56,7 @@ function ProductDetailPage() {
   }, [productId]);
 
   return (
-    <section>
-      {/* {Object.keys(productDetails).length > 0 && (
-        <ProductDetails productDetails={productDetails} />
-      )} 원래는 이렇게 했으나 더 깔끔하게 변경하고 싶었음*/}
-      {/* ProductDetails 값이 있을 때만 컴포넌트를 렌더링 */}
+    <section className="productDetailsMain">
       {productDetails && <ProductDetails productDetails={productDetails} />}
       <CommentsSection productComments={productComments} />
       <GoBackToListButton />
