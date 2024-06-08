@@ -51,7 +51,7 @@ const MoveAddItem = styled.a`
 
 const SearchSortWrapper = styled.div`
     display: flex;
-    gap: ${({ $deviceType }) => {
+    column-gap: ${({ $deviceType }) => {
         if ($deviceType === 'mobile') return '8px';
     }}}
 `;
@@ -77,7 +77,7 @@ function ItemToolbar({ type, deviceType, order, setOrder }) {
                 {deviceType !== 'mobile' ? (
                     <>
                         <SearchItem $deviceType={deviceType} placeholder="검색할 상품을 입력해주세요" />
-                        <MoveAddItem>상품 등록하기</MoveAddItem>
+                        <MoveAddItem href="/additem">상품 등록하기</MoveAddItem>
                         <SortItem>
                             <DropDown deviceType={deviceType} order={order} setOrder={setOrder} />
                         </SortItem>
@@ -86,9 +86,9 @@ function ItemToolbar({ type, deviceType, order, setOrder }) {
                     <>
                         <MobileToolBarWrapper>
                             <ItemType>판매 중인 상품</ItemType>
-                            <MoveAddItem>상품 등록하기</MoveAddItem>
+                            <MoveAddItem href="/additem">상품 등록하기</MoveAddItem>
                         </MobileToolBarWrapper>
-                        <SearchSortWrapper>
+                        <SearchSortWrapper $deviceType={deviceType}>
                             <SearchItem $deviceType={deviceType} placeholder="검색할 상품을 입력해주세요" />
                             <SortItem>
                                 <DropDown deviceType={deviceType} order={order} setOrder={setOrder} />

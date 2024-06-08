@@ -38,8 +38,8 @@ const DropDownMenu = styled.ul`
     border: 1px solid var(--gray200);
     border-radius: 12px;
     top: 46px;
-    left: 0;
-    width: 100%;
+    right: 0;
+    width: 130px;
 `;
 
 const DropDownItem = styled.li`
