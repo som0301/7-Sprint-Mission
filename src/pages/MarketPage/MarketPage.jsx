@@ -2,38 +2,38 @@ import { useEffect, useState } from "react";
 import "./MarketPage.css";
 import SellList from "./components/SellList.jsx";
 import { getLists } from "../../api.js";
-import { getDeviceType } from "../../modules/js/utils.js";
+import { getDeviceType, debounce } from "../../modules/js/utils.js";
+
+const renderCountBest = {
+  mobile: 1,
+  tablet: 2,
+  desktop: 4,
+};
+
+const renderCount = {
+  mobile: 4,
+  tablet: 6,
+  desktop: 10,
+};
 
 function MarketPage() {
-  const [device, setDevice] = useState("");
+  const [deviceType, setdeviceType] = useState("");
   const [items, setItems] = useState([]);
   const [itemsBest, setItemsBest] = useState([]);
-
-  const renderCountBest = {
-    mobile: 1,
-    tablet: 2,
-    desktop: 4,
-  };
-
-  const renderCount = {
-    mobile: 4,
-    tablet: 6,
-    desktop: 10,
-  };
 
   useEffect(() => {
     handleResize();
     handleGetItemList();
-  }, [device]);
+  }, [deviceType]);
 
   const handleGetItemList = async () => {
     const { list } = await getLists();
 
-    const itemsOnPage = list.slice(0, renderCount[device]);
+    const itemsOnPage = list.slice(0, renderCount[deviceType]);
 
     const bestItemsOnPage = list
       .sort((a, b) => b.favoriteCount - a.favoriteCount)
-      .slice(0, renderCountBest[device]);
+      .slice(0, renderCountBest[deviceType]);
 
     setItems(itemsOnPage);
     setItemsBest(bestItemsOnPage);
@@ -41,14 +41,15 @@ function MarketPage() {
 
   const handleResize = () => {
     const width = window.innerWidth;
-    const device = getDeviceType(width);
-    setDevice(device);
+    const deviceType = getDeviceType(width);
+    setdeviceType(deviceType);
   };
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
+    const debouncedHandleResize = debounce(handleResize, 200);
+    window.addEventListener("resize", debouncedHandleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", debouncedHandleResize);
     };
   }, []);
 
