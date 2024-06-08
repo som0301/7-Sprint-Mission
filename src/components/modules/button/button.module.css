@@ -3,6 +3,11 @@
   padding: 12px 23px;
   font-size: 1.6rem;
   text-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .button.disable {
