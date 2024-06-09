@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
-import LoginAndSignupTitle from '../components/LoginAndSignupTitle';
+import LoginAndSignupTitle from '../src/components/LoginAndSignupTitle';
 
-export default function SignUpLayout() {
+export default function LoginLayout() {
   return (
     <div>
       <LoginAndSignupTitle />

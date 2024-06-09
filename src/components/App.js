@@ -1,15 +1,18 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
-import HomeLayout from './layouts/HomeLayout';
-import Home from './components/Home';
-import LoginLayout from './layouts/LoginLayout';
-import Login from './components/Login';
-import SignUpLayout from './layouts/SignUpLayout';
-import SignUp from './components/SignUp';
-import ItemsLayout from './layouts/ItemsLayout';
-import Items from './components/Items';
-import AddItemLayout from './layouts/AddItemLayout';
-import AddItem from './components/AddItem';
+import HomeLayout from '../../page-layout/HomeLayout/HomeLayout';
+import Home from '../../pages/HomePage';
+import LoginLayout from '../../page-layout/LoginLayout';
+import Login from '../../pages/LoginPage';
+import SignUpLayout from '../../page-layout/SignupLayout/SignupLayout';
+import SignUp from '../../pages/SignupPage';
+import ItemsLayout from '../../page-layout/ItemsLayout/ItemsLayout';
+import Items from '../../pages/ItemsPage';
+import AddItemLayout from '../../page-layout/ItemsAddLayout/ItemsAddLayout';
+import AddItem from '../../pages/ItemsAddPage';
+import AddBoardLayout from '../../page-layout/ArticlesAddLayout/ArticlesAddLayout';
+import BoardsLayout from '../../page-layout/ArticlesBoardLayout/ArticlesBoardLayout';
+import AddBoard from '../../pages/ArticlesAddPage';
 
 export default App;
 
@@ -43,6 +46,13 @@ function App() {
           </Route>
           <Route path="/additem" element={<AddItemLayout />}>
             <Route index element={<AddItem />} />
+          </Route>
+          <Route path="boards" element={<BoardsLayout />}>
+            <Route />
+          </Route>
+          <Route path="addboard" element={<AddBoardLayout />}>
+            <Route index element={<AddBoard />} />
+            <Route path="" />
           </Route>
         </Routes>
       </BrowserRouter>

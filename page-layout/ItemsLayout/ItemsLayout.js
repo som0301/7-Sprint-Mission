@@ -1,12 +1,11 @@
 import { Outlet } from 'react-router-dom';
-import NavBar from '../components/NavBar';
+import NavBar from '../../src/common/nav/ui-top-nav/TopNav';
 
 function ItemsLayout() {
   return (
     <div>
       <NavBar />
       <Outlet />
-      <footer></footer>
     </div>
   );
 }
