@@ -34,7 +34,7 @@ function TagList() {
         name='tags'
         value={tags}
         onChange={handleTagChange}
-        onKeyPress={handleKeyDown}
+        onKeyDown={handleKeyDown}
         placeholder='태그를 입력해주세요'
       />
       <div className='tag-list'>
