@@ -1,5 +1,5 @@
 import React from 'react';
-import heartIcon from '../../assets/heart_icon.svg';
+import heartIcon from '../../assets/ic_heart_items.svg';
 
 const BestProductItem = ({ imgUrl, name, price, favoriteCount }) => {
   return (

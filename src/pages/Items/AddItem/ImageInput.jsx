@@ -1,5 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import plusIcon from '../../../assets/ic_plus.svg';
+import deleteIcon from '../../../assets/ic_X.svg';
+import deleteHoverIcon from '../../../assets/ic_X_hover.svg';
 
 const ImageInput = () => {
   const [imgFile, setImgFile] = useState(null);
@@ -10,7 +12,7 @@ const ImageInput = () => {
     setImgFile(e.target.files[0]);
   };
 
-  const handleImageUproadClick = () => {
+  const handleImageUploadClick = () => {
     fileInputRef.current.click();
   };
 
@@ -48,7 +50,7 @@ const ImageInput = () => {
         <button
           type="button"
           className="image-btn"
-          onClick={handleImageUproadClick}
+          onClick={handleImageUploadClick}
         >
           <img src={plusIcon} alt="plusicon" />
           <span>이미지 등록</span>
@@ -64,7 +66,14 @@ const ImageInput = () => {
               type="button"
               className="image-delete"
               onClick={handleDeleteClick}
-            ></button>
+            >
+              <img
+                src={deleteIcon}
+                alt="삭제아이콘"
+                onMouseEnter={(e) => (e.target.src = deleteHoverIcon)}
+                onMouseLeave={(e) => (e.target.src = deleteIcon)}
+              />
+            </button>
           </div>
         )}
       </div>

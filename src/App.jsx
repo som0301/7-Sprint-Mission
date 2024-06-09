@@ -6,6 +6,7 @@ import Login from './pages/Login/Login';
 import Items from './pages/Items/Items';
 import AddItem from './pages/Items/AddItem/AddItem';
 import Community from './pages/Community/Community';
+import ProductDetail from './pages/Items/ProductDetail/ProductDetail';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/community" element={<Community />} />
         <Route path="/items" element={<Items />} />
+        <Route path="/items/:id" element={<ProductDetail />} />
         <Route path="/additem" element={<AddItem />} />
       </Routes>
     </>

@@ -1,32 +1,61 @@
+import { useState, useEffect } from 'react';
 import './AddItem.css';
 import ImageInput from './ImageInput';
+import TagInput from './TagInput';
+import PriceInput from './PriceInput';
+import TitleInput from './TitleInput';
+import DescriptionInput from './DescriptionInput';
 
 const AddItem = () => {
+  const [disabled, setDisabled] = useState(false);
+  const [isValid, setIsValid] = useState({
+    title: false,
+    description: false,
+    price: false,
+    tag: false,
+  });
+
+  const isValueCheck = (currentValue, name) => {
+    if (currentValue.length > 0) {
+      setIsValid((prev) => {
+        return {
+          ...prev,
+          [name]: true,
+        };
+      });
+    } else if (currentValue.length < 1) {
+      setIsValid((prev) => {
+        return {
+          ...prev,
+          [name]: false,
+        };
+      });
+    }
+  };
+
+  useEffect(() => {
+    const allTrue = Object.values(isValid).every((value) => value === true);
+
+    setDisabled(allTrue);
+  }, [isValid]);
+
   return (
     <form className="form-container">
       <div className="form-submit">
         <h2>상품 등록하기</h2>
-        <button type="submit">등록</button>
+        <button
+          type="submit"
+          disabled={!disabled}
+          onClick={(e) => e.preventDefault()}
+        >
+          등록
+        </button>
       </div>
       <ImageInput />
-      <label htmlFor="item-title">상품명</label>
-      <input
-        type="text"
-        id="item-title"
-        name="item-title"
-        placeholder="상품명을 입력해주세요"
-      />
-      <label htmlFor="item-description">상품 소개</label>
-      <textarea
-        type="text"
-        id="item-description"
-        name="item-description"
-        placeholder="상품 소개를 입력해주세요"
-      />
-      <label htmlFor="item-price">판매가격</label>
-      <input type="number" placeholder="판매 가격을 입력해주세요" />
-      <label htmlFor="item-tag">태그</label>
-      <input type="text" placeholder="태그를 입력해주세요" />
+      <TitleInput isValueCheck={isValueCheck} />
+      <DescriptionInput isValueCheck={isValueCheck} />
+      <PriceInput isValueCheck={isValueCheck} />
+      <TagInput isValueCheck={isValueCheck} />
     </form>
   );
 };

@@ -1,9 +1,6 @@
 /* AddItem.jsx */
 .form-container {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px 0 170px;
   color: #1f2937;
 }
 
@@ -27,14 +24,21 @@
   font-size: 16px;
   font-weight: 600;
   color: #fff;
-  background-color: #9ca3af;
+  background-color: #3692ff;
   cursor: pointer;
 }
 
+.form-submit button:disabled {
+  background-color: #9ca3af;
+  cursor: default;
+}
+
+/* TitleInput.jsx */
 .form-container .first-label {
   margin-top: 16px;
 }
 
+/* PriceInput.jsx, DescriptionInput.jsx */
 .form-container label {
   display: block;
   margin-top: 24px;
@@ -68,11 +72,11 @@
   color: #9ca3af;
 }
 
+/* ImageInput.jsx */
 .form-container input[type='file'] {
   display: none;
 }
 
-/* ImageInput.jsx */
 .form-container .image-container {
   display: flex;
   justify-content: first;
@@ -108,6 +112,7 @@
   height: 282px;
   border: 1px solid #f9fafb;
   border-radius: 12px;
+  object-fit: cover;
 }
 
 .form-container .image-delete {
@@ -115,17 +120,127 @@
   top: 10px;
   right: 12px;
   padding: 0;
-  width: 22px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border: none;
   background-color: transparent;
-  background-image: url('/src/assets/ic_X.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   cursor: pointer;
 }
 
-.form-container .image-delete:hover {
-  background-image: url('/src/assets/ic_X_hover.svg');
+.form-container .image-delete > img {
+  width: 20px;
+  height: 20px;
+}
+
+/* TagInput.jsx */
+.form-container .tag-box {
+  display: inline-block;
+  margin-top: 12px;
+  margin-right: 12px;
+  padding: 12px 12px 12px 16px;
+  border-radius: 26px;
+  background-color: #f9fafb;
+}
+
+.form-container .tag-box .tag-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-container .tag-box .tag-flex > span {
+  margin-right: 9px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.form-container .tag-box .tag-flex > button {
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.form-container .tag-box .tag-flex > button > img {
+  width: 20px;
+  height: 20px;
+}
+
+/* PC */
+@media screen and (min-width: 1200px) {
+  /* AddItem.jsx */
+  .form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 0 87px;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  /* AddItem.jsx */
+  .form-container {
+    padding: 16px 24px 139px;
+  }
+
+  /* ImageInput.jsx */
+  .form-container .image-container {
+    gap: 16px;
+  }
+
+  .form-container .image-btn {
+    width: 162px;
+    height: 162px;
+  }
+
+  .form-container .image-preview {
+    width: 162px;
+    height: 162px;
+  }
+
+  .form-container .image-delete {
+    top: 12px;
+    right: 11px;
+  }
+}
+
+/* Mobile */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  /* AddItem.jsx */
+  .form-container {
+    padding: 16px 16px 183px;
+  }
+
+  .form-submit h2 {
+    font-size: 20px;
+  }
+
+  .form-container label {
+    margin-top: 16px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* ImageInput.jsx */
+  .form-container .image-container {
+    gap: 8px;
+    margin-top: 9px;
+  }
+
+  .form-container .image-btn {
+    width: 168px;
+    height: 168px;
+  }
+
+  .form-container .image-preview {
+    width: 168px;
+    height: 168px;
+  }
+
+  .form-container .image-delete {
+    top: 12px;
+    right: 12px;
+  }
 }
