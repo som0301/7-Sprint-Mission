@@ -5,9 +5,7 @@ function ItemsLayout() {
   return (
     <div>
       <NavBar />
-
       <Outlet />
-
       <footer></footer>
     </div>
   );

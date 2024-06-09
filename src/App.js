@@ -1,47 +1,51 @@
-// import './App.css';
-import { Link, Routes, Route } from 'react-router-dom';
-
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
+import HomeLayout from './layouts/HomeLayout';
 import Home from './components/Home';
-import Items from './components/Items';
+import LoginLayout from './layouts/LoginLayout';
 import Login from './components/Login';
-import { useNavigation } from './components/useNavigation';
-import ItemsLayout from './pages/ItemsLayout';
+import SignUpLayout from './layouts/SignUpLayout';
 import SignUp from './components/SignUp';
-import SignUpLayout from './pages/SignUpLayout';
+import ItemsLayout from './layouts/ItemsLayout';
+import Items from './components/Items';
+import AddItemLayout from './layouts/AddItemLayout';
 import AddItem from './components/AddItem';
-import AddItemLayout from './pages/AddItemLayout';
 
 export default App;
 
-function App() {
-  const { navigate } = useNavigation();
-  const handleNavigate = () => {
-    navigate('/items');
-  };
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
 
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+`;
+
+function App() {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />}>
-          <Route index element={<Home />} />
-        </Route>
-        <Route path="/login" element={<Login />}>
-          <Route />
-        </Route>
-        <Route path="/signup" element={<SignUpLayout />}>
-          <Route index element={<SignUp />} />
-        </Route>
-        <Route path="/items" element={<ItemsLayout />}>
-          <Route index element={<Items />} />
-        </Route>
-        <Route path="/additem" element={<AddItemLayout />}>
-          <Route index element={<AddItem />} />
-        </Route>
-      </Routes>
-      <div>
-        <Link to="/items">구경하러 가기</Link>
-        <button onClick={handleNavigate}>구경하러 가기</button>
-      </div>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomeLayout />}>
+            <Route index element={<Home />} />
+          </Route>
+          <Route path="/login" element={<LoginLayout />}>
+            <Route index element={<Login />} />
+          </Route>
+          <Route path="/signup" element={<SignUpLayout />}>
+            <Route index element={<SignUp />} />
+          </Route>
+          <Route path="/items" element={<ItemsLayout />}>
+            <Route index element={<Items />} />
+          </Route>
+          <Route path="/additem" element={<AddItemLayout />}>
+            <Route index element={<AddItem />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
