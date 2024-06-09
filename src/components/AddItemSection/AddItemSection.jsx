@@ -79,7 +79,7 @@ export const AddItemSection = () => {
       <header className="add-item-section-header">
         <h2 className="add-item-section-title">상품 등록하기</h2>
         <button
-          disabled={isFieldEmpty}
+          disabled={!isFieldEmpty}
           className={`add-item-section-submit-button`}
         >
           등록

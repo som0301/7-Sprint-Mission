@@ -32,12 +32,13 @@
   border: none;
   outline: none;
   border-radius: 8px;
-  background-color: var(--gray400);
+  background-color: var(--blue);
   cursor: pointer;
 }
 
 .add-item-section-submit-button:disabled {
-  background-color: var(--blue);
+  background-color: var(--gray400);
+  cursor: not-allowed;
 }
 
 .add-item-section-input-wrapper {

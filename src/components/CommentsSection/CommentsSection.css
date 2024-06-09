@@ -1,0 +1,62 @@
+.comments-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 1200px;
+}
+
+.comments-section-comment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.comments-section-comment-content {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.comments-section-comment-profile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.comments-section-comment-image {
+  width: 40px;
+  height: 40px;
+}
+
+.comments-section-comment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.comments-section-comment-nickname {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.comments-section-comment-created-ago {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--gray400);
+}
+
+.comments-section-container-nocomment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comments-section-container-nocomment-image {
+  width: 200px;
+  height: 200px;
+}
+
+.comments-section-container-nocomment-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray400);
+}

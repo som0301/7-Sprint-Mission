@@ -1,11 +1,12 @@
 import React from "react";
 import "./ItemCard.css";
 import { favoriteIcon } from "../../assets/images/index";
+import { Link } from "react-router-dom";
 
 const ItemCard = ({ item, imageClassName }) => {
-  const { images, name, price, favoriteCount } = item;
+  const { id, images, name, price, favoriteCount } = item;
   return (
-    <div className="item-card-container">
+    <Link to={`/items/${id}`} className="item-card-container">
       <img
         className={`item-card-image ${imageClassName}`}
         src={images}
@@ -17,7 +18,7 @@ const ItemCard = ({ item, imageClassName }) => {
         <img src={favoriteIcon} alt="좋아요기능 하트모양 아이콘" />
         {favoriteCount}
       </h3>
-    </div>
+    </Link>
   );
 };
 
