@@ -39,7 +39,7 @@ function AddItemPage() {
         handleChange(name, value);
     }
 
-    const tagDelete = (deleteTag) => {
+    const deleteTag = (deleteTag) => {
         setAddItemValue((prevValues) => ({
             ...prevValues,
             tag: prevValues.tag.filter(tag => tag !== deleteTag),
@@ -100,7 +100,7 @@ function AddItemPage() {
                         {addItemValue.tag.map((tag, index) => (
                             <div className="tag">
                                 <p>{tag}</p>
-                                <button onClick={() => tagDelete(tag)}>X</button>
+                                <button onClick={() => deleteTag(tag)}>X</button>
                             </div>
                         ))}
                     </div>
