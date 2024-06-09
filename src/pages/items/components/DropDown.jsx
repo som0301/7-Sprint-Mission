@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useViewport from 'shared/hooks/useViewport';
 import styled from 'styled-components';
 import ArrowDownIcon from 'shared/assets/image/ic_arrow_down.svg';
 import SortIcon from 'shared/assets/image/ic_sort.svg';
@@ -55,6 +56,19 @@ const DropDownItem = styled.li`
 
 function DropDown({ deviceType, order, setOrder }) {
     const [isOpen, setIsOpen] = useState(false);
+    const { isMobile } = useViewport();
+
+    const buttonText = order === 'recent' ? '최신순' : '좋아요순';
+    const orderType = [
+        {
+            type: 'recent',
+            text: '최신순',
+        },
+        {
+            type: 'favorite',
+            text: '좋아요순',
+        },
+    ];
 
     const handleToggle = () => setIsOpen(!isOpen);
     const handleChangeOrder = (newOrder) => {
@@ -64,17 +78,17 @@ function DropDown({ deviceType, order, setOrder }) {
     return (
         <>
             <DropDownButton $deviceType={deviceType} onClick={handleToggle}>
-                {deviceType !== 'mobile' && <SortByItem>{order === 'recent' ? '최신순' : '좋아요순'}</SortByItem>}
-                <DropDownIcon
-                    $deviceType={deviceType}
-                    src={deviceType === 'mobile' ? SortIcon : ArrowDownIcon}
-                    alt="ArrowDownIcon"
-                />
+                {!isMobile && <SortByItem>{buttonText}</SortByItem>}
+                <DropDownIcon $deviceType={deviceType} src={isMobile ? SortIcon : ArrowDownIcon} alt="ArrowDownIcon" />
             </DropDownButton>
+
             {isOpen && (
                 <DropDownMenu>
-                    <DropDownItem onClick={() => handleChangeOrder('recent')}>최신순</DropDownItem>
-                    <DropDownItem onClick={() => handleChangeOrder('favorite')}>좋아요순</DropDownItem>
+                    {orderType.map((item) => (
+                        <DropDownItem key={item.type} onClick={() => handleChangeOrder(item.type)}>
+                            {item.text}
+                        </DropDownItem>
+                    ))}
                 </DropDownMenu>
             )}
         </>

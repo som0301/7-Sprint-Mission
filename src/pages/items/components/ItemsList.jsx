@@ -111,18 +111,24 @@ const FavoriteCount = styled.p`
 `;
 
 function ItemsList({ type, page, pageSize, order, setOrder, search }) {
-    const { items, loading, error } = useFetchItems({ page, pageSize, order, search });
+    const { items, isLoading, isError } = useFetchItems({ page, pageSize, order, search });
     const { deviceType } = useViewport();
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    const getItemType = (type) => {
+        if (type === 'best') return '베스트 상품';
+
+        return deviceType === 'desktop' ? '전체 상품' : '판매 중인 상품';
+    };
+
+    if (isLoading) return <p>Loading...</p>;
+    if (isError) return <p>Error: {isError}</p>;
     return (
         <ItemContainer $deviceType={deviceType}>
             <ItemWrapper $deviceType={deviceType}>
                 <ItemType $type={type} $deviceType={deviceType}>
-                    {type === 'best' ? '베스트 상품' : deviceType === 'desktop' ? '전체 상품' : '판매 중인 상품'}
+                    {getItemType(type)}
                 </ItemType>
-                <ItemToolbar type={type} deviceType={deviceType} order={order} setOrder={setOrder} />
+                {type === 'all' && <ItemToolbar deviceType={deviceType} order={order} setOrder={setOrder} />}
             </ItemWrapper>
             <ItemInfo $type={type} $deviceType={deviceType}>
                 {items &&

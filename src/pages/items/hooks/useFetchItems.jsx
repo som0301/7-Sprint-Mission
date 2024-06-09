@@ -3,8 +3,8 @@ import { getItems } from 'pages/items/api/getItems';
 
 function useFetchItems({ page, pageSize, order, search }) {
     const [items, setItems] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [isLoading, setLoading] = useState(true);
+    const [isError, setError] = useState(null);
 
     useEffect(() => {
         async function fetchItems() {
@@ -21,7 +21,7 @@ function useFetchItems({ page, pageSize, order, search }) {
         fetchItems();
     }, [page, pageSize, order, search]);
 
-    return { items, loading, error };
+    return { items, isLoading, isError };
 }
 
 export default useFetchItems;
