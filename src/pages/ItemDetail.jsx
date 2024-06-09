@@ -7,6 +7,7 @@ import styled from "styled-components";
 import BackIcon from "../../src/images/home/ic_back.svg";
 import More from "../../src/images/home/ic_kebab.svg";
 import UserIcon from "../../src/images/home/maskicon.png"
+import NotComment from "../../src/images/home/not_comment.svg";
 
 const ItemDetailLayer = styled.div`
     width: 100%;
@@ -37,24 +38,20 @@ const ItemImg = styled.img`
 
         /* 테블릿버전 */
     @media (768px < width < 1280px) {
-
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
+        width: 340px;
+        height: 340px;
     }
 
     /* 모바일버전 */
     @media (400px < width < 768px) {
-
+        width: 343px;
+        height: 343px;
     }
 `;
 
 const ItemNamePrice = styled.div `
     display: flex;
+    width: 100%;
     flex-direction: column;
     gap: 16px;
     margin-bottom: 16px;
@@ -88,21 +85,17 @@ const ItemName = styled.p `
     font-size: 24px;
     line-height: 28.64px;
     font-weight: 600;
+    color: #1f2937; 
     /* 테블릿버전 */
     @media (768px < width < 1280px) {
-
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
+        font-size: 20px;
+        line-height: 23.87px;
     }
 
     /* 모바일버전 */
     @media (400px < width < 768px) {
-
+        font-size: 16px;
+        line-height: 19.09px;
     }
 `;
 
@@ -111,21 +104,17 @@ const ItemPrice = styled.p `
     line-height: 47.73px;
     font-weight: 600;
     margin-bottom: 16px;
+    color: #1f2937;
         /* 테블릿버전 */
     @media (768px < width < 1280px) {
-
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
+        font-size: 32px;
+        line-height: 38.19px;
     }
 
     /* 모바일버전 */
     @media (400px < width < 768px) {
-
+        font-size: 24px;
+        line-height: 28.64px;
     }
 `;
 
@@ -151,24 +140,19 @@ const DescriptionLayer = styled.div `
     }
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
-
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
+        h1 {
+            line-height: 19.6px;
+        }
     }
 
     /* 모바일버전 */
     @media (400px < width < 768px) {
-
+        
     }
 `;
 
 const ItemTags = styled.p `
-   color: #4b5563;
+    color: #4b5563;
     font-size: 14px;
     font-weight: 500;
     line-height: 16.71px;
@@ -177,13 +161,6 @@ const ItemTags = styled.p `
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
 
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
     }
 
     /* 모바일버전 */
@@ -198,13 +175,6 @@ const TageList = styled.div `
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
 
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
     }
 
     /* 모바일버전 */
@@ -222,13 +192,6 @@ const Tag = styled.button `
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
 
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
     }
 
     /* 모바일버전 */
@@ -248,36 +211,23 @@ const FavoriteCount = styled.div `
     border: solid 1px #E5E7EB;
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
-
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
+        margin-top: 25px;
     }
 
     /* 모바일버전 */
     @media (400px < width < 768px) {
-
+        margin-top: 24px;
     }
 `;
 
 const Detail = styled.div `
     display: flex;
     flex-direction: column;
+    width: 100%;
     justify-content: space-between;
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
 
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
     }
 
     /* 모바일버전 */
@@ -288,6 +238,8 @@ const Detail = styled.div `
 
 const Question = styled.div `
     display: flex;
+    width: 100%;
+    max-width: 1200px;
     flex-direction: column;
     margin-bottom: 40px;
     gap: 16px;
@@ -300,7 +252,8 @@ const Question = styled.div `
     }
 
     input {
-        width: 1200px;
+        max-width: 1200px;
+        width: 100%;
         height: 104px;
         padding: 16px 24px;
         background-color:#F3F4F6;
@@ -309,13 +262,6 @@ const Question = styled.div `
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
 
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
     }
 
     /* 모바일버전 */
@@ -338,13 +284,6 @@ const ButtonLayer = styled.div `
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
 
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
     }
 
     /* 모바일버전 */
@@ -367,13 +306,6 @@ const UserQuestionList = styled.div `
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
 
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
     }
 
     /* 모바일버전 */
@@ -390,13 +322,6 @@ const Comment = styled.div `
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
 
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
     }
 
     /* 모바일버전 */
@@ -423,13 +348,6 @@ const CommentDetail = styled.div `
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
 
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
     }
 
     /* 모바일버전 */
@@ -449,13 +367,6 @@ const CommentData = styled.div `
             /* 테블릿버전 */
     @media (768px < width < 1280px) {
 
-    .addItemLayer {
-        max-width: 696px;
-    }
-
-    .itemSubmitButton {
-        max-width: 696px;
-    }
     }
 
     /* 모바일버전 */
@@ -503,6 +414,17 @@ const Section = styled.div `
     }
 
 `;
+
+const NotCommentImg = styled.div `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 200px;
+        height: 224px;
+    }
+`;
+
 
 function DateFomet(strdate) {
     const date = new Date(strdate);
@@ -584,7 +506,8 @@ function ItemDetail() {
                     <button>등록</button>
                 </ButtonLayer>
                 <UserQuestionList>
-                    {itemComments.map((comment, index) => (
+                    {itemComments.length > 0 ? (
+                        itemComments.map((comment, index) => (
                         <Comment key={index}>
                             <p>{comment.content}</p>
                             <CommentData>
@@ -595,7 +518,12 @@ function ItemDetail() {
                                 </CommentDetail>
                             </CommentData>
                         </Comment>
-                    ))}
+                    ))
+                ) : (
+                    <NotCommentImg>
+                        <img src={NotComment} alt="문의없음" />
+                    </NotCommentImg>
+                )}
                 </UserQuestionList>
             </Question>
             <NavLink to="/items">
