@@ -4,7 +4,7 @@ import "./ProductItem.css";
 
 function Items(){
     return (
-        <div className="body">
+        <div>
         <BestProductList />
         <AllProductList />
         </div>

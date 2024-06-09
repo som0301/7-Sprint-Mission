@@ -1,8 +1,8 @@
 import "./ProductItem.css";
-import heart from './images/heart.svg';
+import heart from "./images/heart.svg";
 
 function formatNumber(number) {
-  return new Intl.NumberFormat("ko-KR").format(number);
+  return new Intl.NumberFormat("ko-KR").format(number) + "원";
 }
 
 function ProductItem({ imgUrl, name, price, favoriteCount }) {
@@ -12,8 +12,14 @@ function ProductItem({ imgUrl, name, price, favoriteCount }) {
       <span className="name">{name}</span>
       <span className="price">{formatNumber(price)}</span>
       <div className="like">
-      <img src={heart} alt="하트" className="heart" width={"13px"} height={"13px"}/> 
-      <span className="favoriteCount">{favoriteCount}</span>
+        <img
+          src={heart}
+          alt="하트"
+          className="heart"
+          width={"13px"}
+          height={"13px"}
+        />
+        <span className="favoriteCount">{favoriteCount}</span>
       </div>
     </li>
   );

@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import ProductItem from "../ProductItem";
 import "../ProductItem.css";
 import { getReviews } from "../api";
+import { Link } from "react-router-dom";
 
 function BestProductList() {
   const [productList, setProductList] = useState([]);
   const [pageSize, setPageSize] = useState(4);
-  const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
   const [currentPage, setCurrentPage] = useState(1);
-  const [orderby,setOrderBy]=useState("favorite");
+  const [orderby, setOrderBy] = useState("favorite");
 
   const changeBestPageSize = () => {
     if (window.innerWidth >= 1200) {
@@ -44,13 +44,14 @@ function BestProductList() {
       <h2>베스트 상품</h2>
       <ul className="best-productlist">
         {productList.map((item) => (
-          <ProductItem
-            key={item.id}
-            imgUrl={item.images[0]}
-            name={item.name}
-            price={item.price}
-            favoriteCount={item.favoriteCount}
-          />
+          <Link to={`./${item.id}`} key={item.id} className="link">
+            <ProductItem
+              imgUrl={item.images[0]}
+              name={item.name}
+              price={item.price}
+              favoriteCount={item.favoriteCount}
+            />
+          </Link>
         ))}
       </ul>
     </div>

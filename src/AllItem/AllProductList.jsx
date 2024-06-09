@@ -5,19 +5,17 @@ import { Link } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
 import { getReviews } from "../api";
 
+const PC_ITEM = 10;
+const TABLET_ITEM = 6;
+const MOBILE_ITEM = 4;
+
 function AllProductList() {
-  const PC_ITEM = 10;
-  const TABLET_ITEM = 6;
-  const MOBILE_ITEM = 4;
   const [productList, setProductList] = useState([]);
   const [orderby, setOrderBy] = useState("recent"); //페이지 정렬 기준
   const [currentPage, setCurrentPage] = useState(1); //몇번째 페이지인지
   const [totalCount, setTotalCount] = useState(0); //전체 아이템 수
   const [pageSize, setPageSize] = useState(PC_ITEM); // 보이는 아이템 수
-  const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
   const [isDropDown, setIsDropDown] = useState(false);
-  const handleNewestClick = () => setOrderBy("recent");
-  const handleFavoriteClick = () => setOrderBy("favorite");
 
   const getAllProduct = async ({ currentPage, pageSize, orderby }) => {
     try {
@@ -60,104 +58,69 @@ function AllProductList() {
   }, []);
 
   return (
-    <div className="container">
-      <div className="container-header">
-        {window.innerWidth >= 375 && window.innerWidth <= 767 && (
-          <div className="mobile-wrapper-top">
-            <div className="mobile-wrapper-top-first">
-              <h2>판매중인 상품</h2>
-              <button className="button">
-                <Link to="/additem" target="_blank" className="product-link">
-                  상품 등록하기
-                </Link>
-              </button>
-            </div>
-            <div className="mobile-wrapper-bottom">
-              <label className="all-label">
-                <img src={search} alt="검색" width={"15px"} height={"15px"} />
-                <div className="search-input">검색할 상품을 입력해주세요</div>
-              </label>
-              <select
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "recent") {
-                    return handleNewestClick();
-                  }
-                  if (value === "favorite") {
-                    return handleFavoriteClick();
-                  }
-                }}
-              >
-                <option value="recent" className="option-input">
-                  최신순
-                </option>
-                <option value="favorite" className="option-input">
-                  좋아요순
-                </option>
-              </select>
-            </div>
-          </div>
-        )}
-        {window.innerWidth >= 768 && window.innerWidth <= 1199 && (
-          <div className="wrapper-top">
-            <h2>판매중인 상품</h2>
-            <div className="all-container-header">
-              <label className="all-label">
-                <img src={search} alt="검색" width={"15px"} height={"15px"} />
-                <div className="search-input">검색할 상품을 입력해주세요</div>
-              </label>
-              <button className="button">
-                <Link to="/additem" target="_blank" className="link">
-                  상품 등록하기
-                </Link>
-              </button>
-              <select
-                id="sort-select"
-                className="custom-select"
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "recent") {
-                    return handleNewestClick();
-                  }
-                  if (value === "favorite") {
-                    return handleFavoriteClick();
-                  }
-                }}
-              >
-                <option value="recent" className="option-input">
-                  최신순
-                </option>
-                <option value="favorite" className="option-input">
-                  좋아요순
-                </option>
-              </select>
+    <>
+      {window.innerWidth >= 768 && (
+        <div className="container">
+          <div className="container-header">
+            <div className="wrapper-top">
+              <h2 className="title-text-pc">전체 상품</h2>
+              <h2 className="title-text-tm">판매중인 상품</h2>
+              <div className="all-container-header">
+                <div className="all-label">
+                  <img src={search} alt="검색" width="15px" height="15px" />
+                  <input
+                    className="search-input"
+                    placeholder="검색할 상품을 입력해주세요"
+                  />
+                </div>
+                <button className="button">
+                  <Link to="/additem" className="product-link">
+                    상품 등록하기
+                  </Link>
+                </button>
+                <select
+                  id="sort-select"
+                  className="custom-select"
+                  onChange={(e) => {
+                    setOrderBy(e.target.value);
+                  }}
+                >
+                  <option value="recent" className="option-input">
+                    최신순
+                  </option>
+                  <option value="favorite" className="option-input">
+                    좋아요순
+                  </option>
+                </select>
+              </div>
             </div>
           </div>
-        )}
-        {window.innerWidth >= 1200 && (
-          <div className="wrapper-top">
-            <h2>전체 상품</h2>
-            <div className="all-container-header">
-              <label className="all-label">
-                <img src={search} alt="검색" width={"15px"} height={"15px"} />
-                <div className="search-input">검색할 상품을 입력해주세요</div>
-              </label>
+        </div>
+      )}
+      {window.innerWidth <= 767 && (
+        <div className="container">
+          <div className="container-header">
+            <div className="wrapper-top">
+              <h2 className="title-text-tm">판매중인 상품</h2>
               <button className="button">
-                <Link to="/additem" target="_blank" className="link">
+                <Link to="/additem" className="product-link">
                   상품 등록하기
                 </Link>
               </button>
+            </div>
+            <div className="wrapper-bottom">
+              <div className="all-label">
+                <img src={search} alt="검색" width="15px" height="15px" />
+                <input
+                  className="search-input"
+                  placeholder="검색할 상품을 입력해주세요"
+                />
+              </div>
               <select
                 id="sort-select"
                 className="custom-select"
                 onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "recent") {
-                    return handleNewestClick();
-                  }
-                  if (value === "favorite") {
-                    return handleFavoriteClick();
-                  }
+                  setOrderBy(e.target.value);
                 }}
               >
                 <option value="recent" className="option-input">
@@ -169,17 +132,19 @@ function AllProductList() {
               </select>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
       <ul className="all-productlist">
         {productList.map((item) => (
-          <ProductItem
-            key={item.id}
-            imgUrl={item.images[0]}
-            name={item.name}
-            price={item.price}
-            favoriteCount={item.favoriteCount}
-          />
+          <Link to={`./${item.id}`} key={item.id} className="link">
+            <ProductItem
+              key={item.id}
+              imgUrl={item.images[0]}
+              name={item.name}
+              price={item.price}
+              favoriteCount={item.favoriteCount}
+            />
+          </Link>
         ))}
       </ul>
       <Pagination
@@ -187,7 +152,7 @@ function AllProductList() {
         currentPage={currentPage}
         onPageChange={handlePageChange}
       />
-    </div>
+    </>
   );
 }
 

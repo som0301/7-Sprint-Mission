@@ -1,8 +1,8 @@
 .button-wrapper {
   display: flex;
   justify-content: center;
-  gap:4px;
-  padding-top:40px;
+  gap: 4px;
+  padding-top: 40px;
 }
 .pagination-button {
   width: 40px;
@@ -11,10 +11,16 @@
   background-color: #fff;
   border-radius: 40px;
   padding: 12.5px;
-  font-size:16px;
-  color:#6B7280;
+  font-size: 16px;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.pagination-button.select-page {
+.pagination-button:disabled{
+  cursor: not-allowed;
+}
+.pagination-button.selectd-page {
   background-color: #3692ff;
-  color:#fff;
+  color: #fff;
 }
