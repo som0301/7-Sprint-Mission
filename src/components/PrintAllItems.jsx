@@ -22,11 +22,11 @@ function PrintAllItems() {
         <h1>전체 상품</h1>
         <Link to='/additem' className='add-item-button'>
           상품 등록하기
-        </Link>        
+        </Link>
       </header>
       <div className='container-items'>
         <div className='all-items'>
-          <ItemBox items={items} />
+          <ItemBox items={items} type='allitem' />
         </div>
       </div>
     </div>

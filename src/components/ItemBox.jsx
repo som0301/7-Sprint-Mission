@@ -1,11 +1,11 @@
 import "../pages/MarketPage.css";
 import { Link } from "react-router-dom";
 
-function ItemBox({ items }) {
+function ItemBox({ items, type }) {
   return (
-    <ul>
+    <ul className={`item-list ${type}`}>
       {items.map((item) => (
-        <li key={item.id} className='item-list'>
+        <li key={item.id} className='item'>
           <Link to={`/items/${item.id}`} className='item-link'>
             <div className='item-box'>
               <img src={item.images[0]} alt={item.name} className='item-img' />
@@ -15,7 +15,7 @@ function ItemBox({ items }) {
                   {item.price.toLocaleString()}원
                 </div>
                 <div className='item-favorite-count'>
-                  ❤️ {item.favoriteCount}
+                  ♡ {item.favoriteCount}
                 </div>
               </div>
             </div>
