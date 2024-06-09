@@ -31,7 +31,10 @@ function AddItemInputTag() {
 
   return (
     <>
+      <p className="input-title">태그</p>
       <input
+        className="input-box"
+        placeholder="태그를 입력해주세요"
         type="text"
         onChange={onChange}
         value={value}
@@ -40,10 +43,12 @@ function AddItemInputTag() {
       <div>
         {tags.map((tag, index) => (
           <Fragment key={index}>
-            <span>{tag}</span>
-            <button onClick={() => removeTag(tag)}>
-              <img src={cancelIcon} alt="삭제버튼" />
-            </button>
+            <div className="input-tag">
+              <span>{tag}</span>
+              <button className="cancel-button" onClick={() => removeTag(tag)}>
+                <img className="cancel-icon" src={cancelIcon} alt="삭제버튼" />
+              </button>
+            </div>
           </Fragment>
         ))}
       </div>
