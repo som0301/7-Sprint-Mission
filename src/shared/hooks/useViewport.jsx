@@ -15,6 +15,10 @@ function useViewport() {
 
     const [deviceType, setDeviceType] = useState(getDeviceType(window.innerWidth));
 
+    const isMobile = deviceType === 'mobile';
+    const isTablet = deviceType === 'tablet';
+    const isDesktop = deviceType === 'desktop';
+
     useEffect(() => {
         const handleResize = () => {
             setDeviceType(getDeviceType(window.innerWidth));
@@ -24,7 +28,7 @@ function useViewport() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    return { deviceType };
+    return { deviceType, isMobile, isTablet, isDesktop };
 }
 
 export default useViewport;

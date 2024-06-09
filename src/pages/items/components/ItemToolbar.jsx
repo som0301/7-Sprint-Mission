@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import SearchIcon from 'shared/assets/image/ic_search.svg';
+import useViewport from 'shared/hooks/useViewport';
 import DropDown from 'pages/items/components/DropDown';
 import { ItemType } from 'pages/items/components/ItemsList';
+import SearchIcon from 'shared/assets/image/ic_search.svg';
 
 const ItemToolbarWrapper = styled.div`
     display: flex;
@@ -71,9 +72,11 @@ const MobileToolBarWrapper = styled.div`
 `;
 
 function ItemToolbar({ deviceType, order, setOrder }) {
+    const { isMobile } = useViewport();
+
     return (
         <ItemToolbarWrapper $deviceType={deviceType}>
-            {deviceType !== 'mobile' ? (
+            {!isMobile ? (
                 <>
                     <SearchItemInput $deviceType={deviceType} placeholder="검색할 상품을 입력해주세요" />
                     <MoveAddItem href="/additem">상품 등록하기</MoveAddItem>

@@ -57,6 +57,8 @@ const PrevNextImage = styled.img`
     height: 16px;
 `;
 
+const TOTAL_PAGES = 5;
+
 function Pagination({ page, setPage }) {
     const { deviceType } = useViewport();
 
@@ -79,7 +81,7 @@ function Pagination({ page, setPage }) {
             <PageButton onClick={handlePrevPage} disabled={page === 1}>
                 <PrevNextImage src={ArrowLeftICon} alt="이전페이지이동" />
             </PageButton>
-            {[1, 2, 3, 4, 5].map((currentPage) => (
+            {Array.from({ length: TOTAL_PAGES }, (_, index) => index + 1).map((currentPage) => (
                 <PageButton
                     key={currentPage}
                     $active={currentPage === page}

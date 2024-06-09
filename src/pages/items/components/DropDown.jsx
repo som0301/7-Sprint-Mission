@@ -75,6 +75,7 @@ function DropDown({ deviceType, order, setOrder }) {
         setOrder(newOrder);
         setIsOpen(false);
     };
+
     return (
         <>
             <DropDownButton $deviceType={deviceType} onClick={handleToggle}>
