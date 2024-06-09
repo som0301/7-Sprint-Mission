@@ -1,5 +1,18 @@
 import { useState, useEffect } from "react";
 
+const getDeviceType = ({ isTablet, isMobile, isDesktop }) => {
+  if (isTablet) {
+    return "tablet";
+  } else if (isMobile) {
+    return "mobile";
+  } else if (isDesktop) {
+    return "desktop";
+  } else {
+    return "unknown";
+  }
+};
+
+// 기기 타입을 판별하는 함수 정의
 const useDeviceType = () => {
   const [deviceType, setDeviceType] = useState({
     isMobile: window.innerWidth <= 767,
@@ -23,22 +36,7 @@ const useDeviceType = () => {
     };
   }, []);
 
-  const getDeviceType = ({ isTablet, isMobile, isDesktop }) => {
-    if (isTablet) {
-      return "tablet";
-    } else if (isMobile) {
-      return "mobile";
-    } else if (isDesktop) {
-      return "desktop";
-    } else {
-      return "unknown";
-    }
-  };
-
-  return {
-    ...deviceType,
-    getDeviceType: () => getDeviceType(deviceType),
-  };
+  return getDeviceType(deviceType);
 };
 
 export default useDeviceType;
