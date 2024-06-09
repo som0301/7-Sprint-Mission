@@ -33,7 +33,7 @@ const Comment = ({ comment }) => {
     writer: { nickname, image },
   } = comment;
 
-  return content ? (
+  return (
     <div className="comments-section-comment-container">
       <p className="comments-section-comment-content">{content}</p>
       <div className="comments-section-comment-profile">
@@ -51,8 +51,6 @@ const Comment = ({ comment }) => {
       </div>
       <hr />
     </div>
-  ) : (
-    <div>없다</div>
   );
 };
 
