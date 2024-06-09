@@ -1,4 +1,4 @@
-@mixin font-style($size, $weight, $color, $lineHeight) {
+@mixin font-style($size, $weight, $lineHeight, $color) {
   font-size: $size;
   font-weight: $weight;
   color: $color;
@@ -6,18 +6,21 @@
 }
 
 .productDetailsMain {
+  display: flex;
+  flex-direction: column;
   width: 1200px;
+  max-width: 100%;
 
   h1 {
-    @include font-style(24px, 600, var(--gray800), 28.64px);
+    @include font-style(24px, 600, 28.64px, var(--gray800));
   }
 
   h2 {
-    @include font-style(40px, 600, var(--gray800), 47.73px);
+    @include font-style(40px, 600, 47.73px, var(--gray800));
   }
 
   h3 {
-    @include font-style(14px, 500, var(--gray800), 16.71px);
+    @include font-style(14px, 500, 16.71px, var(--gray800));
   }
 
   .dividerLine {
@@ -26,11 +29,11 @@
   }
 
   p {
-    @include font-style(16px, 400, var(--gray800), 22.4px);
+    @include font-style(16px, 400, 22.4px, var(--gray800));
   }
 
   span {
-    @include font-style(16px, 400, var(--gray800), 24px);
+    @include font-style(16px, 400, 24px, var(--gray800));
   }
 
   .kebabImage {
@@ -43,7 +46,7 @@
     background-color: var(--activate-button-blue);
     padding: 12px 71px 12px 71px;
     border-radius: 40px;
-    @include font-style(18px, 600, white, 24px);
+    @include font-style(18px, 600, 24px, white);
     font-family: inherit;
 
     display: flex;
@@ -71,10 +74,10 @@
     }
 
     .productInfo {
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      width: 100%;
 
       .titleWrapper {
         display: flex;
@@ -102,12 +105,14 @@
 
       p {
         margin-bottom: 23px;
+        overflow-wrap: break-word;
       }
 
       .productTagsWrapper {
         display: flex;
         align-items: center;
         gap: 10px;
+        margin-bottom: 24px;
 
         .productTags {
           display: inline-block;
@@ -138,7 +143,7 @@
 
         h3 {
           margin: 0;
-          @include font-style(16px, 500, var(--gray500), 19.09px);
+          @include font-style(16px, 500, 19.09px, var(--gray500));
         }
       }
     }
@@ -156,7 +161,7 @@
       margin-bottom: 24px;
 
       h3 {
-        @include font-style(16px, 600, var(--gray900), 19.09px);
+        @include font-style(16px, 600, 19.09px, var(--gray900));
       }
 
       textarea {
@@ -170,7 +175,7 @@
       }
 
       textarea::placeholder {
-        @include font-style(16px, 400, var(--gray400), 24px);
+        @include font-style(16px, 400, 24px, var(--gray400));
       }
 
       button {
@@ -178,17 +183,18 @@
         padding: 12px 23px 12px 23px;
         border-radius: 8px;
         background-color: var(--activate-button-blue);
-        @include font-style(16px, 600, white, 19.09px);
+        @include font-style(16px, 600, 19.09px, white);
         align-self: flex-end;
       }
 
       button:disabled {
         background-color: var(--gray400);
+        cursor: not-allowed;
       }
     }
 
     p {
-      @include font-style(16px, 400, var(--gray800), 22.4px);
+      @include font-style(16px, 400, 22.4px, var(--gray800));
     }
 
     img {
@@ -229,11 +235,11 @@
           gap: 4px;
 
           h3 {
-            @include font-style(14px, 400, var(--gray600), 16.71px);
+            @include font-style(14px, 400, 16.71px, var(--gray600));
           }
 
           h4 {
-            @include font-style(12px, 400, var(--gray400), 14.32px);
+            @include font-style(12px, 400, 14.32px, var(--gray400));
           }
         }
       }
@@ -250,7 +256,111 @@
       }
 
       h3 {
-        @include font-style(16px, 400, var(--gray400), 24px);
+        @include font-style(16px, 400, 24px, var(--gray400));
+      }
+    }
+  }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .productDetailsMain {
+    width: 100%;
+
+    .productDetailsWrapper {
+      .productDetails {
+        gap: 16px;
+        margin-bottom: 24px;
+        #productImage {
+          width: 340px;
+          height: 340px;
+        }
+
+        .productInfo {
+          .detailsWrapper {
+            .titleWrapper {
+              margin-bottom: 12px;
+
+              h1 {
+                @include font-style(20px, 600, 23.87px, var(--gray800));
+              }
+            }
+            h2 {
+              @include font-style(32px, 600, 38.19px, var(--gray800));
+              margin-bottom: 16px;
+            }
+
+            .dividerLine {
+              margin-bottom: 16px;
+            }
+
+            h3 {
+              @include font-style(14px, 500, 16.71px, var(--gray600));
+              margin-bottom: 8px;
+            }
+
+            p {
+              margin-bottom: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 767px) {
+  .productDetailsMain {
+    width: 100%;
+
+    .productDetailsWrapper {
+      .productDetails {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 16px;
+        #productImage {
+          width: 100%;
+          height: 100%;
+        }
+
+        .productInfo {
+          .detailsWrapper {
+            .titleWrapper {
+              margin-bottom: 8px;
+
+              h1 {
+                @include font-style(16px, 600, 19.09px, var(--gray800));
+              }
+            }
+            h2 {
+              @include font-style(24px, 600, 28.64px, var(--gray800));
+              margin-bottom: 16px;
+            }
+
+            .dividerLine {
+              margin-bottom: 16px;
+            }
+
+            h3 {
+              @include font-style(14px, 500, 16.71px, var(--gray600));
+              margin-bottom: 8px;
+            }
+
+            p {
+              margin-bottom: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    .commentsSection {
+      form {
+        margin-bottom: 16px;
+        textarea::placeholder {
+          @include font-style(14px, 400, 24px, var(--gray400));
+        }
       }
     }
   }
