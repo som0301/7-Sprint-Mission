@@ -4,7 +4,7 @@ import AddItemPage from "./pages/AddItemPage";
 import NavBar from "./components/NavBar";
 import "./App.css";
 import "./global.css";
-import ItemDetail from "./ItemDetail";
+import ItemDetail from "./components/ItemDetail";
 
 function App() {
   return (

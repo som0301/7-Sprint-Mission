@@ -11,3 +11,16 @@ export async function getItems({ page = 1, pageSize = 4, orderBy }) {
     return [];
   }
 }
+
+export async function getItemDetail(productId) {
+  const query = `/products/${productId}`;
+  try {
+    const response = await fetch(`${BASE_URL}${query}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching item details", error);
+  }
+}
+
+
