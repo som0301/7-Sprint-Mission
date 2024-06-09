@@ -17,8 +17,10 @@ function TagList() {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      e.preventDefault();
-      addTag(tags.trim());
+      if (e.nativeEvent.isComposing === false) {
+        e.preventDefault();
+        addTag(tags.trim());
+      }
     }
   };
 
@@ -32,7 +34,7 @@ function TagList() {
         name='tags'
         value={tags}
         onChange={handleTagChange}
-        onKeyDown={handleKeyDown}
+        onKeyPress={handleKeyDown}
         placeholder='태그를 입력해주세요'
       />
       <div className='tag-list'>

@@ -4,6 +4,7 @@ import AddItemPage from "./pages/AddItemPage";
 import NavBar from "./components/NavBar";
 import "./App.css";
 import "./global.css";
+import ItemDetail from "./ItemDetail";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/items' element={<MarketPage />} />
+        <Route path='/items/:productId' element={<ItemDetail />} />
         <Route path='/additem' element={<AddItemPage />} />
       </Routes>
     </BrowserRouter>
