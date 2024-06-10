@@ -16,6 +16,7 @@ function ItemDetail() {
   const { productId } = useParams();
   const [item, setItem] = useState(itinialItem);
   const [comments, setComments] = useState([]);
+  const [addComment, setAddComment] = useState("");
 
   const loadItem = useCallback(async () => {
     const newItem = await getItemDetail(productId);
@@ -43,6 +44,30 @@ function ItemDetail() {
     loadComments(productId);
   }, [productId, loadComments]);
 
+  const handleAddCommentSubmit = async (e) => {
+    e.preventDefault();
+    if (addComment === "") {
+      alert("댓글을 입력해주세요.");
+      return;
+    }
+    const newComment = {
+      content: addComment,
+    };
+    await fetch(`/api/items/${productId}/comments`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newComment),
+    });
+    setAddComment("");
+    loadComments();
+  };
+
+  const handleAddCommentChange = (e) => {
+    setAddComment(e.target.value);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -64,7 +89,23 @@ function ItemDetail() {
         </div>
       </div>
       <div className={styles.comments}>
-        <h2>댓글 목록</h2>
+        <div className={styles["comment-add"]}>
+          <h2>문의하기</h2>
+          <textarea
+            type='text'
+            value={addComment}
+            placeholder='개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.'
+            onChange={handleAddCommentChange}
+            className={styles["comment-input"]}
+          />
+
+          <button
+            onClick={handleAddCommentSubmit}
+            className={styles["comment-submit"]}
+          >
+            등록
+          </button>
+        </div>
         {comments.length > 0 ? (
           comments.map((comment) => (
             <div key={comment.id} className={styles.comment}>
@@ -87,7 +128,7 @@ function ItemDetail() {
             </div>
           ))
         ) : (
-          <p>댓글이 없습니다.</p>
+          <p>아직 문의가 없습니다.</p>
         )}
       </div>
       <button className={styles["back-button"]} onClick={pageBack}>

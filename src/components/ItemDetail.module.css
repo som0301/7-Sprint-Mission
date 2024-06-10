@@ -110,3 +110,20 @@
   align-items: center;
   border-radius: 40px;
 }
+
+.comment-add {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 80px;
+}
+
+.comment-input {
+  height: 104px;
+  resize: none;
+}
+
+.comment-submit {
+  display: inline-block;
+  margin-left: auto;
+}
