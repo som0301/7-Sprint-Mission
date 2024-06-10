@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { getProducts } from '../api';
-import ProductList from './ProductList';
-import NavBar from './NavBar';
-import { useNavigation } from './useNavigation';
+import { getProducts } from '../src/product/data-access-product/useGetProducts';
+import ProductList from '../src/components/ProductList';
+import { useNavigation } from '../src/components/useNavigation';
+import BestProductList from '../src/components/BestProductList';
 
 function Items() {
   const [items, setItems] = useState([]);
@@ -68,7 +68,7 @@ function Items() {
   return (
     <div>
       <p>베스트 상품</p>
-      <bestProductList />
+      <BestProductList items={items} />
       <p>판매 중인 상품</p>
       <form onSubmit={handleSearchSubmit}>
         <input name="keyword" onKeyDown={handleKeyDown} />
