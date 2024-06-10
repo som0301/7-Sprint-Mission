@@ -1,0 +1,108 @@
+@import './global';
+@import './reset';
+
+.product-detail {
+  display: flex;
+  gap: 25px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--gray200-color);
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-size: 16px;
+  color: var(--gray800-color);
+}
+
+.product-detail .img {
+  border-radius: 10px;
+  width: 486px;
+  height: 486px;
+  object-fit: cover;
+  box-shadow: 3px 6px 21px -2px rgba(0, 0, 0, 0.49);
+  -webkit-box-shadow: 3px 6px 21px -2px rgba(0, 0, 0, 0.49);
+  -moz-box-shadow: 3px 6px 21px -2px rgba(0, 0, 0, 0.49);
+}
+
+.product-detail .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-detail .info .info-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.product-detail .info h1 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.product-detail .more-btn {
+  position: absolute;
+  right: 0;
+}
+
+.product-detail .info h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray600-color);
+  margin: 10px 0;
+}
+
+.product-detail .info .price {
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--gray200-color);
+}
+
+.product-detail .info .description {
+  font-size: 16px;
+}
+
+.product-detail .tag-container {
+  display: flex;
+  gap: 10px;
+  flex-flow: wrap;
+}
+
+.product-detail .tag {
+  background-color: var(--gray100-color);
+  border-radius: 99999px;
+  padding: 10px;
+}
+
+.product-detail .favorite-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px;
+  color: var(--gray500-color);
+  border: solid 1px var(--gray200-color);
+  border-radius: 99999px;
+  margin-top: 30px;
+}
+
+/* Tablet */
+@media (max-width: $tablet-max-width) {
+  .product-detail .img {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+/* Mobile */
+@media (max-width: $mobile-max-width) {
+  .product-detail {
+    flex-direction: column;
+  }
+
+  .product-detail .img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+  }
+}

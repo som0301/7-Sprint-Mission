@@ -7,14 +7,14 @@
 }
 
 .add-item .title {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-weight: bold;
   font-size: 28px;
   color: var(--gray800-color);
 }
 
 .add-item .btn-register {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-size: 16px;
   font-weight: 300;
   background-color: var(--blue-color);
@@ -66,6 +66,9 @@
 }
 
 .add-item .btn-delete {
+  background-color: transparent;
+  border: none;
+  padding: 0;
   position: absolute;
   top: 8px;
   right: 8px;
@@ -73,7 +76,7 @@
 }
 
 .add-item .input-label {
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-weight: bold;
   font-size: 18px;
   color: var(--gray800-color);
@@ -148,14 +151,4 @@
     height: 100%;
     aspect-ratio: 1;
   }
-
-  /* .add-item .add-img {
-    width: 168px;
-    height: 168px;
-  }
-
-  .add-item .added-img {
-    width: 168px;
-    height: 168px;
-  } */
 }
