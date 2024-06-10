@@ -6,6 +6,7 @@ body {
     "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   color: var(--gray800);
+  -webkit-font-smoothing: antialiased;
 }
 :root {
   --gray900: #111827;

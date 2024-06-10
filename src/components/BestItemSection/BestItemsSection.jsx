@@ -7,7 +7,6 @@ const BestItemsSection = () => {
   const [items, setItems] = useState([]);
   const [pageSize, setPageSize] = useState(4);
   const [orderBy, setOrderBy] = useState("favorite");
-  // const [windowInnerWidth, setWindowInnerWidth] = useState(window.innerWidth);
 
   const handleLoad = async ({ pageSize, orderBy }) => {
     const productsData = await getProducts({ page: 1, pageSize, orderBy });

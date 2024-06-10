@@ -1,0 +1,31 @@
+.second-hand-market-product-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  background-color: var(--snowwhite);
+}
+
+.second-hand-market-product-detail-return-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 71px;
+  color: var(--white);
+  background-color: var(--blue);
+  border: none;
+  border-radius: 40px;
+  margin-top: 16px;
+  margin-bottom: 250px;
+}
+
+.second-hand-market-product-detail-return-button span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.second-hand-market-product-detail-return-button img {
+  width: 19px;
+  height: 16px;
+}

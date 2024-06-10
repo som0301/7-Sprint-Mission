@@ -1,0 +1,53 @@
+.contact-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray900);
+}
+
+.contact-section-textarea {
+  width: 1200px;
+  height: 104px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.contact-section-textarea::placeholder {
+  font-family: "Pretendard Variable", Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray400);
+}
+
+.contact-section-button {
+  margin-left: auto;
+  outline: none;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 23px;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.contact-section-button:disabled {
+  background-color: var(--gray400);
+  cursor: not-allowed;
+}

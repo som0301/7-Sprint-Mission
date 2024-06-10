@@ -21,49 +21,48 @@ export const AddItemSection = () => {
   const [productTag, setProductTag] = useState("");
   const [productTags, setProductTags] = useState([]);
   const [filePreview, setFilePreview] = useState();
-  const [isFieldEmpty, setIsFieldEmpty] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
   const handleChangeInputValue = (e, setter) => {
     setter(e.target.value);
   };
+
   const handleChangeInputFile = (e) => {
     setProductImageFile(e.target.files[0]);
   };
+
   const handleDeletePreview = () => {
-    const inputNode = inputRef.current;
+    const inputNode = fileInputRef.current;
     if (!inputNode) return;
     inputNode.value = "";
     setProductImageFile(null);
+    setFilePreview(null);
   };
+
   const handleAddTag = () => {
     if (!productTag) return;
     setProductTags([...productTags, productTag]);
     setProductTag("");
   };
-  const handleKeyDownAddTag = (e) => {
+
+  const handleKeyUpAddTag = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
       handleAddTag();
     }
   };
+
   const handleDeleteTag = (tagText) => {
     setProductTags(productTags.filter((tag) => tag !== tagText));
   };
-  const checkFieldEmpty = () => {
-    if (productName && productInfo && productPrice && productTags.length > 0) {
-      setIsFieldEmpty(true);
-    } else {
-      setIsFieldEmpty(false);
-    }
-  };
-  const inputRef = useRef();
 
-  useEffect(() => {
-    checkFieldEmpty();
-  }, [productName, productInfo, productPrice, productTag]);
+  const isFieldEmpty =
+    productName && productInfo && productPrice && productTags.length > 0;
+
+  const fileInputRef = useRef();
 
   useEffect(() => {
     if (!productImageFile) return;
@@ -80,10 +79,8 @@ export const AddItemSection = () => {
       <header className="add-item-section-header">
         <h2 className="add-item-section-title">상품 등록하기</h2>
         <button
-          disabled={isFieldEmpty}
-          className={`add-item-section-submit-button ${
-            isFieldEmpty ? "abled" : null
-          }`}
+          disabled={!isFieldEmpty}
+          className={`add-item-section-submit-button`}
         >
           등록
         </button>
@@ -106,7 +103,7 @@ export const AddItemSection = () => {
             id="image"
             name="image"
             accept="image/png, image/jpeg"
-            ref={inputRef}
+            ref={fileInputRef}
             onChange={handleChangeInputFile}
           />
           {filePreview && (
@@ -178,7 +175,7 @@ export const AddItemSection = () => {
             handleChangeInputValue(e, setProductTag);
           }}
           onBlur={handleAddTag}
-          onKeyDown={handleKeyDownAddTag}
+          onKeyUp={handleKeyUpAddTag}
           placeholder="태그를 입력해주세요"
         />
         <div className="add-item-section-tags">

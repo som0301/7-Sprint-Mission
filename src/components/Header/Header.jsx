@@ -1,34 +1,33 @@
 import React from "react";
 import "./Header.css";
 import { pandaMarketLogoImage } from "../../assets/images";
-import { useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
-  const location = useLocation();
-  const pathName = location.pathname;
+  const getLinkStyle = ({ isActive }) => {
+    return {
+      color: isActive ? "var(--blue)" : undefined,
+    };
+  };
   return (
     <header className="header-wrapper">
       <nav className="gnb">
         <div className="gnb-left">
-          <a href="/">
+          <Link to="/">
             <img
               className="gnb-logo"
               src={pandaMarketLogoImage}
               alt="판다마켓로고 이미지"
             />
-          </a>
-          <a>자유게시판</a>
-          <a
-            className={`${
-              pathName == "/items" || pathName == "/additem" ? "selected" : ""
-            }`}
-          >
+          </Link>
+          <Link>자유게시판</Link>
+          <NavLink to="/items" style={getLinkStyle}>
             중고마켓
-          </a>
+          </NavLink>
         </div>
-        <a href="/Login" className="gnb-right gnb-login">
+        <NavLink to="/Login" className="gnb-right gnb-login">
           로그인
-        </a>
+        </NavLink>
       </nav>
     </header>
   );
