@@ -38,10 +38,6 @@ const InputStyle = css`
 
   &::placeholder {
     color: var(--gray-400);
-
-    position: absolute;
-    top: 16px;
-    left: 24px;
   }
 
   &:focus {
@@ -98,17 +94,25 @@ export function Input({
 }
 
 /* tag */
-const StyledTag = styled.div`
+
+const TagStyle = css`
   display: inline-flex;
   background-color: var(--gray-50);
-  padding: 12px 12px 12px 16px;
   border-radius: 26px;
-
-  ${TextStyle}
-
   align-items: center;
   justify-content: center;
   gap: 8px;
+  ${TextStyle}
+`;
+
+const StyledTag = styled.div`
+  padding: 12px 12px 12px 16px;
+  ${TagStyle}
+`;
+
+export const StyledProductTag = styled.div`
+  ${TagStyle}
+  padding: 6px 16px;
 `;
 
 export const TagContainer = styled.div`

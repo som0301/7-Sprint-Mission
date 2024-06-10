@@ -2,7 +2,7 @@ import logoImage from '/src/assets/logo-image.svg';
 import logoText from '/src/assets/logo-text.svg';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useResponsiveApi } from '../../Responsive';
+import { useResponsiveApi } from '/src/Responsive';
 
 const SIZES = {
   header: {

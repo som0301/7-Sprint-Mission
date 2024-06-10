@@ -1,4 +1,4 @@
-import ProductItem from './ProductItem';
+import ProductItem from '/src/components/ProductItem';
 
 function BestProductsListItem({ product, className }) {
   const { id, images, name, price, favoriteCount } = product;
@@ -21,7 +21,7 @@ function BestProductsList({ products, className }) {
       <div className='row'>
         {products.map((product) => {
           return (
-            <div className='best-products-col' key={product.id}>
+            <div className='products-col best-products-col' key={product.id}>
               <BestProductsListItem
                 className='best-product-item'
                 product={product}

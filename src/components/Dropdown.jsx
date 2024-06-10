@@ -7,22 +7,39 @@ import iconSort from '/src/assets/ic_sort.svg';
 
 import { useResponsiveApi } from '/src/Responsive';
 
-function DropdownList({ setOrder }) {
-  const handleNewClick = () => setOrder('recent');
-  const handleBestClick = () => setOrder('favorite');
+export function Dropdown({
+  className,
+  first,
+  firstClick,
+  second,
+  secondClick,
+}) {
   return (
-    <ul className='dropdown-ul'>
-      <li className='dropdown-list' onClick={handleNewClick}>
-        최신순
+    <ul className={`${className} dropdown-ul`}>
+      <li className='dropdown-list' onClick={firstClick}>
+        {first}
       </li>
-      <li className='dropdown-list' onClick={handleBestClick}>
-        좋아요순
+      <li className='dropdown-list' onClick={secondClick}>
+        {second}
       </li>
     </ul>
   );
 }
 
-function Dropdown({ setOrder, order }) {
+function DropdownList({ setOrder }) {
+  const handleNewClick = () => setOrder('recent');
+  const handleBestClick = () => setOrder('favorite');
+  return (
+    <Dropdown
+      first='최신순'
+      firstClick={handleNewClick}
+      second='좋아요순'
+      secondClick={handleBestClick}
+    />
+  );
+}
+
+function ProductDropdown({ setOrder, order }) {
   const [isDropdownView, setDropdownView] = useState(false);
   const { isMobile } = useResponsiveApi();
 
@@ -54,4 +71,4 @@ function Dropdown({ setOrder, order }) {
   );
 }
 
-export default Dropdown;
+export default ProductDropdown;

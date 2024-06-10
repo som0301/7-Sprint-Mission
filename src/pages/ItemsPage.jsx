@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import BestProductsList from '../components/BestProductsList';
-import { getProducts } from '../components/api/api';
+import { getProducts } from '/src/api/api';
 
 import '/src/styles/Reset.css';
 import '/src/App.css';

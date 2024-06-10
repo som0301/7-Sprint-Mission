@@ -1,37 +1,11 @@
-import { FileInput, Input, Tag, TagContainer } from './Input';
-import { styled } from 'styled-components';
-import Button, { StyledButton } from './common/Button';
+import { FileInput, Input, Tag, TagContainer } from '/src/components/Input';
+import { StyledButton } from '/src/components/common/Button';
 import { useEffect, useState } from 'react';
 import {
   StyledForm,
   StyledFormHeader,
   FormHeaderTitle,
 } from '/src/components/common/CommonComponents';
-
-// const StyledForm = styled.form`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 24px;
-//   padding-top: 24px;
-
-//   @media (max-width: 1199px) {
-//     padding-top: 16px;
-//   }
-//   @media (max-width: 767px) {
-//     gap: 16px;
-//   }
-// `;
-
-// const StyledFormHeader = styled.div`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// `;
-
-// const FormHeaderTitle = styled.h2`
-//   font-size: 28px;
-//   font-weight: 700;
-// `;
 
 const initialValues = {
   name: '',

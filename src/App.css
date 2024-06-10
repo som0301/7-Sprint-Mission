@@ -1,8 +1,5 @@
 @import '/src/styles/Color.css';
 
-/* //TODO: css 리팩토링 */
-/* TODO: 헤더 반응형 갭 변경*/
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -132,6 +129,17 @@ main {
 .product-image {
   border-radius: 16px;
 }
+
+ul.kebab-drowdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+}
+
+.products-col:hover {
+  cursor: pointer;
+}
+
 /* 패드 사이즈 */
 @media (max-width: 1199px) {
   body {

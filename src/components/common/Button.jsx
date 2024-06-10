@@ -21,12 +21,14 @@ export const StyledButton = styled.button`
 
   color: #ffffff;
   font-weight: 600;
-  font-size: ${({ size }) => SIZES[size].fontSize}px;
+  font-size: ${({ size }) =>
+    SIZES[size].fontSize ?? SIZES['medium'].fontSize}px;
   background-color: ${({ disabled }) =>
     disabled ? 'var(--gray-400)' : 'var(--main-color)'};
 
-  padding: ${({ size }) => SIZES[size].padding};
-  border-radius: ${({ size }) => SIZES[size].borderRadius}px;
+  padding: ${({ size }) => SIZES[size].padding ?? SIZES['medium'].padding};
+  border-radius: ${({ size }) =>
+    SIZES[size].borderRadius ?? SIZES['medium'].borderRadius}px;
 
   display: flex;
   align-items: center;
@@ -44,5 +46,10 @@ export const StyledButton = styled.button`
   &:disabled {
     cursor: default;
     background-color: var(--gray-400);
+  }
+
+  &.back {
+    display: flex;
+    gap: 10px;
   }
 `;

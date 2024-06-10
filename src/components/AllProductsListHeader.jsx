@@ -1,7 +1,6 @@
-import Button from './common/Button';
-import Search from './Search';
-import Dropdown from './Dropdown';
-import { StyledButton } from './common/Button';
+import Search from '/src/components/Search';
+import Dropdown from '/src/components/Dropdown';
+import { StyledButton } from '/src/components/common/Button';
 
 export function AllProductsListHeader({ onClick, order, setOrder }) {
   return (
