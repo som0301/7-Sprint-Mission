@@ -3,8 +3,8 @@ import Dropdown from "./Dropdown";
 import "../styles/AllItem.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import useMediaQuery from "../hooks/useMediaQuery";
 import Pagination from "./Pagination";
+import useResponsive from "../hooks/useResponsive";
 
 function MobileAllItem({ filter, changeFilter }) {
   return (
@@ -29,9 +29,7 @@ function MobileAllItem({ filter, changeFilter }) {
 function AllItem() {
   const [filter, setFilter] = useState("recent");
   const [page, setPage] = useState(1);
-  const isDesktop = useMediaQuery("(min-width: 1200px)");
-  const isTablet = useMediaQuery("(min-width: 768px) and (max-width: 1199px)");
-  const isMobile = useMediaQuery("(max-width: 767px)");
+  const { isMobile } = useResponsive();
 
   const changeFilter = (e) => {
     setFilter(e.target.value);
@@ -58,9 +56,6 @@ function AllItem() {
       )}
       <AllItemList
         filter={filter}
-        isDesktop={isDesktop}
-        isTablet={isTablet}
-        isMobile={isMobile}
         page={page}
       />
       <Pagination currentPage={page} setPage={setPage} />

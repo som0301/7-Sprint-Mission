@@ -1,10 +1,19 @@
 import { useState, useEffect } from "react";
 import { getProducts } from "../api/api";
 import heartIcon from "../images/icons/ic_heart.svg";
+import useResponsive from "../hooks/useResponsive";
 
-function AllItemList({ page, filter, isDesktop, isTablet, isMobile }) {
+function AllItemList({ page, filter }) {
   const [products, setProducts] = useState([]);
-  const itemsToShow = isDesktop ? 10 : isTablet ? 6 : isMobile ? 4 : 10;
+  const { isDesktop, isTablet, isMobile } = useResponsive();
+  const breakpoints = { desktop: 10, tablet: 6, mobile: 4 };
+  const itemsToShow = isDesktop
+    ? breakpoints.desktop
+    : isTablet
+    ? breakpoints.tablet
+    : isMobile
+    ? breakpoints.mobile
+    : breakpoints.desktop;
 
   const getProductsList = async (options) => {
     const { list } = await getProducts(options);

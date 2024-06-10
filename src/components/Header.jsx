@@ -1,9 +1,11 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logoImage from "../images/logo/logo.svg";
 import mobileLogoImage from "../images/logo/mobile-logo.svg";
 import "../styles/Header.css";
 
 function Header() {
+  const location = useLocation();
+  const isAddItemPage = location.pathname === "/additem";
   return (
     <header className="header-container">
       <h1>
@@ -18,7 +20,12 @@ function Header() {
         <NavLink to="/comunity" className="header-list">
           자유게시판
         </NavLink>
-        <NavLink to="/items" className="header-list header-list-market">
+        <NavLink
+          to="/items"
+          className={`header-list ${
+            isAddItemPage ? "header-list-market-active" : ""
+          }`}
+        >
           중고마켓
         </NavLink>
       </div>

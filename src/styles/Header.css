@@ -10,6 +10,7 @@
   top: 0;
   border-bottom: 1px solid #dfdfdf;
   background-color: #fff;
+  z-index: 9999;
 }
 
 .header-logo {
@@ -31,7 +32,7 @@
   color: #4b5563;
 }
 
-.header-list-market {
+.header-list-market-active {
   color: #3692ff;
 }
 

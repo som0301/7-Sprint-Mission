@@ -1,8 +1,8 @@
 import "../styles/Pagination.css";
 
-function Pagination({ currentPage, setPage }) {
-  const TOTAL_PAGES = 5;
+const TOTAL_PAGES = 5;
 
+function Pagination({ currentPage, setPage }) {
   const handlePrevious = () => {
     if (currentPage > 1) {
       setPage(currentPage - 1);
