@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { getItemDetail, getComments } from "../api";
 import { useParams } from "react-router-dom";
+import styles from "./ItemDetail.module.css";
 
 const itinialItem = {
   name: "",
@@ -43,43 +44,52 @@ function ItemDetail() {
   }, [productId, loadComments]);
 
   return (
-    <div>
-      {item.images.length > 0 && <img src={item.images[0]} alt={item.name} />}
-      <div>{item.name}</div>
-      <div>{item.description}</div>
-      <div>{item.price}</div>
-      <div>{item.favoriteCount}</div>
-      <div>
-        {item.tags.map((tag) => (
-          <span key={tag}>{tag} </span>
-        ))}
+    <div className={styles.container}>
+      <div className={styles.header}>
+        {item.images.length > 0 && (
+          <img src={item.images[0]} alt={item.name} className={styles.image} />
+        )}
+        <div className={styles.details}>
+          <div className={styles.title}>{item.name}</div>
+          <div className={styles.price}>{item.price.toLocaleString()}원</div>
+          <div className={styles.description}>{item.description}</div>
+          <div className={styles.tags}>
+            {item.tags.map((tag) => (
+              <span key={tag} className={styles.tag}>
+                #{tag}
+              </span>
+            ))}
+          </div>
+          <div className={styles.heart}>♡ {item.favoriteCount}</div>
+        </div>
       </div>
-      <div>
+      <div className={styles.comments}>
         <h2>댓글 목록</h2>
         {comments.length > 0 ? (
           comments.map((comment) => (
-            <div key={comment.id} className='comment'>
+            <div key={comment.id} className={styles.comment}>
               <img
                 src={comment.writer.image}
                 alt={comment.writer.nickname}
-                className='comment-profile-img'
+                className={styles["comment-profile-img"]}
               />
-              <div className='comment-details'>
-                <div className='comment-author'>{comment.writer.nickname}</div>
-                <div className='comment-date'>
+              <div className={styles["comment-details"]}>
+                <div className={styles["comment-author"]}>
+                  {comment.writer.nickname}
+                </div>
+                <div className={styles["comment-date"]}>
                   {new Date(comment.createdAt).toLocaleDateString()}
                 </div>
-                <div className='comment-content'>{comment.content}</div>
+                <div className={styles["comment-content"]}>
+                  {comment.content}
+                </div>
               </div>
             </div>
           ))
         ) : (
-          <p>아직 문의가 없습니다.</p>
+          <p>댓글이 없습니다.</p>
         )}
       </div>
-      <button onClick={pageBack} className='back-home'>
-        목록으로 돌아가기
-      </button>
     </div>
   );
 }
