@@ -127,3 +127,7 @@
   display: inline-block;
   margin-left: auto;
 }
+
+.gitmoji {
+  font-size: 24px;
+}
