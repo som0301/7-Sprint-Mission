@@ -16,6 +16,26 @@ export async function getItems({
   return body;
 }
 
+export async function getItemByID(productId = '') {
+  const response = await fetch(`${BASE_URL}/${productId}`);
+  if (!response.ok) {
+    throw new Error('데이터를 불러오는데 실패했습니다');
+  }
+  const body = await response.json();
+  return body;
+}
+
+export async function getCommentsByID(productId = '', limit = 5, cursor = 0) {
+  const response = await fetch(
+    `${BASE_URL}/${productId}/comments?limit=${limit}&cursor=${cursor}`
+  );
+  if (!response.ok) {
+    throw new Error('데이터를 불러오는데 실패했습니다');
+  }
+  const body = await response.json();
+  return body;
+}
+
 export async function submitItems(FormData) {
   const response = await fetch(`${BASE_URL}`, {
     method: 'POST',
