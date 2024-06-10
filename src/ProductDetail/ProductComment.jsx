@@ -1,6 +1,6 @@
 import React from "react";
 import morebutton from "../images/morebutton.svg";
-import comment_emtpy from "../images/comment_empty.svg";
+import comment_empty from "../images/comment_empty.svg";
 
 const ProductComment = ({ comment }) => {
   function timeAgo(dateString) {
@@ -32,16 +32,16 @@ const ProductComment = ({ comment }) => {
             <img
               src={morebutton}
               alt="더보기 버튼"
-              width={"24px"}
-              height={"24px"}
+              width="24"
+              height="24"
             />
             </div>
             <div className="comment-wrapper-img">
               <img
                 src={com.writer.image}
                 alt="사용자"
-                width={"40px"}
-                height={"40px"}
+                width="40"
+                height="40"
               />
               <div className="comment-wrapper-user">
                 <span className="comment-user">{com.writer.nickname}</span>
@@ -53,7 +53,7 @@ const ProductComment = ({ comment }) => {
         ))
       ) : (
         <div className="comment-empty-wrapper">
-        <img src={comment_emtpy} alt="문의" width={"200px"} height={"200px"} />
+        <img src={comment_empty} alt="문의" width="200" height="200" />
         <span className="comment-empty">아직 문의가 없습니다.</span>
         </div>
       )}

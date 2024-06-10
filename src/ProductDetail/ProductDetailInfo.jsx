@@ -2,10 +2,11 @@ import React from "react";
 import detail_heart from "../images/detail-heart.svg";
 import morebutton from "../images/morebutton.svg";
 
+function formatNumber(number) {
+  return new Intl.NumberFormat("ko-KR").format(number) + "원";
+}
+
 const ProductDetailInfo = ({ detailItem }) => {
-  function formatNumber(number) {
-    return new Intl.NumberFormat("ko-KR").format(number) + "원";
-  }
 
   return (
     <div className="detailInfo">
@@ -28,13 +29,11 @@ const ProductDetailInfo = ({ detailItem }) => {
         <p className="top-wrapper-title">상품 소개</p>
         <p className="detailItem-description">{detailItem.description}</p>
         <p className="top-wrapper-title">상품 태그</p>
-        {detailItem && detailItem.tags?.length > 0
-          ? detailItem.tags.map((tag, index) => (
+       {detailItem.tags.map((tag, index) => (
               <p key={index} className="detailItem-tags">
                 {`#${tag}`}
               </p>
-            ))
-          : null}
+            ))}
 
         <button className="favorite-count">
           <img src={detail_heart} alt="좋아요" width={"32px"} height={"32px"}/>
