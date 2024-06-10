@@ -30,6 +30,10 @@ function ItemDetail() {
     }
   }, [productId]);
 
+  const pageBack = () => {
+    window.location.href = "/items";
+  };
+
   useEffect(() => {
     loadItem(productId);
   }, [productId, loadItem]);
@@ -54,15 +58,28 @@ function ItemDetail() {
         <h2>댓글 목록</h2>
         {comments.length > 0 ? (
           comments.map((comment) => (
-            <div key={comment.id}>
-              <div>{comment.writer?.userId}</div>
-              <div>{comment.content}</div>
+            <div key={comment.id} className='comment'>
+              <img
+                src={comment.writer.image}
+                alt={comment.writer.nickname}
+                className='comment-profile-img'
+              />
+              <div className='comment-details'>
+                <div className='comment-author'>{comment.writer.nickname}</div>
+                <div className='comment-date'>
+                  {new Date(comment.createdAt).toLocaleDateString()}
+                </div>
+                <div className='comment-content'>{comment.content}</div>
+              </div>
             </div>
           ))
         ) : (
-          <p>댓글이 없습니다.</p>
+          <p>아직 문의가 없습니다.</p>
         )}
       </div>
+      <button onClick={pageBack} className='back-home'>
+        목록으로 돌아가기
+      </button>
     </div>
   );
 }
