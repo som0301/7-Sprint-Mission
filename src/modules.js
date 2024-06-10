@@ -1,4 +1,3 @@
-import { createContext, useContext } from 'react';
 
 export function createErrorTag(alert, target, tagName) {
   alert = document.createElement(tagName);
@@ -27,28 +26,13 @@ export const classModuleName = (className = '', styles) => {
   return moduleNames;
 };
 
-export function debounce(fn, ms) {
-  let timer;
-  return _ => {
-    clearTimeout(timer);
-    timer = setTimeout(_ => {
-      timer = null;
-      fn.apply(this, arguments);
-    }, ms);
-  };
+export function elapseTimeCal(targetTime) {
+  const currentTime = Date.now();
+  const elapseTime = currentTime - Date.parse(targetTime);
+  const elapseDay = Math.floor(elapseTime / 1000 / 3600 / 24);
+  const elapseHour = Math.floor(elapseTime / 1000 / 3600 % 24);
+
+  return [elapseDay, elapseHour];
 }
-
-
-const GlobalContext = createContext();
-
-export const GlobalProvider = ({children, value}) => {
-  return (
-    <GlobalContext.Provider value={{ globalVar: value}}>
-      {children}
-    </GlobalContext.Provider>
-  )
-}
-
-export const useGlobal = () => useContext(GlobalContext);
 
 export default createErrorTag;

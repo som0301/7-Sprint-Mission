@@ -2,6 +2,7 @@ import { classModuleName } from '../../../modules';
 import styles from './allproductlist.module.css';
 import { getProducts } from '../../../api';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import searchIcon from '../../../images/icons/ic_search.svg';
 import CustomSelect from './../customselect/customselect';
 import Product from '../../modules/product/product';
@@ -27,7 +28,6 @@ const itemViewMediaTitle = {
 };
 
 function ReactiveHeader({ mediaState, orderBy, handleOrderBySelect, keyword, handleInputChange, handleInputBlur }) {
-
   if (mediaState === 'mobile') {
     return (
       <div className={classModuleName('header', styles)}>
@@ -53,11 +53,22 @@ function ReactiveHeader({ mediaState, orderBy, handleOrderBySelect, keyword, han
             <label htmlFor="search">
               <img className={classModuleName('icon', styles)} src={searchIcon} alt="searchIcon" />
             </label>
-            <input id="search" value={keyword} onChange={handleInputChange} onBlur={handleInputBlur} className={classModuleName('search', styles)} name="search" type="text" placeholder="검색할 상품을 입력해주세요" />
+            <input
+              id="search"
+              value={keyword}
+              onChange={handleInputChange}
+              onBlur={handleInputBlur}
+              className={classModuleName('search', styles)}
+              name="search"
+              type="text"
+              placeholder="검색할 상품을 입력해주세요"
+            />
           </div>
-          <Button link="/additem" className="search-submit" cssStyle={styles} name="submit" type="submit">
-            상품 등록하기
-          </Button>
+          <Link to='/additem'>
+            <Button className="search-submit" cssStyle={styles} name="submit" type="submit">
+              상품 등록하기
+            </Button>
+          </Link>
           <CustomSelect onChange={handleOrderBySelect} orderBy={orderBy} mediaState={mediaState} />
         </div>
       </div>
@@ -97,11 +108,11 @@ function AllProductList({ mediaState }) {
 
   const handleInputChange = (e) => {
     setKeyword(e.target.value);
-  }
+  };
 
-  const handleInputBlur = (e) => {
+  const handleInputBlur = () => {
     handleLoad({ orderBy, page, pageSize: itemViewMediaState[mediaState], keyword });
-  }
+  };
 
   useEffect(() => {
     handleLoad({ orderBy, page, pageSize: itemViewMediaState[mediaState], keyword });
@@ -109,17 +120,10 @@ function AllProductList({ mediaState }) {
 
   return (
     <section className={classModuleName('allproductList-body', styles)}>
-      <ReactiveHeader 
-        mediaState={mediaState} 
-        orderBy={orderBy} 
-        handleOrderBySelect={handleOrderBySelect} 
-        keyword={keyword} 
-        handleInputChange={handleInputChange} 
-        handleInputBlur={handleInputBlur}
-      />
+      <ReactiveHeader mediaState={mediaState} orderBy={orderBy} handleOrderBySelect={handleOrderBySelect} keyword={keyword} handleInputChange={handleInputChange} handleInputBlur={handleInputBlur} />
       <div className={classModuleName('product-list', styles)}>
-        {items.map(({ images, name, price, favoriteCount, id }) => {
-          return <Product key={id} images={images} name={name} price={price} favoriteCount={favoriteCount} width={ITEM_WIDTH[mediaState]}></Product>;
+        {items.map((item) => {
+          return <Product key={item.id} item={item} width={ITEM_WIDTH[mediaState]}></Product>;
         })}
       </div>
       <footer>

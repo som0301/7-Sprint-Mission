@@ -11,17 +11,7 @@ import { classModuleName } from '../../../modules';
 function Home() {
   return (
     <div className={classModuleName('home-body media',styles)}>
-      <nav className={classModuleName("mainheader media",styles)}>
-        <div className={classModuleName("mainheaderbg media",styles)}>
-          <a href="/">
-            <div className={classModuleName("nav-logo nav-media",styles)}></div>
-          </a>
-          <div className={classModuleName("virtualbox media",styles)}></div>
-          <a href="/login">
-            <button type="button">로그인</button>
-          </a>
-        </div>
-      </nav>
+      
       <header className={classModuleName("home-header media",styles)}>
         <div className={classModuleName("container main-container media",styles)}>
           <h2 className={classModuleName("big-message media",styles)}>일상의 모든 물건을 거래해 보세요</h2>

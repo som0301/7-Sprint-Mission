@@ -43,8 +43,8 @@ function BestProductList({mediaState}) {
     <section className={classModuleName('best-product-list', styles)}>
       <h2 className={classModuleName('best-product-list-title', styles)}>베스트 상품</h2>
       <div className={classModuleName('best-product-list-container', styles)}>
-        {items.map(({ images, name, price, favoriteCount, id }) => {
-          return <Product key={id} images={images} name={name} price={price} favoriteCount={favoriteCount} width={ITEM_WIDTH[mediaState]}></Product>;
+        {items.map((item) => {
+          return <Product key={item.id} item={item} width={ITEM_WIDTH[mediaState]}></Product>;
         })}
       </div>
     </section>

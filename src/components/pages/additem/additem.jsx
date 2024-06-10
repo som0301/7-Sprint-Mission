@@ -1,5 +1,3 @@
-import ItemsNav from './../../ui/itemnav/itemsnav';
-import userIcon from '../../../images/icons/ic_user.svg';
 import Button from './../../modules/button/button';
 import styles from './additem.module.css';
 import Tag from '../../modules/tag/tag';
@@ -88,7 +86,6 @@ function AddItem({ mediaState }) {
 
   return (
     <>
-      <ItemsNav mediaState={mediaState} rightComponent={<img src={userIcon} alt="userIcon"></img>} />
       <section className={classModuleName('main', styles)}>
         <form className={classModuleName('input-form', styles)}>
           <div className={classModuleName('input-header-container', styles)}>
@@ -135,7 +132,7 @@ function AddItem({ mediaState }) {
           </div>
           <div className={classModuleName('tag-container', styles)}>
             {values.tags.map((tag,index)=>{
-              return <Tag index={index} key={index} style={styles} value={tag} className="input-value-box tag" onDelete={handleTagDelete}/>
+              return <Tag index={index} key={index} style={styles} value={tag} onDelete={handleTagDelete}/>
             })}
           </div>
         </form>

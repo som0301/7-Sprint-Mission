@@ -1,9 +1,19 @@
 .button {
+  width: fit-content;
   padding: 12px 23px;
   font-size: 1.6rem;
   text-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .button.disable {
   background-color: var(--color-coolgray-400);
+}
+
+.link {
+  display: grid;
 }
