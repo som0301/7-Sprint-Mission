@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isEmpty } from 'lodash';
-import { getProductList } from '../../../api';
+import { getProductDataList } from '../../../api/productApi';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import ProductCard from '../ProductCard/ProductCard';
 import ProductSearch from '../ProductSearch/ProductSearch';
@@ -22,21 +22,25 @@ function AllProducts() {
 	const [orderBy, setOrderBy] = useState('recent');
 	const [items, setItems] = useState([]);
 	const [keyword, setKeyword] = useState('');
-	const [error, setError] = useState(false);
+	const [error, setError] = useState(undefined);
 
-	const getProduct = async (page, pageSize, orderBy, keyword) => {
+	const getProductList = async (page, pageSize, orderBy, keyword) => {
 		try {
-			const result = await getProductList({ page, pageSize, orderBy, keyword });
+			setError(undefined);
+			const result = await getProductDataList({ page, pageSize, orderBy, keyword });
 			setItems(result?.list);
 			setTotalPageSize(Math.ceil(result?.totalCount / pageSize));
 		} catch (e) {
+			setError(e.message || '잠시후에 다시 시도해주세요.');
 			console.error(e);
-			setError(e.message);
+			setPage(1);
+			setItems([]);
+			setTotalPageSize(0);
 		}
 	};
 
 	useEffect(() => {
-		getProduct(page, pageSize, orderBy, keyword);
+		getProductList(page, pageSize, orderBy, keyword);
 	}, [page, pageSize, orderBy, keyword]);
 
 	return (

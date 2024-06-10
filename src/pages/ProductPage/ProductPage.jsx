@@ -1,24 +1,24 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { getProductInfo } from '../../api';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getProductData } from '../../api/productApi';
 import { isEmpty } from 'lodash';
 
 function ProductPage() {
+	const navigate = useNavigate();
 	const { itemId } = useParams();
 	const [item, setItem] = useState(null);
-	const [error, setError] = useState(false);
 
 	const getProduct = useCallback(async () => {
 		try {
-			setError(false);
-			const result = await getProductInfo(itemId);
+			const result = await getProductData(itemId);
 			setItem(result);
 		} catch (e) {
-			setError(e.message);
 			console.error(e);
+			alert(e.message);
 			setItem(null);
+			navigate('/items');
 		}
-	}, [itemId]);
+	}, [itemId, navigate]);
 
 	useEffect(() => {
 		getProduct();
@@ -26,9 +26,7 @@ function ProductPage() {
 
 	return (
 		<div className='inner'>
-			{isEmpty(item) ? (
-				<b>{error || '제품 데이터를 가져오는데 실패했습니다.'}</b>
-			) : (
+			{!!item && (
 				<>
 					{isEmpty(item.images) ? <p>등록된 이미지가 없습니다.</p> : <img src={item.images} alt={`${item.name || ''} 이미지`} draggable='false' />}
 					<p>제목: {item.name}</p>

@@ -11,13 +11,13 @@
 .search-form label img {
 	position: absolute;
 	top: 50%;
-	left: 16px;
+	left: 12px;
 	transform: translateY(-50%);
 }
 
 .search-form label input {
 	padding: 8px 16px;
-	padding-left: 48px;
+	padding-left: 40px;
 	width: 100%;
 	min-width: auto;
 	min-height: auto;
@@ -29,4 +29,5 @@
 }
 .search-form label input::placeholder {
 	color: var(--cool-grey-400);
+	letter-spacing: -0.5px;
 }
