@@ -1,7 +1,9 @@
-export async function getItems({
-  orderBy = "favorite",
+
+export default async function getItems({
   page = 1,
   pageSize = 4,
+  orderBy = "recent",
+  search = "",
 }) {
   const query = `page=${page}&pageSize=${pageSize}&orderBy=${orderBy}`;
   const response = await fetch(
@@ -14,6 +16,9 @@ export async function getItems({
       method: "GET",
     }
   );
+  if (!response.ok) {
+    throw new Error("데이터를 불러오는데 실패했습니다");
+  }
   const body = await response.json();
   return body;
 }

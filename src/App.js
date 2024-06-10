@@ -1,31 +1,21 @@
-import { useEffect, useState } from "react";
-import { getItems } from "./Api";
-import BestProductList from "./components/BestProducts";
 import Header from "./components/Header";
-import "./style/header.css";
+import ProductsList from "./pages/ProductsListPage";
+import HomePage from "./pages/HomePage";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import BoardPage from "./pages/BoardPage";
+import AddItemPage from "./pages/AddItemPage";
 
 function App() {
-  // const [order, setOrder] = useState("favorite");
-  const [items, setItems] = useState([]);
-  // const sortedItems = items.sort((a, b) => b[order] - a[order]);
-
-  const handleLoad = async (options) => {
-    const { list } = await getItems(options);
-    setItems(list);
-  };
-
-  useEffect(() => {
-    handleLoad({ orderBy: "favorite", page: 1, pageSize: 4 });
-  }, []);
-
   return (
-    <div>
-      {/* <header className="App-header" /> */}
-      <Header />
-      <div> 베스트 상품 </div>
-      <BestProductList items={items} />
-      <div> 전체 상품 </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />}>
+          <Route path="items" element={<ProductsList />} />
+          <Route path="board" element={<BoardPage />} />
+          <Route path="additem" element={<AddItemPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

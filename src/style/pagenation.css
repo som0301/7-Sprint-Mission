@@ -1,0 +1,32 @@
+button {
+  cursor: pointer;
+}
+
+button:active {
+  background-color: #3692ff;
+  color: #fff;
+}
+
+button:focus {
+  background-color: #3692ff;
+  color: #fff;
+}
+
+.pagenation-container {
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+}
+.page-button-group {
+  display: flex;
+  gap: 4px;
+}
+.page-button {
+  width: 40px;
+  height: 40px;
+  padding: 12.5px;
+  gap: 12.5px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+}
