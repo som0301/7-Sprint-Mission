@@ -100,3 +100,13 @@
 .comment-content {
   font-size: 14px;
 }
+
+.back-button {
+  display: inline-block;
+  padding: 12px auto;
+  margin: 20px auto;
+  background-color: #3692ff;
+  width: 240px;
+  align-items: center;
+  border-radius: 40px;
+}

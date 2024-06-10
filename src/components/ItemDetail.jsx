@@ -90,6 +90,9 @@ function ItemDetail() {
           <p>댓글이 없습니다.</p>
         )}
       </div>
+      <button className={styles["back-button"]} onClick={pageBack}>
+        목록으로 돌아가기
+      </button>
     </div>
   );
 }
