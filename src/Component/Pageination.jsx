@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactComponent as LeftArrow } from "../../src/images/home/arrow_left.svg";
 import { ReactComponent as RightArrow } from "../../src/images/home/arrow_right.svg";
-import "../../src/style/pageination.css";
+import "../../src/style/Pageination.css";
 
 const Pageination = ({pageSize, activePage, onPageChange}) => {
     const maxPages = 5;

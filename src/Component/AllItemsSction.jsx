@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import favicon from "../../src/images/logo/favoriteIcon.svg";
-import CallAPI from "../api/callAPI";
-import "../style/allItemsSection.css"
-import SeachInput from "./seachInput";
-import DropDownSort from "./dropDownSort";
-import Pageination from "./pageination";
+import {CallItemSearch} from "../api/CallAPI";
+import "../style/AllItemsSection.css"
+import SeachInput from "./SeachInput";
+import DropDownSort from "./DropDownSort";
+import Pageination from "./Pageination";
 
 function getWidth() {
     let width = window.innerWidth;
@@ -26,7 +26,9 @@ function getWidth() {
 function AllItem({item}) {
     return (
         <div className="AllItem">
-            <img src={item.images[0]} alt={item.name}/>
+            <NavLink to={`/items/${item.id}`}>
+                <img src={item.images[0]} alt={item.name}/>
+            </NavLink>
             <div className="ItemHistory">
                 <p>{item.name}</p>
                 <h1>{item.price.toLocaleString()}원</h1>
@@ -49,7 +51,7 @@ function AllItemsSection() {
     const [pageSize, setPageSize] = useState();
 
     const AllItemsLoad = async (ItemCount) => {
-        const response = await CallAPI(Poninter, ItemCount, Order);
+        const response = await CallItemSearch(Poninter, ItemCount, Order);
         setAllItemsList(response.list);
         setPageSize(Math.ceil(response.totalCount / ItemCount));
     };

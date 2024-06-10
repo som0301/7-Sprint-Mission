@@ -1,4 +1,4 @@
-@import "../style/colorList.css";
+@import "../style/ColorList.css";
 
 .BestItemLayer {
     width: 1200px;
@@ -13,7 +13,7 @@
     gap: 16px;
 }
 
-.BestItem > img {
+.BestItem > a > img {
     width: 282px;
     height: 282px;
     margin-bottom: 16px;

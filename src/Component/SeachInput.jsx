@@ -1,5 +1,5 @@
 import InputIcon from "../images/home/inputicon.svg";
-import "../../src/style/sechInput.css";
+import "../../src/style/SechInput.css";
 
 function SeachInput() {
     return (
