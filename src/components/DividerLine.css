@@ -1,0 +1,5 @@
+@import url("/src/modules/css/globals.css");
+
+.DividerLine {
+  border: 1px solid var(--gray200);
+}

@@ -5,8 +5,7 @@ import LoginPage from "./pages/LoginPage/LoginPage.jsx";
 import MarketPage from "./pages/MarketPage/MarketPage.jsx";
 import AddItemPage from "./pages/AddItemPage/AddItemPage.jsx";
 import CommunityFeedPage from "./pages/CommunityFeedPage/CommunityFeedPage.jsx";
-import { getLists } from "./api.js";
-import { useEffect, useState } from "react";
+import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage.jsx";
 
 function App() {
   return (
@@ -17,7 +16,10 @@ function App() {
         <Routes>
           <Route index element={<HomePage />} />
           <Route path="login" element={<LoginPage />} />
-          <Route path="items" element={<MarketPage />} />
+          <Route path="items">
+            <Route index element={<MarketPage />} />
+            <Route path=":productId" element={<ProductDetailPage />} />
+          </Route>
           <Route path="additem" element={<AddItemPage />} />
           <Route path="community" element={<CommunityFeedPage />} />
         </Routes>

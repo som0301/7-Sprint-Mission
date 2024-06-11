@@ -1,0 +1,13 @@
+@import url("../../../components/globals.css");
+
+.FavoriteButton {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 4px 12px;
+  border: 1px solid var(--gray200);
+  border-radius: 35px;
+
+  background-color: #fff;
+}

@@ -1,0 +1,55 @@
+@import url("../../../components/globals.css");
+
+.CommentBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+
+  width: 100%;
+  margin: 0 auto;
+
+  box-sizing: border-box;
+}
+
+.CommentBox > p {
+  color: var(--gray800);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.4em;
+}
+
+.CommentBox-profile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.CommentBox-profile > img {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 100%;
+}
+
+.CommentBox-profile > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.CommentBox-profile-name {
+  color: var(--gray600);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.2em;
+}
+
+.CommentBox-profile-updated {
+  color: var(--gray400);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2em;
+}

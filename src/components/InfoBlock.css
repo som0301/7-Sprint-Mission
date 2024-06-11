@@ -1,0 +1,20 @@
+@import url("./globals.css");
+
+.InfoBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.InfoBlock-title {
+  color: var(--gray600);
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+.InfoBlock-detail {
+  display: flex;
+  gap: 8px;
+}

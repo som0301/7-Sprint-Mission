@@ -1,0 +1,61 @@
+@import url("../../../components/globals.css");
+
+.CommentForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+
+  width: 100%;
+  margin: 0 auto;
+
+  box-sizing: border-box;
+}
+
+.CommentForm > *:last-child {
+  align-self: flex-end;
+}
+
+.CommentForm > h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2em;
+}
+
+.CommentForm > textarea {
+  width: 100%;
+  min-height: 104px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+
+  background-color: var(--gray100);
+
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+
+  resize: none;
+  box-sizing: border-box;
+}
+
+.CommentForm > textarea::placeholder {
+  color: var(--gray400);
+}
+
+.CommentForm > textarea:focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .CommentForm {
+    padding: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .CommentForm {
+    padding: 0;
+  }
+}
