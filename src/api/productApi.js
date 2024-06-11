@@ -13,8 +13,10 @@ const ERROR_MESSAGE = '제품 데이터를 가져오는데 실패했습니다.';
  * @param {string} keyword - 검색 키워드 [ favorite, recent ]
  * @returns {Promise<Object>} The response data parsed as JSON.
  */
-export const getProductDataList = async ({ page = 1, pageSize = 4, orderBy = 'favorite', ...args }) => {
-	return await httpClient.get(`${API_URL}/products`, { page, pageSize, orderBy, ...args }).catch((e) => {
+export const getProductDataList = async ({ page = 1, pageSize = 4, orderBy = 'favorite', keyword }) => {
+	const params = { page, pageSize, orderBy };
+	if (keyword) params.keyword = keyword;
+	return await httpClient.get(`${API_URL}/products`, params).catch((e) => {
 		throw new Error(ERROR_MESSAGE, e);
 	});
 };
