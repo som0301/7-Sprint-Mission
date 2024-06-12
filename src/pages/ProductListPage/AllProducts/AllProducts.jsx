@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { isEmpty } from 'lodash';
 import { getProductDataList } from '../../../api/productApi';
-import useMediaQuery from '../../../hooks/useMediaQuery';
 import ProductCard from '../ProductCard/ProductCard';
 import ProductSearch from '../ProductSearch/ProductSearch';
 import ProductSort from '../ProductSort/ProductSort';
@@ -14,9 +13,8 @@ const PAGE_SIZES = {
 	desktop: 12,
 };
 
-function AllProducts() {
-	const mediaQuery = useMediaQuery();
-	const pageSize = PAGE_SIZES[mediaQuery];
+function AllProducts({ deviceType }) {
+	const pageSize = PAGE_SIZES[deviceType];
 	const [page, setPage] = useState(1);
 	const [totalPageSize, setTotalPageSize] = useState(0);
 	const [orderBy, setOrderBy] = useState('recent');
@@ -40,8 +38,8 @@ function AllProducts() {
 	};
 
 	useEffect(() => {
-		getProductList(page, pageSize, orderBy, keyword);
-	}, [page, pageSize, orderBy, keyword]);
+		if (deviceType !== undefined) getProductList(page, pageSize, orderBy, keyword);
+	}, [deviceType, page, pageSize, orderBy, keyword]);
 
 	return (
 		<article className='products'>
