@@ -17,8 +17,10 @@ function TagList() {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      e.preventDefault();
-      addTag(tags.trim());
+      if (e.nativeEvent.isComposing === false) {
+        e.preventDefault();
+        addTag(tags.trim());
+      }
     }
   };
 

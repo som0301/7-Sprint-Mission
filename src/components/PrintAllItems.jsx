@@ -6,7 +6,6 @@ import "../pages/MarketPage.css";
 
 function PrintAllItems() {
   const [items, setItems] = useState([]);
-  const [orderBy, setOrderBy] = useState("recent");
 
   const loadItems = async () => {
     const items = await getItems({ pageSize: 10, orderBy: "recent" });
@@ -24,12 +23,10 @@ function PrintAllItems() {
         <Link to='/additem' className='add-item-button'>
           상품 등록하기
         </Link>
-
-        
       </header>
       <div className='container-items'>
         <div className='all-items'>
-          <ItemBox items={items} />
+          <ItemBox items={items} type='allitem' />
         </div>
       </div>
     </div>

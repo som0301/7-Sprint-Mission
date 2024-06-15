@@ -40,7 +40,9 @@ function AddItemForm() {
     <div className='add-item'>
       <header>
         <h1>상품 등록하기</h1>
-        <button type='submit' disabled={!isFormValid}>등록</button>
+        <button type='submit' disabled={!isFormValid} className='submit-button'>
+          등록
+        </button>
       </header>
       <div>
         <form className='AddItemForm' onSubmit={handleSubmit}>
