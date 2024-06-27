@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ItemBox, { Item } from "./ItemBox";
 import { getItems } from "../../../api/itemApi";
+import "../MarketPage.css";
 
 const PrintBestItems: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
