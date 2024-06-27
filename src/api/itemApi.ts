@@ -19,3 +19,25 @@ export async function getItems({
     return [];
   }
 }
+
+export async function getItemDetail(productId: string) {
+  try {
+    const response = await fetch(`${BASE_URL}/products/${productId}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching item detail", error);
+    return {};
+  }
+}
+
+export async function getComments(productId: string) {
+  try {
+    const response = await fetch(`${BASE_URL}/products/${productId}/comments`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching comments", error);
+    return [];
+  }
+}
