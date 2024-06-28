@@ -1,6 +1,10 @@
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 40px;
+  font-family: "Pretendard", sans-serif;
   font-weight: 600px;
   color: white;
   cursor: pointer;
@@ -13,20 +17,21 @@
 }
 
 .small {
-  font-size: 14px;
-  padding: 8px 16px;
+  font-size: 16px;
+  padding: 12px 22px;
+  border-radius: 8px;
 }
 
-.primary {
+.default {
   background-color: var(--blue);
 }
 
-.primary:hover {
-  background-color: #1967D6;
+.default:hover {
+  background-color: #1967d6;
 }
 
-.primary:active {
-  background-color: #1251AA;
+.default:active {
+  background-color: #1251aa;
 }
 
 .disabled {

@@ -10,7 +10,7 @@ a {
 }
 
 body {
-  font-family: "pretendard", sans-serif;
+  font-family: "Pretendard", sans-serif;
 }
 
 :root {
@@ -23,7 +23,6 @@ body {
   --gray-200: #e5e7eb;
   --gray-100: #f3f4f6;
   --gray-50: #f9fafb;
-  --white: #ffffff;
   --blue: #3692ff;
   --red: #f74747;
 }

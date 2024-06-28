@@ -10,29 +10,29 @@ function NavBar() {
     <nav className={styles.navbar}>
       <div className={styles.navbarBox}>
         <Link to='/' className={styles.navbarLogo}>
-          <img src={Logo} alt='logo' width='153px' />
+          <img src={Logo} alt='logo-img' />
         </Link>
-      </div>
-      <ul className={styles.navbarLinks}>
-        <li>
-          <Link
-            to='/'
-            className={location.pathname === "/" ? styles.active : ""}
-          >
-            자유게시판
-          </Link>
-        </li>
-        <li>
-          <Link
-            to='/items'
-            className={location.pathname === "/items" ? styles.active : ""}
-          >
-            중고마켓
-          </Link>
-        </li>
-      </ul>
-      <div className={styles.buttonLogin}>
-        <Button text='로그인' color='default' size='small' onClick={() => {}} />
+        <ul className={styles.navbarLinks}>
+          <li>
+            <Link
+              to='/board'
+              className={location.pathname === "/board" ? styles.active : ""}
+            >
+              자유게시판
+            </Link>
+          </li>
+          <li>
+            <Link
+              to='/items'
+              className={location.pathname === "/items" ? styles.active : ""}
+            >
+              중고마켓
+            </Link>
+          </li>
+        </ul>
+        <div className={styles.buttonLogin}>
+          <Button text='로그인' color='default' size='small' />
+        </div>
       </div>
     </nav>
   );
