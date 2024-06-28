@@ -71,7 +71,7 @@
   outline: 4px solid var(--color-brand-blue);
 }
 
-.login-input-error{
+.login-input .error {
   outline: 4px solid var(--color-error-red);
 }
 
@@ -97,11 +97,13 @@
 }
 
 .is-visiable {
-  background: url('../../../images/icons/ic_visibility.svg')  no-repeat center / contain;
+  background: url('../../../images/icons/ic_visibility.svg') no-repeat center /
+    contain;
 }
 
 .is-invisable {
-  background: url('../../../images/icons/ic_visibility_off.svg')  no-repeat center / contain;
+  background: url('../../../images/icons/ic_visibility_off.svg') no-repeat
+    center / contain;
 }
 
 .login-button-active,
@@ -131,7 +133,6 @@
 .login-button-active:active {
   background-color: var(--color-coolgray-800);
 }
-
 
 .container-easylogin {
   width: 100%;
