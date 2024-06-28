@@ -1,4 +1,4 @@
-const BASE_URL = "https://panda-market-api.vercel.app";
+export const BASE_URL = "https://panda-market-api.vercel.app";
 
 export async function getItems({
   page = 1,
@@ -31,11 +31,11 @@ export async function getItemDetail(productId: string) {
   }
 }
 
-export async function getComments(productId: string) {
+export async function getComments(productId: string, limit = 10) {
   try {
-    const response = await fetch(`${BASE_URL}/products/${productId}/comments`);
+    const response = await fetch(`${BASE_URL}/products/${productId}/comments?limit=${limit}`);
     const data = await response.json();
-    return data;
+    return data.list || [];
   } catch (error) {
     console.error("Error fetching comments", error);
     return [];

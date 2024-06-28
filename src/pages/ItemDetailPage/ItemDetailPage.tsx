@@ -34,8 +34,13 @@ const ItemDetailPage: React.FC = () => {
 
   const loadComments = useCallback(async () => {
     if (productId) {
-      const newComments = await getComments(productId);
-      setComments(newComments);
+      try {
+        const newComments = await getComments(productId);
+        setComments(newComments);
+      } catch (error) {
+        console.error("댓글을 불러오는 중 오류 발생:", error);
+        alert("Failed to load comments");
+      }
     }
   }, [productId]);
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../ItemDetailPage.module.css";
 import { Comment } from "../../../types";
+import { BASE_URL } from "../../../api/itemApi";
 
 interface CommentSectionProps {
   comments: Comment[];
@@ -24,7 +25,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({
     const newComment = {
       content: addComment,
     };
-    await fetch(`/api/items/${productId}/comments`, {
+    await fetch(`${BASE_URL}/products/${productId}/comments`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
