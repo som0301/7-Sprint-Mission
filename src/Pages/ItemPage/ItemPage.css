@@ -1,0 +1,136 @@
+.best-item-container {
+  padding: 17px 0 70px;
+}
+
+.best-item-list {
+  display: flex;
+  justify-content: center;
+}
+
+.container-title {
+  color: var(--gray--900);
+  font-weight: 700;
+  font-size: 20px;
+  cursor: default;
+}
+
+.all-item-container {
+  padding-bottom: 50px;
+}
+
+.all-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.all-item-list {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 40px 24px;
+  padding-bottom: 50px;
+}
+
+.item-sidebar {
+  display: flex;
+  position: relative;
+  gap: 20px;
+}
+
+.btn-sort {
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 12px 44px;
+}
+
+.btn-sort-list {
+  position: absolute;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+.btn-sort-list li {
+  list-style: none;
+  padding: 12px 44px;
+  border-bottom: 1px solid var(--gray-200);
+  color: #1f2937;
+  cursor: pointer;
+}
+
+.btn-add {
+  padding: 12px 26px;
+  border-radius: 8px;
+}
+
+.input-search {
+  display: flex;
+  align-items: center;
+  background-color: var(--gray-50);
+  border-radius: 12px;
+  padding: 9px 20px;
+  flex: 1;
+}
+
+.input-search input {
+  background-color: var(--gray-50);
+}
+
+.input-search input:focus {
+  outline: none;
+}
+
+.input-search input::placeholder {
+  color: var(--gray-200);
+  font-size: 16px;
+}
+
+.item-card {
+  width: 100%;
+  height: auto;
+  color: var(--gray--900);
+  overflow: hidden;
+  cursor: default;
+}
+
+.item-card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  margin-bottom: 16px;
+}
+
+.item-card-description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.item-name {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-price {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.item-favorite {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--gray-600);
+  font-size: 12px;
+  font-weight: 500;
+}
