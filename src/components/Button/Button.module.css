@@ -1,0 +1,35 @@
+.button {
+  border: none;
+  border-radius: 40px;
+  font-weight: 600px;
+  color: white;
+  cursor: pointer;
+}
+
+.large {
+  font-size: 20px;
+  padding: 16px 32px;
+  width: 100%;
+}
+
+.small {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.primary {
+  background-color: var(--blue);
+}
+
+.primary:hover {
+  background-color: #1967D6;
+}
+
+.primary:active {
+  background-color: #1251AA;
+}
+
+.disabled {
+  background-color: var(--gray-400);
+  cursor: not-allowed;
+}
