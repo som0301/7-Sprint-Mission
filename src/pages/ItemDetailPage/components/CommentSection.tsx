@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./CommentSection.module.css";
+import styles from "../ItemDetailPage.module.css";
 import { Comment } from "../../../types";
 
 interface CommentSectionProps {
