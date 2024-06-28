@@ -107,10 +107,8 @@
   cursor: not-allowed;
 }
 .button-container{
-  text-align: right;
-}
-.bottom-wrapper {
-  clear: both;
+  display: flex;
+  justify-content: flex-end;
 }
 .comment-content {
   font-size: 16px;

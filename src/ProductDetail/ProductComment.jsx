@@ -2,29 +2,30 @@ import React from "react";
 import morebutton from "../images/morebutton.svg";
 import comment_empty from "../images/comment_empty.svg";
 
-const ProductComment = ({ comment }) => {
-  function timeAgo(dateString) {
-    const now = new Date();
-    const updatedAt = new Date(dateString);
-    const diffInSeconds = Math.floor((now - updatedAt) / 1000);
-    const diffInMinutes = Math.floor(diffInSeconds / 60);
-    const diffInHours = Math.floor(diffInMinutes / 60);
-    const diffInDays = Math.floor(diffInHours / 24);
+function timeAgo(dateString) {
+  const now = new Date();
+  const updatedAt = new Date(dateString);
+  const diffInSeconds = Math.floor((now - updatedAt) / 1000);
+  const diffInMinutes = Math.floor(diffInSeconds / 60);
+  const diffInHours = Math.floor(diffInMinutes / 60);
+  const diffInDays = Math.floor(diffInHours / 24);
 
-    if (diffInSeconds < 60) {
-      return "방금 전";
-    } else if (diffInMinutes < 60) {
-      return `${diffInMinutes}분 전`;
-    } else if (diffInHours < 24) {
-      return `${diffInHours}시간 전`;
-    } else {
-      return `${diffInDays}일 전`;
-    }
+  if (diffInSeconds < 60) {
+    return "방금 전";
+  } else if (diffInMinutes < 60) {
+    return `${diffInMinutes}분 전`;
+  } else if (diffInHours < 24) {
+    return `${diffInHours}시간 전`;
+  } else {
+    return `${diffInDays}일 전`;
   }
+}
+
+const ProductComment = ({ comment }) => {
 
   return (
     <div className="bottom-wrapper">
-      {comment && comment.list?.length > 0 ? (
+      {comment.list.length > 0 ? (
         comment.list.map((com) => (
           <div key={com.id}>
             <div className="comment-content-button">

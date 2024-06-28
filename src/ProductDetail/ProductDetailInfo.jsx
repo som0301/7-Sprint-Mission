@@ -36,7 +36,7 @@ const ProductDetailInfo = ({ detailItem }) => {
             ))}
 
         <button className="favorite-count">
-          <img src={detail_heart} alt="좋아요" width={"32px"} height={"32px"}/>
+          <img src={detail_heart} alt="좋아요" width="32 "height="32"/>
           <span className="favorite-count-number">{detailItem.favoriteCount}</span>
         </button>
 
