@@ -35,9 +35,13 @@ h1 {
 }
 
 .content {
-  padding: 138px 0;
+  padding-top: 138px;
   display: flex;
   align-items: center;
+}
+
+.content:last-child {
+  padding-bottom: 138px;
 }
 
 .content img {

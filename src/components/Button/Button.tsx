@@ -5,14 +5,16 @@ interface ButtonProps {
   text: string;
   color?: "default" | "disabled";
   size?: "large" | "small";
+  width?: string;
   onClick?: () => void;
   disabled?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   text,
-  color = "primary",
+  color = "default",
   size = "large",
+  width = "100%",
   onClick,
   disabled = false,
 }) => {
@@ -24,7 +26,12 @@ export const Button: React.FC<ButtonProps> = ({
   ].join(" ");
 
   return (
-    <button className={buttonClasses} onClick={onClick} disabled={disabled}>
+    <button
+      className={buttonClasses}
+      onClick={onClick}
+      disabled={disabled}
+      style={{ width }}
+    >
       {text}
     </button>
   );

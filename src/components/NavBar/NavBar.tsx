@@ -5,6 +5,9 @@ import { Button } from "../Button/Button";
 
 function NavBar() {
   const location = useLocation();
+  const handleButtonClick = (url: string) => () => {
+    window.location.href = url;
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -31,7 +34,12 @@ function NavBar() {
           </li>
         </ul>
         <div className={styles.buttonLogin}>
-          <Button text='로그인' color='default' size='small' />
+          <Button
+            text='로그인'
+            color='default'
+            size='small'
+            onClick={handleButtonClick("/login")}
+          />
         </div>
       </div>
     </nav>

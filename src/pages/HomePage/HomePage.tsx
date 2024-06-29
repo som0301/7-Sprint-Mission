@@ -1,4 +1,3 @@
-import React from "react";
 import feature1 from "../../assets/images/home/feature1-image.png";
 import feature2 from "../../assets/images/home/feature2-image.png";
 import feature3 from "../../assets/images/home/feature3-image.png";
@@ -6,7 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import { Button } from "../../components/Button/Button";
 import "./HomePage.css";
 
-const Homepage: React.FC = () => {
+const Homepage = () => {
   const handleButtonClick = (url: string) => () => {
     window.location.href = url;
   };
