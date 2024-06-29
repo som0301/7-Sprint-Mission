@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../ItemDetailPage.module.css";
 import { Comment } from "../../../types";
 import { BASE_URL } from "../../../api/itemApi";
+import { Button } from "../../../components/Button/Button";
 
 interface CommentSectionProps {
   comments: Comment[];
@@ -16,8 +17,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({
 }) => {
   const [addComment, setAddComment] = useState<string>("");
 
-  const handleAddCommentSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleAddCommentSubmit = async () => {
     if (addComment.trim() === "") {
       alert("댓글을 입력해주세요.");
       return;
@@ -46,18 +46,27 @@ const CommentSection: React.FC<CommentSectionProps> = ({
     <div className={styles.comments}>
       <div className={styles["comment-add"]}>
         <h2>문의하기</h2>
-        <textarea
-          value={addComment}
-          placeholder='개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.'
-          onChange={handleAddCommentChange}
-          className={styles["comment-input"]}
-        />
-        <button
-          onClick={handleAddCommentSubmit}
-          className={styles["comment-submit"]}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleAddCommentSubmit();
+          }}
         >
-          등록
-        </button>
+          <textarea
+            value={addComment}
+            placeholder='개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.'
+            onChange={handleAddCommentChange}
+            className={styles["comment-input"]}
+          />
+          <div className={styles.submitCommentButton}>
+            <Button
+              text='등록'
+              size='small'
+              width=''
+              onClick={handleAddCommentSubmit}
+            />
+          </div>
+        </form>
       </div>
       {comments.length > 0 ? (
         comments.map((comment) => (

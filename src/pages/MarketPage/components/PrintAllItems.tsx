@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { getItems } from "../../../api/itemApi";
 import React from "react";
 import ItemBox, { Item } from "./ItemBox";
+import { Button } from "../../../components/Button/Button";
 import "../MarketPage.css";
 
 const PrintAllItems: React.FC = () => {
@@ -17,20 +17,27 @@ const PrintAllItems: React.FC = () => {
     loadItems();
   }, []);
 
+  const handleButtonClick = (url: string) => () => {
+    window.location.href = url;
+  };
+
   return (
-    <div>
+    <body>
       <header>
-        <h1>전체 상품</h1>
-        <Link to='/additem' className='add-item-button'>
-          상품 등록하기
-        </Link>
+        <span>전체 상품</span>
+        <Button
+          text='상품 등록하기'
+          size='small'
+          width=''
+          onClick={handleButtonClick("/addItem")}
+        />
       </header>
       <div className='container-items'>
         <div className='all-items'>
           <ItemBox items={items} type='all' />
         </div>
       </div>
-    </div>
+    </body>
   );
 };
 

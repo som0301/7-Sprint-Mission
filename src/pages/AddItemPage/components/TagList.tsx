@@ -39,7 +39,7 @@ const TagList: React.FC = () => {
       />
       <div className='tag-list'>
         {tagList.map((tag, index) => (
-          <span key={index} className='tag-item'>
+          <div key={index} className='tag-item'>
             {tag}
             <button
               type='button'
@@ -48,7 +48,7 @@ const TagList: React.FC = () => {
             >
               X
             </button>
-          </span>
+          </div>
         ))}
       </div>
     </>

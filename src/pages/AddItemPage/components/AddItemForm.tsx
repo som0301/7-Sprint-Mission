@@ -48,7 +48,7 @@ const AddItemForm: React.FC = () => {
   return (
     <div className='add-item'>
       <header>
-        <h1>상품 등록하기</h1>
+        <span>상품 등록하기</span>
         <button type='submit' disabled={!isFormValid} className='submit-button'>
           등록
         </button>

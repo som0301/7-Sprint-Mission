@@ -14,7 +14,7 @@ export const Button: React.FC<ButtonProps> = ({
   text,
   color = "default",
   size = "large",
-  width = "100%",
+  width,
   onClick,
   disabled = false,
 }) => {

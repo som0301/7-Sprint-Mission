@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getItemDetail, getComments } from "../../api/itemApi";
 import { useParams } from "react-router-dom";
 import styles from "./ItemDetailPage.module.css";
 import ItemDetail from "./components/ItemDetail";
 import CommentSection from "./components/CommentSection";
 import { Item, Comment } from "../../types";
+import { Button } from "../../components/Button/Button";
 
 const initialItem: Item = {
   id: 0,
@@ -16,7 +17,7 @@ const initialItem: Item = {
   favoriteCount: 0,
 };
 
-const ItemDetailPage: React.FC = () => {
+const ItemDetailPage = () => {
   const { productId } = useParams<{ productId: string }>();
   const [item, setItem] = useState<Item>(initialItem);
   const [comments, setComments] = useState<Comment[]>([]);
@@ -38,8 +39,7 @@ const ItemDetailPage: React.FC = () => {
         const newComments = await getComments(productId);
         setComments(newComments);
       } catch (error) {
-        console.error("댓글을 불러오는 중 오류 발생:", error);
-        alert("Failed to load comments");
+        console.error(error);
       }
     }
   }, [productId]);
@@ -68,9 +68,14 @@ const ItemDetailPage: React.FC = () => {
         productId={productId}
         reloadComments={loadComments}
       />
-      <button className={styles["back-button"]} onClick={pageBack}>
-        목록으로 돌아가기
-      </button>
+      <div className={styles.backButton}>
+        <Button
+          text='목록으로 돌아가기'
+          size='large'
+          width=''
+          onClick={pageBack}
+        />
+      </div>
     </div>
   );
 };

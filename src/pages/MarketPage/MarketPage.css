@@ -6,6 +6,10 @@ ul {
   margin: 0;
 }
 
+body {
+  margin-bottom: 100px;
+}
+
 .item {
   flex: 1 0 calc(20% - 24px);
 }
@@ -60,16 +64,17 @@ ul {
   color: #4b5563;
 }
 
-.h1 {
+span {
   font-weight: 700;
   font-size: 20px;
-  color: #1f2937;
+  color: var(--gray-900);
+  margin: 20px 0;
 }
 
 .container-items {
   display: flex;
   flex-direction: column;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -81,13 +86,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.add-item-button {
-  background-color: #3692ff;
-  color: #ffffff;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 12px 23px;
-  border-radius: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
 }

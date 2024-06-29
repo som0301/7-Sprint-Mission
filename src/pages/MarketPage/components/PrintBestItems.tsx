@@ -17,7 +17,7 @@ const PrintBestItems: React.FC = () => {
 
   return (
     <div className='container-items'>
-      <h1>베스트 상품</h1>
+      <span>베스트 상품</span>
       <div className='best-items'>
         <ItemBox items={items} type='best' />
       </div>
