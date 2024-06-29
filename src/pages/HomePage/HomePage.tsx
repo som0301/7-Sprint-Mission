@@ -1,12 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import feature1 from "../../assets/images/home/feature1-image.png";
 import feature2 from "../../assets/images/home/feature2-image.png";
 import feature3 from "../../assets/images/home/feature3-image.png";
-import "./HomePage.css";
 import Footer from "../../components/Footer/Footer";
+import { Button } from "../../components/Button/Button";
+import "./HomePage.css";
 
 const Homepage: React.FC = () => {
+  const handleButtonClick = (url: string) => () => {
+    window.location.href = url;
+  };
+
   return (
     <>
       <main>
@@ -17,9 +21,12 @@ const Homepage: React.FC = () => {
               <br />
               거래해 보세요
             </h1>
-            <Link to='/items' className='btn'>
-              구경하러 가기
-            </Link>
+            <Button
+              text='구경하러 가기'
+              color='default'
+              size='large'
+              onClick={handleButtonClick("/items")}
+            />
           </div>
         </section>
         <section className='container'>

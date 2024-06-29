@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
-//import './Footer.css'
+import facebook from "../../assets/images/social/facebook-logo.svg";
+import twitter from "../../assets/images/social/twitter-logo.svg";
+import youtube from "../../assets/images/social/youtube-logo.svg";
+import instagram from "../../assets/images/social/instagram-logo.svg";
+import '../../pages/HomePage/HomePage.css'
 
 const Footer = () => {
   return (
@@ -16,28 +20,28 @@ const Footer = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <img src='images/ic_facebook.png' alt='페이스북' />
+            <img src={facebook} alt='페이스북' />
           </a>
           <a
             href='https://www.twitter.com'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <img src='images/ic_twitter.png' alt='트위터' />
+            <img src={twitter} alt='트위터' />
           </a>
           <a
             href='https://www.youtube.com'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <img src='images/ic_youtube.png' alt='유튜브' />
+            <img src={youtube} alt='유튜브' />
           </a>
           <a
             href='https://www.instagram.com'
             target='_blank'
             rel='noopener noreferrer'
           >
-            <img src='images/ic_instagram.png' alt='인스타그램' />
+            <img src={instagram} alt='인스타그램' />
           </a>
         </div>
       </footer>
