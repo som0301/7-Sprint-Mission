@@ -1,30 +1,30 @@
-import inquiryImg from '../../../assets/Img_inquiry_empty.svg';
+import inquiryImg from "../../../assets/Img_inquiry_empty.svg";
 
-const ProductDetailComments = ({ comments }) => {
-  function timeAgo(dateString) {
-    const now = new Date();
-    const pastDate = new Date(dateString);
-    const secondsAgo = Math.floor((now - pastDate) / 1000);
+function timeAgo(dateString) {
+  const now = new Date();
+  const pastDate = new Date(dateString);
+  const secondsAgo = Math.floor((now - pastDate) / 1000);
 
-    const units = [
-      { name: '년', seconds: 31536000 },
-      { name: '개월', seconds: 2592000 },
-      { name: '일', seconds: 86400 },
-      { name: '시간', seconds: 3600 },
-      { name: '분', seconds: 60 },
-      { name: '초', seconds: 1 },
-    ];
+  const units = [
+    { name: "년", seconds: 31536000 },
+    { name: "개월", seconds: 2592000 },
+    { name: "일", seconds: 86400 },
+    { name: "시간", seconds: 3600 },
+    { name: "분", seconds: 60 },
+    { name: "초", seconds: 1 },
+  ];
 
-    for (const unit of units) {
-      const interval = Math.floor(secondsAgo / unit.seconds);
-      if (interval >= 1) {
-        return `${interval} ${unit.name} 전`;
-      }
+  for (const unit of units) {
+    const interval = Math.floor(secondsAgo / unit.seconds);
+    if (interval >= 1) {
+      return `${interval} ${unit.name} 전`;
     }
-
-    return '방금 전';
   }
 
+  return "방금 전";
+}
+
+const ProductDetailComments = ({ comments }) => {
   return (
     <section className="product-comment-section">
       {comments && comments.list?.length > 0 ? (
