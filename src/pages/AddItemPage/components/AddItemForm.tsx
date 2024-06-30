@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import FileInput from "./FileInput";
 import TagList from "./TagList";
 import "./AddItemForm.css";
+import { Button } from "../../../components/Button/Button";
 
 export interface FormValues {
   imgFile: File | null;
@@ -49,9 +50,7 @@ const AddItemForm: React.FC = () => {
     <div className='add-item'>
       <header>
         <span>상품 등록하기</span>
-        <button type='submit' disabled={!isFormValid} className='submit-button'>
-          등록
-        </button>
+        <Button text="등록" disabled={!isFormValid} size="small" width="88px" />
       </header>
       <div>
         <form className='AddItemForm' onSubmit={handleSubmit}>
