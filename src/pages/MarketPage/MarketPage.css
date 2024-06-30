@@ -89,3 +89,18 @@ header {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+header span {
+  margin-right: auto;
+}
+
+.search-input {
+  width: 325px;
+  height: 44px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  background-image: url(src/assets/images/icons/ic_search.svg);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 40px;
+}
