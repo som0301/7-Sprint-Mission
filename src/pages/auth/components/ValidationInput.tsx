@@ -25,9 +25,10 @@ const ValidationInput: React.FC<ValidationInputProps> = ({
 }) => {
   const [value, setValue] = useState("");
   const [isVisible, setIsVisible] = useState(false);
-  const [isValid, setIsValid] = useState(true);
+  const [isValid, setIsValid] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [password, setPassword] = useState("");
+  const [isInitial, setIsInitial] = useState(true);
 
   useEffect(() => {
     onValid(isValid);
@@ -38,6 +39,7 @@ const ValidationInput: React.FC<ValidationInputProps> = ({
   };
 
   const handleBlur = () => {
+    setIsInitial(false);
     let valid = true;
     let error = "";
 
@@ -90,7 +92,7 @@ const ValidationInput: React.FC<ValidationInputProps> = ({
           value={value}
           onChange={handleChange}
           onBlur={handleBlur}
-          className={isValid ? "" : "error"}
+          className={isValid || isInitial ? "" : "error"}
         />
         {(type === "password" || type === "passwordConfirm") && (
           <img
