@@ -1,7 +1,7 @@
 import logo from "../../../assets/images/logo/logo.svg";
 import google from "../../../assets/images/social/google-logo.png";
 import kakao from "../../../assets/images/social/kakao-logo.png";
-import invisible from "../../../assets/images/icons/eye-invisible.svg";
+import PasswordToggle from "../components/PasswordToggle";
 import { Button } from "../../../components/Button/Button";
 import "../auth.css";
 
@@ -27,22 +27,17 @@ const LoginPage = () => {
         </div>
         <div className='input-box'>
           <label htmlFor='password'>비밀번호</label>
-          <div className='password-box'>
-            <input
-              type='password'
-              id='password'
-              name='password'
-              placeholder='비밀번호를 입력해주세요'
-            />
-            <img
-              src={invisible}
-              alt='비밀번호-숨김'
-              className='password-button'
-            />
-          </div>
+          <PasswordToggle
+            id='password'
+            name='password'
+            placeholder='비밀번호를 입력해주세요'
+          />
           <div id='error-message-password' className='error-message'></div>
         </div>
-        <Button text='로그인' color='default' width='100%' />
+
+        <div className='auth-button'>
+          <Button text='로그인' color='default' width='100%' />
+        </div>
       </form>
 
       <div className='login-social'>

@@ -35,6 +35,10 @@ input {
   width: 100%;
 }
 
+.auth-button {
+  margin: 32px 0;
+}
+
 .login-social {
   background-color: #e6f2ff;
   border-radius: 8px;
