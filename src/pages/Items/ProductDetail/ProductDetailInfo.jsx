@@ -1,5 +1,5 @@
-import moreIcon from '../../../assets/ic_kebab.svg';
-import heartIcon from '../../../assets/ic_heart_detail.svg';
+import moreIcon from "../../../assets/ic_kebab.svg";
+import heartIcon from "../../../assets/ic_heart_detail.svg";
 
 const ProductDetailInfo = ({ detailItem }) => {
   return (
@@ -18,11 +18,13 @@ const ProductDetailInfo = ({ detailItem }) => {
         <h3 className="product-description-title">상품 소개</h3>
         <p className="product-description">{detailItem.description}</p>
         <h3 className="product-tag-title">상품 태그</h3>
-        {detailItem && detailItem.tags?.length > 0
-          ? detailItem.tags.map((item, index) => (
-              <div key={index} className="product-tag">{`#${item}`}</div>
-            ))
-          : null}
+        <div className="product-tag-wrap">
+          {detailItem && detailItem.tags?.length > 0
+            ? detailItem.tags.map((item, index) => (
+                <div key={index} className="product-tag">{`#${item}`}</div>
+              ))
+            : null}
+        </div>
         <button className="product-favorite">
           <img src={heartIcon} alt="좋아요아이콘" />
           <span>{detailItem.favoriteCount}</span>

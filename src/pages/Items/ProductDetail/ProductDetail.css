@@ -67,12 +67,17 @@
 
 .product-info-section .product-tag-title {
   margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.product-info-section .product-tag-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 8px;
 }
 
 .product-info-section .product-tag {
-  display: inline-block;
-  margin-top: 8px;
-  margin-right: 8px;
   padding: 0 16px;
   height: 36px;
   line-height: 36px;
