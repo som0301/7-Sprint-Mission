@@ -5,19 +5,24 @@ import { Link } from "react-router-dom";
 import Pagination from "../Pagination/Pagination";
 import { getReviews } from "../api";
 
+interface ListProps{
+  currentPage:number;
+  pageSize:number;
+  orderby:string;
+}
+
 const PC_ITEM = 10;
 const TABLET_ITEM = 6;
 const MOBILE_ITEM = 4;
 
 function AllProductList() {
-  const [productList, setProductList] = useState([]);
-  const [orderby, setOrderBy] = useState("recent"); //페이지 정렬 기준
-  const [currentPage, setCurrentPage] = useState(1); //몇번째 페이지인지
-  const [totalCount, setTotalCount] = useState(0); //전체 아이템 수
-  const [pageSize, setPageSize] = useState(PC_ITEM); // 보이는 아이템 수
-  const [isDropDown, setIsDropDown] = useState(false);
+  const [productList, setProductList] = useState<any[]>([]);
+  const [orderby, setOrderBy] = useState<string>("recent"); //페이지 정렬 기준
+  const [currentPage, setCurrentPage] = useState<number>(1); //몇번째 페이지인지
+  const [totalCount, setTotalCount] = useState<number>(0); //전체 아이템 수
+  const [pageSize, setPageSize] = useState<number>(PC_ITEM); // 보이는 아이템 수
 
-  const getAllProduct = async ({ currentPage, pageSize, orderby }) => {
+  const getAllProduct = async ({ currentPage, pageSize, orderby }:ListProps) => {
     try {
       const data = await getReviews({ currentPage, pageSize, orderby });
       setProductList(data.list);
@@ -29,7 +34,7 @@ function AllProductList() {
 
   const pageNumber = Math.ceil(totalCount / pageSize);
 
-  const handlePageChange = (newPage) => {
+  const handlePageChange = (newPage:number) => {
     setCurrentPage(newPage);
   };
 
@@ -143,7 +148,7 @@ function AllProductList() {
               name={item.name}
               price={item.price}
               favoriteCount={item.favoriteCount}
-            />
+        />
           </Link>
         ))}
       </ul>
