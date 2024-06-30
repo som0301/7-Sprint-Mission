@@ -23,7 +23,7 @@ const ProductDetail = () => {
     };
 
     getProductDetail();
-  }, []);
+  }, [id]);
 
   return (
     <div className="product-container">
