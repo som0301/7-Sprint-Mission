@@ -1,7 +1,11 @@
 export const getProductItem = async (currentPage = 1, pageSize, order) => {
   try {
+    const encodedPage = encodeURIComponent(currentPage);
+    const encodedPageSize = encodeURIComponent(pageSize);
+    const encodedOrder = encodeURIComponent(order);
+
     const response = await fetch(
-      `https://panda-market-api.vercel.app/products?page=${currentPage}&pageSize=${pageSize}&orderBy=${order}`
+      `https://panda-market-api.vercel.app/products?page=${encodedPage}&pageSize=${encodedPageSize}&orderBy=${encodedOrder}`
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -15,8 +19,10 @@ export const getProductItem = async (currentPage = 1, pageSize, order) => {
 
 export const getProductDetailItem = async (id) => {
   try {
+    const encodedId = encodeURIComponent(id);
+
     const response = await fetch(
-      `https://panda-market-api.vercel.app/products/${id}`
+      `https://panda-market-api.vercel.app/products/${encodedId}`
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -30,8 +36,10 @@ export const getProductDetailItem = async (id) => {
 
 export const getProductDetailComments = async (id) => {
   try {
+    const encodedId = encodeURIComponent(id);
+
     const response = await fetch(
-      `https://panda-market-api.vercel.app/products/${id}/comments?limit=3`
+      `https://panda-market-api.vercel.app/products/${encodedId}/comments?limit=3`
     );
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
