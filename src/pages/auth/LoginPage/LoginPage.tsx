@@ -1,11 +1,22 @@
 import logo from "../../../assets/images/logo/logo.svg";
 import google from "../../../assets/images/social/google-logo.png";
 import kakao from "../../../assets/images/social/kakao-logo.png";
-import PasswordToggle from "../components/PasswordToggle";
+import ValidationInput from "../components/ValidationInput";
+import { useState } from "react";
 import { Button } from "../../../components/Button/Button";
 import "../auth.css";
 
 const LoginPage = () => {
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (isEmailValid && isPasswordValid) {
+      window.location.href = "/login";
+    }
+  };
+
   return (
     <div className='auth-container'>
       <div className='auth-logo-box'>
@@ -14,29 +25,30 @@ const LoginPage = () => {
         </a>
       </div>
 
-      <form method='post'>
-        <div className='input-box'>
-          <label htmlFor='email'>이메일</label>
-          <input
-            type='email'
-            id='email'
-            name='email'
-            placeholder='이메일을 입력해주세요'
-          />
-          <div id='error-message-email' className='error-message'></div>
-        </div>
-        <div className='input-box'>
-          <label htmlFor='password'>비밀번호</label>
-          <PasswordToggle
-            id='password'
-            name='password'
-            placeholder='비밀번호를 입력해주세요'
-          />
-          <div id='error-message-password' className='error-message'></div>
-        </div>
+      <form method='post' onSubmit={handleSubmit}>
+        <ValidationInput
+          id='email'
+          type='email'
+          name='이메일'
+          placeholder='이메일을 입력해주세요'
+          onValid={setIsEmailValid}
+        />
+
+        <ValidationInput
+          id='password'
+          type='password'
+          name='비밀번호'
+          placeholder='비밀번호를 입력해주세요'
+          onValid={setIsPasswordValid}
+        />
 
         <div className='auth-button'>
-          <Button text='로그인' color='default' width='100%' />
+          <Button
+            text='로그인'
+            color='default'
+            width='100%'
+            disabled={!isEmailValid || !isPasswordValid}
+          />
         </div>
       </form>
 

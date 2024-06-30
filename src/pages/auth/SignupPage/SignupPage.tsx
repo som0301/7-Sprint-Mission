@@ -1,11 +1,29 @@
+import React, { useState } from "react";
 import logo from "../../../assets/images/logo/logo.svg";
 import google from "../../../assets/images/social/google-logo.png";
 import kakao from "../../../assets/images/social/kakao-logo.png";
-import PasswordToggle from "../components/PasswordToggle";
 import { Button } from "../../../components/Button/Button";
+import ValidationInput from "../components/ValidationInput";
 import "../auth.css";
 
-const SignupPage = () => {
+const SignupPage: React.FC = () => {
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [isNicknameValid, setIsNicknameValid] = useState(false);
+  const [isPasswordConfirmValid, setIsPasswordConfirmValid] = useState(false);
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (
+      isEmailValid &&
+      isPasswordValid &&
+      isNicknameValid &&
+      isPasswordConfirmValid
+    ) {
+      window.location.href = "/signup";
+    }
+  };
+
   return (
     <div className='auth-container'>
       <div className='auth-logo-box'>
@@ -14,55 +32,51 @@ const SignupPage = () => {
         </a>
       </div>
 
-      <form method='post'>
-        <div className='input-box'>
-          <label htmlFor='email'>이메일</label>
-          <input
-            type='email'
-            id='email'
-            name='email'
-            placeholder='이메일을 입력해주세요'
-          />
-          <div id='error-message-email' className='error-message'></div>
-        </div>
+      <form method='post' onSubmit={handleSubmit}>
+        <ValidationInput
+          id='email'
+          type='email'
+          name='이메일'
+          placeholder='이메일을 입력해주세요'
+          onValid={setIsEmailValid}
+        />
 
-        <div className='input-box'>
-          <label htmlFor='nickname'>닉네임</label>
-          <input
-            id='nickname'
-            name='nickname'
-            type='text'
-            placeholder='닉네임을 입력해 주세요'
-          />
-          <div id='error-message-nickname' className='error-message'></div>
-        </div>
+        <ValidationInput
+          id='nickname'
+          type='text'
+          name='닉네임'
+          placeholder='닉네임을 입력해 주세요'
+          onValid={setIsNicknameValid}
+        />
 
-        <div className='input-box'>
-          <label htmlFor='password'>비밀번호</label>
-          <PasswordToggle
-            id='password'
-            name='password'
-            placeholder='비밀번호를 입력해주세요'
-          />
-          <div id='error-message-password' className='error-message'></div>
-        </div>
+        <ValidationInput
+          id='password'
+          type='password'
+          name='비밀번호'
+          placeholder='비밀번호를 입력해주세요'
+          onValid={setIsPasswordValid}
+        />
 
-        <div className='input-box'>
-          <label htmlFor='password-confirm'>비밀번호 확인</label>
+        <ValidationInput
+          id='password-confirm'
+          type='passwordConfirm'
+          name='비밀번호 확인'
+          placeholder='비밀번호를 다시 한 번 입력해 주세요'
+          onValid={setIsPasswordConfirmValid}
+        />
 
-          <PasswordToggle
-            id='password-confirm'
-            name='password-confirm'
-            placeholder='비밀번호를 다시 한 번 입력해 주세요'
-          />
-
-          <div
-            id='error-message-password-confirm'
-            className='error-message'
-          ></div>
-        </div>
         <div className='auth-button'>
-          <Button text='회원가입' color='default' width='100%' />
+          <Button
+            text='회원가입'
+            color='default'
+            width='100%'
+            disabled={
+              !isEmailValid ||
+              !isPasswordValid ||
+              !isNicknameValid ||
+              !isPasswordConfirmValid
+            }
+          />
         </div>
       </form>
 
