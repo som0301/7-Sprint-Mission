@@ -1,23 +1,44 @@
 export const getProductItem = async (currentPage = 1, pageSize, order) => {
-  const responsce = await fetch(
-    `https://panda-market-api.vercel.app/products?page=${currentPage}&pageSize=${pageSize}&orderBy=${order}`
-  );
-  const result = await responsce.json();
-  return result;
+  try {
+    const response = await fetch(
+      `https://panda-market-api.vercel.app/products?page=${currentPage}&pageSize=${pageSize}&orderBy=${order}`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("Error fetching product items:", error);
+  }
 };
 
 export const getProductDetailItem = async (id) => {
-  const response = await fetch(
-    `https://panda-market-api.vercel.app/products/${id}`
-  );
-  const result = await response.json();
-  return result;
+  try {
+    const response = await fetch(
+      `https://panda-market-api.vercel.app/products/${id}`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("Error fetching product detail item:", error);
+  }
 };
 
 export const getProductDetailComments = async (id) => {
-  const response = await fetch(
-    `https://panda-market-api.vercel.app/products/${id}/comments?limit=3`
-  );
-  const result = await response.json();
-  return result;
+  try {
+    const response = await fetch(
+      `https://panda-market-api.vercel.app/products/${id}/comments?limit=3`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.error("Error fetching product detail comments:", error);
+  }
 };
