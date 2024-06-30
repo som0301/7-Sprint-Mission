@@ -141,8 +141,12 @@
   color: #9ca3af;
 }
 
-.product-inquiry-section > button {
-  float: right;
+.product-inquiry-section .inquiry-btn-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.product-inquiry-section .inquiry-btn-wrap > button {
   margin-top: 16px;
   padding: 12px 23px;
   height: 42px;
@@ -154,13 +158,9 @@
   background-color: #9ca3af;
 }
 
-.product-inquiry-section > button:disabled {
+.product-inquiry-section .inquiry-btn-wrap > button:disabled {
   background-color: #3692ff;
   cursor: pointer;
-}
-
-.product-comment-section {
-  clear: both;
 }
 
 .product-comment-section .product-comment-wrap {
