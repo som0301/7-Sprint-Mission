@@ -4,11 +4,17 @@ import "../ProductItem.css";
 import { getReviews } from "../api";
 import { Link } from "react-router-dom";
 
+interface ListProps{
+  currentPage:number;
+  pageSize:number;
+  orderby:string;
+}
+
 function BestProductList() {
-  const [productList, setProductList] = useState([]);
-  const [pageSize, setPageSize] = useState(4);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [orderby, setOrderBy] = useState("favorite");
+  const [productList, setProductList] = useState<any[]>([]);
+  const [pageSize, setPageSize] = useState<number>(4);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [orderby, setOrderBy] = useState<string>("favorite");
 
   const changeBestPageSize = () => {
     if (window.innerWidth >= 1200) {
@@ -25,7 +31,7 @@ function BestProductList() {
     }
   };
 
-  const getBestProduct = async ({ curretPage, pageSize, orderby }) => {
+  const getBestProduct = async ({ currentPage, pageSize, orderby }:ListProps) => {
     const data = await getReviews({ currentPage, pageSize, orderby });
     setProductList(data.list);
   };
