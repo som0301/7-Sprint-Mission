@@ -10,8 +10,23 @@ import ProductDetailComments from "./ProductDetailComments";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const [detailItem, setDetailItem] = useState([]);
-  const [comments, setComments] = useState([]);
+  const [detailItem, setDetailItem] = useState({
+    id: 0,
+    name: "",
+    description: "",
+    price: 0,
+    tags: [],
+    images: [],
+    ownerId: 0,
+    favoriteCount: 0,
+    createdAt: "",
+    updatedAt: "",
+    isFavorite: false,
+  });
+  const [comments, setComments] = useState({
+    list: [],
+    nextCursor: null,
+  });
   const [inquiryValue, setInquiryValue] = useState("");
 
   useEffect(() => {
@@ -32,11 +47,11 @@ const ProductDetail = () => {
         inquiryValue={inquiryValue}
         setInquiryValue={setInquiryValue}
       />
-      <ProductDetailComments comments={comments} />
+      <ProductDetailComments comments={comments.list} />
       <Link
         to="/items"
         className={`product-back-link ${
-          comments.list?.length ? "" : "margin-top"
+          comments.list.length ? "" : "margin-top"
         }`}
       >
         <button type="button" className="product-back-btn">

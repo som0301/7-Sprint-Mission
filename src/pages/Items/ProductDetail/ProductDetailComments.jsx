@@ -27,8 +27,8 @@ function timeAgo(dateString) {
 const ProductDetailComments = ({ comments }) => {
   return (
     <section className="product-comment-section">
-      {comments && comments.list?.length > 0 ? (
-        comments.list.map((comment) => (
+      {comments.length > 0 ? (
+        comments.map((comment) => (
           <div className="product-comment-wrap" key={comment.id}>
             <p className="product-comment">{comment.content}</p>
             <div className="product-profile-wrap">

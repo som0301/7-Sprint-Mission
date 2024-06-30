@@ -12,14 +12,12 @@ const ProductDetailInfo = ({ detailItem }) => {
             <img src={moreIcon} alt="더보기버튼" />
           </button>
         </div>
-        <div className="product-price">
-          {detailItem.price?.toLocaleString()}
-        </div>
+        <div className="product-price">{detailItem.price.toLocaleString()}</div>
         <h3 className="product-description-title">상품 소개</h3>
         <p className="product-description">{detailItem.description}</p>
         <h3 className="product-tag-title">상품 태그</h3>
         <div className="product-tag-wrap">
-          {detailItem && detailItem.tags?.length > 0
+          {detailItem.tags.length > 0
             ? detailItem.tags.map((item, index) => (
                 <div key={index} className="product-tag">{`#${item}`}</div>
               ))
