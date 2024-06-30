@@ -3,6 +3,7 @@ import { getItems } from "../../../api/itemApi";
 import ItemBox, { Item } from "./ItemBox";
 import { Button } from "../../../components/Button/Button";
 import Pagination from "react-js-pagination";
+import OrderSelect from "./OrderSelect";
 import "../MarketPage.css";
 
 const PrintAllItems = () => {
@@ -30,9 +31,9 @@ const PrintAllItems = () => {
     setCurrentPage(1);
   };
 
-  const handleOrderByChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setOrderBy(e.target.value);
-    loadItems(e.target.value);
+  const handleOrderByChange = (value: string) => {
+    setOrderBy(value);
+    loadItems(value);
   };
 
   const filteredItems = items.filter((item) =>
@@ -64,14 +65,7 @@ const PrintAllItems = () => {
           width=''
           onClick={handleButtonClick("/addItem")}
         />
-        <select
-          className='order-select'
-          value={orderBy}
-          onChange={handleOrderByChange}
-        >
-          <option value='recent'>최신순</option>
-          <option value='favorite'>인기순</option>
-        </select>
+        <OrderSelect value={orderBy} onChange={handleOrderByChange} />
       </header>
       <div className='container-items'>
         <div className='all-items'>

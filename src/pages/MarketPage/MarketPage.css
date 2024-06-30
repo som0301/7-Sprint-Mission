@@ -167,24 +167,3 @@ header span {
   pointer-events: none;
   cursor: auto;
 }
-
-.order-select {
-  width: 130px;
-  height: 44px;
-  margin-left: 10px;
-  padding: 12px 20px;
-  border-radius: 12px;
-  gap: 10px;
-  appearance: none;
-  background-image: url(src/assets/images/icons/ic_sort.svg);
-  background-repeat: no-repeat;
-  background-position: 90% center;
-  border: 1px solid #e2e8f0;
-}
-
-.sort-select option {
-  background-color: #fff;
-  color: #333;
-  padding: 10px;
-  font-size: 16px;
-}
