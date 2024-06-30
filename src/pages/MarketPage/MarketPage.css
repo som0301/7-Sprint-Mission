@@ -6,12 +6,13 @@ ul {
   margin: 0;
 }
 
-body {
+.box-items {
   margin-bottom: 100px;
 }
 
 .item {
   flex: 1 0 calc(20% - 24px);
+  justify-content: flex-start;
 }
 
 .item-list.bestitem .item {
@@ -24,6 +25,10 @@ body {
   display: block;
 }
 
+.all-items .item {
+  max-width: 240px;
+}
+
 .item-box {
   padding: 10px;
   text-align: center;
@@ -34,9 +39,10 @@ body {
 
 .item-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 16px;
-  aspect-ratio: 1;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -51,6 +57,9 @@ body {
 .item-name {
   font-size: 16px;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item-price {
@@ -103,4 +112,58 @@ header span {
   background-repeat: no-repeat;
   background-position: 10px center;
   padding-left: 40px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header span {
+  margin-right: auto;
+}
+
+.search-input {
+  width: 325px;
+  height: 44px;
+  margin-bottom: 0;
+  margin-right: 10px;
+  background-image: url(src/assets/images/icons/ic_search.svg);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 40px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination .page-item {
+  list-style: none;
+  margin: 0 5px;
+}
+
+.pagination .page-link {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: var(--blue);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
 }
