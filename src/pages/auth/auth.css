@@ -105,11 +105,12 @@ input:focus {
 
 input.error {
   border: 1px solid var(--red);
+  margin-bottom: 10px;
 }
 
 .error-message {
   color: var(--red);
   font-size: 15px;
-  margin-top: 8px;
   display: none;
+  margin-bottom: 13px;
 }
