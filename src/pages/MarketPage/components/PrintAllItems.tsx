@@ -9,15 +9,16 @@ const PrintAllItems = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [search, setSearch] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
+  const [orderBy, setOrderBy] = useState<string>("recent");
   const itemsPerPage: number = 10;
 
-  const loadItems = async () => {
-    const items = await getItems({ pageSize: 100, orderBy: "recent" });
+  const loadItems = async (orderBy: string) => {
+    const items = await getItems({ pageSize: 100, orderBy });
     setItems(items.list);
   };
 
   useEffect(() => {
-    loadItems();
+    loadItems(orderBy);
   }, []);
 
   const handleButtonClick = (url: string) => () => {
@@ -27,6 +28,11 @@ const PrintAllItems = () => {
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
     setCurrentPage(1);
+  };
+
+  const handleOrderByChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setOrderBy(e.target.value);
+    loadItems(e.target.value);
   };
 
   const filteredItems = items.filter((item) =>
@@ -58,6 +64,14 @@ const PrintAllItems = () => {
           width=''
           onClick={handleButtonClick("/addItem")}
         />
+        <select
+          className='order-select'
+          value={orderBy}
+          onChange={handleOrderByChange}
+        >
+          <option value='recent'>최신순</option>
+          <option value='favorite'>인기순</option>
+        </select>
       </header>
       <div className='container-items'>
         <div className='all-items'>
