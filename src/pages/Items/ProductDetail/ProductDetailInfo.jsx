@@ -17,11 +17,9 @@ const ProductDetailInfo = ({ detailItem }) => {
         <p className="product-description">{detailItem.description}</p>
         <h3 className="product-tag-title">상품 태그</h3>
         <div className="product-tag-wrap">
-          {detailItem.tags.length > 0
-            ? detailItem.tags.map((item, index) => (
-                <div key={index} className="product-tag">{`#${item}`}</div>
-              ))
-            : null}
+          {detailItem.tags.map((item, index) => (
+            <div key={index} className="product-tag">{`#${item}`}</div>
+          ))}
         </div>
         <button className="product-favorite">
           <img src={heartIcon} alt="좋아요아이콘" />
