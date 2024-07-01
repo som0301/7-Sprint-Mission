@@ -8,9 +8,31 @@ import ProductDetailInfo from "./ProductDetailInfo";
 import ProductInquiry from "./ProductInquiry";
 import { Link } from "react-router-dom";
 
+interface DetailItem{
+  id:number;
+  name:string;
+  description:string;
+  price:number;
+  tags:string[];
+  images:string[];
+  ownerId:number;
+  favoriteCount:number;
+  createdAt:string;
+  updatedAt:string;
+  isFavorite:boolean;
+}
+interface Comment{
+  id:string;
+  content:string;
+  writer:{
+    image:string;
+    nickname:string;
+  }
+  updatedAt:string;
+}
 function ProductDetail() {
   const { productId } = useParams();
-  const [detailItem, setDetailItem] = useState({
+  const [detailItem, setDetailItem] = useState<DetailItem>({
     id: 0,
     name: "",
     description: "",
@@ -23,7 +45,7 @@ function ProductDetail() {
     updatedAt: "",
     isFavorite: false,
   });
-  const [itemComment, setItemComment] = useState([]);
+  const [itemComment, setItemComment] = useState<Comment[]>([]);
 
   const getProductDetail = async () => {
     const data = await getProductId({ productId });
@@ -44,7 +66,7 @@ function ProductDetail() {
       <ProductDetailInfo detailItem={detailItem} />
       <div className="line"></div>
       <ProductInquiry />
-      <ProductComment comment={itemComment} />
+      <ProductComment comment={{list:itemComment}} />
       <Link to="/items" className="comment-link">
         <button className="list-button">
           목록으로 돌아가기

@@ -2,10 +2,27 @@ import React from "react";
 import morebutton from "../images/morebutton.svg";
 import comment_empty from "../images/comment_empty.svg";
 
-function timeAgo(dateString) {
+interface Writer{
+  image:string;
+  nickname:string;
+}
+interface Comment{
+  id:string;
+  content:string;
+  writer:Writer;
+  updatedAt:string;
+}
+interface CommentList{
+  list:Comment[];
+}
+interface ProductCommentProps{
+  comment:CommentList;
+}
+
+function timeAgo(dateString:string):string {
   const now = new Date();
   const updatedAt = new Date(dateString);
-  const diffInSeconds = Math.floor((now - updatedAt) / 1000);
+  const diffInSeconds = Math.floor((now.getTime() - updatedAt.getTime()) / 1000);
   const diffInMinutes = Math.floor(diffInSeconds / 60);
   const diffInHours = Math.floor(diffInMinutes / 60);
   const diffInDays = Math.floor(diffInHours / 24);
@@ -21,7 +38,7 @@ function timeAgo(dateString) {
   }
 }
 
-const ProductComment = ({ comment }) => {
+const ProductComment = ({ comment }:ProductCommentProps) => {
 
   return (
     <div className="bottom-wrapper">
