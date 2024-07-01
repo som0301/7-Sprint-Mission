@@ -1,5 +1,6 @@
 import styles from './comment.module.css';
 import { classModuleName, elapseTimeCal } from '../../../modules';
+import kebabImage from '../../../images/icons/ic_kebab.svg'
 
 function Comment({ comment }) {
   const { nickname, image } = comment.writer;
@@ -7,6 +8,7 @@ function Comment({ comment }) {
 
   return (
     <div className={classModuleName('comment-container', styles)}>
+      <img src={kebabImage} alt='새로 말줄임표'/>
       <p>{comment.content}</p>
       <div className={classModuleName('comment-user-container', styles)}>
         <img src={image} alt={`${nickname}이미지`}/>
