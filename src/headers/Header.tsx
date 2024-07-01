@@ -14,8 +14,8 @@ const Header = () => {
   return (
     <header>
       <div className="nav-container">
-        <Link to="/">
-          <button type="button" className="logo">
+        <button type="button" className="header-logo">
+          <Link to="/" className="header-link">
             <img
               src={logo}
               alt="판다마켓로고"
@@ -30,8 +30,9 @@ const Header = () => {
               height="27"
               className="logo-m"
             />
-          </button>
-        </Link>
+          </Link>
+        </button>
+
         <nav>
           <ul>
             <li>
@@ -48,7 +49,7 @@ const Header = () => {
                 to="/items"
                 className="link"
                 style={({ isActive }) =>
-                  isActive || location.pathname === "/additem"
+                  isActive || location.pathname === "/items"
                     ? activeStyle
                     : undefined
                 }

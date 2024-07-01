@@ -1,11 +1,11 @@
 import "./AddItem.css";
 import plus from "../images/plus.svg";
 import deleteIcon from "../images/deleteIcon.svg";
-import { useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 
 function FileInputImage() {
-  const [currentImage, setCurrentImage] = useState();
-  const [previewImage, setPreviewImage] = useState();
+  const [currentImage, setCurrentImage] = useState<File | null>(null);
+  const [previewImage, setPreviewImage] = useState<string| undefined>(undefined);
 
   useEffect(() => {
     if (!currentImage) return;
@@ -14,13 +14,13 @@ function FileInputImage() {
     setPreviewImage(obejctURL);
 
     return () => {
-      setPreviewImage();
+      setPreviewImage(undefined);
       URL.revokeObjectURL(obejctURL);
     };
   }, [currentImage]);
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
+  const handleFileChange = (e:ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
     if (file) {
       setCurrentImage(file);
     } else {

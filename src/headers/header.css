@@ -7,26 +7,20 @@ header {
   border-bottom: 1px solid #dfdfdf;
   white-space: nowrap;
 }
-
 .nav-container {
   display: flex;
   align-items: center;
   gap: 47px;
 }
-
-.nav-container .logo {
+.header-logo{
+  display: inline-block;
+}
+.nav-container .header-logo {
   padding: 0;
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-
-.nav-container .logo img {
-  display: block;
-  width: 153px;
-  height: 51px;
-}
-
 .nav-container li {
   display: inline-block;
   margin-right: 39px;
@@ -61,7 +55,7 @@ header {
     padding: 0px 200px;
   }
 
-  .nav-container .logo .logo-m {
+  .nav-container .header-logo .logo-m {
     display: none;
   }
 }
@@ -76,7 +70,7 @@ header {
     gap: 35px;
   }
 
-  .nav-container .logo .logo-m {
+  .nav-container .header-logo .logo-m {
     display: none;
   }
 }
@@ -91,12 +85,7 @@ header {
     gap: 16px;
   }
 
-  .nav-container .logo img {
-    width: 81px;
-    height: 27px;
-  }
-
-  .nav-container .logo .logo-pt {
+  .nav-container .header-logo .logo-pt {
     display: none;
   }
 

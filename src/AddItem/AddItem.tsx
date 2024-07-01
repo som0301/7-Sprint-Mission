@@ -1,11 +1,19 @@
-import { useEffect, useState } from "react";
+import { ChangeEvent, KeyboardEvent, MouseEvent, useEffect, useState } from "react";
 import "./AddItem.css";
 import FileInputImage from "./FileInputImage";
 import deleteTag from "../images/deleteTag.svg";
+import Header from "../headers/Header";
+
+interface FormData {
+  productName: string;
+  productIntroduction: string;
+  productPrice: string;
+  productTag: string[];
+}
 
 function AddItem() {
   const [isDisabled, setIsDisabled] = useState(true);
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     productName: "",
     productIntroduction: "",
     productPrice: "",
@@ -13,7 +21,7 @@ function AddItem() {
   });
   const [productTagInput, setProductTagInput] = useState("");
 
-  const handleInput = (e) => {
+  const handleInput = (e:ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     let { name, value } = e.target;
     if (name === "productPrice") {
       value = value.replace(/[^0-9]/g, "");
@@ -30,13 +38,13 @@ function AddItem() {
       }));
     }
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
   };
-  const handleTagInputChange = (e) => {
+  const handleTagInputChange = (e:ChangeEvent<HTMLInputElement>) => {
     setProductTagInput(e.target.value);
   };
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e:KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       e.preventDefault();
       const newTag = productTagInput.trim();
@@ -51,7 +59,7 @@ function AddItem() {
     }
   };
 
-  const handleRemoveTag = (indexToRemove) => {
+  const handleRemoveTag = (indexToRemove:number) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
       productTag: prevFormData.productTag.filter(
@@ -71,6 +79,8 @@ function AddItem() {
   }, [formData]);
 
   return (
+    <>
+    <Header />
     <div className="all-wrapper">
       <div className="wrapper">
         <div className="add-top">
@@ -93,7 +103,7 @@ function AddItem() {
             <input
               name="productName"
               value={formData.productName}
-              className="add-product-input name"
+              className="add-product-input product-name"
               id="product-name"
               type="text"
               placeholder="상품명을 입력해주세요"
@@ -109,7 +119,6 @@ function AddItem() {
               value={formData.productIntroduction}
               className="add-product-input introduction"
               id="product-introduce"
-              type="text"
               placeholder="상품 소개를 입력해주세요"
               onChange={handleInput}
             ></textarea>
@@ -121,7 +130,7 @@ function AddItem() {
             <input
               name="productPrice"
               value={formData.productPrice}
-              className="add-product-input price"
+              className="add-product-input product-price"
               id="product-price"
               type="text"
               placeholder="판매 가격을 입력해주세요"
@@ -159,6 +168,7 @@ function AddItem() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

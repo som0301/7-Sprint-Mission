@@ -2,16 +2,32 @@ import React from "react";
 import detail_heart from "../images/detail-heart.svg";
 import morebutton from "../images/morebutton.svg";
 
-const ProductDetailInfo = ({ detailItem }) => {
-  function formatNumber(number) {
-    return new Intl.NumberFormat("ko-KR").format(number) + "원";
-  }
+function formatNumber(number: number): string {
+  return new Intl.NumberFormat("ko-KR").format(number) + "원";
+}
 
+interface DetailInfoItem {
+  id:number;
+  name:string;
+  description:string;
+  price:number;
+  tags:string[];
+  images:string[];
+  ownerId:number;
+  favoriteCount:number;
+  createdAt:string;
+  updatedAt:string;
+  isFavorite:boolean;
+}
+interface DetailInfroProps {
+  detailItem: DetailInfoItem;
+}
+const ProductDetailInfo = ({ detailItem }: DetailInfroProps) => {
   return (
     <div className="detailInfo">
       <img
-      className="img-detail"
-        src={detailItem.images}
+        className="img-detail"
+        src={detailItem.images[0]}
         alt="상품 상세 사진"
         width={"486px"}
         height={"486px"}
@@ -28,19 +44,18 @@ const ProductDetailInfo = ({ detailItem }) => {
         <p className="top-wrapper-title">상품 소개</p>
         <p className="detailItem-description">{detailItem.description}</p>
         <p className="top-wrapper-title">상품 태그</p>
-        {detailItem && detailItem.tags?.length > 0
-          ? detailItem.tags.map((tag, index) => (
-              <p key={index} className="detailItem-tags">
-                {`#${tag}`}
-              </p>
-            ))
-          : null}
+        {detailItem.tags.map((tag, index) => (
+          <p key={index} className="detailItem-tags">
+            {`#${tag}`}
+          </p>
+        ))}
 
         <button className="favorite-count">
-          <img src={detail_heart} alt="좋아요" width={"32px"} height={"32px"}/>
-          <span className="favorite-count-number">{detailItem.favoriteCount}</span>
+          <img src={detail_heart} alt="좋아요" width="32 " height="32" />
+          <span className="favorite-count-number">
+            {detailItem.favoriteCount}
+          </span>
         </button>
-
       </div>
     </div>
   );

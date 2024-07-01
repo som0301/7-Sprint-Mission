@@ -17,11 +17,12 @@
   margin-top: 24px;
 }
 
-.best-container > h2 {
+.productlist-h2,.productlist-h2-all,.productlist-h2-sell{
   color: #111827;
   font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
 }
-
 /* .productlist {
   display: flex;
   column-gap: 24px;
@@ -153,7 +154,7 @@ select {
   margin-bottom: 59px;
 }
 @media screen and (min-width: 1200px) {
-  .title-text-tm {
+  .productlist-h2-sell {
     display: none;
   }
   .all-label {
@@ -181,7 +182,7 @@ select {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
-  .title-text-pc {
+  .productlist-h2-all {
     display: none;
   }
   .container {
