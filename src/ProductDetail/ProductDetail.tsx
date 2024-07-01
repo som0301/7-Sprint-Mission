@@ -48,10 +48,12 @@ function ProductDetail() {
   const [itemComment, setItemComment] = useState<Comment[]>([]);
 
   const getProductDetail = async () => {
+    if(productId){
     const data = await getProductId({ productId });
     const comment = await getProductIdComments({ productId });
     setDetailItem(data);
     setItemComment(comment);
+    }
   };
 
   useEffect(() => {
