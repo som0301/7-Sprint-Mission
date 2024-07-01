@@ -11,7 +11,7 @@ const PrintAllItems = () => {
   const [search, setSearch] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [orderBy, setOrderBy] = useState<string>("recent");
-  const itemsPerPage: number = 10;
+  const [itemsPerPage, setItemsPerPage] = useState<number>(10);
 
   const loadItems = async (orderBy: string) => {
     const items = await getItems({ pageSize: 100, orderBy });
@@ -20,6 +20,22 @@ const PrintAllItems = () => {
 
   useEffect(() => {
     loadItems(orderBy);
+  }, [orderBy]);
+
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth <= 768) {
+        setItemsPerPage(4);
+      } else if (window.innerWidth <= 1024) {
+        setItemsPerPage(6);
+      } else {
+        setItemsPerPage(10);
+      }
+    };
+
+    updateItemsPerPage();
+    window.addEventListener("resize", updateItemsPerPage);
+    return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
 
   const handleButtonClick = (url: string) => () => {
@@ -49,7 +65,7 @@ const PrintAllItems = () => {
   };
 
   return (
-    <div className='box-items'>
+    <div className='container-items-all'>
       <header>
         <span>전체 상품</span>
         <input
@@ -67,7 +83,7 @@ const PrintAllItems = () => {
         />
         <OrderSelect value={orderBy} onChange={handleOrderByChange} />
       </header>
-      <div className='container-items'>
+      <div className='wrapper-items'>
         <div className='all-items'>
           <ItemBox items={currentItems} type='all' />
         </div>
