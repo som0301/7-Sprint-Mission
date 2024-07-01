@@ -1,21 +1,28 @@
+import { ChangeEvent } from 'react'
 import { useEffect, useRef, useState } from 'react'
 import { ReactComponent as DeleteIcon } from '../../../image/deleteicon.svg'
 
-function FileInput({ name, value, onChange }) {
-  const [previewImg, setPreviewImg] = useState()
-  const inputRef = useRef()
+interface Props {
+  name: string
+  value: File | null
+  onImageChange: (name: string, value: File | null) => void
+}
 
-  const handleChange = (e) => {
-    const nextValue = e.target.files[0]
-    onChange(name, nextValue)
+function FileInput({ name, value, onImageChange }: Props) {
+  const [previewImg, setPreviewImg] = useState('')
+  const inputImgRef = useRef<HTMLInputElement>(null)
+
+  const handleImgChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const newImgValue = e.target.files?.[0] || null // undefined이면 null로 대체
+    onImageChange(name, newImgValue)
   }
 
   const handleClearClick = () => {
-    const inputNode = inputRef.current
+    const inputNode = inputImgRef.current
     if (!inputNode) return
 
     inputNode.value = ''
-    onChange(name, null)
+    onImageChange(name, null)
   }
 
   useEffect(() => {
@@ -24,14 +31,14 @@ function FileInput({ name, value, onChange }) {
     setPreviewImg(nextPreview)
 
     return () => {
-      setPreviewImg()
+      setPreviewImg('')
       URL.revokeObjectURL(nextPreview)
     }
   }, [value])
 
   return (
     <div className="wrapper-img-upload">
-      <label for="file">
+      <label htmlFor="file">
         +
         <br />
         이미지 등록
@@ -40,8 +47,8 @@ function FileInput({ name, value, onChange }) {
         className="input-img"
         type="file"
         id="file"
-        onChange={handleChange}
-        ref={inputRef}
+        onChange={handleImgChange}
+        ref={inputImgRef}
       />
       {previewImg && (
         <div className="img-preview">

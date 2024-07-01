@@ -2,9 +2,15 @@ import { ReactComponent as LeftArrow } from '../image/lefticon.svg'
 import { ReactComponent as RightArrow } from '../image/righticon.svg'
 import './PaginationBar.css'
 
-const PaginationBar = ({ pageTotal, activePage, onPageChange }) => {
+interface Props {
+  pageTotal: number
+  activePage: number
+  onPageChange: (e: number) => void
+}
+
+const PaginationBar = ({ pageTotal, activePage, onPageChange }: Props) => {
   const MAX_VISIBLE_PAGES = 5
-  let startPage
+  let startPage: number
 
   if (pageTotal <= MAX_VISIBLE_PAGES) {
     startPage = 1

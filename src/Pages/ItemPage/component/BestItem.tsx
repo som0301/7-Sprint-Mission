@@ -1,6 +1,8 @@
 import ItemCard from './ItemCard'
 import { getProducts } from '../../../service/Api'
 import { useEffect, useState } from 'react'
+import { ItemListResponse } from '../../../interfaces/item.interface'
+import useFetch from '../../../hooks/useFetch'
 
 const getPageSize = () => {
   const width = window.innerWidth
@@ -10,13 +12,13 @@ const getPageSize = () => {
 }
 
 function BestItem() {
-  const [itemList, setItemList] = useState([])
   const [pageSize, setPageSize] = useState(getPageSize())
 
-  const fetchData = async ({ orderBy, pageSize }) => {
-    const products = await getProducts({ orderBy, pageSize })
-    setItemList(products.list)
-  }
+  const fetchBestItems = useFetch<ItemListResponse>(
+    () => getProducts({ orderBy: 'favorite', pageSize }),
+    { list: [], totalCount: 0 }
+  )
+  const { list: itemList } = fetchBestItems
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,7 +26,6 @@ function BestItem() {
     }
 
     window.addEventListener('resize', handleResize)
-    fetchData({ orderBy: 'favorite', pageSize })
 
     return () => {
       window.removeEventListener('resize', handleResize)

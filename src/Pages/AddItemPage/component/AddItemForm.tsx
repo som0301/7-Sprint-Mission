@@ -1,16 +1,26 @@
+import { ChangeEvent, FormEvent, KeyboardEvent, MouseEvent } from 'react'
 import { useState } from 'react'
 import FileInput from './FileInput'
 import { ReactComponent as DeleteIcon } from '../../../image/deleteicon.svg'
 
+type InputValue = string | number | File | null
+interface FormValues {
+  name: string
+  description: string
+  price: number
+  tags: string[]
+  images: File | null
+}
+
 const INITIAL_VALUES = {
   name: '',
   description: '',
-  price: null,
+  price: 0,
   tags: [],
   images: null,
 }
 
-function sanitize(type, value) {
+function sanitize(type: string, value: InputValue) {
   switch (type) {
     case 'number':
       return Number(value) || 0
@@ -21,17 +31,19 @@ function sanitize(type, value) {
 }
 
 function AddItemForm() {
-  const [values, setValues] = useState(INITIAL_VALUES)
+  const [values, setValues] = useState<FormValues>(INITIAL_VALUES)
   const [tagInput, setTagInput] = useState('')
 
-  const handleValueChange = (name, value) => {
+  const handleValueChange = (name: string, value: InputValue) => {
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
     }))
   }
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value, type } = e.target
     if (name === 'tags') {
       setTagInput(value)
@@ -40,7 +52,7 @@ function AddItemForm() {
     }
   }
 
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter' && tagInput) {
       e.preventDefault()
       setValues((prevValues) => ({
@@ -51,21 +63,15 @@ function AddItemForm() {
     }
   }
 
-  const handleRemoveTag = (index) => {
+  const handleRemoveTag = (index: number) => {
     setValues((prevValues) => ({
       ...prevValues,
       tags: prevValues.tags.filter((_, i) => i !== index),
     }))
   }
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const formData = new FormData()
-    formData.append('name', values.name)
-    formData.append('description', values.description)
-    formData.append('price', values.price)
-    formData.append('tags', JSON.stringify(values.tags))
-    formData.append('images', values.images)
   }
 
   const isFormComplete = () => {
@@ -95,7 +101,7 @@ function AddItemForm() {
           <FileInput
             name="images"
             value={values.images}
-            onChange={handleValueChange}
+            onImageChange={handleValueChange}
           />
         </div>
         <div className="add-item-name">
