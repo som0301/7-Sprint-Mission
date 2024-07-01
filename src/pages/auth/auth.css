@@ -17,7 +17,7 @@
   flex-direction: column;
 }
 
-.input-box label {
+.auth-label {
   display: block;
   font-size: 18px;
   font-weight: 700;

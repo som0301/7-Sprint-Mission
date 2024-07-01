@@ -7,6 +7,7 @@ h2 {
 .add-item {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 header {
@@ -47,8 +48,15 @@ textarea {
   color: #1f2937;
 }
 
-input::placeholder {
+textarea {
+  padding: 24px;
+  resize: none;
+}
+
+input::placeholder,
+textarea::placeholder {
   color: #9ca3af;
+  font-size: 16px;
 }
 
 .AddItemForm .input-box:nth-child(1) input {
@@ -59,9 +67,36 @@ input::placeholder {
 .AddItemForm .input-box:nth-child(3) textarea {
   height: 200px;
 }
+
 .img-box {
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
+}
+
+.img-box input[type="file"] {
+  display: none;
+}
+
+.img-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 282px;
+  height: 282px;
+  border-radius: 12px;
+  background: url(../../../assets/images/icons/ic_plus.svg) no-repeat center;
+  background-size: 48px;
+  cursor: pointer;
+  background-color: #f3f4f6;
+  margin-bottom: 0;
+}
+
+.img-label-text {
+  margin-top: 100px;
+  font-size: 16px;
+  color: #9ca3af;
 }
 
 .img-preview-container {

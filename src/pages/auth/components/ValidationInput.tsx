@@ -76,7 +76,9 @@ const ValidationInput: React.FC<ValidationInputProps> = ({
 
   return (
     <div className='input-box'>
-      <label htmlFor={id}>{name}</label>
+      <label htmlFor={id} className='auth-label'>
+        {name}
+      </label>
       <div className='password-box'>
         <input
           type={

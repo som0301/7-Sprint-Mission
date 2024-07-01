@@ -37,8 +37,8 @@ const FileInput: React.FC<FileInputProps> = ({ name, value, onChange }) => {
 
   return (
     <div className='img-box'>
-      <input type='file' onChange={handleChange} ref={inputRef} />
-
+      <label htmlFor='imgFile' className='img-label'><span className='img-label-text'>이미지 등록</span></label>
+      <input type='file' id='imgFile' onChange={handleChange} ref={inputRef} />
       {preview && (
         <div className='img-preview-container'>
           <img className='img-preview' src={preview} alt='이미지 미리보기' />
