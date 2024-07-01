@@ -3,7 +3,7 @@ import facebook from "../../assets/images/social/facebook-logo.svg";
 import twitter from "../../assets/images/social/twitter-logo.svg";
 import youtube from "../../assets/images/social/youtube-logo.svg";
 import instagram from "../../assets/images/social/instagram-logo.svg";
-import '../../pages/HomePage/HomePage.css'
+import './Footer.css';
 
 const Footer = () => {
   return (

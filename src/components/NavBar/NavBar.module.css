@@ -50,3 +50,22 @@
 .buttonLogin {
   margin-left: auto;
 }
+
+@media (max-width: 768px) {
+  .navbarLogo img {
+    width: 81px;
+    height: auto;
+  }
+
+  .navbarLinks {
+    margin-left: 12px;
+  }
+
+  .navbarLinks li:not(:first-child) {
+    margin-left: 12px;
+  }
+
+  .navbar {
+    padding: 10px 12px;
+  }
+}

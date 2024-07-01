@@ -37,3 +37,11 @@
   background-color: var(--gray-400);
   cursor: not-allowed;
 }
+
+@media (max-width: 768px) {
+  .large {
+    font-size: 16px;
+    padding: 16px 20px;
+    width: 154px;
+  }
+}

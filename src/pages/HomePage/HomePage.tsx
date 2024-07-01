@@ -16,7 +16,7 @@ const Homepage = () => {
         <section id='top' className='banner'>
           <div className='banner-box'>
             <h1>
-              일상의 모든 물건을
+              일상의 모든 물건을&nbsp;
               <br />
               거래해 보세요
             </h1>
@@ -34,7 +34,7 @@ const Homepage = () => {
             <div className='content-box'>
               <h2 className='content-name'>Hot item</h2>
               <h1>
-                인기 상품을
+                인기 상품을&nbsp;
                 <br />
                 확인해 보세요
               </h1>
@@ -51,7 +51,7 @@ const Homepage = () => {
               <h1>
                 구매를 원하는
                 <br />
-                상품을 검색하세요
+                &nbsp;상품을 검색하세요
               </h1>
               <p className='content-description'>
                 구매하고 싶은 물품은 검색해서
@@ -66,7 +66,7 @@ const Homepage = () => {
             <div className='content-box'>
               <h2 className='content-name'>Register</h2>
               <h1>
-                판매를 원하는
+                판매를 원하는&nbsp;
                 <br />
                 상품을 등록하세요
               </h1>
@@ -81,7 +81,7 @@ const Homepage = () => {
         <section id='bottom' className='banner'>
           <div className='banner-box'>
             <h1>
-              믿을 수 있는
+              믿을 수 있는&nbsp;
               <br />
               판다마켓 중고거래
             </h1>
