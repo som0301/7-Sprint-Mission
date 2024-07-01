@@ -1,0 +1,47 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 40px;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: var(--gray-400);
+  cursor: not-allowed;
+}
+
+.large {
+  font-size: 20px;
+  padding: 16px 124px;
+}
+
+.small {
+  font-size: 16px;
+  padding: 12px 22px;
+  border-radius: 8px;
+}
+
+.default {
+  background-color: var(--blue);
+}
+
+.default:hover {
+  background-color: #1967d6;
+}
+
+.default:active {
+  background-color: #1251aa;
+}
+
+@media (max-width: 768px) {
+  .large {
+    font-size: 16px;
+    padding: 16px 20px;
+    width: 154px;
+  }
+}
