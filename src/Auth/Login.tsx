@@ -86,7 +86,7 @@ const Login = () => {
         </div>
         <div className="auth-description">
           <span className="auth-description-text">판다마켓이 처음이신가요?</span>
-          <Link to="/singup" className="login-signup">
+          <Link to="/signup" className="login-signup">
             회원가입
           </Link>
         </div>

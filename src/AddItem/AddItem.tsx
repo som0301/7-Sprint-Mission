@@ -2,6 +2,7 @@ import { ChangeEvent, KeyboardEvent, MouseEvent, useEffect, useState } from "rea
 import "./AddItem.css";
 import FileInputImage from "./FileInputImage";
 import deleteTag from "../images/deleteTag.svg";
+import Header from "../headers/Header";
 
 interface FormData {
   productName: string;
@@ -78,6 +79,8 @@ function AddItem() {
   }, [formData]);
 
   return (
+    <>
+    <Header />
     <div className="all-wrapper">
       <div className="wrapper">
         <div className="add-top">
@@ -100,7 +103,7 @@ function AddItem() {
             <input
               name="productName"
               value={formData.productName}
-              className="add-product-input name"
+              className="add-product-input product-name"
               id="product-name"
               type="text"
               placeholder="상품명을 입력해주세요"
@@ -127,7 +130,7 @@ function AddItem() {
             <input
               name="productPrice"
               value={formData.productPrice}
-              className="add-product-input price"
+              className="add-product-input product-price"
               id="product-price"
               type="text"
               placeholder="판매 가격을 입력해주세요"
@@ -165,6 +168,7 @@ function AddItem() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

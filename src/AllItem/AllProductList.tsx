@@ -68,8 +68,8 @@ function AllProductList() {
         <div className="container">
           <div className="container-header">
             <div className="wrapper-top">
-              <h2 className="title-text-pc">전체 상품</h2>
-              <h2 className="title-text-tm">판매중인 상품</h2>
+              <h2 className="productlist-h2-all">전체 상품</h2>
+              <h2 className="productlist-h2-sell">판매중인 상품</h2>
               <div className="all-container-header">
                 <div className="all-label">
                   <img src={search} alt="검색" width="15px" height="15px" />
@@ -106,7 +106,7 @@ function AllProductList() {
         <div className="container">
           <div className="container-header">
             <div className="wrapper-top">
-              <h2 className="title-text-tm">판매중인 상품</h2>
+              <h2 className="productlist-h2-sell">판매중인 상품</h2>
               <button className="button">
                 <Link to="/additem" className="product-link">
                   상품 등록하기

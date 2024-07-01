@@ -1,11 +1,18 @@
 import "./ProductItem.css";
 import heart from "./images/heart.svg";
 
-function formatNumber(number) {
+function formatNumber(number:number):string {
   return new Intl.NumberFormat("ko-KR").format(number) + "원";
 }
 
-function ProductItem({ imgUrl, name, price, favoriteCount }) {
+interface ProductItemProps{
+  imgUrl:string;
+  name:string;
+  price:number;
+  favoriteCount:number;
+}
+
+function ProductItem({ imgUrl, name, price, favoriteCount }:ProductItemProps) {
   return (
     <li className="itemlist">
       <img src={imgUrl} alt="상품" className="imgurl" />

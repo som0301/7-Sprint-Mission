@@ -9,19 +9,16 @@ import Items from "./Items";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/header" element={<Header />} />
-        <Route path="/items" element={<Items />} />
-        <Route path="/addItem" element={<AddItem />} />
-        <Route path="/items/:productId" element={<ProductDetail />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+
+      <Route path="/header" element={<Header />} />
+        <Route path="items" element={<Items />} />
+        <Route path="addItem" element={<AddItem />} />
+        <Route path="items/:productId" element={<ProductDetail />} />
+    </Routes>
   );
 }
-
 export default App;

@@ -7,6 +7,7 @@ import ProductComment from "./ProductComment";
 import ProductDetailInfo from "./ProductDetailInfo";
 import ProductInquiry from "./ProductInquiry";
 import { Link } from "react-router-dom";
+import Header from "../headers/Header";
 
 interface DetailItem{
   id:number;
@@ -64,6 +65,8 @@ function ProductDetail() {
   console.log(itemComment);
 
   return (
+    <>
+    <Header />
     <div className="detail-wrapper">
       <ProductDetailInfo detailItem={detailItem} />
       <div className="line"></div>
@@ -82,6 +85,7 @@ function ProductDetail() {
         </button>
       </Link>
     </div>
+    </>
   );
 }
 
