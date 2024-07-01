@@ -19,7 +19,6 @@ const CommentSection: React.FC<CommentSectionProps> = ({
 
   const handleAddCommentSubmit = async () => {
     if (addComment.trim() === "") {
-      alert("댓글을 입력해주세요.");
       return;
     }
     const newComment = {
@@ -64,6 +63,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({
               size='small'
               width=''
               onClick={handleAddCommentSubmit}
+              disabled={addComment.trim() === ""}
             />
           </div>
         </form>
