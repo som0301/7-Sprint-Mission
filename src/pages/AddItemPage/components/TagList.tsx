@@ -1,7 +1,7 @@
 import React, { ChangeEvent, KeyboardEvent, useState } from "react";
 
 const TagList: React.FC = () => {
-  const [tags, setTags] = useState<string>("");
+  const [tags, setTags] = useState("");
   const [tagList, setTagList] = useState<string[]>([]);
 
   const handleTagChange = (e: ChangeEvent<HTMLInputElement>) => {

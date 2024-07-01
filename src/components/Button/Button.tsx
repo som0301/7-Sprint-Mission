@@ -18,12 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   disabled = false,
 }) => {
-  const buttonClasses = [
-    styles.button,
-    styles[color],
-    styles[size],
-    disabled ? styles.disabled : "",
-  ].join(" ");
+  const buttonClasses = [styles.button, styles[color], styles[size]].join(" ");
 
   return (
     <button

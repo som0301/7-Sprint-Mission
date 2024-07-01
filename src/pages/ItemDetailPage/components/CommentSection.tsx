@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "../ItemDetailPage.module.css";
-import { Comment } from "../../../types";
+import { Comment } from "../../../types/types";
 import { BASE_URL } from "../../../api/itemApi";
 import { Button } from "../../../components/Button/Button";
 
@@ -15,7 +15,7 @@ const CommentSection: React.FC<CommentSectionProps> = ({
   productId,
   reloadComments,
 }) => {
-  const [addComment, setAddComment] = useState<string>("");
+  const [addComment, setAddComment] = useState("");
 
   const handleAddCommentSubmit = async () => {
     if (addComment.trim() === "") {

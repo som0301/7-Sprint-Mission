@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import Logo from "../../assets/images/logo/logo.svg";
 import LogoText from "../../assets/images/logo/logo-text.svg";
@@ -7,10 +7,7 @@ import { Button } from "../Button/Button";
 
 function NavBar() {
   const location = useLocation();
-  const handleButtonClick = (url: string) => () => {
-    window.location.href = url;
-  };
-
+  const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -23,6 +20,10 @@ function NavBar() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  const handleButtonClick = (url: string) => () => {
+    navigate(url);
+  };
 
   const isHome = location.pathname === "/";
 

@@ -1,10 +1,10 @@
 import { useEffect, useState, useCallback } from "react";
 import { getItemDetail, getComments } from "../../api/itemApi";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import styles from "./ItemDetailPage.module.css";
 import ItemDetail from "./components/ItemDetail";
 import CommentSection from "./components/CommentSection";
-import { Item, Comment } from "../../types";
+import { Item, Comment } from "../../types/types";
 import { Button } from "../../components/Button/Button";
 
 const initialItem: Item = {
@@ -21,6 +21,7 @@ const ItemDetailPage = () => {
   const { productId } = useParams<{ productId: string }>();
   const [item, setItem] = useState<Item>(initialItem);
   const [comments, setComments] = useState<Comment[]>([]);
+  const navigate = useNavigate();
 
   const loadItem = useCallback(async () => {
     if (productId) {
@@ -53,7 +54,7 @@ const ItemDetailPage = () => {
   }, [productId, loadComments]);
 
   const pageBack = () => {
-    window.location.href = "/items";
+    navigate("/items");
   };
 
   if (!productId) {

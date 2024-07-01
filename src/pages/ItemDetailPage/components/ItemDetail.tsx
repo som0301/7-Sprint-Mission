@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../ItemDetailPage.module.css";
-import { Item } from "../../../types";
+import { Item } from "../../../types/types";
 
 interface ItemDetailProps {
   item: Item;

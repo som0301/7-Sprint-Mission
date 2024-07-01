@@ -6,7 +6,7 @@ import {
   validatePassword,
   validateNickname,
   validatePasswordConfirm,
-} from "./authValidation";
+} from "../../../utils/authValidation";
 
 interface ValidationInputProps {
   id: string;

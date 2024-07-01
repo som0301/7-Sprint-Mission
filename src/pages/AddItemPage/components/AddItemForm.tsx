@@ -42,7 +42,7 @@ const AddItemForm: React.FC = () => {
 
   useEffect(() => {
     const { productName, description, price } = values;
-    const isValid = productName !== "" && description !== "" && price !== "";
+    const isValid = !!productName && !!description && !!price;
     setIsFormValid(isValid);
   }, [values]);
 
@@ -50,7 +50,7 @@ const AddItemForm: React.FC = () => {
     <div className='add-item'>
       <header>
         <span>상품 등록하기</span>
-        <Button text="등록" disabled={!isFormValid} size="small" width="88px" />
+        <Button text='등록' disabled={!isFormValid} size='small' width='88px' />
       </header>
       <div>
         <form className='AddItemForm' onSubmit={handleSubmit}>

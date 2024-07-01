@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { getItems } from "../../../api/itemApi";
 import ItemBox, { Item } from "./ItemBox";
 import { Button } from "../../../components/Button/Button";
@@ -8,10 +9,11 @@ import "../MarketPage.css";
 
 const PrintAllItems = () => {
   const [items, setItems] = useState<Item[]>([]);
-  const [search, setSearch] = useState<string>("");
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const [orderBy, setOrderBy] = useState<string>("recent");
-  const [itemsPerPage, setItemsPerPage] = useState<number>(10);
+  const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [orderBy, setOrderBy] = useState("recent");
+  const [itemsPerPage, setItemsPerPage] = useState(10);
+  const navigate = useNavigate();
 
   const loadItems = async (orderBy: string) => {
     const items = await getItems({ pageSize: 100, orderBy });
@@ -39,7 +41,7 @@ const PrintAllItems = () => {
   }, []);
 
   const handleButtonClick = (url: string) => () => {
-    window.location.href = url;
+    navigate(url);
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -3,11 +3,14 @@ import feature2 from "../../assets/images/home/feature2-image.png";
 import feature3 from "../../assets/images/home/feature3-image.png";
 import Footer from "../../components/Footer/Footer";
 import { Button } from "../../components/Button/Button";
+import { useNavigate } from "react-router-dom";
 import "./HomePage.css";
 
 const Homepage = () => {
+  const navigate = useNavigate();
+
   const handleButtonClick = (url: string) => () => {
-    window.location.href = url;
+    navigate(url);
   };
 
   return (

@@ -5,7 +5,7 @@ import "../MarketPage.css";
 
 const PrintBestItems: React.FC = () => {
   const [items, setItems] = useState<Item[]>([]);
-  const [itemsPerPage, setItemsPerPage] = useState<number>(4);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
 
   const loadItems = async () => {
     const items = await getItems({ orderBy: "favorite" });

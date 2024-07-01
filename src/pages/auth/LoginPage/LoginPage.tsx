@@ -3,17 +3,19 @@ import google from "../../../assets/images/social/google-logo.png";
 import kakao from "../../../assets/images/social/kakao-logo.png";
 import ValidationInput from "../components/ValidationInput";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../../components/Button/Button";
 import "../auth.css";
 
 const LoginPage = () => {
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (isEmailValid && isPasswordValid) {
-      window.location.href = "/login";
+      navigate("/login");
     }
   };
 

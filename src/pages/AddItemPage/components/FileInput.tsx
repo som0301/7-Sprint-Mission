@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, ChangeEvent } from "react";
+import React, { useRef, useState } from "react";
 import { FormValues } from "./AddItemForm";
 
 interface FileInputProps {
@@ -7,38 +7,41 @@ interface FileInputProps {
   onChange: (name: keyof FormValues, value: File | null) => void;
 }
 
-const FileInput: React.FC<FileInputProps> = ({ name, value, onChange }) => {
-  const [preview, setPreview] = useState<string | undefined>();
+const FileInput: React.FC<FileInputProps> = ({ name, onChange }) => {
   const inputRef = useRef<HTMLInputElement>(null);
+  const [preview, setPreview] = useState<string | null>(null);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const nextValue = e.target.files?.[0] || null;
-    onChange(name, nextValue);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    onChange(name, file);
+
+    if (file) {
+      setPreview(URL.createObjectURL(file));
+    } else {
+      setPreview(null);
+    }
   };
 
   const handleClearClick = () => {
-    const inputNode = inputRef.current;
-    if (!inputNode) return;
-
-    inputNode.value = "";
-    onChange(name, null);
+    if (inputRef.current) {
+      inputRef.current.value = "";
+      onChange(name, null);
+      setPreview(null);
+    }
   };
-
-  useEffect(() => {
-    if (!value) return;
-    const nextPreview = URL.createObjectURL(value);
-    setPreview(nextPreview);
-
-    return () => {
-      setPreview(undefined);
-      URL.revokeObjectURL(nextPreview);
-    };
-  }, [value]);
 
   return (
     <div className='img-box'>
-      <label htmlFor='imgFile' className='img-label'><span className='img-label-text'>이미지 등록</span></label>
-      <input type='file' id='imgFile' onChange={handleChange} ref={inputRef} />
+      <label htmlFor='imgFile' className='img-label'>
+        <span className='img-label-text'>이미지 등록</span>
+      </label>
+      <input
+        type='file'
+        id='imgFile'
+        onChange={handleChange}
+        ref={inputRef}
+        style={{ display: "none" }}
+      />
       {preview && (
         <div className='img-preview-container'>
           <img className='img-preview' src={preview} alt='이미지 미리보기' />
