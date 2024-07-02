@@ -20,6 +20,6 @@
     "^shared/(.*)$",
     "^[./]"
   ],
-  "importOrderSeparation": false,
+  "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

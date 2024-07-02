@@ -1,5 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+
 import { GlobalStyle } from 'app/styles';
+
 import {
   AddItemPage,
   HomePage,
@@ -7,6 +9,7 @@ import {
   ItemListPage,
   NotFoundPage,
 } from 'pages';
+
 import { Layout } from 'widgets/layout';
 
 export default function App() {

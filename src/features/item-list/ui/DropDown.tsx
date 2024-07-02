@@ -2,8 +2,8 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import ArrowDownIcon from 'public/images/ic_arrow_down.svg';
 import SortIcon from 'public/images/ic_sort.svg';
-import { useViewport } from 'shared/hook';
-import { DeviceType } from 'shared/type';
+import { DeviceType } from 'shared/store';
+import { useDeviceStore } from 'shared/store/useDeviceStore';
 
 const DropDownButton = styled.button`
   display: flex;
@@ -55,7 +55,7 @@ const DropDownItem = styled.li`
 
 function DropDown({ deviceType, order, setOrder }: DeviceType) {
   const [isOpen, setIsOpen] = useState(false);
-  const { isMobile } = useViewport();
+  const { isMobile } = useDeviceStore();
 
   const buttonText = order === 'recent' ? '최신순' : '좋아요순';
   const orderType = [

@@ -18,7 +18,7 @@ const getDeviceType = (width: number): DeviceType => {
 // 초기 상태 설정
 const initialDeviceType = getDeviceType(window.innerWidth);
 
-export const useDeviceStore = create<DeviceTypeState>((set) => ({
+ const useDeviceStore = create<DeviceTypeState>((set) => ({
   // 보관할 상태 초기값
   deviceType: initialDeviceType,
   isMobile: initialDeviceType === 'mobile',
@@ -36,6 +36,8 @@ export const useDeviceStore = create<DeviceTypeState>((set) => ({
     });
   },
 }));
+
+export const useDeviceType
 
 // 상태값 업데이트를 위한 리사이즈 핸들러
 export const useDeviceType = () => {

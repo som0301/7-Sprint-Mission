@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
-import { AxiosError } from 'axios';
+
+import axios from 'axios';
+
 import { GetItemsParams, Item, getItems } from 'features/item-list/lib';
+
+import { handleAxiosError } from 'shared/lib';
 
 // 상품 목록 조회 커스텀 훅
 export function useFetchItems({
@@ -20,9 +24,10 @@ export function useFetchItems({
         const { list } = await getItems({ page, pageSize, order, search });
         setItems(list);
       } catch (error) {
-        if (error instanceof AxiosError) {
-          setIsError(error.message);
+        if (axios.isAxiosError(error)) {
+          handleAxiosError(error);
         }
+        setIsError('상품 목록을 불러오는 중 문제가 발생했습니다.');
       } finally {
         setIsLoading(false);
       }

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+
+import { useDeviceStore } from 'shared/store';
+
 import NavigationLink from './NavigationLink';
-import useViewport from 'shared/hook/useViewport';
 
 const HeaderWrapper = styled.header`
   position: fixed;

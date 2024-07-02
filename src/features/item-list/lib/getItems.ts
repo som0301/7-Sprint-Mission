@@ -1,9 +1,11 @@
 import axios from 'axios';
+
 import {
   BASE_URL,
   GetItemsParams,
   GetItemsResponse,
 } from 'features/item-list/lib';
+
 import { handleAxiosError } from 'shared/lib';
 
 // 상품 목록 조회 API

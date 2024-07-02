@@ -1,12 +1,14 @@
-import { useViewport } from 'shared/hook';
-import { DeviceType } from 'shared/type';
+import { DeviceType } from 'shared/store';
+import { useDeviceStore } from 'shared/store/useDeviceStore';
 
 // 상품 목록 타입 정의
 type ItemType = 'all' | 'best';
 
+const DEFAULT_PAGE_SIZE: number = 10;
+
 // 페이지 사이즈 반환 커스텀 훅
 export function usePageSize(type: ItemType) {
-  const { deviceType } = useViewport();
+  const { deviceType } = useDeviceStore();
 
   const pageSizeMap: { [key in ItemType]: { [key in DeviceType]: number } } = {
     all: {
@@ -21,7 +23,6 @@ export function usePageSize(type: ItemType) {
     },
   };
 
-  const DEFAULT_PAGE_SIZE: number = 10;
   const pageSize = pageSizeMap[type][deviceType] ?? DEFAULT_PAGE_SIZE;
 
   return pageSize;
