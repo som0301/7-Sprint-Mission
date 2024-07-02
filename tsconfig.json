@@ -2,13 +2,6 @@
   "compilerOptions": {
     "target": "es6",
     "baseUrl": "./src",
-    "paths": {
-      "@app/*": ["app/*"],
-      "@pages/*": ["pages/*"],
-      "@widgets/*": ["widgets/*"],
-      "@features/*": ["features/*"],
-      "@shared/*": ["shared/*"]
-    },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,

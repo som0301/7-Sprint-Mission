@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import useViewport from 'shared/hook/useViewport';
 import styled from 'styled-components';
-import ArrowDownIcon from 'shared/assets/image/ic_arrow_down.svg';
-import SortIcon from 'shared/assets/image/ic_sort.svg';
+import ArrowDownIcon from 'public/images/ic_arrow_down.svg';
+import SortIcon from 'public/images/ic_sort.svg';
+import { useViewport } from 'shared/hook';
+import { DeviceType } from 'shared/type';
 
 const DropDownButton = styled.button`
   display: flex;
@@ -12,10 +13,8 @@ const DropDownButton = styled.button`
   border: 1px solid var(--gray200);
   background-color: #fff;
   font-size: 16px;
-  padding: ${({ $deviceType }) => {
-    if ($deviceType === 'mobile') return '0 9px';
-    if ($deviceType !== 'mobile') return '0 20px;';
-  }};
+  padding: ${({ $deviceType }) =>
+    $deviceType === 'mobile' ? '0 9px' : '0 20px'};
 `;
 
 const DropDownIcon = styled.img`
@@ -54,7 +53,7 @@ const DropDownItem = styled.li`
   cursor: pointer;
 `;
 
-function DropDown({ deviceType, order, setOrder }) {
+function DropDown({ deviceType, order, setOrder }: DeviceType) {
   const [isOpen, setIsOpen] = useState(false);
   const { isMobile } = useViewport();
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getItems } from 'features/item-list/lib';
-import { GetItemsParams, Item } from 'features/item-list/lib';
+import { AxiosError } from 'axios';
+import { GetItemsParams, Item, getItems } from 'features/item-list/lib';
 
 // 상품 목록 조회 커스텀 훅
 export function useFetchItems({
@@ -20,7 +20,7 @@ export function useFetchItems({
         const { list } = await getItems({ page, pageSize, order, search });
         setItems(list);
       } catch (error) {
-        if (error instanceof Error) {
+        if (error instanceof AxiosError) {
           setIsError(error.message);
         }
       } finally {

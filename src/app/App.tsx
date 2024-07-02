@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import { GlobalStyle } from 'app/styles';
-import { Layout } from 'widgets/layout';
 import {
-  HomePage,
-  ItemListPage,
   AddItemPage,
+  HomePage,
   ItemDetailPage,
+  ItemListPage,
   NotFoundPage,
 } from 'pages';
+import { Layout } from 'widgets/layout';
 
 export default function App() {
   return (
