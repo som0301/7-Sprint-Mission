@@ -8,7 +8,7 @@ const useFormValidation = () => {
     passwordConfirm: "",
   });
 
-  const validateEmtail = (email: string) => {
+  const validateEmail = (email: string) => {
     let emailError = "";
     if (!email) {
       emailError = "이메일을 입력해주세요.";

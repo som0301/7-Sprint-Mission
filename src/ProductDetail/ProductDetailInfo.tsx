@@ -19,10 +19,10 @@ interface DetailInfoItem {
   updatedAt:string;
   isFavorite:boolean;
 }
-interface DetailInfroProps {
+interface DetailInfoProps {
   detailItem: DetailInfoItem;
 }
-const ProductDetailInfo = ({ detailItem }: DetailInfroProps) => {
+const ProductDetailInfo = ({ detailItem }: DetailInfoProps) => {
   return (
     <div className="detailInfo">
       <img
@@ -36,7 +36,7 @@ const ProductDetailInfo = ({ detailItem }: DetailInfroProps) => {
       <div className="Info-wrapper">
         <div className="Info-wrapper-name">
           <h1 className="detailItem-name">{detailItem.name}</h1>
-          <img src={morebutton} alt="더보기" width={"24px"} height={"24px"} />
+          <img src={morebutton} alt="더보기" width="24" height="24" />
         </div>
 
         <h1 className="detailItem-price">{formatNumber(detailItem.price)}</h1>
@@ -51,7 +51,7 @@ const ProductDetailInfo = ({ detailItem }: DetailInfroProps) => {
         ))}
 
         <button className="favorite-count">
-          <img src={detail_heart} alt="좋아요" width="32 " height="32" />
+          <img src={detail_heart} alt="좋아요" width="32" height="32" />
           <span className="favorite-count-number">
             {detailItem.favoriteCount}
           </span>
