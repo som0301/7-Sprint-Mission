@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const useFormValidation = () => {
-  const [error, setError] = useState({
+  const [errors, setErrors] = useState({
     email: "",
     nickname: "",
     password: "",
@@ -17,15 +17,17 @@ const useFormValidation = () => {
     ) {
       emailError = "잘못된 형식의 이메일입니다.";
     }
-    return emailError;
+    setErrors((prevErrors) => ({ ...prevErrors, email: emailError }));
   };
+
   const validateNickname = (nickname: string) => {
     let nicknameError = "";
     if (!nickname) {
       nicknameError = "닉네임을 입력해주세요";
     }
-    return nicknameError;
+    setErrors((prevErrors) => ({ ...prevErrors, nickname: nicknameError }));
   };
+  
   const validatePassword = (password: string) => {
     let passwordError = "";
     if (!password) {
@@ -33,19 +35,31 @@ const useFormValidation = () => {
     } else if (password.length < 8) {
       passwordError = "비밀번호를 8자 이상 입력해주세요";
     }
-    return passwordError;
+    setErrors((prevErrors) => ({ ...prevErrors, password: passwordError }));
   };
+  
   const validatePasswordConfirm = (
     password: string,
     passwordConfirm: string
   ) => {
     let passwordConfirmError = "";
-    if (password !== passwordConfirm) {
+    if (!passwordConfirm) {
+      passwordConfirmError = "비밀번호 확인을 입력해주세요.";
+    } else if (password !== passwordConfirm) {
       passwordConfirmError = "비밀번호가 일치하지 않습니다.";
     }
-    return passwordConfirmError;
+    setErrors((prevErrors) => ({
+      ...prevErrors,
+      passwordConfirm: passwordConfirmError,
+    }));
   };
-  
+  return {
+    errors,
+    validateEmail,
+    validateNickname,
+    validatePassword,
+    validatePasswordConfirm,
+  };
 };
 
 export default useFormValidation;
