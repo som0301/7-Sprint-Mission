@@ -110,7 +110,14 @@ const FavoriteCount = styled.p`
   color: var(--gray600);
 `;
 
-function ItemsListPage({ type, page, pageSize, order, setOrder, search }) {
+export function ItemListPage({
+  type,
+  page,
+  pageSize,
+  order,
+  setOrder,
+  search,
+}) {
   const { items, isLoading, isError } = useFetchItems({
     page,
     pageSize,
@@ -163,5 +170,3 @@ function ItemsListPage({ type, page, pageSize, order, setOrder, search }) {
     </ItemContainer>
   );
 }
-
-export default ItemsListPage;

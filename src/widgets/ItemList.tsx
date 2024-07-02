@@ -18,7 +18,7 @@ const ListWrapper = styled.div`
   row-gap: ${({ $deviceType }) => ($deviceType === 'mobile' ? '24px' : '40px')};
 `;
 
-function ItemsPage() {
+function ItemList() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
   const [order, setOrder] = useState('recent');
@@ -50,4 +50,4 @@ function ItemsPage() {
   );
 }
 
-export default ItemsPage;
+export default ItemList;

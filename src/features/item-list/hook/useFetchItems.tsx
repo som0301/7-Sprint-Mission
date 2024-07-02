@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getItems } from 'features/itemlist/lib';
-import { GetItemsParams, Item } from 'features/itemlist/lib';
+import { getItems } from 'features/item-list/lib';
+import { GetItemsParams, Item } from 'features/item-list/lib';
 
 // 상품 목록 조회 커스텀 훅
 export function useFetchItems({

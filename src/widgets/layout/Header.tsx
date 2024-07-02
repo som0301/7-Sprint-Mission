@@ -38,7 +38,7 @@ const Wrapper = styled.div`
     $deviceType === 'mobile' ? '8px' : '39px;'};
 `;
 
-function Header() {
+export function Header() {
   const { deviceType } = useViewport();
 
   return (
@@ -56,5 +56,3 @@ function Header() {
     </HeaderWrapper>
   );
 }
-
-export default Header;
