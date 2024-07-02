@@ -7,6 +7,7 @@ import {
 import { handleAxiosError } from 'shared/lib';
 
 // 상품 목록 조회 API
+
 export async function getItems({
   page = 1,
   pageSize = 10,

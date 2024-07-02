@@ -1,4 +1,4 @@
-import useViewport from 'shared/hook/useViewport';
+import { useViewport } from 'shared/hook/useViewport';
 
 // 페이지 사이즈 반환 커스텀 훅
 export function usePageSize(type) {
