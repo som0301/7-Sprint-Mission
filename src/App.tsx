@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from '/src/components/header/Header';
 
 import '/src/styles/Reset.css';
 import './App.css';
@@ -15,9 +13,9 @@ import { ResponsiveProvider } from './Responsive';
 import ItemDetailPage from './pages/ItemDetailPage';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
-import App from './pages/App';
+import Index from './pages';
 
-function Main() {
+function App() {
   return (
     <>
       <BrowserRouter>
@@ -25,7 +23,7 @@ function Main() {
           <Routes>
             <Route path='/login' element={<LoginPage />} />
             <Route path='/signup' element={<SignUpPage />} />
-            <Route path='/' element={<App />}>
+            <Route path='/' element={<Index />}>
               <Route index element={<HomePage />} />
               <Route path='board' element={<BoardPage />} />
               <Route path='items' element={<ItemsPage />} />
@@ -43,4 +41,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default App;
