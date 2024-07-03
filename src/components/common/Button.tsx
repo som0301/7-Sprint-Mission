@@ -1,13 +1,24 @@
+import { ButtonHTMLAttributes } from 'react';
 import styled from 'styled-components';
 import '/src/styles/Color.css';
 
-const SIZES = {
+interface SizeType {
+  [key: string]: {
+    borderRadius: string;
+    padding: string;
+    fontSize: string;
+  };
+}
+
+const SIZES: SizeType= {
   small: { borderRadius: '8', padding: '12px 23px', fontSize: '16' },
   medium: { borderRadius: '40', padding: '12px 71px', fontSize: '18' },
   large: { borderRadius: '40', padding: '16px 124px', fontSize: '20' },
 };
 
-export default function Button({ className, onClick, children, disabled }) {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{}
+
+export default function Button({ className, onClick, children, disabled } : ButtonProps) {
   return (
     <button className={className} disabled={disabled} onClick={onClick}>
       {children}
@@ -15,7 +26,7 @@ export default function Button({ className, onClick, children, disabled }) {
   );
 }
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<{size: string;}>`
   background-color: rgba(0, 0, 0, 0);
   border: none;
 

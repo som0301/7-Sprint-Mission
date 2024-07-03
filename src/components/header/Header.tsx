@@ -12,9 +12,9 @@ function Header() {
     <StyledHeader>
       <div className='header-left'>
         <LogoImage type='header' />
-        <TabMenu class='header__tab' />
+        <TabMenu className='header__tab' />
       </div>
-      <StyledButton size='small' onClick={() => navigate('/login')}>
+      <StyledButton size='small' onClick={() => navigate('/login')} >
         로그인
       </StyledButton>
     </StyledHeader>
