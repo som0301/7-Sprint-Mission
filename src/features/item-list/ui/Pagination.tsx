@@ -1,12 +1,26 @@
 import styled from 'styled-components';
 
-import ArrowLeftICon from 'shared/assets/image/arrow_left.svg';
-import ArrowRightICon from 'shared/assets/image/arrow_right.svg';
+import ArrowLeftICon from 'public/images/arrow_left.svg';
+import ArrowRightICon from 'public/images/arrow_right.svg';
+
+import { ItemType } from 'widgets/item-list';
+
+import { DeviceTypeProps } from 'shared/lib';
 import { useDeviceType } from 'shared/store';
+
+interface PaginationProps {
+  type: ItemType;
+  page: number;
+  setPage: (page: number) => void;
+}
+
+type ButtonProps = {
+  $active?: boolean;
+};
 
 const TOTAL_PAGES = 5;
 
-export function Pagination({ page, setPage }) {
+export function Pagination({ page, setPage }: PaginationProps) {
   const deviceType = useDeviceType();
 
   const handlePrevPage = () => {
@@ -19,7 +33,7 @@ export function Pagination({ page, setPage }) {
     setPage(page + 1);
   };
 
-  const handlePageClick = (currentPage) => {
+  const handlePageClick = (currentPage: number) => {
     setPage(currentPage);
   };
 
@@ -37,14 +51,14 @@ export function Pagination({ page, setPage }) {
           {currentPage}
         </PageButton>
       ))}
-      <PageButton onClick={handleNextPage} disabled={page === 5}>
+      <PageButton onClick={handleNextPage} disabled={page === TOTAL_PAGES}>
         <PrevNextImage src={ArrowRightICon} alt='다음페이지이동' />
       </PageButton>
     </PaginationWrapper>
   );
 }
 
-const PaginationWrapper = styled.div`
+const PaginationWrapper = styled.div<DeviceTypeProps>`
   display: flex;
   column-gap: 4px;
   justify-content: center;
@@ -59,7 +73,7 @@ const PaginationWrapper = styled.div`
   }};
 `;
 
-const PageButton = styled.button`
+const PageButton = styled.button<ButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;

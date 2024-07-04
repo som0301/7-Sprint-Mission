@@ -6,17 +6,18 @@ import { useFetchItems } from 'features/item-list/hook';
 import { GetItemsParams } from 'features/item-list/lib/api';
 import { ItemToolbar } from 'features/item-list/ui';
 
+import { DeviceTypeProps } from 'shared/lib';
 import { useDeviceType } from 'shared/store';
 
-type ItemType = 'all' | 'best';
+export type ItemType = 'all' | 'best';
 
-interface ItemListProps {
+interface ItemTypeProps extends DeviceTypeProps {
+  $type: ItemType;
+}
+
+interface ItemListProps extends GetItemsParams {
   type: ItemType;
-  page: number;
-  pageSize: number;
-  order: string;
-  search: string;
-  setOrder?: (order: string) => void;
+  setOrder?: (order: GetItemsParams['order']) => void;
 }
 
 export function ItemList({ type, page, pageSize, order, setOrder, search }: ItemListProps) {
@@ -32,19 +33,22 @@ export function ItemList({ type, page, pageSize, order, setOrder, search }: Item
   if (isError) return <p>Error: {isError}</p>;
   return (
     <ItemContainer $deviceType={deviceType}>
-      <ItemWrapper $deviceType={deviceType}>
-        <ItemType $type={type} $deviceType={deviceType}>
+      <ItemWrapper>
+        <ItemTypeName $type={type} $deviceType={deviceType}>
           {getItemType(type)}
-        </ItemType>
-        {type === 'all' && (
-          <ItemToolbar deviceType={deviceType} order={order} setOrder={setOrder} />
-        )}
+        </ItemTypeName>
+        {type === 'all' && <ItemToolbar order={order} setOrder={setOrder} />}
       </ItemWrapper>
       <ItemInfo $type={type} $deviceType={deviceType}>
         {items &&
           items.map((item) => (
             <ItemCard key={item.id}>
-              <ItemImage $type={type} $deviceType={deviceType} src={item.images} alt={item.name} />
+              <ItemImage
+                $type={type}
+                $deviceType={deviceType}
+                src={item.images[0]}
+                alt={item.name}
+              />
               <ItemName>{item.name}</ItemName>
               <ItemPrice>{item.price.toLocaleString()}원</ItemPrice>
               <FavoriteWrapper>
@@ -58,7 +62,7 @@ export function ItemList({ type, page, pageSize, order, setOrder, search }: Item
   );
 }
 
-const ItemContainer = styled.div`
+const ItemContainer = styled.div<DeviceTypeProps>`
   display: flex;
   flex-direction: column;
   row-gap: 16px;
@@ -75,7 +79,7 @@ const ItemWrapper = styled.div`
   align-items: center;
 `;
 
-export const ItemType = styled.h2`
+export const ItemTypeName = styled.h2<ItemTypeProps>`
   font-size: 20px;
   line-height: 140%;
   display: ${({ $type, $deviceType }) => {
@@ -85,7 +89,7 @@ export const ItemType = styled.h2`
   }};
 `;
 
-const ItemInfo = styled.ul`
+const ItemInfo = styled.ul<ItemTypeProps>`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -105,7 +109,7 @@ const ItemCard = styled.li`
   row-gap: 6px;
 `;
 
-const ItemImage = styled.img`
+const ItemImage = styled.img<ItemTypeProps>`
   width: ${({ $type, $deviceType }) => {
     if ($type === 'all') {
       if ($deviceType === 'mobile') {

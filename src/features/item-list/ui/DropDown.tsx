@@ -10,7 +10,7 @@ import { GetItemsParams } from 'features/item-list/lib';
 import { useDeviceType } from 'shared/store';
 
 export function DropDown({ order, setOrder }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const deviceType = useDeviceType();
 

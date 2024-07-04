@@ -1,10 +1,12 @@
-import { ItemType } from 'pages/items/components/ItemsList';
 import styled from 'styled-components';
 
 import SearchIcon from 'public/images/ic_search.svg';
 
+import { ItemTypeName } from 'widgets/item-list';
+
 import { DropDown } from 'features/item-list/ui';
 
+import { DeviceTypeProps } from 'shared/lib';
 import { useDeviceType } from 'shared/store';
 
 export function ItemToolbar({ order, setOrder }) {
@@ -24,7 +26,7 @@ export function ItemToolbar({ order, setOrder }) {
       ) : (
         <>
           <MobileToolBarWrapper>
-            <ItemType>판매 중인 상품</ItemType>
+            <ItemTypeName>판매 중인 상품</ItemTypeName>
             <MoveAddItem href='/additem'>상품 등록하기</MoveAddItem>
           </MobileToolBarWrapper>
           <SearchSortWrapper $deviceType={deviceType}>
@@ -39,7 +41,7 @@ export function ItemToolbar({ order, setOrder }) {
   );
 }
 
-const ItemToolbarWrapper = styled.div`
+const ItemToolbarWrapper = styled.div<DeviceTypeProps>`
   display: flex;
   flex-direction: ${({ $deviceType }) => {
     if ($deviceType === 'mobile') return 'column';
@@ -52,7 +54,7 @@ const ItemToolbarWrapper = styled.div`
   }};
 `;
 
-const SearchItemInput = styled.input`
+const SearchItemInput = styled.input<DeviceTypeProps>`
     background-color: #f3f4f6;
     background-image: url(${SearchIcon});
     background-position: 15px;
@@ -85,7 +87,7 @@ const MoveAddItem = styled.a`
   }
 `;
 
-const SearchSortWrapper = styled.div`
+const SearchSortWrapper = styled.div<DeviceTypeProps>`
     display: flex;
     column-gap: ${({ $deviceType }) => {
       if ($deviceType === 'mobile') return '8px';
