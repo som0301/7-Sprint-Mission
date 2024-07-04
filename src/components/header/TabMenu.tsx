@@ -5,7 +5,7 @@ const TapStyle = {
   displayDirection: 'column',
 };
 
-function TabMenu({ className }) {
+function TabMenu({ className }: { className: string }) {
   return (
     <div className={className} style={TapStyle}>
       <TabMenuList className='header__tab-list' src='/board'>

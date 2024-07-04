@@ -59,10 +59,10 @@ interface InputProps {
   name?: string;
   value?: string;
   id?: string;
-  placeholder: string;
+  placeholder?: string;
   children?: ReactNode;
   type?: string;
-  onChange: any;
+  onChange?: any;
   onKeyDown?: any;
   onKeyUp?: any;
 }

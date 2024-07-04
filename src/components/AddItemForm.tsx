@@ -1,26 +1,34 @@
-import { FileInput, Input, Tag, TagContainer } from '/src/components/Input';
-import { StyledButton } from '/src/components/common/Button';
-import { useEffect, useState } from 'react';
+import { FileInput, Input, Tag, TagContainer } from '@components/Input';
+import { StyledButton } from '@components/common/Button';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import {
   StyledForm,
   StyledFormHeader,
   FormHeaderTitle,
-} from '/src/components/common/CommonComponents';
+} from '@components/common/CommonComponents';
 
-const initialValues = {
+interface Value {
+  name: string;
+  description: string;
+  price: string;
+  tags: string[];
+  images: any; // any..
+}
+
+const initialValues: Value = {
   name: '',
   description: '',
   price: '',
   tags: [],
-  images: null,
+  images: '',
 };
 
 function AddItemForm() {
   const [isfilled, setIsFilled] = useState(false);
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState<string[]>([]);
   const [values, setValues] = useState(initialValues);
 
-  const handleChange = (name, value) => {
+  const handleChange = (name: string, value: string | number | string[]) => {
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
@@ -28,13 +36,13 @@ function AddItemForm() {
   };
 
   // 모든 input 변경할때 사용
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     handleChange(name, value);
   };
 
   // 가격: 가격 입력할 때
-  const handleNumberChange = (e) => {
+  const handleNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name } = e.target;
     const uncomValue = String(e.target.value).replace(/[^\d]+/g, '');
     const value = uncomValue.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
@@ -43,8 +51,8 @@ function AddItemForm() {
   };
 
   // 태그: 태그 상태 변경
-  const handleTagChange = (e) => {
-    const { value } = e.target;
+  const handleTagChange = (e: KeyboardEvent) => {
+    const { value } = e.target as HTMLInputElement;
     if (value.trim() === '') return;
     if (tags.length === 10) return;
     setTags((prevTags) => {
@@ -54,22 +62,22 @@ function AddItemForm() {
   };
 
   // 태그: 태그 엔터키 눌렀을 때 submit 동작 막기
-  const handleKeyDown = (e) => {
+  const handleKeyDown = (e: KeyboardEvent) => {
     if (e.code !== 'Enter') return;
     e.preventDefault();
   };
 
   // 태그: 엔터키 마지막으로 눌렀을때 tag 등록하고 현재 tag input 비우기
-  const handleKeyUp = (e) => {
+  const handleKeyUp = (e: KeyboardEvent) => {
     if (e.code === 'Enter') {
       e.preventDefault();
       handleTagChange(e);
-      e.target.value = '';
+      (e.target as HTMLInputElement).value = '';
     }
   };
 
   // 태그: 태그삭제할때
-  const handleDeleteTag = (idx) => {
+  const handleDeleteTag = (idx: number) => {
     setTags((prevTags) => {
       const nextTags = [...prevTags];
       nextTags.splice(idx, 1);
@@ -78,19 +86,31 @@ function AddItemForm() {
   };
 
   // 등록 버튼 : 등록 눌렀을 때
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(values); // 아직 POST 구현 안해서 확인용 콘솔로그
   };
 
   useEffect(() => {
-    let isCheck = true;
-    for (let value in values) {
-      isCheck = isCheck && initialValues[value] !== values[value];
-    }
-    isCheck =
-      isCheck &&
-      JSON.stringify(initialValues.tags) !== JSON.stringify(values.tags);
+    // let isCheck = true;
+    // for (let value in values) {
+    //   isCheck = isCheck && initialValues[value] !== values[value];
+    // }
+    // isCheck =
+    //   isCheck &&
+    //   JSON.stringify(initialValues.tags) !== JSON.stringify(values.tags);
+
+    const isCheck = (Object.keys(initialValues) as Array<keyof Value>).every(
+      (key) => {
+        if (key === 'tags') {
+          return (
+            JSON.stringify(initialValues[key]) !== JSON.stringify(values[key])
+          );
+        }
+        return initialValues[key] !== values[key];
+      }
+    );
+
     setIsFilled(isCheck);
   }, [values]);
 

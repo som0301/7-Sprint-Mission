@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import '/src/styles/header/TabMenuList.css';
 
@@ -5,7 +6,13 @@ const activeStyle = {
   color: '#3692FF',
 };
 
-function TabMenuList({ className, children, src }) {
+interface Props {
+  className: string;
+  children: ReactNode;
+  src: string;
+}
+
+function TabMenuList({ className, children, src }: Props) {
   return (
     <NavLink
       className={`link ${className}`}

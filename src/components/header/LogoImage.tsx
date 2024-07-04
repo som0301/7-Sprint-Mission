@@ -1,8 +1,8 @@
-import logoImage from '/src/assets/logo-image.svg';
-import logoText from '/src/assets/logo-text.svg';
+import logoImage from 'assets/logo-image.svg';
+import logoText from 'assets/logo-text.svg';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useResponsiveApi } from '/src/Responsive';
+import { useResponsiveApi } from 'Responsive';
 
 const SIZES = {
   header: {
@@ -12,13 +12,15 @@ const SIZES = {
   sign: {
     width: '396',
     height: '132',
-    // desktop: {},
-    // tablet: {},
-    // mobile: {},
   },
-};
+} as const;
 
-function LogoImage({ type }) {
+type SizeType = keyof typeof SIZES;
+interface ImageProps {
+  type: SizeType; // type을 SizeType으로 제한합니다.
+}
+
+function LogoImage({ type }: ImageProps) {
   const { isMobile } = useResponsiveApi();
   return (
     <Link to='/' style={{ textAlign: 'center' }}>
@@ -27,7 +29,7 @@ function LogoImage({ type }) {
   );
 }
 
-const StyledImage = styled.img`
+const StyledImage = styled.img<ImageProps>`
   width: ${({ type }) => SIZES[type].width}px;
   height: ${({ type }) => SIZES[type].height}px;
 `;
