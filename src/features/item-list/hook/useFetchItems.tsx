@@ -7,12 +7,7 @@ import { GetItemsParams, Item, getItems } from 'features/item-list/lib';
 import { handleAxiosError } from 'shared/lib';
 
 // 상품 목록 조회 커스텀 훅
-export function useFetchItems({
-  page,
-  pageSize,
-  order,
-  search,
-}: GetItemsParams) {
+export function useFetchItems({ page, pageSize, order, search }: GetItemsParams) {
   const [items, setItems] = useState<Item[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isError, setIsError] = useState<string | null>(null);

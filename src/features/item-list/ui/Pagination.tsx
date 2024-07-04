@@ -1,7 +1,48 @@
 import styled from 'styled-components';
-import useViewport from 'shared/hook/useViewport';
+
 import ArrowLeftICon from 'shared/assets/image/arrow_left.svg';
 import ArrowRightICon from 'shared/assets/image/arrow_right.svg';
+import { useDeviceType } from 'shared/store';
+
+const TOTAL_PAGES = 5;
+
+export function Pagination({ page, setPage }) {
+  const deviceType = useDeviceType();
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    setPage(page + 1);
+  };
+
+  const handlePageClick = (currentPage) => {
+    setPage(currentPage);
+  };
+
+  return (
+    <PaginationWrapper $deviceType={deviceType}>
+      <PageButton onClick={handlePrevPage} disabled={page === 1}>
+        <PrevNextImage src={ArrowLeftICon} alt='이전페이지이동' />
+      </PageButton>
+      {Array.from({ length: TOTAL_PAGES }, (_, index) => index + 1).map((currentPage) => (
+        <PageButton
+          key={currentPage}
+          $active={currentPage === page}
+          onClick={() => handlePageClick(currentPage)}
+        >
+          {currentPage}
+        </PageButton>
+      ))}
+      <PageButton onClick={handleNextPage} disabled={page === 5}>
+        <PrevNextImage src={ArrowRightICon} alt='다음페이지이동' />
+      </PageButton>
+    </PaginationWrapper>
+  );
+}
 
 const PaginationWrapper = styled.div`
   display: flex;
@@ -56,47 +97,3 @@ const PrevNextImage = styled.img`
   width: 16px;
   height: 16px;
 `;
-
-const TOTAL_PAGES = 5;
-
-function Pagination({ page, setPage }) {
-  const { deviceType } = useViewport();
-
-  const handlePrevPage = () => {
-    if (page > 1) {
-      setPage(page - 1);
-    }
-  };
-
-  const handleNextPage = () => {
-    setPage(page + 1);
-  };
-
-  const handlePageClick = (currentPage) => {
-    setPage(currentPage);
-  };
-
-  return (
-    <PaginationWrapper $deviceType={deviceType}>
-      <PageButton onClick={handlePrevPage} disabled={page === 1}>
-        <PrevNextImage src={ArrowLeftICon} alt='이전페이지이동' />
-      </PageButton>
-      {Array.from({ length: TOTAL_PAGES }, (_, index) => index + 1).map(
-        (currentPage) => (
-          <PageButton
-            key={currentPage}
-            $active={currentPage === page}
-            onClick={() => handlePageClick(currentPage)}
-          >
-            {currentPage}
-          </PageButton>
-        ),
-      )}
-      <PageButton onClick={handleNextPage} disabled={page === 5}>
-        <PrevNextImage src={ArrowRightICon} alt='다음페이지이동' />
-      </PageButton>
-    </PaginationWrapper>
-  );
-}
-
-export default Pagination;

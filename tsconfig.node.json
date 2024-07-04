@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "composite": true, // 프로젝트를 컴포짓(composite) 구성으로 설정합니다.
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo", // TypeScript 빌드 정보 파일의 경로를 설정합니다.
+    "skipLibCheck": true, // 라이브러리 체크를 건너뛰도록 설정합니다.
+    "module": "ESNext", // 사용할 모듈 시스템을 ESNext로 설정합니다.
+    "moduleResolution": "bundler", // 모듈 해결 방식을 번들러(bundler)로 설정합니다.
+    "allowSyntheticDefaultImports": true, // default import를 허용하기 위해 합성(default synthetic)을 허용합니다.
+    "strict": true, // 엄격한 모드를 활성화하여 TypeScript의 모든 엄격한 타입 검사를 수행합니다.
+    "noEmit": true // TypeScript 컴파일 결과물을 생성하지 않습니다.
+  },
+  "include": ["vite.config.ts"] // 포함할 소스 파일의 경로를 설정합니다.
+}

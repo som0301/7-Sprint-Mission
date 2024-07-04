@@ -1,2 +1,1 @@
-export type { DeviceType, DeviceTypeState } from './Device';
-export { useDeviceStore } from './useDeviceStore';
+export { useDeviceType, useSetDeviceType } from './useDeviceTypeStore';

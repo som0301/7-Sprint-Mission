@@ -2,13 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import { GlobalStyle } from 'app/styles';
 
-import {
-  AddItemPage,
-  HomePage,
-  ItemDetailPage,
-  ItemListPage,
-  NotFoundPage,
-} from 'pages';
+import { AddItemPage, HomePage, ItemDetailPage, ItemListPage, NotFoundPage } from 'pages';
 
 import { Layout } from 'widgets/layout';
 

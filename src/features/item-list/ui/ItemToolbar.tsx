@@ -1,8 +1,43 @@
-import styled from 'styled-components';
-import useViewport from 'shared/hook/useViewport';
-import DropDown from 'pages/items/components/DropDown';
 import { ItemType } from 'pages/items/components/ItemsList';
-import SearchIcon from 'shared/assets/image/ic_search.svg';
+import styled from 'styled-components';
+
+import SearchIcon from 'public/images/ic_search.svg';
+
+import { DropDown } from 'features/item-list/ui';
+
+import { useDeviceType } from 'shared/store';
+
+export function ItemToolbar({ order, setOrder }) {
+  const deviceType = useDeviceType();
+  const isMobile = deviceType === 'mobile';
+
+  return (
+    <ItemToolbarWrapper $deviceType={deviceType}>
+      {!isMobile ? (
+        <>
+          <SearchItemInput $deviceType={deviceType} placeholder='검색할 상품을 입력해주세요' />
+          <MoveAddItem href='/additem'>상품 등록하기</MoveAddItem>
+          <SortItem>
+            <DropDown deviceType={deviceType} order={order} setOrder={setOrder} />
+          </SortItem>
+        </>
+      ) : (
+        <>
+          <MobileToolBarWrapper>
+            <ItemType>판매 중인 상품</ItemType>
+            <MoveAddItem href='/additem'>상품 등록하기</MoveAddItem>
+          </MobileToolBarWrapper>
+          <SearchSortWrapper $deviceType={deviceType}>
+            <SearchItemInput $deviceType={deviceType} placeholder='검색할 상품을 입력해주세요' />
+            <SortItem>
+              <DropDown deviceType={deviceType} order={order} setOrder={setOrder} />
+            </SortItem>
+          </SearchSortWrapper>
+        </>
+      )}
+    </ItemToolbarWrapper>
+  );
+}
 
 const ItemToolbarWrapper = styled.div`
   display: flex;
@@ -70,50 +105,3 @@ const MobileToolBarWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-
-function ItemToolbar({ deviceType, order, setOrder }) {
-  const { isMobile } = useViewport();
-
-  return (
-    <ItemToolbarWrapper $deviceType={deviceType}>
-      {!isMobile ? (
-        <>
-          <SearchItemInput
-            $deviceType={deviceType}
-            placeholder='검색할 상품을 입력해주세요'
-          />
-          <MoveAddItem href='/additem'>상품 등록하기</MoveAddItem>
-          <SortItem>
-            <DropDown
-              deviceType={deviceType}
-              order={order}
-              setOrder={setOrder}
-            />
-          </SortItem>
-        </>
-      ) : (
-        <>
-          <MobileToolBarWrapper>
-            <ItemType>판매 중인 상품</ItemType>
-            <MoveAddItem href='/additem'>상품 등록하기</MoveAddItem>
-          </MobileToolBarWrapper>
-          <SearchSortWrapper $deviceType={deviceType}>
-            <SearchItemInput
-              $deviceType={deviceType}
-              placeholder='검색할 상품을 입력해주세요'
-            />
-            <SortItem>
-              <DropDown
-                deviceType={deviceType}
-                order={order}
-                setOrder={setOrder}
-              />
-            </SortItem>
-          </SearchSortWrapper>
-        </>
-      )}
-    </ItemToolbarWrapper>
-  );
-}
-
-export default ItemToolbar;

@@ -20,7 +20,7 @@ export interface Item {
   updatedAt: string;
 }
 
-//응답 타입 정의
+// 응답 타입 정의
 export interface GetItemsResponse {
   list: Item[];
   totalCount: number;
