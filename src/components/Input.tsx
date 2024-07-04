@@ -3,7 +3,8 @@ import styled, { css } from 'styled-components';
 import iconTagCancel from '/src/assets/ic_tag_cancel.svg';
 import iconPlus from '/src/assets/ic_plus.svg';
 import iconImageCancel from '/src/assets/ic_cancel.svg';
-import { useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import { ReactNode } from 'react';
 
 /* text style css 함수 */
 const TextStyle = css`
@@ -54,6 +55,18 @@ const StyledTextArea = styled.textarea`
   ${InputStyle}
 `;
 
+interface InputProps {
+  name?: string;
+  value?: string;
+  id?: string;
+  placeholder: string;
+  children?: ReactNode;
+  type?: string;
+  onChange: any;
+  onKeyDown?: any;
+  onKeyUp?: any;
+}
+
 export function Input({
   name,
   value,
@@ -64,7 +77,7 @@ export function Input({
   onChange,
   onKeyDown,
   onKeyUp,
-}) {
+}: InputProps) {
   return (
     <StyledInputContainer>
       <StyledLabel htmlFor={id}>{children}</StyledLabel>
@@ -75,7 +88,7 @@ export function Input({
           id={id}
           placeholder={placeholder}
           onChange={onChange}
-          rows='5'
+          rows={5}
         />
       ) : (
         <StyledInput
@@ -126,13 +139,21 @@ export const TagContainer = styled.div`
   }
 `;
 
-export function Tag({ idx, children, onClick }) {
-  const tagRef = useRef();
+export function Tag({
+  idx,
+  children,
+  onClick,
+}: {
+  idx: number;
+  children: ReactNode;
+  onClick: any;
+}) {
+  const tagRef = useRef<HTMLDivElement>(null);
   const handleClick = () => {
     const tagNode = tagRef.current;
     if (!tagNode) return;
 
-    tagNode.value = '';
+    tagNode.textContent = '';
     onClick(idx);
   };
 
@@ -173,7 +194,7 @@ const StyledFileUploadButton = styled.button`
   }
 `;
 
-function FileUploadButton({ onClick }) {
+function FileUploadButton({ onClick }: { onClick: any }) {
   return (
     <StyledFileUploadButton type='button' onClick={onClick}>
       <img src={iconPlus} alt='이미지 등록' />
@@ -221,22 +242,35 @@ const FileUploadContainer = styled.div`
   }
 `;
 
-export function PreviewImage({ preview, onClick }) {
+export function PreviewImage({
+  preview,
+  onClick,
+}: {
+  preview: string;
+  onClick: any;
+}) {
   return (
     <PreviewImagediv>
-      {/* <StyledPreviewImage src={preview} alt='이미지 미리보기' /> */}
       <img src={preview} alt='이미지 미리보기' />
       <img src={iconImageCancel} alt='취소' onClick={onClick} />
     </PreviewImagediv>
   );
 }
 
-export function FileInput({ name, value, onChange }) {
-  const [preview, setPreview] = useState();
-  const inputRef = useRef();
+export function FileInput({
+  name,
+  value,
+  onChange,
+}: {
+  name: string;
+  value: Blob | MediaSource;
+  onChange: any;
+}) {
+  const [preview, setPreview] = useState<string>('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleChange = (e) => {
-    const nextImage = e.target.files[0];
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const nextImage = e.target.files?.[0];
     onChange(name, nextImage);
   };
 

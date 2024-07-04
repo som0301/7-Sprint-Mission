@@ -2,8 +2,8 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 export async function getProducts({
   orderBy = 'createdAt',
-  page = 1,
-  pageSize = 4,
+  page = '1',
+  pageSize = '4',
 }) {
   const query = `page=${page}&pageSize=${pageSize}&orderBy=${orderBy}`;
   const response = await fetch(`${API_URL}?${query}`, {

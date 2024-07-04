@@ -1,20 +1,23 @@
 import { Helmet } from 'react-helmet';
-import { useEffect, useState } from 'react';
+import { ChangeEvent, SyntheticEvent, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getDetailProduct, getProductComments } from '/src/api/api';
-import { StyledButton } from '/src/components/common/Button';
-import DetailProduct from '/src/components/DetailProduct';
-import DetailProductComments from '/src/components/DetailProductComments';
-import { Input } from '/src/components/Input';
+import { getDetailProduct, getProductComments } from '@api/api';
+import { StyledButton } from '@components/common/Button';
+import DetailProduct from '@components/DetailProduct';
+import DetailProductComments from '@components/DetailProductComments';
+import { Input } from '@components/Input';
 import {
   FlexWrapper,
   StyledMain,
   CommentForm,
-} from '/src/components/common/CommonComponents';
+} from '@components/common/CommonComponents';
 import iconBack from '/src/assets/ic_back.svg';
 
 function ItemDetailPage() {
-  const { productId } = useParams();
+  interface ParamTypes {
+    productId?: string;
+  }
+  const { productId } = useParams<keyof ParamTypes>();
   const [detailProduct, setDetailProduct] = useState({});
   const [comments, setComments] = useState([]);
 
@@ -27,22 +30,32 @@ function ItemDetailPage() {
     navigate('/items');
   };
 
-  const handleWriteComment = (e) => {
+  const handleWriteComment = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     setWriteComment(value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     console.log(writeComment);
   };
 
-  const handleDetailProductLoad = async (productId) => {
-    const product = await getDetailProduct(productId);
+  interface Product {
+    name: string;
+    description: string;
+    price: number;
+    images: string[];
+    tags: string[];
+    favoriteCount: number;
+    isFavorite: boolean;
+  }
+
+  const handleDetailProductLoad = async (productId?: string) => {
+    const product: Product = await getDetailProduct(productId);
     setDetailProduct(product);
   };
 
-  const handleCommentsLoad = async (productId) => {
+  const handleCommentsLoad = async (productId?: string) => {
     const { list } = await getProductComments(productId);
     setComments(list);
   };

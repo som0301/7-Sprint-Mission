@@ -1,34 +1,66 @@
 import { useState, useEffect } from 'react';
-import BestProductsList from '../components/BestProductsList';
-import { getProducts } from '/src/api/api';
+import BestProductsList from '@components/BestProductsList';
+import { getProducts } from '@api/api';
 
 import '/src/styles/Reset.css';
 import '/src/App.css';
-import AllProductsList from '/src/components/AllProductsList';
+import AllProductsList from '@components/AllProductsList';
 import '/src/styles/Button.css';
 
-import { useResponsiveApi } from '../Responsive';
+import { useResponsiveApi } from 'Responsive';
 import { Helmet } from 'react-helmet';
-import { StyledMain } from '../components/common/CommonComponents';
+
+interface Options {
+  orderBy: string;
+  pageSize: string;
+  page: string;
+}
+
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  tags: string;
+  images: string;
+  ownerId: number;
+  favoriteCount: number;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+type Order = 'recent' | 'favorite';
+
+const compareProducts = (a: Product, b: Product, orderBy: Order) => {
+  if (orderBy === 'recent') {
+    return b.createdAt.getTime() - a.createdAt.getTime();
+  } else if (orderBy === 'favorite') {
+    return b.favoriteCount - a.favoriteCount;
+  }
+  // 다른 정렬 기준에 대한 비교 로직 추가
+  return 0;
+};
 
 function Items() {
-  const [allProducts, setAllProducts] = useState([]);
-  const [bestProducts, setBestProducts] = useState([]);
-  const [order, setOrder] = useState('recent');
-  const [page, setPage] = useState(1);
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
+  const [bestProducts, setBestProducts] = useState<Product[]>([]);
+  const [order, setOrder] = useState<Order>('recent');
+  const [page, setPage] = useState<number>(1);
 
   const { isDesktop, isTablet } = useResponsiveApi();
   const allProductsPageSize = isDesktop ? 10 : isTablet ? 6 : 4;
   const bestProductsPageSize = isDesktop ? 4 : isTablet ? 2 : 1;
 
-  const sortedProducts = allProducts.sort((a, b) => b[order] - a[order]);
+  const sortedProducts = allProducts.sort((a, b) =>
+    compareProducts(a, b, order)
+  );
 
-  const handleBestProductsLoad = async (options) => {
+  const handleBestProductsLoad = async (options: Options) => {
     const { list } = await getProducts(options);
     setBestProducts(list);
   };
 
-  const handleAllProductsLoad = async (options) => {
+  const handleAllProductsLoad = async (options: Options) => {
     const { list } = await getProducts(options);
     setAllProducts(list);
   };
@@ -37,7 +69,7 @@ function Items() {
     handleBestProductsLoad({
       orderBy: 'favorite',
       pageSize: `${bestProductsPageSize}`,
-      page: 1,
+      page: '1',
     });
   }, [bestProductsPageSize]);
 
