@@ -3,20 +3,26 @@ import styled from 'styled-components';
 import HeartIcon from 'public/images/ic_heart.svg';
 
 import { useFetchItems } from 'features/item-list/hook';
+import { GetItemsParams } from 'features/item-list/lib/api';
 import { ItemToolbar } from 'features/item-list/ui';
 
 import { useDeviceType } from 'shared/store';
 
-export function ItemList({ type, page, pageSize, order, setOrder, search }) {
-  const { items, isLoading, isError } = useFetchItems({
-    page,
-    pageSize,
-    order,
-    search,
-  });
-  const deviceType = useDeviceType();
+type ItemType = 'all' | 'best';
 
-  const getItemType = (type) => {
+interface ItemListProps {
+  type: ItemType;
+  page: number;
+  pageSize: number;
+  order: string;
+  search: string;
+  setOrder?: (order: string) => void;
+}
+
+export function ItemList({ type, page, pageSize, order, setOrder, search }: ItemListProps) {
+  const { items, isLoading, isError } = useFetchItems({ page, pageSize, order, search });
+  const deviceType = useDeviceType();
+  const getItemType = (type: ItemType) => {
     if (type === 'best') return '베스트 상품';
 
     return deviceType === 'desktop' ? '전체 상품' : '판매 중인 상품';

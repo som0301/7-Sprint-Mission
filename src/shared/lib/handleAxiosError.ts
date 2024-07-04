@@ -1,5 +1,11 @@
 import { AxiosError } from 'axios';
 
+interface ErrorDetails {
+  response?: unknown;
+  request?: XMLHttpRequest;
+  message?: string;
+}
+
 // AxiosError 핸들러
 export function handleAxiosError(error: AxiosError) {
   const errorMappings: Record<string, string> = {
@@ -10,17 +16,17 @@ export function handleAxiosError(error: AxiosError) {
   };
 
   let errorMessage = errorMappings.unknownError;
-  let details: any = null;
+  let details: ErrorDetails = {};
 
   if (error.response) {
-    errorMessage = errorMappings.response_error;
-    details = error.response.data;
+    errorMessage = errorMappings.responseError;
+    details = { response: error.response.data };
   } else if (error.request) {
     errorMessage = errorMappings.noResponse;
-    details = error.request;
+    details = { request: error.request };
   } else {
     errorMessage = errorMappings.requestError;
-    details = error.message;
+    details = { message: error.message };
   }
   console.error(errorMessage, { details });
 }

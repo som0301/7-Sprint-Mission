@@ -2,38 +2,51 @@ import { Link, NavLink } from 'react-router-dom';
 
 import styled, { css } from 'styled-components';
 
-import MobileLogo from 'shared/assets/image/panda-market-logo-mobile.png';
-import Logo from 'shared/assets/image/panda-market-logo.png';
+import MobileLogo from 'public/images/panda-market-logo-mobile.png';
+import Logo from 'public/images/panda-market-logo.png';
 
-const homeStyle = css`
-  width: 153px;
-  height: 51px;
-  background-image: url(${Logo});
+import { DeviceTypeProps } from 'shared/lib';
+
+interface NavigationLinkProps extends DeviceTypeProps {
+  href: string;
+  text: string;
+  type: 'home' | 'nav' | 'login';
+}
+
+export function NavigationLink({ href, text, type, $deviceType }: NavigationLinkProps) {
+  if (type === 'nav') {
+    return (
+      <StyledNavLink to={href} className={type} $deviceType={$deviceType}>
+        {text}
+      </StyledNavLink>
+    );
+  } else {
+    return (
+      <StyledLink to={href} className={type} $deviceType={$deviceType}>
+        {text}
+      </StyledLink>
+    );
+  }
+}
+
+const homeStyle = css<DeviceTypeProps>`
+  width: ${({ $deviceType }) => ($deviceType === 'mobile' ? '81px' : '153px')};
+  height: ${({ $deviceType }) => ($deviceType === 'mobile' ? '40px' : '51px;')};
+  background-image: url (${({ $deviceType }) => ($deviceType === 'mobile' ? Logo : MobileLogo)});
   background-size: contain;
   background-repeat: no-repeat;
   text-indent: -9999px;
   overflow: hidden;
   white-space: nowrap;
-
-  @media (min-width: 375px) and (max-width: 767px) {
-    width: 81px;
-    height: 40px;
-    background-image: url(${MobileLogo});
-  }
 `;
 
-const navStyle = css`
+const navStyle = css<DeviceTypeProps>`
   display: flex;
   align-items: center;
-  font-size: 18px;
   font-weight: 700;
-  line-height: 21.48px;
+  font-size: ${({ $deviceType }) => ($deviceType === 'mobile' ? '16px' : '18px;')};
+  line-height: ${({ $deviceType }) => ($deviceType === 'mobile' ? '19.09px' : '21.48px;')};
   color: var(--gray600);
-
-  @media (min-width: 375px) and (max-width: 767px) {
-    font-size: 16px;
-    line-height: 19.09px;
-  }
 `;
 
 const loginStyle = css`
@@ -53,7 +66,7 @@ const loginStyle = css`
   }
 `;
 
-const StyledNavLink = styled(NavLink)`
+const StyledNavLink = styled(NavLink)<DeviceTypeProps>`
   &.home {
     ${homeStyle}
   }
@@ -71,7 +84,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link)<DeviceTypeProps>`
   &.home {
     ${homeStyle}
   }
@@ -84,22 +97,3 @@ const StyledLink = styled(Link)`
     ${loginStyle}
   }
 `;
-
-function NavigationLink({ href, text, type }) {
-  if (type === 'nav') {
-    return (
-      <StyledNavLink to={href} className={type}>
-        {text}
-      </StyledNavLink>
-    );
-  }
-  if (type !== 'nav') {
-    return (
-      <StyledLink to={href} className={type}>
-        {text}
-      </StyledLink>
-    );
-  }
-}
-
-export default NavigationLink;

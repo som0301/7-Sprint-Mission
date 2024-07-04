@@ -1,10 +1,30 @@
 import styled from 'styled-components';
 
-import { useDeviceStore } from 'shared/store';
+import { NavigationLink } from 'widgets/layout';
 
-import NavigationLink from './NavigationLink';
+import { DeviceTypeProps } from 'shared/lib';
+import { useDeviceType } from 'shared/store';
 
-const HeaderWrapper = styled.header`
+export function Header() {
+  const deviceType = useDeviceType();
+
+  return (
+    <HeaderWrapper $deviceType={deviceType}>
+      <Container $deviceType={deviceType}>
+        <h1>
+          <NavigationLink href='/' text='판다마켓' type='home' $deviceType={deviceType} />
+        </h1>
+        <Wrapper $deviceType={deviceType}>
+          <NavigationLink href='/freeboard' text='자유게시판' type='nav' $deviceType={deviceType} />
+          <NavigationLink href='/items' text='중고마켓' type='nav' $deviceType={deviceType} />
+        </Wrapper>
+      </Container>
+      <NavigationLink href='/login' text='로그인' type='login' $deviceType={deviceType} />
+    </HeaderWrapper>
+  );
+}
+
+const HeaderWrapper = styled.header<DeviceTypeProps>`
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -23,7 +43,7 @@ const HeaderWrapper = styled.header`
   }};
 `;
 
-const Container = styled.div`
+const Container = styled.div<DeviceTypeProps>`
   display: flex;
   align-items: center;
   column-gap: ${({ $deviceType }) => {
@@ -33,27 +53,8 @@ const Container = styled.div`
   }};
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<DeviceTypeProps>`
   display: flex;
   justify-content: space-between;
   column-gap: ${({ $deviceType }) => ($deviceType === 'mobile' ? '8px' : '39px;')};
 `;
-
-export function Header() {
-  const { deviceType } = useViewport();
-
-  return (
-    <HeaderWrapper $deviceType={deviceType}>
-      <Container $deviceType={deviceType}>
-        <h1>
-          <NavigationLink href='/' text='판다마켓' type='home' />
-        </h1>
-        <Wrapper $deviceType={deviceType}>
-          <NavigationLink href='/freeboard' text='자유게시판' type='nav' />
-          <NavigationLink href='/items' text='중고마켓' type='nav' />
-        </Wrapper>
-      </Container>
-      <NavigationLink href='/login' text='로그인' type='login' />
-    </HeaderWrapper>
-  );
-}

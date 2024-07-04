@@ -7,14 +7,11 @@ import { ItemList } from 'widgets/item-list';
 import { usePageSize } from 'features/item-list/hook';
 import { Pagination } from 'features/item-list/ui';
 
-import { useDeviceType } from 'shared/store';
-
 export function ItemListPage() {
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
   const [order, setOrder] = useState('recent');
 
-  const deviceType = useDeviceType();
   const allItemsPageSize = usePageSize('all');
   const bestItemsPageSize = usePageSize('best');
 
