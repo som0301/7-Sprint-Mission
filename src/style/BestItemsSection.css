@@ -1,0 +1,80 @@
+@import "../style/ColorList.css";
+
+.BestItemLayer {
+    width: 1200px;
+}
+
+.BestItemLayer > h1 {
+    margin-bottom: 16px;
+}
+
+.ItemList {
+    display: flex;
+    gap: 16px;
+}
+
+.BestItem > a > img {
+    width: 282px;
+    height: 282px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+}
+
+.ItemHistory {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ItemHistory > p{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.71px;
+    color: var(--cool-Gray800);
+}
+
+.ItemHistory > h1{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.09px;
+    color: var(--cool-Gray800);
+}
+
+.Itemfav {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.Itemfav > img {
+    width: 16px;
+    height: 16px;
+}
+
+.Itemfav > p {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.32px;
+}
+
+/* 테블릿버전 */
+@media (768px < width < 1280px) {
+    .BestItem > img {
+        width: 336px;
+        height: 336px;
+    }
+    .BestItemLayer {
+        width: 696px;
+    }
+}
+
+/* 모바일버전 */
+@media (400px < width < 768px) {
+    .BestItem > img {
+        width: 343px;
+        height: 343px;
+    }
+    .BestItemLayer {
+        width: 343px;
+    }
+}
