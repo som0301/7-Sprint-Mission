@@ -1,7 +1,7 @@
 import { StyledSignMain } from '../components/common/CommonComponents';
-import LogoImage from '/src/components/header/LogoImage';
+import LogoImage from '@components/header/LogoImage';
 import { Link } from 'react-router-dom';
-import SignUpForm from '/src/components/SignUpForm';
+import SignUpForm from '@components/SignUpForm';
 
 function SignUpPage() {
   return (

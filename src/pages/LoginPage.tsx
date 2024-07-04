@@ -1,11 +1,8 @@
 import { Link } from 'react-router-dom';
-import { FlexWrapper } from '../components/common/CommonComponents';
-import {
-  StyledMain,
-  StyledSignMain,
-} from '/src/components/common/CommonComponents';
-import LogoImage from '/src/components/header/LogoImage';
-import LoginForm from '/src/components/LoginForm';
+import { FlexWrapper } from '@components/common/CommonComponents';
+import { StyledSignMain } from '@components/common/CommonComponents';
+import LogoImage from '@components/header/LogoImage';
+import LoginForm from '@components/LoginForm';
 
 function LoginPage() {
   return (

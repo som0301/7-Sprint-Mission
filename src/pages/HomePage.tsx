@@ -1,5 +1,3 @@
-import { Outlet } from 'react-router-dom';
-import Header from '/src/components/header/Header';
 import { Helmet } from 'react-helmet';
 
 function HomePage() {

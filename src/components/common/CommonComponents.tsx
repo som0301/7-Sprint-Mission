@@ -70,7 +70,11 @@ export const ContentText = styled.p`
   color: var(--gray-800);
 `;
 
-export const Text = styled.p`
+export const Text = styled.p<{
+  $SIZE?: string;
+  $WEIGHT?: string;
+  $COLOR?: string;
+}>`
   font-size: ${({ $SIZE }) => $SIZE ?? '16'}px;
   font-weight: ${({ $WEIGHT }) => $WEIGHT ?? '400'};
   color: ${({ $COLOR }) =>
@@ -81,10 +85,17 @@ export const Text = styled.p`
   }
 `;
 
-export const FlexWrapper = styled.div`
+export const FlexWrapper = styled.div<{
+  $col?: boolean;
+  $gap?: string;
+  $wrap?: boolean;
+  $center?: boolean;
+  $RIGHT?: boolean;
+  $isMobile?: boolean;
+}>`
   display: flex;
   flex-direction: ${({ $col }) => ($col ? 'column' : 'row')};
-  gap: ${({ $gap }) => $gap}px;
+  gap: ${({ $gap }) => $gap ?? null}px;
   justify-content: ${({ $center, $RIGHT }) =>
     $center ? 'center' : $RIGHT ? 'flex-end' : ''};
 
@@ -97,7 +108,7 @@ export const FlexWrapper = styled.div`
     position: relative;
   }
 
-  &.comment-wrapper{
+  &.comment-wrapper {
     margin: 24px 0 40px;
   }
 
