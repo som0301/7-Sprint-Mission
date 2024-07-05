@@ -1,8 +1,8 @@
 import '../styles/ProductList.scss';
 import { Link } from 'react-router-dom';
 import heartImg from '../assets/icons/ic_heart_s.svg';
-import ProductController from '../components/ProductController';
-import Pagination from '../components/Pagination';
+import ProductController from './ProductController';
+import Pagination from './Pagination';
 
 function ProductListItem({ item }) {
   return (
