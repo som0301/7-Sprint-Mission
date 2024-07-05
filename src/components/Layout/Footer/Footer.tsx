@@ -1,9 +1,9 @@
 import React from "react";
 import "./Footer.css";
-import facebookLogo from "../../assets/images/social/facebook-logo.svg";
-import twitterLogo from "../../assets/images/social/twitter-logo.svg";
-import youtubeLogo from "../../assets/images/social/youtube-logo.svg";
-import instagrameLogo from "../../assets/images/social/instagram-logo.svg";
+import facebookLogo from "../../../assets/images/social/facebook-logo.svg";
+import twitterLogo from "../../../assets/images/social/twitter-logo.svg";
+import youtubeLogo from "../../../assets/images/social/youtube-logo.svg";
+import instagrameLogo from "../../../assets/images/social/instagram-logo.svg";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {

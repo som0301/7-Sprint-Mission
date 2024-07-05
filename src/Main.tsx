@@ -7,8 +7,8 @@ import UsedMarketPage from "./pages/UsedMarketPage/UsedMarketPage";
 import AddItemPage from "./pages/AddItemPage/AddItemPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
-import PrivacyPage from "./pages/Footer/PrivacyPage";
-import FaqPage from "./pages/Footer/FaqPage";
+import PrivacyPage from "./components/Layout/Footer/PrivacyPage";
+import FaqPage from "./components/Layout/Footer/FaqPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 

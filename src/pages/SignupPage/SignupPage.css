@@ -1,5 +1,13 @@
 .signup-page-main {
   width: 640px;
   margin: 0 auto;
-  padding-top: 60px;
+}
+
+/* Mobile: 767px 이하 */
+@media screen and (max-width: 767px) {
+  /*기본 패딩과 최대 넓이*/
+  .signup-page-main {
+    padding: 60px 16px 0;
+    max-width: 400px;
+  }
 }

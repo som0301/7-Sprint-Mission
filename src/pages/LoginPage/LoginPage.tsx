@@ -1,18 +1,14 @@
 import React from "react";
-import logoImg from "../../assets/images/icons/panda-market-logo.svg";
-import "./LoginPage.css";
+import "./LoginPage.scss";
 import { Link } from "react-router-dom";
-import EasyLogin from "../../UI/EasyLogin";
-import TogglePassword from "../../UI/togglePassword";
+import EasyLogin from "../../components/Layout/UI/EasyLogin";
+import TogglePassword from "../../components/Layout/UI/TogglePassword";
+import GoHomeLogo from "../../components/Layout/UI/GoHomeLogo";
 
 function LoginPage() {
   return (
     <div className="login-page-main">
-      <section className="go-home-logo">
-        <a href="/">
-          <img src={logoImg} alt="판다 마켓 홈" width="396" />
-        </a>
-      </section>
+      <GoHomeLogo />
       <section className="input">
         <form method="post" id="login" className="form">
           <div className="input-area">
