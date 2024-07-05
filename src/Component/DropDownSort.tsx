@@ -1,8 +1,13 @@
 import "../../src/style/DropDownSort.css"
 import React from "react";
-function DropDownSort( {setOrder} ) {
 
-    const handleChange = (event) => {
+interface DropDownSortProp{
+    setOrder: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function DropDownSort( {setOrder}:DropDownSortProp ) {
+
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setOrder(event.target.value);
     };
 

@@ -426,7 +426,7 @@ const NotCommentImg = styled.div `
 `;
 
 
-function DateFomet(strdate) {
+function DateFomet(strdate:string) {
     const date = new Date(strdate);
 
     const year = date.getUTCFullYear();
@@ -441,11 +441,26 @@ function DateFomet(strdate) {
     return `${formattedDate} ${formattedTime}`;
 }
 
+interface ItemProps {
+    images : string;
+    name : string;
+    price : number;
+    description: string;
+    tags: string[];
+    favoriteCount: number;
+}
+
+interface CommentProps {
+    content: string;
+    writer: {nickname: string};
+    updatedAt: string;
+}
+
 function ItemDetail() {
-    const [item, setItem] = useState([]);
-    const [itemComments, setItemComments] = useState([]);
+    const [item, setItem] = useState<ItemProps>();
+    const [itemComments, setItemComments] = useState<CommentProps[]>([]);
     const location = useLocation();
-    const itemId = (location.pathname.split("/").pop());
+    const itemId: number = Number((location.pathname.split("/").pop()));
 
     const ItemLoad = async () => {
         const response = await CallItemDetail(itemId);

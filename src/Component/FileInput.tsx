@@ -71,12 +71,18 @@ const PreviewDeleteButton = styled.button `
     background-color: #3692ff;
 `;
 
-function FileInput({name, value, onChange}) {
-    const [preview, setPreview] = useState();
-    const inputRef = useRef();
-    const [fileOnOff, setFileOnOff] = useState();
-    const handleChange = (e) => {
-        const nextValue = e.target.files[0];
+interface FileInputProps{
+    name: string;
+    value: File | null;
+    onChange: (name: string, value: File | null) => void;
+}
+
+function FileInput({name, value, onChange}: FileInputProps) {
+    const [preview, setPreview] = useState<string | undefined>();
+    const inputRef = useRef<HTMLInputElement | null>(null);
+    const [fileOnOff, setFileOnOff] = useState<boolean>();
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const nextValue = e.target.files ? e.target.files[0] : null;
         onChange(name, nextValue);
     };
 
@@ -97,12 +103,13 @@ function FileInput({name, value, onChange}) {
         else {
             setFileOnOff(true);
         }
-        const nextPreview = URL.createObjectURL(value);
+        const nextPreview = value ? URL.createObjectURL(value) : undefined;
         setPreview(nextPreview);
 
         return () => {
-            setPreview();
-            URL.revokeObjectURL(nextPreview);
+            if(nextPreview) {
+                URL.revokeObjectURL(nextPreview);
+            }
         };
     }, [value]);
 
