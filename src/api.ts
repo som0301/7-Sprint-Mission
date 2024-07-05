@@ -7,13 +7,13 @@ export async function getProducts(orderBy = 'recent', page = 1, pageSize = 10) {
   return body;
 }
 
-export async function getProductDetail(productId) {
+export async function getProductDetail(productId: number) {
   const response = await fetch(`${API_URL}/${productId}`);
   const body = await response.json();
   return body;
 }
 
-export async function getProductComments(productId, limit = 3) {
+export async function getProductComments(productId: number, limit: number = 3) {
   const query = `limit=${limit}`;
   const response = await fetch(`${API_URL}/${productId}/comments?${query}`);
   const body = await response.json();

@@ -6,12 +6,23 @@ import ProductDetail from '../components/ProductDetail';
 import CommentList from '../components/CommentList';
 import Button from '../components/Button';
 import turnBackImg from '../assets/icons/ic_turn_back.svg';
+import { ChangeEvent, MouseEvent } from 'react';
+import { Comment } from '../types/comment';
+
+interface Item {
+  name: string;
+  description: string;
+  price: string;
+  tags: string[];
+  images: string[];
+  favoriteCount: string;
+}
 
 function Item() {
   const params = useParams();
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState<Comment[]>([]);
   const [inputComment, setInputComment] = useState('');
-  const [item, setItem] = useState({
+  const [item, setItem] = useState<Item>({
     name: '',
     description: '',
     price: '',
@@ -19,21 +30,21 @@ function Item() {
     images: [],
     favoriteCount: '',
   });
-  const handleLoadItem = async (itemId) => {
+  const handleLoadItem = async (itemId: number) => {
     setItem(await getProductDetail(itemId));
   };
 
-  const handleLoadComments = async (itemId) => {
+  const handleLoadComments = async (itemId: number) => {
     const { list } = await getProductComments(itemId);
     setComments(list);
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setInputComment(e.target.value);
   };
   useEffect(() => {
-    handleLoadItem(params.itemId);
-    handleLoadComments(params.itemId);
+    handleLoadItem(Number(params.itemId));
+    handleLoadComments(Number(params.itemId));
   }, []);
 
   return (

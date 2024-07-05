@@ -3,6 +3,7 @@ import arrowDownImg from '../assets/icons/ic_arrow_down.svg';
 import mobileSelectImg from '../assets/icons/ic_sort.svg';
 import { useState } from 'react';
 import Button from './Button';
+import { MouseEvent } from 'react';
 
 function SelectBox({ handleSelect, selectList }) {
   const [isListOpen, setIsListOpen] = useState(false);

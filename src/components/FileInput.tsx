@@ -1,8 +1,17 @@
 import ImgInput from '../styledComponets/ImgInput';
+import { ReactNode } from 'react';
+import { MouseEvent, ChangeEvent } from 'react';
 
-function FileInput({ name, onChange, children }) {
-  const handleChange = (e) => {
-    const nextValue = e.target.files[0];
+interface Props {
+  name: string;
+  children?: ReactNode;
+  onChange: (name: string, value: File | null) => void;
+}
+
+function FileInput({ name, onChange, children }: Props) {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    const nextValue = files && files.length > 0 ? files[0] : null;
     onChange(name, nextValue);
   };
   return (

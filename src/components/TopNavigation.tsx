@@ -5,7 +5,7 @@ import userProfileImg from '../assets/icons/ic_user_profile.svg';
 function TopNavigation() {
   const location = useLocation();
   const isAdditemPage = location.pathname === '/additem' ? true : false;
-  function getLinkStyle({ isActive }) {
+  function getLinkStyle({ isActive }: { isActive: boolean }) {
     return {
       color: isActive ? 'var(--blue-color)' : undefined,
     };

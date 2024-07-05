@@ -1,10 +1,28 @@
 import '../styles/Pagination.scss';
 import { useEffect, useState } from 'react';
+import { MouseEvent } from 'react';
 
 const VISIBLE_PAGE_COUNT = 5;
 
-function Pagination({ totalProdCount, page, allProdPageSize, onClickPage }) {
-  const [pageButtons, setPageButtons] = useState([]);
+interface Props {
+  totalProdCount: number;
+  page: number;
+  allProdPageSize: number;
+  onClickPage: (pageNum: number) => void;
+}
+
+interface PageButton {
+  page: number;
+  state: string;
+}
+
+function Pagination({
+  totalProdCount,
+  page,
+  allProdPageSize,
+  onClickPage,
+}: Props) {
+  const [pageButtons, setPageButtons] = useState<PageButton[]>([]);
 
   const handlePage = () => {
     const enablePageCount = totalProdCount / allProdPageSize;
@@ -25,8 +43,9 @@ function Pagination({ totalProdCount, page, allProdPageSize, onClickPage }) {
     handlePage();
   }, [page, allProdPageSize, totalProdCount]);
 
-  const pageClick = (e) => {
-    onClickPage(Number(e.target.textContent));
+  const pageClick = (e: MouseEvent<HTMLButtonElement>) => {
+    const target = e.target as HTMLButtonElement;
+    onClickPage(Number(target.textContent));
   };
 
   return (

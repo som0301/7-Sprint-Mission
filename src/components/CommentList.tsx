@@ -4,8 +4,9 @@ import moreBtnImg from '../assets/icons/ic_more.svg';
 import noCommentImg from '../assets/images/img_no_comment.png';
 import elapsedTime from '../utils/elapsedTime';
 import Button from './Button';
+import { Comment } from '../types/comment';
 
-function CommentListItem({ comment }) {
+function CommentListItem({ comment }: { comment: Comment }) {
   return (
     <div className={styles['comment-list-item']}>
       <p>{comment['content']}</p>
@@ -23,7 +24,7 @@ function CommentListItem({ comment }) {
   );
 }
 
-function CommentList({ comments }) {
+function CommentList({ comments }: { comments: Comment[] }) {
   return comments.length > 0 ? (
     <div className={styles['comment-list']}>
       {comments.map((comment) => {

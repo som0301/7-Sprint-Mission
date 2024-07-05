@@ -1,8 +1,8 @@
-export default function elapsedTime(date) {
+export default function elapsedTime(date: string) {
   const start = new Date(date);
   const end = new Date();
 
-  const diff = (end - start) / 1000;
+  const diff = (end.getTime() - start.getTime()) / 1000;
 
   const times = [
     { name: '년', milliSeconds: 60 * 60 * 24 * 365 },

@@ -1,18 +1,19 @@
 import '../styles/Tag.scss';
 import grayXIc from '../assets/icons/ic_x_gray.svg';
 import Button from './Button';
+import { ChangeEvent, MouseEvent } from 'react';
 
-function Tag({ name, onDeleteClick }) {
+interface Props {
+  name: string;
+  onDeleteClick: (e: MouseEvent<HTMLButtonElement>) => void;
+}
+
+function Tag({ name, onDeleteClick }: Props) {
   return (
     <div className='tag'>
       <span className='tag-name'>{name}</span>
       <Button onClick={onDeleteClick}>
-        <img
-          name={name}
-          src={grayXIc}
-          alt='삭제 버튼'
-          className='tag-btn-delete'
-        />
+        <img src={grayXIc} alt='삭제 버튼' className='tag-btn-delete' />
       </Button>
     </div>
   );

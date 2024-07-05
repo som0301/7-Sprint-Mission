@@ -5,12 +5,21 @@ import { useEffect, useState } from 'react';
 import FileInput from '../components/FileInput';
 import Tag from '../components/Tag';
 import Button from '../components/Button';
+import { ChangeEvent, MouseEvent, KeyboardEvent, FormEvent } from 'react';
+
+interface Values {
+  title: string;
+  discription: string;
+  price: string;
+  tag: string;
+  imgFile: File | null;
+}
 
 function AddItem() {
-  const [tags, setTags] = useState([]);
-  const [preview, setPreview] = useState(null);
+  const [tags, setTags] = useState<string[]>([]);
+  const [preview, setPreview] = useState<string | null>(null);
   const [isFormComplete, setIsFormComplete] = useState(false);
-  const [values, setValues] = useState({
+  const [values, setValues] = useState<Values>({
     title: '',
     discription: '',
     price: '',
@@ -31,7 +40,7 @@ function AddItem() {
 
   useEffect(() => {
     const isComplete =
-      Object.keys(values)
+      (Object.keys(values) as (keyof Values)[])
         .filter((key) => key !== 'tag')
         .filter((key) => key !== 'imgFile')
         .every((key) => values[key]) && tags.length > 0;
@@ -39,7 +48,7 @@ function AddItem() {
     setIsFormComplete(isComplete);
   }, [values, tags]);
 
-  const handleFileInputChange = (name, value) => {
+  const handleFileInputChange = (name: string, value: File) => {
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
@@ -54,11 +63,14 @@ function AddItem() {
     }));
   };
 
-  const handleDeletetag = (e) => {
-    setTags(tags.filter((element) => element !== e.target.name));
+  const handleDeleteTag = (e: MouseEvent<HTMLButtonElement>) => {
+    const target = e.target as HTMLButtonElement;
+    setTags(tags.filter((element) => element !== target.name));
   };
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setValues((prevValues) => ({
       ...prevValues,
@@ -66,9 +78,10 @@ function AddItem() {
     }));
   };
 
-  const handleTagInput = (e) => {
+  const handleTagInput = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
-      !tags.includes(e.target.value) && setTags([...tags, e.target.value]);
+      const target = e.target as HTMLInputElement;
+      !tags.includes(target.value) && setTags([...tags, target.value]);
       setValues((prevValues) => ({
         ...prevValues,
         tag: '',
@@ -76,7 +89,7 @@ function AddItem() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
@@ -101,7 +114,7 @@ function AddItem() {
             <div className='add-img'>
               <FileInput
                 name='imgFile'
-                value={values.imgFile}
+                // value={values.imgFile}
                 onChange={handleFileInputChange}
               >
                 <img src={plusIc} alt='플러스_아이콘' />
@@ -167,7 +180,7 @@ function AddItem() {
         <div className='tag-container'>
           {tags.map((item) => {
             return (
-              <Tag name={item} key={item} onDeleteClick={handleDeletetag}></Tag>
+              <Tag name={item} key={item} onDeleteClick={handleDeleteTag}></Tag>
             );
           })}
         </div>
