@@ -7,7 +7,7 @@ import '/src/App.css';
 import AllProductsList from '@components/AllProductsList';
 import '/src/styles/Button.css';
 
-import { useResponsiveApi } from 'Responsive';
+import { useResponsiveApi } from '@hooks/Responsive';
 import { Helmet } from 'react-helmet';
 
 interface Options {
@@ -20,22 +20,30 @@ interface Product {
   id: number;
   name: string;
   description: string;
-  price: number;
-  tags: string;
+  price: string;
+  tags: string[];
   images: string;
   ownerId: number;
-  favoriteCount: number;
+  favoriteCount: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
 type Order = 'recent' | 'favorite';
 
+const parseProductDates = (products: any[]): Product[] => {
+  return products.map((product) => ({
+    ...product,
+    createdAt: new Date(product.createdAt),
+    updatedAt: new Date(product.updatedAt),
+  }));
+};
+
 const compareProducts = (a: Product, b: Product, orderBy: Order) => {
   if (orderBy === 'recent') {
     return b.createdAt.getTime() - a.createdAt.getTime();
   } else if (orderBy === 'favorite') {
-    return b.favoriteCount - a.favoriteCount;
+    return Number(b.favoriteCount) - Number(a.favoriteCount);
   }
   // 다른 정렬 기준에 대한 비교 로직 추가
   return 0;
@@ -57,12 +65,12 @@ function Items() {
 
   const handleBestProductsLoad = async (options: Options) => {
     const { list } = await getProducts(options);
-    setBestProducts(list);
+    setBestProducts(parseProductDates(list));
   };
 
   const handleAllProductsLoad = async (options: Options) => {
     const { list } = await getProducts(options);
-    setAllProducts(list);
+    setAllProducts(parseProductDates(list));
   };
 
   useEffect(() => {

@@ -2,10 +2,15 @@ import ProductItem from '@components/ProductItem';
 
 interface Product {
   id: number;
-  images: string;
   name: string;
+  description: string;
   price: string;
+  tags: string[];
+  images: string;
+  ownerId: number;
   favoriteCount: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 interface ItemProps {

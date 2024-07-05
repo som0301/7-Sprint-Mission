@@ -1,8 +1,8 @@
-import logoImage from 'assets/logo-image.svg';
-import logoText from 'assets/logo-text.svg';
+import logoImage from '@assets/logo-image.svg';
+import logoText from '@assets/logo-text.svg';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useResponsiveApi } from 'Responsive';
+import { useResponsiveApi } from '@hooks/Responsive';
 
 const SIZES = {
   header: {

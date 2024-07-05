@@ -1,12 +1,28 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-//import { IS_MOBILE } from "../utils/constants"; // !matchMedia('screen and (min-width: 768px)').matches;
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
-const ResponsiveContext = createContext();
-export function ResponsiveProvider({ children }) {
-  const IS_DESKTOP = matchMedia('screen and (min-width: 1200px)').matches;
-  const IS_TABLET = matchMedia('screen and (max-width: 1199px)').matches;
-  const IS_MOBILE = matchMedia('screen and (max-width: 767px)').matches;
+interface ContextValue {
+  isDesktop: boolean;
+  isTablet: boolean;
+  isMobile: boolean;
+}
 
+const IS_DESKTOP = matchMedia('screen and (min-width: 1200px)').matches;
+const IS_TABLET = matchMedia('screen and (max-width: 1199px)').matches;
+const IS_MOBILE = matchMedia('screen and (max-width: 767px)').matches;
+
+const ResponsiveContext = createContext<ContextValue>({
+  isDesktop: IS_DESKTOP,
+  isTablet: IS_TABLET,
+  isMobile: IS_MOBILE,
+});
+
+export function ResponsiveProvider({ children }: { children: ReactNode }) {
   const [isDesktop, setIsDesktop] = useState(IS_DESKTOP);
   const [isTablet, setIsTablet] = useState(IS_TABLET);
   const [isMobile, setIsMobile] = useState(IS_MOBILE);

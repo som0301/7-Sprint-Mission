@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 import { ChangeEvent, SyntheticEvent, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -11,15 +12,54 @@ import {
   StyledMain,
   CommentForm,
 } from '@components/common/CommonComponents';
-import iconBack from '/src/assets/ic_back.svg';
+import iconBack from '@assets/ic_back.svg';
+import { describe } from 'node:test';
+
+interface Comment {
+  comment: {
+    content: string;
+    createdAt: Date;
+    updatedAt: Date;
+    writer: {
+      image: string;
+      nickname: string;
+    };
+  };
+}
+
+interface Product {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  tags: string[];
+  images: string;
+  ownerId: number;
+  favoriteCount: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+const initialProduct = {
+  id: 0,
+  name: '',
+  description: '',
+  price: '',
+  tags: [],
+  images: '',
+  ownerId: 0,
+  favoriteCount: '',
+  createdAt: new Date(),
+  updatedAt: new Date(),
+};
 
 function ItemDetailPage() {
   interface ParamTypes {
     productId?: string;
   }
   const { productId } = useParams<keyof ParamTypes>();
-  const [detailProduct, setDetailProduct] = useState({});
-  const [comments, setComments] = useState([]);
+  const [detailProduct, setDetailProduct] = useState<Product>(initialProduct);
+  const [comments, setComments] = useState<Comment['comment'][]>([]);
 
   const [isCommentFill, setIsCommentFill] = useState(false);
   const [writeComment, setWriteComment] = useState('');
@@ -39,16 +79,6 @@ function ItemDetailPage() {
     e.preventDefault();
     console.log(writeComment);
   };
-
-  interface Product {
-    name: string;
-    description: string;
-    price: number;
-    images: string[];
-    tags: string[];
-    favoriteCount: number;
-    isFavorite: boolean;
-  }
 
   const handleDetailProductLoad = async (productId?: string) => {
     const product: Product = await getDetailProduct(productId);

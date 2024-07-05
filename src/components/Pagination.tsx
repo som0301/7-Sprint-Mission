@@ -1,10 +1,10 @@
-import btnLeft from '/src/assets/btn_pagination_left.svg';
-import btnRight from '/src/assets/btn_pagination_right.svg';
-import iconPage01 from 'assets/ic_pagination_1_active.svg';
-import iconPage02 from 'assets/ic_pagination_2.svg';
-import iconPage03 from 'assets/ic_pagination_3.svg';
-import iconPage04 from 'assets/ic_pagination_4.svg';
-import iconPage05 from 'assets/ic_pagination_5.svg';
+import btnLeft from '@assets/btn_pagination_left.svg';
+import btnRight from '@assets/btn_pagination_right.svg';
+import iconPage01 from '@assets/ic_pagination_1_active.svg';
+import iconPage02 from '@assets/ic_pagination_2.svg';
+import iconPage03 from '@assets/ic_pagination_3.svg';
+import iconPage04 from '@assets/ic_pagination_4.svg';
+import iconPage05 from '@assets/ic_pagination_5.svg';
 
 interface Props {
   setPage: any;

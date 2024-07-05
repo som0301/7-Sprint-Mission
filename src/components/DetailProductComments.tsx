@@ -1,27 +1,34 @@
 import { styled } from 'styled-components';
-import iconProfile from 'assets/ic_profile.svg';
-import imageEmpty from 'assets/Img_inquiry_empty.svg';
+import iconProfile from '@assets/ic_profile.svg';
+import imageEmpty from '@assets/Img_inquiry_empty.svg';
 import { ContentText, FlexWrapper } from '@components/common/CommonComponents';
 import { Text } from '@components/common/CommonComponents';
 import Kebab from '@components/Kebab';
+import React, { ReactElement } from 'react';
 
 const ProfileImage = styled.img`
   width: 40px;
   height: 40px;
 `;
 
-interface Props {
+interface Writer {
+  image: string;
+  nickname: string;
+}
+
+interface Comment {
   content: string;
   createdAt: Date;
   updatedAt: Date;
-  writer: {
-    image: string;
-    nickname: string;
-  };
+  writer: Writer;
 }
 
-function Comment({ comment }: { comment: any }) {
-  const { content, updatedAt, writer }: Props = comment;
+interface CommentProps {
+  comment: Comment;
+}
+
+function Comment({ comment }: CommentProps): ReactElement {
+  const { content, updatedAt, writer } = comment;
   const { image, nickname } = writer;
 
   const detailDate = (a: string | number | Date) => {
@@ -62,7 +69,7 @@ function Comment({ comment }: { comment: any }) {
   );
 }
 
-function EmptyComments() {
+function EmptyComments(): ReactElement {
   return (
     <FlexWrapper $col className='comment-empty'>
       <img width='200' height='224' src={imageEmpty} alt='empty' />
@@ -73,13 +80,19 @@ function EmptyComments() {
   );
 }
 
-function DetailProductComments({ comments }: { comments: string[] }) {
+interface Comments {
+  comments: CommentProps['comment'][];
+}
+
+function DetailProductComments({ comments }: Comments): ReactElement {
   return comments.length === 0 ? (
     <EmptyComments />
   ) : (
-    comments.map((comment, idx) => {
-      return <Comment comment={comment} key={idx} />;
-    })
+    <>
+      {comments.map((comment, idx) => {
+        return <Comment comment={comment} key={idx} />;
+      })}
+    </>
   );
 }
 

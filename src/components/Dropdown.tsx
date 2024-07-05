@@ -2,7 +2,7 @@ import iconArrowDown from '/src/assets/ic_arrow_down.svg';
 import { useState } from 'react';
 import '/src/styles/Dropdown.css';
 import iconSort from '/src/assets/ic_sort.svg';
-import { useResponsiveApi } from 'Responsive';
+import { useResponsiveApi } from '@hooks/Responsive';
 
 interface DropdownProps {
   className?: string;

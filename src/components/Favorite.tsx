@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
-import iconHeartEmpty from 'assets/ic_heart_empty.svg';
+import iconHeartEmpty from '@assets/ic_heart_empty.svg';
 // import iconHeartFill from '/src/assets/ic_heart_fill.svg';
-import 'styles/Color.css';
+// import 'styles/Color.css';
 
 const FavoriteDiv = styled.div`
   display: inline-flex;

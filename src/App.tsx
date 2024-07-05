@@ -9,7 +9,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import AddItemPage from './pages/AddItemPage';
 import HomePage from './pages/HomePage';
 import BoardPage from './pages/BoardPage';
-import { ResponsiveProvider } from './Responsive';
+import { ResponsiveProvider } from './hooks/Responsive';
 import ItemDetailPage from './pages/ItemDetailPage';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';

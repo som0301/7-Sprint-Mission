@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { useResponsiveApi } from 'Responsive';
+import { useResponsiveApi } from '../hooks/Responsive';
 import Favorite from '@components/Favorite';
 import { StyledProductTag } from '@components/Input';
 import { FlexWrapper, Text } from '@components/common/CommonComponents';
 import Kebab from '@components/Kebab';
-import 'styles/Color.css';
+// import 'styles/Color.css';
 
 const DetailItemImage = styled.img<{ $isDesktop: boolean; $isTablet: boolean }>`
   width: ${({ $isDesktop, $isTablet }) =>
@@ -15,21 +15,25 @@ const DetailItemImage = styled.img<{ $isDesktop: boolean; $isTablet: boolean }>`
   border-radius: 16px;
 `;
 
+interface ProductOption {
+  id: number;
+  name: string;
+  description: string;
+  price: string;
+  tags: string[];
+  images: string;
+  ownerId: number;
+  favoriteCount: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 interface Product {
-  product: {
-    name: string;
-    description: String;
-    price: String;
-    images: string;
-    tags: string[];
-    favoriteCount: number;
-    isFavorite: boolean;
-  };
+  product: ProductOption;
 }
 
 function DetailProduct({ product }: Product) {
-  const { name, description, price, images, tags, favoriteCount, isFavorite } =
-    product;
+  const { name, description, price, images, tags, favoriteCount } = product;
   const { isDesktop, isTablet, isMobile } = useResponsiveApi();
 
   const [isKebab, setIsKebab] = useState(false);

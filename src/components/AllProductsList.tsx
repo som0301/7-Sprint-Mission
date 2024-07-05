@@ -7,7 +7,7 @@ import {
   MobileAllProductsListHeader,
 } from '@components/AllProductsListHeader';
 
-import { useResponsiveApi } from 'Responsive';
+import { useResponsiveApi } from '../hooks/Responsive';
 
 interface Product {
   id: number;
