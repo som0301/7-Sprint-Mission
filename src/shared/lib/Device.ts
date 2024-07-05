@@ -2,5 +2,5 @@
 export type DeviceType = 'mobile' | 'tablet' | 'desktop';
 
 export interface DeviceTypeProps {
-  $deviceType: DeviceType;
+  $deviceType?: DeviceType;
 }

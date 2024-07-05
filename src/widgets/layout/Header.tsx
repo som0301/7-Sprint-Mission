@@ -7,7 +7,7 @@ import { useDeviceType } from 'shared/store';
 
 export function Header() {
   const deviceType = useDeviceType();
-
+  console.log('deviceType:', deviceType);
   return (
     <HeaderWrapper $deviceType={deviceType}>
       <Container $deviceType={deviceType}>

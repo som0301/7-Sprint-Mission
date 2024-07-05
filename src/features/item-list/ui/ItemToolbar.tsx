@@ -1,15 +1,22 @@
 import styled from 'styled-components';
 
-import SearchIcon from 'public/images/ic_search.svg';
-
 import { ItemTypeName } from 'widgets/item-list';
 
+import { GetItemsParams } from 'features/item-list/lib/api';
 import { DropDown } from 'features/item-list/ui';
 
 import { DeviceTypeProps } from 'shared/lib';
 import { useDeviceType } from 'shared/store';
 
-export function ItemToolbar({ order, setOrder }) {
+import SearchIcon from '/images/ic_search.svg';
+
+export type Order = GetItemsParams['order'];
+export interface ItemToolbarProps {
+  order: Order;
+  setOrder?: (order: Order) => void;
+}
+
+export function ItemToolbar({ order, setOrder }: ItemToolbarProps) {
   const deviceType = useDeviceType();
   const isMobile = deviceType === 'mobile';
 
@@ -20,7 +27,7 @@ export function ItemToolbar({ order, setOrder }) {
           <SearchItemInput $deviceType={deviceType} placeholder='검색할 상품을 입력해주세요' />
           <MoveAddItem href='/additem'>상품 등록하기</MoveAddItem>
           <SortItem>
-            <DropDown deviceType={deviceType} order={order} setOrder={setOrder} />
+            <DropDown order={order} setOrder={setOrder} />
           </SortItem>
         </>
       ) : (
@@ -32,7 +39,7 @@ export function ItemToolbar({ order, setOrder }) {
           <SearchSortWrapper $deviceType={deviceType}>
             <SearchItemInput $deviceType={deviceType} placeholder='검색할 상품을 입력해주세요' />
             <SortItem>
-              <DropDown deviceType={deviceType} order={order} setOrder={setOrder} />
+              <DropDown order={order} setOrder={setOrder} />
             </SortItem>
           </SearchSortWrapper>
         </>

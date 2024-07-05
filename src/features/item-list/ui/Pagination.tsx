@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-import ArrowLeftICon from 'public/images/arrow_left.svg';
-import ArrowRightICon from 'public/images/arrow_right.svg';
-
 import { ItemType } from 'widgets/item-list';
 
 import { DeviceTypeProps } from 'shared/lib';
 import { useDeviceType } from 'shared/store';
+
+import ArrowLeftICon from '/images/arrow_left.svg';
+import ArrowRightICon from '/images/arrow_right.svg';
 
 interface PaginationProps {
   type: ItemType;

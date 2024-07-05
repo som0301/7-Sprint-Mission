@@ -9,10 +9,10 @@ interface DeviceTypeState {
 }
 
 const useDeviceTypeStore = create<DeviceTypeState>((set) => ({
-  // 상태
+  // 상태 초기화
   deviceType: getDeviceType(window.innerWidth),
 
-  // 액션
+  // 액션 정의
   setDeviceType: (width: number) => {
     set({ deviceType: getDeviceType(width) });
   },

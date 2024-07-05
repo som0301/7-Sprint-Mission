@@ -2,10 +2,10 @@ import { Link, NavLink } from 'react-router-dom';
 
 import styled, { css } from 'styled-components';
 
-import MobileLogo from 'public/images/panda-market-logo-mobile.png';
-import Logo from 'public/images/panda-market-logo.png';
-
 import { DeviceTypeProps } from 'shared/lib';
+
+import MobileLogo from '/images/panda-market-logo-mobile.png';
+import Logo from '/images/panda-market-logo.png';
 
 interface NavigationLinkProps extends DeviceTypeProps {
   href: string;
@@ -32,7 +32,7 @@ export function NavigationLink({ href, text, type, $deviceType }: NavigationLink
 const homeStyle = css<DeviceTypeProps>`
   width: ${({ $deviceType }) => ($deviceType === 'mobile' ? '81px' : '153px')};
   height: ${({ $deviceType }) => ($deviceType === 'mobile' ? '40px' : '51px;')};
-  background-image: url (${({ $deviceType }) => ($deviceType === 'mobile' ? Logo : MobileLogo)});
+  background-image: url(${({ $deviceType }) => ($deviceType === 'mobile' ? MobileLogo : Logo)});
   background-size: contain;
   background-repeat: no-repeat;
   text-indent: -9999px;

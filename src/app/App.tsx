@@ -6,7 +6,10 @@ import { AddItemPage, HomePage, ItemDetailPage, ItemListPage, NotFoundPage } fro
 
 import { Layout } from 'widgets/layout';
 
+import { useHandleResize } from 'shared/hook/useHandleResize';
+
 export default function App() {
+  useHandleResize();
   return (
     <Router>
       <GlobalStyle />

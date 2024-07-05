@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import styled from 'styled-components';
 
@@ -24,36 +24,31 @@ export function ItemListPage() {
 
   const allItemsPageSize = usePageSize('all');
   const bestItemsPageSize = usePageSize('best');
-  setSearch('');
+  useEffect(() => {
+    setSearch('');
+  }, []);
 
   return (
-    <Container>
-      <ListWrapper $deviceType={deviceType}>
-        <ItemList
-          type='best'
-          page={1}
-          pageSize={bestItemsPageSize}
-          order='favorite'
-          search={search}
-        />
-        <ItemList
-          type='all'
-          page={page}
-          pageSize={allItemsPageSize}
-          order={order}
-          setOrder={setOrder}
-          search={search}
-        />
-        <Pagination type='all' page={page} setPage={setPage} />
-      </ListWrapper>
-    </Container>
+    <ListWrapper $deviceType={deviceType}>
+      <ItemList
+        type='best'
+        page={1}
+        pageSize={bestItemsPageSize}
+        order='favorite'
+        search={search}
+      />
+      <ItemList
+        type='all'
+        page={page}
+        pageSize={allItemsPageSize}
+        order={order}
+        setOrder={setOrder}
+        search={search}
+      />
+      <Pagination type='all' page={page} setPage={setPage} />
+    </ListWrapper>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-`;
 
 const ListWrapper = styled.div<DeviceTypeProps>`
   display: flex;

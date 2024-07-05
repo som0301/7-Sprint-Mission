@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 
 import { Helmet } from 'react-helmet';
 
-import { Footer } from './Footer';
+// simport { Footer } from './Footer';
 import { Header } from './Header';
 
 // Header, Footer, Outlet을 렌더링하는 Layout 컴포넌트
@@ -14,7 +14,6 @@ export function Layout() {
       </Helmet>
       <Header />
       <Outlet />
-      <Footer />
     </>
   );
 }

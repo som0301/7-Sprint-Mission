@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import HeartIcon from 'public/images/ic_heart.svg';
-
 import { useFetchItems } from 'features/item-list/hook';
 import { GetItemsParams } from 'features/item-list/lib/api';
 import { ItemToolbar } from 'features/item-list/ui';
@@ -9,10 +7,13 @@ import { ItemToolbar } from 'features/item-list/ui';
 import { DeviceTypeProps } from 'shared/lib';
 import { useDeviceType } from 'shared/store';
 
+import HeartIcon from '/images/ic_heart.svg';
+
 export type ItemType = 'all' | 'best';
 
 interface ItemTypeProps extends DeviceTypeProps {
-  $type: ItemType;
+  $type?: ItemType;
+  childern?: React.ReactNode;
 }
 
 interface ItemListProps extends GetItemsParams {
@@ -21,16 +22,15 @@ interface ItemListProps extends GetItemsParams {
 }
 
 export function ItemList({ type, page, pageSize, order, setOrder, search }: ItemListProps) {
-  const { items, isLoading, isError } = useFetchItems({ page, pageSize, order, search });
+  const { items } = useFetchItems({ page, pageSize, order, search });
   const deviceType = useDeviceType();
   const getItemType = (type: ItemType) => {
-    if (type === 'best') return '베스트 상품';
-
+    if (type === 'best') {
+      return '베스트 상품';
+    }
     return deviceType === 'desktop' ? '전체 상품' : '판매 중인 상품';
   };
 
-  if (isLoading) return <p>Loading...</p>;
-  if (isError) return <p>Error: {isError}</p>;
   return (
     <ItemContainer $deviceType={deviceType}>
       <ItemWrapper>
@@ -66,7 +66,9 @@ const ItemContainer = styled.div<DeviceTypeProps>`
   display: flex;
   flex-direction: column;
   row-gap: 16px;
+  width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
   padding: ${({ $deviceType }) => {
     if ($deviceType === 'tablet') return '0 24px';
     if ($deviceType === 'mobile') return '0 16px';

@@ -2,21 +2,22 @@ import { useState } from 'react';
 
 import styled from 'styled-components';
 
-import ArrowDownIcon from 'public/images/ic_arrow_down.svg';
-import SortIcon from 'public/images/ic_sort.svg';
+import { ItemToolbarProps, Order } from 'features/item-list/ui';
 
-import { GetItemsParams } from 'features/item-list/lib';
-
+import { DeviceTypeProps } from 'shared/lib';
 import { useDeviceType } from 'shared/store';
 
-export function DropDown({ order, setOrder }) {
+import ArrowDownIcon from '/images/ic_arrow_down.svg';
+import SortIcon from '/images/ic_sort.svg';
+
+export function DropDown({ order, setOrder }: ItemToolbarProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const deviceType = useDeviceType();
 
   const isMobile = deviceType === 'mobile';
   const buttonText = order === 'recent' ? '최신순' : '좋아요순';
-  const orderType = [
+  const orderType: { type: Order; text: string }[] = [
     {
       type: 'recent',
       text: '최신순',
@@ -28,9 +29,11 @@ export function DropDown({ order, setOrder }) {
   ];
 
   const handleToggle = () => setIsOpen(!isOpen);
-  const handleChangeOrder = (newOrder) => {
-    setOrder(newOrder);
-    setIsOpen(false);
+  const handleChangeOrder = (newOrder: Order) => {
+    setOrder?.(newOrder);
+    if (setIsOpen) {
+      setIsOpen(!isOpen);
+    }
   };
 
   return (
@@ -57,7 +60,7 @@ export function DropDown({ order, setOrder }) {
   );
 }
 
-const DropDownButton = styled.button`
+const DropDownButton = styled.button<DeviceTypeProps>`
   display: flex;
   align-items: center;
   gap: 24px;
@@ -68,7 +71,7 @@ const DropDownButton = styled.button`
   padding: ${({ $deviceType }) => ($deviceType === 'mobile' ? '0 9px' : '0 20px')};
 `;
 
-const DropDownIcon = styled.img`
+const DropDownIcon = styled.img<DeviceTypeProps>`
   width: 24px;
   height: 24px;
 `;
