@@ -134,7 +134,7 @@
   font-weight: 400;
   color: #1f2937;
   background-color: #fff;
-  background-image: url('../../assets/arrow_down_icon.svg');
+  background-image: url("../../assets/arrow_down_icon.svg");
   background-repeat: no-repeat;
   background-size: 15.7px 7.42px;
   background-position: calc(100% - 24px) 50%;
@@ -237,7 +237,7 @@
   /* Items.jsx */
   .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 70px auto 0;
   }
 
   /* BestProductItem.jsx */
@@ -262,6 +262,7 @@
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   /* Items.jsx */
   .container {
+    margin-top: 70px;
     padding: 0 24px;
   }
 
@@ -299,6 +300,7 @@
 @media screen and (min-width: 375px) and (max-width: 767px) {
   /* Items.jsx */
   .container {
+    margin-top: 70px;
     padding: 0 16px;
   }
 
@@ -403,7 +405,7 @@
     border-radius: 12px;
     text-align: left;
     background-color: #fff;
-    background-image: url('../../assets/ic_sort.svg');
+    background-image: url("../../assets/ic_sort.svg");
     background-repeat: no-repeat;
     background-size: 24px;
     background-position: center;

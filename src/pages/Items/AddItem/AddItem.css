@@ -13,6 +13,7 @@
 .form-submit h2 {
   font-size: 28px;
   font-weight: 700;
+  line-height: 0;
 }
 
 .form-submit button {
@@ -73,7 +74,7 @@
 }
 
 /* ImageInput.jsx */
-.form-container input[type='file'] {
+.form-container input[type="file"] {
   display: none;
 }
 
@@ -173,7 +174,7 @@
   /* AddItem.jsx */
   .form-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 70px auto 0;
     padding: 24px 0 87px;
   }
 }

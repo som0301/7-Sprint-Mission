@@ -263,7 +263,7 @@
   .product-container {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 70px auto 0;
     padding: 24px 0 250px;
   }
 
@@ -279,6 +279,7 @@
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .product-container {
     width: 100%;
+    margin-top: 70px;
     padding: 24px 24px 326px;
   }
   .product-info-section {
@@ -313,6 +314,7 @@
 @media screen and (min-width: 375px) and (max-width: 767px) {
   .product-container {
     width: 100%;
+    margin-top: 70px;
     padding: 16px 16px 166px 16px;
   }
 
