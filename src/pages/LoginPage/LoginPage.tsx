@@ -1,11 +1,9 @@
 import React from "react";
 import logoImg from "../../assets/images/icons/panda-market-logo.svg";
 import "./LoginPage.css";
-import visibilityOn from "../../assets/images/icons/btn_visibility_on.svg";
-import visibilityOff from "../../assets/images/icons/btn_visibility_off.svg";
-import kakaotalkLoge from "../../assets/images/social/kakaotalk-logo.svg";
-import googleLoge from "../../assets/images/social/google-logo.svg";
 import { Link } from "react-router-dom";
+import EasyLogin from "../../UI/EasyLogin";
+import TogglePassword from "../../UI/togglePassword";
 
 function LoginPage() {
   return (
@@ -42,20 +40,7 @@ function LoginPage() {
                 autoComplete="current-password"
                 required
               />
-              <button className="visibility-button" type="button">
-                <img
-                  className="visibility-off"
-                  src={visibilityOff}
-                  alt="비밀번호 가리기"
-                  width="24"
-                />
-                <img
-                  className="visibility-on"
-                  src={visibilityOn}
-                  alt="비밀번호 보이기"
-                  width="24"
-                />
-              </button>
+              <TogglePassword />
             </div>
             <h3 id="password-error" className="error-message password">
               비밀번호를 입력해주세요.
@@ -64,17 +49,7 @@ function LoginPage() {
           <button className="button pill-button acc-button">로그인</button>
         </form>
       </section>
-      <section className="easy-login">
-        <h3>간편 로그인하기</h3>
-        <div>
-          <a href="https://www.google.com/" target="_blank">
-            <img src={googleLoge} alt="구글" width="42" />
-          </a>
-          <a href="https://www.kakaocorp.com/page/" target="_blank">
-            <img src={kakaotalkLoge} alt="카카오톡" width="42" />
-          </a>
-        </div>
-      </section>
+      <EasyLogin />
       <section className="signup">
         판다마켓이 처음이신가요? <Link to="/signup">회원가입</Link>
       </section>

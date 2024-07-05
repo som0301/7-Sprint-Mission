@@ -53,9 +53,11 @@ function ProductSearch({ onOptionChange }: ProductSearchType) {
               placeholder="검색할 상품을 입력해주세요"
             />
           </div>
-          <button id="add-item-button" className="blue-button button">
-            <Link to="/additem">상품 등록하기</Link>
-          </button>
+          <Link to="/additem">
+            <button id="add-item-button" className="blue-button button">
+              상품 등록하기
+            </button>
+          </Link>
         </form>
         <div className="dropdown">
           <button className="dropdown-toggle" onClick={toggleDropdown}>

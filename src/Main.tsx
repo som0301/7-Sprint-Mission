@@ -27,7 +27,7 @@ function Main() {
           <Route path="login" element={<LoginPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="faq" element={<FaqPage />} />
-          <Route path="signup " element={<SignupPage />} />
+          <Route path="signup" element={<SignupPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
