@@ -1,6 +1,19 @@
-import ProductItem from '/src/components/ProductItem';
+import ProductItem from '@components/ProductItem';
 
-function BestProductsListItem({ product, className }) {
+interface Product {
+  id: number;
+  images: string;
+  name: string;
+  price: string;
+  favoriteCount: string;
+}
+
+interface ItemProps {
+  product: Product;
+  className: string;
+}
+
+function BestProductsListItem({ product, className }: ItemProps) {
   const { id, images, name, price, favoriteCount } = product;
   return (
     <ProductItem
@@ -14,7 +27,12 @@ function BestProductsListItem({ product, className }) {
   );
 }
 
-function BestProductsList({ products, className }) {
+interface ListProps {
+  products: Product[];
+  className: string;
+}
+
+function BestProductsList({ products, className }: ListProps) {
   return (
     <div className={className}>
       <h2 className='products-list-title'>베스트 상품</h2>

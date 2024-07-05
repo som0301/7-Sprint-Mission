@@ -1,15 +1,28 @@
 import { useNavigate } from 'react-router-dom';
-import Pagination from '/src/components/Pagination';
-import ProductItem from '/src/components/ProductItem';
+import Pagination from '@components/Pagination';
+import ProductItem from '@components/ProductItem';
 
 import {
   AllProductsListHeader,
   MobileAllProductsListHeader,
-} from '/src/components/AllProductsListHeader';
+} from '@components/AllProductsListHeader';
 
-import { useResponsiveApi } from '/src/Responsive';
+import { useResponsiveApi } from 'Responsive';
 
-function AllProductsListItem({ product, className }) {
+interface Product {
+  id: number;
+  images: string;
+  name: string;
+  price: string;
+  favoriteCount: string;
+}
+
+interface ItemProps {
+  product: Product;
+  className: string;
+}
+
+function AllProductsListItem({ product, className }: ItemProps) {
   const { id, images, name, price, favoriteCount } = product;
 
   return (
@@ -24,6 +37,16 @@ function AllProductsListItem({ product, className }) {
   );
 }
 
+interface ListProps {
+  products: Product[];
+  className: string;
+  setOrder: any;
+  order: 'recent' | 'favorite';
+  handleProductsLoad: any;
+  setPage: any;
+  page: number;
+}
+
 function AllProductsList({
   products,
   className,
@@ -32,7 +55,7 @@ function AllProductsList({
   handleProductsLoad,
   setPage,
   page,
-}) {
+}: ListProps) {
   const { isMobile } = useResponsiveApi();
   const navigate = useNavigate();
   const handleAddProduct = () => {
@@ -69,7 +92,7 @@ function AllProductsList({
       </div>
       <div className='pagination-div'>
         <Pagination
-          handleProductsLoad={handleProductsLoad}
+          // handleProductsLoad={handleProductsLoad}
           setPage={setPage}
           page={page}
         />

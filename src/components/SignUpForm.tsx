@@ -1,9 +1,5 @@
-import { StyledButton } from '/src/components/common/Button';
-import {
-  StyledForm,
-  StyledSignForm,
-  StyledSignMain,
-} from './common/CommonComponents';
+import { StyledButton } from '@components/common/Button';
+import { StyledSignForm } from '@components/common/CommonComponents';
 import { Input } from './Input';
 
 function SignUpForm() {

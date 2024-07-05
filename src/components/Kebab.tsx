@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import iconKebab from '/src/assets/ic_kebab.svg';
-import { Dropdown } from '/src/components/Dropdown';
+import { Dropdown } from '@components/Dropdown';
 import styled from 'styled-components';
 import { useRef } from 'react';
 
@@ -13,14 +13,15 @@ const KebabButton = styled.button`
 `;
 
 function Kebab() {
-  const [isKebab, setIsKebab] = useState(false);
-  const optionsRef = useRef < HTMLDivElement > null;
+  const [isKebab, setIsKebab] = useState<boolean>(false);
+  const optionsRef = useRef<HTMLDivElement>(null);
 
   const handleKebabOpen = () => {
     setIsKebab((prev) => !prev);
   };
 
-  const handleKebabClose = (e) => {
+  const handleKebabClose = (e: any) => {
+    // e 타입에 FocusEvent도 안되고 뭘 넣어야할지 모르겠음..
     if (!optionsRef.current?.contains(e.relatedTarget)) {
       setIsKebab(false);
     }

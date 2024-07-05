@@ -1,7 +1,8 @@
+import { ReactNode } from 'react';
 import styled from 'styled-components';
-import iconHeartEmpty from '/src/assets/ic_heart_empty.svg';
-import iconHeartFill from '/src/assets/ic_heart_fill.svg';
-import '/src/styles/Color.css';
+import iconHeartEmpty from 'assets/ic_heart_empty.svg';
+// import iconHeartFill from '/src/assets/ic_heart_fill.svg';
+import 'styles/Color.css';
 
 const FavoriteDiv = styled.div`
   display: inline-flex;
@@ -19,7 +20,7 @@ const FavoriteDiv = styled.div`
 `;
 // size small / large
 
-function Favorite({ children }) {
+function Favorite({ children }: { children: ReactNode }) {
   return (
     <FavoriteDiv>
       <img src={iconHeartEmpty} alt='heart' />

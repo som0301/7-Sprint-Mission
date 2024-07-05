@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { useResponsiveApi } from '/src/Responsive';
-import Favorite from '/src/components/Favorite';
-import { StyledProductTag } from '/src/components/Input';
-import { FlexWrapper, Text } from '/src/components/common/CommonComponents';
-import Kebab from '/src/components/Kebab';
-import '/src/styles/Color.css';
+import { useResponsiveApi } from 'Responsive';
+import Favorite from '@components/Favorite';
+import { StyledProductTag } from '@components/Input';
+import { FlexWrapper, Text } from '@components/common/CommonComponents';
+import Kebab from '@components/Kebab';
+import 'styles/Color.css';
 
-const DetailItemImage = styled.img`
+const DetailItemImage = styled.img<{ $isDesktop: boolean; $isTablet: boolean }>`
   width: ${({ $isDesktop, $isTablet }) =>
     $isDesktop ? '486px' : $isTablet ? '340px' : '100%'};
   height: ${({ $isDesktop, $isTablet }) =>
@@ -15,7 +15,19 @@ const DetailItemImage = styled.img`
   border-radius: 16px;
 `;
 
-function DetailProduct({ product }) {
+interface Product {
+  product: {
+    name: string;
+    description: String;
+    price: String;
+    images: string;
+    tags: string[];
+    favoriteCount: number;
+    isFavorite: boolean;
+  };
+}
+
+function DetailProduct({ product }: Product) {
   const { name, description, price, images, tags, favoriteCount, isFavorite } =
     product;
   const { isDesktop, isTablet, isMobile } = useResponsiveApi();

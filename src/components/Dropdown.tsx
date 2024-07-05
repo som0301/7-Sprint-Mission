@@ -1,11 +1,16 @@
 import iconArrowDown from '/src/assets/ic_arrow_down.svg';
 import { useState } from 'react';
-
 import '/src/styles/Dropdown.css';
-
 import iconSort from '/src/assets/ic_sort.svg';
+import { useResponsiveApi } from 'Responsive';
 
-import { useResponsiveApi } from '/src/Responsive';
+interface DropdownProps {
+  className?: string;
+  first: string;
+  second: string;
+  firstClick?: any;
+  secondClick?: any;
+}
 
 export function Dropdown({
   className,
@@ -13,7 +18,7 @@ export function Dropdown({
   firstClick,
   second,
   secondClick,
-}) {
+}: DropdownProps) {
   return (
     <ul className={`${className} dropdown-ul`}>
       <li className='dropdown-list' onClick={firstClick}>
@@ -26,7 +31,11 @@ export function Dropdown({
   );
 }
 
-function DropdownList({ setOrder }) {
+interface Props {
+  setOrder: any;
+}
+
+function DropdownList({ setOrder }: Props) {
   const handleNewClick = () => setOrder('recent');
   const handleBestClick = () => setOrder('favorite');
   return (
@@ -39,7 +48,12 @@ function DropdownList({ setOrder }) {
   );
 }
 
-function ProductDropdown({ setOrder, order }) {
+interface PropsProduct {
+  setOrder?: any;
+  order: 'recent' | 'favorite';
+}
+
+function ProductDropdown({ setOrder, order }: PropsProduct) {
   const [isDropdownView, setDropdownView] = useState(false);
   const { isMobile } = useResponsiveApi();
 

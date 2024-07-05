@@ -1,25 +1,32 @@
 import { styled } from 'styled-components';
-import iconProfile from '/src/assets/ic_profile.svg';
-import imageEmpty from '/src/assets/Img_inquiry_empty.svg';
-import {
-  ContentText,
-  FlexWrapper,
-} from '/src/components/common/CommonComponents';
-import { Text } from '/src/components/common/CommonComponents';
-import Kebab from '/src/components/Kebab';
+import iconProfile from 'assets/ic_profile.svg';
+import imageEmpty from 'assets/Img_inquiry_empty.svg';
+import { ContentText, FlexWrapper } from '@components/common/CommonComponents';
+import { Text } from '@components/common/CommonComponents';
+import Kebab from '@components/Kebab';
 
 const ProfileImage = styled.img`
   width: 40px;
   height: 40px;
 `;
 
-function Comment({ comment }) {
-  const { content, createdAt, updatedAt, writer } = comment;
+interface Props {
+  content: string;
+  createdAt: Date;
+  updatedAt: Date;
+  writer: {
+    image: string;
+    nickname: string;
+  };
+}
+
+function Comment({ comment }: { comment: any }) {
+  const { content, updatedAt, writer }: Props = comment;
   const { image, nickname } = writer;
 
-  const detailDate = (a) => {
+  const detailDate = (a: string | number | Date) => {
     const createdSeconds = new Date(a);
-    const milliSeconds = new Date() - createdSeconds;
+    const milliSeconds = Number(Number(new Date()) - Number(createdSeconds));
     const seconds = milliSeconds / 1000;
     if (seconds < 60) return `방금 전`;
     const minutes = seconds / 60;
@@ -54,8 +61,6 @@ function Comment({ comment }) {
     </FlexWrapper>
   );
 }
-// TODO: 댓글 컴포넌트의 이름이 list.. 이거 참고
-// TODO: 댓글들 여백 주기.. 여기말고 DetailProductComments를 불러오는 곳에 div를 씌워서 해야할듯
 
 function EmptyComments() {
   return (
@@ -68,7 +73,7 @@ function EmptyComments() {
   );
 }
 
-function DetailProductComments({ comments }) {
+function DetailProductComments({ comments }: { comments: string[] }) {
   return comments.length === 0 ? (
     <EmptyComments />
   ) : (

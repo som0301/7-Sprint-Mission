@@ -1,12 +1,17 @@
-import btnLeft from "/src/assets/btn_pagination_left.svg";
-import btnRight from "/src/assets/btn_pagination_right.svg";
-import iconPage01 from "/src/assets/ic_pagination_1_active.svg";
-import iconPage02 from "/src/assets/ic_pagination_2.svg";
-import iconPage03 from "/src/assets/ic_pagination_3.svg";
-import iconPage04 from "/src/assets/ic_pagination_4.svg";
-import iconPage05 from "/src/assets/ic_pagination_5.svg";
+import btnLeft from '/src/assets/btn_pagination_left.svg';
+import btnRight from '/src/assets/btn_pagination_right.svg';
+import iconPage01 from 'assets/ic_pagination_1_active.svg';
+import iconPage02 from 'assets/ic_pagination_2.svg';
+import iconPage03 from 'assets/ic_pagination_3.svg';
+import iconPage04 from 'assets/ic_pagination_4.svg';
+import iconPage05 from 'assets/ic_pagination_5.svg';
 
-function Pagination({ setPage, page }) {
+interface Props {
+  setPage: any;
+  page: number;
+}
+
+function Pagination({ setPage, page }: Props) {
   const handleLoadPrevPage = () => {
     const prevPage = page > 1 ? page - 1 : 5;
     setPage(prevPage);
@@ -17,13 +22,13 @@ function Pagination({ setPage, page }) {
     setPage(nextPage);
   };
 
-  const handleLoadPage = (pageNum) => {
+  const handleLoadPage = (pageNum: number) => {
     const page = pageNum;
     setPage(page);
   };
 
   return (
-    <div className="pagination">
+    <div className='pagination'>
       <button onClick={handleLoadPrevPage}>
         <img src={btnLeft} />
       </button>
