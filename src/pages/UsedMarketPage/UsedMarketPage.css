@@ -1,5 +1,11 @@
+.usedMarketPage-main {
+  width: 1200px;
+  margin: 0 auto 24px;
+  padding-top: 24px;
+}
+
 .best-products {
-  margin: 24px auto 40px;
+  margin: 0px auto 40px;
 }
 
 h1 {
@@ -238,6 +244,10 @@ form {
 
 /* Tablet Styles */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
+  .usedMarketPage-main {
+    width: 100%;
+  }
+
   .item-image {
     width: 100%;
     height: 100%;
@@ -268,6 +278,10 @@ form {
 
 /* Mobile Styles */
 @media screen and (max-width: 767px) {
+  .usedMarketPage-main {
+    width: 100%;
+  }
+
   .item-image {
     width: 100%;
     height: 100%;

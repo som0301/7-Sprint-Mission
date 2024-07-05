@@ -10,6 +10,8 @@
   flex-direction: column;
   width: 1200px;
   max-width: 100%;
+  margin: 0 auto;
+  padding-top: 24px;
 
   h1 {
     @include font-style(24px, 600, 28.64px, var(--gray800));
