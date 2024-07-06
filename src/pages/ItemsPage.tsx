@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import BestProductsList from '@components/BestProductsList';
-import { getProducts } from '@api/api';
+import { getProducts } from '@data/api';
 
-import '/src/styles/Reset.css';
+import '@assets/styles/Reset.css';
 import '/src/App.css';
 import AllProductsList from '@components/AllProductsList';
-import '/src/styles/Button.css';
+import '@assets/styles/Button.css';
 
 import { useResponsiveApi } from '@hooks/Responsive';
 import { Helmet } from 'react-helmet';

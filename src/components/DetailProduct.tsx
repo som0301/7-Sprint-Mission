@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { useResponsiveApi } from '../hooks/Responsive';
+import { useResponsiveApi } from '@hooks/Responsive';
 import Favorite from '@components/Favorite';
 import { StyledProductTag } from '@components/Input';
 import { FlexWrapper, Text } from '@components/common/CommonComponents';

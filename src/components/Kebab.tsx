@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import iconKebab from '/src/assets/ic_kebab.svg';
+import iconKebab from '@assets/images/ic_kebab.svg';
 import { Dropdown } from '@components/Dropdown';
 import styled from 'styled-components';
 import { useRef } from 'react';

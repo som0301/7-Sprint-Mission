@@ -1,4 +1,4 @@
-import TabMenuList from './TabMenuList';
+import TabMenuList from '@components/header/TabMenuList';
 
 const TapStyle = {
   display: 'flex',

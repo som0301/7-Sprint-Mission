@@ -1,10 +1,10 @@
 import { styled } from 'styled-components';
-import iconProfile from '@assets/ic_profile.svg';
-import imageEmpty from '@assets/Img_inquiry_empty.svg';
+import iconProfile from '@assets/images/ic_profile.svg';
+import imageEmpty from '@assets/images/Img_inquiry_empty.svg';
 import { ContentText, FlexWrapper } from '@components/common/CommonComponents';
 import { Text } from '@components/common/CommonComponents';
 import Kebab from '@components/Kebab';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 
 const ProfileImage = styled.img`
   width: 40px;

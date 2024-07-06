@@ -1,4 +1,4 @@
-@import "/src/styles/Color.css";
+@import '@assets/styles/Color.css';
 
 .dropdown {
   position: relative;

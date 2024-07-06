@@ -1,4 +1,4 @@
-import '@styles/Search.css';
+import '@assets/styles/Search.css';
 
 interface Props {
   name?: string;

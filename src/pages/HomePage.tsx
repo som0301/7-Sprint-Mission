@@ -1,19 +1,16 @@
 import useNavigator from '@hooks/useNavigator';
 import { Helmet } from 'react-helmet';
+import { StyledButton } from '@components/common/Button';
 
 import './HomePage.scss';
 
-import HomeImage01 from '@assets/Img_home_01.png';
-import HomeImage02 from '@assets/Img_home_02.png';
-import HomeImage03 from '@assets/Img_home_03.png';
-import HomeBottomImage from '@assets/Img_home_bottom.png';
-import HomeTopImage from '@assets/Img_home_top.png';
-import { StyledButton } from '@components/common/Button';
-
-import iconTwitter from '@assets/ic_twitter.svg';
-import iconYoutube from '@assets/ic_youtube.svg';
-import iconFacebook from '@assets/ic_facebook.svg';
-import iconInstagram from '@assets/ic_instagram.svg';
+import HomeImage01 from '@assets/images/Img_home_01.png';
+import HomeImage02 from '@assets/images/Img_home_02.png';
+import HomeImage03 from '@assets/images/Img_home_03.png';
+import iconTwitter from '@assets/images/ic_twitter.svg';
+import iconYoutube from '@assets/images/ic_youtube.svg';
+import iconFacebook from '@assets/images/ic_facebook.svg';
+import iconInstagram from '@assets/images/ic_instagram.svg';
 
 function HomePage() {
   const handleMovePage = useNavigator();

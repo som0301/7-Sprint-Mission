@@ -1,4 +1,4 @@
-@import "/src/styles/Color.css";
+@import '@assets/styles/Color.css';
 
 .header__tab-list {
   list-style: none;

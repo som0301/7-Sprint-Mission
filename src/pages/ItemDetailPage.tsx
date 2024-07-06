@@ -1,8 +1,7 @@
-import React, { ReactElement } from 'react';
 import { Helmet } from 'react-helmet';
 import { ChangeEvent, SyntheticEvent, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getDetailProduct, getProductComments } from '@api/api';
+import { getDetailProduct, getProductComments } from '@data/api';
 import { StyledButton } from '@components/common/Button';
 import DetailProduct from '@components/DetailProduct';
 import DetailProductComments from '@components/DetailProductComments';
@@ -12,8 +11,7 @@ import {
   StyledMain,
   CommentForm,
 } from '@components/common/CommonComponents';
-import iconBack from '@assets/ic_back.svg';
-import { describe } from 'node:test';
+import iconBack from '@assets/images/ic_back.svg';
 
 interface Comment {
   comment: {

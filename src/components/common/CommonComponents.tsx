@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import '/src/styles/Color.css';
+import '@assets/styles/Color.css';
 
 export const StyledMain = styled.div`
   width: 1200px;

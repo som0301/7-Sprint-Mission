@@ -23,10 +23,11 @@
     "baseUrl": "src",
     "paths": {
       "@components/*": ["components/*"],
-      "@api/*": ["api/*"],
+      "@data/*": ["data/*"],
       "@hooks/*": ["hooks/*"],
       "@assets/*": ["assets/*"],
-      "@styles/*": ["styles/*"],
+      "@utils/*": ["utils/*"],
+      "@types/*": ["types/*"],
       "*": ["*"]
     },
   

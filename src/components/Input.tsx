@@ -1,8 +1,8 @@
-import '/src/styles/Color.css';
+import '@assets/styles/Color.css';
 import styled, { css } from 'styled-components';
-import iconTagCancel from '/src/assets/ic_tag_cancel.svg';
-import iconPlus from '/src/assets/ic_plus.svg';
-import iconImageCancel from '/src/assets/ic_cancel.svg';
+import iconTagCancel from '@assets/images/ic_tag_cancel.svg';
+import iconPlus from '@assets/images/ic_plus.svg';
+import iconImageCancel from '@assets/images/ic_cancel.svg';
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { ReactNode } from 'react';
 

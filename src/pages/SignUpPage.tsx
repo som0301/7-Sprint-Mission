@@ -1,4 +1,4 @@
-import { StyledSignMain } from '../components/common/CommonComponents';
+import { StyledSignMain } from '@components/common/CommonComponents';
 import LogoImage from '@components/header/LogoImage';
 import { Link } from 'react-router-dom';
 import SignUpForm from '@components/SignUpForm';

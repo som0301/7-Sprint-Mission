@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
-import '/src/styles/header/TabMenuList.css';
+import '@assets/styles/header/TabMenuList.css';
 
 const activeStyle = {
   color: '#3692FF',

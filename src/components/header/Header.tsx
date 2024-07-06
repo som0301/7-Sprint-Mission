@@ -1,10 +1,9 @@
-import { StyledButton } from '../common/Button';
-import TabMenu from './TabMenu';
-
-import LogoImage from './LogoImage';
 import styled from 'styled-components';
-
 import { useNavigate } from 'react-router-dom';
+
+import { StyledButton } from '@components/common/Button';
+import TabMenu from '@components/header/TabMenu';
+import LogoImage from '@components/header/LogoImage';
 
 function Header() {
   const navigate = useNavigate();
@@ -14,7 +13,7 @@ function Header() {
         <LogoImage type='header' />
         <TabMenu className='header__tab' />
       </div>
-      <StyledButton size='small' onClick={() => navigate('/login')} >
+      <StyledButton size='small' onClick={() => navigate('/login')}>
         로그인
       </StyledButton>
     </StyledHeader>

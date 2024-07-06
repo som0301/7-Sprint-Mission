@@ -1,5 +1,5 @@
-import '@styles/ProductItem.css';
-import iconHeartEmpty from '@assets/ic_heart_empty_small.svg';
+import '@assets/styles/ProductItem.css';
+import iconHeartEmpty from '@assets/images/ic_heart_empty_small.svg';
 import { useNavigate } from 'react-router-dom';
 //import iconHeartFill from "/src/assets/ic_heart_fill.svg"; // 나중에 채워진 하트
 

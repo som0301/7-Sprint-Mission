@@ -1,4 +1,4 @@
-@import '/src/styles/Color.css';
+@import '@assets/styles/Color.css';
 button {
   background-color: rgba(0, 0, 0, 0);
   border: none;

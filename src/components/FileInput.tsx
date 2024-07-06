@@ -1,4 +1,4 @@
-import imageTempProduct from 'assets/image_addProduct.svg';
+import imageTempProduct from '@assets/images/image_addProduct.svg';
 import { Input } from '@components/Input';
 
 function FileInput() {

@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import '/src/styles/Reset.css';
+import '@assets/styles/Reset.css';
 import './App.css';
-import '/src/styles/Button.css';
+import '@assets/styles/Button.css';
 
 import ItemsPage from './pages/ItemsPage';
 import NotFoundPage from './pages/NotFoundPage';
