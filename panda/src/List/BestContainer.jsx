@@ -2,18 +2,19 @@ import React, { useState, useEffect } from 'react';
 import BestItem from './BestItem';
 import { getBestItem } from '../Api/getProduct';
 import styles from './Best.module.css';
+import useItemsCountPerPage from '../Hooks/UseItemCountPerPage';
 
 const BestContainer = () => {
   const [items, setItems] = useState([]);
-  const [pageSize, setPageSize] = useState(4);
+  const itemsCountPerPage = useItemsCountPerPage(4, 2, 1);
   useEffect(() => {
     const fetchItems = async () => {
-      const result = await getBestItem(pageSize);
+      const result = await getBestItem(itemsCountPerPage);
       setItems(result.list);
     };
 
     fetchItems();
-  }, []);
+  }, [itemsCountPerPage]);
 
   return (
     <div>

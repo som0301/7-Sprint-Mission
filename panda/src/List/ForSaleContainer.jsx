@@ -3,33 +3,14 @@ import ForSaleItem from './ForSaleItem';
 import Pagination from 'react-js-pagination';
 import { getForSaleItem } from '../Api/getProduct';
 import styles from './ForSale.module.css';
+import useItemsCountPerPage from '../Hooks/UseItemCountPerPage';
 
 const ForSaleContainer = () => {
   const [items, setItems] = useState([]);
   const [order, setOrder] = useState('recent');
   const [totalCount, setTotalCount] = useState();
-  const [itemsCountPerPage, setItemsCountPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
-
-  const updateItemsCountPerPage = () => {
-    const width = window.innerWidth;
-    if (width <= 375) {
-      setItemsCountPerPage(4);
-    } else if (width <= 744) {
-      setItemsCountPerPage(6);
-    } else {
-      setItemsCountPerPage(10);
-    }
-  };
-
-  useEffect(() => {
-    updateItemsCountPerPage();
-    window.addEventListener('resize', updateItemsCountPerPage);
-
-    return () => {
-      window.removeEventListener('resize', updateItemsCountPerPage);
-    };
-  }, []);
+  const itemsCountPerPage = useItemsCountPerPage(10, 6, 4);
 
   useEffect(() => {
     const fetchItems = async () => {
