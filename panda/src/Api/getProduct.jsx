@@ -13,10 +13,17 @@ export const getBestItem = async (pageSize) => {
   }
 };
 
-export const getForSaleItem = async (page = 1, pageSize = 10, order) => {
+export const getForSaleItem = async (
+  page = 1,
+  pageSize = 10,
+  order,
+  keyword = ''
+) => {
   try {
+    // 검색어를 쿼리 파라미터에 추가합니다.
+    const query = keyword ? `&keyword=${encodeURIComponent(keyword)}` : '';
     const response = await fetch(
-      `https://panda-market-api.vercel.app/products?page=${page}&pageSize=${pageSize}&orderBy=${order}`
+      `https://panda-market-api.vercel.app/products?page=${page}&pageSize=${pageSize}&orderBy=${order}${query}`
     );
     if (!response.ok) {
       throw new Error('Network response was not ok');

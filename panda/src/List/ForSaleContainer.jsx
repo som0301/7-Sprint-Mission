@@ -10,6 +10,7 @@ const ForSaleContainer = () => {
   const [order, setOrder] = useState('recent');
   const [totalCount, setTotalCount] = useState();
   const [currentPage, setCurrentPage] = useState(1);
+  const [search, setSearch] = useState('');
   const itemsCountPerPage = useItemsCountPerPage(10, 6, 4);
 
   useEffect(() => {
@@ -17,16 +18,22 @@ const ForSaleContainer = () => {
       const result = await getForSaleItem(
         currentPage,
         itemsCountPerPage,
-        order
+        order,
+        search
       );
       setItems(result.list);
       setTotalCount(result.totalCount);
     };
     fetchItems();
-  }, [currentPage, itemsCountPerPage, order]);
+  }, [currentPage, itemsCountPerPage, order, search]);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+    setCurrentPage(1);
   };
 
   const handleOrderChange = (e) => {
@@ -38,7 +45,12 @@ const ForSaleContainer = () => {
       <div>
         <h1>판매 중인 상품</h1>
         <div>
-          <input type="text" placeholder="검색할 상품을 입력해주세요" />
+          <input
+            type="text"
+            placeholder="검색할 상품을 입력해주세요"
+            value={search}
+            onChange={handleSearchChange}
+          />
           <button>상품 등록하기</button>
           <select
             name="order"
