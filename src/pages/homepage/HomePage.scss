@@ -1,0 +1,242 @@
+@import '@assets/styles/common/index.scss';
+
+@mixin Background {
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 70%;
+}
+
+body {
+  width: 100%;
+  color: #161346;
+  margin-top: 70px;
+  display: block;
+}
+
+.new-line {
+  display: block;
+
+  @include tablet {
+    display: inline;
+  }
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.main {
+  width: 100%;
+  padding: 0;
+
+  .sky {
+    background-color: $sky--color;
+    height: 540px;
+    width: 100%;
+
+    .main-top-panda {
+      background-image: url('@assets/images/Img_home_top.png');
+      @include Background;
+      @include Flex(column, center, flex-start);
+      gap: 32px;
+
+      @include tablet {
+        background-position: bottom center;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 84px;
+        gap: 24px;
+        background-size: 95%;
+      }
+    }
+
+    .main-bottom-panda {
+      background-image: url('@assets/images/Img_home_bottom.png');
+      @include Background;
+      @include Flex(row, null, center);
+      @include tablet {
+        background-position: bottom center;
+        background-size: 100%;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 201px;
+      }
+    }
+  }
+}
+
+.container {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+
+  @include tablet {
+    width: 100%;
+  }
+}
+.title {
+  @include font-style(40, 700, 40, 32);
+  line-height: 56px;
+
+  @include mobile {
+    line-height: 44px;
+  }
+}
+
+@include tablet {
+  .main-top {
+    height: 771px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main-bottom {
+    height: 927px;
+  }
+
+  @include mobile {
+    .sky {
+      height: 540px;
+    }
+    .main-top-panda {
+      padding-top: 48px;
+      gap: 18px;
+    }
+  }
+}
+
+// || 중간 home
+.home {
+  @include Flex(column, null, null);
+  gap: 276px;
+
+  .home-content {
+    background-color: $white-color;
+    @include Flex(row, null, center);
+    gap: 64px;
+
+    &:first-child {
+      padding-top: 138px;
+    }
+    &:last-child {
+      padding-bottom: 277px;
+    }
+
+    &:nth-child(even) {
+      justify-content: right;
+
+      & > .home-text-div {
+        order: 1;
+      }
+
+      & > img {
+        order: 2;
+      }
+    }
+
+    .home-banner {
+      @include font-style(18, 700, 18, 16);
+      color: $main--color;
+    }
+
+    .title {
+      margin: 12px 0 24px;
+    }
+
+    .home-img {
+      width: 588px;
+      height: 444px;
+    }
+    .home-description {
+      @include font-style(24, 500, 18, 16);
+      line-height: 28.8px;
+      letter-spacing: 0.08em;
+      color: $description-color;
+    }
+
+    .home-title {
+      @include font-style(40, 700, 32, 24);
+      line-height: 56px;
+      margin: 12px 0 24px;
+
+      @include tablet {
+        line-height: 44px;
+        margin: 12px 0 20px;
+      }
+      @include mobile {
+        line-height: 33px;
+        margin: 8px 0 14px;
+      }
+    }
+  }
+
+  @include tablet {
+    padding: 24px;
+    gap: 64px;
+
+    .home-content {
+      width: 100%;
+      flex-direction: column;
+      gap: 20px;
+      &:first-child {
+        padding: 0;
+      }
+      &:last-child {
+        padding-bottom: 80px;
+      }
+
+      &:nth-child(even) > .home-text-div {
+        order: 2;
+      }
+      &:nth-child(even) > img {
+        order: 1;
+      }
+      .home-img {
+        max-width: 588px;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .home-text-div {
+      width: 100%;
+    }
+    .home-text {
+      @include Flex(column, flex-start, flex-start);
+    }
+
+    .home-title {
+      font-size: 2.5em; /* 32px */
+      margin: 0;
+      text-align: center;
+      .new-line {
+        display: inline;
+      }
+
+      .home-description {
+        font-size: 1.125em;
+      }
+    }
+  }
+
+  @include mobile {
+    padding: 16px;
+    /* || main에서 Home */
+    .home-content {
+      &:first-child {
+        padding-top: 51px;
+      }
+      &:last-child {
+        padding-bottom: 64px;
+      }
+    }
+
+    /* || main에서 bottom */
+    .main-bottom {
+      height: 540px;
+    }
+    .main-bottom-panda {
+      padding-top: 121px;
+    }
+  }
+}
