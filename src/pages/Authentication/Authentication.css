@@ -55,7 +55,6 @@
   outline: 2px solid var(--main-color);
 }
 
-/* input.focusout과 span.focusout은 js파일에서 사용 */
 .auth-form input.focusout {
   outline: 2px solid var(--error-color);
   margin-bottom: 10px;
@@ -107,7 +106,6 @@
   cursor: pointer;
 }
 
-/* .btn_large_enubled js파일에서 사용 */
 .auth-form .btn_large_enubled {
   background-color: var(--main-color);
   cursor: pointer;
@@ -131,10 +129,13 @@
 }
 
 .sns-login .sns-icon > button {
+  padding: 0;
+  line-height: 0;
   border: none;
   cursor: pointer;
   width: 42px;
   height: 42px;
+  background-color: transparent;
 }
 
 .sns-login .sns-icon > button:last-child {
@@ -167,9 +168,14 @@
     padding: 0 16px;
   }
 
+  .auth-logo-link {
+    display: block;
+    margin: 100px auto 0;
+    width: 198px;
+  }
+
   .auth-logo {
     width: 198px;
-    margin: 100px auto 0;
     cursor: pointer;
   }
 
