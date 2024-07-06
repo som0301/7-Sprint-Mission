@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "composite": true, // 프로젝트를 복합 프로젝트로 설정 (true로 설정 시, 프로젝트의 성능이 향상될 수 있음)
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo", // 빌드 정보 파일의 경로 설정
+    "target": "ES2020", // 빌드할 JavaScript의 목표 버전 설정
+    "baseUrl": "./src", // 절대 경로 임포트의 기준 경로 설정
+    "outDir": "./dist", // 컴파일 된 js 파일이 생성되는 위치
+    "useDefineForClassFields": true, // 클래스 필드에 대해 'define' 방식을 사용할지 설정
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // 프로젝트에서 사용할 라이브러리 목록 설정
+    "module": "ESNext", // 모듈 포맷 설정 (Vite는 ES 모듈을 사용하므로 ESNext를 권장)
+    "skipLibCheck": true, // 라이브러리 검사를 생략할지 여부 설정 (Vite 빌드 속도를 향상시킬 수 있음)
+    "allowJs": true, // JavaScript 파일을 포함하여 컴파일할지 여부 설정
+    "esModuleInterop": true, // CommonJS 모듈을 ES 모듈로 가져오게 해주는 옵션
+    "allowSyntheticDefaultImports": true, // default import 문법 허용 여부 설정
+    "forceConsistentCasingInFileNames": true, // 파일 이름의 일관된 캐싱 강제 여부 설정
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // 모듈 해석 전략 설정 (Vite에서는 "bundler"를 권장)
+    "allowImportingTsExtensions": true, // TypeScript 확장자(.ts, .tsx)를 자동으로 해석할지 여부 설정
+    "resolveJsonModule": true, // JSON 파일을 import할 수 있도록 설정
+    "isolatedModules": true, // 각 파일을 독립적인 모듈로 취급할지 여부 설정
+    "moduleDetection": "force", // 모듈 감지 강제 설정 (Vite와의 호환성을 위해 "force"를 사용)
+    "noEmit": true, // TypeScript 컴파일 결과물 생성 비활성화 (Vite가 관리하기 때문에 필요 없음)
+    "jsx": "react-jsx", // JSX 문법을 어떻게 처리할지 설정 (React 프로젝트에서는 필수)
+
+    /* Linting */
+    "strict": true, // 엄격한 타입 체크 활성화
+    "noUnusedLocals": true, // 사용되지 않는 로컬 변수 경고 설정
+    "noUnusedParameters": true, // 사용되지 않는 매개변수 경고 설정
+    "noFallthroughCasesInSwitch": true // switch 문에서 case 문후의 누락된 break 경고 설정
+  },
+  "include": ["src"] // TypeScript 파일이 위치한 디렉토리 설정
+}
