@@ -2,8 +2,8 @@ import Image from "next/image";
 import styles from "./BestListForm.module.css";
 import medalIcon from "../public/medal_icon.svg";
 import heart from "../public/heart.svg";
-import axios from "../lib/axios";
 import { useEffect, useState } from "react";
+import { getArticles } from "../lib/api";
 
 interface Writer {
   id: number;
@@ -22,24 +22,50 @@ interface ArticleList {
   list: Article[];
 }
 
-export default function BestListForm(props: ArticleList) {
-  const [isLike, setIsLike] = useState<ArticleList>({ list: [] });
+interface BestProps {
+  pageSize: number;
+  orderBy: string;
+}
 
-  async function getProduct() {
+const PC_List = 3;
+const TABLET_List = 2;
+const MOBILE_List = 1;
+
+export default function BestListForm(props: ArticleList) {
+  const [orderBy, setOrderBy] = useState("like");
+  const [isLike, setIsLike] = useState<ArticleList>({ list: [] });
+  const [pageSize, setPageSize] = useState<number>(PC_List);
+
+  async function getBestArticle({ pageSize, orderBy }: BestProps) {
     try {
-      const res = await axios.get("/articles?page=1&pageSize=3&orderBy=like");
-      const likeProduct = res.data;
-      setIsLike(likeProduct);
+      const response = await getArticles({ pageSize, orderBy });
+      setIsLike(response);
     } catch (error) {
-      console.error("Error fetching products:", error);
+      console.log(error);
     }
   }
+  const changePageSize = () => {
+    if (window.innerWidth >= 1200) {
+      setPageSize(PC_List);
+    }
+    if (window.innerWidth >= 768 && window.innerWidth <= 1199) {
+      setPageSize(TABLET_List);
+      return;
+    }
+    if (window.innerWidth >= 375 && window.innerWidth <= 767) {
+      setPageSize(MOBILE_List);
+      return;
+    }
+  };
 
   useEffect(() => {
-    getProduct();
-  }, []);
+    getBestArticle({ pageSize, orderBy });
+  }, [pageSize, orderBy]);
 
-  console.log(isLike);
+  useEffect(() => {
+    window.addEventListener("resize", changePageSize);
+    return () => window.removeEventListener("resize", changePageSize);
+  }, []);
 
   return (
     <>
@@ -59,7 +85,7 @@ export default function BestListForm(props: ArticleList) {
                 <div className={styles["BestList-img"]}>
                   <Image
                     src={article.image}
-                    alt="하트"
+                    alt="이미지"
                     width="48"
                     height="45"
                   />

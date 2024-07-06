@@ -6,6 +6,7 @@ import ListForm from "../components/ListForm";
 import Dropdown from "../components/Dropdown";
 import Image from "next/image";
 
+
 export default function boards() {
   return (
     <>
@@ -37,7 +38,6 @@ export default function boards() {
           </div>
 
           <ListForm />
-          <div className={styles.line}></div>
         </section>
       </div>
     </>
