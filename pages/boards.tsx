@@ -11,8 +11,8 @@ export default function boards() {
     <>
       <Header />
       <div className={styles["section-wrapper"]}>
+      <h2 className={styles["boards-best-list-h2"]}>베스트 게시글</h2>
         <section className={styles["boards-best-list"]}>
-          <h2 className={styles["boards-best-list-h2"]}>베스트 게시글</h2>
           <BestListForm />
         </section>
 

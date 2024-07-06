@@ -6,6 +6,7 @@
   background-color: #f9fafb;
   margin-top: 24px;
   padding: 0 24px;
+  display: grid;
 }
 .BestList-badge {
   width: 102px;
@@ -39,6 +40,7 @@
   font-weight: 600;
   line-height: 23.87px;
   color: #1f2937;
+  word-wrap: break-word;
 }
 .BestList-img {
   width: 72px;
@@ -46,11 +48,16 @@
   border-radius: 6px;
   border: 1px solid #e5e7eb;
   background-color: #ffffff;
+  aspect-ratio: 27 / 40;
+  position: relative;
+  flex-shrink: 0;
+  padding: 13.71px 12px;
 }
 .BestList-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 16px;
 }
 .BestList-wrapper-name {
   display: flex;
