@@ -4,11 +4,12 @@ import Pagination from 'react-js-pagination';
 import { getForSaleItem } from '../Api/getProduct';
 import styles from './ForSale.module.css';
 import useItemsCountPerPage from '../Hooks/UseItemCountPerPage';
+import { Product } from '../Types/item';
 
 const ForSaleContainer = () => {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<Product[]>([]);
   const [order, setOrder] = useState('recent');
-  const [totalCount, setTotalCount] = useState();
+  const [totalCount, setTotalCount] = useState(1);
   const [currentPage, setCurrentPage] = useState(1);
   const [search, setSearch] = useState('');
   const itemsCountPerPage = useItemsCountPerPage(10, 6, 4);
@@ -27,16 +28,16 @@ const ForSaleContainer = () => {
     fetchItems();
   }, [currentPage, itemsCountPerPage, order, search]);
 
-  const handlePageChange = (pageNumber) => {
+  const handlePageChange = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
     setCurrentPage(1);
   };
 
-  const handleOrderChange = (e) => {
+  const handleOrderChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setOrder(e.target.value);
   };
 

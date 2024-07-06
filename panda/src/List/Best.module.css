@@ -1,5 +1,10 @@
 .BestContainer {
-  display: flex;
+  display: grid; /* flex 대신 grid를 사용합니다. */
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* 가로로 1열 배치 */
+  gap: 16px; /* 요소들 사이의 간격을 설정합니다. (필요에 따라 조절 가능) */
 }
 
 .BestItems {
@@ -10,6 +15,5 @@
 .img {
   width: 282px;
   height: 282px;
-  border: 1px solid gray;
   border-radius: 16.59px;
 }

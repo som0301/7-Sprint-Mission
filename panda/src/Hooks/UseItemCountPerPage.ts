@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 
-const useItemsCountPerPage = (defaultCount, smallCount, smallerCount) => {
+const useItemsCountPerPage = (
+  defaultCount: number,
+  smallCount: number,
+  smallerCount: number
+) => {
   const [itemsCountPerPage, setItemsCountPerPage] = useState(defaultCount);
   useEffect(() => {
     const updateItemsCountPerPage = () => {

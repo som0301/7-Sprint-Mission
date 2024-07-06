@@ -1,9 +1,15 @@
 import React from 'react';
-import styles from './ForSale.module.css';
+import styles from './Best.module.css';
+import { Product } from '../Types/item';
 
-const ForSaleItem = ({ name, price, images, favoriteCount }) => {
+const BestItem: React.FC<Product> = ({
+  name,
+  price,
+  images,
+  favoriteCount,
+}) => {
   return (
-    <div className={styles.ForSaleItemCard}>
+    <div className={styles.BestItems}>
       <img className={styles.img} src={images} alt="베스트상품이미지" />
       <div className={styles.name}>{name}</div>
       <div className={styles.price}>{price.toLocaleString('ko-KR')}원</div>
@@ -12,4 +18,4 @@ const ForSaleItem = ({ name, price, images, favoriteCount }) => {
   );
 };
 
-export default ForSaleItem;
+export default BestItem;

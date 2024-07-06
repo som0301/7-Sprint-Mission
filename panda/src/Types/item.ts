@@ -1,5 +1,7 @@
 export interface Product {
   id: number;
+  images: string;
+  favoriteCount: number;
   name: string;
   description: string;
   price: number;
@@ -7,5 +9,6 @@ export interface Product {
 }
 
 export interface ApiResponse {
-  products: Product[];
+  list: Product[];
+  totalCount: number;
 }
