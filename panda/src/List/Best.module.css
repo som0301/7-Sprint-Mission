@@ -1,0 +1,15 @@
+.BestContainer {
+  display: flex;
+}
+
+.BestItems {
+  display: flex;
+  flex-direction: column;
+}
+
+.img {
+  width: 282px;
+  height: 282px;
+  border: 1px solid gray;
+  border-radius: 16.59px;
+}
