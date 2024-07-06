@@ -1,5 +1,6 @@
 import React from 'react';
 import BestItem from './BestItem';
+import { getBestItem } from '../Api/getProduct';
 
 const BestContainer = () => {
   return (
