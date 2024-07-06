@@ -2,7 +2,7 @@ export const getProductItem = async (
   currentPage: number = 1,
   pageSize: number,
   order: string
-) => {
+): Promise<any> => {
   try {
     const encodedPage = encodeURIComponent(currentPage);
     const encodedPageSize = encodeURIComponent(pageSize);
@@ -21,7 +21,14 @@ export const getProductItem = async (
   }
 };
 
-export const getProductDetailItem = async (id: string | undefined) => {
+export const getProductDetailItem = async (
+  id: string | undefined
+): Promise<any> => {
+  if (id === undefined) {
+    console.log("Error: Product ID is undefined");
+    return;
+  }
+
   try {
     const encodedId = encodeURIComponent(id);
 
@@ -38,7 +45,14 @@ export const getProductDetailItem = async (id: string | undefined) => {
   }
 };
 
-export const getProductDetailComments = async (id: string | undefined) => {
+export const getProductDetailComments = async (
+  id: string | undefined
+): Promise<any> => {
+  if (id === undefined) {
+    console.log("Error: Product ID is undefined");
+    return;
+  }
+
   try {
     const encodedId = encodeURIComponent(id);
 
