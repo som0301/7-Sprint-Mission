@@ -4,7 +4,7 @@ import "./Header.scss";
 import { getLinkStyle } from "../../../utils/Utils";
 import userImage from "../../../assets/images/icons/ic_user.svg";
 import logoImg from "../../../assets/images/icons/panda-market-logo.svg";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 function Header() {
   const location = useLocation();

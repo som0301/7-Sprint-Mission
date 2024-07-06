@@ -84,7 +84,7 @@
   margin-left: 16px;
 }
 
-.signup {
+.goto-page {
   color: #1f2937;
   font-size: var(--fontsize-15); /*15px*/
   line-height: 17.9px;
@@ -134,10 +134,6 @@
 /* Mobile: 767px 이하 */
 @media screen and (max-width: 767px) {
   /*기본 패딩과 최대 넓이*/
-  .login-page-main {
-    padding: 60px 16px 0;
-    max-width: 400px;
-  }
 
   /*사이즈 위치 조정*/
   .go-home-logo {
