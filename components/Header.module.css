@@ -18,6 +18,9 @@
   color: #4b5563;
   font-size: 18px;
 }
+.active{
+  color:  #3692FF;
+}
 .line {
   width: 100%;
   border-bottom: 1px solid #dfdfdf;

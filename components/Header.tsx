@@ -4,8 +4,10 @@ import logo from "../public/logo.svg";
 import userBtn from "../public/userBtn.svg";
 import styles from "./Header.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Header() {
+  const router=useRouter();
   return (
     <>
       <div className={styles.header}>
@@ -22,7 +24,7 @@ export default function Header() {
           </Link>
           <div className={styles["nav-wrapper"]}>
             <Link href="/boards">
-              <h2 className={styles["nav-wrapper-boards"]}>자유게시판</h2>
+              <h2 className={`${styles["nav-wrapper-boards"]} ${router.pathname==='/boards'? styles.active : ''}`}>자유게시판</h2>
             </Link>
             <Link href="/">
               <h2 className={styles["nav-wrapper-items"]}>중고마켓</h2>
