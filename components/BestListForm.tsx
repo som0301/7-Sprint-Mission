@@ -22,7 +22,7 @@ interface ArticleList {
   list: Article[];
 }
 
-export default function BestListForm() {
+export default function BestListForm(props: ArticleList) {
   const [isLike, setIsLike] = useState<ArticleList>({ list: [] });
 
   async function getProduct() {
