@@ -1,0 +1,75 @@
+.BestList-form {
+  width: 384px;
+  height: 169px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f9fafb;
+  margin-top: 24px;
+  padding: 0 24px;
+}
+.BestList-badge {
+  width: 102px;
+  height: 30px;
+  border-radius: 0 0 32px 32px;
+  background-color: #3692ff;
+  margin-bottom: 16px;
+}
+.BestList-wrapper-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.BestList-badge-best {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #ffffff;
+}
+.BestList-wrapper-h3 {
+  width: 336px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.BestList-h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23.87px;
+  color: #1f2937;
+}
+.BestList-img {
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+}
+.BestList-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.BestList-wrapper-name {
+  display: flex;
+  gap: 8px;
+}
+.BestList-wrapper-heart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.BestList-span {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.71px;
+  color: #4b5563;
+}
+.favoriteCount {
+  color: #6b7280;
+}
+.date {
+  color: #9ca3af;
+}

@@ -37,6 +37,7 @@ export default function boards() {
           </div>
 
           <ListForm />
+          <div className={styles.line}></div>
         </section>
       </div>
     </>
