@@ -30,37 +30,29 @@ const Header = () => {
   return (
     <nav className='bg-white border-b'>
       <div className='container mx-auto flex justify-between items-center p-4'>
-        <Link href='/' legacyBehavior>
-          <a className='flex items-center'>
-            <Image
-              src={isMobile ? LogoText : Logo}
-              alt='logo-img'
-              width={isMobile ? 153 : 80}
-            />
-          </a>
+        <Link href='/' className='flex items-center'>
+          <Image
+            src={isMobile ? LogoText : Logo}
+            alt='logo-img'
+            width={isMobile ? 153 : 80}
+          />
         </Link>
         {!isHome && (
           <ul className='flex space-x-4'>
             <li>
-              <Link href='/board' legacyBehavior>
-                <a
-                  className={
-                    router.pathname === "/boards" ? "text-blue-500" : ""
-                  }
-                >
-                  자유게시판
-                </a>
+              <Link
+                href='/boards'
+                className={router.pathname === "/boards" ? "text-blue-500" : ""}
+              >
+                자유게시판
               </Link>
             </li>
             <li>
-              <Link href='/items' legacyBehavior>
-                <a
-                  className={
-                    router.pathname === "/items" ? "text-blue-500" : ""
-                  }
-                >
-                  중고마켓
-                </a>
+              <Link
+                href='/items'
+                className={router.pathname === "/items" ? "text-blue-500" : ""}
+              >
+                중고마켓
               </Link>
             </li>
           </ul>
