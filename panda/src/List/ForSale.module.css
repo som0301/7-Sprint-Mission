@@ -1,10 +1,7 @@
 .ForSaleContainer {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(250px, 1fr)
-  ); /* 각 요소의 최소 너비를 250px로 설정하고, 가능한 많은 요소를 한 줄에 배치 */
-  grid-gap: 16px; /* 요소들 사이의 간격을 16px로 설정 */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 16px;
 }
 
 .img {
@@ -44,7 +41,7 @@
   width: 30px;
   height: 30px;
   border: 1px solid #ddd;
-  border-radius: 50%; /* 완전한 원형으로 만들기 위해 50%로 설정 */
+  border-radius: 50%;
   text-decoration: none;
   color: #333;
   font-size: 14px;

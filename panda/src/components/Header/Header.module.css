@@ -1,26 +1,26 @@
 .HeaderContainer {
   display: flex;
-  align-items: center; /* 세로 중앙 정렬 */
+  align-items: center;
 }
 
 .logo {
   width: 153px;
   height: 51px;
-  margin-right: auto; /* 로고와 content 사이의 여백을 최대로 설정 */
+  margin-right: auto;
 }
 
 .content {
   list-style: none;
   display: flex;
   gap: 10px;
-  margin-left: 20px; /* 로고와 content 사이의 간격 설정 */
-  flex-grow: 1; /* content가 남은 공간을 채우도록 설정 */
+  margin-left: 20px;
+  flex-grow: 1;
 }
 
 .loginButton {
   background-color: #3692ff;
   color: white;
   border-radius: 8px;
-  padding: 12px 23px; /* 쉼표 대신 공백으로 수정 */
-  margin-left: auto; /* content와 loginButton 사이의 여백을 최대로 설정 */
+  padding: 12px 23px;
+  margin-left: auto;
 }
