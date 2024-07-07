@@ -4,7 +4,7 @@ import searchImg from '../assets/icons/ic_search.svg';
 import SelectBox from './SelectBox';
 
 interface Props {
-  handleSelect?: (selectedValue: string) => void;
+  handleSelect: (selectedValue: string) => void;
 }
 
 function ProductController({ handleSelect }: Props) {

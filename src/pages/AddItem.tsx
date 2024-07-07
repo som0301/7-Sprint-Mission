@@ -48,7 +48,7 @@ function AddItem() {
     setIsFormComplete(isComplete);
   }, [values, tags]);
 
-  const handleFileInputChange = (name: string, value: File) => {
+  const handleFileInputChange = (name: string, value: File | null) => {
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
@@ -63,8 +63,8 @@ function AddItem() {
     }));
   };
 
-  const handleDeleteTag = (e: MouseEvent<HTMLButtonElement>) => {
-    const target = e.target as HTMLButtonElement;
+  const handleDeleteTag = (e: MouseEvent) => {
+    const target = e.currentTarget as HTMLButtonElement;
     setTags(tags.filter((element) => element !== target.name));
   };
 
@@ -179,6 +179,7 @@ function AddItem() {
         />
         <div className='tag-container'>
           {tags.map((item) => {
+            // console.log(item);
             return (
               <Tag name={item} key={item} onDeleteClick={handleDeleteTag}></Tag>
             );

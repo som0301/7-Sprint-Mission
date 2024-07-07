@@ -1,7 +1,7 @@
 import '../styles/BestProductList.scss';
 import heartImg from '../assets/icons/ic_heart_s.svg';
 import { Link } from 'react-router-dom';
-import { Product } from '../types/product';
+import type { Product } from '../types/product';
 
 function BestProductListItem({ item }: { item: Product }) {
   return (

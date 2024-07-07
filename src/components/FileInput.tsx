@@ -1,6 +1,6 @@
 import ImgInput from '../styledComponets/ImgInput';
 import { ReactNode } from 'react';
-import { MouseEvent, ChangeEvent } from 'react';
+import { ChangeEvent } from 'react';
 
 interface Props {
   name: string;

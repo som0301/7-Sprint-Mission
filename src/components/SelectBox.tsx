@@ -5,7 +5,12 @@ import { useState } from 'react';
 import Button from './Button';
 import { MouseEvent } from 'react';
 
-function SelectBox({ handleSelect, selectList }) {
+interface Props {
+  handleSelect: (selectedValue: string) => void;
+  selectList: string[];
+}
+
+function SelectBox({ handleSelect, selectList }: Props) {
   const [isListOpen, setIsListOpen] = useState(false);
   const [selectedText, setSelectedText] = useState(selectList[0]);
 
@@ -17,9 +22,16 @@ function SelectBox({ handleSelect, selectList }) {
     }
   };
 
-  const handleSelectItem = (e) => {
-    handleSelect(e.target.textContent);
-    setSelectedText(() => e.target.textContent);
+  const handleSelectItem = (e: MouseEvent<HTMLButtonElement>) => {
+    const target = e.target as HTMLButtonElement;
+    const textContent = target.textContent;
+
+    if (textContent !== null) {
+      handleSelect(textContent);
+      setSelectedText(() => textContent);
+    } else {
+      console.warn('textContent is null');
+    }
   };
 
   return (

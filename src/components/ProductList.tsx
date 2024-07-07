@@ -37,7 +37,6 @@ function ProductListItem({ item }: { item: Product }) {
 
 function ProductList({
   items,
-  order,
   page,
   handleSelect,
   onClickPage,

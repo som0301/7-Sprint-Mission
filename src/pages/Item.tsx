@@ -6,29 +6,23 @@ import ProductDetail from '../components/ProductDetail';
 import CommentList from '../components/CommentList';
 import Button from '../components/Button';
 import turnBackImg from '../assets/icons/ic_turn_back.svg';
-import { ChangeEvent, MouseEvent } from 'react';
+import { ChangeEvent } from 'react';
 import { Comment } from '../types/comment';
-
-interface Item {
-  name: string;
-  description: string;
-  price: string;
-  tags: string[];
-  images: string[];
-  favoriteCount: string;
-}
+import { Product } from '../types/product';
 
 function Item() {
   const params = useParams();
   const [comments, setComments] = useState<Comment[]>([]);
   const [inputComment, setInputComment] = useState('');
-  const [item, setItem] = useState<Item>({
+  const [item, setItem] = useState<Product>({
+    id: -1,
     name: '',
+    price: -1,
     description: '',
-    price: '',
     tags: [],
     images: [],
-    favoriteCount: '',
+    ownerId: -1,
+    favoriteCount: -1,
   });
   const handleLoadItem = async (itemId: number) => {
     setItem(await getProductDetail(itemId));
