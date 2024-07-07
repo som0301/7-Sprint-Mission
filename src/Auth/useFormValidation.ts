@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useFormValidation = () => {
+const useValidationForm= () => {
   const [errors, setErrors] = useState({
     email: "",
     nickname: "",
@@ -27,7 +27,7 @@ const useFormValidation = () => {
     }
     setErrors((prevErrors) => ({ ...prevErrors, nickname: nicknameError }));
   };
-  
+
   const validatePassword = (password: string) => {
     let passwordError = "";
     if (!password) {
@@ -37,7 +37,7 @@ const useFormValidation = () => {
     }
     setErrors((prevErrors) => ({ ...prevErrors, password: passwordError }));
   };
-  
+
   const validatePasswordConfirm = (
     password: string,
     passwordConfirm: string
@@ -62,4 +62,4 @@ const useFormValidation = () => {
   };
 };
 
-export default useFormValidation;
+export default useValidationForm;
