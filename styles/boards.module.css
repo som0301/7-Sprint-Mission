@@ -1,14 +1,11 @@
 .section-wrapper {
-  margin: 0 auto;
-  max-width: 1200px;
   display: flex;
   flex-direction: column;
   column-gap: 40px;
-  margin-top: 24px;;
 }
 .boards-best-list {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   column-gap: 24px;
   margin-bottom: 40px;
 }
@@ -59,8 +56,30 @@
   border: none;
   width: 100%;
 }
-.line{
-  margin-top:24px;
-  width:100%;
-  border:1px solid #E5E7EB;
+.line {
+  margin-top: 24px;
+  width: 100%;
+  border: 1px solid #e5e7eb;
+}
+@media screen and (min-width: 1200px) {
+  .section-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: 24px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .section-wrapper {
+    padding: 0 24px;
+    margin-top: 24px;
+  }
+  .search-wrapper{
+    width:100%;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .section-wrapper {
+    padding: 0 16px;
+    margin-top: 24px;
+  }
 }

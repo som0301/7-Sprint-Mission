@@ -26,13 +26,8 @@ interface ArticleList {
   list: Article[];
 }
 
-const PCTABLET_List = 5;
-const MOBILE_List = 3;
-
-export default function ListForm(props: ArticleList) {
+export default function ListForm({ pageSize, orderBy }: ListProps) {
   const [isList, setIsList] = useState<ArticleList>({ list: [] });
-  const [pageSize, setPageSize] = useState(PCTABLET_List);
-  const [orderBy, setOrderBy] = useState("recent");
 
   async function getListArticle({ pageSize, orderBy }: ListProps) {
     try {
@@ -43,25 +38,9 @@ export default function ListForm(props: ArticleList) {
     }
   }
 
-  const changePageSize = () => {
-    if (window.innerWidth >= 768) {
-      setPageSize(PCTABLET_List);
-      return;
-    }
-    if (window.innerWidth >= 375 && window.innerWidth <= 767) {
-      setPageSize(MOBILE_List);
-      return;
-    }
-  };
-
   useEffect(() => {
     getListArticle({ pageSize, orderBy });
   }, [pageSize, orderBy]);
-
-  useEffect(() => {
-    window.addEventListener("resize", changePageSize);
-    return () => window.removeEventListener("resize", changePageSize);
-  }, []);
 
   return (
     <>

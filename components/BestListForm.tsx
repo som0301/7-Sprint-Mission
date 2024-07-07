@@ -31,7 +31,7 @@ const PC_List = 3;
 const TABLET_List = 2;
 const MOBILE_List = 1;
 
-export default function BestListForm(props: ArticleList) {
+export default function BestListForm() {
   const [orderBy, setOrderBy] = useState("like");
   const [isLike, setIsLike] = useState<ArticleList>({ list: [] });
   const [pageSize, setPageSize] = useState<number>(PC_List);
@@ -47,6 +47,8 @@ export default function BestListForm(props: ArticleList) {
   const changePageSize = () => {
     if (window.innerWidth >= 1200) {
       setPageSize(PC_List);
+      console.log(pageSize);
+      return;
     }
     if (window.innerWidth >= 768 && window.innerWidth <= 1199) {
       setPageSize(TABLET_List);
@@ -63,6 +65,7 @@ export default function BestListForm(props: ArticleList) {
   }, [pageSize, orderBy]);
 
   useEffect(() => {
+    changePageSize();
     window.addEventListener("resize", changePageSize);
     return () => window.removeEventListener("resize", changePageSize);
   }, []);
