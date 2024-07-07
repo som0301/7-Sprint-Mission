@@ -1,23 +1,37 @@
 import Header from "../components/Header";
-import search from "../public/search.svg";
 import styles from "../styles/boards.module.css";
 import BestListForm from "../components/BestListForm";
 import ListForm from "../components/ListForm";
 import Dropdown from "../components/Dropdown";
 import Image from "next/image";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import SearchForm from "../components/SearchForm";
+import { useRouter } from "next/router";
+import axios from "../lib/axios";
 
 const PCTABLET_List = 5;
 const MOBILE_List = 3;
 
+interface Article {
+  content: string;
+  createdAt: string;
+  id: number;
+  image: string | null;
+  likeCount: number;
+  title: string;
+  writer: { id: number; nickname: string };
+}
+
 export default function Boards() {
   const [pageSize, setPageSize] = useState(PCTABLET_List);
   const [orderBy, setOrderBy] = useState("recent");
+  const [articles, setArticles] = useState<Article>();
+  const router = useRouter();
+  const { q } = router.query;
 
   const changePageSize = () => {
     if (window.innerWidth >= 768) {
       setPageSize(PCTABLET_List);
-      console.log(PCTABLET_List);
       return;
     }
     if (window.innerWidth >= 375 && window.innerWidth <= 767) {
@@ -50,13 +64,7 @@ export default function Boards() {
           </div>
 
           <div className={styles["list-wrapper-input"]}>
-            <div className={styles["search-wrapper"]}>
-              <Image src={search} alt="검색" width="24" height="24" />
-              <input
-                placeholder="검색할 상품을 입력해주세요"
-                className={styles["boards-input"]}
-              />
-            </div>
+            <SearchForm initialValue={(q as string) || ""} />
             <Dropdown setOrderBy={setOrderBy} />
           </div>
           <ListForm pageSize={pageSize} orderBy={orderBy} />

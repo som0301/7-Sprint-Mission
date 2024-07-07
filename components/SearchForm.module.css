@@ -1,0 +1,27 @@
+.search-wrapper {
+    display: flex;
+    gap: 9px;
+    width: 1054px;
+    height: 42px;
+    border-radius: 12px;
+    border: none;
+    padding: 9px 20px 9px 16px;
+    background-color: #f3f4f6;
+  }
+  .boards-input {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000000;
+    background-color: unset;
+    border: none;
+    width: 100%;
+  }
+.boards-input::placeholder{
+  color: #9ca3af;
+}
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .search-wrapper{
+      width:100%;
+    }
+  }
