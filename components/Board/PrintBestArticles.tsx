@@ -1,8 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { Article } from "../../types/articleTypes";
-import { fetchArticles } from "@/pages/api/articles";
-import Image from "next/image";
-import BestBadge from "public/images/icons/img_badge.svg";
+import Image from "next/legacy/image";
+import BestBadge from "@/public/images/icons/img_badge.svg";
+import { fetchArticles } from "@/app/api/articles";
 
 export default function PrintBestArticles() {
   const [posts, setPosts] = useState<Article[]>([]);
