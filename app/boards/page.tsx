@@ -1,11 +1,11 @@
-import PrintAllArticles from "@/components/Board/PrintAllArticles";
-import PrintBestArticles from "@/components/Board/PrintBestArticles";
+import AllArticleList from "@/components/Board/AllArticleList";
+import BestArticleList from "@/components/Board/BestArticleList";
 
 export default function MainComponent() {
   return (
     <div>
-      <PrintBestArticles />
-      <PrintAllArticles />
+      <BestArticleList />
+      <AllArticleList />
     </div>
   );
 }

@@ -1,11 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Article } from "../../types/articleTypes";
+import { Article } from "../../types/article";
 import Image from "next/legacy/image";
-import { fetchArticles } from "@/app/api/articles";
+import { fetchArticles } from "@/api/articles";
 
-export default function PrintAllArticles() {
+export default function AllArticleList() {
   const [posts, setPosts] = useState<Article[]>([]);
   const [sortType, setSortType] = useState("recent");
   const [searchTerm, setSearchTerm] = useState("");
@@ -34,7 +34,7 @@ export default function PrintAllArticles() {
   const filteredPosts = posts.filter((post) => post.title.includes(searchTerm));
 
   return (
-    <div className='container mx-auto p-4'>
+    <div className='max-w-[1200px] mx-auto p-4'>
       <h2 className='text-xl font-bold mb-4'>게시글</h2>
       <div className='mb-4 flex items-center justify-between'>
         <input
