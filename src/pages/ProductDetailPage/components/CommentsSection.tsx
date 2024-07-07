@@ -22,7 +22,7 @@ const CommentsSection = ({
 
   return (
     <div className="commentsSection">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="comment-form">
         <h3>문의하기</h3>
         <textarea
           onChange={handleChange}

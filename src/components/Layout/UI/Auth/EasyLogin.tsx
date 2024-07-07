@@ -1,6 +1,6 @@
 import React from "react";
-import kakaotalkLoge from "../../../assets/images/social/kakaotalk-logo.svg";
-import googleLoge from "../../../assets/images/social/google-logo.svg";
+import kakaotalkLoge from "../../../../assets/images/social/kakaotalk-logo.svg";
+import googleLoge from "../../../../assets/images/social/google-logo.svg";
 
 function EasyLogin() {
   return (

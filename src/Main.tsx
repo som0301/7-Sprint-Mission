@@ -9,8 +9,7 @@ import NotFoundPage from "./pages/NotFoundPage";
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetailPage";
 import PrivacyPage from "./components/Layout/Footer/PrivacyPage";
 import FaqPage from "./components/Layout/Footer/FaqPage";
-import LoginPage from "./pages/LoginPage/LoginPage";
-import SignupPage from "./pages/SignupPage/SignupPage";
+import SingupAndLoginPage from "./pages/SingupAndLoginPage/SingupAndLoginPage";
 
 function Main() {
   return (
@@ -24,10 +23,10 @@ function Main() {
             <Route path=":productId" element={<ProductDetailPage />} />
           </Route>
           <Route path="additem" element={<AddItemPage />} />
-          <Route path="login" element={<LoginPage />} />
+          <Route path="login" element={<SingupAndLoginPage />} />
+          <Route path="signup" element={<SingupAndLoginPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="faq" element={<FaqPage />} />
-          <Route path="signup" element={<SignupPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>

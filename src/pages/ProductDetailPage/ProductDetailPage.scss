@@ -154,7 +154,7 @@
   }
 
   .commentsSection {
-    form {
+    .comment-form {
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -357,7 +357,7 @@
     }
 
     .commentsSection {
-      form {
+      .comment-form {
         margin-bottom: 16px;
         textarea::placeholder {
           @include font-style(14px, 400, 24px, var(--gray400));
