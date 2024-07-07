@@ -24,6 +24,7 @@
 .auth-container {
   width: 640px;
   margin: 40px auto 0;
+  padding-bottom: 80px;
   color: var(--Cool-gray-800);
 }
 

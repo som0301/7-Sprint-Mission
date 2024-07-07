@@ -106,8 +106,8 @@ const Home = () => {
         <div className="f-container">
           <div className="pc-tablet-addr">©codeit - 2024</div>
           <div className="fnav">
-            <a href="pages/privacy/privacy.html">Privacy Policy</a>
-            <a href="pages/faq/faq.html">FAQ</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">FAQ</a>
           </div>
           <div className="sns">
             <button
