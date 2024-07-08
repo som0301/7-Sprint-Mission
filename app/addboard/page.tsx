@@ -41,33 +41,35 @@ const AddBoard: React.FC = () => {
 
   return (
     <div className='max-w-[1200px] mx-auto px-4'>
-      <header className='flex justify-between items-center py-5'>
+      <header className='flex justify-between items-center my-6'>
         <span className='text-xl font-bold'>게시글 쓰기</span>
-        <Button text='등록' disabled={!isFormValid} size='small' width='88px' />
+        <Button text='등록' disabled={!isFormValid} size='small' width='74px' />
       </header>
       <form className='flex flex-col' onSubmit={handleSubmit}>
-        <div className='mb-4'>
-          <h2 className='text-lg font-semibold mb-2'>*제목</h2>
+        <div className='mb-6'>
+          <h2 className='text-lg font-bold mb-3'>*제목</h2>
           <input
             name='title'
             value={values.title}
             onChange={handleInputChange}
             placeholder='제목을 입력해주세요'
-            className='w-full p-4 rounded-xl bg-gray-100'
+            className={`w-full py-4 px-6 rounded-xl bg-gray-100 text-base font-normal ${
+              values.title ? "text-black" : "text-gray-400"
+            }`}
           />
         </div>
-        <div className='mb-4'>
-          <h2 className='text-lg font-semibold mb-2'>*내용</h2>
+        <div className='mb-6'>
+          <h2 className='text-lg font-bold mb-3'>*내용</h2>
           <textarea
             name='body'
             value={values.body}
             onChange={handleInputChange}
             placeholder='내용을 입력해주세요'
-            className='w-full p-4 rounded-xl bg-gray-100 h-48'
+            className={`w-full py-4 px-6 rounded-xl bg-gray-100 h-[282px] text-gray-400 text-base font-normal resize-none ${values.body ? 'text-black' : 'text-gray-400'}`}
           />
         </div>
-        <div className='mb-4'>
-          <h2 className='text-lg font-semibold mb-2'>상품 이미지</h2>
+        <div className='mb-6'>
+          <h2 className='text-lg font-bold mb-3'>이미지</h2>
           <FileInput
             name='image'
             value={values.image}

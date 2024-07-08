@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Image from "next/image";
+import Plus from "@/assets/images/icons/ic_plus.svg";
 
 interface FileInputProps<T> {
   name: keyof T;
@@ -35,9 +36,28 @@ const FileInput = <T,>({ name, value, onChange }: FileInputProps<T>) => {
     <div className='flex items-center mb-4'>
       <label
         htmlFor={name as string}
-        className='w-72 h-72 flex flex-col items-center justify-center bg-gray-100 rounded-xl cursor-pointer'
+        className='w-72 h-72 flex flex-col items-center justify-center bg-gray-100 rounded-xl cursor-pointer relative'
       >
-        <span className='text-gray-500'>이미지 등록</span>
+        <div
+          className='absolute'
+          style={{
+            top: "99px",
+            left: "117px",
+            right: "117px",
+            bottom: "135px",
+            backgroundImage: `url(${Plus.src})`,
+            backgroundSize: "48px 48px",
+            backgroundRepeat: "no-repeat",
+          }}
+        />
+        <span
+          className='text-gray-400 text-base font-normal absolute'
+          style={{
+            top: "159px",
+          }}
+        >
+          이미지 등록
+        </span>
       </label>
       <input
         type='file'
@@ -49,7 +69,7 @@ const FileInput = <T,>({ name, value, onChange }: FileInputProps<T>) => {
       {preview && (
         <div className='relative ml-4'>
           <Image
-            className='w-72 h-72 border rounded-xl'
+            className='w-72 h-72 border rounded-xl '
             src={preview}
             alt='이미지 미리보기'
             width={72}
