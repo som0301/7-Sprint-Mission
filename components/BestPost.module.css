@@ -1,0 +1,116 @@
+.bestPostContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 24px;
+  width: 1200px;
+  top: 24px;
+  font-family: 'Pretendard';
+}
+
+.postSubject {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.87px;
+  text-align: left;
+}
+
+.postWrapper {
+  height: 169px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.postContentWrapper {
+  width: 384px;
+  height: 169px;
+  padding: 0 24px 16px 24px;
+  background-color: #f9fafb;
+}
+
+.postContent {
+  width: 336px;
+  height: 153px;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+}
+
+.postContent > img {
+  width: 102px;
+  height: 30px;
+}
+
+.postInfo {
+  padding: 16px 0 18px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.postTitle {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23.87px;
+  text-align: left;
+}
+
+.postImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 6px;
+}
+
+.postImgContainer.withImage {
+  border: 1px solid #e5e7eb;
+}
+
+.postImg {
+  width: 72px;
+  min-width: 72px;
+  height: 72px;
+  left: 264px;
+  padding: 13.71px 12px;
+  gap: 0px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.postDetails {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  line-height: 16.71px;
+}
+
+.postMeta {
+  display: flex;
+  gap: 8px;
+}
+
+.nickname {
+  text-align: left;
+  color: #4b5563;
+}
+
+.likeCount {
+  display: flex;
+  gap: 4px;
+  text-align: left;
+  color: #6b7280;
+}
+
+.likeCount > img {
+  width: 13.4px;
+  height: 11.65px;
+  position: relative;
+  top: 2px;
+}
+
+.createdAt {
+  color: #9ca3af;
+}
