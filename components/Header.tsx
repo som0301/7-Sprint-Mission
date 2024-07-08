@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import Logo from "/public/images/logo/logo.svg";
-import LogoText from "/public/images/logo/logo-text.svg";
+import Logo from "/assets/images/logo/logo.svg";
+import LogoText from "/assets/images/logo/logo-text.svg";
+import Button from "./Button";
 
 const Header = () => {
   const router = useRouter();
@@ -24,52 +25,47 @@ const Header = () => {
     };
   }, []);
 
-  const handleButtonClick = (url: string) => () => {
-    router.push(url);
-  };
-
-  const hideNav = pathname === "/login" || pathname === "/signup";
-
   return (
-    !hideNav && (
-      <nav className='bg-white border-b'>
-        <div className='container mx-auto flex justify-between items-center p-4'>
-          <Link href='/' className='flex items-center'>
-            <Image
-              src={isMobile ? LogoText : Logo}
-              alt='logo-img'
-              width={isMobile ? 153 : 80}
-            />
-          </Link>
-          <ul className='flex space-x-4'>
-            <li>
-              <Link
-                href='/boards'
-                className={pathname === "/boards" ? "text-blue-500" : ""}
-              >
-                자유게시판
-              </Link>
-            </li>
-            <li>
-              <Link
-                href='/items'
-                className={pathname === "/items" ? "text-blue-500" : ""}
-              >
-                중고마켓
-              </Link>
-            </li>
-          </ul>
-          <div>
-            <button
-              className='bg-blue-500 text-white px-4 py-2 rounded'
-              onClick={handleButtonClick("/login")}
+    <nav className='flex justify-center items-center p-2 border-b border-gray-200'>
+      <div className='flex items-center px-[200px] w-full'>
+        <Link href='/'>
+          <Image
+            src={isMobile ? LogoText : Logo}
+            alt='logo-img'
+            width={!isMobile ? 153 : 80}
+          />
+        </Link>
+        <ul className='flex text-base list-none m-0 p-0 ml-7'>
+          <li className='ml-7'>
+            <Link
+              href='/boards'
+              className={
+                pathname === "/boards"
+                  ? "text-blue-500 font-bold"
+                  : "text-gray-600 font-bold"
+              }
             >
-              로그인
-            </button>
-          </div>
+              자유게시판
+            </Link>
+          </li>
+          <li className='ml-7'>
+            <Link
+              href='/items'
+              className={
+                pathname === "/items"
+                  ? "text-blue-500 font-bold"
+                  : "text-gray-600 font-bold"
+              }
+            >
+              중고마켓
+            </Link>
+          </li>
+        </ul>
+        <div className='ml-auto'>
+          <Button text='로그인' color='default' size='small' />
         </div>
-      </nav>
-    )
+      </div>
+    </nav>
   );
 };
 
