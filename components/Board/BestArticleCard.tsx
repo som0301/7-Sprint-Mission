@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Article } from "../../types/article";
 import BestBadge from "@/public/images/icons/img_badge.svg";
 import Heart from "@/public/images/icons/ic_heart.svg";
