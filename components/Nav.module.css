@@ -1,0 +1,94 @@
+.navContainer {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 200px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.navWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 8.59px;
+}
+
+.logoImg {
+  width: 40px;
+  border-radius: 11.18px;
+}
+
+.brandLogo {
+  font-family: 'ROKAF Sans';
+  font-size: 25.63px;
+  font-weight: 700;
+  line-height: 34.6px;
+  color: #3692ff;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  height: 69px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.48px;
+  text-align: center;
+  display: flex;
+  /* gap: 15px; */
+  list-style: none;
+  color: #4b5563;
+  padding-left: 0;
+  margin-left: 32px;
+}
+
+.freeBoard,
+.secondhandMarket {
+  width: 109px;
+}
+
+@media screen and (max-width: 1280px) {
+  .navContainer {
+    padding: 10px 24px;
+  }
+
+  .menu {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 744px) {
+  .navContainer {
+    padding: 15px 16px;
+  }
+
+  .logoImg {
+    display: none;
+  }
+
+  .brandLogo {
+    font-size: 20.2px;
+    line-height: 27.27px;
+  }
+
+  .menu {
+    gap: 8px;
+    font-size: 16px;
+    margin-left: 16px;
+  }
+
+  .freeBoard {
+    width: 69px;
+    white-space: nowrap;
+  }
+
+  .secondhandMarket {
+    width: 58px;
+  }
+}

@@ -1,0 +1,144 @@
+.bulletinContainer {
+  position: relative;
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto;
+  top: 40px;
+  font-family: 'Pretendard';
+}
+
+.bulletinHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.postSubject {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.87px;
+  text-align: left;
+}
+
+.writingBtn {
+  width: 88px;
+  height: 42px;
+  background-color: #3692ff;
+  padding: 12px 23px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.09px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.searchSortGroup {
+  display: flex;
+  gap: 16px;
+}
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.postWrapperContainer {
+  width: 1200px;
+  height: 136px;
+  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.postContentWrapper {
+  height: 112px;
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.postInfo {
+  width: 1200px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.postTitle {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23.87px;
+  color: #1f2937;
+}
+
+.postImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+}
+
+.postImgContainer.withImage {
+  border: 1px solid #e5e7eb;
+}
+
+.postImg {
+  width: 48px;
+  height: 44.57px;
+}
+
+.postMeta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.postDetails {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 16.71px;
+}
+
+.profileImg {
+  width: 24px;
+  height: 24px;
+}
+
+.nickname {
+  color: #4b5563;
+}
+
+.createdAt {
+  color: #9ca3af;
+}
+
+.likeCountWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.likeCountWrapper > img {
+  width: 24px;
+  height: 24px;
+}
+
+.likeCount {
+  font-size: 16px;
+  line-height: 24px;
+  color: #6b7280;
+}
