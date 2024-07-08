@@ -1,0 +1,26 @@
+.HeaderContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 153px;
+  height: 51px;
+  margin-right: auto;
+}
+
+.content {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+  flex-grow: 1;
+}
+
+.loginButton {
+  background-color: #3692ff;
+  color: white;
+  border-radius: 8px;
+  padding: 12px 23px;
+  margin-left: auto;
+}
