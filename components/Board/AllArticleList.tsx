@@ -7,6 +7,7 @@ import searchIcon from "@/assets/images/icons/ic_search.svg";
 import Button from "../Button";
 import AllArticleCard from "./AllArticleCard";
 import OrderDropdown from "../OrderDropdown";
+import Link from "next/link";
 
 const sortOptions = [
   { value: "recent", label: "최신순" },
@@ -45,7 +46,9 @@ export default function AllArticleList() {
     <div className='max-w-[1200px] mx-auto p-4'>
       <div className='flex items-center justify-between mb-6'>
         <h2 className='text-xl font-bold'>게시글</h2>
-        <Button text='글쓰기' color='default' size='small' width='88px' />
+        <Link href='/addboard'>
+          <Button text='글쓰기' color='default' size='small' width='88px' />
+        </Link>
       </div>
       <div className='mb-6 flex items-center justify-between'>
         <input
