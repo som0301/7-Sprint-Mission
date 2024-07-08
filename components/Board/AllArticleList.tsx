@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Article } from "../../types/article";
 import { fetchArticles } from "@/api/articles";
+import searchIcon from "@/assets/images/icons/ic_search.svg";
 import Button from "../Button";
 import AllArticleCard from "./AllArticleCard";
 import OrderDropdown from "../OrderDropdown";
@@ -54,7 +55,7 @@ export default function AllArticleList() {
           placeholder='검색할 내용을 입력해주세요'
           className='mr-4 py-[9px] pl-12 pr-5 rounded-xl bg-gray-100 w-full'
           style={{
-            backgroundImage: "url('/images/icons/ic_search.svg')",
+            backgroundImage: `url(${searchIcon.src})`,
             backgroundSize: "24px 24px",
             backgroundPosition: "16px center",
             backgroundRepeat: "no-repeat",
