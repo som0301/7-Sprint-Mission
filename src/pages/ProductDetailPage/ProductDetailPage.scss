@@ -10,6 +10,8 @@
   flex-direction: column;
   width: 1200px;
   max-width: 100%;
+  margin: 0 auto;
+  padding-top: 24px;
 
   h1 {
     @include font-style(24px, 600, 28.64px, var(--gray800));
@@ -41,8 +43,7 @@
   }
 
   .goBackButton {
-    margin: auto;
-    margin-top: 40px;
+    margin: 40px auto 40px;
     background-color: var(--activate-button-blue);
     padding: 12px 71px 12px 71px;
     border-radius: 40px;
@@ -153,7 +154,7 @@
   }
 
   .commentsSection {
-    form {
+    .comment-form {
       display: flex;
       flex-direction: column;
       gap: 16px;
@@ -356,7 +357,7 @@
     }
 
     .commentsSection {
-      form {
+      .comment-form {
         margin-bottom: 16px;
         textarea::placeholder {
           @include font-style(14px, 400, 24px, var(--gray400));
