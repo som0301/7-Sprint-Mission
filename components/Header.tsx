@@ -25,10 +25,6 @@ const Header = () => {
     };
   }, []);
 
-  const handleButtonClick = (url: string) => () => {
-    router.push(url);
-  };
-
   return (
     <nav className='flex justify-center items-center p-2 border-b border-gray-200'>
       <div className='flex items-center px-[200px] w-full'>
@@ -66,12 +62,7 @@ const Header = () => {
           </li>
         </ul>
         <div className='ml-auto'>
-          <Button
-            text='로그인'
-            color='default'
-            size='small'
-            onClick={handleButtonClick("/login")}
-          />
+          <Button text='로그인' color='default' size='small' />
         </div>
       </div>
     </nav>
