@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import ArrowIcon from "@/public/images/icons/ic_arrow_down.svg";
+import ArrowIcon from "@/assets/images/icons/ic_arrow_down.svg";
 
 interface OrderDropdownProps {
   options: { value: string; label: string }[];

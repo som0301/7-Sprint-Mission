@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { Article } from "../../types/article";
-import BestBadge from "@/public/images/icons/img_badge.svg";
-import Heart from "@/public/images/icons/ic_heart.svg";
+import BestBadge from "@/assets/images/icons/img_badge.svg";
+import Heart from "@/assets/images/icons/ic_heart.svg";
 
 const BestArticleCard: React.FC<Article> = ({
   title,

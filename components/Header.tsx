@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
-import Logo from "/public/images/logo/logo.svg";
-import LogoText from "/public/images/logo/logo-text.svg";
+import Logo from "/assets/images/logo/logo.svg";
+import LogoText from "/assets/images/logo/logo-text.svg";
 
 const Header = () => {
   const router = useRouter();

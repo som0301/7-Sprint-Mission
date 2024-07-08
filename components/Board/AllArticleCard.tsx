@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import { Article } from "../../types/article";
-import Profile from "@/public/images/icons/ic_profile.svg";
-import Heart from "@/public/images/icons/ic_heart.svg";
+import Profile from "@/assets/images/icons/ic_profile.svg";
+import Heart from "@/assets/images/icons/ic_heart.svg";
 
 const AllArticleCard: React.FC<Article> = ({
   title,
