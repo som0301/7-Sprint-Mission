@@ -1,12 +1,13 @@
 import '../styles/BestProductList.scss';
 import heartImg from '../assets/icons/ic_heart_s.svg';
 import { Link } from 'react-router-dom';
+import type { Product } from '../types/product';
 
-function BestProductListItem({ item }) {
+function BestProductListItem({ item }: { item: Product }) {
   return (
     <Link to={'/items/' + item.id}>
       <div className='best-product-list-item'>
-        <img className='img' src={item.images[0]} alt={item.title} />
+        <img className='img' src={item.images[0]} alt={item.name} />
         <div className='info'>
           <p>{item.name}</p>
           <p className='price'>
@@ -22,7 +23,7 @@ function BestProductListItem({ item }) {
   );
 }
 
-function BestProductList({ items }) {
+function BestProductList({ items }: { items: Product[] }) {
   return (
     <div className='best-product-list'>
       <p className='title'>베스트 상품</p>

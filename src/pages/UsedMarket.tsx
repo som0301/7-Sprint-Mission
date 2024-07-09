@@ -4,6 +4,7 @@ import BestProductList from '../components/BestProductList';
 import { useEffect, useState } from 'react';
 import { getProducts } from '../api';
 import { useMediaQuery } from 'react-responsive';
+import { Product } from '../types/product';
 
 const PAGE_SIZES = {
   PC: { regular: 10, best: 4 },
@@ -11,8 +12,13 @@ const PAGE_SIZES = {
   MOBILE: { regular: 4, best: 1 },
 };
 
+const SELECT_ORDER = {
+  RECENT: '최신순',
+  FAVORITE: '좋아요순',
+};
+
 function UsedMarket() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<Product[]>([]);
   const [bestItems, setBestItems] = useState([]);
   const [order, setOrder] = useState('recent');
   const [page, setPage] = useState(1);
@@ -22,19 +28,23 @@ function UsedMarket() {
   const isTablet = useMediaQuery({ query: '(max-width: 1200px)' });
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
-  const allProdHandleLoad = async (order, page, pageSize) => {
+  const allProdHandleLoad = async (
+    order: string,
+    page: number,
+    pageSize: number
+  ) => {
     const { list, totalCount } = await getProducts(order, page, pageSize);
     setItems(list);
     setTotalProdCount(totalCount);
   };
 
-  const bestProdHandleLoad = async (page, pageSize) => {
+  const bestProdHandleLoad = async (page: number, pageSize: number) => {
     const { list, totalCount } = await getProducts('favorite', page, pageSize);
     setBestItems(list);
     setTotalProdCount(totalCount);
   };
 
-  const handleLoad = (order) => {
+  const handleLoad = (order: string) => {
     if (!isTablet && !isMobile) {
       // PC
       setAllProdPageSize(() => PAGE_SIZES.PC.regular);
@@ -53,16 +63,16 @@ function UsedMarket() {
     }
   };
 
-  const handleSelect = (selectedValue) => {
-    if (selectedValue === '최신순') {
+  const handleSelect = (selectedValue: string) => {
+    if (selectedValue === SELECT_ORDER.RECENT) {
       setOrder('recent');
-    } else if (selectedValue === '좋아요순') {
+    } else if (selectedValue === SELECT_ORDER.FAVORITE) {
       setOrder('favorite');
     }
     setPage(1);
   };
 
-  const onClickPage = (pageNum) => {
+  const onClickPage = (pageNum: number) => {
     setPage(pageNum);
   };
 

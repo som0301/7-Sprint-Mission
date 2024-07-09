@@ -2,8 +2,9 @@ import styles from '../styles/ProductDetail.module.scss';
 import heartImg from '../assets/icons/ic_heart_m.svg';
 import moreBtnImg from '../assets/icons/ic_more.svg';
 import Button from './Button';
+import { Product } from '../types/product';
 
-function ProductDetail({ product }) {
+function ProductDetail({ product }: { product: Product }) {
   return (
     <div className={styles['product-detail']}>
       <img
@@ -27,7 +28,7 @@ function ProductDetail({ product }) {
           <div className={styles['tag-section']}>
             <h2>상품 태그</h2>
             <p className={styles['tag-container']}>
-              {product.tags?.map((tag) => {
+              {product.tags?.map((tag: string) => {
                 return (
                   <span className={styles['tag']} key={tag}>
                     {'#' + tag}
@@ -40,7 +41,7 @@ function ProductDetail({ product }) {
         <div className={styles['info-bottom']}>
           <Button className={styles['favorite-btn']}>
             <img
-              name={name}
+              // name={name}
               src={heartImg}
               alt='삭제 버튼'
               className='tag-btn-delete'
