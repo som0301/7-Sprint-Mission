@@ -59,7 +59,7 @@ function AddItem() {
     }
   };
 
-  const handleRemoveTag = (indexToRemove:number) => {
+  const handleRemoveTag = (indexToRemove: number) => {
     setFormData((prevFormData) => ({
       ...prevFormData,
       productTag: prevFormData.productTag.filter(

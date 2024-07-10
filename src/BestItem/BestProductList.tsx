@@ -7,14 +7,21 @@ import { Link } from "react-router-dom";
 interface ListProps{
   currentPage:number;
   pageSize:number;
-  orderby:string;
+  orderBy:string;
+}
+interface Product{
+  id:string;
+  name:string;
+  price:number;
+  favoriteCount:number;
+  images:string[];
 }
 
 function BestProductList() {
-  const [productList, setProductList] = useState<any[]>([]);
+  const [productList, setProductList] = useState<Product[]>([]);
   const [pageSize, setPageSize] = useState<number>(4);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [orderby, setOrderBy] = useState<string>("favorite");
+  const [orderBy, setOrderBy] = useState<string>("favorite");
 
   const changeBestPageSize = () => {
     if (window.innerWidth >= 1200) {
@@ -31,14 +38,14 @@ function BestProductList() {
     }
   };
 
-  const getBestProduct = async ({ currentPage, pageSize, orderby }:ListProps) => {
-    const data = await getReviews({ currentPage, pageSize, orderby });
+  const getBestProduct = async ({ currentPage, pageSize, orderBy }:ListProps) => {
+    const data = await getReviews({ currentPage, pageSize, orderBy });
     setProductList(data.list);
   };
 
   useEffect(() => {
-    getBestProduct({ currentPage, pageSize, orderby });
-  }, [orderby, pageSize, currentPage]);
+    getBestProduct({ currentPage, pageSize, orderBy });
+  }, [orderBy, pageSize, currentPage]);
 
   useEffect(() => {
     window.addEventListener("resize", changeBestPageSize);

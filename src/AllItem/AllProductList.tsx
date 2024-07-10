@@ -8,7 +8,7 @@ import { getReviews } from "../api";
 interface ListProps{
   currentPage:number;
   pageSize:number;
-  orderby:string;
+  orderBy:string;
 }
 
 const PC_ITEM = 10;
@@ -17,14 +17,14 @@ const MOBILE_ITEM = 4;
 
 function AllProductList() {
   const [productList, setProductList] = useState<any[]>([]);
-  const [orderby, setOrderBy] = useState<string>("recent"); //페이지 정렬 기준
+  const [orderBy, setOrderBy] = useState<string>("recent"); //페이지 정렬 기준
   const [currentPage, setCurrentPage] = useState<number>(1); //몇번째 페이지인지
   const [totalCount, setTotalCount] = useState<number>(0); //전체 아이템 수
   const [pageSize, setPageSize] = useState<number>(PC_ITEM); // 보이는 아이템 수
 
-  const getAllProduct = async ({ currentPage, pageSize, orderby }:ListProps) => {
+  const getAllProduct = async ({ currentPage, pageSize, orderBy }:ListProps) => {
     try {
-      const data = await getReviews({ currentPage, pageSize, orderby });
+      const data = await getReviews({ currentPage, pageSize, orderBy });
       setProductList(data.list);
       setTotalCount(data.totalCount);
     } catch (error) {
@@ -54,8 +54,8 @@ function AllProductList() {
   };
 
   useEffect(() => {
-    getAllProduct({ currentPage, pageSize, orderby });
-  }, [orderby, pageSize, currentPage]);
+    getAllProduct({ currentPage, pageSize, orderBy });
+  }, [orderBy, pageSize, currentPage]);
 
   useEffect(() => {
     window.addEventListener("resize", changePageSize);
