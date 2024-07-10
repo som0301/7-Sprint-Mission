@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import FileInput from "../Component/FileInput";
-import "../../src/style/AddItemPage.css";
+import "../style/addItemPage.css"
 
 interface AddItemState {
   imgFile: File | null;
