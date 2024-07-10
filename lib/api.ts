@@ -1,6 +1,7 @@
 interface ArticleProps {
   pageSize: number;
   orderBy: string;
+  keyword?: string;
 }
 
 interface Article {
@@ -19,8 +20,8 @@ interface ArticleList {
   list: Article[];
 }
 
-export async function getArticles({ pageSize, orderBy }: ArticleProps){
-  const url = `https://panda-market-api.vercel.app/articles?page=1&pageSize=${pageSize}&orderBy=${orderBy}`;
+export async function getArticles({ pageSize, orderBy, keyword="" }: ArticleProps){
+  const url = `https://panda-market-api.vercel.app/articles?page=1&pageSize=${pageSize}&orderBy=${orderBy}&keyword=${keyword}`;
   try {
     const response = await fetch(url);
     if (!response.ok) {

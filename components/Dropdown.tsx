@@ -3,11 +3,11 @@ import sort from "../public/sort.svg";
 import Image from "next/image";
 import { useRef } from "react";
 
-interface DropdownProps {
+interface Props {
   setOrderBy: (value: string) => void;
 }
 
-export default function Dropdown({ setOrderBy }: DropdownProps) {
+export default function Dropdown({ setOrderBy }: Props) {
 
 
   return (

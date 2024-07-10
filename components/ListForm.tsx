@@ -4,34 +4,20 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getArticles } from "../lib/api";
 import userBtn from "../public/userBtn.svg";
+import {ArticleList} from "./type";
 
-interface ListProps {
+interface Props {
   pageSize: number;
   orderBy: string;
-}
-interface Writer {
-  id: number;
-  nickname: string;
-}
-interface Article {
-  content: string;
-  createdAt: string;
-  id: number;
-  image: string | null;
-  likeCount: number;
-  title: string;
-  writer: Writer;
-}
-interface ArticleList {
-  list: Article[];
+  keyword: string;
 }
 
-export default function ListForm({ pageSize, orderBy }: ListProps) {
+export default function ListForm({ pageSize, orderBy, keyword }: Props) {
   const [isList, setIsList] = useState<ArticleList>({ list: [] });
 
-  async function getListArticle({ pageSize, orderBy }: ListProps) {
+  async function getListArticle({ pageSize, orderBy, keyword }: Props) {
     try {
-      const reponse = await getArticles({ pageSize, orderBy });
+      const reponse = await getArticles({ pageSize, orderBy, keyword });
       setIsList(reponse);
     } catch (error) {
       console.log(error);
@@ -39,8 +25,8 @@ export default function ListForm({ pageSize, orderBy }: ListProps) {
   }
 
   useEffect(() => {
-    getListArticle({ pageSize, orderBy });
-  }, [pageSize, orderBy]);
+    getListArticle({ pageSize, orderBy, keyword });
+  }, [pageSize, orderBy, keyword]);
 
   return (
     <>
@@ -50,7 +36,7 @@ export default function ListForm({ pageSize, orderBy }: ListProps) {
             <form key={index} className={styles["List-form"]}>
               <div className={styles["List-wrapper-title"]}>
                 <span className={styles["List-title"]}>{article.title}</span>
-                {article.image ? (
+                {article.image && (
                   <div className={styles["List-wrapper-img"]}>
                     <div className={styles["List-img"]}>
                       <Image
@@ -61,8 +47,6 @@ export default function ListForm({ pageSize, orderBy }: ListProps) {
                       />
                     </div>
                   </div>
-                ) : (
-                  ""
                 )}
               </div>
 
