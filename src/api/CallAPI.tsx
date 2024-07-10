@@ -1,4 +1,4 @@
-export async function CallItemSearch(page=1, pageSize=1, orderBy="favorite") {
+export async function CallItemSearch(page:number =1, pageSize:number =1, orderBy:string ="favorite") {
     const query = `page=${page}&pageSize=${pageSize}&orderBy=${orderBy}`;
     const response = await fetch(`https://panda-market-api.vercel.app/products?${query}`);
     const body = await response.json();

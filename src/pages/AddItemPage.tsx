@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useMemo } from "react";
 import FileInput from "../Component/FileInput";
 import "../style/addItemPage.css"
 
@@ -61,22 +61,22 @@ function AddItemPage() {
   };
 
   useEffect(() => {
-    const buttonOnOff = () => {
+    const canSubmit = useMemo<boolean>(() => {
       return !(
         addItemValue.title !== "" &&
         addItemValue.description !== "" &&
         addItemValue.price !== "" &&
         addItemValue.tag.length > 0
       );
-    };
+    }, [addItemValue]);
     if (submitButton.current) {
-      if (buttonOnOff() === false) {
+      if (canSubmit) {
         submitButton.current.style.setProperty("background-color", "#3692FF");
       } else {
         submitButton.current.style.setProperty("background-color", "#9CA3AF");
       }
     }
-    setButtonDisabled(buttonOnOff);
+    setButtonDisabled(canSubmit);
   }, [addItemValue]);
 
   return (
@@ -136,7 +136,7 @@ function AddItemPage() {
           ></input>
           <div className="tagList">
             {addItemValue.tag.map((tag, index) => (
-              <div className="tag">
+              <div className="tag" key={index}>
                 <p>{tag}</p>
                 <button onClick={() => deleteTag(tag)}>X</button>
               </div>

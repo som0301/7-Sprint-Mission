@@ -53,15 +53,15 @@ function AllItem({ item }: { item: AllItemProps }) {
 }
 
 function AllItemsSection() {
-  const [AlltItemsList, setAllItemsList] = useState<AllItemProps[]>([]);
-  const [ItemCount, setItemCount] = useState<number>(getWidth());
-  const [Order, setOrder] = useState<string>("recent");
-  const [Poninter, setPoninter] = useState<number>(1);
-  const [Title, setTitle] = useState<string>("전체 상품");
+  const [alltItemsList, setAllItemsList] = useState<AllItemProps[]>([]);
+  const [itemCount, setItemCount] = useState<number>(getWidth());
+  const [order, setOrder] = useState<string>("recent");
+  const [poninter, setPoninter] = useState<number>(1);
+  const [title, setTitle] = useState<string>("전체 상품");
   const [pageSize, setPageSize] = useState<number>(0);
 
   const AllItemsLoad = async (ItemCount: number, Order: string) => {
-    const response: AllItemsResponse = await CallItemSearch(Poninter, ItemCount, Order);
+    const response: AllItemsResponse = await CallItemSearch(poninter, ItemCount, Order);
     setAllItemsList(response.list);
     setPageSize(Math.ceil(response.totalCount / ItemCount));
   };
@@ -83,25 +83,25 @@ function AllItemsSection() {
   };
 
   useEffect(() => {
-    AllItemsLoad(ItemCount, Order);
-    if (ItemCount < 10) {
+    AllItemsLoad(itemCount, order);
+    if (itemCount < 10) {
       setTitle("판매 중인 상품");
     } else {
       setTitle("전체 상품");
     }
-  }, [ItemCount, Order, Poninter]);
+  }, [itemCount, order, poninter]);
 
   return (
     <div className="AllItemLayer">
       <div className="AllItemMenu">
         <div className="AllItemTitle">
-          <h1>{Title}</h1>
+          <h1>{title}</h1>
           <Link to="/additem">
             <button className="AddItemButton">상품 등록하기</button>
           </Link>
         </div>
         <div className="ItemCustom">
-          <SeachInput></SeachInput>
+          <SeachInput />
           <Link to="/additem">
             <button className="AddItemButton">상품 등록하기</button>
           </Link>
@@ -109,14 +109,14 @@ function AllItemsSection() {
         </div>
       </div>
       <div className="ItemList">
-        {AlltItemsList.map((item) => (
-          <AllItem item={item} />
+        {alltItemsList.map((item, index) => (
+          <AllItem item={item} key={index} />
         ))}
       </div>
       <div className="Pagination">
         <Pageination
           pageSize={pageSize}
-          activePage={Poninter}
+          activePage={poninter}
           onPageChange={onPageChange}
         ></Pageination>
       </div>
