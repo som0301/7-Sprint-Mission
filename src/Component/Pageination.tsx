@@ -3,9 +3,15 @@ import { ReactComponent as LeftArrow } from "../../src/images/home/arrow_left.sv
 import { ReactComponent as RightArrow } from "../../src/images/home/arrow_right.svg";
 import "../../src/style/Pageination.css";
 
-const Pageination = ({pageSize, activePage, onPageChange}) => {
+interface PageinationProps {
+    pageSize : number;
+    activePage : number;
+    onPageChange: (pageNumber: number) => void;
+}
+
+const Pageination = ({pageSize, activePage, onPageChange} : PageinationProps) => {
     const maxPages = 5;
-    let startPage;
+    let startPage=0;
 
     if(pageSize <= maxPages) {
         startPage = 1;

@@ -70,6 +70,6 @@ nav > a > img {
     nav > a > img {
         width: 81px;
         height: 40px;
-        content : url("C:/Users/ouran/Desktop/tmp/7-Sprint-Mission/src/images/logo/panda-market-logo.svg");
+        content : url("../images/logo/panda-market-logo.svg");
     }
 }

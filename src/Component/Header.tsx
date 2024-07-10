@@ -1,25 +1,32 @@
 import { NavLink, useLocation  } from "react-router-dom";
-import Logo from "../../src/images/logo/panda-market-pandalogo.svg";
+import Logo from "../images/logo/panda-market-pandalogo.svg";
 import "../../src/style/Header.css";
 import { useEffect, useRef } from "react";
-import maskIcon from "../../src/images/home/maskicon.png"
+import maskIcon from "../images/home/maskicon.png"
 
 function Header() {
     const location = useLocation();
     const marketAction = /^(\/items(\/\d+)?|\/additem)$/.test(location.pathname);
-    const mask = useRef();
-    const loginButton = useRef();
+    const mask = useRef<HTMLImageElement | null>(null);
+    const loginButton = useRef<HTMLButtonElement | null>(null);
 
-    useEffect(()=> {
-        if(location.pathname === `/additem`) {
+    useEffect(() => {
+        if (location.pathname === `/additem`) {
+          if (mask.current) {
             mask.current.style.setProperty("display", "block");
+          }
+          if (loginButton.current) {
             loginButton.current.style.setProperty("display", "none");
-        }
-        else {
+          }
+        } else {
+          if (mask.current) {
             mask.current.style.setProperty("display", "none");
+          }
+          if (loginButton.current) {
             loginButton.current.style.setProperty("display", "block");
+          }
         }
-    }, [location.pathname]);
+      }, [location.pathname]);
 
     return (
         <header>
