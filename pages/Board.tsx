@@ -1,19 +1,73 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "@/styles/Board.module.css";
 import BestPost from "@/components/BestPost";
 import SearchForm from "@/components/SearchForm";
 import SelectBtn from "@/components/SelectBtn";
 import GeneralPost from "@/components/GeneralPost";
+import { getArticles } from "@/lib/api";
+import { Articles } from "@/lib/type";
+import useDevice from "@/lib/useDevice";
+
+const initialArticleState = () => ({
+  content: "",
+  createdAt: "",
+  id: 0,
+  image: "",
+  likeCount: 0,
+  title: "",
+  updatedAt: "",
+  writer: {
+    id: 0,
+    nickname: "",
+  },
+});
 
 export default function Board() {
+  const router = useRouter();
+  const keyword =
+    typeof router.query.keyword === "string" ? router.query.keyword : undefined;
+  const { isDesktop, isTablet, isMobile } = useDevice();
+  const [order, setOrder] = useState<string>("recent");
+  const [bestPageSize, setBestPageSize] = useState<number>(3);
+  const [BestArticles, setBestArticles] = useState<Articles[]>([
+    initialArticleState(),
+  ]);
+  const [GeneralArticles, setGeneralArticles] = useState<Articles[]>([
+    initialArticleState(),
+  ]);
+
+  useEffect(() => {
+    if (isDesktop) {
+      setBestPageSize(3);
+    } else if (isTablet) {
+      setBestPageSize(2);
+    } else if (isMobile) {
+      setBestPageSize(1);
+    }
+  }, [isDesktop, isTablet, isMobile]);
+
+  useEffect(() => {
+    const getArticlesApi = async () => {
+      const bestArticles = await getArticles(1, bestPageSize, "recent");
+      const generalArticles = await getArticles(1, 10, order, keyword);
+
+      setBestArticles(bestArticles.list);
+      setGeneralArticles(generalArticles.list);
+    };
+
+    getArticlesApi();
+  }, [bestPageSize, order, keyword]);
+
   return (
     <div className={styles.container}>
       <section className={styles["best-section"]}>
         <h2>베스트 게시글</h2>
         <div className={styles["bestpost-container"]}>
-          <BestPost />
-          <BestPost />
-          <BestPost />
+          {BestArticles.map((article) => (
+            <BestPost article={article} key={article.id} />
+          ))}
         </div>
       </section>
       <section className={styles["general-section"]}>
@@ -25,13 +79,12 @@ export default function Board() {
         </div>
         <div className={styles["middle-wrap"]}>
           <SearchForm />
-          <SelectBtn />
+          <SelectBtn order={order} setOrder={setOrder} />
         </div>
         <div className={styles["bottom-wrap"]}>
-          <GeneralPost />
-          <GeneralPost />
-          <GeneralPost />
-          <GeneralPost />
+          {GeneralArticles.map((article) => (
+            <GeneralPost article={article} key={article.id} />
+          ))}
         </div>
       </section>
     </div>
