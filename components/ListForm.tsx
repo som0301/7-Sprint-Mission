@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getArticles } from "../lib/api";
 import userBtn from "../public/userBtn.svg";
-import {ArticleList} from "./type";
+import { Article } from "./type";
 
 interface Props {
   pageSize: number;
@@ -13,12 +13,12 @@ interface Props {
 }
 
 export default function ListForm({ pageSize, orderBy, keyword }: Props) {
-  const [isList, setIsList] = useState<ArticleList>({ list: [] });
+  const [isList, setIsList] = useState<Article[]>([]);
 
   async function getListArticle({ pageSize, orderBy, keyword }: Props) {
     try {
       const reponse = await getArticles({ pageSize, orderBy, keyword });
-      setIsList(reponse);
+      setIsList(reponse.list);
     } catch (error) {
       console.log(error);
     }
@@ -30,10 +30,10 @@ export default function ListForm({ pageSize, orderBy, keyword }: Props) {
 
   return (
     <>
-      {isList.list.length > 0 ? (
-        isList.list.map((article, index) => (
+      {isList.length > 0 ? (
+        isList.map((article) => (
           <>
-            <form key={index} className={styles["List-form"]}>
+            <form key={article.id} className={styles["List-form"]}>
               <div className={styles["List-wrapper-title"]}>
                 <span className={styles["List-title"]}>{article.title}</span>
                 {article.image && (

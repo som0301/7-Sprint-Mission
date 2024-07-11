@@ -4,7 +4,7 @@ import medalIcon from "../public/medal_icon.svg";
 import heart from "../public/heart.svg";
 import { useEffect, useState } from "react";
 import { getArticles } from "../lib/api";
-import {ArticleList} from "./type";
+import { Article } from "./type";
 
 interface getBestArticleParams {
   pageSize: number;
@@ -17,13 +17,13 @@ const MOBILE_List = 1;
 
 export default function BestListForm() {
   const [orderBy, setOrderBy] = useState<"like" | "recent">("like");
-  const [isLike, setIsLike] = useState<ArticleList>({ list: [] });
+  const [isLike, setIsLike] = useState<Article[]>([]);
   const [pageSize, setPageSize] = useState<number>(PC_List);
 
   async function getBestArticle({ pageSize, orderBy }: getBestArticleParams) {
     try {
       const response = await getArticles({ pageSize, orderBy });
-      setIsLike(response);
+      setIsLike(response.list);
     } catch (error) {
       console.log(error);
     }
@@ -53,11 +53,12 @@ export default function BestListForm() {
     window.addEventListener("resize", changePageSize);
     return () => window.removeEventListener("resize", changePageSize);
   }, []);
-  
+  console.log(isLike);
+
   return (
     <>
-      {isLike.list.length > 0 ? (
-        isLike.list.map((article) => (
+      {isLike.length > 0 ? (
+        isLike.map((article) => (
           <form key={article.id} className={styles["BestList-form"]}>
             <div className={styles["BestList-badge"]}>
               <div className={styles["BestList-wrapper-badge"]}>

@@ -12,7 +12,3 @@ export interface Article {
   title: string;
   writer: Writer;
 }
-
-export interface ArticleList {
-  list: Article[];
-}
