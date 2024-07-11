@@ -16,7 +16,7 @@
   margin-top: 16px;
 }
 
-.description-wrap .description {
+.description-wrap .title {
   overflow: hidden;
   font-size: 20px;
   font-weight: 600;
@@ -96,10 +96,6 @@
   .description-wrap {
     width: 336px;
     height: 72px;
-  }
-
-  .description-wrap .description {
-    width: 256px;
   }
 }
 

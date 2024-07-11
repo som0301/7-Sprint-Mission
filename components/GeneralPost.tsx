@@ -1,34 +1,37 @@
 import Image from "next/image";
 import styles from "@/components/GeneralPost.module.css";
 import heart_ic from "@/public/ic_heart.svg";
-import logo from "@/public/logo.svg"; // 삭제
+import profile_ic from "@/public/ic_profile.svg";
+import { PostProps } from "@/lib/type";
 
-export default function GeneralPost() {
+export default function GeneralPost({ article, ...rest }: PostProps) {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} {...rest}>
       <div className={styles["top-wrap"]}>
-        <div className={styles.description}>
-          안녕하시오들 나는 이세상 최고의 원펀치쓰리강냉이라네
-        </div>
-        <Image
-          src={logo}
-          alt="게시글이미지"
-          width="72"
-          height="72"
-          className={styles["post-img"]}
-        />
+        <div className={styles.title}>{article.title}</div>
+        {article.image && (
+          <Image
+            src={article.image}
+            alt="게시글이미지"
+            width="72"
+            height="72"
+            className={styles["post-img"]}
+          />
+        )}
       </div>
       <div className={styles["bottom-wrap"]}>
         <div className={styles["profile-wrap"]}>
           <Image
-            src={logo}
+            src={profile_ic}
             alt="프로필이미지"
             width="24"
             height="24"
             className={styles["profile-img"]}
           />
-          <div className={styles.nickname}>든든한찬찬</div>
-          <div className={styles.date}>2020. 01. 02</div>
+          <div className={styles.nickname}>{article.writer.nickname}</div>
+          <div className={styles.date}>
+            {article.updatedAt.replace(/-/g, ".").split("T")[0]}
+          </div>
         </div>
         <div className={styles["favorite-wrap"]}>
           <Image
@@ -38,7 +41,7 @@ export default function GeneralPost() {
             height="24"
             className={styles["favorite-img"]}
           />
-          <div className={styles["favorite-count"]}>9999</div>
+          <div className={styles["favorite-count"]}>{article.likeCount}</div>
         </div>
       </div>
     </div>
