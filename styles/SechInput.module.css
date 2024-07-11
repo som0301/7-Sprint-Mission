@@ -1,0 +1,51 @@
+
+.SeachInputLayer {
+    position: relative;
+}
+
+.SeachInputLayer > img {
+    width: 24px;
+    height: 24px;
+    top: 24%;
+    left : 16px;
+    position: absolute;
+}
+
+.SeachInputLayer > input {
+    width: 325px;
+    height: 42px;
+    border-radius: 12px;
+    padding: 9px 16px 9px 44px;
+    background-color: var(--cool-Gray100);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    box-sizing: border-box;
+}
+
+.SearchInputLayer > input::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--cool-Gray400);
+}
+
+
+/* 테블릿버전 */
+@media (768px < width < 1280px) {
+
+    .SeachInputLayer > input {
+        width: 242px;
+    }
+}
+
+/* 모바일버전 */
+@media (400px < width < 768px) {
+    .SeachInputLayer {
+        flex-grow: 1;
+    }
+
+    .SeachInputLayer > input {
+        width: 294px;
+    }
+}
