@@ -1,0 +1,110 @@
+.container {
+  width: 100%;
+}
+
+.best-section .bestpost-container {
+  display: grid;
+}
+
+.best-section > h2,
+.general-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.87px;
+  color: #111827;
+}
+
+.best-section > h2 {
+  margin-bottom: 24px;
+}
+
+.general-section {
+  margin-top: 40px;
+}
+
+.general-section > .top-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.general-section > .top-wrap > .link {
+  width: 88px;
+  height: 42px;
+}
+
+.general-section > .top-wrap > .link > button {
+  width: 88px;
+  height: 42px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  color: #fff;
+  background-color: #3692ff;
+  cursor: pointer;
+}
+
+.general-section > .middle-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.general-section > .bottom-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin: 70px auto 0;
+    padding: 24px 0 80px;
+  }
+
+  .best-section .bestpost-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    margin-top: 70px;
+    padding: 24px 24px 80px;
+  }
+
+  .best-section .bestpost-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .container {
+    margin-top: 70px;
+    padding: 16px 16px 80px;
+  }
+
+  .best-section > h2,
+  .general-section > h2 {
+    margin-bottom: 16px;
+  }
+
+  .best-section .bestpost-container {
+    grid-template-columns: 1fr;
+  }
+
+  .general-section > .top-wrap {
+    margin-bottom: 16px;
+  }
+
+  .general-section > .middle-wrap {
+    gap: 8px;
+  }
+}
