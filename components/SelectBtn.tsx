@@ -3,8 +3,12 @@ import styles from "@/components/SelectBtn.module.css";
 import Image from "next/image";
 import sort_ic from "@/public/ic_sort.svg";
 
-export default function SelectBtn() {
-  const [order, setOrder] = useState<string>("recent");
+interface Props {
+  order: string;
+  setOrder: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function SelectBtn({ order, setOrder }: Props) {
   const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
 
   const handleOrderSelectClick = () => {
@@ -14,7 +18,7 @@ export default function SelectBtn() {
   const handleDropdownClick = (e: MouseEvent<HTMLLIElement>) => {
     const target = e.currentTarget;
 
-    setOrder(target.id === "recent" ? "recent" : "favorite");
+    setOrder(target.id === "recent" ? "recent" : "like");
   };
 
   return (
@@ -51,7 +55,7 @@ export default function SelectBtn() {
           </li>
           <li
             className={styles["order-option"]}
-            id="favorite"
+            id="like"
             onClick={handleDropdownClick}
           >
             좋아요순
