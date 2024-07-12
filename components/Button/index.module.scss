@@ -1,0 +1,12 @@
+@use 'sass:color';
+@use '@/styles/mixins' as m;
+
+.commonButton {
+  @include m.flexbox;
+  white-space: nowrap;
+  transition: 0.2s;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}

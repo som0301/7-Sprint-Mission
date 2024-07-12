@@ -1,0 +1,62 @@
+@use '@/styles/mixins' as m;
+
+.topNavigationWrapper {
+  font-family: 'Pretendard';
+  position: relative;
+  z-index: 10;
+}
+
+.topNavigation {
+  background-color: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 200px;
+  border-bottom: 1px solid var(--color-gray200);
+
+  .linkSection {
+    @include m.flexbox;
+    gap: 30px;
+  }
+
+  .linkList {
+    display: flex;
+    gap: 30px;
+    font-size: 17px;
+  }
+
+  color: #000000;
+
+  .linkList a,
+  .linkList a:visited {
+    text-decoration-line: none;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000000;
+  }
+
+  .linkList a.pageFocus {
+    color: var(--color-blue);
+  }
+
+  .btnProfile {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  @include m.before(Tablet) {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  @include m.before(Mobile) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

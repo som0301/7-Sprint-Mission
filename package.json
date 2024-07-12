@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.5.6",
+    "clsx": "^2.1.1",
+    "next": "^14.2.5",
     "react": "^18",
     "react-dom": "^18",
     "sass": "^1.77.7"
