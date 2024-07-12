@@ -43,7 +43,7 @@ export default function AllArticleList() {
   const filteredPosts = posts.filter((post) => post.title.includes(searchTerm));
 
   return (
-    <div className='max-w-[1200px] mx-auto p-4'>
+    <div className='max-w-[1200px] mx-auto py-4'>
       <div className='flex items-center justify-between mb-6'>
         <h2 className='text-xl font-bold'>게시글</h2>
         <Link href='/addboard'>

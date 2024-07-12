@@ -1,10 +1,12 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Article } from "../../types/article";
 import Profile from "@/assets/images/icons/ic_profile.svg";
 import Heart from "@/assets/images/icons/ic_heart.svg";
 
 const AllArticleCard: React.FC<Article> = ({
+  id,
   title,
   content,
   createdAt,
@@ -13,9 +15,9 @@ const AllArticleCard: React.FC<Article> = ({
   likeCount,
 }) => {
   return (
-    <div
-      className='py-6 flex items-start relative'
-      style={{ paddingBottom: "72px" }}
+    <Link
+      href={`/boards/${id}`}
+      className='py-6 flex items-start relative pb-[72px]'
     >
       <div className='flex-grow'>
         <h2 className='text-xl font-semibold text-gray-800'>{title}</h2>
@@ -48,7 +50,7 @@ const AllArticleCard: React.FC<Article> = ({
           <span className='ml-1'>{likeCount}</span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

@@ -22,8 +22,8 @@ export default function BestArticleList() {
   };
 
   return (
-    <div className='max-w-[1200px] mx-auto p-6'>
-      <h2 className='text-xl font-bold mb-4'>베스트 게시글</h2>
+    <div className='max-w-[1200px] mx-auto py-6'>
+      <h2 className='text-xl font-bold mb-6'>베스트 게시글</h2>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
         {posts.map((article) => (
           <BestArticleCard key={article.id} {...article} />

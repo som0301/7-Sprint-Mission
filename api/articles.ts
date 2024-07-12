@@ -14,3 +14,12 @@ export const fetchArticles = async (
   const data = await response.json();
   return data.list;
 };
+
+export const fetchArticleById = async (id: number) => {
+  const response = await fetch(`${API_BASE_URL}/articles/${id}`);
+  if (!response.ok) {
+    throw new Error("error");
+  }
+  const data = await response.json();
+  return data;
+};

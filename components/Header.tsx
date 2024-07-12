@@ -2,14 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Logo from "/assets/images/logo/logo.svg";
 import LogoText from "/assets/images/logo/logo-text.svg";
 import Button from "./Button";
 
 const Header = () => {
-  const router = useRouter();
   const pathname = usePathname();
   const [isMobile, setIsMobile] = useState(false);
 
