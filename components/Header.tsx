@@ -39,7 +39,7 @@ const Header = () => {
               <Link
                 href="/Board"
                 className={styles.link}
-                style={router.pathname === "/Board" ? activeStyle : undefined}
+                style={router.pathname === "/board" ? activeStyle : undefined}
               >
                 자유게시판
               </Link>
