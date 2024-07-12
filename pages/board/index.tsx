@@ -1,10 +1,10 @@
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import styles from "../styles/boards.module.css";
-import BestListForm from "../components/BestListForm";
-import ListForm from "../components/ListForm";
-import Dropdown from "../components/Dropdown";
+import BestListForm from "../../components/BestListForm";
+import ListForm from "../../components/ListForm";
+import Dropdown from "../../components/Dropdown";
 import { useState, useEffect } from "react";
-import SearchForm from "../components/SearchForm";
+import SearchForm from "../../components/SearchForm";
 import { useRouter } from "next/router";
 
 const PCTABLET_List = 5;
