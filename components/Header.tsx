@@ -24,7 +24,13 @@ function Header() {
           if (loginButton.current) {
             loginButton.current.style.setProperty("display", "none");
           }
-        } else {
+        } 
+
+        else if (router.pathname === '/boards') {
+          
+        }
+        
+        else {
           if (mask.current) {
             mask.current.style.setProperty("display", "none");
           }
@@ -46,7 +52,9 @@ function Header() {
                   height={MobileScreen ? 40 : 51}
                 />
                 </Link>
-                <button className={style.menuList}>자유게시판</button>
+                <Link href="/boards">
+                  <button className={style.menuList}>자유게시판</button>
+                </Link>
                 <Link href="/items" passHref>
                     <div className={marketAction ? style.activemenu : undefined}>
                         <button className={style.menuList}>중고마켓</button>
