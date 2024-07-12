@@ -7,7 +7,7 @@ interface Props {
   order: string;
   setOrder: React.Dispatch<React.SetStateAction<string>>;
 }
-
+// 컴포넌트의 범용성을 위해 props로 데이터를 전달받으면 전달한 데이터에 대한 셀렉트박스가 생성되게 하고 싶었으나 실패...
 export default function SelectBtn({ order, setOrder }: Props) {
   const [isDropdownVisible, setIsDropdownVisible] = useState<boolean>(false);
 
