@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useMemo } from "react";
-import FileInput from "../Component/FileInput";
-import "../style/addItemPage.css"
+import FileInput from "@/components/FileInput";
+import style from "@/styles/AddItemPage.module.css";
 
 interface AddItemState {
   imgFile: File | null;
@@ -56,19 +56,16 @@ function AddItemPage() {
   const submitButton = useRef<HTMLButtonElement>(null);
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  const test = () => {
-    console.log("등록성공");
-  };
+  const canSubmit = useMemo<boolean>(() => {
+    return !(
+      addItemValue.title !== "" &&
+      addItemValue.description !== "" &&
+      addItemValue.price !== "" &&
+      addItemValue.tag.length > 0
+    );
+  }, [addItemValue]);
 
   useEffect(() => {
-    const canSubmit = useMemo<boolean>(() => {
-      return !(
-        addItemValue.title !== "" &&
-        addItemValue.description !== "" &&
-        addItemValue.price !== "" &&
-        addItemValue.tag.length > 0
-      );
-    }, [addItemValue]);
     if (submitButton.current) {
       if (canSubmit) {
         submitButton.current.style.setProperty("background-color", "#3692FF");
@@ -80,15 +77,15 @@ function AddItemPage() {
   }, [addItemValue]);
 
   return (
-    <div className="addItemSize">
-      <div className="addItemLayer">
-        <div className="itemSubmitButton">
+    <div className={style.addItemSize}>
+      <div className={style.addItemLayer}>
+        <div className={style.itemSubmitButton}>
           <p>상품등록하기</p>
-          <button disabled={buttonDisabled} onClick={test} ref={submitButton}>
+          <button disabled={buttonDisabled} ref={submitButton}>
             등록
           </button>
         </div>
-        <div className="itemData">
+        <div className={style.itemData}>
           <p>상품이미지</p>
           <FileInput
             name="imgFile"
@@ -96,47 +93,47 @@ function AddItemPage() {
             onChange={handleChange}
           />
         </div>
-        <div className="itemData">
+        <div className={style.itemData}>
           <p>상품명</p>
           <input
             name="title"
             placeholder="상품명을 입력해주세요"
             value={addItemValue.title}
-            className="itemTitle"
+            className={style.itemTitle}
             onChange={handleInputChange}
           />
         </div>
-        <div className="itemData">
+        <div className={style.itemData}>
           <p>상품소개</p>
           <input
             name="description"
             placeholder="상품 소개를 입력해주세요"
             value={addItemValue.description}
-            className="itemDescription"
+            className={style.temDescription}
             onChange={handleInputChange}
           ></input>
         </div>
-        <div className="itemData">
+        <div className={style.itemData}>
           <p>판매가격</p>
           <input
             name="price"
             placeholder="판매 가격을 입력해주세요"
             value={addItemValue.price}
-            className="itemPrice"
+            className={style.itemPrice}
             onChange={handleInputChange}
           ></input>
         </div>
-        <div className="itemData">
+        <div className={style.itemData}>
           <p>태그</p>
           <input
             name="tag"
             placeholder="태그를 입력해주세요"
-            className="itemTag"
+            className={style.itemTag}
             onKeyDown={(e) => enterEvent(e)}
           ></input>
-          <div className="tagList">
+          <div className={style.tagList}>
             {addItemValue.tag.map((tag, index) => (
-              <div className="tag" key={index}>
+              <div className={style.tag} key={index}>
                 <p>{tag}</p>
                 <button onClick={() => deleteTag(tag)}>X</button>
               </div>

@@ -22,7 +22,7 @@ function getWidth() {
 }
 
 interface BestItemProps {
-  images: string;
+  images: string[];
   id: number;
   name: string;
   price: number;
@@ -37,7 +37,7 @@ function BestItem({ item }: { item: BestItemProps }) {
   return (
     <div className={style.BestItem}>
       <Link href={`/items/${item.id}`}>
-        <Image src={item.images} alt={item.name} className={style.img} />
+        <Image src={item.images[0]} alt={item.name} className={style.img} width={221} height={221} />
       </Link>
       <div className={style.ItemHistory}>
         <p>{item.name}</p>

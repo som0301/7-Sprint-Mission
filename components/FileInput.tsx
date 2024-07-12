@@ -120,7 +120,6 @@ function FileInput({name, value, onChange}: FileInputProps) {
                 <Input type="file" disabled={fileOnOff} onChange={handleChange} ref={inputRef} />
             </InputContainer>
             <PreviewContainer>
-                
                 <Img src={preview} alt=" "/>
                 {value && <PreviewDeleteButton onClick={handleDeleteClick}>X</PreviewDeleteButton>}
             </PreviewContainer>

@@ -1,6 +1,8 @@
 import LeftArrow from "../public/images/home/arrow_left.svg";
 import RightArrow from "../public/images/home/arrow_right.svg";
 import style from "@/styles/Pageination.module.css";
+import Image from "next/image";
+
 
 interface PageinationProps {
     pageSize : number;
@@ -32,7 +34,7 @@ const Pageination = ({pageSize, activePage, onPageChange} : PageinationProps) =>
                 disabled={activePage===1}
                 onClick={()=>onPageChange(activePage-1)}
             >
-                <LeftArrow />
+                <Image src={LeftArrow} alt="왼쪽시프트"/>
             </button>
             {pages.map((page) => (
                 <button
@@ -48,7 +50,7 @@ const Pageination = ({pageSize, activePage, onPageChange} : PageinationProps) =>
                 disabled={activePage===pageSize} 
                 onClick={()=>onPageChange(activePage+1)}
             >
-                <RightArrow/>
+                <Image src={RightArrow} alt="오른쪽시프트"/>
             </button>
         </div>
     );

@@ -25,7 +25,7 @@ function getWidth() {
 }
 
 interface AllItemProps {
-  images: string;
+  images: string[];
   id: number;
   name: string;
   price: number;
@@ -38,12 +38,11 @@ interface AllItemsResponse {
 }
 
 function AllItem({ item }: { item: AllItemProps }) {
+
   return (
     <div className={style.AllItem}>
       <Link href={`/items/${item.id}`}>
-        <div className={style.img}>
-          <Image src={item.images} alt={item.name} />
-        </div>
+        <Image src={item.images[0]} alt={item.name} className={style.img} width={221} height={221} />
       </Link>
       <div className={style.ItemHistory}>
         <p>{item.name}</p>

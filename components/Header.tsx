@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from 'next/image';
-import PCLogo from "../public/images/logo/panda-market-pandalogo.svg";
-import MobileLogo from "../public/images/logo/panda-market-logo.svg";
+import PCLogo from "@/public/images/logo/panda-market-pandalogo.svg";
+import MobileLogo from "@/public/images/logo/panda-market-logo.svg";
 import style from "../styles/Header.module.css";
 import { useEffect, useRef } from "react";
 import maskIcon from "../public/images/home/maskicon.png"
@@ -10,11 +10,12 @@ import useMediaQuery from "@/utils/useMediaQuery";
 
 function Header() {
     const router = useRouter();
-    const marketAction = /^(\/items(\/\d+)?|\/additem)$/.test(router.pathname);
+    const marketAction = /^\/items(\/\d+)?|\/additem$/.test(router.pathname);
     const mask = useRef<HTMLImageElement | null>(null);
     const loginButton = useRef<HTMLButtonElement | null>(null);
     const MobileScreen = useMediaQuery(`(min-width: 400px) and (max-width: 768px)`);
 
+    console.log(marketAction);
     useEffect(() => {
         if (router.pathname === `/additem`) {
           if (mask.current) {
@@ -46,8 +47,10 @@ function Header() {
                 />
                 </Link>
                 <button className={style.menuList}>자유게시판</button>
-                <Link href="/items" className={ marketAction ? "activemenu" : undefined } passHref>
-                    <button className={style.menuList}>중고마켓</button>
+                <Link href="/items" passHref>
+                    <div className={marketAction ? style.activemenu : undefined}>
+                        <button className={style.menuList}>중고마켓</button>
+                    </div>
                 </Link>
             </nav>
             <button className={style.loginButton} ref={loginButton}>로그인</button>

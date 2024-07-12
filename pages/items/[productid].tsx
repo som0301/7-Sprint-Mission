@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import heartIcon from "../../src/images/logo/favoriteIcon.svg";
-import { CallItemDetail } from "../api/CallAPI";
-import { CallItemComment } from "../api/CallAPI";
+import heartIcon from "@/public/images/logo/favoriteIcon.svg";
+import { CallItemDetail } from "@/pages/api/CallAPI";
+import { CallItemComment } from "@/pages/api/CallAPI";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import BackIcon from "../../src/images/home/ic_back.svg";
-import More from "../../src/images/home/ic_kebab.svg";
-import UserIcon from "../../src/images/home/maskicon.png"
-import NotComment from "../../src/images/home/not_comment.svg";
+import BackIcon from "@/public/images/home/ic_back.svg";
+import More from "@/public/images/home/ic_kebab.svg";
+import UserIcon from "@/public/images/home/maskicon.png"
+import NotComment from "@/public/images/home/not_comment.svg";
+import Image from "next/image";
 
 const ItemDetailLayer = styled.div`
     width: 100%;
@@ -426,7 +427,6 @@ const NotCommentImg = styled.div `
     }
 `;
 
-
 function DateFomet(strdate:string) {
     const date = new Date(strdate);
 
@@ -461,8 +461,10 @@ function ItemDetail() {
     const [item, setItem] = useState<ItemProps>();
     const [itemComments, setItemComments] = useState<CommentProps[]>([]);
     const router = useRouter();
-    const itemId: number = Number((router.pathname.split("/").pop()));
-
+    // const itemId: number = Number((router.pathname.split("/").pop()));
+    const { productid } = router.query;
+    const itemId: number = Number(productid);
+    
     const ItemLoad = async () => {
         const response = await CallItemDetail(itemId);
         setItem(response);
@@ -471,7 +473,6 @@ function ItemDetail() {
     const ItemComments = async () => {
         const resopnse = await CallItemComment(itemId);
         setItemComments(resopnse.list);
-        console.log(itemComments);
     }
 
     useEffect(() => {
@@ -527,7 +528,7 @@ function ItemDetail() {
                         <Comment key={index}>
                             <p>{comment.content}</p>
                             <CommentData>
-                                <img src={UserIcon} alt="유저아이콘" />
+                                <Image src={UserIcon} alt="유저아이콘" width={32} height={32}/>
                                 <CommentDetail>
                                     <h1>{comment.writer.nickname}</h1>
                                     <h2>{DateFomet(comment.updatedAt)}</h2>

@@ -11,7 +11,7 @@ export async function CallItemDetail(id: number) {
     return body;
 }
 
-export async function CallItemComment(id: number, limit=5) {
+export async function CallItemComment(id: number, limit: number =5) {
     const response = await fetch(`https://panda-market-api.vercel.app/products/${id}/comments?limit=${limit}`);
     const body = await response.json();
     return body;

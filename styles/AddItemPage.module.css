@@ -1,6 +1,5 @@
 
 .addItemSize {
-    /* margin: 0, auto; */
     display: flex;
     align-items: center;
 }
@@ -97,6 +96,10 @@
 /* 테블릿버전 */
 @media (768px < width < 1280px) {
 
+    .addItemSize {
+        margin: 17px 24px;
+    }
+
     .addItemLayer {
         max-width: 696px;
     }
@@ -104,9 +107,26 @@
     .itemSubmitButton {
         max-width: 696px;
     }
+
+    .itemData {
+        width: 100%;
+        max-width: 1200px;
+    }
+    .itemData > input {
+        width: 100%;
+    }
 }
 
 /* 모바일버전 */
 @media (400px < width < 768px) {
-
+    .addItemSize {
+        margin: auto 16px;
+    }
+    .itemData {
+        width: 100%;
+        max-width: 1200px;
+    }
+    .itemData > input {
+        width: 100%;
+    }
 }
