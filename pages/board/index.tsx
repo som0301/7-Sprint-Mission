@@ -1,11 +1,12 @@
 import Header from "../../components/Header";
-import styles from "../styles/boards.module.css";
+import styles from "../../styles/board.module.css";
 import BestListForm from "../../components/BestListForm";
 import ListForm from "../../components/ListForm";
 import Dropdown from "../../components/Dropdown";
 import { useState, useEffect } from "react";
 import SearchForm from "../../components/SearchForm";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const PCTABLET_List = 5;
 const MOBILE_List = 3;
@@ -47,9 +48,11 @@ export default function Boards() {
         <section className={styles["boards-list"]}>
           <div className={styles["list-wrapper-title"]}>
             <h2 className={styles["boards-list-h2"]}>게시글</h2>
+            <Link href="/addboard">
             <button type="button" className={styles.boardsBtn}>
               글쓰기
             </button>
+            </Link>
           </div>
 
           <div className={styles["list-wrapper-input"]}>

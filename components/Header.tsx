@@ -23,7 +23,7 @@ export default function Header() {
             <h1 className={styles["header-logo-mobile"]}>판다마켓 </h1>
           </Link>
           <div className={styles["nav-wrapper"]}>
-            <Link href="/boards">
+            <Link href="/board">
               <h2 className={`${styles["nav-wrapper-boards"]} ${router.pathname==='/boards'? styles.active : ''}`}>자유게시판</h2>
             </Link>
             <Link href="/">

@@ -105,6 +105,7 @@ export default function Addboard() {
                   alt="이전 사진"
                   width="282"
                   height="282"
+                  className={styles.previewImage}
                 />
               )}
             </div>
