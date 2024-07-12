@@ -62,6 +62,5 @@
     .nav > a > img {
         width: 81px;
         height: 40px;
-        content : url("../public/images/logo/panda-market-logo.svg");
     }
 }

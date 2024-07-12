@@ -1,16 +1,19 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from 'next/image';
-import Logo from "../public/images/logo/panda-market-pandalogo.svg";
+import PCLogo from "../public/images/logo/panda-market-pandalogo.svg";
+import MobileLogo from "../public/images/logo/panda-market-logo.svg";
 import style from "../styles/Header.module.css";
 import { useEffect, useRef } from "react";
 import maskIcon from "../public/images/home/maskicon.png"
+import useMediaQuery from "@/utils/useMediaQuery";
 
 function Header() {
     const router = useRouter();
     const marketAction = /^(\/items(\/\d+)?|\/additem)$/.test(router.pathname);
     const mask = useRef<HTMLImageElement | null>(null);
     const loginButton = useRef<HTMLButtonElement | null>(null);
+    const MobileScreen = useMediaQuery(`(min-width: 400px) and (max-width: 768px)`);
 
     useEffect(() => {
         if (router.pathname === `/additem`) {
@@ -34,7 +37,13 @@ function Header() {
         <header className={style.header}>
             <nav className={style.nav}>
                 <Link href="/" passHref>
-                  <Image src={Logo} className={style.headerLogo} alt="로고" width={153} height={51} />
+                <Image
+                  src={MobileScreen ? MobileLogo : PCLogo}
+                  className={style.headerLogo}
+                  alt="로고"
+                  width={MobileScreen ? 81 : 153}
+                  height={MobileScreen ? 40 : 51}
+                />
                 </Link>
                 <button className={style.menuList}>자유게시판</button>
                 <Link href="/items" className={ marketAction ? "activemenu" : undefined } passHref>
