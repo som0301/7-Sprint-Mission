@@ -19,8 +19,12 @@ export async function CallItemComment(id: number, limit: number =5) {
     return body;
 }
 
-export async function CallArticles(keyword: string, orderBy:"recent" | "like") {
-    const response = await fetch(`${apiurl}/articles?page=1&pageSize=20&orderBy=${orderBy}&keyword=${keyword}`);
+export async function CallArticles(keyword: string | undefined,  orderBy:string, size: number) {
+    let query = `${apiurl}/articles?page=1&pageSize=${size}&orderBy=${orderBy}`;
+    if(keyword) {
+        query = query+`&keyword=${keyword}`;
+    }
+    const response = await fetch(query);
     const body = await response.json();
     return body;
 }

@@ -63,7 +63,7 @@ function AllItemsSection() {
   const [poninter, setPoninter] = useState<number>(1);
   const [title, setTitle] = useState<string>("전체 상품");
   const [pageSize, setPageSize] = useState<number>(0);
-
+  const option = {"recent" : "최신순", "favorite" : "좋아요순"};
   const AllItemsLoad = async (ItemCount: number, Order: string) => {
     const response: AllItemsResponse = await CallItemSearch(poninter, ItemCount, Order);
     setAllItemsList(response.list);
@@ -109,7 +109,7 @@ function AllItemsSection() {
           <Link href="/additem">
             <button className={style.AddItemButton}>상품 등록하기</button>
           </Link>
-          <DropDownSort setOrder={setOrder}></DropDownSort>
+          <DropDownSort option={option} setOrder={setOrder}></DropDownSort>
         </div>
       </div>
       <div className={style.ItemList}>

@@ -15,7 +15,6 @@ function Header() {
     const loginButton = useRef<HTMLButtonElement | null>(null);
     const MobileScreen = useMediaQuery(`(min-width: 400px) and (max-width: 768px)`);
 
-    console.log(marketAction);
     useEffect(() => {
         if (router.pathname === `/additem`) {
           if (mask.current) {
