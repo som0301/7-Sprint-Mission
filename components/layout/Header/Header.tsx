@@ -2,14 +2,14 @@ import React from "react";
 import Link from "next/link";
 import userImage from "@/public/images/icons/ic_user.svg";
 import logoImg from "@/public/images/icons/panda-market-logo.svg";
-
+import styles from "./Header.module.scss";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import NavLink from "./NavLink";
+import NavLink from "../../NavLink";
 
 const Header: React.FC = () => {
   const router = useRouter();
-  const isLogin = true;
+  const isLogin = false;
   const isLoginOrSignupPage =
     router.pathname === "/login" || router.pathname === "/signup";
 
@@ -18,19 +18,19 @@ const Header: React.FC = () => {
   return (
     <>
       {!isLoginOrSignupPage && (
-        <header className="nav">
-          <div id="logo-menu">
+        <header className={styles.nav}>
+          <div className={styles["logo-menu"]}>
             <Link href="/">
               <img src={logoImg.src} alt="판다마켓 로고" />
             </Link>
-            <div className="menu-area">
-              <div className="menu">
-                <h3>
-                  <NavLink href="/freeboard">자유게시판</NavLink>
+            <div className={styles["menu-area"]}>
+              <div className={styles.menu}>
+                <h3 className={styles.title}>
+                  <NavLink href="/boards">자유게시판</NavLink>
                 </h3>
               </div>
-              <div className="menu">
-                <h3>
+              <div className={styles.menu}>
+                <h3 className={styles.title}>
                   <NavLink href="/items">중고마켓</NavLink>
                 </h3>
               </div>
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
           </div>
           {!isLogin && (
             <Link href="/login">
-              <button className="blue-button button">로그인</button>
+              <button className={styles["blue-button button"]}>로그인</button>
             </Link>
           )}
           {isLogin && <img src={userImage.src} alt="유저 로그인 프로필"></img>}

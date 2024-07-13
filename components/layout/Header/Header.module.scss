@@ -4,7 +4,7 @@
   z-index: 10;
 }
 
-#logo-menu {
+.logo-menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,7 +24,7 @@
   justify-content: center;
   align-items: center;
 
-  h3 {
+  .title {
     font-weight: 700;
     font-size: 18px;
     line-height: 21.48px;
@@ -63,7 +63,7 @@
     width: auto;
   }
 
-  h3 {
+  .title {
     font-size: 16px;
     line-height: 19.09px;
   }
