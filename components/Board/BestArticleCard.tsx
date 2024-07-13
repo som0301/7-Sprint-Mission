@@ -16,9 +16,9 @@ const BestArticleCard: React.FC<Article> = ({
   return (
     <Link
       href={`/boards/${id}`}
-      className='max-w-sm rounded-lg overflow-hidden bg-gray-50 flex flex-col justify-between'
+      className='max-w-sm rounded-lg overflow-hidden bg-gray-50 flex flex-col justify-between px-6 pb-4'
     >
-      <div className='px-6 pb-4 flex-grow'>
+      <div className=' flex-grow'>
         <div className='mb-4'>
           <Image src={BestBadge} alt='best badge' width={102} />
         </div>
@@ -40,7 +40,7 @@ const BestArticleCard: React.FC<Article> = ({
           )}
         </div>
       </div>
-      <div className='px-6 pb-4 mt-auto'>
+      <div className='mt-auto'>
         <div className='flex items-center justify-between'>
           <div className='flex font-normal text-sm'>
             <div className='text-gray-600 mr-2'>{writer.nickname}</div>

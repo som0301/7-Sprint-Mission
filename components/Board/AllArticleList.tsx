@@ -50,7 +50,7 @@ export default function AllArticleList() {
           <Button text='글쓰기' color='default' size='small' width='88px' />
         </Link>
       </div>
-      <div className='mb-6 flex items-center justify-between'>
+      <div className='flex items-center justify-between'>
         <input
           type='text'
           value={searchTerm}
