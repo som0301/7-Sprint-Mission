@@ -89,15 +89,22 @@ export function getElapsedTime(updatedAtString: string) {
 }
 
 // 2024.4.23 10:7 PM 형식으로 포맷
-export function getFormatTime(updatedAtString: string) {
+export function getFormatTime(updatedAtString: string, isHour: boolean = true) {
   const updatedAt = new Date(updatedAtString);
-  const formattedHour =
-    updatedAt.getHours() > 12
-      ? updatedAt.getHours() - 12
-      : updatedAt.getHours();
-  const amPm = updatedAt.getHours() >= 12 ? "PM" : "AM";
 
-  return `${updatedAt.getFullYear()}.${
+  let formattedDateTime = `${updatedAt.getFullYear()}. ${
     updatedAt.getMonth() + 1
-  }.${updatedAt.getDate()} ${formattedHour}:${updatedAt.getMinutes()} ${amPm}`;
+  }. ${updatedAt.getDate()}`;
+
+  if (isHour) {
+    const formattedHour =
+      updatedAt.getHours() > 12
+        ? updatedAt.getHours() - 12
+        : updatedAt.getHours();
+    const amPm = updatedAt.getHours() >= 12 ? "PM" : "AM";
+
+    formattedDateTime += ` ${formattedHour}:${updatedAt.getMinutes()} ${amPm}`;
+  }
+
+  return formattedDateTime.trim();
 }

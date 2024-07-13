@@ -1,4 +1,4 @@
-export interface Post {
+export interface Article {
   content: string;
   createdAt: string;
   id: number;
@@ -12,7 +12,7 @@ export interface Post {
   };
 }
 
-export interface PostApiData {
+export interface ArticleApiData {
   page?: number;
   pageSize?: number;
   orderBy?: "recent" | "like";

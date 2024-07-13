@@ -2,31 +2,41 @@ import { useEffect, useState } from "react";
 import styles from "../Freeboard.module.scss";
 import BestArticleItem from "./BestArticleItem";
 import { getArticle } from "@/lib/articleApi";
-import { Post, PostApiData } from "@/types/postTypes";
+import { Article, ArticleApiData } from "@/types/ArticleTypes";
+import Link from "next/link";
+
+const PAGESIZE = 3;
+const ORDERBY = "like";
 
 export default function BestArticleList() {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [article, setArticle] = useState<Article[]>([]);
 
-  const fetchData = async ({ orderBy, pageSize }: PostApiData) => {
+  const fetchData = async ({ orderBy, pageSize }: ArticleApiData) => {
     try {
-      const test = await getArticle({ orderBy, pageSize });
+      const result = await getArticle({ orderBy, pageSize });
 
-      setPosts(() => test.list);
+      setArticle(() => result.list);
     } catch (error) {
       console.log(error);
     }
   };
 
+  console.log(article);
+
   useEffect(() => {
-    fetchData({ orderBy: "like", pageSize: 3 });
+    fetchData({ orderBy: ORDERBY, pageSize: PAGESIZE });
   }, []);
 
   return (
-    <section className={styles["best-posts"]}>
+    <section className={styles["best-article"]}>
       <h1 className={styles.title}>베스트 게시글</h1>
-      {posts.map((post) => (
-        <BestArticleItem key={post.id} post={post} />
-      ))}
+      <div className={styles["card-container"]}>
+        {article.map((article) => (
+          <Link href="" key={article.id}>
+            <BestArticleItem article={article} />
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }

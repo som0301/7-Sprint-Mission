@@ -6,10 +6,11 @@ import styles from "./Header.module.scss";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import NavLink from "../../NavLink";
+import Button from "../Button";
 
 const Header: React.FC = () => {
   const router = useRouter();
-  const isLogin = false;
+  const isLogin = true;
   const isLoginOrSignupPage =
     router.pathname === "/login" || router.pathname === "/signup";
 
@@ -38,7 +39,7 @@ const Header: React.FC = () => {
           </div>
           {!isLogin && (
             <Link href="/login">
-              <button className={styles["blue-button button"]}>로그인</button>
+              <Button>로그인</Button>
             </Link>
           )}
           {isLogin && <img src={userImage.src} alt="유저 로그인 프로필"></img>}
