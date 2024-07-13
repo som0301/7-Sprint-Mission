@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Article } from "../../types/article";
 import { fetchArticles } from "@/api/articles";
 import searchIcon from "@/assets/images/icons/ic_search.svg";
@@ -18,22 +18,38 @@ export default function AllArticleList() {
   const [posts, setPosts] = useState<Article[]>([]);
   const [sortType, setSortType] = useState("recent");
   const [searchTerm, setSearchTerm] = useState("");
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+  const observer = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
     loadArticles();
-  }, [sortType]);
+  }, [sortType, page]);
 
   const loadArticles = async () => {
+    if (!hasMore) return;
+
+    setLoading(true);
     try {
-      const articles = await fetchArticles(1, 10, sortType);
-      setPosts(articles);
+      const newArticles = await fetchArticles(page, 10, sortType);
+      if (newArticles.length === 0) {
+        setHasMore(false);
+      } else {
+        setPosts((prevPosts) => [...prevPosts, ...newArticles]);
+      }
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
   const handleSortChange = (value: string) => {
     setSortType(value);
+    setPage(1);
+    setPosts([]);
+    setHasMore(true);
   };
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -41,6 +57,20 @@ export default function AllArticleList() {
   };
 
   const filteredPosts = posts.filter((post) => post.title.includes(searchTerm));
+
+  const lastPostElementCallback = useCallback(
+    (node: HTMLDivElement) => {
+      if (loading) return;
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          setPage((prevPage) => prevPage + 1);
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    [loading, hasMore],
+  );
 
   return (
     <div className='max-w-[1200px] mx-auto py-4'>
@@ -71,10 +101,20 @@ export default function AllArticleList() {
         />
       </div>
       <div>
-        {filteredPosts.map((article) => (
-          <AllArticleCard key={article.id} {...article} />
-        ))}
+        {filteredPosts.map((article, index) => {
+          if (index === filteredPosts.length - 1) {
+            return (
+              <div ref={lastPostElementCallback} key={article.id}>
+                <AllArticleCard {...article} />
+              </div>
+            );
+          } else {
+            return <AllArticleCard key={article.id} {...article} />;
+          }
+        })}
       </div>
+      {loading && <p>Loading...</p>}
+      {!hasMore && <p className='text-center py-4'>게시글의 마지막입니다</p>}
     </div>
   );
 }

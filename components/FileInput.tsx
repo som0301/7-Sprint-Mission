@@ -38,14 +38,10 @@ const FileInput = <T,>({ name, value, onChange }: FileInputProps<T>) => {
         htmlFor={name as string}
         className='w-[162px] h-[162px] lg:w-72 lg:h-72 flex flex-col items-center bg-gray-100 rounded-xl cursor-pointer relative'
       >
-        <div
-          className='absolute lg:top-[99px] lg:left-[117px] lg:right-[117px] lg:bottom-[135px] top-[39px] left-[57px] right-[57px]'
-        >
-          <Image src={Plus} alt="Plus icon" width={48} height={48} />
+        <div className='absolute lg:top-[99px] lg:left-[117px] lg:right-[117px] lg:bottom-[135px] top-[39px] left-[57px] right-[57px]'>
+          <Image src={Plus} alt='Plus icon' width={48} height={48} />
         </div>
-        <span
-          className='text-gray-400 text-base font-normal absolute lg:top-[159px] top-[99px]'
-        >
+        <span className='text-gray-400 text-base font-normal absolute lg:top-[159px] top-[99px]'>
           이미지 등록
         </span>
       </label>
