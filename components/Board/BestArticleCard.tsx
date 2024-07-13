@@ -16,7 +16,7 @@ const BestArticleCard: React.FC<Article> = ({
   return (
     <Link
       href={`/boards/${id}`}
-      className='max-w-sm rounded-lg overflow-hidden bg-gray-50 flex flex-col justify-between px-6 pb-4'
+      className='lg:h-[169px] h-[167px] rounded-lg overflow-hidden bg-gray-50 flex flex-col justify-between px-6 pb-4'
     >
       <div className=' flex-grow'>
         <div className='mb-4'>

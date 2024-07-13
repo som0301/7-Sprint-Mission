@@ -47,7 +47,7 @@ const AddBoard: React.FC = () => {
       </header>
       <form className='flex flex-col' onSubmit={handleSubmit}>
         <div className='mb-6'>
-          <h2 className='text-lg font-bold mb-3'>*제목</h2>
+          <h2 className='sm:text-lg text-sm font-bold mb-3'>*제목</h2>
           <input
             name='title'
             value={values.title}
@@ -59,7 +59,7 @@ const AddBoard: React.FC = () => {
           />
         </div>
         <div className='mb-6'>
-          <h2 className='text-lg font-bold mb-3'>*내용</h2>
+          <h2 className='sm:text-lg text-sm font-bold mb-3'>*내용</h2>
           <textarea
             name='body'
             value={values.body}
@@ -69,7 +69,7 @@ const AddBoard: React.FC = () => {
           />
         </div>
         <div className='mb-6'>
-          <h2 className='text-lg font-bold mb-3'>이미지</h2>
+          <h2 className='sm:text-lg text-sm font-bold mb-3'>이미지</h2>
           <FileInput
             name='image'
             value={values.image}

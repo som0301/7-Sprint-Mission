@@ -56,7 +56,7 @@ export default function AllArticleList() {
           value={searchTerm}
           onChange={handleSearchChange}
           placeholder='검색할 내용을 입력해주세요'
-          className='mr-4 py-[9px] pl-12 pr-5 rounded-xl bg-gray-100 w-full'
+          className='sm:mr-4 mr-2 py-[9px] pl-12 pr-5 rounded-xl bg-gray-100 w-full'
           style={{
             backgroundImage: `url(${searchIcon.src})`,
             backgroundSize: "24px 24px",
@@ -70,7 +70,7 @@ export default function AllArticleList() {
           onSelect={handleSortChange}
         />
       </div>
-      <div className='divide-y divide-gray-200'>
+      <div>
         {filteredPosts.map((article) => (
           <AllArticleCard key={article.id} {...article} />
         ))}

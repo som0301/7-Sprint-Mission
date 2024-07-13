@@ -33,28 +33,18 @@ const FileInput = <T,>({ name, value, onChange }: FileInputProps<T>) => {
   };
 
   return (
-    <div className='flex items-center mb-4'>
+    <div className='flex flex-col lg:flex-row items-start mb-4'>
       <label
         htmlFor={name as string}
-        className='w-72 h-72 flex flex-col items-center justify-center bg-gray-100 rounded-xl cursor-pointer relative'
+        className='w-[162px] h-[162px] lg:w-72 lg:h-72 flex flex-col items-center bg-gray-100 rounded-xl cursor-pointer relative'
       >
         <div
-          className='absolute'
-          style={{
-            top: "99px",
-            left: "117px",
-            right: "117px",
-            bottom: "135px",
-            backgroundImage: `url(${Plus.src})`,
-            backgroundSize: "48px 48px",
-            backgroundRepeat: "no-repeat",
-          }}
-        />
+          className='absolute lg:top-[99px] lg:left-[117px] lg:right-[117px] lg:bottom-[135px] top-[39px] left-[57px] right-[57px]'
+        >
+          <Image src={Plus} alt="Plus icon" width={48} height={48} />
+        </div>
         <span
-          className='text-gray-400 text-base font-normal absolute'
-          style={{
-            top: "159px",
-          }}
+          className='text-gray-400 text-base font-normal absolute lg:top-[159px] top-[99px]'
         >
           이미지 등록
         </span>
@@ -67,13 +57,13 @@ const FileInput = <T,>({ name, value, onChange }: FileInputProps<T>) => {
         className='hidden'
       />
       {preview && (
-        <div className='relative ml-4'>
+        <div className='relative mt-4 lg:mt-0 lg:ml-4'>
           <Image
-            className='w-72 h-72 border rounded-xl '
+            className='w-[162px] h-[162px] lg:w-72 lg:h-72 border rounded-xl object-cover'
             src={preview}
             alt='이미지 미리보기'
-            width={72}
-            height={72}
+            width={288}
+            height={288}
           />
           <button
             className='absolute top-1 right-1 w-5 h-5 rounded-full bg-gray-500 text-white flex items-center justify-center cursor-pointer'

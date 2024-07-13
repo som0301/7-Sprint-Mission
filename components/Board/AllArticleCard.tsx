@@ -8,7 +8,6 @@ import Heart from "@/assets/images/icons/ic_heart.svg";
 const AllArticleCard: React.FC<Article> = ({
   id,
   title,
-  content,
   createdAt,
   writer,
   image,
@@ -17,27 +16,28 @@ const AllArticleCard: React.FC<Article> = ({
   return (
     <Link
       href={`/boards/${id}`}
-      className='py-6 flex items-start relative pb-[72px]'
+      className='flex flex-col border-b border-gray-200 py-6'
     >
-      <div className='flex-grow'>
-        <h2 className='text-xl font-semibold text-gray-800'>{title}</h2>
-        <p className='text-gray-500'>{content}</p>
-      </div>
-      <div className='ml-4 flex-shrink-0'>
-        {image && (
-          <div className='w-18 h-18 bg-white flex items-center justify-center ml-2 p-3 border border-gray-200 rounded-md'>
-            <div className='relative w-12 h-12 p-3'>
-              <Image
-                src={image}
-                alt='article-image'
-                layout='fill'
-                objectFit='contain'
-              />
+      <div className='flex items-start w-full'>
+        <div className='flex-grow h-12'>
+          <h2 className='text-xl font-semibold text-gray-800'>{title}</h2>
+        </div>
+        <div className='ml-4 flex-shrink-0'>
+          {image && (
+            <div className='w-[72px] h-[72px] bg-white flex items-center justify-center ml-2 p-3 border border-gray-200 rounded-md'>
+              <div className='relative w-12 h-12 p-3'>
+                <Image
+                  src={image}
+                  alt='article-image'
+                  layout='fill'
+                  objectFit='contain'
+                />
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
-      <div className='absolute bottom-6 left-0 right-0 flex justify-between font-normal'>
+      <div className='flex justify-between items-center mt-4'>
         <div className='text-gray-400 text-sm flex items-center'>
           <Image src={Profile} alt='profile' width={24} />
           <span className='ml-2 text-gray-600'>{writer.nickname}</span>
