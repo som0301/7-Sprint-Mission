@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import favicon from "@/public/images/logo/favoriteIcon.svg";
+import favicon from "@/assets/images/logo/favoriteIcon.svg";
 import { CallItemSearch } from "@/pages/api/CallAPI";
 import style from "@/styles/AllItemsSection.module.css";
 import SeachInput from "./SeachInput";

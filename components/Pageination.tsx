@@ -1,5 +1,5 @@
-import LeftArrow from "../public/images/home/arrow_left.svg";
-import RightArrow from "../public/images/home/arrow_right.svg";
+import LeftArrow from "@/assets/images/home/arrow_left.svg";
+import RightArrow from "@/assets/images/home/arrow_right.svg";
 import style from "@/styles/Pageination.module.css";
 import Image from "next/image";
 

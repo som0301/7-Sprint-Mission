@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from 'next/image';
-import PCLogo from "@/public/images/logo/panda-market-pandalogo.svg";
-import MobileLogo from "@/public/images/logo/panda-market-logo.svg";
+import PCLogo from "@/assets/images/logo/panda-market-pandalogo.svg";
+import MobileLogo from "@/assets/images/logo/panda-market-logo.svg";
 import style from "../styles/Header.module.css";
 import { useEffect, useRef } from "react";
-import maskIcon from "../public/images/home/maskicon.png"
+import maskIcon from "@/assets/images/home/maskicon.png"
 import useMediaQuery from "@/utils/useMediaQuery";
 
 function Header() {

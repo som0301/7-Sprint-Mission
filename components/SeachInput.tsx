@@ -1,4 +1,4 @@
-import InputIcon from "@/public/images/home/inputicon.svg";
+import InputIcon from "@/assets/images/home/inputicon.svg";
 import style from "@/styles/SechInput.module.css";
 import Image from "next/image";
 
