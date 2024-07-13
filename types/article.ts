@@ -14,3 +14,9 @@ export interface Article {
   writer: Writer;
 }
 
+export interface Comment {
+  id: number;
+  writer: { nickname: string };
+  content: string;
+  createdAt: string;
+}

@@ -39,6 +39,12 @@
   background-color: #1251aa;
 }
 
+.icon {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .large {
     font-size: 16px;

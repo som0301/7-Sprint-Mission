@@ -29,3 +29,19 @@ export const fetchArticleById = async (id: number) => {
     throw new Error("error");
   }
 };
+
+export const fetchArticleComments = async (id: number) => {
+  try {
+    const response = await axios.get(
+      `${API_BASE_URL}/articles/${id}/comments`,
+      {
+        params: {
+          limit: 99,
+        },
+      },
+    );
+    return response.data.list;
+  } catch (error) {
+    throw new Error("error");
+  }
+};
