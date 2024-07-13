@@ -8,6 +8,7 @@ import { Article, Comment } from "@/types/article";
 import Profile from "@/assets/images/icons/ic_profile.svg";
 import Heart from "@/assets/images/icons/ic_heart.svg";
 import BackIcon from "@/assets/images/icons/ic_back.svg";
+import EmptyComments from "@/assets/images/ui/empty-reply.svg";
 import formatTimeDiff from "@/utils/formatTimeDiff";
 import Button from "@/components/Button";
 
@@ -105,7 +106,7 @@ export default function ArticleDetail() {
       <textarea
         value={newComment}
         onChange={handleCommentChange}
-        className={`w-full py-4 px-6 rounded-xl bg-gray-100 h-[104px] text-gray-400 text-base font-normal resize-none ${
+        className={`w-full py-4 px-6 rounded-xl bg-gray-100 h-[104px] text-base font-normal resize-none ${
           newComment ? "text-black" : "text-gray-400"
         }`}
         placeholder='댓글을 입력해주세요.'
@@ -121,33 +122,49 @@ export default function ArticleDetail() {
         />
       </div>
       <div>
-        {comments.map((comment) => (
-          <div key={comment.id} className='border-b border-gray-200 py-4'>
-            <div className='mb-6 text-gray-800 text-sm font-normal'>
-              {comment.content}
-            </div>
-            <div className='flex items-center mb-2'>
-              <div className='mr-2'>
-                <Image
-                  src={Profile}
-                  alt='profile'
-                  width={32}
-                  height={32}
-                  className='inline-block'
-                />
+        {comments.length > 0 ? (
+          comments.map((comment) => (
+            <div key={comment.id} className='border-b border-gray-200 py-4'>
+              <div className='mb-6 text-gray-800 text-sm font-normal'>
+                {comment.content}
               </div>
-              <div className='flex flex-col font-normal text-xs'>
-                <span className='mr-2 text-gray-600'>
-                  {comment.writer.nickname}
-                </span>
-                <span className='mr-2 text-gray-400'>
-                  {formatTimeDiff(comment.createdAt)}
-                </span>
+              <div className='flex items-center mb-2'>
+                <div className='mr-2'>
+                  <Image
+                    src={Profile}
+                    alt='profile'
+                    width={32}
+                    height={32}
+                    className='inline-block'
+                  />
+                </div>
+                <div className='flex flex-col font-normal text-xs'>
+                  <span className='mr-2 text-gray-600'>
+                    {comment.writer.nickname}
+                  </span>
+                  <span className='mr-2 text-gray-400'>
+                    {formatTimeDiff(comment.createdAt)}
+                  </span>
+                </div>
               </div>
             </div>
+          ))
+        ) : (
+          <div className='flex justify-center flex-col items-center  text-gray-400 font-normal text-base'>
+            <Image
+              src={EmptyComments}
+              alt='No comments'
+              width={150}
+              height={150}
+            />
+            <p className='text-base font-normal text-center mt-4'>
+              아직 댓글이 없어요,
+              <br />
+              지금 댓글을 달아보세요!
+            </p>
           </div>
-        ))}
-        <div className='flex justify-center mt-10'>
+        )}
+        <div className='flex justify-center my-10'>
           <Button
             text='목록으로 돌아가기'
             color='default'
