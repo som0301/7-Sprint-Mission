@@ -5,8 +5,6 @@ import Article from './Article';
 import { Article as ArticleType, OrderBy } from '@/types/article.d';
 import SearchBar from './SearchBar';
 import SelectBox from './SelectBox';
-// import items from './mock.json';
-// import itemsBest from './mock-best.json';
 import { getArticles } from '@/services/articles';
 import { useEffect, useState, KeyboardEvent } from 'react';
 import { SELECT_ORDER, SelectdValue, selectList } from '@/types/select-order.d';
@@ -22,9 +20,29 @@ const BEST_ARTICLE_SIZE = {
   MOBILE: 1,
 };
 
-const BoardPage = () => {
-  const [articles, setArticles] = useState<ArticleType[]>();
-  const [bestArticles, setBestArticles] = useState<ArticleType[]>();
+export async function getServerSideProps() {
+  const initialArticles =
+    (await getArticles(1, ARTICLE_SIZE, 'recent', null)).list ?? [];
+  const initialBestArticles =
+    (await getArticles(1, BEST_ARTICLE_SIZE.PC, 'like', null)).list ?? [];
+
+  return {
+    props: {
+      initialArticles,
+      initialBestArticles,
+    },
+  };
+}
+
+interface Props {
+  initialArticles: ArticleType[];
+  initialBestArticles: ArticleType[];
+}
+
+const BoardPage = ({ initialArticles, initialBestArticles }: Props) => {
+  const [articles, setArticles] = useState<ArticleType[]>(initialArticles);
+  const [bestArticles, setBestArticles] =
+    useState<ArticleType[]>(initialBestArticles);
   const [order, setOrder] = useState<OrderBy>('recent');
   const [keyword, setKeyword] = useState<string | null>(null);
   const { isDesktop, isTablet, isMobile } = useResponsive();

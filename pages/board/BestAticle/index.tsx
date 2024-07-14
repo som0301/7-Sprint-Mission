@@ -15,7 +15,7 @@ const BestArticle = ({ article }: Props) => {
       <div className={styles.topSection}>
         <Image
           src={ImageBadgeBest}
-          alt='사용자 프로필 아이콘'
+          alt='베스트 뱃지 아이콘'
           unoptimized
           className={styles.badgeImg}
         />
