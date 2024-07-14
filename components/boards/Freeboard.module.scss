@@ -152,3 +152,47 @@
     height: 24px;
   }
 }
+
+/* Tablet Styles */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .main {
+    width: 100%;
+  }
+
+  .card-container {
+    gap: 16px;
+
+    a {
+      width: 100%;
+    }
+  }
+
+  .card-title {
+    @include font-style(18px, 600, 21.48px, var(--gray800));
+  }
+
+  .best-card {
+    width: 100%;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 767px) {
+  .main {
+    width: 100%;
+  }
+
+  .card-container {
+    a {
+      width: 100%;
+    }
+  }
+
+  .card-title {
+    @include font-style(18px, 600, 21.48px, var(--gray800));
+  }
+
+  .best-card {
+    width: 100%;
+  }
+}
