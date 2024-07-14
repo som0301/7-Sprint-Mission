@@ -16,22 +16,17 @@ const Header = () => {
           <Link href='/'>
             <ResponsiveImage
               desktopImg={{
-                width: 154,
-                height: 51,
                 src: ImageLogoSmall,
               }}
               tabletImg={{
-                width: 154,
-                height: 51,
                 src: ImageLogoSmall,
               }}
               mobileImg={{
-                width: 109,
-                height: 51,
                 src: ImageLogoLetter,
               }}
               alt='판다마켓 로고'
               unoptimized={false}
+              priority={true}
             />
           </Link>
           <div className={styles.linkList}>

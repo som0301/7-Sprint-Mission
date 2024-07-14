@@ -2,13 +2,10 @@
 
 .article {
   font-family: 'Pretendard';
-  // background-color: var(--color-blue);
   height: 136px;
   border-bottom: 1px solid var(--color-gray200);
   @include m.flexbox(between, normal);
   flex-direction: column;
-
-  // gap: 10px;
   .top {
     @include m.flexbox(between, normal);
 

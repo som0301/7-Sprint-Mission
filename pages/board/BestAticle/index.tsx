@@ -21,38 +21,34 @@ const BestArticle = ({ article }: Props) => {
         />
       </div>
       <div className={styles.middleSection}>
-        <div className={styles.content}>
-          맥북 16인치 16기가 1테라 정도 사양이면 얼마에 팔아야하나요?
-        </div>
-        <div className={cx(article.image && styles.articleImgContainer)}>
-          {article.image && (
+        <div className={styles.content}>{article?.title}</div>
+        <div className={cx(article?.image && styles.articleImgContainer)}>
+          {article?.image && (
             <Image
-              src={article.image}
+              src={article?.image}
               alt='게시글에 올라온 이미지'
               width={72}
               height={72}
-              // fill
               unoptimized={true}
-              // style={{ objectFit: 'contain' }}
               className={styles.contentImg}
             />
           )}
         </div>
-
-        <div className={styles.contentImg}></div>
       </div>
       <div className={styles.bottomSection}>
         <div className={styles.leftGroup}>
-          <div className={styles.nickname}>총명한판다</div>
+          <div className={styles.nickname}>{article?.writer?.nickname}</div>
           <Image
             src={IconLikeHeart}
             alt='좋아요 하트 아이콘'
             unoptimized
             className={styles.likeHeart}
           />
-          <div className={styles.likeCount}>10</div>
+          <div className={styles.likeCount}>{article?.likeCount}</div>
         </div>
-        <div className={styles.createDate}>{getDateFormat('2020-07-16')}</div>
+        <div className={styles.createDate}>
+          {getDateFormat(article?.createdAt)}
+        </div>
       </div>
     </div>
   );

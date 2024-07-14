@@ -10,6 +10,7 @@ interface Props {
   className?: string;
   alt: string;
   unoptimized: boolean;
+  priority: boolean;
 }
 
 const ResponsiveImage = ({
@@ -19,6 +20,7 @@ const ResponsiveImage = ({
   className,
   alt,
   unoptimized,
+  priority,
 }: Props) => {
   return (
     <>
@@ -29,6 +31,7 @@ const ResponsiveImage = ({
         alt={alt}
         className={cx(styles.desktopImg, className)}
         unoptimized={unoptimized}
+        priority={priority}
       />
       <Image
         src={tabletImg.src}
@@ -37,6 +40,7 @@ const ResponsiveImage = ({
         alt={alt}
         className={cx(styles.tabletImg, className)}
         unoptimized={unoptimized}
+        priority={priority}
       />
       <Image
         src={mobileImg.src}
@@ -45,6 +49,7 @@ const ResponsiveImage = ({
         alt={alt}
         className={cx(styles.mobileImg, className)}
         unoptimized={unoptimized}
+        priority={priority}
       />
     </>
   );

@@ -5,7 +5,7 @@ interface Writer {
 
 export interface Article {
   id: number;
-  title: string;
+  title: string | null;
   content: string;
   image: string | null;
   likeCount: number;

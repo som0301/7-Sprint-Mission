@@ -1,5 +1,4 @@
 import axiosInstance from '@/libs/axiosInstance';
-import { Article as ArticleType } from '@/types/article.d';
 
 type OrderBy = 'recent' | 'like';
 

@@ -3,6 +3,7 @@ import { Article as ArticleType } from '@/types/article.d';
 import Image from 'next/image';
 import cx from 'clsx';
 import { IconUserProfile, IconLikeHeart } from '@/public';
+import getDateFormat from '@/utils/dateFormat';
 
 interface Props {
   article: ArticleType;
@@ -12,11 +13,11 @@ const Article = ({ article }: Props) => {
   return (
     <div className={styles.article}>
       <div className={styles.top}>
-        <div className={styles.title}>{article.title}</div>
-        <div className={cx(article.image && styles.articleImgContainer)}>
-          {article.image && (
+        <div className={styles.title}>{article?.title}</div>
+        <div className={cx(article?.image && styles.articleImgContainer)}>
+          {article?.image && (
             <Image
-              src={article.image}
+              src={article?.image}
               alt='게시글에 올라온 이미지'
               width={72}
               height={72}
@@ -34,9 +35,9 @@ const Article = ({ article }: Props) => {
             unoptimized
             className={styles.profileImg}
           />
-          <div className={styles.nickname}>{article.writer.nickname}</div>
+          <div className={styles.nickname}>{article?.writer?.nickname}</div>
           <div className={styles.createDate}>
-            {new Date(article.createdAt).toISOString().split('T')[0]}
+            {getDateFormat(article?.createdAt)}
           </div>
         </div>
 
@@ -47,7 +48,7 @@ const Article = ({ article }: Props) => {
             unoptimized
             className={styles.likeHeart}
           />
-          <div className={styles.likeCount}>{article.likeCount}</div>
+          <div className={styles.likeCount}>{article?.likeCount}</div>
         </div>
       </div>
     </div>

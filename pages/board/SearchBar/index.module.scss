@@ -1,6 +1,4 @@
 .searchInput {
-  // font-family: 'Pretendard';
-  // background-color: var(--color-blue);
   height: 42px;
   width: 100%;
 
@@ -12,6 +10,7 @@
   padding-left: 10px;
 
   input {
+    font-family: 'Pretendard';
     background-color: rgba(0, 0, 0, 0);
     border: none;
     outline: none;

@@ -2,17 +2,18 @@ import styles from './index.module.scss';
 import Image from 'next/image';
 import { IconArrowDown, IconSort } from '@/public';
 import { MouseEvent, useState } from 'react';
-// import { useState } from 'react';
 import Button from '@/components/Button';
-// import Button from './Button';
-import { SELECT_ORDER, SelectdValue, selectList } from '@/types/select-order.d';
+import {
+  SelectdValue,
+  selectList as defaultSelectList,
+} from '@/types/select-order.d';
 
 interface Props {
   handleSelect: (selectedValue: SelectdValue) => void;
-  selectList: typeof selectList;
+  selectList: typeof defaultSelectList;
 }
 
-function SelectBox({ handleSelect, selectList }: Props) {
+function SelectBox({ handleSelect, selectList = defaultSelectList }: Props) {
   const [isListOpen, setIsListOpen] = useState(false);
   const [selectedText, setSelectedText] = useState<SelectdValue>(selectList[0]);
 
@@ -54,7 +55,7 @@ function SelectBox({ handleSelect, selectList }: Props) {
       {isListOpen && (
         <div onClick={handleOpenList} role='presentation'>
           <ul className={styles.optionList}>
-            {selectList.map((item) => {
+            {selectList?.map((item) => {
               return (
                 <Button
                   key={item}
