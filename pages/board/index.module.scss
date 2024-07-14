@@ -2,6 +2,19 @@
 
 .boardPage {
   font-family: 'Pretendard';
+  width: 1200px;
+  margin: 0 auto;
+
+  @include m.before(Tablet) {
+    width: auto;
+    margin: 0 24px;
+  }
+
+  @include m.before(Mobile) {
+    width: auto;
+    margin: 0 16px;
+  }
+
   .header {
     .title {
       font-weight: bold;
@@ -23,14 +36,14 @@
     flex-direction: column;
     gap: 24px;
     .header {
-      @include m.flexbox(between, start);
+      @include m.flexbox(between, center);
       .btnWrite {
         width: 88px;
         height: 42px;
       }
     }
     .controlBar {
-      @include m.flexbox;
+      @include m.flexbox(between, center);
       gap: 16px;
     }
     .aticleContainer {
@@ -40,3 +53,10 @@
     }
   }
 }
+
+// @media (max-width: 1200px) {
+//   .boardPage {
+//     width: 100%;
+//     margin: 0 24px;
+//   }
+// }

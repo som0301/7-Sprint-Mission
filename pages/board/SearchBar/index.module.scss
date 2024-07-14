@@ -1,6 +1,21 @@
-.searchBar {
-  font-family: 'Pretendard';
-  background-color: var(--color-blue);
+.searchInput {
+  // font-family: 'Pretendard';
+  // background-color: var(--color-blue);
   height: 42px;
   width: 100%;
+
+  background-color: var(--color-gray100);
+  border-radius: 7px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+
+  input {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 100%;
+  }
 }

@@ -31,7 +31,7 @@ const Header = () => {
                 src: ImageLogoLetter,
               }}
               alt='판다마켓 로고'
-              unoptimized={true}
+              unoptimized={false}
             />
           </Link>
           <div className={styles.linkList}>

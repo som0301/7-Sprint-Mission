@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, MouseEvent } from 'react';
 import cx from 'clsx';
 import Link from 'next/link';
 
@@ -9,7 +9,7 @@ interface Props {
   className?: string;
   link?: string;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   type?: 'submit' | 'reset' | 'button';
   skin?: 'skyBlue' | 'emerald';
 }

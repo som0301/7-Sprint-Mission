@@ -1,6 +1,91 @@
+@use '@/styles/mixins' as m;
+
 .selectBox {
-  font-family: 'Pretendard';
-  background-color: var(--color-blue);
-  height: 42px;
+  position: relative;
   width: 130px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid var(--color-gray200);
+  background-size: 20px;
+  cursor: pointer;
+
+  .selectedText {
+    color: var(--color-gray800);
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-size: 15px;
+
+    @include m.before(Mobile) {
+      display: none;
+    }
+  }
+
+  .icMobile {
+    display: none;
+    @include m.before(Mobile) {
+      display: block;
+    }
+  }
+
+  .icDown {
+    @include m.before(Mobile) {
+      display: none;
+    }
+  }
+
+  .selectBtn {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 15px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    width: inherit;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding-left: 15px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .optionList {
+    position: absolute;
+    width: 120px;
+    top: 50px;
+    left: 0;
+    width: 120px;
+    border-radius: 10px;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray200);
+    list-style-type: none;
+    overflow: hidden;
+    @include m.before(Mobile) {
+      left: -70px;
+    }
+  }
+
+  .optionItem {
+    font-family: 'Pretendard';
+    font-weight: 500;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 35px;
+    border-bottom: 1px solid var(--color-gray200);
+    padding: 5px 15px 5px;
+    transition: 0.1s;
+  }
+
+  @include m.before(Mobile) {
+    width: 50px;
+  }
+
+  .button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
 }

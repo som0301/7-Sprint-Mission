@@ -19,7 +19,23 @@ const temArticle: ArticleType = {
   writer: { id: 7, nickname: '임시 닉네임' },
 };
 
+const SELECT_ORDER = {
+  RECENT: '최신순',
+  FAVORITE: '좋아요순',
+};
+
+const handleSelect = (selectedValue: string) => {
+  if (selectedValue === SELECT_ORDER.RECENT) {
+    // setOrder('recent');
+  } else if (selectedValue === SELECT_ORDER.FAVORITE) {
+    // setOrder('favorite');
+  }
+  // setPage(1);
+};
+
 const BoardPage = () => {
+  const selectList = ['최신순', '좋아요순'];
+
   return (
     <div className={styles.boardPage}>
       <div className={styles.bestArticles}>
@@ -43,11 +59,10 @@ const BoardPage = () => {
         </div>
         <div className={styles.controlBar}>
           <SearchBar />
-          <SelectBox />
+          <SelectBox selectList={selectList} handleSelect={handleSelect} />
         </div>
         <div className={styles.aticleContainer}>
-          {items.list?.map((article, i) => {
-            // if (i > 0) return;
+          {items.list?.map((article) => {
             return <Article key={article.id} article={article}></Article>;
           })}
         </div>

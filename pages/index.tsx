@@ -1,7 +1,7 @@
 const Home = () => {
   return (
     <>
-      <h1>Hello Next.js!</h1>
+      <h1>홈 페이지</h1>
     </>
   );
 };
