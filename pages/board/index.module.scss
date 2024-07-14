@@ -1,4 +1,42 @@
+@use '@/styles/mixins' as m;
+
 .boardPage {
   font-family: 'Pretendard';
-  // font-size: 40px;
+  .header {
+    .title {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .bestArticles {
+    margin-bottom: 40px;
+    .aticleContainer {
+      @include m.flexbox;
+      gap: 24px;
+    }
+  }
+
+  .normalArticles {
+    @include m.flexbox(center, normal);
+    flex-direction: column;
+    gap: 24px;
+    .header {
+      @include m.flexbox(between, start);
+      .btnWrite {
+        width: 88px;
+        height: 42px;
+      }
+    }
+    .controlBar {
+      @include m.flexbox;
+      gap: 16px;
+    }
+    .aticleContainer {
+      @include m.flexbox(center, normal);
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
 }

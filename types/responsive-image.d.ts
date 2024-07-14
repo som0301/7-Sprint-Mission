@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 
-export interface responsiveImage {
+export interface ResponsiveImage {
   src: string | StaticImageData;
   width?: number;
   height?: number;

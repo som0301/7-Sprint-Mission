@@ -1,12 +1,12 @@
 import cx from 'clsx';
 import styles from './index.module.scss';
 import Image from 'next/image';
-import { responsiveImage } from '@/types/responsive-image.d';
+import { ResponsiveImage as ResponsiveImageType } from '@/types/responsive-image.d';
 
 interface Props {
-  mobileImg: responsiveImage;
-  tabletImg: responsiveImage;
-  desktopImg: responsiveImage;
+  mobileImg: ResponsiveImageType;
+  tabletImg: ResponsiveImageType;
+  desktopImg: ResponsiveImageType;
   className?: string;
   alt: string;
   unoptimized: boolean;

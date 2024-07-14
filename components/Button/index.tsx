@@ -11,19 +11,24 @@ interface Props {
   disabled?: boolean;
   onClick?: () => void;
   type?: 'submit' | 'reset' | 'button';
+  skin?: 'skyBlue' | 'emerald';
 }
 
 const Button = ({
-  type,
-  link,
   children,
+  link,
   className,
   disabled,
   onClick,
+  type,
+  skin,
 }: Props) => {
   if (link) {
     return (
-      <Link href={link} className={cx(styles.commonButton, className)}>
+      <Link
+        href={link}
+        className={cx(styles.commonButton, className, styles[skin ?? ''])}
+      >
         {children}
       </Link>
     );
@@ -33,7 +38,7 @@ const Button = ({
     <button
       type={type}
       disabled={disabled}
-      className={cx(styles.commonButton, className)}
+      className={cx(styles.commonButton, className, styles[skin ?? ''])}
       onClick={onClick}
     >
       {children}
