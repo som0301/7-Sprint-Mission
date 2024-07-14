@@ -22,12 +22,14 @@ const Button = ({
   onClick,
   type,
   skin,
+  ...props
 }: Props) => {
   if (link) {
     return (
       <Link
         href={link}
         className={cx(styles.commonButton, className, styles[skin ?? ''])}
+        {...props}
       >
         {children}
       </Link>
@@ -40,6 +42,7 @@ const Button = ({
       disabled={disabled}
       className={cx(styles.commonButton, className, styles[skin ?? ''])}
       onClick={onClick}
+      {...props}
     >
       {children}
     </button>

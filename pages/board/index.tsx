@@ -2,39 +2,77 @@ import styles from './index.module.scss';
 import Button from '@/components/Button';
 import BestArticle from './BestAticle';
 import Article from './Article';
-import { Article as ArticleType } from '@/types/article.d';
+import { Article as ArticleType, OrderBy } from '@/types/article.d';
 import SearchBar from './SearchBar';
 import SelectBox from './SelectBox';
-import items from './mock.json';
-import itemsBest from './mock-best.json';
+// import items from './mock.json';
+// import itemsBest from './mock-best.json';
+import { getArticles } from '@/services/articles';
+import { useEffect, useState, KeyboardEvent } from 'react';
+import { SELECT_ORDER, SelectdValue, selectList } from '@/types/select-order.d';
+import { useResponsive } from '@/hooks/useResponsive';
 
-const temArticle: ArticleType = {
-  id: 1,
-  title: '임시 제목',
-  content: '임시 내용',
-  image: null,
-  likeCount: 1,
-  createdAt: '2024-07-14',
-  updatedAt: '2024-07-14',
-  writer: { id: 7, nickname: '임시 닉네임' },
-};
+type ArticleKind = 'normal' | 'best';
 
-const SELECT_ORDER = {
-  RECENT: '최신순',
-  FAVORITE: '좋아요순',
-};
+const ARTICLE_SIZE = 10;
 
-const handleSelect = (selectedValue: string) => {
-  if (selectedValue === SELECT_ORDER.RECENT) {
-    // setOrder('recent');
-  } else if (selectedValue === SELECT_ORDER.FAVORITE) {
-    // setOrder('favorite');
-  }
-  // setPage(1);
+const BEST_ARTICLE_SIZE = {
+  PC: 3,
+  TABLET: 2,
+  MOBILE: 1,
 };
 
 const BoardPage = () => {
-  const selectList = ['최신순', '좋아요순'];
+  const [articles, setArticles] = useState<ArticleType[]>();
+  const [bestArticles, setBestArticles] = useState<ArticleType[]>();
+  const [order, setOrder] = useState<OrderBy>('recent');
+  const [keyword, setKeyword] = useState('recent');
+  const { isDesktop, isTablet, isMobile } = useResponsive();
+
+  const handleLoadAtrilces = async (
+    page = 1,
+    pageSize = ARTICLE_SIZE,
+    order: OrderBy = 'recent',
+    target: ArticleKind = 'normal'
+  ) => {
+    const { list } = await getArticles(page, pageSize, order);
+
+    if (target === 'normal') {
+      setArticles(list);
+    } else if (target === 'best') {
+      setBestArticles(list);
+    }
+  };
+
+  const handleLoadResponsive = async () => {
+    if (isDesktop) {
+      handleLoadAtrilces(1, BEST_ARTICLE_SIZE.PC, 'like', 'best');
+    } else if (isTablet) {
+      handleLoadAtrilces(1, BEST_ARTICLE_SIZE.TABLET, 'like', 'best');
+    } else if (isMobile) {
+      handleLoadAtrilces(1, BEST_ARTICLE_SIZE.MOBILE, 'like', 'best');
+    }
+  };
+
+  const handleSelect = (selectedValue: SelectdValue) => {
+    if (selectedValue === SELECT_ORDER.RECENT) {
+      setOrder('recent');
+    } else if (selectedValue === SELECT_ORDER.FAVORITE) {
+      setOrder('like');
+    }
+  };
+
+  const handleSearch = (e: KeyboardEvent<HTMLInputElement>) => {};
+
+  // useEffect(() => {
+  //   handleLoadAtrilces();
+  //   handleLoadResponsive();
+  // }, []);
+
+  useEffect(() => {
+    handleLoadAtrilces(1, 10, order, 'normal');
+    handleLoadResponsive();
+  }, [order, isDesktop, isTablet, isMobile]);
 
   return (
     <div className={styles.boardPage}>
@@ -42,7 +80,7 @@ const BoardPage = () => {
         <div className={styles.header}>
           <div className={styles.title}>베스트 게시글</div>
           <div className={styles.aticleContainer}>
-            {itemsBest.list?.map((article) => {
+            {bestArticles?.map((article) => {
               return (
                 <BestArticle key={article.id} article={article}></BestArticle>
               );
@@ -58,11 +96,11 @@ const BoardPage = () => {
           </Button>
         </div>
         <div className={styles.controlBar}>
-          <SearchBar />
+          <SearchBar handleSearch={handleSearch} />
           <SelectBox selectList={selectList} handleSelect={handleSelect} />
         </div>
         <div className={styles.aticleContainer}>
-          {items.list?.map((article) => {
+          {articles?.map((article) => {
             return <Article key={article.id} article={article}></Article>;
           })}
         </div>

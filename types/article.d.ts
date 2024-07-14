@@ -14,4 +14,6 @@ export interface Article {
   writer: Writer;
 }
 
+export type OrderBy = 'recent' | 'like';
+
 export type ArticleTypes = ValueOf<typeof Article>;

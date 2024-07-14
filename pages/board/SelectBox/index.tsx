@@ -5,15 +5,16 @@ import { MouseEvent, useState } from 'react';
 // import { useState } from 'react';
 import Button from '@/components/Button';
 // import Button from './Button';
+import { SELECT_ORDER, SelectdValue, selectList } from '@/types/select-order.d';
 
 interface Props {
-  handleSelect: (selectedValue: string) => void;
-  selectList: string[];
+  handleSelect: (selectedValue: SelectdValue) => void;
+  selectList: typeof selectList;
 }
 
 function SelectBox({ handleSelect, selectList }: Props) {
   const [isListOpen, setIsListOpen] = useState(false);
-  const [selectedText, setSelectedText] = useState(selectList[0]);
+  const [selectedText, setSelectedText] = useState<SelectdValue>(selectList[0]);
 
   const handleOpenList = () => {
     if (isListOpen) {
@@ -25,7 +26,7 @@ function SelectBox({ handleSelect, selectList }: Props) {
 
   const handleSelectItem = (e: MouseEvent<HTMLButtonElement>) => {
     const target = e.target as HTMLButtonElement;
-    const textContent = target.textContent;
+    const textContent = target.textContent as SelectdValue;
 
     if (textContent !== null) {
       handleSelect(textContent);
@@ -51,7 +52,7 @@ function SelectBox({ handleSelect, selectList }: Props) {
         />
       </button>
       {isListOpen && (
-        <button onClick={handleOpenList}>
+        <div onClick={handleOpenList} role='presentation'>
           <ul className={styles.optionList}>
             {selectList.map((item) => {
               return (
@@ -65,7 +66,7 @@ function SelectBox({ handleSelect, selectList }: Props) {
               );
             })}
           </ul>
-        </button>
+        </div>
       )}
     </div>
   );
