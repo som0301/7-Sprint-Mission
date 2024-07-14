@@ -1,16 +1,12 @@
-import styles from "../Freeboard.module.scss";
+import styles from "./Freeboard.module.scss";
 import badgeImg from "@/public/images/icons/img_badge.svg";
 import favoriteImg from "@/public/images/icons/ic_heart.svg";
-import { Article } from "@/types/ArticleTypes";
+import { ArticleProp } from "@/types/ArticleTypes";
 import { getFormatTime } from "@/utils/Utils";
-
-interface BestPostItemProps {
-  article: Article;
-}
 
 export default function BestArticleItem({
   article: { createdAt, image, likeCount, title, writer },
-}: BestPostItemProps) {
+}: ArticleProp) {
   return (
     <div className={styles["best-card"]}>
       <img className={styles.badge} src={badgeImg.src} alt="Best 뱃지" />

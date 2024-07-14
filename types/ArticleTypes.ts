@@ -17,3 +17,17 @@ export interface ArticleApiData {
   pageSize?: number;
   orderBy?: "recent" | "like";
 }
+
+export interface ArticleProps {
+  initialArticles: Article[];
+}
+
+export interface ArticleProp {
+  article: Article;
+}
+
+export enum DeviceTypePageSize {
+  MOBILE_PAGE_SIZE = 1,
+  TABLET_PAGE_SIZE = 2,
+  DESKTOP_PAGE_SIZE = 3,
+}

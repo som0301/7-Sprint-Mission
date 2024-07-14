@@ -1,15 +1,11 @@
-import { Article } from "@/types/ArticleTypes";
-import styles from "../Freeboard.module.scss";
+import { ArticleProp } from "@/types/ArticleTypes";
+import styles from "./Freeboard.module.scss";
 import favoriteImg from "@/public/images/icons/ic_heart.svg";
 import { getFormatTime } from "@/utils/Utils";
 
-interface BestPostItemProps {
-  article: Article;
-}
-
 export default function AllArticleItem({
   article: { createdAt, image, likeCount, title, writer },
-}: BestPostItemProps) {
+}: ArticleProp) {
   return (
     <div className={styles["all-card"]}>
       <div className={styles["content-wrapper"]}>

@@ -16,6 +16,7 @@
 }
 
 //Best Article
+
 .title {
   @include font-style(20px, 700, 23.87px, var(--gray900));
   display: flex;
