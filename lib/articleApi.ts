@@ -8,10 +8,11 @@ export const getArticle = async ({
   page = 1,
   pageSize = 10,
   orderBy = "recent",
+  keyword = "",
 }) => {
   try {
     const response = await instance.get(`/articles`, {
-      params: { page, pageSize, orderBy },
+      params: { page, pageSize, orderBy, keyword },
     });
 
     if (response.status !== 200) {

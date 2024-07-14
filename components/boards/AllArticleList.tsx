@@ -7,6 +7,7 @@ import Button from "@/components/layout/Button";
 import Dropdown from "@/components/layout/Dropdown";
 import Link from "next/link";
 import { getArticle } from "@/lib/articleApi";
+import { useRouter } from "next/router";
 
 export default function AllArticleList({
   initialArticles,
@@ -15,14 +16,18 @@ export default function AllArticleList({
 }) {
   const [articles, setArticles] = useState(initialArticles);
   const [orderBy, setOrderBy] = useState<ArticleApiData["orderBy"]>("recent");
+  const [searchValue, setSearchValue] = useState<string>("");
+
+  const router = useRouter();
+  const { q } = router.query;
 
   const handleOrderChange = (option: string) => {
     if (option === "recent" || option === "like") setOrderBy(option);
   };
 
-  const fetchData = async ({ orderBy, pageSize }: ArticleApiData) => {
+  const fetchData = async ({ orderBy, pageSize, keyword }: ArticleApiData) => {
     try {
-      const result = await getArticle({ orderBy, pageSize });
+      const result = await getArticle({ orderBy, pageSize, keyword });
 
       setArticles(() => result.list);
     } catch (error) {
@@ -30,9 +35,25 @@ export default function AllArticleList({
     }
   };
 
+  const handleSortBySearch = (value: string) => {
+    const searchValue = value.trim();
+    setSearchValue(searchValue);
+
+    if (!searchValue) {
+      router.push("/boards");
+      return;
+    }
+
+    router.push(`/boards?q=${searchValue}`);
+  };
+
   useEffect(() => {
-    fetchData({ orderBy: orderBy });
-  }, [orderBy]);
+    fetchData({ orderBy: orderBy, keyword: searchValue });
+
+    return () => {
+      setSearchValue("");
+    };
+  }, [orderBy, q]);
 
   return (
     <section className={styles["all-article"]}>
@@ -41,7 +62,7 @@ export default function AllArticleList({
         <Button>글쓰기</Button>
       </div>
       <div className={styles["search-wrapper"]}>
-        <SearchInput />
+        <SearchInput onSortBySearch={handleSortBySearch} />
         <Dropdown onOrderChange={handleOrderChange} />
       </div>
       {articles.map((article) => (

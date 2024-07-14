@@ -16,6 +16,7 @@ export interface ArticleApiData {
   page?: number;
   pageSize?: number;
   orderBy?: "recent" | "like";
+  keyword?: string;
 }
 
 export interface ArticleProps {
