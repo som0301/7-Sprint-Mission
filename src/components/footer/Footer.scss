@@ -1,0 +1,62 @@
+@import '@assets/styles/common/index.scss';
+
+footer {
+  height: 160px;
+  background-color: $footer-background-color;
+  padding: 32px 200px 0;
+
+  @include tablet {
+    padding: 32px 104px 0;
+  }
+
+  @include mobile {
+    padding: 32px;
+
+    .footer-content {
+      flex-wrap: wrap;
+    }
+
+    .copyrights {
+      order: 3;
+    }
+    .links {
+      order: 1;
+    }
+
+    .social {
+      order: 2;
+    }
+  }
+
+  .footer-content {
+    @include Flex(row, space-between, center);
+  }
+
+  .footer-text {
+    @include font-style(16, 400);
+  }
+
+  .copyright {
+    color: $footer-company-color;
+  }
+
+  .links {
+    @include Flex(row, null, flex-start);
+    gap: 30px;
+  }
+
+  .link {
+    color: $gray-200;
+  }
+
+  .social {
+    @include Flex(row, null, null);
+    gap: 13px;
+
+    img {
+      // sns 이미지들
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
