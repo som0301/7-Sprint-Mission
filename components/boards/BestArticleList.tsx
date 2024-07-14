@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import styles from "./Freeboard.module.scss";
 import BestArticleItem from "./BestArticleItem";
 import { getArticle } from "@/lib/articleApi";
-import { Article, ArticleApiData } from "@/types/ArticleTypes";
+import { Article, ArticleApiData } from "@/types/articleTypes";
 import Link from "next/link";
 import useDeviceType from "@/hooks/useDeviceType";
-import { DeviceTypePageSize } from "@/types/ArticleTypes";
+import { DeviceTypePageSize } from "@/types/articleTypes";
 
 const ORDERBY = "like";
 
@@ -40,7 +40,7 @@ export default function BestArticleList() {
       <h1 className={styles.title}>베스트 게시글</h1>
       <div className={styles["card-container"]}>
         {articles.map((article) => (
-          <Link href={`/article/${article.id}`} key={article.id}>
+          <Link href={`/board/${article.id}`} key={article.id}>
             <BestArticleItem article={article} />
           </Link>
         ))}

@@ -1,7 +1,7 @@
 import styles from "./Freeboard.module.scss";
 import badgeImg from "@/public/images/icons/img_badge.svg";
 import favoriteImg from "@/public/images/icons/ic_heart.svg";
-import { ArticleProp } from "@/types/ArticleTypes";
+import { ArticleProp } from "@/types/articleTypes";
 import { getFormatTime } from "@/utils/Utils";
 
 export default function BestArticleItem({
@@ -21,11 +21,6 @@ export default function BestArticleItem({
         </div>
         <div className={styles["writer-wrapper"]}>
           <div className={styles["nickname-wrapper"]}>
-            <img
-              className={styles["favorite"]}
-              src={favoriteImg.src}
-              alt="프로필 사진"
-            />
             <span className={styles["nickname"]}>{writer.nickname}</span>
             <div className={styles["favorite-wrapper"]}>
               <img

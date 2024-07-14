@@ -1,4 +1,4 @@
-import { ArticleProp } from "@/types/ArticleTypes";
+import { ArticleProp } from "@/types/articleTypes";
 import styles from "./Freeboard.module.scss";
 import favoriteImg from "@/public/images/icons/ic_heart.svg";
 import { getFormatTime } from "@/utils/Utils";

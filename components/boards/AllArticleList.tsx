@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Freeboard.module.scss";
 import AllArticleItem from "./AllArticleItem";
-import { Article } from "@/types/ArticleTypes";
+import { Article, ArticleApiData } from "@/types/articleTypes";
 import SearchInput from "@/components/layout/SearchInput";
 import Button from "@/components/layout/Button";
 import Dropdown from "@/components/layout/Dropdown";
+import Link from "next/link";
+import { getArticle } from "@/lib/articleApi";
 
 export default function AllArticleList({
   initialArticles,
@@ -12,6 +14,25 @@ export default function AllArticleList({
   initialArticles: Article[];
 }) {
   const [articles, setArticles] = useState(initialArticles);
+  const [orderBy, setOrderBy] = useState<ArticleApiData["orderBy"]>("recent");
+
+  const handleOrderChange = (option: string) => {
+    if (option === "recent" || option === "like") setOrderBy(option);
+  };
+
+  const fetchData = async ({ orderBy, pageSize }: ArticleApiData) => {
+    try {
+      const result = await getArticle({ orderBy, pageSize });
+
+      setArticles(() => result.list);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData({ orderBy: orderBy });
+  }, [orderBy]);
 
   return (
     <section className={styles["all-article"]}>
@@ -21,10 +42,12 @@ export default function AllArticleList({
       </div>
       <div className={styles["search-wrapper"]}>
         <SearchInput />
-        <Dropdown />
+        <Dropdown onOrderChange={handleOrderChange} />
       </div>
       {articles.map((article) => (
-        <AllArticleItem key={article.id} article={article} />
+        <Link href={`/board/${article.id}`} key={article.id}>
+          <AllArticleItem article={article} />
+        </Link>
       ))}
     </section>
   );
