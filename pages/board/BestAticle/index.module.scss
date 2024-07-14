@@ -1,7 +1,61 @@
-.bestArticlePage {
+@use '@/styles/mixins' as m;
+
+.bestArticle {
   font-family: 'Pretendard';
-  // font-size: 40px;
   background-color: var(--color-gray50);
+  border-radius: 8px;
+  padding: 0 24px 20px;
   height: 169px;
   width: 100%;
+  @include m.flexbox(between, normal);
+  flex-direction: column;
+  gap: 16px;
+
+  .middleSection {
+    @include m.flexbox(between, normal);
+    // gap: 16px;
+
+    .content {
+      width: 100%;
+      margin-right: 16px;
+      flex-grow: 1;
+    }
+    .articleImgContainer {
+      width: 72px;
+      height: 72px;
+      overflow: hidden;
+      border: 1px solid var(--color-gray200);
+      border-radius: 8px;
+      flex-shrink: 0;
+      padding: 14px;
+      .contentImg {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .bottomSection {
+    @include m.flexbox(between, center);
+    .leftGroup {
+      @include m.flexbox(between, center);
+      .nickname {
+        color: var(--color-gray600);
+        font-size: 14px;
+        margin-right: 10px;
+      }
+      .likeHeart {
+        margin-right: 3px;
+      }
+      .likeCount {
+        color: var(--color-gray500);
+        font-size: 14px;
+      }
+    }
+    .createDate {
+      color: var(--color-gray400);
+      font-size: 14px;
+    }
+  }
 }

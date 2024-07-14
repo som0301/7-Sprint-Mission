@@ -27,7 +27,9 @@ const BoardPage = () => {
           <div className={styles.title}>베스트 게시글</div>
           <div className={styles.aticleContainer}>
             {itemsBest.list?.map((article) => {
-              return <BestArticle key={article.id}></BestArticle>;
+              return (
+                <BestArticle key={article.id} article={article}></BestArticle>
+              );
             })}
           </div>
         </div>
