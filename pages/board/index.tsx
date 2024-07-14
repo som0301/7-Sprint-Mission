@@ -26,16 +26,17 @@ const BoardPage = () => {
   const [articles, setArticles] = useState<ArticleType[]>();
   const [bestArticles, setBestArticles] = useState<ArticleType[]>();
   const [order, setOrder] = useState<OrderBy>('recent');
-  const [keyword, setKeyword] = useState('recent');
+  const [keyword, setKeyword] = useState<string | null>(null);
   const { isDesktop, isTablet, isMobile } = useResponsive();
 
   const handleLoadAtrilces = async (
     page = 1,
     pageSize = ARTICLE_SIZE,
     order: OrderBy = 'recent',
-    target: ArticleKind = 'normal'
+    target: ArticleKind = 'normal',
+    keyword: string | null = null
   ) => {
-    const { list } = await getArticles(page, pageSize, order);
+    const { list } = await getArticles(page, pageSize, order, keyword);
 
     if (target === 'normal') {
       setArticles(list);
@@ -62,17 +63,21 @@ const BoardPage = () => {
     }
   };
 
-  const handleSearch = (e: KeyboardEvent<HTMLInputElement>) => {};
-
-  // useEffect(() => {
-  //   handleLoadAtrilces();
-  //   handleLoadResponsive();
-  // }, []);
+  const handleSearch = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      const target = e.target as HTMLInputElement;
+      if (target.value === '') {
+        setKeyword(null);
+      } else {
+        setKeyword(target.value);
+      }
+    }
+  };
 
   useEffect(() => {
-    handleLoadAtrilces(1, 10, order, 'normal');
+    handleLoadAtrilces(1, 10, order, 'normal', keyword);
     handleLoadResponsive();
-  }, [order, isDesktop, isTablet, isMobile]);
+  }, [order, isDesktop, isTablet, isMobile, keyword]);
 
   return (
     <div className={styles.boardPage}>
