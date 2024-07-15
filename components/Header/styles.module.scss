@@ -1,0 +1,26 @@
+@import "@/styles/import.scss";
+
+.container {
+  @include Flex(row, space-between, center);
+  @include Size(100%, 70px);
+  column-gap: 47px;
+  padding: 0 200px;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid $color-border-bottom;
+  background-color: $color-white;
+  z-index: 999;
+}
+
+@media screen and (max-width: $width-max-tablet) {
+  .container {
+    padding: 0 34px;
+  }
+}
+
+@media screen and (max-width: $width-max-mobile) {
+  .container {
+    padding: 0 16px;
+    column-gap: 15px;
+  }
+}

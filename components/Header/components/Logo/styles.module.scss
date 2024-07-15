@@ -1,0 +1,20 @@
+@import "@/styles/import.scss";
+
+.logo {
+  @include Size(153px, 51px);
+}
+
+.mobile-logo {
+  @include Size(81px, 40px);
+  display: none;
+}
+
+@media screen and (max-width: $width-max-mobile) {
+  .logo {
+    display: none;
+  }
+
+  .mobile-logo {
+    display: block;
+  }
+}

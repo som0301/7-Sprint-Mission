@@ -1,0 +1,12 @@
+@import "@/styles/import.scss";
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: $width-max-tablet) {
+  .container {
+    padding: 0 24px;
+  }
+}

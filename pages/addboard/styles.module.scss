@@ -1,0 +1,159 @@
+@import "@/styles/import.scss";
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding-top: 24px;
+}
+
+.add-post-container {
+  @include Size(1200px, 42px);
+  @include Flex(row, space-between, center);
+  margin-bottom: 24px;
+
+  .add-post {
+    @include Font(20px, 700, $color-gray-800);
+  }
+
+  .add-post-button {
+    @include Size(74px, inherit);
+    @include Font(16px, 600, $color-white);
+    background-color: $color-gray-400;
+    border-radius: 8px;
+    padding: 12px 23px;
+  }
+}
+
+.title-container {
+  @include Flex(column, "", left);
+
+  .title {
+    @include Font(18px, 700, $color-gray-800);
+    margin-bottom: 12px;
+  }
+
+  .title-input {
+    @include Size(1200px, 56px);
+    background-color: $color-gray-100;
+    border-radius: 12px;
+    gap: 10px;
+    padding: 16px 24px;
+    margin-bottom: 24px;
+  }
+
+  .title-input::placeholder {
+    @include Font(16px, 400, $color-gray-400);
+  }
+}
+
+.content-container {
+  @include Flex(column, "", left);
+
+  .content {
+    @include Font(18px, 700, $color-gray-800);
+    margin-bottom: 12px;
+  }
+
+  .content-textarea {
+    @include Size(1200px, 282px);
+    background-color: $color-gray-100;
+    border-radius: 12px;
+    border: none;
+    resize: none;
+    margin-bottom: 24px;
+    padding: 16px 24px;
+  }
+
+  .content-textarea::placeholder {
+    @include Font(16px, 400, $color-gray-400);
+  }
+}
+
+.add-image-container {
+  @include Flex(column, "", left);
+  position: relative;
+
+  .add-image {
+    @include Font(18px, 700, $color-gray-800);
+    margin-bottom: 12px;
+  }
+
+  .add-image-wrapper {
+    @include Size(282px, 282px);
+    background-color: $color-gray-100;
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+
+  .add-image-input {
+    @include Size(282px, 282px);
+    display: none;
+  }
+
+  .plus-image-icon {
+    position: absolute;
+    top: 135px;
+    left: 117px;
+  }
+
+  .add-image-span {
+    @include Font(16px, 400, $color-gray-400);
+    position: absolute;
+    top: 189px;
+    left: 104px;
+  }
+}
+
+@media screen and (max-width: $width-max-tablet) {
+  .container {
+    padding: 16px 24px;
+  }
+
+  .add-post-container {
+    @include Size(100%, inherit);
+    margin-bottom: 24px;
+  }
+
+  .title-input {
+    max-width: 100%;
+  }
+
+  .content-textarea {
+    max-width: 100%;
+  }
+
+  .add-image-container .add-image-wrapper {
+    @include Size(162px, 162px);
+  }
+
+  .add-image-container .plus-image-icon {
+    top: 78px;
+    left: 60px;
+  }
+
+  .add-image-container .add-image-span {
+    @include Font(16px, 400, $color-gray-400);
+    position: absolute;
+    top: 129px;
+    left: 43px;
+  }
+}
+
+@media screen and (max-width: $width-max-mobile) {
+  .container {
+    padding: 16px;
+  }
+
+  .title-container .title {
+    @include Font(14px, 700, $color-gray-800);
+  }
+
+  .content-container .content {
+    @include Font(14px, 700, $color-gray-800);
+  }
+
+  .add-image-container .add-image {
+    @include Font(14px, 700, $color-gray-800);
+  }
+}

@@ -1,0 +1,68 @@
+@import "@/styles/import.scss";
+
+.container {
+  max-width: 1920px;
+  padding-top: 24px;
+}
+
+.all-post-top-header {
+  @include Flex(row, space-between, center);
+  padding-bottom: 24px;
+  width: 1200px;
+
+  .title {
+    @include Font(20px, 700, $color-gray-900);
+  }
+
+  .button {
+    @include Size(88px, 42px);
+    @include Font(16px, 600, $color-white);
+    border-radius: 8px;
+    padding: 12px 23px;
+    background-color: $color-blue-button;
+  }
+}
+
+.all-post-bottom-header {
+  @include Flex(row, space-between, center);
+  width: 1200px;
+}
+
+.search-container {
+  position: relative;
+  @include Size(1054px, 42px);
+
+  .search {
+    @include Size(100%, 100%);
+    padding: 12px 44px;
+    background-color: $color-gray-100;
+    border-radius: 12px;
+  }
+
+  .search::placeholder {
+    @include Font(16px, 400, $color-gray-400);
+    @include Size(202px, 24px);
+  }
+
+  .search-icon {
+    @include Size(24px, 24px);
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (max-width: $width-max-tablet) {
+  .all-post-top-header {
+    width: 100%;
+  }
+
+  .all-post-bottom-header {
+    width: 100%;
+  }
+
+  .search-container {
+    padding-right: 16px;
+  }
+}

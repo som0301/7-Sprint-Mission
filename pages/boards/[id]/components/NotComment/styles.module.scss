@@ -1,0 +1,10 @@
+@import "@/styles/import.scss";
+
+.container {
+  @include Flex(column, center, center);
+  text-align: center;
+
+  .description {
+    @include Font(16px, 400, $color-gray-400);
+  }
+}

@@ -1,0 +1,84 @@
+@import "@/styles/import.scss";
+
+.container {
+  @include Size(384px, 169px);
+  border-radius: 8px;
+  background-color: $color-board-card-background;
+  margin-top: 24px;
+  position: relative;
+}
+
+.best-badge {
+  margin-left: 24px;
+}
+
+.wrapper {
+  padding: 16px 24px 16px;
+}
+
+.best-post-title-container {
+  @include Flex(row, space-between, top);
+}
+
+.title {
+  @include Font(20px, 600, $color-gray-800);
+  @include Size(256px, 48px);
+}
+
+.post-image-container {
+  @include Flex(row, center, center);
+  @include Size(72px, 72px);
+  border-radius: 6px;
+  border: 1px solid $color-gray-200;
+  background-color: $color-white;
+}
+
+.post-image {
+  object-fit: contain;
+}
+
+.post-user-container {
+  @include Flex(row, space-between, center);
+  @include Size(336px, 17px);
+  position: absolute;
+  bottom: 16px;
+}
+
+.post-user-like {
+  @include Flex(row, space-between, center);
+
+  .user-name {
+    @include Font(14px, 400, $color-gray-600);
+    margin-right: 8px;
+  }
+}
+
+.like-wrapper {
+  @include Flex(row, space-between, center);
+}
+
+.like-icon {
+  @include Size(16px, 16px);
+}
+
+.like-count {
+  @include Size(15px, 17px);
+  @include Flex(row, center, center);
+  @include Font(14px, 400, $color-gray-500);
+  margin-left: 4px;
+}
+
+.date {
+  @include Font(14px, 400, $color-gray-400);
+}
+
+@media screen and (max-width: $width-max-tablet) {
+  .container {
+    width: 100%;
+  }
+
+  .post-user-container {
+    @include Size(90%, 17px);
+    @include Flex("", space-between, "");
+  }
+}

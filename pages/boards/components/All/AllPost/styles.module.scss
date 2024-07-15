@@ -1,0 +1,76 @@
+@import "@/styles/import.scss";
+
+.container {
+  width: 1200px;
+  padding-top: 24px;
+  border-bottom: 1px solid $color-gray-200;
+}
+
+.post-top-info {
+  @include Flex(row, space-between, "");
+  padding-bottom: 16px;
+
+  .title {
+    @include Font(20px, 600, $color-gray-800);
+    @include Size(1120px, 24px);
+  }
+
+  .image-wrapper {
+    @include Flex(row, center, center);
+    @include Size(72px, 72px);
+    border-radius: 8px;
+    border: 1px solid $color-gray-200;
+    background-color: $color-white;
+  }
+
+  .none-image-wrapper {
+    @include Size(72px, 72px);
+  }
+}
+
+.post-bottom-info {
+  @include Flex(row, space-between, center);
+  padding-bottom: 24px;
+
+  .user-wrapper {
+    @include Flex(row, space-between, center);
+    column-gap: 8px;
+
+    .user-name {
+      @include Font(14px, 400, $color-gray-600);
+    }
+
+    .date {
+      @include Font(14px, 400, $color-gray-400);
+    }
+  }
+
+  .like-wrapper {
+    @include Flex(row, space-between, center);
+    column-gap: 8px;
+
+    .like-image-wrapper {
+      @include Size(24px, 24px);
+      @include Flex("", center, center);
+    }
+
+    .like-count {
+      @include Font(16px, 400, $color-gray-500);
+    }
+  }
+}
+@media screen and (max-width: $width-max-tablet) {
+  .container {
+    width: 100%;
+  }
+
+  .image-wrapper {
+    min-width: 72px;
+  }
+}
+
+@media screen and (max-width: $width-max-mobile) {
+  .post-top-info .title {
+    @include Font(18px, 600, $color-gray-800);
+  }
+}

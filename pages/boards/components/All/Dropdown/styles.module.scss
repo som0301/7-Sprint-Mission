@@ -1,0 +1,61 @@
+@import "@/styles/import.scss";
+
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown {
+  @include Size(130px, 42px);
+  padding: 12px 20px;
+  border: 1px solid $color-gray-200;
+  border-radius: 12px;
+  background-color: $color-white;
+}
+
+.dropdown-header {
+  @include Flex(row, space-between, center);
+  cursor: pointer;
+  @include Size(90px, 18px);
+}
+
+.mobile-dropdown {
+  @include Size(42px, 42px);
+  border: 1px solid $color-gray-200;
+  border-radius: 12px;
+  padding: 9px;
+  background-color: $color-white;
+  @include Flex(row, center, center);
+}
+
+.mobile-dropdown-header {
+  cursor: pointer;
+  @include Size(90px, 18px);
+}
+
+.dropdown-option {
+  @include Flex(row, center, center);
+  @include Size(100%, 24px);
+  @include Font(16px, 400, $color-gray-900);
+}
+
+.dropdown-list {
+  @include Flex(column, center, center);
+  @include Size(130px, auto);
+  padding: 8px 0;
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  border: 1px solid $color-gray-200;
+  border-radius: 12px 12px 12px 12px;
+  background-color: $color-white;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.dropdown-list-item {
+  @include Font(16px, 400, $color-gray-800);
+  @include Size(56px, 26px);
+  cursor: pointer;
+  line-height: 26px;
+}

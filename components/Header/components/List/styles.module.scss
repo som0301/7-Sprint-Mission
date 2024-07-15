@@ -1,0 +1,24 @@
+@import "@/styles/import.scss";
+
+.item {
+  column-gap: 41px;
+  display: flex;
+  flex-grow: 1;
+}
+
+.item-list {
+  @include Font(18px, 700, $color-gray-600);
+  line-height: 21px;
+  text-align: center;
+  text-decoration: none;
+}
+
+@media screen and (max-width: $width-max-mobile) {
+  .item {
+    column-gap: 8px;
+  }
+
+  .item-list {
+    display: inline-block;
+  }
+}

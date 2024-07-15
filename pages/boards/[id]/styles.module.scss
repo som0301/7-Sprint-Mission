@@ -1,0 +1,119 @@
+@import "@/styles/import.scss";
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.wrapper {
+  border-bottom: 1px solid $color-gray-200;
+}
+
+.title-container {
+  @include Flex(row, space-between, center);
+  width: 100%;
+  padding-top: 32px;
+
+  .title {
+    @include Size(1168px, auto);
+    @include Font(20px, 700, $color-gray-800);
+  }
+}
+
+.user-container {
+  @include Flex(row, left, center);
+  padding: 16px 0;
+
+  .user-wrapper {
+    @include Flex(row, space-between, center);
+    padding-right: 16px;
+    border-right: 1px solid $color-gray-200;
+    column-gap: 8px;
+
+    .user-name {
+      @include Font(14px, 400, $color-gray-600);
+    }
+
+    .date {
+      @include Font(12px, 400, $color-gray-400);
+    }
+  }
+
+  .like-wrapper {
+    @include Flex(row, center, center);
+    padding-left: 16px;
+    column-gap: 3.5px;
+
+    .like-count {
+      @include Font(14px, 400, $color-gray-500);
+    }
+  }
+}
+
+.description {
+  width: 100%;
+  padding: 16px 0 64px;
+  @include Font(16px, 400, $color-gray-800);
+}
+
+.comment-container {
+  .comment {
+    @include Font(16px, 600, $color-gray-900);
+  }
+
+  .comment-textarea {
+    @include Size(100%, 104px);
+    background-color: $color-gray-100;
+    margin: 16px 0;
+    padding: 16px 24px;
+    border-radius: 12px;
+    border: none;
+    resize: none;
+  }
+
+  .comment-textarea::placeholder {
+    @include Font(16px, 400, $color-gray-400);
+  }
+
+  .comment-button-container {
+    @include Flex(row, space-between, center);
+
+    .comment-button {
+      @include Font(16px, 600, $color-white);
+      border-radius: 8px;
+      padding: 12px 23px;
+      background-color: $color-blue-button;
+
+      &:disabled {
+        background-color: $color-gray-200;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.back-button-container {
+  @include Flex("", center, center);
+  padding: 40px 0;
+
+  .back-button {
+    @include Flex(row, space-between, center);
+    @include Font(18px, 600, $color-white);
+    padding: 12px 71px;
+    border-radius: 40px;
+    background-color: $color-blue-button;
+    column-gap: 10px;
+  }
+}
+
+@media screen and (max-width: $width-max-tablet) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media screen and (max-width: $width-max-mobile) {
+  .container {
+    padding: 0 16px;
+  }
+}

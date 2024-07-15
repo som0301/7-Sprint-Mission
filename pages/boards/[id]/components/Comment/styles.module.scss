@@ -1,0 +1,36 @@
+@import "@/styles/import.scss";
+
+.container {
+  margin-top: 24px;
+
+  .title-container {
+    @include Flex(row, space-between, center);
+
+    .title {
+      @include Font(14px, 400, $color-gray-800);
+    }
+  }
+
+  .user-container {
+    @include Flex(row, space-between, center);
+    padding: 24px 0;
+    border-bottom: 1px solid $color-gray-200;
+
+    .user-wrapper {
+      @include Flex(row, space-between, center);
+      column-gap: 8px;
+
+      .user-info {
+        @include Flex(column, center, left);
+
+        .user-name {
+          @include Font(12px, 400, $color-gray-600);
+        }
+
+        .time {
+          @include Font(12px, 400, $color-gray-400);
+        }
+      }
+    }
+  }
+}
