@@ -1,10 +1,10 @@
 import styles from './index.module.scss';
 import Button from '@/components/Button';
-import BestArticle from './BestAticle';
-import Article from './Article';
+import BestArticle from '@/containers/board/BestAticle';
+import SearchBar from '@/containers/board/SearchBar';
+import SelectBox from '@/containers/board/SelectBox';
+import Article from '@/containers/board/Article';
 import { Article as ArticleType, OrderBy } from '@/types/article.d';
-import SearchBar from './SearchBar';
-import SelectBox from './SelectBox';
 import { getArticles } from '@/services/articles';
 import { useEffect, useState, KeyboardEvent } from 'react';
 import { SELECT_ORDER, SelectdValue, selectList } from '@/types/select-order.d';
