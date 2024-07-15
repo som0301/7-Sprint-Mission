@@ -2,18 +2,14 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin-top: 24px;
   gap: 24px;
-  width: 1200px;
-  top: 24px;
-  font-family: 'Pretendard';
 }
 
 .postSubject {
   font-size: 20px;
   font-weight: 700;
   line-height: 23.87px;
-  text-align: left;
 }
 
 .postWrapper {
@@ -24,10 +20,11 @@
 }
 
 .postContentWrapper {
-  width: 384px;
+  width: 100%;
   height: 169px;
   padding: 0 24px 16px 24px;
   background-color: #f9fafb;
+  border-radius: 8px;
 }
 
 .postContent {
@@ -36,11 +33,6 @@
   display: flex;
   flex-direction: column;
   /* border: 1px solid red; */
-}
-
-.postContent > img {
-  width: 102px;
-  height: 30px;
 }
 
 .postInfo {
@@ -54,6 +46,8 @@
   font-weight: 600;
   line-height: 23.87px;
   text-align: left;
+  text-decoration: none;
+  color: #1f2937;
 }
 
 .postImgContainer {
@@ -65,14 +59,16 @@
   border-radius: 6px;
 }
 
-.postImgContainer.withImage {
+.postImgContainer.imgPresent {
   border: 1px solid #e5e7eb;
 }
 
+.postImgContainer.imgAbsent {
+  display: none;
+}
+
 .postImg {
-  width: 72px;
   min-width: 72px;
-  height: 72px;
   left: 264px;
   padding: 13.71px 12px;
   gap: 0px;
@@ -83,8 +79,12 @@
 .postDetails {
   display: flex;
   justify-content: space-between;
+  gap: 8px;
+  position: absolute;
   font-size: 14px;
+  font-weight: 400;
   line-height: 16.71px;
+  bottom: 16px;
 }
 
 .postMeta {
@@ -100,17 +100,26 @@
 .likeCount {
   display: flex;
   gap: 4px;
-  text-align: left;
   color: #6b7280;
-}
-
-.likeCount > img {
-  width: 13.4px;
-  height: 11.65px;
-  position: relative;
-  top: 2px;
 }
 
 .createdAt {
   color: #9ca3af;
+}
+
+@media screen and (max-width: 1280px) {
+  .postWrapper {
+    /* justify-content: space-between; */
+    gap: 16px;
+  }
+  .postContentWrapper {
+    width: 340px;
+    height: 167px;
+  }
+  .postContent {
+    width: 292px;
+  }
+}
+
+@media screen and (max-width: 743px) {
 }

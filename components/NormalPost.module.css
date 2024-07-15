@@ -1,17 +1,17 @@
-.bulletinContainer {
+.normalPostContainer {
   position: relative;
-  width: 1200px;
+  /* width: 1200px; */
   display: flex;
   flex-direction: column;
   gap: 24px;
   margin: 0 auto;
   top: 40px;
-  font-family: 'Pretendard';
 }
 
-.bulletinHeader {
+.normalPostHeader {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .postSubject {
@@ -24,19 +24,15 @@
 .writingBtn {
   width: 88px;
   height: 42px;
-  background-color: #3692ff;
   padding: 12px 23px;
   border-radius: 8px;
-  border: none;
   font-size: 16px;
-  font-weight: 600;
   line-height: 19.09px;
-  color: #ffffff;
-  cursor: pointer;
 }
 
 .searchSortGroup {
   display: flex;
+  justify-content: space-between;
   gap: 16px;
 }
 
@@ -47,7 +43,7 @@
 }
 
 .postWrapperContainer {
-  width: 1200px;
+  /* width: 1200px; */
   height: 136px;
   gap: 24px;
   display: flex;
@@ -66,7 +62,7 @@
 }
 
 .postInfo {
-  width: 1200px;
+  /* width: 1200px; */
   height: 72px;
   display: flex;
   justify-content: space-between;
@@ -78,6 +74,8 @@
   font-weight: 600;
   line-height: 23.87px;
   color: #1f2937;
+  text-decoration: none;
+  flex-grow: 1;
 }
 
 .postImgContainer {
@@ -87,6 +85,7 @@
   width: 72px;
   height: 72px;
   border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .postImgContainer.withImage {
@@ -110,11 +109,6 @@
   gap: 8px;
   font-size: 14px;
   line-height: 16.71px;
-}
-
-.profileImg {
-  width: 24px;
-  height: 24px;
 }
 
 .nickname {

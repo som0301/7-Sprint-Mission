@@ -1,0 +1,105 @@
+.emptyCommentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.emptyCommentMessage {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.backBtnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.backBtnLink {
+  text-decoration: none;
+}
+
+.backBtn {
+  width: 240px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  border-radius: 40px;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 12px 71px;
+  white-space: nowrap;
+}
+
+.backBtnText {
+  white-space: nowrap;
+}
+
+/* 댓글 */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.commentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.commentWrapper {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 24px;
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.commentTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.commentContent {
+  font-size: 14px;
+  line-height: 16.71px;
+  color: #1f2937;
+}
+
+.commentWriter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.writingInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  line-height: 14.32px;
+}
+
+.nickname {
+  color: #4b5563;
+}
+
+.createdAt {
+  color: #9ca3af;
+}
+
+@media screen and (max-width: 1280px) {
+  .backBtnContainer {
+    position: relative;
+    top: -20px;
+  }
+}
