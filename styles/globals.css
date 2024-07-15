@@ -55,6 +55,7 @@
   height: 48px;
   color: #ffffff;
   display: inline-block;
+  cursor: pointer;
 }
 
 .small-button:hover {
