@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import debounce from "lodash/debounce";
 
 const useResize = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowWidth, setWindowWidth] = useState(0);
 
   useEffect(() => {
     const handleResize = debounce(() => {

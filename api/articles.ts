@@ -6,6 +6,7 @@ export const fetchArticles = async (
   page: number,
   pageSize: number,
   orderBy: string,
+  keyword?: string,
 ) => {
   try {
     const response = await axios.get(`${API_BASE_URL}/articles`, {
@@ -13,6 +14,7 @@ export const fetchArticles = async (
         page,
         pageSize,
         orderBy,
+        keyword,
       },
     });
     return response.data.list;

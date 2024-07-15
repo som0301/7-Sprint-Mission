@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import debounce from "lodash/debounce";
 import { Article } from "../../types/article";
 import { fetchArticles } from "@/api/articles";
 import searchIcon from "@/assets/images/icons/ic_search.svg";
@@ -18,33 +17,28 @@ const sortOptions = [
 export default function AllArticleList() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [sortType, setSortType] = useState("recent");
-  const [search, setSearch] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const observer = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    setArticles([]);
-    setPage(1);
-    setHasMore(true);
     loadArticles();
-  }, [sortType, search]);
-
-  useEffect(() => {
-    if (page > 1) loadArticles();
-  }, [page]);
+  }, [sortType, searchTerm, page]);
 
   const loadArticles = async () => {
     if (loading || !hasMore) return;
 
     setLoading(true);
     try {
-      const newArticles = await fetchArticles(page, 10, sortType);
+      const newArticles = await fetchArticles(page, 10, sortType, searchTerm);
       if (newArticles.length === 0) {
         setHasMore(false);
       } else {
-        setArticles((prevArticles) => [...prevArticles, ...newArticles]);
+        setArticles((prevArticles) =>
+          page === 1 ? newArticles : [...prevArticles, ...newArticles],
+        );
       }
     } catch (error) {
       console.error(error);
@@ -55,18 +49,19 @@ export default function AllArticleList() {
 
   const handleSortChange = (value: string) => {
     setSortType(value);
+    resetSearch();
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+    resetSearch();
+  };
+
+  const resetSearch = () => {
     setPage(1);
     setArticles([]);
     setHasMore(true);
   };
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value);
-  };
-
-  const filteredArticles = articles.filter((article) =>
-    article.title.toLowerCase().includes(search.toLowerCase()),
-  );
 
   const lastPostElementCallback = useCallback(
     (node: HTMLDivElement) => {
@@ -93,7 +88,7 @@ export default function AllArticleList() {
       <div className='flex items-center justify-between'>
         <input
           type='text'
-          value={search}
+          value={searchTerm}
           onChange={handleSearchChange}
           placeholder='검색할 내용을 입력해주세요'
           className='sm:mr-4 mr-2 py-[9px] pl-12 pr-5 rounded-xl bg-gray-100 w-full'
@@ -111,8 +106,8 @@ export default function AllArticleList() {
         />
       </div>
       <div>
-        {filteredArticles.map((article, index) => {
-          if (index === filteredArticles.length - 1) {
+        {articles.map((article, index) => {
+          if (index === articles.length - 1) {
             return (
               <div ref={lastPostElementCallback} key={article.id}>
                 <AllArticleCard {...article} />
@@ -124,10 +119,10 @@ export default function AllArticleList() {
         })}
       </div>
       {loading && <p>Loading...</p>}
-      {!hasMore && filteredArticles.length === 0 && (
+      {!hasMore && articles.length === 0 && (
         <p className='text-center py-4'>검색 결과가 없습니다</p>
       )}
-      {!hasMore && filteredArticles.length > 0 && (
+      {!hasMore && articles.length > 0 && (
         <p className='text-center py-4'>게시글의 마지막입니다</p>
       )}
     </div>
