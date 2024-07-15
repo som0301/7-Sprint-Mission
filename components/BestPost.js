@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
-import axios from '@/lib/axios';
+import Link from 'next/link';
 import Image from 'next/image';
+import axios from '@/lib/axios';
+import { formatDate } from '@/utils/formatDate';
 import styles from '@/components/BestPost.module.css';
+import bestPostImg from '@/assets/images/bestPostImg.png';
+import likeIcon from '@/assets/images/likeIcon.svg';
 
 export default function BestPost() {
   const [list, setList] = useState([]);
@@ -14,16 +18,18 @@ export default function BestPost() {
       if (window.innerWidth <= 1280) {
         newPageSize = 2;
       }
-      if (window.innerWidth <= 744) {
+      if (window.innerWidth <= 743) {
         newPageSize = 1;
       }
-
       setPageSize(newPageSize);
 
-      const res = await axios.get(
-        `articles?page=1&pageSize=${newPageSize}&orderBy=like`
-      );
-      console.log(res.data);
+      const res = await axios.get('articles', {
+        params: {
+          page: 1,
+          pageSize: newPageSize,
+          orderBy: 'like',
+        },
+      });
       setList(res.data.list);
     } catch (error) {
       console.error('Failed to fetch list:', error);
@@ -38,13 +44,6 @@ export default function BestPost() {
     };
   }, []);
 
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    return new Date(dateString)
-      .toLocaleDateString('ko-KR', options)
-      .replace(/\./g, '.');
-  };
-
   return (
     <div className={styles.bestPostContainer}>
       <span className={styles.postSubject}>베스트 게시글</span>
@@ -53,23 +52,27 @@ export default function BestPost() {
           <div key={post.id} className={styles.postContentWrapper}>
             <div className={styles.postContent}>
               <Image
-                src='/image/bestPostImg.png'
-                alt='Best Post'
-                width={50}
-                height={50}
+                src={bestPostImg}
+                width={102}
+                height={30}
+                alt='best post badge'
               />
               <div className={styles.postInfo}>
-                <span className={styles.postTitle}>{post.title}</span>
+                <Link href={`/board/${post.id}`} className={styles.postTitle}>
+                  {post.title}
+                </Link>
                 <div
                   className={`${styles.postImgContainer} ${
-                    post.image ? styles.withImage : ''
+                    post.image ? styles.imgPresent : styles.imgAbsent
                   }`}
                 >
                   {post.image && (
-                    <img
+                    <Image
                       className={styles.postImg}
                       src={post.image}
-                      alt='bestPost Image'
+                      width={72}
+                      height={72}
+                      alt='thumbnail'
                     />
                   )}
                 </div>
@@ -80,7 +83,13 @@ export default function BestPost() {
                     {post.writer.nickname}
                   </span>
                   <div className={styles.likeCount}>
-                    <img src='/image/likeIcon.svg' />
+                    <Image
+                      src={likeIcon}
+                      width={16}
+                      height={16}
+                      style={{ width: 16, height: 16 }}
+                      alt='like icon'
+                    />
                     <div>{post.likeCount}</div>
                   </div>
                 </div>

@@ -1,14 +1,15 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  width: 100%;
 }
 
 .dropdownToggle {
-  width: 130px;
   height: 42px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
   padding: 12px 20px;
   background-color: #ffffff;
   font-size: 16px;
@@ -18,6 +19,21 @@
   cursor: pointer;
 }
 
+.isMobileDropdown {
+  display: flex;
+}
+
+.isNonMobileDropdown {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.dropdownIcon {
+  display: flex;
+}
+
 .toggleIcon {
   margin-left: 8px;
 }
@@ -25,11 +41,18 @@
 .dropdownMenu {
   display: block;
   position: absolute;
-  width: 130px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  width: 100%;
   text-align: center;
   padding: 0;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.dropdownMenu li:first-child {
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .dropdownItem {
@@ -41,4 +64,17 @@
 
 .dropdownItem:hover {
   background-color: #ddd;
+}
+
+@media screen and (max-width: 1280px) {
+  .dropdownToggle {
+    /* width: 120px; */
+  }
+}
+
+@media screen and (max-width: 743px) {
+  .dropdown {
+    width: 42px;
+    height: 42px;
+  }
 }

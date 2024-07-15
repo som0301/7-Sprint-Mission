@@ -19,10 +19,10 @@
   gap: 8.59px;
 }
 
-.logoImg {
-  width: 40px;
-  border-radius: 11.18px;
-}
+/* .logoImg {
+  width: 153px;
+  height: 51px;
+} */
 
 .brandLogo {
   font-family: 'ROKAF Sans';
@@ -63,13 +63,13 @@
   }
 }
 
-@media screen and (max-width: 744px) {
+@media screen and (max-width: 743px) {
   .navContainer {
     padding: 15px 16px;
   }
 
   .logoImg {
-    display: none;
+    /* display: none; */
   }
 
   .brandLogo {

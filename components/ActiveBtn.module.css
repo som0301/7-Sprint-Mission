@@ -1,0 +1,8 @@
+.activeBtn {
+  background-color: #3692ff;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}

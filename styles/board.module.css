@@ -1,0 +1,137 @@
+.boardContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.articleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 8px;
+}
+
+.articleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 80px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.articleTitle {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.articleTitle > span {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.87px;
+  color: #1f2937;
+}
+
+.articleInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.createInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nickname {
+  font-size: 14px;
+  line-height: 16.71px;
+  color: #4b5563;
+}
+
+.createdAt {
+  font-size: 12px;
+  line-height: 14.32px;
+  color: #9ca3af;
+}
+
+.likeArticleContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 16px;
+  border-left: 1px solid #e5e7eb;
+}
+
+.likeCount {
+  font-size: 14px;
+  line-height: 16.71px;
+  color: #6b7280;
+}
+
+.articleContent {
+  font-size: 16px;
+  line-height: 24px;
+  color: #1f2937;
+}
+
+.commentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  margin-top: 64px;
+  margin-bottom: 82px;
+}
+
+.commentTitle {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.09px;
+}
+
+.commentInput {
+  /* width: 1200px; */
+  height: 104px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px 24px 64px 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  background-color: #f3f4f6;
+}
+
+.commentInput::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+  /* margin-top: 16px; */
+}
+
+.registrationBtn {
+  width: 74px;
+  height: 42px;
+  padding: 12px 23px;
+  gap: 10px;
+  position: absolute;
+  top: 155px;
+  right: 0;
+  border: none;
+  border-radius: 8px;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.09px;
+  color: #ffffff;
+  background-color: #9ca3af;
+}
+
+.registrationBtn.active {
+  background-color: #3692ff;
+  cursor: pointer;
+}

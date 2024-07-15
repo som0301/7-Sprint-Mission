@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-
+import Image from 'next/image';
 import styles from '@/components/SearchForm.module.css';
+import searchIcon from '@/assets/images/searchIcon.svg';
 
 export default function SearchForm() {
   const router = useRouter();
@@ -13,24 +14,27 @@ export default function SearchForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    router.push(`/boards?q=${value}`);
+    router.push(`/boards?keyword=${encodeURIComponent(value)}`);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.searchForm} onSubmit={handleSubmit}>
       <div className={styles.searchContainer}>
-        <img
-          src='/image/searchIcon.svg'
+        <Image
           className={styles.searchIcon}
+          src={searchIcon}
+          width={24}
+          height={24}
           alt='Search Icon'
         />
         <input
           className={styles.searchBar}
-          name='q'
+          name='keyword'
           value={value}
           onChange={handleChange}
           type='text'
           placeholder='검색할 상품을 입력해주세요'
+          autoComplete='off'
         />
       </div>
     </form>

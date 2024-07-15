@@ -1,0 +1,88 @@
+.pageContainer {
+  color: #1f2937;
+}
+
+.titleContainer {
+  height: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleDesktop {
+  /* 데스크탑 스타일 */
+  display: inline; /* 보이도록 설정 */
+}
+
+.titleMobile {
+  /* 모바일 스타일 */
+  display: inline; /* 보이도록 설정 */
+}
+
+.titleDesktop,
+.titleMobile {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.87px;
+}
+
+.registrationBtn {
+  width: 74px;
+  height: 42px;
+  padding: 12px 23px;
+  gap: 10px;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #9ca3af;
+}
+
+.registrationBtn.active {
+  background-color: #3692ff;
+  cursor: pointer;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  top: 24px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.48px;
+}
+
+.subject,
+.content,
+.image {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contentContainer input {
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  background-color: #f3f4f6;
+}
+
+.contentContainer input::placeholder {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #9ca3af;
+}
+
+.itemTitleInput {
+  padding: 16px 24px;
+}
+
+.itemContentInput {
+  height: 282px;
+}
+
+.itemContentInput {
+  padding: 16px 24px 242px 24px;
+}
