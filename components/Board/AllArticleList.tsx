@@ -8,6 +8,7 @@ import Button from "../Button";
 import AllArticleCard from "./AllArticleCard";
 import OrderDropdown from "../OrderDropdown";
 import Link from "next/link";
+import debounce from "lodash/debounce";
 
 const sortOptions = [
   { value: "recent", label: "최신순" },
@@ -24,20 +25,12 @@ export default function AllArticleList() {
   const [hasMore, setHasMore] = useState(true);
   const observer = useRef<IntersectionObserver | null>(null);
 
-  useEffect(() => {
-    loadArticles();
-  }, [sortType, searchTerm, page]);
-
-  useEffect(() => {
-    filterArticles();
-  }, [searchTerm, articles]);
-
-  const loadArticles = async () => {
+  const loadArticles = async (term: string) => {
     if (loading || !hasMore) return;
 
     setLoading(true);
     try {
-      const newArticles = await fetchArticles(page, 10, sortType, searchTerm);
+      const newArticles = await fetchArticles(page, 10, sortType, term);
       if (newArticles.length === 0) {
         setHasMore(false);
       } else {
@@ -52,31 +45,43 @@ export default function AllArticleList() {
     }
   };
 
-  const filterArticles = () => {
-    if (!searchTerm) {
-      setFilteredArticles(articles);
-    } else {
-      const filtered = articles.filter((article) =>
-        article.title.toLowerCase().includes(searchTerm.toLowerCase()),
-      );
-      setFilteredArticles(filtered);
-    }
-  };
+  const filterArticlesByTitle = useCallback(() => {
+    const filtered = articles.filter((article) =>
+      article.title.toLowerCase().includes(searchTerm.toLowerCase()),
+    );
+    setFilteredArticles(filtered);
+  }, [articles, searchTerm]);
+
+  useEffect(() => {
+    filterArticlesByTitle();
+  }, [filterArticlesByTitle]);
+
+  const debouncedSearch = useCallback(
+    debounce((term: string) => {
+      setPage(1);
+      setArticles([]);
+      setHasMore(true);
+      loadArticles(term);
+    }, 500),
+    [],
+  );
+
+  useEffect(() => {
+    loadArticles(searchTerm);
+  }, [sortType, page]);
 
   const handleSortChange = (value: string) => {
     setSortType(value);
-    resetSearch();
-  };
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
-    resetSearch();
-  };
-
-  const resetSearch = () => {
     setPage(1);
     setArticles([]);
     setHasMore(true);
+    loadArticles(searchTerm);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newSearchTerm = e.target.value;
+    setSearchTerm(newSearchTerm);
+    debouncedSearch(newSearchTerm);
   };
 
   const lastPostElementCallback = useCallback(
@@ -121,9 +126,10 @@ export default function AllArticleList() {
           onSelect={handleSortChange}
         />
       </div>
+      {loading && <p className='text-center py-2'>검색 중...</p>}
       <div>
         {filteredArticles.map((article, index) => {
-          if (index === articles.length - 1) {
+          if (index === filteredArticles.length - 1) {
             return (
               <div ref={lastPostElementCallback} key={article.id}>
                 <AllArticleCard {...article} />
@@ -134,11 +140,11 @@ export default function AllArticleList() {
           }
         })}
       </div>
-      {loading && <p>Loading...</p>}
-      {!hasMore && articles.length === 0 && (
+      {loading && <p className='text-center py-2'>Loading...</p>}
+      {!hasMore && filteredArticles.length === 0 && (
         <p className='text-center py-4'>검색 결과가 없습니다</p>
       )}
-      {!hasMore && articles.length > 0 && (
+      {!hasMore && filteredArticles.length > 0 && (
         <p className='text-center py-4'>게시글의 마지막입니다</p>
       )}
     </div>
