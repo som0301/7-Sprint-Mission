@@ -5,6 +5,7 @@ import Image from "next/image";
 import Button from "@/components/Button";
 import Link from "next/link";
 import "@/styles/Homepage.css";
+import Footer from "@/components/Footer";
 
 const Homepage = () => {
   return (
@@ -82,6 +83,7 @@ const Homepage = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 };
