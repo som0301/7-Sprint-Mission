@@ -1,0 +1,65 @@
+.header {
+    padding: 0 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: solid 1px #DFDFDF;
+}
+
+.mask {
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.headerLogo {
+    margin-right: 32px;
+}
+
+.menuList {
+    background: none;
+    border: 0;
+    font-size: 18px;
+    color: var(--cool-Gray600);
+    font-weight: 700;
+    line-height: 21.48px;
+    width: 109px;
+    height: 69px;
+}
+
+.loginButton {
+    border-radius: 8px;
+    width: 88px;
+    height: 42px;
+    font-weight: 600;
+    background-color: var(--brand-blue);
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.activemenu .menuList{
+    color: var(--brand-blue);
+}
+
+/* 테블릿버전 */
+@media (768px < width < 1280px) {
+    .header {
+        padding: 0 24px;
+    }
+}
+
+/* 모바일버전 */
+@media (400px < width < 768px) {
+    .header {
+        padding: 0 16px;
+    }
+    .nav > a > img {
+        width: 81px;
+        height: 40px;
+    }
+}
