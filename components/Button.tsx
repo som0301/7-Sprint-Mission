@@ -7,6 +7,7 @@ interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
   color?: "default" | "disabled";
   size?: "large" | "small";
   width?: string;
+  icon?: React.ReactNode;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,6 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   width,
   onClick,
   disabled = false,
+  icon,
   ...props
 }) => {
   const buttonClasses = [styles.button, styles[color], styles[size]].join(" ");
@@ -28,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
       style={{ width }}
       {...props}
     >
-      {text}
+      {text} {icon && <span className={styles.icon}>{icon}</span>}
     </button>
   );
 };

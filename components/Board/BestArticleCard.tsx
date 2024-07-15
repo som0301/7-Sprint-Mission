@@ -1,10 +1,12 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { Article } from "../../types/article";
 import BestBadge from "@/assets/images/icons/img_badge.svg";
 import Heart from "@/assets/images/icons/ic_heart.svg";
 
 const BestArticleCard: React.FC<Article> = ({
+  id,
   title,
   image,
   likeCount,
@@ -12,12 +14,15 @@ const BestArticleCard: React.FC<Article> = ({
   writer,
 }) => {
   return (
-    <div className='max-w-sm rounded-lg overflow-hidden bg-gray-50 flex flex-col justify-between'>
-      <div className='px-6 pb-4 flex-grow'>
+    <Link
+      href={`/boards/${id}`}
+      className='lg:h-[169px] h-[167px] rounded-lg overflow-hidden bg-gray-50 flex flex-col justify-between px-6 pb-4'
+    >
+      <div className=' flex-grow'>
         <div className='mb-4'>
           <Image src={BestBadge} alt='best badge' width={102} />
         </div>
-        <div className='flex justify-between items-center mb-4'>
+        <div className='flex justify-between  mb-4'>
           <div className='font-semibold text-xl text-gray-800 leading-6 flex-grow'>
             {title}
           </div>
@@ -35,7 +40,7 @@ const BestArticleCard: React.FC<Article> = ({
           )}
         </div>
       </div>
-      <div className='px-6 pb-4 mt-auto'>
+      <div className='mt-auto'>
         <div className='flex items-center justify-between'>
           <div className='flex font-normal text-sm'>
             <div className='text-gray-600 mr-2'>{writer.nickname}</div>
@@ -52,7 +57,7 @@ const BestArticleCard: React.FC<Article> = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

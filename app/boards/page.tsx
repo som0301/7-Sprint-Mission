@@ -3,7 +3,7 @@ import BestArticleList from "@/components/Board/BestArticleList";
 
 export default function MainComponent() {
   return (
-    <div>
+    <div className='sm:px-6 px-4'>
       <BestArticleList />
       <AllArticleList />
     </div>

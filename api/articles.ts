@@ -1,16 +1,49 @@
+import axios from "axios";
+
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 export const fetchArticles = async (
   page: number,
   pageSize: number,
   orderBy: string,
+  keyword?: string,
 ) => {
-  const response = await fetch(
-    `${API_BASE_URL}/articles?page=${page}&pageSize=${pageSize}&orderBy=${orderBy}`,
-  );
-  if (!response.ok) {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/articles`, {
+      params: {
+        page,
+        pageSize,
+        orderBy,
+        keyword,
+      },
+    });
+    return response.data.list;
+  } catch (error) {
     throw new Error("error");
   }
-  const data = await response.json();
-  return data.list;
+};
+
+export const fetchArticleById = async (id: number) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/articles/${id}`);
+    return response.data;
+  } catch (error) {
+    throw new Error("error");
+  }
+};
+
+export const fetchArticleComments = async (id: number) => {
+  try {
+    const response = await axios.get(
+      `${API_BASE_URL}/articles/${id}/comments`,
+      {
+        params: {
+          limit: 99,
+        },
+      },
+    );
+    return response.data.list;
+  } catch (error) {
+    throw new Error("error");
+  }
 };

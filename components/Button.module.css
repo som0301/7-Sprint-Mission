@@ -11,7 +11,7 @@
 }
 
 .button:disabled {
-  background-color: #d1d5db;
+  background-color: #9ca3af;
   cursor: not-allowed;
 }
 
@@ -37,6 +37,12 @@
 
 .default:active {
   background-color: #1251aa;
+}
+
+.icon {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 768px) {
