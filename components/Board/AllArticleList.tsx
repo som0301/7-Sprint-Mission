@@ -16,6 +16,7 @@ const sortOptions = [
 
 export default function AllArticleList() {
   const [articles, setArticles] = useState<Article[]>([]);
+  const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
   const [sortType, setSortType] = useState("recent");
   const [searchTerm, setSearchTerm] = useState("");
   const [page, setPage] = useState(1);
@@ -26,6 +27,10 @@ export default function AllArticleList() {
   useEffect(() => {
     loadArticles();
   }, [sortType, searchTerm, page]);
+
+  useEffect(() => {
+    filterArticles();
+  }, [searchTerm, articles]);
 
   const loadArticles = async () => {
     if (loading || !hasMore) return;
@@ -44,6 +49,17 @@ export default function AllArticleList() {
       console.error(error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const filterArticles = () => {
+    if (!searchTerm) {
+      setFilteredArticles(articles);
+    } else {
+      const filtered = articles.filter((article) =>
+        article.title.toLowerCase().includes(searchTerm.toLowerCase()),
+      );
+      setFilteredArticles(filtered);
     }
   };
 
@@ -106,7 +122,7 @@ export default function AllArticleList() {
         />
       </div>
       <div>
-        {articles.map((article, index) => {
+        {filteredArticles.map((article, index) => {
           if (index === articles.length - 1) {
             return (
               <div ref={lastPostElementCallback} key={article.id}>
