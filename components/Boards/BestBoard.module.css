@@ -1,0 +1,23 @@
+.bestPost {
+  width: 384px;
+  height: 169px;
+  position: relative;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+.bestBadge {
+  width: 102px;
+  height: 30px;
+  padding: 0 24px;
+}
+
+.bestPost {
+  width: 383px;
+  height: 169px;
+}
+
+.title {
+  width: 336px;
+  height: 72px;
+}
