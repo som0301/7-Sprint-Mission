@@ -1,0 +1,112 @@
+.container {
+  padding: 0 24px 16px;
+  border-radius: 8px;
+  background-color: var(--cool-gray-50);
+}
+
+.badge-img {
+  width: 102px;
+  height: 30px;
+}
+
+.description-wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.description-wrap .title {
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 23.87px;
+  color: #1f2937;
+}
+
+.description-wrap .post-img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.bottom-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.bottom-wrap .nickname-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+.bottom-wrap .nickname {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.71px;
+  color: #4b5563;
+}
+
+.bottom-wrap .favorite-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bottom-wrap .favorite-btn {
+  padding: 0;
+  line-height: 0;
+  width: 16px;
+  height: 16px;
+  border: none;
+  background-color: transparent;
+}
+
+.bottom-wrap .favorite-img {
+  width: 16px;
+  height: 16px;
+}
+.bottom-wrap .favorite-count {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.71px;
+  color: #6b7280;
+}
+
+.bottom-wrap .date {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.71px;
+  color: #9ca3af;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 384px;
+    height: 169px;
+  }
+
+  .description-wrap {
+    width: 336px;
+    height: 72px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    height: 167px;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .container {
+    height: 167px;
+  }
+}
