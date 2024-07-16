@@ -5,7 +5,6 @@ import iconHeart from "@/public/assets/images/icon-heart.png";
 
 const GeneralPost: React.FC<Article> = ({
   title,
-  content,
   createdAt,
   writer,
   image,

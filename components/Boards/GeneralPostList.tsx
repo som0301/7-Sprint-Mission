@@ -12,6 +12,7 @@ export default function GeneralPostList() {
 
   const [posts, setPosts] = useState<Article[]>([]);
   const [sortOption, setSortOption] = useState(SORT_OPTION.RECENT);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     getGeneralPosts();
@@ -20,6 +21,14 @@ export default function GeneralPostList() {
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSortOption(e.target.value);
   };
+
+  const handleSerchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+
+  const searchPostResult = posts.filter((post) =>
+    post.title.includes(searchValue)
+  );
 
   const getGeneralPosts = async () => {
     try {
@@ -45,6 +54,7 @@ export default function GeneralPostList() {
           className={styles.searchInput}
           type="text"
           placeholder="검색할 내용을 입력해 주세요."
+          onChange={handleSerchInput}
         />
         <select className={styles.dropDown} onChange={handleSortChange}>
           <option value="recent">최신순</option>
@@ -52,7 +62,7 @@ export default function GeneralPostList() {
         </select>
       </div>
       <div className={styles.generalPostCards}>
-        {posts.map((article) => (
+        {searchPostResult.map((article) => (
           <GeneralPost key={article.id} {...article} />
         ))}
       </div>
