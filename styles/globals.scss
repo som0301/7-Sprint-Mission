@@ -1,0 +1,11 @@
+@import 'reset.module';
+@import 'base.module';
+@import 'variables';
+@import 'animations';
+
+// web fonts
+@import url('https://unpkg.com/pretendard@1.3.9/dist/web/static/pretendard.css');
+
+body {
+  margin-top: 130px;
+}

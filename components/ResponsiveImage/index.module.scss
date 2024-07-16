@@ -1,0 +1,34 @@
+@use '@/styles/mixins' as m;
+
+.desktopImg {
+  display: inline;
+  @include m.before(Tablet) {
+    display: none;
+  }
+
+  @include m.before(Mobile) {
+    display: none;
+  }
+}
+
+.tabletImg {
+  display: none;
+  @include m.before(Tablet) {
+    display: inline;
+  }
+
+  @include m.before(Mobile) {
+    display: none;
+  }
+}
+
+.mobileImg {
+  display: none;
+  @include m.before(Tablet) {
+    display: none;
+  }
+
+  @include m.before(Mobile) {
+    display: inline;
+  }
+}
