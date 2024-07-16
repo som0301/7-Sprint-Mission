@@ -7,7 +7,7 @@ export interface Article {
   id: number;
   title: string;
   content: string;
-  image: any; //모르겠습니다..
+  image?: any; //모르겠습니다..
   likeCount: number;
   createdAt: string;
   updatedAt: string;

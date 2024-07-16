@@ -1,0 +1,8 @@
+.title-text {
+  padding-bottom: 24px;
+}
+
+.post-cards {
+  display: flex;
+  justify-content: space-between;
+}

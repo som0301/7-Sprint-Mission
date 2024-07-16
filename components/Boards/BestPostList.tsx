@@ -2,6 +2,7 @@ import { Article } from "@/types/articles";
 import { useState, useEffect } from "react";
 import getPosts from "../../lib/axios";
 import BestPost from "./BestBoard";
+import styles from "./BestPostList.module.css";
 
 export default function BestPostList() {
   const [posts, SetPosts] = useState<Article[]>([]);
@@ -24,13 +25,13 @@ export default function BestPostList() {
   };
 
   return (
-    <div className="best-post">
-      <h2 className="title-text">베스트 게시글</h2>
-      <div className="post-card">
+    <>
+      <h2 className={styles["title-text"]}>베스트 게시글</h2>
+      <div className={styles["post-cards"]}>
         {posts.map((article) => (
           <BestPost key={article.id} {...article} />
         ))}
       </div>
-    </div>
+    </>
   );
 }

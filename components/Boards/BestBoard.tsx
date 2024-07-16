@@ -2,6 +2,7 @@ import Image from "next/image";
 import bestProductBadge from "@/public/assets/images/bestProductBadge.png";
 import iconHeart from "@/public/assets/images/icon-heart.png";
 import { Article } from "@/types/articles";
+import styles from "./BestBoard.module.css";
 
 const BestPost: React.FC<Article> = ({
   title,
@@ -11,13 +12,15 @@ const BestPost: React.FC<Article> = ({
   writer,
 }) => {
   return (
-    <div className="bestPost">
+    <div className={styles.bestPost}>
       <div className="bestBadge">
-        <Image src={bestProductBadge} alt="bestBadge" width={72} height={72} />
+        <Image src={bestProductBadge} alt="bestBadge" width={102} height={30} />
       </div>
-      <div className="title">
+      <div className={styles.title}>
         <p>{title}</p>
-        <img src={image} />
+        {image && (
+          <Image src={image} alt="productImage" width={72} height={72} />
+        )}
       </div>
       <div className="postFooter">
         <div className="leftFooter">
