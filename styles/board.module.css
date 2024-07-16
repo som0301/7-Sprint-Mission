@@ -31,6 +31,7 @@
   font-weight: 600;
   line-height: 19.09px;
   color: #ffffff;
+  cursor: pointer;
 }
 .list-wrapper-input {
   display: flex;

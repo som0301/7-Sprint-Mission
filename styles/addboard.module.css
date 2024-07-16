@@ -1,0 +1,145 @@
+.top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-wrapper-board {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 23.87px;
+  color: #1f2937;
+}
+.register-button {
+  height: 42px;
+  border-radius: 8px;
+  border: none;
+  padding: 12px 23px;
+  background-color: #3692ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.09px;
+}
+.register-button.disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+.section-wrapper {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.section-h1 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.48px;
+  color: #1f2937;
+}
+.section-input {
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  background-color: #f3f4f6;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #000;
+  font-family: pretendard;
+  resize: none;
+}
+.section-input::placeholder {
+  color: #9ca3af;
+}
+.textarea-input {
+  height: 282px;
+}
+.current-wrapper {
+  display: flex;
+  gap: 10px;
+}
+.input-wrapper {
+  position: relative;
+  width: 282px;
+  height: 282px;
+}
+.img-input {
+  width: 282px;
+  height: 282px;
+  text-indent: -9999px;
+}
+.img-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width:100%;
+}
+.img-wrapper.span {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #9ca3af;
+}
+.previewImage{
+  object-fit: cover;
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .container{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 0 24px;
+  }
+  .img-input {
+    width: 162px;
+    height: 162px;
+    text-indent: -9999px;
+  }
+  .input-wrapper {
+    width: 162px;
+    height: 162px;
+  }
+  .previewImage{
+    width:162px;
+    height:162px;
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 767px) {
+  .container{
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding: 0 15px;
+  }
+  .img-input {
+    width: 168px;
+    height: 168px;
+    text-indent: -9999px;
+  }
+  .input-wrapper {
+    width: 168px;
+    height: 168px;
+  }
+  .previewImage{
+    width:168px;
+    height:168px;
+  }
+}

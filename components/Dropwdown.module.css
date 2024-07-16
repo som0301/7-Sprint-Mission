@@ -6,15 +6,15 @@
   padding: 12px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
-.Dropdown-select{
-  width:100%;
-  height:100%;
-  border:none;
+.Dropdown-select {
+  width: 100%;
+  height: 100%;
+  border: none;
   background-color: unset;
   appearance: none;
-  background-image: url('../public/arrow_down.svg');
+  background-image: url("../public/arrow_down.svg");
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: right 1px center;
@@ -26,13 +26,13 @@
   color: #1f2937;
 }
 @media screen and (min-width: 375px) and (max-width: 767px) {
-  .Dropdown-select{
-    width:24px;
-    height:24px;
-    background-image: url('../public/sort.svg');
+  .Dropdown-select {
+    width: 24px;
+    height: 24px;
+    background-image: url("../public/sort.svg");
     appearance: none;
     background-repeat: no-repeat;
     background-position: center;
-    text-indent:-999px;
+    text-indent: -999px;
   }
 }

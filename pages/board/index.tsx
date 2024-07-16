@@ -1,33 +1,21 @@
-import Header from "../components/Header";
-import styles from "../styles/boards.module.css";
-import BestListForm from "../components/BestListForm";
-import ListForm from "../components/ListForm";
-import Dropdown from "../components/Dropdown";
-import Image from "next/image";
+import Header from "../../components/Header";
+import styles from "../../styles/board.module.css";
+import BestListForm from "../../components/BestListForm";
+import ListForm from "../../components/ListForm";
+import Dropdown from "../../components/Dropdown";
 import { useState, useEffect } from "react";
-import SearchForm from "../components/SearchForm";
+import SearchForm from "../../components/SearchForm";
 import { useRouter } from "next/router";
-import axios from "../lib/axios";
+import Link from "next/link";
 
 const PCTABLET_List = 5;
 const MOBILE_List = 3;
 
-interface Article {
-  content: string;
-  createdAt: string;
-  id: number;
-  image: string | null;
-  likeCount: number;
-  title: string;
-  writer: { id: number; nickname: string };
-}
-
 export default function Boards() {
   const [pageSize, setPageSize] = useState(PCTABLET_List);
   const [orderBy, setOrderBy] = useState("recent");
-  const [articles, setArticles] = useState<Article>();
   const router = useRouter();
-  const { q } = router.query;
+  const { keyword } = router.query;
 
   const changePageSize = () => {
     if (window.innerWidth >= 768) {
@@ -46,6 +34,8 @@ export default function Boards() {
     return () => window.removeEventListener("resize", changePageSize);
   }, []);
 
+  const searchKeyword = Array.isArray(keyword) ? keyword[0] : keyword || "";
+
   return (
     <>
       <Header />
@@ -58,16 +48,18 @@ export default function Boards() {
         <section className={styles["boards-list"]}>
           <div className={styles["list-wrapper-title"]}>
             <h2 className={styles["boards-list-h2"]}>게시글</h2>
+            <Link href="/addboard">
             <button type="button" className={styles.boardsBtn}>
               글쓰기
             </button>
+            </Link>
           </div>
 
           <div className={styles["list-wrapper-input"]}>
-            <SearchForm initialValue={(q as string) || ""} />
+            <SearchForm initialValue={(keyword as string) || ""} />
             <Dropdown setOrderBy={setOrderBy} />
           </div>
-          <ListForm pageSize={pageSize} orderBy={orderBy} />
+          <ListForm pageSize={pageSize} orderBy={orderBy} keyword={searchKeyword}/>
         </section>
       </div>
     </>

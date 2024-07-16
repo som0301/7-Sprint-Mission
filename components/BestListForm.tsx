@@ -4,27 +4,11 @@ import medalIcon from "../public/medal_icon.svg";
 import heart from "../public/heart.svg";
 import { useEffect, useState } from "react";
 import { getArticles } from "../lib/api";
+import { Article } from "./type";
 
-interface Writer {
-  id: number;
-  nickname: string;
-}
-interface Article {
-  content: string;
-  createdAt: string;
-  id: number;
-  image: string | null;
-  likeCount: number;
-  title: string;
-  writer: Writer;
-}
-interface ArticleList {
-  list: Article[];
-}
-
-interface BestProps {
+interface getBestArticleParams {
   pageSize: number;
-  orderBy: string;
+  orderBy: "like" | "recent";
 }
 
 const PC_List = 3;
@@ -32,14 +16,14 @@ const TABLET_List = 2;
 const MOBILE_List = 1;
 
 export default function BestListForm() {
-  const [orderBy, setOrderBy] = useState("like");
-  const [isLike, setIsLike] = useState<ArticleList>({ list: [] });
+  const [orderBy, setOrderBy] = useState<"like" | "recent">("like");
+  const [isLike, setIsLike] = useState<Article[]>([]);
   const [pageSize, setPageSize] = useState<number>(PC_List);
 
-  async function getBestArticle({ pageSize, orderBy }: BestProps) {
+  async function getBestArticle({ pageSize, orderBy }: getBestArticleParams) {
     try {
       const response = await getArticles({ pageSize, orderBy });
-      setIsLike(response);
+      setIsLike(response.list);
     } catch (error) {
       console.log(error);
     }
@@ -69,12 +53,13 @@ export default function BestListForm() {
     window.addEventListener("resize", changePageSize);
     return () => window.removeEventListener("resize", changePageSize);
   }, []);
+  console.log(isLike);
 
   return (
     <>
-      {isLike.list.length > 0 ? (
-        isLike.list.map((article, index) => (
-          <form key={index} className={styles["BestList-form"]}>
+      {isLike.length > 0 ? (
+        isLike.map((article) => (
+          <form key={article.id} className={styles["BestList-form"]}>
             <div className={styles["BestList-badge"]}>
               <div className={styles["BestList-wrapper-badge"]}>
                 <Image src={medalIcon} alt="메달" width="16" height="16" />
@@ -84,7 +69,7 @@ export default function BestListForm() {
 
             <div className={styles["BestList-wrapper-h3"]}>
               <h3 className={styles["BestList-h3"]}>{article.title}</h3>
-              {article.image ? (
+              {article.image && (
                 <div className={styles["BestList-img"]}>
                   <Image
                     src={article.image}
@@ -93,8 +78,6 @@ export default function BestListForm() {
                     height="45"
                   />
                 </div>
-              ) : (
-                ""
               )}
             </div>
 

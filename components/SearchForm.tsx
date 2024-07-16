@@ -19,10 +19,10 @@ export default function SearchForm({
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!value) {
-      router.push("/");
+      router.push("/board");
       return;
     }
-    router.push(`/search?keyword=${value}`);
+    router.push(`/board?keyword=${value}`);
   }
   console.log(value);
   return (
